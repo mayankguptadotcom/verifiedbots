@@ -37,6 +37,7 @@
   ],
   "tier": 1,
   "tier_label": "Fully verifiable",
+  "first_seen": "2026-07-08T19:13:49.571Z",
   "resolved_cidrs": [
     "18.97.14.80/29",
     "18.97.14.88/30",

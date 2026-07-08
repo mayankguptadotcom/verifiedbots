@@ -6,10 +6,14 @@ import { dataset } from '../lib/data';
 const endpoints = [
   { path: '/data/all.json', desc: 'The full catalogue: every bot with identity, UA patterns, verification recipes, tier, and resolved IP ranges.' },
   { path: '/data/by-category/<category>.json', desc: 'The same shape, filtered to one category (e.g. ai-crawler.json).' },
+  { path: '/data/by-tier/tier-<n>.json', desc: 'The same shape, filtered to one verification tier: tier-1 (fully verifiable), tier-2 (verifiable), tier-3 (listed only).' },
   { path: '/data/bots/<id>.json', desc: 'A single bot artifact.' },
   { path: '/data/ips/<id>.ips', desc: 'Plain-text CIDR list for one bot, one range per line (GoodBots-compatible).' },
+  { path: '/data/ips/by-category/<category>.ips', desc: 'Union of verified ranges for one category (only categories with at least one verified range).' },
+  { path: '/data/ips/by-tier/tier-<n>.ips', desc: 'Union of verified ranges for one tier (tier-3 has none by definition).' },
   { path: '/data/ips/all.ips', desc: 'Union of all verified ranges in the directory.' },
   { path: '/data/ua-patterns.json', desc: 'Just the UA regex patterns, per bot, with categories.' },
+  { path: '/rss.xml', desc: 'RSS feed of bots newly added to the directory.' },
 ];
 ---
 <Layout title="Data & API">

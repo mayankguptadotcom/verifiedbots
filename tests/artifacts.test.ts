@@ -34,7 +34,7 @@ const outcomes: FeedOutcome[] = [
 
 describe('buildArtifacts', () => {
   const out = mkdtempSync(join(tmpdir(), 'dist-'));
-  buildArtifacts([googlebot, claudebot], outcomes, out, '2026-07-07T00:00:00Z');
+  buildArtifacts([googlebot, claudebot], outcomes, out, '2026-07-07T00:00:00Z', { googlebot: '2026-07-01T00:00:00Z' });
   const all = JSON.parse(readFileSync(join(out, 'all.json'), 'utf8'));
 
   it('writes all.json with tiers and resolved cidrs', () => {
@@ -55,6 +55,25 @@ describe('buildArtifacts', () => {
     expect(readFileSync(join(out, 'ips/googlebot.ips'), 'utf8')).toBe('66.249.64.0/27\n66.249.90.0/28\n');
     expect(existsSync(join(out, 'ips/claudebot.ips'))).toBe(false);
     expect(readFileSync(join(out, 'ips/all.ips'), 'utf8')).toBe('66.249.64.0/27\n66.249.90.0/28\n');
+  });
+  it('stamps first_seen from the registry, defaulting to generatedAt for new bots', () => {
+    expect(all.bots.find((b: any) => b.id === 'googlebot').first_seen).toBe('2026-07-01T00:00:00Z');
+    expect(all.bots.find((b: any) => b.id === 'claudebot').first_seen).toBe('2026-07-07T00:00:00Z');
+  });
+  it('writes per-tier json for all three tiers and .ips only for tiers with ranges', () => {
+    const t1 = JSON.parse(readFileSync(join(out, 'by-tier/tier-1.json'), 'utf8'));
+    expect(t1.bots.map((b: any) => b.id)).toEqual(['googlebot']);
+    const t2 = JSON.parse(readFileSync(join(out, 'by-tier/tier-2.json'), 'utf8'));
+    expect(t2.count).toBe(0);
+    const t3 = JSON.parse(readFileSync(join(out, 'by-tier/tier-3.json'), 'utf8'));
+    expect(t3.bots.map((b: any) => b.id)).toEqual(['claudebot']);
+    expect(readFileSync(join(out, 'ips/by-tier/tier-1.ips'), 'utf8')).toBe('66.249.64.0/27\n66.249.90.0/28\n');
+    expect(existsSync(join(out, 'ips/by-tier/tier-2.ips'))).toBe(false);
+    expect(existsSync(join(out, 'ips/by-tier/tier-3.ips'))).toBe(false);
+  });
+  it('writes per-category .ips files only for categories with ranges', () => {
+    expect(readFileSync(join(out, 'ips/by-category/search-engine.ips'), 'utf8')).toBe('66.249.64.0/27\n66.249.90.0/28\n');
+    expect(existsSync(join(out, 'ips/by-category/ai-crawler.ips'))).toBe(false);
   });
   it('writes ua-patterns.json', () => {
     const ua = JSON.parse(readFileSync(join(out, 'ua-patterns.json'), 'utf8'));

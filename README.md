@@ -34,11 +34,18 @@ All artifacts are served live and CC-BY-4.0 licensed:
 
 - `https://verifiedbots.dev/data/all.json` — the full dataset
 - `https://verifiedbots.dev/data/by-category/<category>.json` — one category
+- `https://verifiedbots.dev/data/by-tier/tier-<n>.json` — one verification
+  tier (1 fully verifiable, 2 verifiable, 3 listed only)
 - `https://verifiedbots.dev/data/bots/<id>.json` — one bot
 - `https://verifiedbots.dev/data/ips/<id>.ips` — one bot's IP ranges
+- `https://verifiedbots.dev/data/ips/by-category/<category>.ips` — one
+  category's verified IP ranges
+- `https://verifiedbots.dev/data/ips/by-tier/tier-<n>.ips` — one tier's
+  verified IP ranges
 - `https://verifiedbots.dev/data/ips/all.ips` — every verified IP range
 - `https://verifiedbots.dev/data/ua-patterns.json` — user-agent match
   patterns for every bot
+- `https://verifiedbots.dev/rss.xml` — RSS feed of newly added bots
 
 ## Contributing
 

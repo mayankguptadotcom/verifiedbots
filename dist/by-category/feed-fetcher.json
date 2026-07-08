@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T17:51:21.656Z",
+  "generated_at": "2026-07-08T19:13:49.571Z",
   "count": 5,
   "bots": [
     {
@@ -30,6 +30,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -59,6 +60,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -94,6 +96,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "144.202.49.4/32",
         "149.28.114.120/32",
@@ -130,6 +133,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -184,6 +188,7 @@
       ],
       "tier": 2,
       "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "198.58.102.117/32",
         "198.58.102.155/32",
