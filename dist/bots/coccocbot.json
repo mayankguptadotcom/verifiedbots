@@ -1,0 +1,38 @@
+{
+  "id": "coccocbot",
+  "name": "coccocbot",
+  "operator": {
+    "name": "Cốc Cốc",
+    "url": "https://coccoc.com"
+  },
+  "description": "Cốc Cốc's web crawler, fetching pages for the Vietnamese Cốc Cốc search engine. Separate web and image sub-bots share the same verification domain.",
+  "docs": [
+    "https://coccoc.com/search/console/en"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "coccocbot-web/\\d",
+      "coccocbot-image/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; coccocbot-web/1.0; +http://help.coccoc.com/searchengine)",
+      "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "coccocbot"
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.coccoc.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": []
+}

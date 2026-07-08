@@ -1,0 +1,29 @@
+{
+  "id": "semrushbot",
+  "name": "SemrushBot",
+  "operator": {
+    "name": "Semrush",
+    "url": "https://www.semrush.com"
+  },
+  "description": "Semrush's web crawler, feeding the backlink and site-audit data behind the Semrush SEO platform. Semrush's own bot page explicitly states it does not use consecutive IP blocks, so no CIDR list can be sourced.",
+  "docs": [
+    "https://www.semrush.com/bot/"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "SemrushBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; SemrushBot/7~bl; +http://www.semrush.com/bot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "SemrushBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,69 @@
+{
+  "id": "betterstack-uptime",
+  "name": "Better Stack Uptime",
+  "operator": {
+    "name": "Better Stack",
+    "url": "https://betterstack.com"
+  },
+  "description": "Better Stack's uptime-monitoring probes, which request customer URLs on a schedule from a published, frequently-changing list of monitoring IPs.",
+  "docs": [
+    "https://betterstack.com/docs/uptime/frequently-asked-questions/"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "Better ?Uptime Bot"
+    ],
+    "instances": [
+      "Better Stack Better Uptime Bot Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://uptime.betterstack.com/ips.txt",
+      "format": "text_lines"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "162.55.165.86/32",
+    "168.119.246.194/32",
+    "172.105.162.156/32",
+    "178.156.154.250/32",
+    "178.156.210.11/32",
+    "178.156.217.188/32",
+    "192.53.169.77/32",
+    "194.195.248.157/32",
+    "2400:8907::2000:2eff:fed6:8631/128",
+    "2400:8907::2000:6fff:fe13:8fcc/128",
+    "2400:8907::2000:d5ff:fecf:a8d3/128",
+    "2400:8907::2000:f7ff:fe54:8db9/128",
+    "2a01:4f8:c012:856d::1/128",
+    "2a01:4f8:c013:3a76::1/128",
+    "2a01:4f8:c014:24d5::1/128",
+    "2a01:4f8:c014:2649::1/128",
+    "2a01:4ff:2f0:1c39::1/128",
+    "2a01:4ff:2f0:1f88::1/128",
+    "2a01:4ff:2f0:258a::1/128",
+    "2a01:4ff:2f0:3b17::1/128",
+    "2a01:4ff:f0:4f11::1/128",
+    "2a01:4ff:f0:565a::1/128",
+    "2a01:4ff:f0:5a81::1/128",
+    "2a01:4ff:f0:abcd::1/128",
+    "2a01:4ff:f0:eec4::1/128",
+    "45.79.236.121/32",
+    "5.161.118.194/32",
+    "5.161.90.230/32",
+    "5.223.56.56/32",
+    "5.223.60.188/32",
+    "5.223.73.226/32",
+    "5.223.75.121/32",
+    "91.98.38.26/32",
+    "91.99.189.210/32"
+  ]
+}

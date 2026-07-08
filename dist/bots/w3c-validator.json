@@ -1,0 +1,39 @@
+{
+  "id": "w3c-validator",
+  "name": "W3C Markup Validator",
+  "operator": {
+    "name": "World Wide Web Consortium (W3C)",
+    "url": "https://www.w3.org"
+  },
+  "description": "The W3C Markup Validation Service's fetcher, used when a user submits a URL to be checked for HTML conformance. W3C documents a fixed source address for its validation services alongside the user-agent string.",
+  "docs": [
+    "https://validator.w3.org/services"
+  ],
+  "category": "security",
+  "user_agents": {
+    "patterns": [
+      "W3C_Validator/[\\d.]+"
+    ],
+    "instances": [
+      "W3C_Validator/1.3"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "52.22.66.203/32",
+        "2600:1f18:7d7a:2700::/56"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": [
+    "2600:1f18:7d7a:2700::/56",
+    "52.22.66.203/32"
+  ]
+}

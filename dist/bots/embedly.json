@@ -1,0 +1,50 @@
+{
+  "id": "embedly",
+  "name": "Embedly",
+  "operator": {
+    "name": "Embedly",
+    "url": "https://embed.ly"
+  },
+  "description": "Embedly's fetcher, used to generate rich embeds and previews of shared URLs for its customers' apps and sites. Embedly's FAQ publishes a fixed, small set of source IPs rather than a live CIDR feed.",
+  "docs": [
+    "https://docs.embed.ly/reference/faq"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "Embedly/[\\d.]+"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Embedly/0.2; +http://support.embed.ly/)",
+      "Mozilla/5.0 (compatible; Embedly/0.2; snap; +http://support.embed.ly/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "107.21.253.49/32",
+        "54.204.20.249/32",
+        "54.204.20.250/32",
+        "54.221.198.105/32",
+        "54.221.199.147/32",
+        "54.225.104.196/32",
+        "2600:1f18:100d:9f00::/52"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": [
+    "107.21.253.49/32",
+    "2600:1f18:100d:9f00::/52",
+    "54.204.20.249/32",
+    "54.204.20.250/32",
+    "54.221.198.105/32",
+    "54.221.199.147/32",
+    "54.225.104.196/32"
+  ]
+}

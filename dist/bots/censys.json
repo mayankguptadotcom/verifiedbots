@@ -1,0 +1,83 @@
+{
+  "id": "censys",
+  "name": "Censys Inspect",
+  "operator": {
+    "name": "Censys",
+    "url": "https://censys.com"
+  },
+  "description": "Censys' internet-wide scanner, which probes public IP addresses to build the host/service data behind Censys Search. Censys publishes a fixed set of scanner subnets and ASNs for opt-out purposes.",
+  "docs": [
+    "https://docs.censys.com/docs/opt-out-of-data-collection"
+  ],
+  "category": "security",
+  "user_agents": {
+    "patterns": [
+      "CensysInspect/[\\d.]+"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "66.132.159.0/24",
+        "66.132.148.0/24",
+        "66.132.153.0/24",
+        "66.132.224.0/24",
+        "66.132.186.0/24",
+        "66.132.195.0/24",
+        "66.132.172.0/24",
+        "162.142.125.0/24",
+        "167.94.138.0/24",
+        "167.94.145.0/24",
+        "167.94.146.0/24",
+        "167.248.133.0/24",
+        "199.45.154.0/24",
+        "199.45.155.0/24",
+        "206.168.34.0/24",
+        "206.168.35.0/24",
+        "2602:80d:1000:b0cc:e::/80",
+        "2620:96:e000:b0cc:e::/80",
+        "2602:80d:1003::/112",
+        "2602:80d:1004::/112"
+      ]
+    },
+    {
+      "type": "asn",
+      "numbers": [
+        398722,
+        398705,
+        398324
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": [
+    "162.142.125.0/24",
+    "167.248.133.0/24",
+    "167.94.138.0/24",
+    "167.94.145.0/24",
+    "167.94.146.0/24",
+    "199.45.154.0/24",
+    "199.45.155.0/24",
+    "206.168.34.0/24",
+    "206.168.35.0/24",
+    "2602:80d:1000:b0cc:e::/80",
+    "2602:80d:1003::/112",
+    "2602:80d:1004::/112",
+    "2620:96:e000:b0cc:e::/80",
+    "66.132.148.0/24",
+    "66.132.153.0/24",
+    "66.132.159.0/24",
+    "66.132.172.0/24",
+    "66.132.186.0/24",
+    "66.132.195.0/24",
+    "66.132.224.0/24"
+  ]
+}

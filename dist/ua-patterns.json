@@ -1,9 +1,238 @@
 [
   {
+    "id": "adyen-webhooks",
+    "category": "webhook",
+    "patterns": [
+      "Adyen HttpClient"
+    ]
+  },
+  {
+    "id": "ahrefs-siteaudit",
+    "category": "seo",
+    "patterns": [
+      "AhrefsSiteAudit/\\d"
+    ]
+  },
+  {
+    "id": "ahrefsbot",
+    "category": "seo",
+    "patterns": [
+      "AhrefsBot/\\d"
+    ]
+  },
+  {
+    "id": "ai2bot",
+    "category": "ai-crawler",
+    "patterns": [
+      "AI2Bot"
+    ]
+  },
+  {
+    "id": "amazonbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "Amazonbot/\\d"
+    ]
+  },
+  {
+    "id": "applebot",
+    "category": "search-engine",
+    "patterns": [
+      "Applebot/\\d"
+    ]
+  },
+  {
+    "id": "arquivo-pt",
+    "category": "archiver",
+    "patterns": [
+      "Arquivo-web-crawler"
+    ]
+  },
+  {
+    "id": "baiduspider",
+    "category": "search-engine",
+    "patterns": [
+      "Baiduspider/\\d"
+    ]
+  },
+  {
+    "id": "betterstack-uptime",
+    "category": "monitoring",
+    "patterns": [
+      "Better ?Uptime Bot"
+    ]
+  },
+  {
+    "id": "bingbot",
+    "category": "search-engine",
+    "patterns": [
+      "bingbot/\\d"
+    ]
+  },
+  {
+    "id": "botify",
+    "category": "seo",
+    "patterns": [
+      "compatible; botify"
+    ]
+  },
+  {
+    "id": "bytespider",
+    "category": "ai-crawler",
+    "patterns": [
+      "Bytespider"
+    ]
+  },
+  {
+    "id": "ccbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "CCBot/\\d"
+    ]
+  },
+  {
+    "id": "censys",
+    "category": "security",
+    "patterns": [
+      "CensysInspect/[\\d.]+"
+    ]
+  },
+  {
+    "id": "chatgpt-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "ChatGPT-User/\\d"
+    ]
+  },
+  {
+    "id": "checkly",
+    "category": "monitoring",
+    "patterns": [
+      "Checkly/[\\d.]+"
+    ]
+  },
+  {
+    "id": "claude-searchbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "Claude-SearchBot/\\d"
+    ]
+  },
+  {
+    "id": "claude-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Claude-User/\\d"
+    ]
+  },
+  {
     "id": "claudebot",
     "category": "ai-crawler",
     "patterns": [
       "ClaudeBot/\\d"
+    ]
+  },
+  {
+    "id": "coccocbot",
+    "category": "search-engine",
+    "patterns": [
+      "coccocbot-web/\\d",
+      "coccocbot-image/\\d"
+    ]
+  },
+  {
+    "id": "detectify",
+    "category": "security",
+    "patterns": [
+      "Detectify"
+    ]
+  },
+  {
+    "id": "diffbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "Diffbot/\\d"
+    ]
+  },
+  {
+    "id": "discordbot",
+    "category": "social-preview",
+    "patterns": [
+      "Discordbot/\\d"
+    ]
+  },
+  {
+    "id": "dotbot",
+    "category": "seo",
+    "patterns": [
+      "DotBot/\\d"
+    ]
+  },
+  {
+    "id": "duckduckbot",
+    "category": "search-engine",
+    "patterns": [
+      "DuckDuckBot/\\d"
+    ]
+  },
+  {
+    "id": "embedly",
+    "category": "social-preview",
+    "patterns": [
+      "Embedly/[\\d.]+"
+    ]
+  },
+  {
+    "id": "facebookexternalhit",
+    "category": "social-preview",
+    "patterns": [
+      "facebookexternalhit/\\d"
+    ]
+  },
+  {
+    "id": "feedly",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Feedly/[\\d.]+"
+    ]
+  },
+  {
+    "id": "flipboard-proxy",
+    "category": "feed-fetcher",
+    "patterns": [
+      "FlipboardProxy/[\\d.]+"
+    ]
+  },
+  {
+    "id": "freshping",
+    "category": "monitoring",
+    "patterns": [
+      "FreshpingBot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "github-hooks",
+    "category": "webhook",
+    "patterns": [
+      "GitHub-Hookshot/[0-9a-f]+"
+    ]
+  },
+  {
+    "id": "google-special-crawlers",
+    "category": "search-engine",
+    "patterns": [
+      "AdsBot-Google",
+      "Mediapartners-Google",
+      "Google-Safety"
+    ]
+  },
+  {
+    "id": "google-user-triggered-fetchers",
+    "category": "ai-assistant",
+    "patterns": [
+      "Google-Read-Aloud",
+      "Google-Site-Verification",
+      "Google-NotebookLM"
     ]
   },
   {
@@ -21,10 +250,256 @@
     ]
   },
   {
+    "id": "hetrixtools",
+    "category": "monitoring",
+    "patterns": [
+      "HetrixTools Uptime Monitoring Bot"
+    ]
+  },
+  {
+    "id": "iframely",
+    "category": "social-preview",
+    "patterns": [
+      "Iframely/[\\d.]+"
+    ]
+  },
+  {
+    "id": "inoreader",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Inoreader/[\\d.]+"
+    ]
+  },
+  {
+    "id": "internet-measurement-driftnet",
+    "category": "security",
+    "patterns": [
+      "InternetMeasurement/[\\d.]+"
+    ]
+  },
+  {
+    "id": "kagibot",
+    "category": "search-engine",
+    "patterns": [
+      "Kagibot/\\d"
+    ]
+  },
+  {
+    "id": "leakix",
+    "category": "security",
+    "patterns": [
+      "l9explore/[\\d.]+"
+    ]
+  },
+  {
+    "id": "linkedinbot",
+    "category": "social-preview",
+    "patterns": [
+      "LinkedInBot/\\d"
+    ]
+  },
+  {
+    "id": "marginalia",
+    "category": "search-engine",
+    "patterns": [
+      "search\\.marginalia\\.nu"
+    ]
+  },
+  {
+    "id": "mastodon",
+    "category": "social-preview",
+    "patterns": [
+      "http\\.rb/[\\d.]+ \\(Mastodon/[\\d.]+;"
+    ]
+  },
+  {
     "id": "meta-externalagent",
     "category": "ai-crawler",
     "patterns": [
       "meta-externalagent/\\d"
+    ]
+  },
+  {
+    "id": "meta-externalfetcher",
+    "category": "ai-assistant",
+    "patterns": [
+      "meta-externalfetcher/\\d"
+    ]
+  },
+  {
+    "id": "mistralai-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "MistralAI-User/\\d"
+    ]
+  },
+  {
+    "id": "mj12bot",
+    "category": "seo",
+    "patterns": [
+      "MJ12bot/v\\d"
+    ]
+  },
+  {
+    "id": "mojeekbot",
+    "category": "search-engine",
+    "patterns": [
+      "MojeekBot/\\d"
+    ]
+  },
+  {
+    "id": "naver-yeti",
+    "category": "search-engine",
+    "patterns": [
+      "Yeti/\\d"
+    ]
+  },
+  {
+    "id": "newsblur",
+    "category": "feed-fetcher",
+    "patterns": [
+      "NewsBlur Feed Fetcher"
+    ]
+  },
+  {
+    "id": "oai-searchbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "OAI-SearchBot/\\d"
+    ]
+  },
+  {
+    "id": "omgili",
+    "category": "ai-crawler",
+    "patterns": [
+      "omgili"
+    ]
+  },
+  {
+    "id": "oncrawl",
+    "category": "seo",
+    "patterns": [
+      "Oncrawl/\\d"
+    ]
+  },
+  {
+    "id": "paypal-ipn",
+    "category": "webhook",
+    "patterns": [
+      "PayPal IPN"
+    ]
+  },
+  {
+    "id": "perplexity-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Perplexity-User/\\d"
+    ]
+  },
+  {
+    "id": "perplexitybot",
+    "category": "ai-crawler",
+    "patterns": [
+      "PerplexityBot/\\d"
+    ]
+  },
+  {
+    "id": "petalbot",
+    "category": "search-engine",
+    "patterns": [
+      "PetalBot"
+    ]
+  },
+  {
+    "id": "pingdom",
+    "category": "monitoring",
+    "patterns": [
+      "pingbot/\\d"
+    ]
+  },
+  {
+    "id": "pinterestbot",
+    "category": "social-preview",
+    "patterns": [
+      "Pinterest(bot)?/\\d"
+    ]
+  },
+  {
+    "id": "qwantbot",
+    "category": "search-engine",
+    "patterns": [
+      "Qwantify/\\d",
+      "Qwantbot/\\d"
+    ]
+  },
+  {
+    "id": "redditbot",
+    "category": "social-preview",
+    "patterns": [
+      "redditbot/\\d"
+    ]
+  },
+  {
+    "id": "rogerbot",
+    "category": "seo",
+    "patterns": [
+      "rogerbot/\\d"
+    ]
+  },
+  {
+    "id": "semrushbot",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot/\\d"
+    ]
+  },
+  {
+    "id": "seznambot",
+    "category": "search-engine",
+    "patterns": [
+      "SeznamBot/\\d"
+    ]
+  },
+  {
+    "id": "sistrix",
+    "category": "seo",
+    "patterns": [
+      "SISTRIX Crawler"
+    ]
+  },
+  {
+    "id": "site24x7",
+    "category": "monitoring",
+    "patterns": [
+      "Site24x7/[\\d.]+"
+    ]
+  },
+  {
+    "id": "slack-imgproxy",
+    "category": "social-preview",
+    "patterns": [
+      "Slack-ImgProxy"
+    ]
+  },
+  {
+    "id": "slackbot",
+    "category": "social-preview",
+    "patterns": [
+      "Slackbot"
+    ]
+  },
+  {
+    "id": "statuscake",
+    "category": "monitoring",
+    "patterns": [
+      "StatusCake"
+    ]
+  },
+  {
+    "id": "stractbot",
+    "category": "search-engine",
+    "patterns": [
+      "StractBot/\\d"
     ]
   },
   {
@@ -35,10 +510,80 @@
     ]
   },
   {
+    "id": "superfeedr",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Superfeedr"
+    ]
+  },
+  {
+    "id": "svix-webhooks",
+    "category": "webhook",
+    "patterns": [
+      "Svix-Webhooks/[\\d.]+"
+    ]
+  },
+  {
+    "id": "telegram-webhooks",
+    "category": "webhook",
+    "patterns": [
+      "TelegramBot \\(like TwitterBot\\)"
+    ]
+  },
+  {
+    "id": "telegrambot",
+    "category": "social-preview",
+    "patterns": [
+      "TelegramBot"
+    ]
+  },
+  {
+    "id": "twitterbot",
+    "category": "social-preview",
+    "patterns": [
+      "Twitterbot/\\d"
+    ]
+  },
+  {
+    "id": "updown-io",
+    "category": "monitoring",
+    "patterns": [
+      "updown\\.io"
+    ]
+  },
+  {
     "id": "uptimerobot",
     "category": "monitoring",
     "patterns": [
       "UptimeRobot/\\d"
+    ]
+  },
+  {
+    "id": "w3c-validator",
+    "category": "security",
+    "patterns": [
+      "W3C_Validator/[\\d.]+"
+    ]
+  },
+  {
+    "id": "whatsapp",
+    "category": "social-preview",
+    "patterns": [
+      "WhatsApp/[\\d.]+ [AIN]"
+    ]
+  },
+  {
+    "id": "yandexbot",
+    "category": "search-engine",
+    "patterns": [
+      "YandexBot/\\d"
+    ]
+  },
+  {
+    "id": "youbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "YouBot/\\d"
     ]
   }
 ]

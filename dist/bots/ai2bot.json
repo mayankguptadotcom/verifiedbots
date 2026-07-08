@@ -1,0 +1,29 @@
+{
+  "id": "ai2bot",
+  "name": "AI2Bot",
+  "operator": {
+    "name": "Allen Institute for AI",
+    "url": "https://allenai.org"
+  },
+  "description": "The Allen Institute for AI's crawler, used to build open training datasets such as Dolma. AI2 publishes no IP ranges, ASN, or reverse-DNS pattern.",
+  "docs": [
+    "https://allenai.org/crawler"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "AI2Bot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "AI2Bot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

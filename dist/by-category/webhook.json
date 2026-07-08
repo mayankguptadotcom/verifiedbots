@@ -1,8 +1,136 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T14:33:35.419Z",
-  "count": 1,
+  "generated_at": "2026-07-08T16:28:37.636Z",
+  "count": 6,
   "bots": [
+    {
+      "id": "adyen-webhooks",
+      "name": "Adyen Webhooks",
+      "operator": {
+        "name": "Adyen",
+        "url": "https://www.adyen.com"
+      },
+      "description": "Adyen's payment-event webhook delivery service. Not a crawler; POSTs notifications to merchant endpoints. Adyen documents its egress domain for DNS-based allowlisting rather than a static IP list, since its outbound IPs change over time.",
+      "docs": [
+        "https://docs.adyen.com/development-resources/webhooks/secure-webhooks"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "Adyen HttpClient"
+        ],
+        "instances": [
+          "Adyen HttpClient 1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.out.adyen.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "github-hooks",
+      "name": "GitHub Webhooks",
+      "operator": {
+        "name": "GitHub",
+        "url": "https://github.com"
+      },
+      "description": "GitHub's webhook delivery service. Not a crawler; sends repository and organization event notifications to configured endpoints from IP ranges published in GitHub's meta API.",
+      "docs": [
+        "https://docs.github.com/en/rest/meta/meta"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "GitHub-Hookshot/[0-9a-f]+"
+        ],
+        "instances": [
+          "GitHub-Hookshot/044aa46"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://api.github.com/meta",
+          "format": "github_meta",
+          "selector": "hooks"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "140.82.112.0/20",
+        "143.55.64.0/20",
+        "185.199.108.0/22",
+        "192.30.252.0/22",
+        "2606:50c0::/32",
+        "2a0a:a440::/29"
+      ]
+    },
+    {
+      "id": "paypal-ipn",
+      "name": "PayPal IPN",
+      "operator": {
+        "name": "PayPal",
+        "url": "https://www.paypal.com"
+      },
+      "description": "PayPal's Instant Payment Notification service. Not a crawler; POSTs payment-event notifications to merchant listener endpoints from a documented, static set of server CIDR ranges (shared with other PayPal server traffic).",
+      "docs": [
+        "https://www.paypal.com/us/cshelp/article/what-are-the-internet-protocol-ip-addresses-for-paypal-server-endpoints-ts1056"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "PayPal IPN"
+        ],
+        "instances": [
+          "PayPal IPN (https://www.paypal.com/ipn)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "64.4.240.0/21",
+            "64.4.248.0/22",
+            "66.211.168.0/22",
+            "91.243.72.0/23",
+            "173.0.80.0/20",
+            "185.177.52.0/22",
+            "192.160.215.0/24",
+            "198.54.216.0/23"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": [
+        "173.0.80.0/20",
+        "185.177.52.0/22",
+        "192.160.215.0/24",
+        "198.54.216.0/23",
+        "64.4.240.0/21",
+        "64.4.248.0/22",
+        "66.211.168.0/22",
+        "91.243.72.0/23"
+      ]
+    },
     {
       "id": "stripe-webhooks",
       "name": "Stripe Webhooks",
@@ -51,6 +179,120 @@
         "54.187.216.72/32",
         "54.88.130.119/32",
         "54.88.130.237/32"
+      ]
+    },
+    {
+      "id": "svix-webhooks",
+      "name": "Svix Webhooks",
+      "operator": {
+        "name": "Svix",
+        "url": "https://www.svix.com"
+      },
+      "description": "Webhook-sending infrastructure used by Svix's customers to deliver events. Not a crawler; Pro/Enterprise plans get a documented, static set of per-region source IPs, and requests include a Svix sender identifier in the User-Agent.",
+      "docs": [
+        "https://docs.svix.com/receiving/source-ips"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "Svix-Webhooks/[\\d.]+"
+        ],
+        "instances": [
+          "Svix-Webhooks/1.68.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "44.228.126.217/32",
+            "50.112.21.217/32",
+            "52.24.126.164/32",
+            "54.148.139.208/32",
+            "2600:1f24:64:8000::/56",
+            "54.164.207.221/32",
+            "54.90.7.123/32",
+            "2600:1f28:37:4000::/56",
+            "52.215.16.239/32",
+            "54.216.8.72/32",
+            "63.33.109.123/32",
+            "2a05:d028:17:8000::/56",
+            "13.239.204.236/32",
+            "54.66.246.217/32",
+            "54.252.65.96/32",
+            "2406:da2c:13:4000::/56",
+            "52.60.44.49/32",
+            "3.98.68.230/32",
+            "3.96.105.27/32",
+            "2600:1f21:1c:4000::/56"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": [
+        "13.239.204.236/32",
+        "2406:da2c:13:4000::/56",
+        "2600:1f21:1c:4000::/56",
+        "2600:1f24:64:8000::/56",
+        "2600:1f28:37:4000::/56",
+        "2a05:d028:17:8000::/56",
+        "3.96.105.27/32",
+        "3.98.68.230/32",
+        "44.228.126.217/32",
+        "50.112.21.217/32",
+        "52.215.16.239/32",
+        "52.24.126.164/32",
+        "52.60.44.49/32",
+        "54.148.139.208/32",
+        "54.164.207.221/32",
+        "54.216.8.72/32",
+        "54.252.65.96/32",
+        "54.66.246.217/32",
+        "54.90.7.123/32",
+        "63.33.109.123/32"
+      ]
+    },
+    {
+      "id": "telegram-webhooks",
+      "name": "Telegram Bot Webhooks",
+      "operator": {
+        "name": "Telegram",
+        "url": "https://telegram.org"
+      },
+      "description": "Telegram's webhook delivery to bot servers. Not a crawler; POSTs update events to a bot's registered HTTPS endpoint from two documented, static CIDR ranges. Telegram documents no User-Agent for these POSTs; the UA listed here is Telegram's documented fetcher token and is unconfirmed for webhook traffic — verify by source IP, not UA.",
+      "docs": [
+        "https://core.telegram.org/bots/webhooks"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "TelegramBot \\(like TwitterBot\\)"
+        ],
+        "instances": [
+          "TelegramBot (like TwitterBot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "149.154.160.0/20",
+            "91.108.4.0/22"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": [
+        "149.154.160.0/20",
+        "91.108.4.0/22"
       ]
     }
   ]

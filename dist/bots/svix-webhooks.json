@@ -1,0 +1,75 @@
+{
+  "id": "svix-webhooks",
+  "name": "Svix Webhooks",
+  "operator": {
+    "name": "Svix",
+    "url": "https://www.svix.com"
+  },
+  "description": "Webhook-sending infrastructure used by Svix's customers to deliver events. Not a crawler; Pro/Enterprise plans get a documented, static set of per-region source IPs, and requests include a Svix sender identifier in the User-Agent.",
+  "docs": [
+    "https://docs.svix.com/receiving/source-ips"
+  ],
+  "category": "webhook",
+  "user_agents": {
+    "patterns": [
+      "Svix-Webhooks/[\\d.]+"
+    ],
+    "instances": [
+      "Svix-Webhooks/1.68.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "44.228.126.217/32",
+        "50.112.21.217/32",
+        "52.24.126.164/32",
+        "54.148.139.208/32",
+        "2600:1f24:64:8000::/56",
+        "54.164.207.221/32",
+        "54.90.7.123/32",
+        "2600:1f28:37:4000::/56",
+        "52.215.16.239/32",
+        "54.216.8.72/32",
+        "63.33.109.123/32",
+        "2a05:d028:17:8000::/56",
+        "13.239.204.236/32",
+        "54.66.246.217/32",
+        "54.252.65.96/32",
+        "2406:da2c:13:4000::/56",
+        "52.60.44.49/32",
+        "3.98.68.230/32",
+        "3.96.105.27/32",
+        "2600:1f21:1c:4000::/56"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": [
+    "13.239.204.236/32",
+    "2406:da2c:13:4000::/56",
+    "2600:1f21:1c:4000::/56",
+    "2600:1f24:64:8000::/56",
+    "2600:1f28:37:4000::/56",
+    "2a05:d028:17:8000::/56",
+    "3.96.105.27/32",
+    "3.98.68.230/32",
+    "44.228.126.217/32",
+    "50.112.21.217/32",
+    "52.215.16.239/32",
+    "52.24.126.164/32",
+    "52.60.44.49/32",
+    "54.148.139.208/32",
+    "54.164.207.221/32",
+    "54.216.8.72/32",
+    "54.252.65.96/32",
+    "54.66.246.217/32",
+    "54.90.7.123/32",
+    "63.33.109.123/32"
+  ]
+}

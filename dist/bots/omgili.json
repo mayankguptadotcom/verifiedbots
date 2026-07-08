@@ -1,0 +1,28 @@
+{
+  "id": "omgili",
+  "name": "omgili",
+  "operator": {
+    "name": "Webz.io",
+    "url": "https://webz.io"
+  },
+  "description": "Webz.io's legacy crawler user agent (formerly \"Omgilibot\"), used to collect web, forum, and news content for its data feeds. Webz.io's current public documentation describes successor crawlers (\"webzio\" / \"webzio-extended\") and no longer documents this UA string or any IP verification method for it.",
+  "docs": [
+    "https://webz.io/blog/company/from-omgilibot-to-the-webzbot-duo-a-powerful-leap-for-ethical-and-comprehensive-data-collection/"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "omgili"
+    ],
+    "instances": [
+      "omgili/0.5 +http://omgili.com"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

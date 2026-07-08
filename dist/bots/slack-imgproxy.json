@@ -1,0 +1,29 @@
+{
+  "id": "slack-imgproxy",
+  "name": "Slack-ImgProxy",
+  "operator": {
+    "name": "Slack",
+    "url": "https://slack.com"
+  },
+  "description": "Slack's image-proxying fetcher, which retrieves and caches images posted in channels while stripping referrer data. Slack documents the User-Agent string but publishes no IP ranges or other verification method.",
+  "docs": [
+    "https://api.slack.com/robots"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "Slack-ImgProxy"
+    ],
+    "instances": [
+      "Slack-ImgProxy (+https://api.slack.com/robots)",
+      "Slack-ImgProxy 1.106 (+https://api.slack.com/robots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "linkedinbot",
+  "name": "LinkedInBot",
+  "operator": {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com"
+  },
+  "description": "LinkedIn's crawler that fetches shared links to build post link previews. LinkedIn's own robots.txt names the \"LinkedInBot\" token, but LinkedIn publishes no dedicated bot-documentation page, IP list, ASN, or reverse-DNS pattern for this crawler.",
+  "docs": [
+    "https://www.linkedin.com/robots.txt"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "LinkedInBot/\\d"
+    ],
+    "instances": [
+      "LinkedInBot/1.0 (compatible; Mozilla/5.0; Jakarta Commons-HttpClient/4.3 +http://www.linkedin.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "LinkedInBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": "qwantbot",
+  "name": "Qwantbot",
+  "operator": {
+    "name": "Qwant",
+    "url": "https://www.qwant.com"
+  },
+  "description": "Qwant's web crawler, fetching pages for the privacy-focused Qwant search engine. Older crawls identify as Qwantify; current documentation uses the Qwantbot name.",
+  "docs": [
+    "https://help.qwant.com/bot/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Qwantify/\\d",
+      "Qwantbot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Qwantify/2.4w; +https://www.qwant.com/)/2.4w",
+      "Mozilla/5.0 (compatible; Qwantbot/1.0_12345; +https://help.qwant.com/bot/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://help.qwant.com/wp-content/uploads/sites/latest/qwantbot.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.qwant.com"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "194.187.171.0/24"
+  ]
+}
