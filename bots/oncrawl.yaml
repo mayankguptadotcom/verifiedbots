@@ -1,0 +1,17 @@
+id: oncrawl
+name: OnCrawl
+operator: { name: OnCrawl, url: "https://www.oncrawl.com" }
+description: >-
+  OnCrawl's SEO crawler, used to analyze a customer's own site structure and
+  content for technical SEO reporting. OnCrawl's help docs describe no fixed
+  IP range; the bot's identity is user-configurable per crawl.
+docs:
+  - "https://help.oncrawl.com/en/articles/2767653-oncrawl-crawler-how-does-the-oncrawl-bot-find-and-crawl-pages"
+category: seo
+user_agents:
+  patterns:
+    - 'Oncrawl/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Oncrawl/1.0; +http://www.oncrawl.com/)'
+behavior: { respects_robots_txt: true, robots_token: Oncrawl }
+verification: []

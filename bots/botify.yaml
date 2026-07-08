@@ -1,0 +1,17 @@
+id: botify
+name: Botify
+operator: { name: Botify, url: "https://www.botify.com" }
+description: >-
+  Botify's SEO crawler, used by its SiteCrawler product to analyze enterprise
+  websites for search-indexing insights. Botify does not publish a fixed IP
+  range or CIDR list for site owners to allowlist.
+docs:
+  - "https://support.botify.com/en/articles/9108549-crawling-with-a-custom-user-agent"
+category: seo
+user_agents:
+  patterns:
+    - 'compatible; botify'
+  instances:
+    - 'Mozilla/5.0 (compatible; botify; http://botify.com)'
+behavior: { respects_robots_txt: true, robots_token: Botify }
+verification: []

@@ -1,0 +1,17 @@
+id: rogerbot
+name: Rogerbot
+operator: { name: Moz, url: "https://moz.com" }
+description: >-
+  Moz's site-audit crawler for Moz Pro Campaigns, distinct from DotBot. Moz's
+  own FAQ states plainly that Rogerbot has no IP range: "we do not use a
+  static IP address or range of IP addresses."
+docs:
+  - "https://moz.com/help/moz-procedures/crawlers/rogerbot"
+category: seo
+user_agents:
+  patterns:
+    - 'rogerbot/\d'
+  instances:
+    - 'rogerbot/1.2 (http://moz.com/help/pro/what-is-rogerbot-, rogerbot-crawler+phaser-testing-crawler-01@moz.com)'
+behavior: { respects_robots_txt: true, robots_token: rogerbot }
+verification: []

@@ -1,0 +1,20 @@
+id: ahrefs-siteaudit
+name: AhrefsSiteAudit
+operator: { name: Ahrefs, url: "https://ahrefs.com" }
+description: >-
+  Ahrefs' on-demand site-auditing crawler, distinct from AhrefsBot, used when
+  Ahrefs customers run the Site Audit tool against their own or a competitor's
+  domain. Shares Ahrefs' published IP-range feed.
+docs:
+  - "https://ahrefs.com/robot/site-audit"
+category: seo
+user_agents:
+  patterns:
+    - 'AhrefsSiteAudit/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; AhrefsSiteAudit/6.1; +http://ahrefs.com/robot/site-audit)'
+behavior: { respects_robots_txt: true, robots_token: AhrefsSiteAudit }
+verification:
+  - type: cidr_feed
+    url: "https://api.ahrefs.com/v3/public/crawler-ip-ranges"
+    format: prefixes
