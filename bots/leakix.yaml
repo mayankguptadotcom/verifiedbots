@@ -1,0 +1,22 @@
+id: leakix
+name: LeakIX (l9explore)
+operator: { name: LeakIX, url: "https://leakix.net" }
+description: >-
+  LeakIX's internet-wide recon scanner (l9explore), which probes exposed
+  services to populate the LeakIX misconfiguration/vulnerability search
+  engine. Its probe fleet publishes a live, per-host list of source IPs at
+  scan.leakix.net whose hostnames resolve under scan.leakix.org, and its
+  scanning tool sets an identifiable user-agent.
+docs:
+  - "https://docs.leakix.net/"
+  - "https://scan.leakix.net/"
+category: security
+user_agents:
+  patterns:
+    - 'l9explore/[\d.]+'
+  instances:
+    - 'l9explore/1.2.2'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.scan.leakix.org"]
