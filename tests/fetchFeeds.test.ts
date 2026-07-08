@@ -70,4 +70,18 @@ describe('fetchAllFeeds', () => {
     expect(await fetchAllFeeds([b], lkg, fetcher)).toEqual([]);
     expect(existsSync(join(lkg, 'nofeed--0.json'))).toBe(false);
   });
+  it('reports error with LKG fallback when the fetcher rejects', async () => {
+    writeFileSync(join(lkg, 'googlebot--0.json'), JSON.stringify({ url: 'x', fetched_at: 'y', ranges: ['66.249.64.0/27'] }));
+    const fetcher: Fetcher = async () => { throw 'socket hang up'; }; // non-Error throw on purpose
+    const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher);
+    expect(out[0]).toMatchObject({ status: 'error', ranges: ['66.249.64.0/27'] });
+    expect(out[0].detail).toContain('socket hang up');
+  });
+  it('treats a corrupt LKG file as absent instead of crashing the run', async () => {
+    writeFileSync(join(lkg, 'googlebot--0.json'), '{truncated');
+    const fetcher: Fetcher = async () => ({ status: 200, body: prefixBody(['66.249.64.0/27']) });
+    const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher);
+    expect(out[0]).toMatchObject({ status: 'ok', ranges: ['66.249.64.0/27'] });
+    expect(JSON.parse(readFileSync(join(lkg, 'googlebot--0.json'), 'utf8')).ranges).toEqual(['66.249.64.0/27']);
+  });
 });

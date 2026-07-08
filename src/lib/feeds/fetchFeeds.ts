@@ -20,9 +20,21 @@ const defaultFetcher: Fetcher = async (url) => {
   return { status: res.status, body: await res.text() };
 };
 
+function errMessage(e: unknown): string {
+  return e instanceof Error ? e.message : String(e);
+}
+
 function readLkg(path: string): string[] {
   if (!existsSync(path)) return [];
-  return (JSON.parse(readFileSync(path, 'utf8')).ranges as string[]) ?? [];
+  try {
+    const data = JSON.parse(readFileSync(path, 'utf8'));
+    if (Array.isArray(data.ranges) && data.ranges.every((r: unknown) => typeof r === 'string')) {
+      return data.ranges;
+    }
+  } catch {
+    // Corrupt LKG file: treat as absent
+  }
+  return [];
 }
 
 export async function fetchAllFeeds(bots: Bot[], lkgDir: string, fetcher: Fetcher = defaultFetcher): Promise<FeedOutcome[]> {
@@ -48,14 +60,14 @@ export async function fetchAllFeeds(bots: Bot[], lkgDir: string, fetcher: Fetche
         }
         body = res.body;
       } catch (e) {
-        outcomes.push(fail(`fetch failed: ${(e as Error).message}`));
+        outcomes.push(fail(`fetch failed: ${errMessage(e)}`));
         continue;
       }
       let ranges: string[];
       try {
         ranges = sanitizeCidrs(parseFeed(feed.format, body, feed.selector));
       } catch (e) {
-        outcomes.push(fail((e as Error).message));
+        outcomes.push(fail(errMessage(e)));
         continue;
       }
       const diff = diffRanges(lkgRanges, ranges);
@@ -69,6 +81,7 @@ export async function fetchAllFeeds(bots: Bot[], lkgDir: string, fetcher: Fetche
         });
         continue;
       }
+      // TODO: atomic write (tmp+rename) — a crash mid-write corrupts the LKG trust anchor.
       writeFileSync(lkgPath, JSON.stringify({ url: feed.url, fetched_at: new Date().toISOString(), ranges }, null, 2));
       outcomes.push({ botId: bot.id, url: feed.url, status: 'ok', ranges });
     }
