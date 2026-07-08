@@ -1,0 +1,19 @@
+id: duckduckbot
+name: DuckDuckBot
+operator: { name: DuckDuckGo, url: "https://duckduckgo.com" }
+description: >-
+  DuckDuckGo's web crawler, used to improve DuckDuckGo's search results.
+docs:
+  - "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
+category: search-engine
+user_agents:
+  patterns:
+    - 'DuckDuckBot/\d'
+  instances:
+    - 'DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)'
+    - 'Mozilla/5.0 (compatible; DuckDuckBot-Https/1.1; https://duckduckgo.com/duckduckbot)'
+behavior: { respects_robots_txt: true, robots_token: DuckDuckBot }
+verification:
+  - type: cidr_feed
+    url: "https://duckduckgo.com/duckduckbot.json"
+    format: prefixes

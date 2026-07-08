@@ -1,0 +1,25 @@
+id: google-user-triggered-fetchers
+name: Google user-triggered fetchers
+operator: { name: Google, url: "https://www.google.com" }
+description: >-
+  Google tools and product features that fetch a specific page because an end
+  user asked for it (Google Read Aloud, Site Verifier, NotebookLM, and
+  similar), rather than autonomous crawling for search indexing. They
+  generally ignore robots.txt because a human requested the fetch.
+docs:
+  - "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'Google-Read-Aloud'
+    - 'Google-Site-Verification'
+    - 'Google-NotebookLM'
+  instances:
+    - 'Mozilla/5.0 (compatible; Google-Site-Verification/1.0)'
+    - 'Google-Read-Aloud'
+    - 'Google-NotebookLM'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json"
+    format: prefixes

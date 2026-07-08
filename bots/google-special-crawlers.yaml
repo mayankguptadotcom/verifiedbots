@@ -1,0 +1,25 @@
+id: google-special-crawlers
+name: Google special-case crawlers
+operator: { name: Google, url: "https://www.google.com" }
+description: >-
+  A group of Google crawlers that operate under separate agreements between
+  the crawled site and a specific Google product (AdsBot, AdSense, Google
+  Safety scanning, and similar). Several members of this group ignore the
+  wildcard robots.txt rule and must be targeted explicitly.
+docs:
+  - "https://developers.google.com/crawling/docs/crawlers-fetchers/google-special-case-crawlers"
+category: search-engine
+user_agents:
+  patterns:
+    - 'AdsBot-Google'
+    - 'Mediapartners-Google'
+    - 'Google-Safety'
+  instances:
+    - 'AdsBot-Google (+http://www.google.com/adsbot.html)'
+    - 'Mediapartners-Google'
+    - 'Google-Safety'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/search/apis/ipranges/special-crawlers.json"
+    format: prefixes
