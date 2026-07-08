@@ -15,7 +15,8 @@ user_agents:
 behavior: { respects_robots_txt: true, robots_token: Googlebot }
 verification:
   - type: cidr_feed
-    url: "https://developers.google.com/static/search/apis/ipranges/googlebot.json"
+    # Google moved googlebot.json here mid-2026; old URL serves a redirect stub.
+    url: "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
     format: prefixes
   - type: rdns
     masks: ["*.googlebot.com", "*.geo.googlebot.com"]
