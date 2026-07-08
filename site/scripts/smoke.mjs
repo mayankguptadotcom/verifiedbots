@@ -7,7 +7,7 @@ const projectName = branding.match(/projectName:\s*'([^']+)'/)?.[1];
 if (!projectName) { console.error('smoke: could not extract projectName from src/branding.ts'); process.exit(1); }
 
 const checks = [
-  ['index.html', [projectName, 'id="bot-filter"', 'data-bot', 'rel="canonical"', 'verifiedbots.dev']],
+  ['index.html', [projectName, 'id="bot-filter"', 'data-bot', 'rel="canonical"', 'verifiedbots.dev', 'category-chips', 'mayankgupta.com']],
   ['bots/googlebot/index.html', ['How to verify', 'common-crawlers.json']],
   ['bots/claudebot/index.html', ['cannot currently be verified']],
   ['practices/index.html', ['Good Bot', 'robots.txt']],
@@ -21,5 +21,9 @@ for (const [file, markers] of checks) {
 }
 if (!existsSync(root('data/all.json'))) { console.error('smoke: /data/all.json not in build output'); failed = true; }
 if (!existsSync(root('sitemap-index.xml'))) { console.error('smoke: /sitemap-index.xml not in build output'); failed = true; }
+
+const indexHtml = existsSync(root('index.html')) ? readFileSync(root('index.html'), 'utf8') : '';
+if (/cerberus/i.test(indexHtml)) { console.error('smoke: index.html still mentions Cerberus'); failed = true; }
+
 if (failed) process.exit(1);
 console.log('smoke: OK');

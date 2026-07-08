@@ -43,8 +43,8 @@ const rdns = bot.verification.filter((v) => v.type === 'rdns');
       <h2>User agents</h2>
       <p class="small muted">Patterns this directory matches, with real observed strings.</p>
       <ul class="mono small ua-list">
-        {bot.user_agents.patterns.map((p) => <li class="pattern">{p}</li>)}
-        {bot.user_agents.instances.map((i) => <li class="instance muted">{i}</li>)}
+        {bot.user_agents.patterns.map((p) => <li class="pattern"><span class="tag">regex</span>{p}</li>)}
+        {bot.user_agents.instances.map((i) => <li class="instance muted"><span class="tag tag-observed">observed</span>{i}</li>)}
       </ul>
     </section>
 
@@ -89,6 +89,8 @@ const rdns = bot.verification.filter((v) => v.type === 'rdns');
     .ua-list { list-style: none; padding: 0; display: grid; gap: 0.4rem; }
     .ua-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.45rem 0.7rem; overflow-x: auto; white-space: nowrap; }
     .ua-list .pattern { border-left: 3px solid var(--accent); }
+    .tag { font-family: var(--font-ui); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 0.05rem 0.35rem; margin-right: 0.6rem; vertical-align: middle; }
+    .tag-observed { color: var(--muted); border-color: var(--border); }
     .ranges { max-height: 22rem; overflow: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: var(--space-2); }
   </style>
 </Layout>

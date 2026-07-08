@@ -50,11 +50,22 @@ const nav = [
       <slot />
     </main>
     <footer class="site-footer">
-      <div class="container small muted">
-        <p><strong>{BRANDING.projectName}</strong> {BRANDING.byline}. Data generated {dataset.generated_at.slice(0, 10)}. <a href={BRANDING.repoUrl}>GitHub</a></p>
-        <p>{BRANDING.nonAffiliation}</p>
+      <div class="container small muted footer-columns">
+        <div class="footer-left">
+          <p>{BRANDING.nonAffiliation}</p>
+          <p>Data generated {dataset.generated_at.slice(0, 10)} · <a href={BRANDING.repoUrl}>GitHub</a></p>
+        </div>
+        <div class="footer-right">
+          <p><strong>{BRANDING.projectName}</strong> by <a href={BRANDING.bylineUrl}>{BRANDING.bylineName}</a></p>
+          <p>&copy; {new Date().getFullYear()} {BRANDING.bylineName}. Data CC-BY-4.0 · Code MIT.</p>
+        </div>
       </div>
     </footer>
+    <style>
+      .footer-columns { display: flex; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+      .footer-right { text-align: right; }
+      .footer-columns p { margin: 0.2rem 0; }
+    </style>
     <script>
       // Delegated, ClientRouter-safe: attach once per full load, survives view transitions.
       document.addEventListener('click', (e) => {
