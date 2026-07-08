@@ -19,7 +19,7 @@ const groups = botsByCategory();
       <span><strong>{s.categories}</strong> categories</span>
       <span><strong>{s.ranges}</strong> IP ranges</span>
     </div>
-    <input id="bot-filter" type="search" placeholder="Filter bots — name, operator, category… ( / )" autocomplete="off" />
+    <input id="bot-filter" type="search" placeholder="Filter bots — name, operator, category… ( / )" autocomplete="off" aria-label="Filter bots" />
   </section>
 
   {[...groups.entries()].map(([key, bots]) => (

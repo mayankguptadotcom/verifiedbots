@@ -18,19 +18,22 @@ const endpoints = [
     rebuilt daily from first-party operator feeds, no auth, no rate limits. CC-BY-4.0: use it anywhere, credit this project.</p>
   </header>
   <CopyBlock title="Try it" command="curl -s https://<this-domain>/data/all.json | head -40" />
-  <table class="endpoints">
-    <thead><tr><th>Path</th><th>What it is</th></tr></thead>
-    <tbody>
-      {endpoints.map((e) => (
-        <tr><td class="mono small">{e.path}</td><td class="small">{e.desc}</td></tr>
-      ))}
-    </tbody>
-  </table>
+  <div class="table-scroll">
+    <table class="endpoints">
+      <thead><tr><th scope="col">Path</th><th scope="col">What it is</th></tr></thead>
+      <tbody>
+        {endpoints.map((e) => (
+          <tr><td class="mono small">{e.path}</td><td class="small">{e.desc}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
   <p class="small muted">Dataset generated {dataset.generated_at}. Guardrails: every range passes CIDR sanity checks,
   and a feed that changes suspiciously is held on last-known-good data pending human review.</p>
   <style>
     .head { padding-block: var(--space-5) var(--space-3); max-width: 52rem; }
     .lede { font-size: 1.35rem; color: var(--muted); line-height: 1.5; }
+    .table-scroll { overflow-x: auto; }
     .endpoints { width: 100%; border-collapse: collapse; margin-block: var(--space-3); }
     .endpoints th { text-align: left; font-size: var(--text-small); color: var(--muted); padding: 0.5rem 0.7rem; }
     .endpoints td { border-top: 1px solid var(--border); padding: 0.7rem; vertical-align: top; }

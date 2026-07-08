@@ -7,6 +7,7 @@ import '../styles/global.css';
 interface Props { title: string; description?: string }
 const { title, description = 'The open, categorized directory of verified good bots — user agents, IP ranges, and how to verify them.' } = Astro.props;
 const path = Astro.url.pathname;
+const fullTitle = title === BRANDING.projectName ? title : `${title} — ${BRANDING.projectName}`;
 const nav = [
   { href: '/', label: 'Directory' },
   { href: '/practices', label: 'Practices' },
@@ -19,7 +20,10 @@ const nav = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <title>{title === BRANDING.projectName ? title : `${title} — ${BRANDING.projectName}`}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <title>{fullTitle}</title>
     <script is:inline>
       const saved = localStorage.getItem('theme');
       document.documentElement.dataset.theme =
@@ -57,10 +61,13 @@ const nav = [
         document.documentElement.dataset.theme = next;
         localStorage.setItem('theme', next);
       });
-      // Re-apply theme after each view transition (new document head runs is:inline again, but keep for safety).
+      // Re-apply theme after each view transition. ClientRouter deduplicates identical
+      // inline scripts, so the head is:inline script above does NOT re-run on swaps —
+      // this handler is the actual mechanism that keeps the theme across navigations.
       document.addEventListener('astro:after-swap', () => {
         const saved = localStorage.getItem('theme');
-        if (saved) document.documentElement.dataset.theme = saved;
+        document.documentElement.dataset.theme =
+          saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       });
     </script>
   </body>
