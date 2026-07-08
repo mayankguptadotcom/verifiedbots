@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CopyBlock from '../components/CopyBlock.astro';
+import { BRANDING } from '../../../src/branding';
+const repo = BRANDING.repoUrl;
+---
+<Layout title="Submit a bot">
+  <header class="head">
+    <h1 class="display">Submit a bot</h1>
+    <p class="lede">Every entry is a reviewed pull request. Automated checks validate your data —
+    a maintainer reviews legitimacy before anything is published.</p>
+  </header>
+  <section class="card">
+    <h2>1 — The PR route (preferred)</h2>
+    <p>Add one YAML file describing your bot and open a pull request. CI validates the schema,
+    live-fetches any IP feed you claim, checks your UA patterns against real instances, and posts a report.</p>
+    <CopyBlock title="Start from an existing bot file" command={`git clone ${repo} && cp bots/googlebot.yaml bots/<your-bot-id>.yaml`} />
+    <p class="small muted">Read <a href={`${repo}/blob/main/CONTRIBUTING.md`}>CONTRIBUTING.md</a> for the field-by-field guide.</p>
+  </section>
+  <section class="card">
+    <h2>2 — The form route</h2>
+    <p>Not comfortable with YAML? Open a <a href={`${repo}/issues/new?template=submit-bot.yml`}>"Submit a bot" issue</a> —
+    maintainers convert accepted submissions into PRs.</p>
+  </section>
+  <section class="card">
+    <h2>Before you submit</h2>
+    <p>Check your bot against the <a href="/practices">Good Bot Practices</a>. Bots without any verification
+    path are listed as Tier 3 — visible, but flagged as unverifiable.</p>
+  </section>
+  <style>
+    .head { padding-block: var(--space-5) var(--space-3); max-width: 52rem; }
+    .lede { font-size: 1.35rem; color: var(--muted); line-height: 1.5; }
+    section { margin-block: var(--space-2); }
+    section h2 { font-size: 1.25rem; }
+  </style>
+</Layout>

@@ -1,0 +1,33 @@
+---
+interface Props { command: string; title?: string }
+const { command, title } = Astro.props;
+---
+<div class="copyblock">
+  {title && <p class="small muted">{title}</p>}
+  <div class="row">
+    <pre><code>{command}</code></pre>
+    <button class="copy-btn" data-copy={command}>Copy</button>
+  </div>
+</div>
+<script>
+  // One delegated handler for all CopyBlocks; guarded so ClientRouter swaps don't double-bind.
+  if (!(window as any).__copyBound) {
+    (window as any).__copyBound = true;
+    document.addEventListener('click', async (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.copy-btn');
+      if (!btn) return;
+      await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+      const prev = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(() => (btn.textContent = prev), 1200);
+    });
+  }
+</script>
+<style>
+  .copyblock { margin-block: var(--space-2); }
+  .copyblock p { margin: 0 0 0.35rem; }
+  .row { display: flex; align-items: stretch; gap: 0.5rem; }
+  pre { flex: 1; margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem 0.9rem; }
+  .copy-btn { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 10px; padding: 0 0.9rem; cursor: pointer; font: inherit; font-size: var(--text-small); }
+  .copy-btn:hover { border-color: var(--accent); }
+</style>

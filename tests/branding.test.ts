@@ -6,6 +6,7 @@ describe('branding', () => {
     expect(BRANDING.projectName.length).toBeGreaterThan(0);
     expect(BRANDING.byline).toContain('Cerberus');
     expect(BRANDING.nonAffiliation.toLowerCase()).toContain('cloudflare');
-    expect(BRANDING.domain).toBeNull(); // undecided — set at launch
+    expect(BRANDING.domain).toBe('verifiedbots.dev');
+    expect(BRANDING.repoUrl).toContain('github.com/');
   });
 });

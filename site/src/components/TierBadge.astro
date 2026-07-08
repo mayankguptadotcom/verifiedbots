@@ -1,0 +1,12 @@
+---
+interface Props { tier: 1 | 2 | 3; label: string }
+const { tier, label } = Astro.props;
+---
+<span class={`pill tier-${tier}`}><span class="dot"></span>{label}</span>
+<style>
+  .dot { width: 0.55em; height: 0.55em; border-radius: 999px; display: inline-block; }
+  .tier-1 .dot { background: var(--tier1); }
+  .tier-2 .dot { background: var(--tier2); }
+  .tier-3 .dot { background: var(--tier3); }
+  .tier-3 { color: var(--muted); }
+</style>
