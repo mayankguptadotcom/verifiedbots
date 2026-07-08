@@ -1,0 +1,7 @@
+---
+import { dataset, stats } from '../lib/data';
+import { BRANDING } from '../../../src/branding';
+const s = stats();
+---
+<html lang="en"><head><meta charset="utf-8" /><title>{BRANDING.projectName}</title></head>
+<body><h1>{BRANDING.projectName}</h1><p>{s.bots} bots · generated {dataset.generated_at}</p></body></html>

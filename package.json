@@ -8,7 +8,8 @@
     "typecheck": "tsc --noEmit",
     "validate": "tsx src/cli/validate.ts",
     "fetch-feeds": "tsx src/cli/fetch-feeds.ts",
-    "build:artifacts": "tsx src/cli/build.ts"
+    "build:artifacts": "tsx src/cli/build.ts",
+    "build:site": "npm --prefix site run build"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
