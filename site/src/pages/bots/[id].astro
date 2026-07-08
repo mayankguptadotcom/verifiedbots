@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TierBadge from '../../components/TierBadge.astro';
+import CopyBlock from '../../components/CopyBlock.astro';
+import Scorecard from '../../components/Scorecard.astro';
+import { dataset, CATEGORY_LABELS } from '../../lib/data';
+import { scorecard } from '../../lib/scorecard';
+import { verifyCommands } from '../../lib/verify-commands';
+
+export function getStaticPaths() {
+  return dataset.bots.map((bot) => ({ params: { id: bot.id }, props: { bot } }));
+}
+const { bot } = Astro.props;
+const checks = scorecard(bot);
+const commands = verifyCommands(bot);
+const staticCidrs = bot.verification.filter((v) => v.type === 'static_cidrs');
+const rdns = bot.verification.filter((v) => v.type === 'rdns');
+---
+<Layout title={bot.name} description={bot.description}>
+  <article>
+    <header class="bot-head">
+      <p class="small muted crumbs"><a href="/">Directory</a> / <a href={`/category/${bot.category}`}>{CATEGORY_LABELS[bot.category] ?? bot.category}</a></p>
+      <div class="title-row">
+        <h1 transition:name={`bot-name-${bot.id}`}>{bot.name}</h1>
+        <TierBadge tier={bot.tier} label={bot.tier_label} />
+      </div>
+      <p class="lede">{bot.description}</p>
+      <p class="small muted">
+        Operated by <a href={bot.operator.url}>{bot.operator.name}</a>
+        {bot.docs.length > 0 && <> · <a href={bot.docs[0]}>Official documentation</a></>}
+      </p>
+    </header>
+
+    {bot.tier === 3 && (
+      <aside class="card tier3-note">
+        <strong>This bot cannot currently be verified.</strong>
+        <p>Its operator publishes no IP ranges, rDNS, or Web Bot Auth keys — sites must trust the user-agent string alone.
+        Operator: <a href="/practices">here's how to fix that →</a></p>
+      </aside>
+    )}
+
+    <section>
+      <h2>User agents</h2>
+      <p class="small muted">Patterns this directory matches, with real observed strings.</p>
+      <ul class="mono small ua-list">
+        {bot.user_agents.patterns.map((p) => <li class="pattern">{p}</li>)}
+        {bot.user_agents.instances.map((i) => <li class="instance muted">{i}</li>)}
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to verify</h2>
+      {commands.map((c) => <CopyBlock title={c.title} command={c.command} />)}
+      {rdns.map((v) => (
+        <p class="small muted">Reverse-DNS suffixes: <span class="mono">{(v.masks as string[]).join(', ')}</span></p>
+      ))}
+      {staticCidrs.map((v) => (
+        <p class="small muted">Documented static ranges: <span class="mono">{(v.cidrs as string[]).join(', ')}</span></p>
+      ))}
+      {commands.length === 0 && staticCidrs.length === 0 && rdns.length === 0 && (
+        <p class="muted">No verification recipe published by the operator.</p>
+      )}
+    </section>
+
+    {bot.resolved_cidrs.length > 0 && (
+      <section>
+        <h2>IP ranges <span class="muted small">({bot.resolved_cidrs.length})</span></h2>
+        <p class="small muted">Refreshed daily from the operator's feed. Also available as <a href={`/data/ips/${bot.id}.ips`} class="mono">/data/ips/{bot.id}.ips</a> and <a href={`/data/bots/${bot.id}.json`} class="mono">/data/bots/{bot.id}.json</a>.</p>
+        <pre class="ranges mono small">{bot.resolved_cidrs.join('\n')}</pre>
+      </section>
+    )}
+
+    <section>
+      <h2>Good Bot Practices scorecard</h2>
+      <Scorecard checks={checks} />
+      <p class="small muted">Measured against the <a href="/practices">Good Bot Practices</a>.</p>
+    </section>
+  </article>
+
+  <style>
+    .bot-head { padding-block: var(--space-4) var(--space-2); }
+    .crumbs { margin-bottom: var(--space-2); }
+    .title-row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+    .title-row h1 { margin: 0; }
+    .lede { font-size: 1.25rem; color: var(--muted); max-width: 46rem; }
+    section { margin-block: var(--space-4); }
+    .tier3-note { border-color: var(--tier2); }
+    .tier3-note p { margin: 0.4rem 0 0; }
+    .ua-list { list-style: none; padding: 0; display: grid; gap: 0.4rem; }
+    .ua-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.45rem 0.7rem; overflow-x: auto; white-space: nowrap; }
+    .ua-list .pattern { border-left: 3px solid var(--accent); }
+    .ranges { max-height: 22rem; overflow: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: var(--space-2); }
+  </style>
+</Layout>
