@@ -1,0 +1,129 @@
+{
+  "project": "Verified Bots Directory",
+  "generated_at": "2026-07-08T05:23:43.316Z",
+  "count": 3,
+  "bots": [
+    {
+      "id": "claudebot",
+      "name": "ClaudeBot",
+      "operator": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com"
+      },
+      "description": "Anthropic's web crawler collecting publicly available web data for training Claude models. Anthropic does not publish crawler IP ranges or rDNS.",
+      "docs": [
+        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ClaudeBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ClaudeBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "gptbot",
+      "name": "GPTBot",
+      "operator": {
+        "name": "OpenAI",
+        "url": "https://openai.com"
+      },
+      "description": "OpenAI's web crawler that gathers publicly available data used to train OpenAI's models.",
+      "docs": [
+        "https://developers.openai.com/api/docs/bots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "GPTBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.2; +https://openai.com/gptbot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "GPTBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://openai.com/gptbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "132.196.86.0/24",
+        "172.182.202.0/25",
+        "172.182.204.0/24",
+        "172.182.207.0/25",
+        "172.182.214.0/24",
+        "172.182.215.0/24",
+        "20.125.66.80/28",
+        "20.171.206.0/24",
+        "20.171.207.0/24",
+        "4.227.36.0/25",
+        "52.230.152.0/24",
+        "74.7.175.128/25",
+        "74.7.227.0/25",
+        "74.7.227.128/25",
+        "74.7.228.0/25",
+        "74.7.230.0/25",
+        "74.7.241.0/25",
+        "74.7.241.128/25",
+        "74.7.242.0/25",
+        "74.7.243.128/25",
+        "74.7.244.0/25"
+      ]
+    },
+    {
+      "id": "meta-externalagent",
+      "name": "Meta External Agent",
+      "operator": {
+        "name": "Meta",
+        "url": "https://www.meta.com"
+      },
+      "description": "Meta's crawler for AI training data and content indexing across Meta products. Verified by ASN lookup (AS32934); Meta publishes no IP feed.",
+      "docs": [
+        "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "meta-externalagent/\\d"
+        ],
+        "instances": [
+          "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "meta-externalagent"
+      },
+      "verification": [
+        {
+          "type": "asn",
+          "numbers": [
+            32934
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": []
+    }
+  ]
+}

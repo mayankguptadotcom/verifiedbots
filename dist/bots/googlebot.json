@@ -1,7 +1,45 @@
 {
-  "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
-  "fetched_at": "2026-07-08T05:23:42.996Z",
-  "ranges": [
+  "id": "googlebot",
+  "name": "Googlebot",
+  "operator": {
+    "name": "Google",
+    "url": "https://www.google.com"
+  },
+  "description": "Google's primary web crawler, fetching pages for Google Search indexing.",
+  "docs": [
+    "https://developers.google.com/search/docs/crawling-indexing/verifying-googlebot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Googlebot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/125.0.6422.26 Safari/537.36",
+      "Googlebot/2.1 (+http://www.google.com/bot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Googlebot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.googlebot.com",
+        "*.geo.googlebot.com"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
     "192.178.4.0/27",
     "192.178.4.128/27",
     "192.178.4.160/27",

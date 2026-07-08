@@ -1,0 +1,44 @@
+[
+  {
+    "id": "claudebot",
+    "category": "ai-crawler",
+    "patterns": [
+      "ClaudeBot/\\d"
+    ]
+  },
+  {
+    "id": "googlebot",
+    "category": "search-engine",
+    "patterns": [
+      "Googlebot/\\d"
+    ]
+  },
+  {
+    "id": "gptbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "GPTBot/\\d"
+    ]
+  },
+  {
+    "id": "meta-externalagent",
+    "category": "ai-crawler",
+    "patterns": [
+      "meta-externalagent/\\d"
+    ]
+  },
+  {
+    "id": "stripe-webhooks",
+    "category": "webhook",
+    "patterns": [
+      "Stripe/1\\.0"
+    ]
+  },
+  {
+    "id": "uptimerobot",
+    "category": "monitoring",
+    "patterns": [
+      "UptimeRobot/\\d"
+    ]
+  }
+]

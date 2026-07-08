@@ -1,0 +1,57 @@
+{
+  "project": "Verified Bots Directory",
+  "generated_at": "2026-07-08T05:23:43.316Z",
+  "count": 1,
+  "bots": [
+    {
+      "id": "stripe-webhooks",
+      "name": "Stripe Webhooks",
+      "operator": {
+        "name": "Stripe",
+        "url": "https://stripe.com"
+      },
+      "description": "Stripe's webhook delivery service. Not a crawler; sends event notifications (payments, subscriptions) to merchant endpoints from published IPs.",
+      "docs": [
+        "https://docs.stripe.com/ips"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "Stripe/1\\.0"
+        ],
+        "instances": [
+          "Stripe/1.0 (+https://stripe.com/docs/webhooks)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://stripe.com/files/ips/ips_webhooks.json",
+          "format": "stripe_webhooks"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "13.235.122.149/32",
+        "13.235.14.237/32",
+        "18.211.135.69/32",
+        "3.120.168.93/32",
+        "3.130.192.231/32",
+        "3.18.12.63/32",
+        "3.69.109.8/32",
+        "35.154.171.200/32",
+        "35.157.207.129/32",
+        "52.15.183.38/32",
+        "54.187.174.169/32",
+        "54.187.205.235/32",
+        "54.187.216.72/32",
+        "54.88.130.119/32",
+        "54.88.130.237/32"
+      ]
+    }
+  ]
+}
