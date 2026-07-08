@@ -51,12 +51,19 @@ const groups = botsByCategory();
         empty.hidden = shown > 0;
       };
       input.addEventListener('input', apply);
+    }
+    document.addEventListener('astro:page-load', initFilter);
+
+    if (!(window as any).__filterKeyBound) {
+      (window as any).__filterKeyBound = true;
       document.addEventListener('keydown', (e) => {
-        if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+        if (e.key !== '/') return;
+        const el = document.activeElement as HTMLElement | null;
+        if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable)) return;
+        const input = document.getElementById('bot-filter') as HTMLInputElement | null;
+        if (input) { e.preventDefault(); input.focus(); }
       });
     }
-    initFilter();
-    document.addEventListener('astro:page-load', initFilter);
   </script>
 
   <style>
