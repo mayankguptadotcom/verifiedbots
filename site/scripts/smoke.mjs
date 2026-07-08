@@ -9,7 +9,7 @@ if (!projectName) { console.error('smoke: could not extract projectName from src
 const checks = [
   ['index.html', [projectName, 'id="bot-filter"', 'data-bot', 'rel="canonical"', 'verifiedbots.dev', 'category-chips', 'mayankgupta.com']],
   ['bots/googlebot/index.html', ['How to verify', 'common-crawlers.json']],
-  ['bots/claudebot/index.html', ['cannot currently be verified']],
+  ['bots/bytespider/index.html', ['cannot currently be verified']],
   ['practices/index.html', ['Good Bot', 'robots.txt']],
   ['data-docs/index.html', ['/data/all.json']],
 ];

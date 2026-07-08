@@ -15,7 +15,7 @@ export interface Bot {
   verification: Verification[];
 }
 export type Verification =
-  | { type: 'cidr_feed'; url: string; format: 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines'; selector?: string }
+  | { type: 'cidr_feed'; url: string; format: 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array'; selector?: string }
   | { type: 'static_cidrs'; cidrs: string[] }
   | { type: 'asn'; numbers: number[] }
   | { type: 'rdns'; masks: string[] }

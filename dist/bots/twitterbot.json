@@ -1,0 +1,30 @@
+{
+  "id": "twitterbot",
+  "name": "Twitterbot",
+  "operator": {
+    "name": "X",
+    "url": "https://x.com"
+  },
+  "description": "X (formerly Twitter)'s crawler that fetches shared links to render Card previews. X's own developer docs give no IP ranges, ASN, or reverse-DNS verification method; the commonly cited \"*.twttr.com\" rDNS check and aggregate IP ranges trace only to community write-ups, not official docs.",
+  "docs": [
+    "https://web.archive.org/web/20260204221515/https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "Twitterbot/\\d"
+    ],
+    "instances": [
+      "Twitterbot/1.0",
+      "Twitterbot/0.1"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Twitterbot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

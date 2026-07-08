@@ -1,0 +1,21 @@
+id: telegram-webhooks
+name: Telegram Bot Webhooks
+operator: { name: Telegram, url: "https://telegram.org" }
+description: >-
+  Telegram's webhook delivery to bot servers. Not a crawler; POSTs update
+  events to a bot's registered HTTPS endpoint from two documented, static
+  CIDR ranges. Telegram documents no User-Agent for these POSTs; the UA
+  listed here is Telegram's documented fetcher token and is unconfirmed for
+  webhook traffic — verify by source IP, not UA.
+docs:
+  - "https://core.telegram.org/bots/webhooks"
+category: webhook
+user_agents:
+  patterns:
+    - 'TelegramBot \(like TwitterBot\)'
+  instances:
+    - 'TelegramBot (like TwitterBot)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs: ["149.154.160.0/20", "91.108.4.0/22"]

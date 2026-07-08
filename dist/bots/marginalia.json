@@ -1,0 +1,50 @@
+{
+  "id": "marginalia",
+  "name": "Marginalia",
+  "operator": {
+    "name": "Marginalia Search",
+    "url": "https://www.marginalia.nu"
+  },
+  "description": "The crawler behind Marginalia Search, an independent search engine focused on older, text-heavy, and non-commercial web pages. Identifies itself by a bare URL rather than a conventional bot token.",
+  "docs": [
+    "https://about.marginalia-search.com/article/crawler/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "search\\.marginalia\\.nu"
+    ],
+    "instances": [
+      "search.marginalia.nu"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "search.marginalia.nu"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://search.marginalia.nu/crawler-ips.txt",
+      "format": "text_lines"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "193.183.0.162/32",
+    "193.183.0.163/32",
+    "193.183.0.164/32",
+    "193.183.0.165/32",
+    "193.183.0.166/32",
+    "193.183.0.167/32",
+    "193.183.0.168/32",
+    "193.183.0.169/32",
+    "193.183.0.170/32",
+    "193.183.0.171/32",
+    "193.183.0.172/32",
+    "193.183.0.173/32",
+    "193.183.0.174/32",
+    "81.170.128.52/32"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "claude-user",
+  "name": "Claude-User",
+  "operator": {
+    "name": "Anthropic",
+    "url": "https://www.anthropic.com"
+  },
+  "description": "Anthropic's user-triggered fetcher, used when a person asks Claude to visit a specific web page (e.g. via tool use in a conversation).",
+  "docs": [
+    "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "Claude-User/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Claude-User/1.0; +Claude-User@anthropic.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false,
+    "robots_token": "Claude-User"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://claude.com/crawling/bots.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "136.107.176.208/32",
+    "216.73.216.0/22",
+    "34.11.34.31/32",
+    "34.150.241.79/32",
+    "34.162.191.81/32",
+    "34.162.230.222/32",
+    "34.162.244.71/32",
+    "34.182.140.95/32",
+    "34.182.161.143/32",
+    "34.182.218.27/32",
+    "34.182.220.85/32",
+    "34.182.222.37/32",
+    "34.182.225.167/32",
+    "34.182.226.151/32",
+    "34.182.226.221/32",
+    "34.186.108.163/32",
+    "34.85.172.162/32",
+    "35.221.29.174/32",
+    "35.245.175.129/32",
+    "35.245.89.239/32"
+  ]
+}

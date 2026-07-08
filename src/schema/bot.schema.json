@@ -49,7 +49,7 @@
             "properties": {
               "type": { "const": "cidr_feed" },
               "url": { "type": "string", "pattern": "^https://" },
-              "format": { "enum": ["prefixes", "stripe_webhooks", "github_meta", "text_lines"] },
+              "format": { "enum": ["prefixes", "stripe_webhooks", "github_meta", "text_lines", "json_array"] },
               "selector": { "type": "string" }
             }
           },

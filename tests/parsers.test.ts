@@ -47,4 +47,12 @@ describe('parseFeed', () => {
     expect(() => parseFeed('github_meta', '{"hooks":["1.2.3.0/24",{}]}', 'hooks')).toThrow(/unparseable feed/);
     expect(() => parseFeed('prefixes', '{"prefixes":[{"ipv4Prefix":"1.2.3.0/24"},{"other":1}]}')).toThrow(/unparseable feed/);
   });
+  it('parses a bare JSON array of strings', () => {
+    expect(parseFeed('json_array', '["1.2.3.0/24", "5.6.7.8"]')).toEqual(['1.2.3.0/24', '5.6.7.8']);
+  });
+  it('rejects json_array bodies that are not arrays of strings', () => {
+    expect(() => parseFeed('json_array', '{"a":1}')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('json_array', '[1,2]')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('json_array', 'nope')).toThrow(/unparseable feed/);
+  });
 });

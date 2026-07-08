@@ -1,0 +1,17 @@
+id: diffbot
+name: Diffbot
+operator: { name: Diffbot, url: "https://www.diffbot.com" }
+description: >-
+  Diffbot's general-purpose web crawler, used to build its Knowledge Graph
+  and power its structured-extraction APIs. Diffbot documents robots.txt
+  behavior but publishes no IP list, ASN, or reverse-DNS pattern.
+docs:
+  - "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'Diffbot/\d'
+  instances:
+    - 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729; Diffbot/0.1; +http://www.diffbot.com)'
+behavior: { respects_robots_txt: true, robots_token: Diffbot }
+verification: []

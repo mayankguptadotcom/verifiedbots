@@ -1,0 +1,48 @@
+{
+  "id": "ccbot",
+  "name": "CCBot",
+  "operator": {
+    "name": "Common Crawl Foundation",
+    "url": "https://commoncrawl.org"
+  },
+  "description": "Common Crawl's crawler that builds the freely available Common Crawl web archive, widely reused as AI training data by third parties.",
+  "docs": [
+    "https://commoncrawl.org/ccbot"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "CCBot/\\d"
+    ],
+    "instances": [
+      "CCBot/2.0 (https://commoncrawl.org/faq/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "CCBot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://index.commoncrawl.org/ccbot.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.crawl.commoncrawl.org"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "18.97.14.80/29",
+    "18.97.14.88/30",
+    "18.97.9.168/29",
+    "2600:1f28:365:80b0::/60",
+    "3.41.188.32/29",
+    "98.85.178.216/32"
+  ]
+}

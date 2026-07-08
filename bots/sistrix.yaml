@@ -1,0 +1,19 @@
+id: sistrix
+name: SISTRIX Crawler
+operator: { name: SISTRIX, url: "https://www.sistrix.com" }
+description: >-
+  The crawler behind the SISTRIX Toolbox, a German SEO visibility platform.
+  SISTRIX documents that every crawler IP resolves via reverse DNS to the
+  "sistrix.net" domain rather than publishing a static CIDR list.
+docs:
+  - "https://www.sistrix.com/tutorials/crawling-errors-in-the-optimizer/"
+category: seo
+user_agents:
+  patterns:
+    - 'SISTRIX Crawler'
+  instances:
+    - 'Mozilla/5.0 (compatible; SISTRIX Crawler; http://crawler.sistrix.net/)'
+behavior: { respects_robots_txt: true, robots_token: sistrix }
+verification:
+  - type: rdns
+    masks: ["*.crawler.sistrix.net"]

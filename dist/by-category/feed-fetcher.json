@@ -1,0 +1,211 @@
+{
+  "project": "Verified Bots Directory",
+  "generated_at": "2026-07-08T16:33:42.624Z",
+  "count": 5,
+  "bots": [
+    {
+      "id": "feedly",
+      "name": "Feedly Fetcher",
+      "operator": {
+        "name": "Feedly",
+        "url": "https://feedly.com"
+      },
+      "description": "Feedly's fetcher, which retrieves RSS/Atom feed URLs after a user has explicitly added them to their Feedly. Feedly documents that it behaves as a direct agent of the user rather than a robot, and does not publish a fixed IP list because its source IPs change over time.",
+      "docs": [
+        "https://feedly.com/fetcher.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Feedly/[\\d.]+"
+        ],
+        "instances": [
+          "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)",
+          "FeedlyBot/1.0 (http://feedly.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "flipboard-proxy",
+      "name": "Flipboard Proxy",
+      "operator": {
+        "name": "Flipboard, Inc.",
+        "url": "https://about.flipboard.com"
+      },
+      "description": "Flipboard's proxy service, which fetches and prepares elements of a page (e.g. a social feed a user asked Flipboard to scan) for presentation in the Flipboard app. Flipboard's own docs say these requests currently originate from an Amazon EC2 cluster but publish no fixed IP list.",
+      "docs": [
+        "https://about.flipboard.com/proxy-service/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "FlipboardProxy/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FlipboardProxy/1.2; +http://flipboard.com/browserproxy)",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:49.0) Gecko/20100101 Firefox/49.0 (FlipboardProxy/1.2; +http://flipboard.com/browserproxy)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "inoreader",
+      "name": "Inoreader Fetcher",
+      "operator": {
+        "name": "Innologica",
+        "url": "https://www.inoreader.com"
+      },
+      "description": "Inoreader's feed fetcher, which retrieves RSS/Atom feeds that Inoreader users have subscribed to. Its own docs state it does not read robots.txt because it fetches specific, user-requested feed URLs rather than crawling a site, and it publishes a live list of its backend fetcher IPs.",
+      "docs": [
+        "https://www.inoreader.com/feed-fetcher"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Inoreader/[\\d.]+"
+        ],
+        "instances": [
+          "Inoreader/1.0 (+http://www.inoreader.com/feed-fetcher; 3 subscribers; )",
+          "Mozilla/5.0 (compatible; inoreader.com; 1 subscribers)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.inoreader.com/.well-known/ip_list.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "144.202.49.4/32",
+        "149.28.114.120/32",
+        "45.76.28.241/32",
+        "84.242.180.248/29",
+        "88.203.186.16/28",
+        "92.247.179.240/28",
+        "92.247.181.0/26"
+      ]
+    },
+    {
+      "id": "newsblur",
+      "name": "NewsBlur Feed Fetcher",
+      "operator": {
+        "name": "NewsBlur",
+        "url": "https://www.newsblur.com"
+      },
+      "description": "NewsBlur's open-source feed fetcher, which polls RSS/Atom feeds on behalf of subscribed users. Its user agent embeds the live subscriber count and the feed's permalink; NewsBlur publishes no fixed IP range for it.",
+      "docs": [
+        "https://github.com/samuelclay/NewsBlur/blob/main/apps/rss_feeds/models.py"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "NewsBlur Feed Fetcher"
+        ],
+        "instances": [
+          "NewsBlur Feed Fetcher - 1 subscriber - http://www.newsblur.com/site/0000000/webpage (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "superfeedr",
+      "name": "Superfeedr",
+      "operator": {
+        "name": "Superfeedr",
+        "url": "https://superfeedr.com"
+      },
+      "description": "Superfeedr's PubSubHubbub feed-polling infrastructure, which fetches feed URLs that publishers or subscribers have registered with the service. Its docs publish a list of current node IPs but warn it changes as they add or remove cloud capacity.",
+      "docs": [
+        "https://documentation.superfeedr.com/misc.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Superfeedr"
+        ],
+        "instances": [
+          "Superfeedr bot/2.0 http://superfeedr.com - Make your feeds realtime: get in touch - feed-id:1162088860"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "50.116.28.209/32",
+            "50.116.30.23/32",
+            "198.58.96.215/32",
+            "198.58.99.82/32",
+            "198.58.102.49/32",
+            "198.58.102.95/32",
+            "198.58.102.96/32",
+            "198.58.102.117/32",
+            "198.58.102.155/32",
+            "198.58.102.156/32",
+            "198.58.102.158/32",
+            "198.58.103.28/32",
+            "198.58.103.36/32",
+            "198.58.103.91/32",
+            "198.58.103.92/32",
+            "198.58.103.102/32",
+            "198.58.103.114/32",
+            "198.58.103.115/32",
+            "198.58.103.158/32",
+            "198.58.103.160/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": [
+        "198.58.102.117/32",
+        "198.58.102.155/32",
+        "198.58.102.156/32",
+        "198.58.102.158/32",
+        "198.58.102.49/32",
+        "198.58.102.95/32",
+        "198.58.102.96/32",
+        "198.58.103.102/32",
+        "198.58.103.114/32",
+        "198.58.103.115/32",
+        "198.58.103.158/32",
+        "198.58.103.160/32",
+        "198.58.103.28/32",
+        "198.58.103.36/32",
+        "198.58.103.91/32",
+        "198.58.103.92/32",
+        "198.58.96.215/32",
+        "198.58.99.82/32",
+        "50.116.28.209/32",
+        "50.116.30.23/32"
+      ]
+    }
+  ]
+}

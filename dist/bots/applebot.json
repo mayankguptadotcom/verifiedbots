@@ -1,0 +1,55 @@
+{
+  "id": "applebot",
+  "name": "Applebot",
+  "operator": {
+    "name": "Apple",
+    "url": "https://www.apple.com"
+  },
+  "description": "Apple's web crawler, used to index content for Siri, Spotlight Suggestions, and Safari's search features.",
+  "docs": [
+    "https://support.apple.com/en-us/119829"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Applebot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Applebot/0.3; +http://www.apple.com/go/applebot)",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B410 Safari/600.1.4 (Applebot/0.1; +http://www.apple.com/go/applebot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Applebot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://search.developer.apple.com/applebot.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.applebot.apple.com"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "17.22.237.0/24",
+    "17.22.245.0/24",
+    "17.22.253.0/24",
+    "17.241.193.160/27",
+    "17.241.200.160/27",
+    "17.241.208.160/27",
+    "17.241.219.0/24",
+    "17.241.227.0/24",
+    "17.241.75.0/24",
+    "17.246.15.0/24",
+    "17.246.19.0/24",
+    "17.246.23.0/24"
+  ]
+}

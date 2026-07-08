@@ -1,0 +1,20 @@
+id: statuscake
+name: StatusCake
+operator: { name: StatusCake, url: "https://www.statuscake.com" }
+description: >-
+  Uptime and page-speed testing service that requests customer URLs from a
+  global network of test-location servers, published as a machine-readable
+  IP list.
+docs:
+  - "https://www.statuscake.com/kb/knowledge-base/what-are-your-ips/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'StatusCake'
+  instances:
+    - 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/98 Safari/537.4 (StatusCake)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://app.statuscake.com/Workfloor/Locations.php?format=txt"
+    format: text_lines

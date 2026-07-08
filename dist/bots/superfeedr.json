@@ -1,0 +1,75 @@
+{
+  "id": "superfeedr",
+  "name": "Superfeedr",
+  "operator": {
+    "name": "Superfeedr",
+    "url": "https://superfeedr.com"
+  },
+  "description": "Superfeedr's PubSubHubbub feed-polling infrastructure, which fetches feed URLs that publishers or subscribers have registered with the service. Its docs publish a list of current node IPs but warn it changes as they add or remove cloud capacity.",
+  "docs": [
+    "https://documentation.superfeedr.com/misc.html"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "Superfeedr"
+    ],
+    "instances": [
+      "Superfeedr bot/2.0 http://superfeedr.com - Make your feeds realtime: get in touch - feed-id:1162088860"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "50.116.28.209/32",
+        "50.116.30.23/32",
+        "198.58.96.215/32",
+        "198.58.99.82/32",
+        "198.58.102.49/32",
+        "198.58.102.95/32",
+        "198.58.102.96/32",
+        "198.58.102.117/32",
+        "198.58.102.155/32",
+        "198.58.102.156/32",
+        "198.58.102.158/32",
+        "198.58.103.28/32",
+        "198.58.103.36/32",
+        "198.58.103.91/32",
+        "198.58.103.92/32",
+        "198.58.103.102/32",
+        "198.58.103.114/32",
+        "198.58.103.115/32",
+        "198.58.103.158/32",
+        "198.58.103.160/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": [
+    "198.58.102.117/32",
+    "198.58.102.155/32",
+    "198.58.102.156/32",
+    "198.58.102.158/32",
+    "198.58.102.49/32",
+    "198.58.102.95/32",
+    "198.58.102.96/32",
+    "198.58.103.102/32",
+    "198.58.103.114/32",
+    "198.58.103.115/32",
+    "198.58.103.158/32",
+    "198.58.103.160/32",
+    "198.58.103.28/32",
+    "198.58.103.36/32",
+    "198.58.103.91/32",
+    "198.58.103.92/32",
+    "198.58.96.215/32",
+    "198.58.99.82/32",
+    "50.116.28.209/32",
+    "50.116.30.23/32"
+  ]
+}

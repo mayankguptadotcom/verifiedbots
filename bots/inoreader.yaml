@@ -1,0 +1,22 @@
+id: inoreader
+name: Inoreader Fetcher
+operator: { name: Innologica, url: "https://www.inoreader.com" }
+description: >-
+  Inoreader's feed fetcher, which retrieves RSS/Atom feeds that Inoreader
+  users have subscribed to. Its own docs state it does not read robots.txt
+  because it fetches specific, user-requested feed URLs rather than crawling
+  a site, and it publishes a live list of its backend fetcher IPs.
+docs:
+  - "https://www.inoreader.com/feed-fetcher"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Inoreader/[\d.]+'
+  instances:
+    - 'Inoreader/1.0 (+http://www.inoreader.com/feed-fetcher; 3 subscribers; )'
+    - 'Mozilla/5.0 (compatible; inoreader.com; 1 subscribers)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://www.inoreader.com/.well-known/ip_list.txt"
+    format: text_lines

@@ -1,0 +1,38 @@
+{
+  "id": "mojeekbot",
+  "name": "MojeekBot",
+  "operator": {
+    "name": "Mojeek",
+    "url": "https://www.mojeek.com"
+  },
+  "description": "Mojeek's web crawler, fetching pages for the independent Mojeek search engine index.",
+  "docs": [
+    "https://www.mojeek.com/bot.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "MojeekBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; MojeekBot/0.6; +https://www.mojeek.com/bot.html)",
+      "MojeekBot/0.2 (archi; http://www.mojeek.com/bot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "MojeekBot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://www.mojeek.com/mojeekbot.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "5.102.173.64/28"
+  ]
+}

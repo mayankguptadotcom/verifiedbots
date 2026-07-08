@@ -1,4 +1,4 @@
-export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines';
+export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array';
 
 function fail(detail: string): never {
   throw new Error(`unparseable feed: ${detail}`);
@@ -21,6 +21,16 @@ function asJson(body: string): any {
 
 export function parseFeed(format: FeedFormat, body: string, selector?: string): string[] {
   switch (format) {
+    case 'json_array': {
+      let doc: unknown;
+      try {
+        doc = JSON.parse(body);
+      } catch {
+        fail('invalid JSON');
+      }
+      if (!Array.isArray(doc) || !doc.every((e) => typeof e === 'string')) fail('expected a JSON array of strings');
+      return doc as string[];
+    }
     case 'prefixes': {
       const doc = asJson(body);
       if (!Array.isArray(doc.prefixes)) fail('missing "prefixes" array');

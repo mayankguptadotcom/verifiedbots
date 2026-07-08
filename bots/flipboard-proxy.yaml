@@ -1,0 +1,19 @@
+id: flipboard-proxy
+name: Flipboard Proxy
+operator: { name: "Flipboard, Inc.", url: "https://about.flipboard.com" }
+description: >-
+  Flipboard's proxy service, which fetches and prepares elements of a page
+  (e.g. a social feed a user asked Flipboard to scan) for presentation in
+  the Flipboard app. Flipboard's own docs say these requests currently
+  originate from an Amazon EC2 cluster but publish no fixed IP list.
+docs:
+  - "https://about.flipboard.com/proxy-service/"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'FlipboardProxy/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; FlipboardProxy/1.2; +http://flipboard.com/browserproxy)'
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:49.0) Gecko/20100101 Firefox/49.0 (FlipboardProxy/1.2; +http://flipboard.com/browserproxy)'
+behavior: { respects_robots_txt: false }
+verification: []

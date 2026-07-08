@@ -1,0 +1,19 @@
+id: hetrixtools
+name: HetrixTools
+operator: { name: HetrixTools, url: "https://hetrixtools.com" }
+description: >-
+  Uptime and blacklist monitoring service that probes customer sites from a
+  published list of monitoring-node IPs.
+docs:
+  - "https://docs.hetrixtools.com/uptime-monitoring-ip-addresses/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'HetrixTools Uptime Monitoring Bot'
+  instances:
+    - 'HetrixTools Uptime Monitoring Bot'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://hetrixtools.com/resources/uptime-monitor-only-ips.txt"
+    format: text_lines

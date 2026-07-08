@@ -1,0 +1,17 @@
+id: stractbot
+name: StractBot
+operator: { name: Stract, url: "https://stract.com" }
+description: >-
+  The crawler for Stract, an open-source search engine. Stract documents the
+  crawler's user agent and robots.txt behavior but publishes no IP list or
+  reverse-DNS verification method.
+docs:
+  - "https://stract.com/bot"
+category: search-engine
+user_agents:
+  patterns:
+    - 'StractBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; StractBot/0.2; open source search engine; +https://stract.com/webmasters)'
+behavior: { respects_robots_txt: true, robots_token: StractBot }
+verification: []

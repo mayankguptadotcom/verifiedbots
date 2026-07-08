@@ -1,0 +1,87 @@
+{
+  "id": "ahrefs-siteaudit",
+  "name": "AhrefsSiteAudit",
+  "operator": {
+    "name": "Ahrefs",
+    "url": "https://ahrefs.com"
+  },
+  "description": "Ahrefs' on-demand site-auditing crawler, distinct from AhrefsBot, used when Ahrefs customers run the Site Audit tool against their own or a competitor's domain. Shares Ahrefs' published IP-range feed.",
+  "docs": [
+    "https://ahrefs.com/robot/site-audit"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "AhrefsSiteAudit/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; AhrefsSiteAudit/6.1; +http://ahrefs.com/robot/site-audit)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "AhrefsSiteAudit"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "resolved_cidrs": [
+    "142.44.220.0/24",
+    "142.44.225.0/24",
+    "142.44.228.0/24",
+    "142.44.233.0/24",
+    "148.113.128.0/24",
+    "148.113.130.0/24",
+    "15.235.27.0/24",
+    "15.235.96.0/24",
+    "15.235.98.0/24",
+    "167.114.139.0/24",
+    "168.100.149.0/24",
+    "176.31.139.0/27",
+    "198.244.168.0/24",
+    "198.244.183.0/24",
+    "198.244.186.193/32",
+    "198.244.186.194/31",
+    "198.244.186.196/30",
+    "198.244.186.200/31",
+    "198.244.186.202/32",
+    "198.244.226.0/24",
+    "198.244.240.0/24",
+    "198.244.242.0/24",
+    "202.8.40.0/22",
+    "202.94.84.110/31",
+    "202.94.84.112/31",
+    "37.59.204.128/27",
+    "5.39.1.224/27",
+    "5.39.109.160/27",
+    "51.161.37.0/24",
+    "51.161.65.0/24",
+    "51.195.183.0/24",
+    "51.195.215.0/24",
+    "51.195.244.0/24",
+    "51.222.168.0/24",
+    "51.222.253.0/26",
+    "51.222.95.0/24",
+    "51.68.247.192/27",
+    "51.75.236.128/27",
+    "51.89.129.0/24",
+    "54.36.148.0/23",
+    "54.37.118.64/27",
+    "54.38.147.0/24",
+    "54.39.0.0/24",
+    "54.39.136.0/24",
+    "54.39.203.0/24",
+    "54.39.210.0/24",
+    "54.39.6.0/24",
+    "54.39.89.0/24",
+    "92.222.104.192/27",
+    "92.222.108.96/27",
+    "94.23.188.192/27"
+  ]
+}

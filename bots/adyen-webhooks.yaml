@@ -1,0 +1,20 @@
+id: adyen-webhooks
+name: Adyen Webhooks
+operator: { name: Adyen, url: "https://www.adyen.com" }
+description: >-
+  Adyen's payment-event webhook delivery service. Not a crawler; POSTs
+  notifications to merchant endpoints. Adyen documents its egress domain for
+  DNS-based allowlisting rather than a static IP list, since its outbound
+  IPs change over time.
+docs:
+  - "https://docs.adyen.com/development-resources/webhooks/secure-webhooks"
+category: webhook
+user_agents:
+  patterns:
+    - 'Adyen HttpClient'
+  instances:
+    - 'Adyen HttpClient 1.0'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.out.adyen.com"]

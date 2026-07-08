@@ -1,0 +1,20 @@
+id: updown-io
+name: updown.io
+operator: { name: updown.io, url: "https://updown.io" }
+description: >-
+  Website uptime-monitoring service that checks customer sites from a
+  published JSON array of node IPs. Documents "updown.io" as the common
+  substring of its requests rather than one fixed User-Agent.
+docs:
+  - "https://updown.io/api"
+category: monitoring
+user_agents:
+  patterns:
+    - 'updown\.io'
+  instances:
+    - 'updown.io daemon'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://updown.io/api/nodes/ips.json"
+    format: json_array

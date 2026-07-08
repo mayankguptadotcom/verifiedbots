@@ -1,0 +1,17 @@
+id: mj12bot
+name: MJ12bot
+operator: { name: Majestic-12, url: "https://mj12bot.com" }
+description: >-
+  The crawler behind Majestic's backlink index. Majestic explicitly states it
+  is a community-based distributed crawler with no fixed IP allocation, so
+  requests cannot be verified by IP, ASN, or reverse DNS.
+docs:
+  - "https://mj12bot.com/"
+category: seo
+user_agents:
+  patterns:
+    - 'MJ12bot/v\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)'
+behavior: { respects_robots_txt: true, robots_token: MJ12bot }
+verification: []

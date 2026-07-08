@@ -1,0 +1,18 @@
+id: mastodon
+name: Mastodon (link preview fetcher)
+operator: { name: "Mastodon gGmbH", url: "https://joinmastodon.org" }
+description: >-
+  The generic link-preview fetcher built into Mastodon server software
+  (FetchLinkCardService, using the http.rb gem), run independently by every
+  self-hosted instance. There is no single operator, IP range, or ASN to
+  verify against — traffic can originate from any of thousands of instances.
+docs:
+  - "https://github.com/mastodon/mastodon/blob/main/app/services/fetch_link_card_service.rb"
+category: social-preview
+user_agents:
+  patterns:
+    - 'http\.rb/[\d.]+ \(Mastodon/[\d.]+;'
+  instances:
+    - 'http.rb/2.2.2 (Mastodon/1.5.1; +https://example-masto-instance.org/)'
+behavior: { respects_robots_txt: true }
+verification: []

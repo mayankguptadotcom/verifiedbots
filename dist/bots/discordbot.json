@@ -1,0 +1,28 @@
+{
+  "id": "discordbot",
+  "name": "Discordbot",
+  "operator": {
+    "name": "Discord",
+    "url": "https://discord.com"
+  },
+  "description": "Discord's crawler that fetches shared links to render embeds in chat. Discord's own docs only specify the User-Agent format required of API clients, not this embed fetcher; no IP ranges, ASN, or rDNS are published.",
+  "docs": [
+    "https://docs.discord.com/developers/reference"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "Discordbot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,36 @@
+{
+  "project": "Verified Bots Directory",
+  "generated_at": "2026-07-08T16:33:42.624Z",
+  "count": 1,
+  "bots": [
+    {
+      "id": "arquivo-pt",
+      "name": "Arquivo.pt Web Crawler",
+      "operator": {
+        "name": "Arquivo.pt (FCCN/FCT)",
+        "url": "https://arquivo.pt"
+      },
+      "description": "The crawler behind Arquivo.pt, Portugal's public web archive, which captures full page renders (HTML, CSS, JS, images) for long-term preservation. Built on Heritrix; the operator documents no fixed IP range.",
+      "docs": [
+        "https://sobre.arquivo.pt/en/help/crawling-and-archiving-web-content/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "Arquivo-web-crawler"
+        ],
+        "instances": [
+          "Arquivo-web-crawler (compatible; heritrix/3.4.0-20200304 +https://arquivo.pt/faq-crawling)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Arquivo-web-crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    }
+  ]
+}

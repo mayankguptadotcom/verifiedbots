@@ -1,0 +1,20 @@
+id: ahrefsbot
+name: AhrefsBot
+operator: { name: Ahrefs, url: "https://ahrefs.com" }
+description: >-
+  Ahrefs' primary web crawler, powering the backlink and keyword database
+  behind the Ahrefs SEO platform and the Yep search engine. Crawls from
+  publicly published IP ranges with a matching reverse-DNS suffix.
+docs:
+  - "https://ahrefs.com/robot"
+category: seo
+user_agents:
+  patterns:
+    - 'AhrefsBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)'
+behavior: { respects_robots_txt: true, robots_token: AhrefsBot }
+verification:
+  - type: cidr_feed
+    url: "https://api.ahrefs.com/v3/public/crawler-ip-ranges"
+    format: prefixes

@@ -1,0 +1,17 @@
+id: dotbot
+name: DotBot
+operator: { name: Moz, url: "https://moz.com" }
+description: >-
+  Moz's general-purpose web crawler, distinct from rogerbot, that gathers
+  link data powering the Moz Link Index and Link Explorer. Moz's own help
+  pages document no fixed IP range for it.
+docs:
+  - "https://moz.com/help/moz-procedures/crawlers/dotbot"
+category: seo
+user_agents:
+  patterns:
+    - 'DotBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)'
+behavior: { respects_robots_txt: true, robots_token: dotbot }
+verification: []

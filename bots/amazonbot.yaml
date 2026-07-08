@@ -1,0 +1,17 @@
+id: amazonbot
+name: Amazonbot
+operator: { name: Amazon, url: "https://www.amazon.com" }
+description: >-
+  Amazon's web crawler used to improve Amazon's products and services,
+  including training AI models. Amazon publishes a human-readable IP list
+  but no machine-parseable feed in a format this project's schema supports.
+docs:
+  - "https://developer.amazon.com/en/amazonbot"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'Amazonbot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36'
+behavior: { respects_robots_txt: true, robots_token: Amazonbot }
+verification: []

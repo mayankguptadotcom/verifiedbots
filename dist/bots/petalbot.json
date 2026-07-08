@@ -1,0 +1,37 @@
+{
+  "id": "petalbot",
+  "name": "PetalBot",
+  "operator": {
+    "name": "Huawei",
+    "url": "https://www.huawei.com"
+  },
+  "description": "Huawei's web crawler, fetching pages for the Petal Search engine used in Huawei's mobile services.",
+  "docs": [
+    "https://webmaster.petalsearch.com/site/petalbot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "PetalBot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible;PetalBot;+https://webmaster.petalsearch.com/site/petalbot)",
+      "Mozilla/5.0 (Linux; Android 7.0;) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; PetalBot;+https://webmaster.petalsearch.com/site/petalbot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "PetalBot"
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.petalsearch.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": []
+}

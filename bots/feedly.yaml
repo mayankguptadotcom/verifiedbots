@@ -1,0 +1,19 @@
+id: feedly
+name: Feedly Fetcher
+operator: { name: Feedly, url: "https://feedly.com" }
+description: >-
+  Feedly's fetcher, which retrieves RSS/Atom feed URLs after a user has
+  explicitly added them to their Feedly. Feedly documents that it behaves as
+  a direct agent of the user rather than a robot, and does not publish a
+  fixed IP list because its source IPs change over time.
+docs:
+  - "https://feedly.com/fetcher.html"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Feedly/[\d.]+'
+  instances:
+    - 'Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)'
+    - 'FeedlyBot/1.0 (http://feedly.com)'
+behavior: { respects_robots_txt: false }
+verification: []

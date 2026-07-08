@@ -1,0 +1,19 @@
+id: claude-searchbot
+name: Claude-SearchBot
+operator: { name: Anthropic, url: "https://www.anthropic.com" }
+description: >-
+  Anthropic's crawler that indexes pages to improve search-style answer
+  quality in Claude products, distinct from ClaudeBot's training-data crawl.
+docs:
+  - "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'Claude-SearchBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Claude-SearchBot/1.0; +Claude-SearchBot@anthropic.com)'
+behavior: { respects_robots_txt: true, robots_token: Claude-SearchBot }
+verification:
+  - type: cidr_feed
+    url: "https://claude.com/crawling/bots.json"
+    format: prefixes

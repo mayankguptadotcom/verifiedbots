@@ -1,0 +1,37 @@
+{
+  "id": "seznambot",
+  "name": "SeznamBot",
+  "operator": {
+    "name": "Seznam.cz",
+    "url": "https://www.seznam.cz"
+  },
+  "description": "Seznam's web crawler, fetching pages for the Seznam.cz search engine used primarily in the Czech Republic.",
+  "docs": [
+    "https://o-seznam.cz/napoveda/vyhledavani/en/seznambot-crawler/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "SeznamBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; SeznamBot/4.0; +https://o-seznam.cz/napoveda/vyhledavani/en/seznambot-crawler/)",
+      "Mozilla/5.0 (compatible; SeznamBot/3.2; +http://napoveda.seznam.cz/en/seznambot-intro/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "SeznamBot"
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.seznam.cz"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,22 @@
+id: applebot
+name: Applebot
+operator: { name: Apple, url: "https://www.apple.com" }
+description: >-
+  Apple's web crawler, used to index content for Siri, Spotlight Suggestions,
+  and Safari's search features.
+docs:
+  - "https://support.apple.com/en-us/119829"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Applebot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Applebot/0.3; +http://www.apple.com/go/applebot)'
+    - 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B410 Safari/600.1.4 (Applebot/0.1; +http://www.apple.com/go/applebot)'
+behavior: { respects_robots_txt: true, robots_token: Applebot }
+verification:
+  - type: cidr_feed
+    url: "https://search.developer.apple.com/applebot.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.applebot.apple.com"]

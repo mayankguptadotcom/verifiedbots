@@ -1,0 +1,20 @@
+id: whatsapp
+name: WhatsApp Link Preview Fetcher
+operator: { name: Meta, url: "https://www.meta.com" }
+description: >-
+  WhatsApp's fetcher that requests a shared URL to build the link preview
+  shown in chat. Meta documents the request's User-Agent format but no IP
+  feed; verified by ASN lookup (AS32934), same as Meta's other crawlers.
+docs:
+  - "https://developers.facebook.com/documentation/business-messaging/whatsapp/link-previews/"
+category: social-preview
+user_agents:
+  patterns:
+    - 'WhatsApp/[\d.]+ [AIN]'
+  instances:
+    - 'WhatsApp/2.19.330 A'
+    - 'WhatsApp/2.19.92 i'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: asn
+    numbers: [32934]

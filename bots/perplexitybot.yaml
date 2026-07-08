@@ -1,0 +1,19 @@
+id: perplexitybot
+name: PerplexityBot
+operator: { name: Perplexity, url: "https://www.perplexity.ai" }
+description: >-
+  Perplexity's crawler that indexes pages to surface and link websites in
+  Perplexity search results. Perplexity states it is not used to train models.
+docs:
+  - "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'PerplexityBot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)'
+behavior: { respects_robots_txt: true, robots_token: PerplexityBot }
+verification:
+  - type: cidr_feed
+    url: "https://www.perplexity.com/perplexitybot.json"
+    format: prefixes

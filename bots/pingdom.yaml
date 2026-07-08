@@ -1,0 +1,22 @@
+id: pingdom
+name: Pingdom
+operator: { name: SolarWinds, url: "https://www.pingdom.com" }
+description: >-
+  Uptime and page-speed monitoring service that probes customer sites from a
+  published list of probe-server IPs. Owned by SolarWinds.
+docs:
+  - "https://documentation.solarwinds.com/en/success_center/pingdom/content/topics/pingdom-probe-servers-ip-addresses.htm"
+category: monitoring
+user_agents:
+  patterns:
+    - 'pingbot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; pingbot/2.0; +http://www.pingdom.com/)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://my.pingdom.com/probes/ipv4"
+    format: text_lines
+  - type: cidr_feed
+    url: "https://my.pingdom.com/probes/ipv6"
+    format: text_lines

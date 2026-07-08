@@ -1,0 +1,391 @@
+{
+  "project": "Verified Bots Directory",
+  "generated_at": "2026-07-08T16:33:42.624Z",
+  "count": 9,
+  "bots": [
+    {
+      "id": "ahrefs-siteaudit",
+      "name": "AhrefsSiteAudit",
+      "operator": {
+        "name": "Ahrefs",
+        "url": "https://ahrefs.com"
+      },
+      "description": "Ahrefs' on-demand site-auditing crawler, distinct from AhrefsBot, used when Ahrefs customers run the Site Audit tool against their own or a competitor's domain. Shares Ahrefs' published IP-range feed.",
+      "docs": [
+        "https://ahrefs.com/robot/site-audit"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AhrefsSiteAudit/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AhrefsSiteAudit/6.1; +http://ahrefs.com/robot/site-audit)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AhrefsSiteAudit"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "142.44.220.0/24",
+        "142.44.225.0/24",
+        "142.44.228.0/24",
+        "142.44.233.0/24",
+        "148.113.128.0/24",
+        "148.113.130.0/24",
+        "15.235.27.0/24",
+        "15.235.96.0/24",
+        "15.235.98.0/24",
+        "167.114.139.0/24",
+        "168.100.149.0/24",
+        "176.31.139.0/27",
+        "198.244.168.0/24",
+        "198.244.183.0/24",
+        "198.244.186.193/32",
+        "198.244.186.194/31",
+        "198.244.186.196/30",
+        "198.244.186.200/31",
+        "198.244.186.202/32",
+        "198.244.226.0/24",
+        "198.244.240.0/24",
+        "198.244.242.0/24",
+        "202.8.40.0/22",
+        "202.94.84.110/31",
+        "202.94.84.112/31",
+        "37.59.204.128/27",
+        "5.39.1.224/27",
+        "5.39.109.160/27",
+        "51.161.37.0/24",
+        "51.161.65.0/24",
+        "51.195.183.0/24",
+        "51.195.215.0/24",
+        "51.195.244.0/24",
+        "51.222.168.0/24",
+        "51.222.253.0/26",
+        "51.222.95.0/24",
+        "51.68.247.192/27",
+        "51.75.236.128/27",
+        "51.89.129.0/24",
+        "54.36.148.0/23",
+        "54.37.118.64/27",
+        "54.38.147.0/24",
+        "54.39.0.0/24",
+        "54.39.136.0/24",
+        "54.39.203.0/24",
+        "54.39.210.0/24",
+        "54.39.6.0/24",
+        "54.39.89.0/24",
+        "92.222.104.192/27",
+        "92.222.108.96/27",
+        "94.23.188.192/27"
+      ]
+    },
+    {
+      "id": "ahrefsbot",
+      "name": "AhrefsBot",
+      "operator": {
+        "name": "Ahrefs",
+        "url": "https://ahrefs.com"
+      },
+      "description": "Ahrefs' primary web crawler, powering the backlink and keyword database behind the Ahrefs SEO platform and the Yep search engine. Crawls from publicly published IP ranges with a matching reverse-DNS suffix.",
+      "docs": [
+        "https://ahrefs.com/robot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AhrefsBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AhrefsBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "142.44.220.0/24",
+        "142.44.225.0/24",
+        "142.44.228.0/24",
+        "142.44.233.0/24",
+        "148.113.128.0/24",
+        "148.113.130.0/24",
+        "15.235.27.0/24",
+        "15.235.96.0/24",
+        "15.235.98.0/24",
+        "167.114.139.0/24",
+        "168.100.149.0/24",
+        "176.31.139.0/27",
+        "198.244.168.0/24",
+        "198.244.183.0/24",
+        "198.244.186.193/32",
+        "198.244.186.194/31",
+        "198.244.186.196/30",
+        "198.244.186.200/31",
+        "198.244.186.202/32",
+        "198.244.226.0/24",
+        "198.244.240.0/24",
+        "198.244.242.0/24",
+        "202.8.40.0/22",
+        "202.94.84.110/31",
+        "202.94.84.112/31",
+        "37.59.204.128/27",
+        "5.39.1.224/27",
+        "5.39.109.160/27",
+        "51.161.37.0/24",
+        "51.161.65.0/24",
+        "51.195.183.0/24",
+        "51.195.215.0/24",
+        "51.195.244.0/24",
+        "51.222.168.0/24",
+        "51.222.253.0/26",
+        "51.222.95.0/24",
+        "51.68.247.192/27",
+        "51.75.236.128/27",
+        "51.89.129.0/24",
+        "54.36.148.0/23",
+        "54.37.118.64/27",
+        "54.38.147.0/24",
+        "54.39.0.0/24",
+        "54.39.136.0/24",
+        "54.39.203.0/24",
+        "54.39.210.0/24",
+        "54.39.6.0/24",
+        "54.39.89.0/24",
+        "92.222.104.192/27",
+        "92.222.108.96/27",
+        "94.23.188.192/27"
+      ]
+    },
+    {
+      "id": "botify",
+      "name": "Botify",
+      "operator": {
+        "name": "Botify",
+        "url": "https://www.botify.com"
+      },
+      "description": "Botify's SEO crawler, used by its SiteCrawler product to analyze enterprise websites for search-indexing insights. Botify does not publish a fixed IP range or CIDR list for site owners to allowlist.",
+      "docs": [
+        "https://support.botify.com/en/articles/9108549-crawling-with-a-custom-user-agent"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "compatible; botify"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; botify; http://botify.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Botify"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "dotbot",
+      "name": "DotBot",
+      "operator": {
+        "name": "Moz",
+        "url": "https://moz.com"
+      },
+      "description": "Moz's general-purpose web crawler, distinct from rogerbot, that gathers link data powering the Moz Link Index and Link Explorer. Moz's own help pages document no fixed IP range for it.",
+      "docs": [
+        "https://moz.com/help/moz-procedures/crawlers/dotbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "DotBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "dotbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "mj12bot",
+      "name": "MJ12bot",
+      "operator": {
+        "name": "Majestic-12",
+        "url": "https://mj12bot.com"
+      },
+      "description": "The crawler behind Majestic's backlink index. Majestic explicitly states it is a community-based distributed crawler with no fixed IP allocation, so requests cannot be verified by IP, ASN, or reverse DNS.",
+      "docs": [
+        "https://mj12bot.com/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "MJ12bot/v\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MJ12bot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "oncrawl",
+      "name": "OnCrawl",
+      "operator": {
+        "name": "OnCrawl",
+        "url": "https://www.oncrawl.com"
+      },
+      "description": "OnCrawl's SEO crawler, used to analyze a customer's own site structure and content for technical SEO reporting. OnCrawl's help docs describe no fixed IP range; the bot's identity is user-configurable per crawl.",
+      "docs": [
+        "https://help.oncrawl.com/en/articles/2767653-oncrawl-crawler-how-does-the-oncrawl-bot-find-and-crawl-pages"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Oncrawl/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Oncrawl/1.0; +http://www.oncrawl.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Oncrawl"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "rogerbot",
+      "name": "Rogerbot",
+      "operator": {
+        "name": "Moz",
+        "url": "https://moz.com"
+      },
+      "description": "Moz's site-audit crawler for Moz Pro Campaigns, distinct from DotBot. Moz's own FAQ states plainly that Rogerbot has no IP range: \"we do not use a static IP address or range of IP addresses.\"",
+      "docs": [
+        "https://moz.com/help/moz-procedures/crawlers/rogerbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "rogerbot/\\d"
+        ],
+        "instances": [
+          "rogerbot/1.2 (http://moz.com/help/pro/what-is-rogerbot-, rogerbot-crawler+phaser-testing-crawler-01@moz.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "rogerbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot",
+      "name": "SemrushBot",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "Semrush's web crawler, feeding the backlink and site-audit data behind the Semrush SEO platform. Semrush's own bot page explicitly states it does not use consecutive IP blocks, so no CIDR list can be sourced.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SemrushBot/7~bl; +http://www.semrush.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "sistrix",
+      "name": "SISTRIX Crawler",
+      "operator": {
+        "name": "SISTRIX",
+        "url": "https://www.sistrix.com"
+      },
+      "description": "The crawler behind the SISTRIX Toolbox, a German SEO visibility platform. SISTRIX documents that every crawler IP resolves via reverse DNS to the \"sistrix.net\" domain rather than publishing a static CIDR list.",
+      "docs": [
+        "https://www.sistrix.com/tutorials/crawling-errors-in-the-optimizer/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SISTRIX Crawler"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SISTRIX Crawler; http://crawler.sistrix.net/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "sistrix"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.crawler.sistrix.net"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "resolved_cidrs": []
+    }
+  ]
+}

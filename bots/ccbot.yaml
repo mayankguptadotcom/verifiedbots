@@ -1,0 +1,21 @@
+id: ccbot
+name: CCBot
+operator: { name: "Common Crawl Foundation", url: "https://commoncrawl.org" }
+description: >-
+  Common Crawl's crawler that builds the freely available Common Crawl web
+  archive, widely reused as AI training data by third parties.
+docs:
+  - "https://commoncrawl.org/ccbot"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'CCBot/\d'
+  instances:
+    - 'CCBot/2.0 (https://commoncrawl.org/faq/)'
+behavior: { respects_robots_txt: true, robots_token: CCBot }
+verification:
+  - type: cidr_feed
+    url: "https://index.commoncrawl.org/ccbot.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.crawl.commoncrawl.org"]

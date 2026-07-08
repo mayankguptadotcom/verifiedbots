@@ -1,0 +1,18 @@
+id: baiduspider
+name: Baiduspider
+operator: { name: Baidu, url: "https://www.baidu.com" }
+description: >-
+  Baidu's primary web crawler, fetching pages for Baidu Search indexing.
+docs:
+  - "https://help.baidu.com/question?prod_en=master&class=Baiduspider"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Baiduspider/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)'
+    - 'Mozilla/5.0 (compatible; Baiduspider-render/2.0; +http://www.baidu.com/search/spider.html)'
+behavior: { respects_robots_txt: true, robots_token: Baiduspider }
+verification:
+  - type: rdns
+    masks: ["*.baidu.com", "*.baidu.jp"]

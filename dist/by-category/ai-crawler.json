@@ -1,8 +1,199 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T14:43:46.314Z",
-  "count": 3,
+  "generated_at": "2026-07-08T16:33:42.624Z",
+  "count": 13,
   "bots": [
+    {
+      "id": "ai2bot",
+      "name": "AI2Bot",
+      "operator": {
+        "name": "Allen Institute for AI",
+        "url": "https://allenai.org"
+      },
+      "description": "The Allen Institute for AI's crawler, used to build open training datasets such as Dolma. AI2 publishes no IP ranges, ASN, or reverse-DNS pattern.",
+      "docs": [
+        "https://allenai.org/crawler"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "AI2Bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AI2Bot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazonbot",
+      "name": "Amazonbot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's web crawler used to improve Amazon's products and services, including training AI models. Amazon publishes a human-readable IP list but no machine-parseable feed in a format this project's schema supports.",
+      "docs": [
+        "https://developer.amazon.com/en/amazonbot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Amazonbot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Amazonbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "bytespider",
+      "name": "Bytespider",
+      "operator": {
+        "name": "ByteDance",
+        "url": "https://www.bytedance.com"
+      },
+      "description": "ByteDance's web crawler, used to gather training data for its AI models. ByteDance publishes no IP ranges, ASN, or reverse-DNS pattern for it.",
+      "docs": [
+        "https://zhanzhang.toutiao.com/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Bytespider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.3478.1649 Mobile Safari/537.36; Bytespider"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Bytespider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "ccbot",
+      "name": "CCBot",
+      "operator": {
+        "name": "Common Crawl Foundation",
+        "url": "https://commoncrawl.org"
+      },
+      "description": "Common Crawl's crawler that builds the freely available Common Crawl web archive, widely reused as AI training data by third parties.",
+      "docs": [
+        "https://commoncrawl.org/ccbot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "CCBot/\\d"
+        ],
+        "instances": [
+          "CCBot/2.0 (https://commoncrawl.org/faq/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "CCBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://index.commoncrawl.org/ccbot.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.crawl.commoncrawl.org"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "18.97.14.80/29",
+        "18.97.14.88/30",
+        "18.97.9.168/29",
+        "2600:1f28:365:80b0::/60",
+        "3.41.188.32/29",
+        "98.85.178.216/32"
+      ]
+    },
+    {
+      "id": "claude-searchbot",
+      "name": "Claude-SearchBot",
+      "operator": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com"
+      },
+      "description": "Anthropic's crawler that indexes pages to improve search-style answer quality in Claude products, distinct from ClaudeBot's training-data crawl.",
+      "docs": [
+        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Claude-SearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Claude-SearchBot/1.0; +Claude-SearchBot@anthropic.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Claude-SearchBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://claude.com/crawling/bots.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "136.107.176.208/32",
+        "216.73.216.0/22",
+        "34.11.34.31/32",
+        "34.150.241.79/32",
+        "34.162.191.81/32",
+        "34.162.230.222/32",
+        "34.162.244.71/32",
+        "34.182.140.95/32",
+        "34.182.161.143/32",
+        "34.182.218.27/32",
+        "34.182.220.85/32",
+        "34.182.222.37/32",
+        "34.182.225.167/32",
+        "34.182.226.151/32",
+        "34.182.226.221/32",
+        "34.186.108.163/32",
+        "34.85.172.162/32",
+        "35.221.29.174/32",
+        "35.245.175.129/32",
+        "35.245.89.239/32"
+      ]
+    },
     {
       "id": "claudebot",
       "name": "ClaudeBot",
@@ -10,7 +201,7 @@
         "name": "Anthropic",
         "url": "https://www.anthropic.com"
       },
-      "description": "Anthropic's web crawler collecting publicly available web data for training Claude models. Anthropic does not publish crawler IP ranges or rDNS.",
+      "description": "Anthropic's web crawler collecting publicly available web data for training Claude models. Anthropic publishes its crawler source IPs as a machine-readable feed.",
       "docs": [
         "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
@@ -26,6 +217,62 @@
       "behavior": {
         "respects_robots_txt": true,
         "robots_token": "ClaudeBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://claude.com/crawling/bots.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "136.107.176.208/32",
+        "216.73.216.0/22",
+        "34.11.34.31/32",
+        "34.150.241.79/32",
+        "34.162.191.81/32",
+        "34.162.230.222/32",
+        "34.162.244.71/32",
+        "34.182.140.95/32",
+        "34.182.161.143/32",
+        "34.182.218.27/32",
+        "34.182.220.85/32",
+        "34.182.222.37/32",
+        "34.182.225.167/32",
+        "34.182.226.151/32",
+        "34.182.226.221/32",
+        "34.186.108.163/32",
+        "34.85.172.162/32",
+        "35.221.29.174/32",
+        "35.245.175.129/32",
+        "35.245.89.239/32"
+      ]
+    },
+    {
+      "id": "diffbot",
+      "name": "Diffbot",
+      "operator": {
+        "name": "Diffbot",
+        "url": "https://www.diffbot.com"
+      },
+      "description": "Diffbot's general-purpose web crawler, used to build its Knowledge Graph and power its structured-extraction APIs. Diffbot documents robots.txt behavior but publishes no IP list, ASN, or reverse-DNS pattern.",
+      "docs": [
+        "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Diffbot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729; Diffbot/0.1; +http://www.diffbot.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Diffbot"
       },
       "verification": [],
       "tier": 3,
@@ -124,6 +371,197 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "resolved_cidrs": []
+    },
+    {
+      "id": "oai-searchbot",
+      "name": "OAI-SearchBot",
+      "operator": {
+        "name": "OpenAI",
+        "url": "https://openai.com"
+      },
+      "description": "OpenAI's crawler that indexes pages to power search results inside ChatGPT. It is distinct from GPTBot and is not used to gather training data.",
+      "docs": [
+        "https://developers.openai.com/api/docs/bots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "OAI-SearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "OAI-SearchBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://openai.com/searchbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "104.210.140.128/28",
+        "135.234.64.0/24",
+        "172.182.193.224/28",
+        "172.182.193.80/28",
+        "172.182.194.144/28",
+        "172.182.194.32/28",
+        "172.182.195.48/28",
+        "172.182.209.208/28",
+        "172.182.211.192/28",
+        "172.182.213.192/28",
+        "172.182.224.0/28",
+        "172.203.190.128/28",
+        "20.14.99.96/28",
+        "20.168.18.32/28",
+        "20.169.6.224/28",
+        "20.169.7.48/28",
+        "20.169.77.0/25",
+        "20.171.123.64/28",
+        "20.171.53.224/28",
+        "20.25.151.224/28",
+        "20.42.10.176/28",
+        "4.227.36.0/25",
+        "40.67.175.0/25",
+        "40.90.214.16/28",
+        "51.8.102.0/24",
+        "74.7.175.128/25",
+        "74.7.228.0/25",
+        "74.7.228.128/25",
+        "74.7.229.0/25",
+        "74.7.229.128/25",
+        "74.7.230.0/25",
+        "74.7.241.128/25",
+        "74.7.242.128/25",
+        "74.7.243.0/25",
+        "74.7.244.0/25"
+      ]
+    },
+    {
+      "id": "omgili",
+      "name": "omgili",
+      "operator": {
+        "name": "Webz.io",
+        "url": "https://webz.io"
+      },
+      "description": "Webz.io's legacy crawler user agent (formerly \"Omgilibot\"), used to collect web, forum, and news content for its data feeds. Webz.io's current public documentation describes successor crawlers (\"webzio\" / \"webzio-extended\") and no longer documents this UA string or any IP verification method for it.",
+      "docs": [
+        "https://webz.io/blog/company/from-omgilibot-to-the-webzbot-duo-a-powerful-leap-for-ethical-and-comprehensive-data-collection/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "omgili"
+        ],
+        "instances": [
+          "omgili/0.5 +http://omgili.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "perplexitybot",
+      "name": "PerplexityBot",
+      "operator": {
+        "name": "Perplexity",
+        "url": "https://www.perplexity.ai"
+      },
+      "description": "Perplexity's crawler that indexes pages to surface and link websites in Perplexity search results. Perplexity states it is not used to train models.",
+      "docs": [
+        "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "PerplexityBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PerplexityBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.perplexity.com/perplexitybot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "107.20.236.150/32",
+        "18.210.92.235/32",
+        "18.97.1.228/30",
+        "18.97.9.96/29",
+        "3.211.124.183/32",
+        "3.222.232.239/32",
+        "3.224.62.45/32",
+        "3.231.139.107/32"
+      ]
+    },
+    {
+      "id": "youbot",
+      "name": "YouBot",
+      "operator": {
+        "name": "You.com",
+        "url": "https://you.com"
+      },
+      "description": "You.com's crawler that indexes pages for its AI-powered search product. You.com documents a dedicated IP range, a reverse-DNS pattern, and support for signed-request verification via Web Bot Auth.",
+      "docs": [
+        "https://you.com/docs/youbot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "YouBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; YouBot/1.0; +https://docs.you.com/youbot; env:prod) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YouBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "68.67.112.0/24"
+          ]
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.search.you.com"
+          ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://you.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "resolved_cidrs": [
+        "68.67.112.0/24"
+      ]
     }
   ]
 }
