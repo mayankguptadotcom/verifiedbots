@@ -1,0 +1,25 @@
+name: Submit a bot
+description: Propose a bot for the directory (non-technical route — maintainers convert to a PR)
+labels: [bot-submission]
+body:
+  - type: input
+    id: name
+    attributes: { label: Bot name }
+    validations: { required: true }
+  - type: input
+    id: operator
+    attributes: { label: Operator name and URL }
+    validations: { required: true }
+  - type: textarea
+    id: uas
+    attributes: { label: User-Agent strings (one per line, as sent on the wire) }
+    validations: { required: true }
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: IP range feed URL, rDNS suffixes, ASN, or Web Bot Auth key directory URL
+  - type: input
+    id: docs
+    attributes: { label: Official documentation URL }
+    validations: { required: true }
