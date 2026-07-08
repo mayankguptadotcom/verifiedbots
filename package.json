@@ -5,6 +5,7 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "test": "vitest run",
+    "typecheck": "tsc --noEmit",
     "validate": "tsx src/cli/validate.ts",
     "fetch-feeds": "tsx src/cli/fetch-feeds.ts",
     "build:artifacts": "tsx src/cli/build.ts"

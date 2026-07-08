@@ -48,13 +48,14 @@ describe('fetchAllFeeds', () => {
     expect(JSON.parse(readFileSync(join(lkg, 'googlebot--0.json'), 'utf8')).ranges).toEqual(['66.249.64.0/27']);
   });
   it('holds a suspicious diff and keeps LKG', async () => {
-    const oldRanges = Array.from({ length: 50 }, (_, i) => `8.${i}.0.0/16`);
+    // Sorted lexicographically, since readLkg runs stored ranges through sanitizeCidrs (which sorts).
+    const oldRanges = Array.from({ length: 50 }, (_, i) => `8.${i}.0.0/16`).sort();
     writeFileSync(join(lkg, 'googlebot--0.json'), JSON.stringify({ url: 'x', fetched_at: 'y', ranges: oldRanges }));
     const newRanges = Array.from({ length: 50 }, (_, i) => `9.${i}.0.0/16`);
     const fetcher: Fetcher = async () => ({ status: 200, body: prefixBody(newRanges) });
     const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher);
     expect(out[0].status).toBe('held');
-    expect(out[0].ranges).toEqual(oldRanges); // LKG returned exactly as stored
+    expect(out[0].ranges).toEqual(oldRanges); // LKG returned exactly as stored (post-sanitize sort order)
   });
   it('rejects non-https URLs defensively', async () => {
     const b = bot('badbot', 'https://ok.example/f.json');
@@ -83,5 +84,11 @@ describe('fetchAllFeeds', () => {
     const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher);
     expect(out[0]).toMatchObject({ status: 'ok', ranges: ['66.249.64.0/27'] });
     expect(JSON.parse(readFileSync(join(lkg, 'googlebot--0.json'), 'utf8')).ranges).toEqual(['66.249.64.0/27']);
+  });
+  it('treats a poisoned committed LKG file (private/bogon range) as absent, not served', async () => {
+    writeFileSync(join(lkg, 'googlebot--0.json'), JSON.stringify({ url: 'x', fetched_at: 'y', ranges: ['10.0.0.0/16'] }));
+    const fetcher: Fetcher = async () => ({ status: 503, body: '' });
+    const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher);
+    expect(out[0]).toMatchObject({ status: 'error', ranges: [] });
   });
 });

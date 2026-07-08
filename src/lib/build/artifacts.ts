@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { BRANDING } from '../../branding.js';
 import { computeTier, TIER_LABELS, type Tier } from '../tiers.js';
@@ -15,6 +15,10 @@ function resolveCidrs(bot: Bot, outcomes: FeedOutcome[]): string[] {
 }
 
 export function buildArtifacts(bots: Bot[], outcomes: FeedOutcome[], outDir: string, generatedAt: string): void {
+  // Retract prior output first: a bot removed from the source data must not leave stale
+  // artifacts (e.g. dist/bots/<removed-id>.json) behind in outDir.
+  rmSync(outDir, { recursive: true, force: true });
+
   const artifacts: BotArtifact[] = bots
     .map((bot) => {
       const tier = computeTier(bot);

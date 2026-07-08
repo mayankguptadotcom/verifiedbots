@@ -30,7 +30,13 @@ export const BROWSER_UA_SAMPLES = [
 
 const schema = JSON.parse(readFileSync(new URL('../schema/bot.schema.json', import.meta.url), 'utf8'));
 const ajv = new Ajv2020({ allErrors: true });
-addFormats(ajv);
+// ajv-formats is CJS with no "exports" map; under NodeNext module resolution its default
+// export is typed as the module namespace (non-callable) instead of the callable plugin
+// function. Unwrap the real function at runtime via `.default` when present.
+type FormatsPluginFn = (ajv: Ajv2020, options?: unknown) => Ajv2020;
+const addFormatsFn: FormatsPluginFn =
+  ((addFormats as unknown as { default?: FormatsPluginFn }).default ?? (addFormats as unknown as FormatsPluginFn));
+addFormatsFn(ajv);
 const schemaValidate = ajv.compile(schema);
 
 export function validateBotDocument(doc: unknown): string[] {

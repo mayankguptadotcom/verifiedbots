@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
+import { mkdtempSync, readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildArtifacts } from '../src/lib/build/artifacts.js';
@@ -62,5 +62,16 @@ describe('buildArtifacts', () => {
       { id: 'claudebot', category: 'ai-crawler', patterns: ['ClaudeBot/\\d'] },
       { id: 'googlebot', category: 'search-engine', patterns: ['Googlebot/\\d'] },
     ]);
+  });
+});
+
+describe('buildArtifacts dist retraction', () => {
+  it('removes stale files from outDir that no longer correspond to a built bot', () => {
+    const out = mkdtempSync(join(tmpdir(), 'dist-stale-'));
+    mkdirSync(join(out, 'bots'), { recursive: true });
+    writeFileSync(join(out, 'bots', 'removed-bot.json'), '{"id":"removed-bot"}');
+    buildArtifacts([claudebot], [], out, '2026-07-07T00:00:00Z');
+    expect(existsSync(join(out, 'bots', 'removed-bot.json'))).toBe(false);
+    expect(existsSync(join(out, 'bots', 'claudebot.json'))).toBe(true);
   });
 });

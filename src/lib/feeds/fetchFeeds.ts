@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseFeed } from './parsers.js';
 import { diffRanges } from './diff.js';
@@ -15,9 +15,17 @@ export interface FeedOutcome {
   detail?: string;
 }
 
+const MAX_BODY_BYTES = 5_000_000;
+
 const defaultFetcher: Fetcher = async (url) => {
-  const res = await fetch(url, { redirect: 'follow', headers: { 'user-agent': 'verifiedbots-pipeline/1.0' } });
-  return { status: res.status, body: await res.text() };
+  const res = await fetch(url, {
+    redirect: 'follow',
+    headers: { 'user-agent': 'verifiedbots-pipeline/1.0' },
+    signal: AbortSignal.timeout(30_000),
+  });
+  const body = await res.text();
+  if (body.length > MAX_BODY_BYTES) throw new Error('feed body exceeds 5MB cap');
+  return { status: res.status, body };
 };
 
 function errMessage(e: unknown): string {
@@ -29,10 +37,10 @@ function readLkg(path: string): string[] {
   try {
     const data = JSON.parse(readFileSync(path, 'utf8'));
     if (Array.isArray(data.ranges) && data.ranges.every((r: unknown) => typeof r === 'string')) {
-      return data.ranges;
+      return sanitizeCidrs(data.ranges);
     }
   } catch {
-    // Corrupt LKG file: treat as absent
+    // Corrupt or poisoned (private/bogon/malformed range) LKG file: treat as absent
   }
   return [];
 }
@@ -81,8 +89,11 @@ export async function fetchAllFeeds(bots: Bot[], lkgDir: string, fetcher: Fetche
         });
         continue;
       }
-      // TODO: atomic write (tmp+rename) — a crash mid-write corrupts the LKG trust anchor.
-      writeFileSync(lkgPath, JSON.stringify({ url: feed.url, fetched_at: new Date().toISOString(), ranges }, null, 2));
+      // Atomic write: write to a temp file in the same directory, then rename, so a crash
+      // mid-write can never leave a corrupt/truncated LKG trust anchor on disk.
+      const tmpPath = `${lkgPath}.tmp`;
+      writeFileSync(tmpPath, JSON.stringify({ url: feed.url, fetched_at: new Date().toISOString(), ranges }, null, 2));
+      renameSync(tmpPath, lkgPath);
       outcomes.push({ botId: bot.id, url: feed.url, status: 'ok', ranges });
     }
   }
