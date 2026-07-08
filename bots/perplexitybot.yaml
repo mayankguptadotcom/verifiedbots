@@ -5,7 +5,7 @@ description: >-
   Perplexity's crawler that indexes pages to surface and link websites in
   Perplexity search results. Perplexity states it is not used to train models.
 docs:
-  - "https://docs.perplexity.ai/docs/perplexitybot"
+  - "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
 category: ai-crawler
 user_agents:
   patterns:

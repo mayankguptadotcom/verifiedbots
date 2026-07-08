@@ -3,7 +3,7 @@ name: ClaudeBot
 operator: { name: Anthropic, url: "https://www.anthropic.com" }
 description: >-
   Anthropic's web crawler collecting publicly available web data for training
-  Claude models. Anthropic does not publish crawler IP ranges or rDNS.
+  Claude models. Anthropic publishes its crawler source IPs as a machine-readable feed.
 docs:
   - "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
 category: ai-crawler
@@ -13,4 +13,7 @@ user_agents:
   instances:
     - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)'
 behavior: { respects_robots_txt: true, robots_token: ClaudeBot }
-verification: []
+verification:
+  - type: cidr_feed
+    url: "https://claude.com/crawling/bots.json"
+    format: prefixes
