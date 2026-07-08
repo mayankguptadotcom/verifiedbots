@@ -1,0 +1,19 @@
+id: stripe-webhooks
+name: Stripe Webhooks
+operator: { name: Stripe, url: "https://stripe.com" }
+description: >-
+  Stripe's webhook delivery service. Not a crawler; sends event notifications
+  (payments, subscriptions) to merchant endpoints from published IPs.
+docs:
+  - "https://docs.stripe.com/ips"
+category: webhook
+user_agents:
+  patterns:
+    - 'Stripe/1\.0'
+  instances:
+    - 'Stripe/1.0 (+https://stripe.com/docs/webhooks)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://stripe.com/files/ips/ips_webhooks.json"
+    format: stripe_webhooks

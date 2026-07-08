@@ -1,0 +1,19 @@
+id: gptbot
+name: GPTBot
+operator: { name: OpenAI, url: "https://openai.com" }
+description: >-
+  OpenAI's web crawler that gathers publicly available data used to train
+  OpenAI's models.
+docs:
+  - "https://developers.openai.com/api/docs/bots"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'GPTBot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.2; +https://openai.com/gptbot'
+behavior: { respects_robots_txt: true, robots_token: GPTBot }
+verification:
+  - type: cidr_feed
+    url: "https://openai.com/gptbot.json"
+    format: prefixes
