@@ -1,0 +1,28 @@
+id: paypal-ipn
+name: PayPal IPN
+operator: { name: PayPal, url: "https://www.paypal.com" }
+description: >-
+  PayPal's Instant Payment Notification service. Not a crawler; POSTs
+  payment-event notifications to merchant listener endpoints from a
+  documented, static set of server CIDR ranges (shared with other PayPal
+  server traffic).
+docs:
+  - "https://www.paypal.com/us/cshelp/article/what-are-the-internet-protocol-ip-addresses-for-paypal-server-endpoints-ts1056"
+category: webhook
+user_agents:
+  patterns:
+    - 'PayPal IPN'
+  instances:
+    - 'PayPal IPN (https://www.paypal.com/ipn)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "64.4.240.0/21"
+      - "64.4.248.0/22"
+      - "66.211.168.0/22"
+      - "91.243.72.0/23"
+      - "173.0.80.0/20"
+      - "185.177.52.0/22"
+      - "192.160.215.0/24"
+      - "198.54.216.0/23"

@@ -1,0 +1,20 @@
+id: site24x7
+name: Site24x7
+operator: { name: Zoho, url: "https://www.site24x7.com" }
+description: >-
+  Zoho's infrastructure and website monitoring service, which probes
+  customer sites from 130+ global monitoring locations published as a
+  machine-readable IP list.
+docs:
+  - "https://www.site24x7.com/multi-location-web-site-monitoring.html"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Site24x7/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; Site24x7/1.0; +https://www.site24x7.com/)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://www.site24x7.com/tools/public/location-ips.txt"
+    format: text_lines

@@ -1,0 +1,22 @@
+id: checkly
+name: Checkly
+operator: { name: Checkly, url: "https://www.checklyhq.com" }
+description: >-
+  Synthetic-monitoring service that runs API and browser checks against
+  customer endpoints from a published, fixed set of static outbound IPs.
+docs:
+  - "https://www.checklyhq.com/docs/platform/allowlisting-traffic/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Checkly/[\d.]+'
+  instances:
+    - 'Checkly/1.0 (https://www.checklyhq.com)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://api.checklyhq.com/v1/static-ips"
+    format: json_array
+  - type: cidr_feed
+    url: "https://api.checklyhq.com/v1/static-ipv6s"
+    format: json_array

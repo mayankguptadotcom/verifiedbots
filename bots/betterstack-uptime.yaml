@@ -1,0 +1,19 @@
+id: betterstack-uptime
+name: Better Stack Uptime
+operator: { name: Better Stack, url: "https://betterstack.com" }
+description: >-
+  Better Stack's uptime-monitoring probes, which request customer URLs on a
+  schedule from a published, frequently-changing list of monitoring IPs.
+docs:
+  - "https://betterstack.com/docs/uptime/frequently-asked-questions/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Better ?Uptime Bot'
+  instances:
+    - 'Better Stack Better Uptime Bot Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://uptime.betterstack.com/ips.txt"
+    format: text_lines
