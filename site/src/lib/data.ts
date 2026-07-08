@@ -12,6 +12,7 @@ export interface BotArtifact {
   verification: Array<Record<string, unknown> & { type: string }>;
   tier: 1 | 2 | 3;
   tier_label: string;
+  first_seen: string;
   resolved_cidrs: string[];
 }
 

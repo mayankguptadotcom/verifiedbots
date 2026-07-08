@@ -9,17 +9,24 @@ export function getStaticPaths() {
 const { category } = Astro.params;
 const { bots } = Astro.props;
 const label = CATEGORY_LABELS[category!] ?? category;
+const hasRanges = bots.some((b) => b.resolved_cidrs.length > 0);
 ---
 <Layout title={label}>
   <header class="cat-head">
     <p class="small muted"><a href="/">Directory</a> / {label}</p>
     <h1>{label} <span class="muted">{bots.length}</span></h1>
+    <p class="small data-links">
+      <a class="pill" href={`/data/by-category/${category}.json`} data-astro-reload>JSON</a>
+      {hasRanges && <a class="pill" href={`/data/ips/by-category/${category}.ips`} data-astro-reload>IP ranges (.ips)</a>}
+    </p>
   </header>
   <div class="grid">
     {bots.map((bot) => <BotCard bot={bot} />)}
   </div>
   <style>
     .cat-head { padding-block: var(--space-4) var(--space-2); }
+    .data-links { display: flex; gap: 0.5rem; margin-top: var(--space-1); }
+    .data-links .pill:hover { border-color: var(--accent); color: var(--accent); }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: var(--space-2); }
   </style>
 </Layout>

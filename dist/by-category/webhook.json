@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T17:51:21.656Z",
+  "generated_at": "2026-07-08T19:13:49.571Z",
   "count": 6,
   "bots": [
     {
@@ -36,6 +36,7 @@
       ],
       "tier": 2,
       "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -71,6 +72,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "140.82.112.0/20",
         "143.55.64.0/20",
@@ -120,6 +122,7 @@
       ],
       "tier": 2,
       "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "173.0.80.0/20",
         "185.177.52.0/22",
@@ -163,6 +166,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "13.235.122.149/32",
         "13.235.14.237/32",
@@ -233,6 +237,7 @@
       ],
       "tier": 2,
       "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "13.239.204.236/32",
         "2406:da2c:13:4000::/56",
@@ -290,6 +295,7 @@
       ],
       "tier": 2,
       "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "149.154.160.0/20",
         "91.108.4.0/22"

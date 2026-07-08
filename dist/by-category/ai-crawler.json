@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T17:51:21.656Z",
+  "generated_at": "2026-07-08T19:13:49.571Z",
   "count": 13,
   "bots": [
     {
@@ -30,6 +30,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -59,6 +60,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -88,6 +90,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -129,6 +132,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "18.97.14.80/29",
         "18.97.14.88/30",
@@ -171,6 +175,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "136.107.176.208/32",
         "216.73.216.0/22",
@@ -227,6 +232,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "136.107.176.208/32",
         "216.73.216.0/22",
@@ -277,6 +283,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -312,6 +319,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "132.196.86.0/24",
         "172.182.202.0/25",
@@ -370,6 +378,7 @@
       ],
       "tier": 2,
       "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -405,6 +414,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "104.210.140.128/28",
         "135.234.64.0/24",
@@ -469,6 +479,7 @@
       "verification": [],
       "tier": 3,
       "tier_label": "Listed only",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -504,6 +515,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "107.20.236.150/32",
         "18.210.92.235/32",
@@ -559,6 +571,7 @@
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "68.67.112.0/24"
       ]

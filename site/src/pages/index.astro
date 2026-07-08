@@ -1,31 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BotCard from '../components/BotCard.astro';
+import BotMascot from '../components/BotMascot.astro';
 import { BRANDING } from '../../../src/branding';
-import { stats, botsByCategory, CATEGORY_LABELS } from '../lib/data';
+import { stats, botsByCategory, CATEGORY_LABELS, dataset } from '../lib/data';
 const s = stats();
 const groups = botsByCategory();
+const TIER_LABELS: Record<number, string> = { 1: 'Fully verifiable', 2: 'Verifiable', 3: 'Listed only' };
+const TIERS = [1, 2, 3].map((tier) => ({
+  tier,
+  label: TIER_LABELS[tier],
+  count: dataset.bots.filter((b) => b.tier === tier).length,
+}));
 ---
 <Layout title={BRANDING.projectName}>
   <section class="hero">
-    <h1 class="display">The good bots,<br />verified.</h1>
-    <p class="lede">
-      The open, categorized directory of legitimate bots — their user agents, published IP ranges,
-      and exactly how to verify them.
-    </p>
-    <div class="stats mono small">
-      <span><strong>{s.bots}</strong> bots</span>
-      <span><strong>{s.verifiable}</strong> verifiable</span>
-      <span><strong>{s.categories}</strong> categories</span>
-      <span><strong>{s.ranges}</strong> IP ranges</span>
+    <div class="hero-content">
+      <h1 class="display">The web's bots,<br />verified.</h1>
+      <p class="lede">
+        The open, categorized directory of legitimate bots — their user agents, published IP ranges,
+        and exactly how to verify them.
+      </p>
+      <div class="stats mono small">
+        <span><strong>{s.bots}</strong> bots</span>
+        <span><strong>{s.verifiable}</strong> verifiable</span>
+        <span><strong>{s.categories}</strong> categories</span>
+        <span><strong>{s.ranges}</strong> IP ranges</span>
+      </div>
+      <input id="bot-filter" type="search" placeholder="Filter bots — name, operator, category… ( / )" autocomplete="off" aria-label="Filter bots" />
+      <div class="chips" id="category-chips">
+        <button class="pill chip active" data-category="">All</button>
+        {[...groups.entries()].map(([key, bots]) => (
+          <button class="pill chip" data-category={key}>{CATEGORY_LABELS[key]} <span class="muted">{bots.length}</span></button>
+        ))}
+      </div>
+      <div class="chips" id="tier-chips">
+        <button class="pill chip active" data-tier="">All tiers</button>
+        {TIERS.map((t) => (
+          <button class="pill chip" data-tier={t.tier}>{t.label} <span class="muted">{t.count}</span></button>
+        ))}
+      </div>
     </div>
-    <input id="bot-filter" type="search" placeholder="Filter bots — name, operator, category… ( / )" autocomplete="off" aria-label="Filter bots" />
-    <div class="chips" id="category-chips">
-      <button class="pill chip active" data-category="">All</button>
-      {[...groups.entries()].map(([key, bots]) => (
-        <button class="pill chip" data-category={key}>{CATEGORY_LABELS[key]} <span class="muted">{bots.length}</span></button>
-      ))}
-    </div>
+    <BotMascot variant="hero" />
   </section>
 
   {[...groups.entries()].map(([key, bots]) => (
@@ -46,14 +62,17 @@ const groups = botsByCategory();
       const sections = [...document.querySelectorAll<HTMLElement>('[data-category-section]')];
       const empty = document.getElementById('no-results')!;
       const chips = [...document.querySelectorAll<HTMLElement>('#category-chips .chip')];
+      const tierChips = [...document.querySelectorAll<HTMLElement>('#tier-chips .chip')];
       let activeCategory = '';
+      let activeTier = '';
       const apply = () => {
         const q = input.value.trim().toLowerCase();
         let shown = 0;
         for (const card of cards) {
           const textHit = !q || (card.dataset.bot ?? '').includes(q);
           const categoryHit = activeCategory === '' || card.dataset.category === activeCategory;
-          const hit = textHit && categoryHit;
+          const tierHit = activeTier === '' || card.dataset.tier === activeTier;
+          const hit = textHit && categoryHit && tierHit;
           card.hidden = !hit;
           if (hit) shown++;
         }
@@ -65,6 +84,13 @@ const groups = botsByCategory();
         chip.addEventListener('click', () => {
           activeCategory = chip.dataset.category ?? '';
           for (const c of chips) c.classList.toggle('active', c === chip);
+          apply();
+        });
+      }
+      for (const chip of tierChips) {
+        chip.addEventListener('click', () => {
+          activeTier = chip.dataset.tier ?? '';
+          for (const c of tierChips) c.classList.toggle('active', c === chip);
           apply();
         });
       }
@@ -84,7 +110,11 @@ const groups = botsByCategory();
   </script>
 
   <style>
-    .hero { padding-block: var(--space-5) var(--space-4); max-width: 52rem; }
+    .hero {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--space-4); padding-block: var(--space-5) var(--space-4);
+    }
+    .hero-content { max-width: 52rem; min-width: 0; flex: 1; }
     .lede { font-size: 1.35rem; color: var(--muted); line-height: 1.5; margin: var(--space-2) 0 var(--space-3); }
     .stats { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-3); color: var(--muted); }
     .stats strong { color: var(--text); font-size: 1.15em; }
@@ -95,6 +125,7 @@ const groups = botsByCategory();
     }
     #bot-filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
     .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-2); }
+    #tier-chips { margin-top: 0.6rem; }
     .chip { cursor: pointer; font: inherit; font-size: var(--text-small); }
     .chip.active { border-color: var(--accent); color: var(--accent); }
     .category { margin-block: var(--space-4); }

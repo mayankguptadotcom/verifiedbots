@@ -32,6 +32,7 @@
   ],
   "tier": 2,
   "tier_label": "Verifiable",
+  "first_seen": "2026-07-08T19:13:49.571Z",
   "resolved_cidrs": [
     "149.154.160.0/20",
     "91.108.4.0/22"

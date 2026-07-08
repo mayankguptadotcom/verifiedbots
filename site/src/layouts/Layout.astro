@@ -2,10 +2,11 @@
 import { ClientRouter } from 'astro:transitions';
 import { BRANDING } from '../../../src/branding';
 import { dataset } from '../lib/data';
+import BotMascot from '../components/BotMascot.astro';
 import '../styles/global.css';
 
 interface Props { title: string; description?: string }
-const { title, description = 'The open, categorized directory of verified good bots — user agents, IP ranges, and how to verify them.' } = Astro.props;
+const { title, description = "The open, categorized directory of the web's bots — user agents, IP ranges, and how to verify them." } = Astro.props;
 const path = Astro.url.pathname;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === BRANDING.projectName ? title : `${title} — ${BRANDING.projectName}`;
@@ -22,6 +23,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title={`${BRANDING.projectName} — new bots`} href="/rss.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
@@ -49,6 +51,7 @@ const nav = [
     <main class="container">
       <slot />
     </main>
+    {path !== '/' && <BotMascot variant="corner" />}
     <footer class="site-footer">
       <div class="container small muted footer-columns">
         <div class="footer-left">
