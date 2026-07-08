@@ -1,48 +1,68 @@
 # Verified Bots Directory
 
-The open, categorized directory of good bots — identities, user agents,
-IP ranges, and machine-actionable verification recipes.
+The open, categorized directory of verified good bots — identities, user
+agents, IP ranges, and machine-actionable verification recipes — at
+[verifiedbots.dev](https://verifiedbots.dev).
 
-> Status: pre-launch, private. Data + pipeline are being built; site follows.
-> An independent open project. Not affiliated with Cloudflare or its
-> Verified Bots program.
+## Why
+
+No canonical open source project joins bot identity (who operates this
+thing, what category is it) with both UA patterns *and* authoritative
+verification data. Bot directories tend to withhold IP ranges; IP-range
+lists tend to lack identity and category context. This repo is that join,
+done in the open, refreshed daily, with the provenance to back it up.
 
 ## What's here
-- `bots/*.yaml` — one curated file per bot (schema: `src/schema/bot.schema.json`)
-- `dist/` — built artifacts: `all.json`, `by-category/*.json`, `bots/*.json`,
-  `ips/*.ips` (GoodBots-compatible), `ua-patterns.json`
-- `PRACTICES.md` — the Good Bot Practices standard
-- Verification tiers: 1 = fully verifiable (IP feed / Web Bot Auth),
-  2 = verifiable (rDNS / ASN / static ranges), 3 = listed only
 
-## Commands
-- `npm test` — unit tests
-- `npm run validate` — validate all bot files
-- `npm run fetch-feeds` — refresh IP ranges from first-party feeds (guarded:
-  poisoned or wildly-changed feeds fall back to last-known-good)
-- `npm run build:artifacts` — build `dist/`
+- `bots/*.yaml` — one curated entry per bot (schema:
+  `src/schema/bot.schema.json`), covering identity, category, behavior, and
+  verification recipes.
+- `dist/` — built artifacts, also served live from verifiedbots.dev under
+  `/data/` (see "Use the data" below).
+- Verification tiers: **1 — fully verifiable** (machine-readable IP feed or
+  Web Bot Auth), **2 — verifiable** (rDNS / ASN / static ranges), **3 —
+  listed only** (identity known, no verification recipe published yet).
+- `PRACTICES.md` — the Good Bot Practices standard every entry is measured
+  against.
+- Daily refresh pipeline with poisoned-feed guardrails: CIDR sanity checks,
+  a diff alarm on large swings, and automatic fallback to the last-known-good
+  feed if a source looks wrong.
 
-## Website
+## Use the data
 
-`site/` is an Astro static site rendering this dataset; it also serves the raw
-artifacts under `/data/`.
+All artifacts are served live and CC-BY-4.0 licensed:
 
-- Local: `npm run build:artifacts` (repo root), then `cd site && npm install && npm run dev`
-- Full build: `npm run build:site` (requires `dist/` to exist)
+- `https://verifiedbots.dev/data/all.json` — the full dataset
+- `https://verifiedbots.dev/data/by-category/<category>.json` — one category
+- `https://verifiedbots.dev/data/bots/<id>.json` — one bot
+- `https://verifiedbots.dev/data/ips/<id>.ips` — one bot's IP ranges
+- `https://verifiedbots.dev/data/ips/all.ips` — every verified IP range
+- `https://verifiedbots.dev/data/ua-patterns.json` — user-agent match
+  patterns for every bot
 
-### Deploy (Cloudflare Pages, git integration)
+## Contributing
 
-| Setting | Value |
-|---|---|
-| Build command | `npm ci && (npm run build:artifacts \|\| [ $? -eq 2 ]) && npm --prefix site ci && npm --prefix site run build` |
-| Build output directory | `site/dist` |
-| Environment variable | `NODE_VERSION=24` |
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add or update a bot entry,
+and [PRACTICES.md](PRACTICES.md) for the standard entries are measured
+against.
 
-Custom domain: verifiedbots.dev (set in the Pages dashboard → Custom domains).
+## Development
 
-The daily `build` workflow commits refreshed `dist/` data to main; the Pages
-git integration rebuilds the site on that push, so the site republishes daily
-without extra config.
+`npm test`, `npm run validate`, and `npm run build:artifacts` cover the data
+pipeline; see [CONTRIBUTING.md](CONTRIBUTING.md) for the full local setup
+(including the `site/` Astro app). Deploy/ops notes live in
+`docs/DEPLOY.md`.
 
-## Licensing
+## Roadmap (rough)
+
+- Grow the directory toward 100–150+ verified bots across all categories.
+- Web Bot Auth verification checks for submitted key directories.
+- Active verification: a challenge endpoint that proves bot ownership at
+  submission time, rather than trusting a claimed feed alone.
+- A lookup API — "is this UA + IP a verified bot?" — for site owners who
+  don't want to embed the full dataset.
+- An annual state-of-the-good-bots report.
+
+## License
+
 Code: MIT (`LICENSE`). Data (`bots/`, `dist/`): CC-BY-4.0 (`LICENSE-DATA.md`).

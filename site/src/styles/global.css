@@ -87,6 +87,7 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
   border-radius: 999px; padding: 0.2em 0.85em;
   font-size: var(--text-small); font-weight: 560;
   border: 1px solid var(--border); background: var(--surface);
+  white-space: nowrap; flex-shrink: 0;
 }
 
 .site-header {

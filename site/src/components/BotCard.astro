@@ -7,7 +7,7 @@ interface Props { bot: BotArtifact }
 const { bot } = Astro.props;
 const haystack = `${bot.id} ${bot.name} ${bot.operator.name} ${bot.category} ${CATEGORY_LABELS[bot.category] ?? ''}`.toLowerCase();
 ---
-<a class="card bot-card" href={`/bots/${bot.id}`} data-bot={haystack}>
+<a class="card bot-card" href={`/bots/${bot.id}`} data-bot={haystack} data-category={bot.category}>
   <div class="top">
     <h3 transition:name={`bot-name-${bot.id}`}>{bot.name}</h3>
     <TierBadge tier={bot.tier} label={bot.tier_label} />

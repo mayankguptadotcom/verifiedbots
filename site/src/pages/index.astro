@@ -20,6 +20,12 @@ const groups = botsByCategory();
       <span><strong>{s.ranges}</strong> IP ranges</span>
     </div>
     <input id="bot-filter" type="search" placeholder="Filter bots — name, operator, category… ( / )" autocomplete="off" aria-label="Filter bots" />
+    <div class="chips" id="category-chips">
+      <button class="pill chip active" data-category="">All</button>
+      {[...groups.entries()].map(([key, bots]) => (
+        <button class="pill chip" data-category={key}>{CATEGORY_LABELS[key]} <span class="muted">{bots.length}</span></button>
+      ))}
+    </div>
   </section>
 
   {[...groups.entries()].map(([key, bots]) => (
@@ -39,11 +45,15 @@ const groups = botsByCategory();
       const cards = [...document.querySelectorAll<HTMLElement>('[data-bot]')];
       const sections = [...document.querySelectorAll<HTMLElement>('[data-category-section]')];
       const empty = document.getElementById('no-results')!;
+      const chips = [...document.querySelectorAll<HTMLElement>('#category-chips .chip')];
+      let activeCategory = '';
       const apply = () => {
         const q = input.value.trim().toLowerCase();
         let shown = 0;
         for (const card of cards) {
-          const hit = !q || (card.dataset.bot ?? '').includes(q);
+          const textHit = !q || (card.dataset.bot ?? '').includes(q);
+          const categoryHit = activeCategory === '' || card.dataset.category === activeCategory;
+          const hit = textHit && categoryHit;
           card.hidden = !hit;
           if (hit) shown++;
         }
@@ -51,6 +61,13 @@ const groups = botsByCategory();
         empty.hidden = shown > 0;
       };
       input.addEventListener('input', apply);
+      for (const chip of chips) {
+        chip.addEventListener('click', () => {
+          activeCategory = chip.dataset.category ?? '';
+          for (const c of chips) c.classList.toggle('active', c === chip);
+          apply();
+        });
+      }
     }
     document.addEventListener('astro:page-load', initFilter);
 
@@ -77,6 +94,9 @@ const groups = botsByCategory();
       padding: 0.85rem 1.1rem;
     }
     #bot-filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-2); }
+    .chip { cursor: pointer; font: inherit; font-size: var(--text-small); }
+    .chip.active { border-color: var(--accent); color: var(--accent); }
     .category { margin-block: var(--space-4); }
     .category h2 a:hover { color: var(--accent); }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: var(--space-2); }
