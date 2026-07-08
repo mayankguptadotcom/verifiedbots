@@ -1,0 +1,19 @@
+id: oai-searchbot
+name: OAI-SearchBot
+operator: { name: OpenAI, url: "https://openai.com" }
+description: >-
+  OpenAI's crawler that indexes pages to power search results inside ChatGPT.
+  It is distinct from GPTBot and is not used to gather training data.
+docs:
+  - "https://developers.openai.com/api/docs/bots"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'OAI-SearchBot/\d'
+  instances:
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot'
+behavior: { respects_robots_txt: true, robots_token: OAI-SearchBot }
+verification:
+  - type: cidr_feed
+    url: "https://openai.com/searchbot.json"
+    format: prefixes

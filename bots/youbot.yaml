@@ -1,0 +1,23 @@
+id: youbot
+name: YouBot
+operator: { name: "You.com", url: "https://you.com" }
+description: >-
+  You.com's crawler that indexes pages for its AI-powered search product.
+  You.com documents a dedicated IP range, a reverse-DNS pattern, and support
+  for signed-request verification via Web Bot Auth.
+docs:
+  - "https://you.com/docs/youbot"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'YouBot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; YouBot/1.0; +https://docs.you.com/youbot; env:prod) Chrome/W.X.Y.Z Safari/537.36'
+behavior: { respects_robots_txt: true, robots_token: YouBot }
+verification:
+  - type: static_cidrs
+    cidrs: ["68.67.112.0/24"]
+  - type: rdns
+    masks: ["*.search.you.com"]
+  - type: web_bot_auth
+    signature_agent_url: "https://you.com/.well-known/http-message-signatures-directory"

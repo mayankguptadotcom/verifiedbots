@@ -1,0 +1,19 @@
+id: claude-user
+name: Claude-User
+operator: { name: Anthropic, url: "https://www.anthropic.com" }
+description: >-
+  Anthropic's user-triggered fetcher, used when a person asks Claude to visit
+  a specific web page (e.g. via tool use in a conversation).
+docs:
+  - "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'Claude-User/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Claude-User/1.0; +Claude-User@anthropic.com)'
+behavior: { respects_robots_txt: false, robots_token: Claude-User }
+verification:
+  - type: cidr_feed
+    url: "https://claude.com/crawling/bots.json"
+    format: prefixes

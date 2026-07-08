@@ -1,0 +1,19 @@
+id: mistralai-user
+name: MistralAI-User
+operator: { name: "Mistral AI", url: "https://mistral.ai" }
+description: >-
+  Mistral AI's user-triggered fetcher, used when a user of a Mistral product
+  (e.g. Le Chat) asks it to visit a specific web page to answer a question.
+docs:
+  - "https://docs.mistral.ai/robots"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'MistralAI-User/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)'
+behavior: { respects_robots_txt: true, robots_token: MistralAI-User }
+verification:
+  - type: cidr_feed
+    url: "https://mistral.ai/mistralai-user-ips.json"
+    format: prefixes

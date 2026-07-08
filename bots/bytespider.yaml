@@ -1,0 +1,16 @@
+id: bytespider
+name: Bytespider
+operator: { name: ByteDance, url: "https://www.bytedance.com" }
+description: >-
+  ByteDance's web crawler, used to gather training data for its AI models.
+  ByteDance publishes no IP ranges, ASN, or reverse-DNS pattern for it.
+docs:
+  - "https://zhanzhang.toutiao.com/"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'Bytespider'
+  instances:
+    - 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.3478.1649 Mobile Safari/537.36; Bytespider'
+behavior: { respects_robots_txt: true, robots_token: Bytespider }
+verification: []
