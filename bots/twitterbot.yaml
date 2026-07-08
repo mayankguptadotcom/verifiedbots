@@ -7,7 +7,7 @@ description: >-
   verification method; the commonly cited "*.twttr.com" rDNS check and
   aggregate IP ranges trace only to community write-ups, not official docs.
 docs:
-  - "https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards"
+  - "https://web.archive.org/web/20260204221515/https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards"
 category: social-preview
 user_agents:
   patterns:
