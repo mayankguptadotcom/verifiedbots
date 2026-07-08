@@ -36,7 +36,7 @@ artifacts under `/data/`.
 |---|---|
 | Build command | `npm ci && (npm run build:artifacts \|\| [ $? -eq 2 ]) && npm --prefix site ci && npm --prefix site run build` |
 | Build output directory | `site/dist` |
-| Environment variable | `NODE_VERSION=22` |
+| Environment variable | `NODE_VERSION=24` |
 
 Custom domain: verifiedbots.dev (set in the Pages dashboard → Custom domains).
 
