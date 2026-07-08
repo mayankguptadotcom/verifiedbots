@@ -1,0 +1,14 @@
+# Cloudflare Pages header rules. Later matching rules override earlier ones.
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Hashed build assets — filenames change every deploy, safe to cache forever
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Data feeds — refreshed by the daily build; browsers hold 1h, serve stale while revalidating
+/data/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
