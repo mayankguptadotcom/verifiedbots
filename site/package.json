@@ -2,7 +2,9 @@
   "name": "verifiedbots-site",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "node scripts/copy-data.mjs && astro build",
@@ -14,5 +16,9 @@
     "@fontsource-variable/jetbrains-mono": "^5.1.0",
     "astro": "^5.0.0"
   },
-  "devDependencies": { "vitest": "^2.1.0" }
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.0"
+  }
 }

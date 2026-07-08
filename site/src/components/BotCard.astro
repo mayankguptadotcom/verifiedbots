@@ -1,0 +1,23 @@
+---
+import type { BotArtifact } from '../lib/data';
+import { CATEGORY_LABELS } from '../lib/data';
+import TierBadge from './TierBadge.astro';
+
+interface Props { bot: BotArtifact }
+const { bot } = Astro.props;
+const haystack = `${bot.id} ${bot.name} ${bot.operator.name} ${bot.category} ${CATEGORY_LABELS[bot.category] ?? ''}`.toLowerCase();
+---
+<a class="card bot-card" href={`/bots/${bot.id}`} data-bot={haystack}>
+  <div class="top">
+    <h3 transition:name={`bot-name-${bot.id}`}>{bot.name}</h3>
+    <TierBadge tier={bot.tier} label={bot.tier_label} />
+  </div>
+  <p class="muted small">{bot.operator.name} · {CATEGORY_LABELS[bot.category] ?? bot.category}</p>
+  <p class="desc">{bot.description}</p>
+</a>
+<style>
+  .bot-card { display: block; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  h3 { margin: 0; font-size: 1.25rem; }
+  .desc { margin: 0.6rem 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+</style>
