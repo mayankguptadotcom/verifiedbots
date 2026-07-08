@@ -1,9 +1,77 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BotCard from '../components/BotCard.astro';
 import { BRANDING } from '../../../src/branding';
-import { stats } from '../lib/data';
+import { stats, botsByCategory, CATEGORY_LABELS } from '../lib/data';
 const s = stats();
+const groups = botsByCategory();
 ---
 <Layout title={BRANDING.projectName}>
-  <h1 class="display">{s.bots} good bots, verified.</h1>
+  <section class="hero">
+    <h1 class="display">The good bots,<br />verified.</h1>
+    <p class="lede">
+      The open, categorized directory of legitimate bots — their user agents, published IP ranges,
+      and exactly how to verify them.
+    </p>
+    <div class="stats mono small">
+      <span><strong>{s.bots}</strong> bots</span>
+      <span><strong>{s.verifiable}</strong> verifiable</span>
+      <span><strong>{s.categories}</strong> categories</span>
+      <span><strong>{s.ranges}</strong> IP ranges</span>
+    </div>
+    <input id="bot-filter" type="search" placeholder="Filter bots — name, operator, category… ( / )" autocomplete="off" />
+  </section>
+
+  {[...groups.entries()].map(([key, bots]) => (
+    <section class="category" data-category-section>
+      <h2 id={key}><a href={`/category/${key}`}>{CATEGORY_LABELS[key]}</a> <span class="muted small">{bots.length}</span></h2>
+      <div class="grid">
+        {bots.map((bot) => <BotCard bot={bot} />)}
+      </div>
+    </section>
+  ))}
+  <p id="no-results" class="muted" hidden>No bots match that filter.</p>
+
+  <script>
+    function initFilter() {
+      const input = document.getElementById('bot-filter') as HTMLInputElement | null;
+      if (!input) return;
+      const cards = [...document.querySelectorAll<HTMLElement>('[data-bot]')];
+      const sections = [...document.querySelectorAll<HTMLElement>('[data-category-section]')];
+      const empty = document.getElementById('no-results')!;
+      const apply = () => {
+        const q = input.value.trim().toLowerCase();
+        let shown = 0;
+        for (const card of cards) {
+          const hit = !q || (card.dataset.bot ?? '').includes(q);
+          card.hidden = !hit;
+          if (hit) shown++;
+        }
+        for (const s of sections) s.hidden = ![...s.querySelectorAll<HTMLElement>('[data-bot]')].some((c) => !c.hidden);
+        empty.hidden = shown > 0;
+      };
+      input.addEventListener('input', apply);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+      });
+    }
+    initFilter();
+    document.addEventListener('astro:page-load', initFilter);
+  </script>
+
+  <style>
+    .hero { padding-block: var(--space-5) var(--space-4); max-width: 52rem; }
+    .lede { font-size: 1.35rem; color: var(--muted); line-height: 1.5; margin: var(--space-2) 0 var(--space-3); }
+    .stats { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-3); color: var(--muted); }
+    .stats strong { color: var(--text); font-size: 1.15em; }
+    #bot-filter {
+      width: 100%; max-width: 34rem; font: inherit; color: var(--text);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+    }
+    #bot-filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+    .category { margin-block: var(--space-4); }
+    .category h2 a:hover { color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: var(--space-2); }
+  </style>
 </Layout>
