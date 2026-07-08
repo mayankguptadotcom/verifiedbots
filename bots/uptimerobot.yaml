@@ -1,0 +1,19 @@
+id: uptimerobot
+name: UptimeRobot
+operator: { name: UptimeRobot, url: "https://uptimerobot.com" }
+description: >-
+  Uptime monitoring service that probes customer sites on a schedule from a
+  published list of monitoring IPs.
+docs:
+  - "https://uptimerobot.com/help/locations/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'UptimeRobot/\d'
+  instances:
+    - 'Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://uptimerobot.com/inc/files/ips/IPv4andIPv6.txt"
+    format: text_lines

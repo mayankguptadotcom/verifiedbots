@@ -1,0 +1,1 @@
+{ "verifiable_password_authentication": false, "hooks": ["192.30.252.0/22", "185.199.108.0/22"], "web": ["192.30.252.0/22"] }
