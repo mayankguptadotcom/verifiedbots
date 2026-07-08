@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit",
     "validate": "tsx src/cli/validate.ts",
     "fetch-feeds": "tsx src/cli/fetch-feeds.ts",
+    "verify-wba": "tsx src/cli/verify-wba.ts",
     "build:artifacts": "tsx src/cli/build.ts",
     "build:site": "npm --prefix site run build"
   },
