@@ -1,7 +1,9 @@
 ---
-import { dataset, stats } from '../lib/data';
+import Layout from '../layouts/Layout.astro';
 import { BRANDING } from '../../../src/branding';
+import { stats } from '../lib/data';
 const s = stats();
 ---
-<html lang="en"><head><meta charset="utf-8" /><title>{BRANDING.projectName}</title></head>
-<body><h1>{BRANDING.projectName}</h1><p>{s.bots} bots · generated {dataset.generated_at}</p></body></html>
+<Layout title={BRANDING.projectName}>
+  <h1 class="display">{s.bots} good bots, verified.</h1>
+</Layout>
