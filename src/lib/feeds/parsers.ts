@@ -6,8 +6,15 @@ function fail(detail: string): never {
 
 function asJson(body: string): any {
   try {
-    return JSON.parse(body);
-  } catch {
+    const parsed = JSON.parse(body);
+    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      fail('feed body is not a JSON object');
+    }
+    return parsed;
+  } catch (e) {
+    if (e instanceof Error && e.message.includes('unparseable feed')) {
+      throw e;
+    }
     fail('invalid JSON');
   }
 }
@@ -17,19 +24,35 @@ export function parseFeed(format: FeedFormat, body: string, selector?: string): 
     case 'prefixes': {
       const doc = asJson(body);
       if (!Array.isArray(doc.prefixes)) fail('missing "prefixes" array');
-      return doc.prefixes
-        .map((p: any) => p.ipv4Prefix ?? p.ipv6Prefix)
-        .filter((v: unknown): v is string => typeof v === 'string');
+      const result: string[] = [];
+      for (const p of doc.prefixes) {
+        const prefix = p.ipv4Prefix ?? p.ipv6Prefix;
+        if (typeof prefix !== 'string') {
+          fail('prefix entry missing ipv4Prefix/ipv6Prefix string');
+        }
+        result.push(prefix);
+      }
+      return result;
     }
     case 'stripe_webhooks': {
       const doc = asJson(body);
       if (!Array.isArray(doc.WEBHOOKS)) fail('missing "WEBHOOKS" array');
+      for (const entry of doc.WEBHOOKS) {
+        if (typeof entry !== 'string') {
+          fail('non-string entry in feed array');
+        }
+      }
       return doc.WEBHOOKS;
     }
     case 'github_meta': {
       const doc = asJson(body);
       if (!selector) fail('github_meta requires a selector');
       if (!Array.isArray(doc[selector])) fail(`missing "${selector}" array`);
+      for (const entry of doc[selector]) {
+        if (typeof entry !== 'string') {
+          fail('non-string entry in feed array');
+        }
+      }
       return doc[selector];
     }
     case 'text_lines':

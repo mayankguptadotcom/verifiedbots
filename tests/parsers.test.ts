@@ -37,4 +37,14 @@ describe('parseFeed', () => {
     expect(() => parseFeed('prefixes', '{"nope": []}')).toThrow(/unparseable feed/);
     expect(() => parseFeed('github_meta', fx('github_meta.json'), 'missing_key')).toThrow(/unparseable feed/);
   });
+  it('throws on non-object JSON bodies', () => {
+    expect(() => parseFeed('prefixes', 'null')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('stripe_webhooks', '42')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('github_meta', '[]', 'hooks')).toThrow(/unparseable feed/);
+  });
+  it('throws on non-string elements instead of passing garbage through', () => {
+    expect(() => parseFeed('stripe_webhooks', '{"WEBHOOKS":[1,null,"3.3.3.3"]}')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('github_meta', '{"hooks":["1.2.3.0/24",{}]}', 'hooks')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('prefixes', '{"prefixes":[{"ipv4Prefix":"1.2.3.0/24"},{"other":1}]}')).toThrow(/unparseable feed/);
+  });
 });
