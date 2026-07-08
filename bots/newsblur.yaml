@@ -1,0 +1,17 @@
+id: newsblur
+name: NewsBlur Feed Fetcher
+operator: { name: NewsBlur, url: "https://www.newsblur.com" }
+description: >-
+  NewsBlur's open-source feed fetcher, which polls RSS/Atom feeds on behalf
+  of subscribed users. Its user agent embeds the live subscriber count and
+  the feed's permalink; NewsBlur publishes no fixed IP range for it.
+docs:
+  - "https://github.com/samuelclay/NewsBlur/blob/main/apps/rss_feeds/models.py"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'NewsBlur Feed Fetcher'
+  instances:
+    - 'NewsBlur Feed Fetcher - 1 subscriber - http://www.newsblur.com/site/0000000/webpage (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15)'
+behavior: { respects_robots_txt: false }
+verification: []
