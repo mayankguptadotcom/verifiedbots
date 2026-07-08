@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CopyBlock from '../components/CopyBlock.astro';
+import { BRANDING } from '../../../src/branding';
 import { dataset } from '../lib/data';
 const endpoints = [
   { path: '/data/all.json', desc: 'The full catalogue: every bot with identity, UA patterns, verification recipes, tier, and resolved IP ranges.' },
@@ -17,7 +18,7 @@ const endpoints = [
     <p class="lede">Everything on this site is also machine-readable — static JSON and plain-text files,
     rebuilt daily from first-party operator feeds, no auth, no rate limits. CC-BY-4.0: use it anywhere, credit this project.</p>
   </header>
-  <CopyBlock title="Try it" command="curl -s https://<this-domain>/data/all.json | head -40" />
+  <CopyBlock title="Try it" command={`curl -s https://${BRANDING.domain}/data/all.json | head -40`} />
   <div class="table-scroll">
     <table class="endpoints">
       <thead><tr><th scope="col">Path</th><th scope="col">What it is</th></tr></thead>

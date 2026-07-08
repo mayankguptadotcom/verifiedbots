@@ -38,6 +38,8 @@ artifacts under `/data/`.
 | Build output directory | `site/dist` |
 | Environment variable | `NODE_VERSION=22` |
 
+Custom domain: verifiedbots.dev (set in the Pages dashboard → Custom domains).
+
 The daily `build` workflow commits refreshed `dist/` data to main; the Pages
 git integration rebuilds the site on that push, so the site republishes daily
 without extra config.

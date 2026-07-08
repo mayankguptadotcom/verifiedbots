@@ -7,6 +7,7 @@ import '../styles/global.css';
 interface Props { title: string; description?: string }
 const { title, description = 'The open, categorized directory of verified good bots — user agents, IP ranges, and how to verify them.' } = Astro.props;
 const path = Astro.url.pathname;
+const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === BRANDING.projectName ? title : `${title} — ${BRANDING.projectName}`;
 const nav = [
   { href: '/', label: 'Directory' },
@@ -20,7 +21,9 @@ const nav = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <title>{fullTitle}</title>
@@ -48,7 +51,7 @@ const nav = [
     </main>
     <footer class="site-footer">
       <div class="container small muted">
-        <p><strong>{BRANDING.projectName}</strong> {BRANDING.byline}. Data generated {dataset.generated_at.slice(0, 10)}. <a href="https://github.com/mayankguptadotcom/verifiedbots">GitHub</a></p>
+        <p><strong>{BRANDING.projectName}</strong> {BRANDING.byline}. Data generated {dataset.generated_at.slice(0, 10)}. <a href={BRANDING.repoUrl}>GitHub</a></p>
         <p>{BRANDING.nonAffiliation}</p>
       </div>
     </footer>

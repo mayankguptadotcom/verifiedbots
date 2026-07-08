@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CopyBlock from '../components/CopyBlock.astro';
-const repo = 'https://github.com/mayankguptadotcom/verifiedbots';
+import { BRANDING } from '../../../src/branding';
+const repo = BRANDING.repoUrl;
 ---
 <Layout title="Submit a bot">
   <header class="head">
