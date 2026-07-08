@@ -1,0 +1,18 @@
+id: redditbot
+name: Redditbot
+operator: { name: Reddit, url: "https://www.reddit.com" }
+description: >-
+  Reddit's on-demand fetcher that retrieves a shared URL's metadata to build
+  the link preview shown on a post. Reddit's robots.txt now disallows all
+  crawling and documents no user agent, IP list, or verification method for
+  this fetcher.
+docs:
+  - "https://www.reddit.com/robots.txt"
+category: social-preview
+user_agents:
+  patterns:
+    - 'redditbot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; redditbot/1.0; +http://www.reddit.com/feedback)'
+behavior: { respects_robots_txt: true }
+verification: []

@@ -1,0 +1,18 @@
+id: slackbot
+name: Slackbot (Link Expanding)
+operator: { name: Slack, url: "https://slack.com" }
+description: >-
+  Slack's crawler that expands links posted in channels into rich previews by
+  reading oEmbed, Twitter Card, and Open Graph metadata. Slack documents the
+  User-Agent strings but publishes no IP ranges or other verification method.
+docs:
+  - "https://api.slack.com/robots"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Slackbot'
+  instances:
+    - 'Slackbot-LinkExpanding 1.0 (+https://api.slack.com/robots)'
+    - 'Slackbot 1.0 (+https://api.slack.com/robots)'
+behavior: { respects_robots_txt: false }
+verification: []

@@ -1,0 +1,21 @@
+id: pinterestbot
+name: Pinterestbot
+operator: { name: Pinterest, url: "https://www.pinterest.com" }
+description: >-
+  Pinterest's crawler, used both for general web indexing and for validating
+  Pin metadata/broken links. Pinterest documents a reverse-DNS verification
+  method rather than a fixed IP list, since only its US-based traffic uses a
+  stable range.
+docs:
+  - "https://help.pinterest.com/en/business/article/pinterestbot"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Pinterest(bot)?/\d'
+  instances:
+    - 'Pinterest/0.2 (+https://www.pinterest.com/bot.html)'
+    - 'Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)'
+behavior: { respects_robots_txt: true, robots_token: Pinterestbot }
+verification:
+  - type: rdns
+    masks: ["*.pinterest.com", "*.pinterestcrawler.com"]

@@ -1,0 +1,25 @@
+id: iframely
+name: Iframely
+operator: { name: Iframely, url: "https://iframely.com" }
+description: >-
+  Iframely's fetcher, used to generate embeds and link previews of shared
+  URLs for its customers' apps and sites. Iframely publishes live IPv4/IPv6
+  address lists and documents reverse-DNS resolution to its own domain.
+docs:
+  - "https://iframely.com/docs/about"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Iframely/[\d.]+'
+  instances:
+    - 'Iframely/1.3.1 (+https://iframely.com/docs/about) Atlassian'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://iframely.com/ips-v4"
+    format: text_lines
+  - type: cidr_feed
+    url: "https://iframely.com/ips-v6"
+    format: text_lines
+  - type: rdns
+    masks: ["*.iframely.com"]

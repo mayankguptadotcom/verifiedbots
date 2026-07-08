@@ -1,0 +1,18 @@
+id: telegrambot
+name: TelegramBot (link preview)
+operator: { name: Telegram, url: "https://telegram.org" }
+description: >-
+  Telegram's fetcher for generating link previews in chats. Telegram's docs
+  document static CIDR ranges only for inbound webhook delivery to bot
+  servers, not for this outbound preview fetcher, so no IP verification is
+  attached here.
+docs:
+  - "https://core.telegram.org/bots/webhooks"
+category: social-preview
+user_agents:
+  patterns:
+    - 'TelegramBot'
+  instances:
+    - 'TelegramBot (like TwitterBot)'
+behavior: { respects_robots_txt: false }
+verification: []

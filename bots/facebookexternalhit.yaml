@@ -1,0 +1,20 @@
+id: facebookexternalhit
+name: Facebook External Hit
+operator: { name: Meta, url: "https://www.meta.com" }
+description: >-
+  Meta's crawler that fetches shared links from Facebook, Instagram, and
+  Messenger to generate rich link previews. Verified by ASN lookup (AS32934);
+  Meta's own docs describe IP-based allowlisting but publish no IP feed.
+docs:
+  - "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+category: social-preview
+user_agents:
+  patterns:
+    - 'facebookexternalhit/\d'
+  instances:
+    - 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
+    - 'facebookexternalhit/1.1'
+behavior: { respects_robots_txt: true, robots_token: facebookexternalhit }
+verification:
+  - type: asn
+    numbers: [32934]
