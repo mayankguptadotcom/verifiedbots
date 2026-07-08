@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BotCard from '../../components/BotCard.astro';
+import { botsByCategory, CATEGORY_LABELS } from '../../lib/data';
+
+export function getStaticPaths() {
+  return [...botsByCategory().entries()].map(([category, bots]) => ({ params: { category }, props: { bots } }));
+}
+const { category } = Astro.params;
+const { bots } = Astro.props;
+const label = CATEGORY_LABELS[category!] ?? category;
+---
+<Layout title={label}>
+  <header class="cat-head">
+    <p class="small muted"><a href="/">Directory</a> / {label}</p>
+    <h1>{label} <span class="muted">{bots.length}</span></h1>
+  </header>
+  <div class="grid">
+    {bots.map((bot) => <BotCard bot={bot} />)}
+  </div>
+  <style>
+    .cat-head { padding-block: var(--space-4) var(--space-2); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: var(--space-2); }
+  </style>
+</Layout>

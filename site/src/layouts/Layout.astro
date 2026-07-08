@@ -1,0 +1,74 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { BRANDING } from '../../../src/branding';
+import { dataset } from '../lib/data';
+import '../styles/global.css';
+
+interface Props { title: string; description?: string }
+const { title, description = 'The open, categorized directory of verified good bots — user agents, IP ranges, and how to verify them.' } = Astro.props;
+const path = Astro.url.pathname;
+const fullTitle = title === BRANDING.projectName ? title : `${title} — ${BRANDING.projectName}`;
+const nav = [
+  { href: '/', label: 'Directory' },
+  { href: '/practices', label: 'Practices' },
+  { href: '/data-docs', label: 'Data' },
+  { href: '/submit', label: 'Submit a bot' },
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <title>{fullTitle}</title>
+    <script is:inline>
+      const saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme =
+        saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script>
+    <ClientRouter />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="/" class="wordmark">{BRANDING.projectName}</a>
+        <nav>
+          {nav.map((n) => (
+            <a href={n.href} aria-current={path === n.href || (n.href !== '/' && path.startsWith(n.href)) ? 'page' : undefined}>{n.label}</a>
+          ))}
+          <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container small muted">
+        <p><strong>{BRANDING.projectName}</strong> {BRANDING.byline}. Data generated {dataset.generated_at.slice(0, 10)}. <a href="https://github.com/mayankguptadotcom/verifiedbots">GitHub</a></p>
+        <p>{BRANDING.nonAffiliation}</p>
+      </div>
+    </footer>
+    <script>
+      // Delegated, ClientRouter-safe: attach once per full load, survives view transitions.
+      document.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('#theme-toggle');
+        if (!btn) return;
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+      // Re-apply theme after each view transition. ClientRouter deduplicates identical
+      // inline scripts, so the head is:inline script above does NOT re-run on swaps —
+      // this handler is the actual mechanism that keeps the theme across navigations.
+      document.addEventListener('astro:after-swap', () => {
+        const saved = localStorage.getItem('theme');
+        document.documentElement.dataset.theme =
+          saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>

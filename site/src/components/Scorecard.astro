@@ -1,0 +1,27 @@
+---
+import type { PracticeCheck } from '../lib/scorecard';
+interface Props { checks: PracticeCheck[] }
+const { checks } = Astro.props;
+const glyph = { pass: '✓', gap: '✗', na: '—', info: '○' } as const;
+---
+<ul class="scorecard">
+  {checks.map((c) => (
+    <li class={c.status}>
+      <span class="glyph" aria-hidden="true">{glyph[c.status]}</span>
+      <div>
+        <strong>{c.label}</strong>
+        <p class="small muted">{c.detail}</p>
+      </div>
+    </li>
+  ))}
+</ul>
+<style>
+  .scorecard { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); }
+  li { display: flex; gap: 0.8rem; align-items: baseline; padding: 0.65rem 0.2rem; border-bottom: 1px solid var(--border); }
+  li:last-child { border-bottom: none; }
+  .glyph { font-weight: 700; width: 1.2em; text-align: center; }
+  .pass .glyph { color: var(--tier1); }
+  .gap .glyph { color: var(--tier2); }
+  .na .glyph, .info .glyph { color: var(--muted); }
+  p { margin: 0.1rem 0 0; }
+</style>

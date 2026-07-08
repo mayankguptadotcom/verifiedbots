@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+const practices = [
+  { n: 1, title: 'Identify honestly', body: 'Send a stable User-Agent token: product name, version, and an info URL. Example: ExampleBot/2.1 (+https://example.com/bot).', field: 'user_agents' },
+  { n: 2, title: 'Be verifiable', body: 'Publish machine-readable IP ranges at a stable HTTPS URL (the Google/OpenAI prefixes JSON shape is the de-facto standard), support forward/reverse DNS on a domain you control, or implement Web Bot Auth (IETF HTTP Message Signatures) and host a key directory at /.well-known/http-message-signatures-directory. Implement with Cloudflare\'s open-source libraries (github.com/cloudflare/web-bot-auth); self-test free at fingerprint.com/web-bot-auth/test/.', field: 'verification' },
+  { n: 3, title: 'Respect robots.txt', body: 'Honor robots.txt and document your token. Service traffic that is not a crawler (webhooks, monitors the site owner configured) is exempt by nature.', field: 'behavior.respects_robots_txt' },
+  { n: 4, title: 'Behave', body: 'Sane request rates. Back off on 429 and 503. Honor cache headers.', field: 'behavior' },
+  { n: 5, title: 'Be reachable', body: 'Publish operator identity, documentation, and a contact channel for site owners.', field: 'operator, docs' },
+];
+---
+<Layout title="Good Bot Practices">
+  <header class="head">
+    <h1 class="display">Good Bot<br />Practices</h1>
+    <p class="lede">The standard this directory measures every bot against. Each practice maps to a field in the
+    bot schema, so every directory entry doubles as a conformance scorecard.</p>
+  </header>
+  <ol class="practices">
+    {practices.map((p) => (
+      <li class="card">
+        <span class="n mono">{String(p.n).padStart(2, '0')}</span>
+        <div>
+          <h2>{p.title}</h2>
+          <p>{p.body}</p>
+          <p class="small muted mono">schema: {p.field}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+  <p>Ready to be listed? <a href="/submit">Submit your bot →</a></p>
+  <style>
+    .head { padding-block: var(--space-5) var(--space-3); max-width: 52rem; }
+    .lede { font-size: 1.35rem; color: var(--muted); line-height: 1.5; }
+    .practices { list-style: none; margin: 0 0 var(--space-4); padding: 0; display: grid; gap: var(--space-2); }
+    .practices li { display: flex; gap: var(--space-3); }
+    .n { color: var(--accent); font-size: 1.5rem; font-weight: 700; }
+    .practices h2 { font-size: 1.35rem; margin-bottom: 0.4rem; }
+    .practices p { margin: 0 0 0.4rem; }
+  </style>
+</Layout>
