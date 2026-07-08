@@ -1,25 +1,119 @@
 name: Submit a bot
-description: Propose a bot for the directory (non-technical route — maintainers convert to a PR)
+description: Propose a bot for the directory. Accepted submissions are converted to a reviewed pull request.
+title: "[Bot submission]: "
 labels: [bot-submission]
 body:
-  - type: input
-    id: name
-    attributes: { label: Bot name }
-    validations: { required: true }
-  - type: input
-    id: operator
-    attributes: { label: Operator name and URL }
-    validations: { required: true }
-  - type: textarea
-    id: uas
-    attributes: { label: User-Agent strings (one per line, as sent on the wire) }
-    validations: { required: true }
-  - type: textarea
-    id: verification
+  - type: markdown
     attributes:
-      label: Verification
-      description: IP range feed URL, rDNS suffixes, ASN, or Web Bot Auth key directory URL
+      value: |
+        Thanks for submitting! A few notes before you start:
+        - Every field below maps directly to the directory's bot schema, so complete answers get published faster.
+        - Your bot's **verification tier** depends on what you can provide: a machine-readable IP feed or Web Bot Auth key directory → *Fully verifiable*; documented rDNS/ASN/static ranges → *Verifiable*; nothing → *Listed only*.
+        - Read the [Good Bot Practices](https://verifiedbots.dev/practices) first — the directory scores every bot against them.
   - type: input
-    id: docs
-    attributes: { label: Official documentation URL }
+    id: bot-name
+    attributes:
+      label: Bot name
+      description: The human-readable name, e.g. "ExampleBot"
     validations: { required: true }
+  - type: input
+    id: operator-name
+    attributes:
+      label: Operator name
+      description: The company or person that runs the bot
+    validations: { required: true }
+  - type: input
+    id: operator-url
+    attributes:
+      label: Operator URL
+      description: https:// homepage of the operator
+      placeholder: "https://example.com"
+    validations: { required: true }
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Search engine crawler
+        - AI crawler (training data)
+        - AI assistant / user-triggered fetcher
+        - Social preview / link unfurler
+        - Monitoring / uptime
+        - SEO tool
+        - Feed fetcher
+        - Archiver
+        - Security scanner
+        - Webhook / service sender
+    validations: { required: true }
+  - type: textarea
+    id: description
+    attributes:
+      label: What does the bot do?
+      description: 1–3 sentences. What it fetches, why, and for whom.
+    validations: { required: true }
+  - type: textarea
+    id: ua-instances
+    attributes:
+      label: User-Agent strings
+      description: One per line, exactly as sent on the wire (copy from your server logs or bot config).
+      render: text
+    validations: { required: true }
+  - type: dropdown
+    id: robots
+    attributes:
+      label: Does the bot respect robots.txt?
+      options:
+        - "Yes"
+        - "No"
+        - Not applicable — service traffic the site owner configures (webhooks, monitors)
+    validations: { required: true }
+  - type: input
+    id: robots-token
+    attributes:
+      label: robots.txt token
+      description: The User-agent token site owners can use to target your bot (if applicable)
+      placeholder: ExampleBot
+  - type: checkboxes
+    id: verification-methods
+    attributes:
+      label: Verification methods you provide
+      description: Check all that apply — details go in the next field.
+      options:
+        - label: Machine-readable IP range feed at a stable HTTPS URL (JSON or plain text)
+        - label: Web Bot Auth key directory at /.well-known/http-message-signatures-directory
+        - label: Forward/reverse DNS on a domain we control
+        - label: Documented static IP ranges or ASN
+        - label: None yet (the bot will be listed as "Listed only" / Tier 3)
+  - type: textarea
+    id: verification-details
+    attributes:
+      label: Verification details
+      description: |
+        The concrete data for each method you checked:
+        - IP feed: the exact URL (e.g. https://example.com/bot-ips.json)
+        - Web Bot Auth: the key directory URL
+        - rDNS: the hostname suffixes (e.g. *.crawl.example.com)
+        - Static ranges / ASN: the CIDRs or AS number, plus where they're documented
+      render: text
+  - type: input
+    id: docs-url
+    attributes:
+      label: Official documentation URL
+      description: A public https:// page describing the bot and how to verify it
+    validations: { required: true }
+  - type: input
+    id: contact
+    attributes:
+      label: Operator contact
+      description: Email or URL site owners can use to reach you about the bot's behavior (recommended)
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Attestation
+      options:
+        - label: I am the bot's operator or authorized to represent them
+          required: true
+        - label: The information above is accurate to the best of my knowledge
+          required: true
+        - label: I have read the Good Bot Practices and understand the directory assigns a verification tier based on the evidence provided
+          required: true
