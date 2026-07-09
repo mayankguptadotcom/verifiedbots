@@ -1,0 +1,37 @@
+{
+  "id": "feedbin",
+  "name": "Feedbin",
+  "operator": {
+    "name": "Feedbin",
+    "url": "https://feedbin.com"
+  },
+  "description": "Feedbin's feed fetcher, which retrieves RSS/Atom feeds that users have subscribed to. Its user agent includes the internal feed id and current subscriber count, and Feedbin documents forward-confirmed reverse DNS in *.bot.feedbin.com as the way to verify its requests.",
+  "docs": [
+    "https://feedbin.com/help/verifying-feed-requests/"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "Feedbin feed-id:\\d+"
+    ],
+    "instances": [
+      "Feedbin feed-id:2005098 - 2 subscribers",
+      "Feedbin feed-id:1234 - 21 subscribers"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.bot.feedbin.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-07-09T03:01:47.690Z",
+  "resolved_cidrs": []
+}
