@@ -1,0 +1,20 @@
+id: google-cloudvertexbot
+name: Google-CloudVertexBot
+operator: { name: Google, url: "https://cloud.google.com" }
+description: >-
+  Google Cloud crawler that fetches sites on the site owners' request when
+  building Vertex AI Agents. Crawling preferences addressed to its user agent
+  have no effect on Google Search or other Google products.
+docs:
+  - "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'Google-CloudVertexBot'
+  instances:
+    - 'Google-CloudVertexBot'
+behavior: { respects_robots_txt: true, robots_token: Google-CloudVertexBot }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+    format: prefixes

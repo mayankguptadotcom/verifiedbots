@@ -1,0 +1,29 @@
+id: grafana-synthetic-monitoring
+name: Grafana Synthetic Monitoring
+operator: { name: Grafana Labs, url: "https://grafana.com" }
+description: >-
+  Grafana Cloud Synthetic Monitoring public probes, which run
+  customer-configured checks (HTTP, browser, and protocol) from Grafana-run
+  locations. HTTP checks send a documented synthetic-monitoring-agent
+  User-Agent by default (customers can override it). Grafana publishes
+  probe source IPs as a machine-readable feed at
+  allowlists.grafana.com/synthetics.
+docs:
+  - "https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/http/"
+  - "https://grafana.com/docs/grafana-cloud/security-and-account-management/allow-list/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'synthetic-monitoring-agent/v[\d.]+'
+  instances:
+    - 'synthetic-monitoring-agent/v0.41.3 (linux amd64; 1522bdcd162c24088daf19d0aa6667773e69825a; 2025-09-02T13:45:18Z; +https://github.com/grafana/synthetic-monitoring-agent)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://allowlists.grafana.com/synthetics"
+    format: github_meta
+    selector: all.ipv4
+  - type: cidr_feed
+    url: "https://allowlists.grafana.com/synthetics"
+    format: github_meta
+    selector: all.ipv6

@@ -1,0 +1,23 @@
+id: googleother
+name: GoogleOther
+operator: { name: Google, url: "https://www.google.com" }
+description: >-
+  Google's generic crawler family (GoogleOther, GoogleOther-Image,
+  GoogleOther-Video), used by various Google product teams for fetching
+  publicly accessible content. Robots.txt rules addressed to it do not
+  affect Google Search.
+docs:
+  - "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+category: search-engine
+user_agents:
+  patterns:
+    - 'GoogleOther'
+  instances:
+    - 'GoogleOther'
+    - 'GoogleOther-Image/1.0'
+    - 'GoogleOther-Video/1.0'
+behavior: { respects_robots_txt: true, robots_token: GoogleOther }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+    format: prefixes

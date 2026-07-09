@@ -1,5 +1,12 @@
 [
   {
+    "id": "adidxbot",
+    "category": "search-engine",
+    "patterns": [
+      "adidxbot/\\d"
+    ]
+  },
+  {
     "id": "adyen-webhooks",
     "category": "webhook",
     "patterns": [
@@ -28,10 +35,24 @@
     ]
   },
   {
+    "id": "amazon-adbot",
+    "category": "search-engine",
+    "patterns": [
+      "AmazonAdBot/\\d"
+    ]
+  },
+  {
     "id": "amazonbot",
     "category": "ai-crawler",
     "patterns": [
       "Amazonbot/\\d"
+    ]
+  },
+  {
+    "id": "apple-podcasts",
+    "category": "feed-fetcher",
+    "patterns": [
+      "^i[Tt][Mm][Ss]$"
     ]
   },
   {
@@ -67,6 +88,13 @@
     "category": "search-engine",
     "patterns": [
       "bingbot/\\d"
+    ]
+  },
+  {
+    "id": "bingpreview",
+    "category": "search-engine",
+    "patterns": [
+      "BingPreview/\\d"
     ]
   },
   {
@@ -133,11 +161,26 @@
     ]
   },
   {
+    "id": "cloudflare-healthchecks",
+    "category": "monitoring",
+    "patterns": [
+      "Cloudflare-Healthchecks/[\\d.]+"
+    ]
+  },
+  {
     "id": "coccocbot",
     "category": "search-engine",
     "patterns": [
       "coccocbot-web/\\d",
       "coccocbot-image/\\d"
+    ]
+  },
+  {
+    "id": "datadog-synthetics",
+    "category": "monitoring",
+    "patterns": [
+      "Datadog/Synthetics",
+      "DatadogSynthetics"
     ]
   },
   {
@@ -190,6 +233,13 @@
     ]
   },
   {
+    "id": "feedbin",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Feedbin feed-id:\\d+"
+    ]
+  },
+  {
     "id": "feedly",
     "category": "feed-fetcher",
     "patterns": [
@@ -218,6 +268,13 @@
     ]
   },
   {
+    "id": "google-cloudvertexbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "Google-CloudVertexBot"
+    ]
+  },
+  {
     "id": "google-special-crawlers",
     "category": "search-engine",
     "patterns": [
@@ -243,10 +300,24 @@
     ]
   },
   {
+    "id": "googleother",
+    "category": "search-engine",
+    "patterns": [
+      "GoogleOther"
+    ]
+  },
+  {
     "id": "gptbot",
     "category": "ai-crawler",
     "patterns": [
       "GPTBot/\\d"
+    ]
+  },
+  {
+    "id": "grafana-synthetic-monitoring",
+    "category": "monitoring",
+    "patterns": [
+      "synthetic-monitoring-agent/v[\\d.]+"
     ]
   },
   {
@@ -268,6 +339,14 @@
     "category": "feed-fetcher",
     "patterns": [
       "Inoreader/[\\d.]+"
+    ]
+  },
+  {
+    "id": "internet-archive",
+    "category": "archiver",
+    "patterns": [
+      "archive\\.org_bot",
+      "ia_archiver"
     ]
   },
   {
@@ -355,6 +434,13 @@
     ]
   },
   {
+    "id": "newrelic-synthetics",
+    "category": "monitoring",
+    "patterns": [
+      "NewRelicbot/[\\d.]+"
+    ]
+  },
+  {
     "id": "newsblur",
     "category": "feed-fetcher",
     "patterns": [
@@ -425,6 +511,13 @@
     ]
   },
   {
+    "id": "qualys-ssllabs",
+    "category": "security",
+    "patterns": [
+      "SSL Labs \\(https://www\\.ssllabs\\.com/about/assessment\\.html\\)"
+    ]
+  },
+  {
     "id": "qwantbot",
     "category": "search-engine",
     "patterns": [
@@ -444,6 +537,13 @@
     "category": "seo",
     "patterns": [
       "rogerbot/\\d"
+    ]
+  },
+  {
+    "id": "route53-healthchecks",
+    "category": "monitoring",
+    "patterns": [
+      "Amazon Route 53 Health Check Service"
     ]
   },
   {
@@ -486,6 +586,13 @@
     "category": "social-preview",
     "patterns": [
       "Slackbot"
+    ]
+  },
+  {
+    "id": "snapchat",
+    "category": "social-preview",
+    "patterns": [
+      "Snap URL Preview Service"
     ]
   },
   {
@@ -535,6 +642,13 @@
     "category": "social-preview",
     "patterns": [
       "TelegramBot"
+    ]
+  },
+  {
+    "id": "twilio-webhooks",
+    "category": "webhook",
+    "patterns": [
+      "TwilioProxy/[\\d.]+"
     ]
   },
   {

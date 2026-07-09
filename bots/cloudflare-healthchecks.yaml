@@ -1,0 +1,21 @@
+id: cloudflare-healthchecks
+name: Cloudflare Health Checks
+operator: { name: Cloudflare, url: "https://www.cloudflare.com" }
+description: >-
+  Cloudflare's Health Checks probes, which monitor customer origin servers
+  from Cloudflare data centers in regions the customer selects. Cloudflare
+  documents a fixed User-Agent format embedding the first 16 characters of
+  the health check ID, and recommends matching on it; its health-checks
+  docs do not tie probe traffic to the published Cloudflare IP lists, so no
+  CIDR recipe is attached.
+docs:
+  - "https://developers.cloudflare.com/health-checks/"
+  - "https://developers.cloudflare.com/health-checks/how-to/zone-lockdown/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Cloudflare-Healthchecks/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; Cloudflare-Healthchecks/1.0; +https://www.cloudflare.com/; healthcheck-id: AAAAAAAAAAAAAAAA)'
+behavior: { respects_robots_txt: false }
+verification: []

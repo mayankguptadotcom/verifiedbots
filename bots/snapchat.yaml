@@ -1,0 +1,18 @@
+id: snapchat
+name: Snap URL Preview Service
+operator: { name: Snap Inc., url: "https://www.snap.com" }
+description: >-
+  Snapchat's link-preview fetcher, which scans the HTML of URLs shared in
+  Snapchat chats to build preview cards from Open Graph or Twitter Card
+  tags. Snap documents that responses are cached for 30 minutes to reduce
+  traffic; no IP ranges or robots.txt behavior are documented.
+docs:
+  - "https://developers.snap.com/robots"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Snap URL Preview Service'
+  instances:
+    - 'Snap URL Preview Service; bot; snapchat; https://developers.snap.com/robots'
+behavior: { respects_robots_txt: false }
+verification: []

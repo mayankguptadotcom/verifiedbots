@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T21:48:57.395Z",
-  "count": 6,
+  "generated_at": "2026-07-09T03:01:47.690Z",
+  "count": 7,
   "bots": [
     {
       "id": "adyen-webhooks",
@@ -300,6 +300,36 @@
         "149.154.160.0/20",
         "91.108.4.0/22"
       ]
+    },
+    {
+      "id": "twilio-webhooks",
+      "name": "Twilio Webhooks",
+      "operator": {
+        "name": "Twilio",
+        "url": "https://www.twilio.com"
+      },
+      "description": "Twilio's webhook delivery service, which POSTs event callbacks (incoming messages and calls, status updates) to customer-configured endpoints. Not a crawler. Twilio states there is no fixed range of source IPs — requests come from a dynamic pool — so recipients are told to validate the X-Twilio-Signature request signature instead.",
+      "docs": [
+        "https://www.twilio.com/docs/usage/webhooks/webhooks-faq",
+        "https://www.twilio.com/docs/voice/whatsapp-business-calling"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "TwilioProxy/[\\d.]+"
+        ],
+        "instances": [
+          "TwilioProxy/1.1"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
     }
   ]
 }

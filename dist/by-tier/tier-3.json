@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T21:48:57.395Z",
-  "count": 24,
+  "generated_at": "2026-07-09T03:01:47.690Z",
+  "count": 30,
   "bots": [
     {
       "id": "ai2bot",
@@ -154,6 +154,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cloudflare-healthchecks",
+      "name": "Cloudflare Health Checks",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's Health Checks probes, which monitor customer origin servers from Cloudflare data centers in regions the customer selects. Cloudflare documents a fixed User-Agent format embedding the first 16 characters of the health check ID, and recommends matching on it; its health-checks docs do not tie probe traffic to the published Cloudflare IP lists, so no CIDR recipe is attached.",
+      "docs": [
+        "https://developers.cloudflare.com/health-checks/",
+        "https://developers.cloudflare.com/health-checks/how-to/zone-lockdown/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-Healthchecks/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cloudflare-Healthchecks/1.0; +https://www.cloudflare.com/; healthcheck-id: AAAAAAAAAAAAAAAA)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "diffbot",
       "name": "Diffbot",
       "operator": {
@@ -303,6 +333,40 @@
       "resolved_cidrs": []
     },
     {
+      "id": "internet-archive",
+      "name": "archive.org_bot",
+      "operator": {
+        "name": "Internet Archive",
+        "url": "https://archive.org"
+      },
+      "description": "The Internet Archive's Heritrix-based crawler used for its wide crawl of the web, feeding the Wayback Machine. The Archive says it crawls slowly to avoid disrupting sites and publishes no IP ranges. Its help pages note that robots exclusions may prevent archiving, but the operator does not document a commitment to obey robots.txt across its crawls.",
+      "docs": [
+        "https://archive.org/details/archive.org_bot",
+        "https://help.archive.org/help/wayback-machine-general-information/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "archive\\.org_bot",
+          "ia_archiver"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; archive.org_bot +http://archive.org/details/archive.org_bot)",
+          "Mozilla/5.0 (compatible; archive.org_bot +http://www.archive.org/details/archive.org_bot)",
+          "Mozilla/5.0 (compatible; special_archiver/3.1.1 +http://www.archive.org/details/archive.org_bot)",
+          "ia_archiver-web.archive.org"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "linkedinbot",
       "name": "LinkedInBot",
       "operator": {
@@ -389,6 +453,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "newrelic-synthetics",
+      "name": "New Relic Synthetics",
+      "operator": {
+        "name": "New Relic",
+        "url": "https://newrelic.com"
+      },
+      "description": "New Relic's synthetic-monitoring minions, which probe customer-configured URLs from public minion IPs. New Relic documents an X-Abuse-Info request header identifying the monitor and account; logs also record a NewRelicbot User-Agent. The published IP list is a JSON object keyed by location, which this directory's feed formats cannot consume, so no CIDR recipe is attached.",
+      "docs": [
+        "https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/synthetic-public-minion-ips/",
+        "https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/identify-synthetic-monitoring-requests-your-app/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "NewRelicbot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; NewRelicbot/2.1; +http://www.newrelic.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
     },
     {
@@ -539,6 +633,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "route53-healthchecks",
+      "name": "Amazon Route 53 Health Checks",
+      "operator": {
+        "name": "Amazon Web Services",
+        "url": "https://aws.amazon.com"
+      },
+      "description": "Amazon Route 53 health checkers, which probe customer-configured endpoints from AWS data centers worldwide to drive DNS failover. AWS publishes checker source ranges only inside the general ip-ranges.amazonaws.com/ip-ranges.json feed (entries tagged ROUTE53_HEALTHCHECKS), a shape this directory's feed formats cannot consume, so no CIDR recipe is attached.",
+      "docs": [
+        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html",
+        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-router-firewall-rules.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Amazon Route 53 Health Check Service"
+        ],
+        "instances": [
+          "Amazon Route 53 Health Check Service; ref:47d9bc51-39d6-4cd9-9a7f-4c981c5db165; report http://amzn.to/1vsZADi"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "semrushbot",
       "name": "SemrushBot",
       "operator": {
@@ -629,6 +753,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "snapchat",
+      "name": "Snap URL Preview Service",
+      "operator": {
+        "name": "Snap Inc.",
+        "url": "https://www.snap.com"
+      },
+      "description": "Snapchat's link-preview fetcher, which scans the HTML of URLs shared in Snapchat chats to build preview cards from Open Graph or Twitter Card tags. Snap documents that responses are cached for 30 minutes to reduce traffic; no IP ranges or robots.txt behavior are documented.",
+      "docs": [
+        "https://developers.snap.com/robots"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Snap URL Preview Service"
+        ],
+        "instances": [
+          "Snap URL Preview Service; bot; snapchat; https://developers.snap.com/robots"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "stractbot",
       "name": "StractBot",
       "operator": {
@@ -685,6 +838,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "twilio-webhooks",
+      "name": "Twilio Webhooks",
+      "operator": {
+        "name": "Twilio",
+        "url": "https://www.twilio.com"
+      },
+      "description": "Twilio's webhook delivery service, which POSTs event callbacks (incoming messages and calls, status updates) to customer-configured endpoints. Not a crawler. Twilio states there is no fixed range of source IPs — requests come from a dynamic pool — so recipients are told to validate the X-Twilio-Signature request signature instead.",
+      "docs": [
+        "https://www.twilio.com/docs/usage/webhooks/webhooks-faq",
+        "https://www.twilio.com/docs/voice/whatsapp-business-calling"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "TwilioProxy/[\\d.]+"
+        ],
+        "instances": [
+          "TwilioProxy/1.1"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
     },
     {

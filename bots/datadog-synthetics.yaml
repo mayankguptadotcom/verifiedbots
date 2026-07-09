@@ -1,0 +1,29 @@
+id: datadog-synthetics
+name: Datadog Synthetics
+operator: { name: Datadog, url: "https://www.datadoghq.com" }
+description: >-
+  Datadog Synthetic Monitoring probes that run customer-configured API and
+  browser tests against endpoints. API tests send a "Datadog/Synthetics"
+  User-Agent; browser tests append "DatadogSynthetics" to a browser UA.
+  Datadog publishes probe IP ranges as a machine-readable feed at
+  ip-ranges.datadoghq.com/synthetics.json.
+docs:
+  - "https://docs.datadoghq.com/synthetics/guide/identify_synthetics_bots/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Datadog/Synthetics'
+    - 'DatadogSynthetics'
+  instances:
+    - 'Datadog/Synthetics'
+    - 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0 DatadogSynthetics'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://ip-ranges.datadoghq.com/synthetics.json"
+    format: github_meta
+    selector: synthetics.prefixes_ipv4
+  - type: cidr_feed
+    url: "https://ip-ranges.datadoghq.com/synthetics.json"
+    format: github_meta
+    selector: synthetics.prefixes_ipv6
