@@ -1,0 +1,37 @@
+{
+  "id": "apple-podcasts",
+  "name": "Apple Podcasts (iTMS)",
+  "operator": {
+    "name": "Apple",
+    "url": "https://www.apple.com"
+  },
+  "description": "Apple's podcast feed fetcher, which crawls only URLs associated with content registered on Apple Podcasts. Apple documents that iTMS traffic may come from applebot.apple.com hosts and that it does not follow robots.txt because it is not a general search crawler.",
+  "docs": [
+    "https://support.apple.com/en-us/119829"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "^i[Tt][Mm][Ss]$"
+    ],
+    "instances": [
+      "iTMS",
+      "itms"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.applebot.apple.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-07-09T03:01:47.690Z",
+  "resolved_cidrs": []
+}

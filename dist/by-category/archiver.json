@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T21:51:36.475Z",
-  "count": 1,
+  "generated_at": "2026-07-09T03:43:07.812Z",
+  "count": 2,
   "bots": [
     {
       "id": "arquivo-pt",
@@ -31,6 +31,40 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "internet-archive",
+      "name": "archive.org_bot",
+      "operator": {
+        "name": "Internet Archive",
+        "url": "https://archive.org"
+      },
+      "description": "The Internet Archive's Heritrix-based crawler used for its wide crawl of the web, feeding the Wayback Machine. The Archive says it crawls slowly to avoid disrupting sites and publishes no IP ranges. Its help pages note that robots exclusions may prevent archiving, but the operator does not document a commitment to obey robots.txt across its crawls.",
+      "docs": [
+        "https://archive.org/details/archive.org_bot",
+        "https://help.archive.org/help/wayback-machine-general-information/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "archive\\.org_bot",
+          "ia_archiver"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; archive.org_bot +http://archive.org/details/archive.org_bot)",
+          "Mozilla/5.0 (compatible; archive.org_bot +http://www.archive.org/details/archive.org_bot)",
+          "Mozilla/5.0 (compatible; special_archiver/3.1.1 +http://www.archive.org/details/archive.org_bot)",
+          "ia_archiver-web.archive.org"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
     }
   ]

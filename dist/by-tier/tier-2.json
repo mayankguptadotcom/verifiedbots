@@ -1,8 +1,46 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-08T21:51:36.475Z",
-  "count": 25,
+  "generated_at": "2026-07-09T03:43:07.812Z",
+  "count": 31,
   "bots": [
+    {
+      "id": "adidxbot",
+      "name": "AdIdxBot",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com"
+      },
+      "description": "Microsoft's crawler for Bing Ads / Microsoft Advertising. It crawls ads and follows through to the advertised landing pages for quality control, with both desktop and mobile variants.",
+      "docs": [
+        "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+        "https://www.bing.com/webmasters/help/verify-bingbot-2195837f"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "adidxbot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; adidxbot/2.0; +http://www.bing.com/bingbot.htm)",
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53 (compatible; adidxbot/2.0; +http://www.bing.com/bingbot.htm)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.search.msn.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "adyen-webhooks",
       "name": "Adyen Webhooks",
@@ -37,6 +75,80 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-adbot",
+      "name": "Amazon AdBot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's advertising crawler. It scans web pages that request ads from Amazon's advertising systems, collecting page content for Amazon's classification systems to maintain brand safety and improve ad relevance.",
+      "docs": [
+        "https://adbot.amazon.com/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "AmazonAdBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AmazonAdBot/1.0; +https://adbot.amazon.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AmazonAdBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.amazonadbot.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "apple-podcasts",
+      "name": "Apple Podcasts (iTMS)",
+      "operator": {
+        "name": "Apple",
+        "url": "https://www.apple.com"
+      },
+      "description": "Apple's podcast feed fetcher, which crawls only URLs associated with content registered on Apple Podcasts. Apple documents that iTMS traffic may come from applebot.apple.com hosts and that it does not follow robots.txt because it is not a general search crawler.",
+      "docs": [
+        "https://support.apple.com/en-us/119829"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "^i[Tt][Mm][Ss]$"
+        ],
+        "instances": [
+          "iTMS",
+          "itms"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.applebot.apple.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
     },
     {
@@ -76,6 +188,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "bingpreview",
+      "name": "BingPreview",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com"
+      },
+      "description": "Microsoft fetcher used to generate page snapshots for previews in Bing search results. Runs both desktop and mobile variants.",
+      "docs": [
+        "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+        "https://www.bing.com/webmasters/help/verify-bingbot-2195837f"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "BingPreview/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534+ (KHTML, like Gecko) BingPreview/1.0b",
+          "Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Lumia 530) like Gecko BingPreview/1.0b"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.search.msn.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
     },
     {
@@ -347,6 +497,43 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "feedbin",
+      "name": "Feedbin",
+      "operator": {
+        "name": "Feedbin",
+        "url": "https://feedbin.com"
+      },
+      "description": "Feedbin's feed fetcher, which retrieves RSS/Atom feeds that users have subscribed to. Its user agent includes the internal feed id and current subscriber count, and Feedbin documents forward-confirmed reverse DNS in *.bot.feedbin.com as the way to verify its requests.",
+      "docs": [
+        "https://feedbin.com/help/verifying-feed-requests/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Feedbin feed-id:\\d+"
+        ],
+        "instances": [
+          "Feedbin feed-id:2005098 - 2 subscribers",
+          "Feedbin feed-id:1234 - 21 subscribers"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.bot.feedbin.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
     },
     {
@@ -857,6 +1044,49 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "qualys-ssllabs",
+      "name": "Qualys SSL Labs",
+      "operator": {
+        "name": "Qualys",
+        "url": "https://www.qualys.com"
+      },
+      "description": "Qualys' SSL Labs server test, which runs visitor-initiated and monthly (SSL Pulse) TLS-configuration assessments of public HTTPS sites. Qualys documents the assessments as slow and non-intrusive and publishes the scanner's source IP ranges in its support knowledge base.",
+      "docs": [
+        "https://www.ssllabs.com/about/assessment.html",
+        "https://success.qualys.com/support/s/article/000005823"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "SSL Labs \\(https://www\\.ssllabs\\.com/about/assessment\\.html\\)"
+        ],
+        "instances": [
+          "SSL Labs (https://www.ssllabs.com/about/assessment.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "69.67.183.0/24",
+            "2602:fdaa:c6:2::/64",
+            "64.39.109.20/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": [
+        "2602:fdaa:c6:2::/64",
+        "64.39.109.20/32",
+        "69.67.183.0/24"
+      ]
     },
     {
       "id": "seznambot",

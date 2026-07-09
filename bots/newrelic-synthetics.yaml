@@ -1,0 +1,21 @@
+id: newrelic-synthetics
+name: New Relic Synthetics
+operator: { name: New Relic, url: "https://newrelic.com" }
+description: >-
+  New Relic's synthetic-monitoring minions, which probe customer-configured
+  URLs from public minion IPs. New Relic documents an X-Abuse-Info request
+  header identifying the monitor and account; logs also record a
+  NewRelicbot User-Agent. The published IP list is a JSON object keyed by
+  location, which this directory's feed formats cannot consume, so no CIDR
+  recipe is attached.
+docs:
+  - "https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/synthetic-public-minion-ips/"
+  - "https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/identify-synthetic-monitoring-requests-your-app/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'NewRelicbot/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; NewRelicbot/2.1; +http://www.newrelic.com)'
+behavior: { respects_robots_txt: false }
+verification: []

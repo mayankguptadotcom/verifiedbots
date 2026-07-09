@@ -25,6 +25,15 @@ describe('parseFeed', () => {
       '185.199.108.0/22',
     ]);
   });
+  it('resolves dot-path selectors into nested objects (Datadog/Grafana shapes)', () => {
+    const datadog = '{"version":1,"synthetics":{"prefixes_ipv4":["1.2.3.0/24","5.6.7.0/24"],"prefixes_ipv6":["2001:db8::/32"]}}';
+    expect(parseFeed('github_meta', datadog, 'synthetics.prefixes_ipv4')).toEqual(['1.2.3.0/24', '5.6.7.0/24']);
+    expect(parseFeed('github_meta', datadog, 'synthetics.prefixes_ipv6')).toEqual(['2001:db8::/32']);
+  });
+  it('throws when a dot-path segment is missing or not an object', () => {
+    expect(() => parseFeed('github_meta', '{"synthetics":{"a":[]}}', 'synthetics.b')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('github_meta', '{"synthetics":"nope"}', 'synthetics.a')).toThrow(/unparseable feed/);
+  });
   it('parses plain text lines, skipping blanks', () => {
     expect(parseFeed('text_lines', fx('uptimerobot.txt'))).toEqual([
       '69.162.124.226',

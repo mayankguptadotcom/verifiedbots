@@ -1,0 +1,19 @@
+id: amazon-adbot
+name: Amazon AdBot
+operator: { name: Amazon, url: "https://www.amazon.com" }
+description: >-
+  Amazon's advertising crawler. It scans web pages that request ads from
+  Amazon's advertising systems, collecting page content for Amazon's
+  classification systems to maintain brand safety and improve ad relevance.
+docs:
+  - "https://adbot.amazon.com/"
+category: search-engine
+user_agents:
+  patterns:
+    - 'AmazonAdBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; AmazonAdBot/1.0; +https://adbot.amazon.com)'
+behavior: { respects_robots_txt: true, robots_token: AmazonAdBot }
+verification:
+  - type: rdns
+    masks: ["*.amazonadbot.com"]

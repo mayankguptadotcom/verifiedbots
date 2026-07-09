@@ -1,0 +1,21 @@
+id: route53-healthchecks
+name: Amazon Route 53 Health Checks
+operator: { name: Amazon Web Services, url: "https://aws.amazon.com" }
+description: >-
+  Amazon Route 53 health checkers, which probe customer-configured
+  endpoints from AWS data centers worldwide to drive DNS failover. AWS
+  publishes checker source ranges only inside the general
+  ip-ranges.amazonaws.com/ip-ranges.json feed (entries tagged
+  ROUTE53_HEALTHCHECKS), a shape this directory's feed formats cannot
+  consume, so no CIDR recipe is attached.
+docs:
+  - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html"
+  - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-router-firewall-rules.html"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Amazon Route 53 Health Check Service'
+  instances:
+    - 'Amazon Route 53 Health Check Service; ref:47d9bc51-39d6-4cd9-9a7f-4c981c5db165; report http://amzn.to/1vsZADi'
+behavior: { respects_robots_txt: false }
+verification: []

@@ -57,13 +57,21 @@ export function parseFeed(format: FeedFormat, body: string, selector?: string): 
     case 'github_meta': {
       const doc = asJson(body);
       if (!selector) fail('github_meta requires a selector');
-      if (!Array.isArray(doc[selector])) fail(`missing "${selector}" array`);
-      for (const entry of doc[selector]) {
+      // Selector is a dot-path: "hooks" (GitHub) or "synthetics.prefixes_ipv4" (Datadog-style nesting).
+      let node: any = doc;
+      for (const key of selector.split('.')) {
+        if (node === null || typeof node !== 'object' || Array.isArray(node)) {
+          fail(`selector "${selector}" does not resolve to an array`);
+        }
+        node = node[key];
+      }
+      if (!Array.isArray(node)) fail(`missing "${selector}" array`);
+      for (const entry of node) {
         if (typeof entry !== 'string') {
           fail('non-string entry in feed array');
         }
       }
-      return doc[selector];
+      return node;
     }
     case 'text_lines':
       return body

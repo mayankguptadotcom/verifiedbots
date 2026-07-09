@@ -1,0 +1,24 @@
+id: qualys-ssllabs
+name: Qualys SSL Labs
+operator: { name: Qualys, url: "https://www.qualys.com" }
+description: >-
+  Qualys' SSL Labs server test, which runs visitor-initiated and monthly
+  (SSL Pulse) TLS-configuration assessments of public HTTPS sites. Qualys
+  documents the assessments as slow and non-intrusive and publishes the
+  scanner's source IP ranges in its support knowledge base.
+docs:
+  - "https://www.ssllabs.com/about/assessment.html"
+  - "https://success.qualys.com/support/s/article/000005823"
+category: security
+user_agents:
+  patterns:
+    - 'SSL Labs \(https://www\.ssllabs\.com/about/assessment\.html\)'
+  instances:
+    - 'SSL Labs (https://www.ssllabs.com/about/assessment.html)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "69.67.183.0/24"
+      - "2602:fdaa:c6:2::/64"
+      - "64.39.109.20/32"

@@ -81,5 +81,21 @@
   "w3c-validator": "2026-07-08T19:13:49.571Z",
   "whatsapp": "2026-07-08T19:13:49.571Z",
   "yandexbot": "2026-07-08T19:13:49.571Z",
-  "youbot": "2026-07-08T19:13:49.571Z"
+  "youbot": "2026-07-08T19:13:49.571Z",
+  "adidxbot": "2026-07-09T03:01:47.690Z",
+  "amazon-adbot": "2026-07-09T03:01:47.690Z",
+  "apple-podcasts": "2026-07-09T03:01:47.690Z",
+  "bingpreview": "2026-07-09T03:01:47.690Z",
+  "cloudflare-healthchecks": "2026-07-09T03:01:47.690Z",
+  "datadog-synthetics": "2026-07-09T03:01:47.690Z",
+  "feedbin": "2026-07-09T03:01:47.690Z",
+  "google-cloudvertexbot": "2026-07-09T03:01:47.690Z",
+  "googleother": "2026-07-09T03:01:47.690Z",
+  "grafana-synthetic-monitoring": "2026-07-09T03:01:47.690Z",
+  "internet-archive": "2026-07-09T03:01:47.690Z",
+  "newrelic-synthetics": "2026-07-09T03:01:47.690Z",
+  "qualys-ssllabs": "2026-07-09T03:01:47.690Z",
+  "route53-healthchecks": "2026-07-09T03:01:47.690Z",
+  "snapchat": "2026-07-09T03:01:47.690Z",
+  "twilio-webhooks": "2026-07-09T03:01:47.690Z"
 }
