@@ -1,6 +1,6 @@
 {
   "url": "https://api.checklyhq.com/v1/static-ipv6s",
-  "fetched_at": "2026-07-10T05:43:51.678Z",
+  "fetched_at": "2026-07-11T05:22:32.653Z",
   "ranges": [
     "2406:da11:e9f:a800::/56",
     "2406:da12:940:c700::/56",
