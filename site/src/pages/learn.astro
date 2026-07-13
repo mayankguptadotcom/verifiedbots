@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const methods = [
+  {
+    title: 'Published IP ranges (CIDR feeds)',
+    body: 'The operator publishes the exact IP addresses its bot crawls from, as a machine-readable list at a stable URL. A CIDR like 66.249.64.0/27 is shorthand for a block of addresses (the /27 means the first 27 bits are fixed — 32 addresses). If a request claims to be Googlebot but its IP is not in Google\'s published list, it isn\'t Googlebot.',
+    example: 'Google publishes common-crawlers.json; this directory re-serves every verified range as plain-text allowlists.',
+  },
+  {
+    title: 'Reverse DNS (forward-confirmed)',
+    body: 'The operator points the DNS records of its crawl IPs at hostnames on a domain it controls. Verification is a loop: look up the IP\'s PTR record → the hostname must end in the operator\'s domain → look up that hostname\'s A/AAAA record → it must return the same IP you started with. Both halves matter: anyone can fake a PTR record, but only the domain owner can make the forward lookup match.',
+    example: 'Feedbin requests reverse-resolve to *.bot.feedbin.com; Bing\'s crawlers to *.search.msn.com.',
+  },
+  {
+    title: 'ASN (network ownership)',
+    body: 'Every network on the internet routes traffic under an Autonomous System Number. When an operator owns its network outright, checking which AS announces the source IP attributes the traffic — coarser than an IP list (a whole network, not specific crawl ranges), but hard to fake, because routing is public.',
+    example: 'Meta\'s crawlers originate from AS32934, Meta\'s own network.',
+  },
+  {
+    title: 'Web Bot Auth (signed requests)',
+    body: 'The newest method, being standardized at the IETF: the bot cryptographically signs each request (HTTP Message Signatures) and hosts its public keys at a well-known URL. Verification doesn\'t depend on IPs at all — the signature either checks out against the operator\'s published key or it doesn\'t.',
+    example: 'Key directories live at /.well-known/http-message-signatures-directory.',
+  },
+];
+
+const cases = [
+  {
+    verdict: 'Listed — Tier 1',
+    name: 'ClaudeBot (Anthropic)',
+    body: 'Identifiable operator, honest UA, and — since Anthropic began publishing a machine-readable feed of its crawler IPs — full verifiability. ClaudeBot spent time in Tier 3 before that feed existed: same bot, same operator, better proof. Tiers move when operators publish.',
+  },
+  {
+    verdict: 'Listed — Tier 3',
+    name: 'archive.org_bot (Internet Archive)',
+    body: 'One of the most identifiable operators on the web, with an honest UA and documentation — but no published IP ranges and no rDNS scheme. You can recognize its traffic and know who claims it; you can\'t yet prove a given request is really them. That\'s exactly what "listed only" means.',
+  },
+  {
+    verdict: 'Listed — Tier 3',
+    name: 'Twilio webhooks',
+    body: 'Twilio documents that its webhooks come from a dynamic IP pool with no stable ranges — and tells you to verify authenticity a different way (request signatures). A fully accountable operator whose proof mechanism just doesn\'t fit IP-based recipes yet.',
+  },
+  {
+    verdict: 'Not listed',
+    name: 'SendGrid event webhooks',
+    body: 'SendGrid\'s delivery traffic sends no distinctive User-Agent at all, and the operator documents neither stable IPs nor a verification method. There is nothing recognizable to list: a directory entry that can\'t match any traffic in your logs would be an empty promise.',
+  },
+  {
+    verdict: 'Not listed',
+    name: 'Screaming Frog SEO Spider',
+    body: 'The opposite failure: a perfectly recognizable UA that doesn\'t identify anyone accountable. It\'s desktop software run from arbitrary machines — the UA names the software, not an operator responsible for the traffic — and it ships presets for impersonating other bots, making even the software claim advisory. No accountability chain, nothing to verify, no path to a tier.',
+  },
+];
+---
+<Layout title="Understanding bots" description="A field guide to bot identity: user agents, IP ranges, reverse DNS, ASNs, Web Bot Auth — and how this directory decides who gets listed.">
+  <header class="head">
+    <h1 class="display">Understanding<br />bots</h1>
+    <p class="lede">A field guide to bot identity — how legitimate bots announce themselves, how their
+    claims get verified, and how this directory decides who gets listed, who gets "listed only," and
+    who gets left out.</p>
+  </header>
+
+  <section>
+    <h2>What counts as a bot?</h2>
+    <p>Roughly a third of web traffic is automated. The legitimate kinds fall into a few families,
+    and they behave differently enough that lumping them together leads to bad blocking decisions:</p>
+    <ul>
+      <li><strong>Crawlers</strong> discover and fetch pages at their own initiative — search engines
+      indexing the web, AI operators collecting training data, archives preserving it. These are the
+      bots robots.txt was invented for.</li>
+      <li><strong>Fetchers</strong> retrieve a specific URL because a person did something — pasting a
+      link into a chat (preview bots), asking an AI assistant a question, subscribing to a feed.
+      They typically don't obey robots.txt <em>by design</em>: a human asked for that exact page.</li>
+      <li><strong>Service traffic</strong> visits you because you (or your vendor) configured it —
+      uptime monitors probing your endpoints, webhook deliveries POSTing events to your API,
+      security scanners you hired. Blocking these usually breaks something you set up yourself.</li>
+    </ul>
+    <p>The directory's ten categories map onto these families, so you can set policy per family
+    instead of guessing per bot.</p>
+  </section>
+
+  <section>
+    <h2>Identity: the User-Agent</h2>
+    <p>An honest bot announces itself on every request with a stable User-Agent token. The
+    conventional anatomy:</p>
+    <pre class="mono ua-anatomy">Mozilla/5.0 (compatible; <span class="hl">ExampleBot</span>/<span class="hl2">2.1</span>; <span class="hl3">+https://example.com/bot</span>)
+                        └ name          └ version  └ info URL for site owners</pre>
+    <p>The token (<code>ExampleBot</code>) is also what you address in robots.txt. But here's the
+    problem that motivates everything else on this page: <strong>a User-Agent is just a string, and
+    anyone can send any string.</strong> Scrapers routinely claim to be Googlebot to borrow its
+    welcome. So identity claims need proof.</p>
+  </section>
+
+  <section>
+    <h2>Verification: proving the claim</h2>
+    <p>Four methods exist in the wild, in rough order of adoption:</p>
+    <div class="grid">
+      {methods.map((m) => (
+        <div class="card">
+          <h3>{m.title}</h3>
+          <p>{m.body}</p>
+          <p class="small muted">{m.example}</p>
+        </div>
+      ))}
+    </div>
+    <p>The directory's tiers describe which proof is available: <strong>Tier 1 — fully
+    verifiable</strong> (machine-readable IP feed or Web Bot Auth: you can automate the check),
+    <strong>Tier 2 — verifiable</strong> (rDNS, ASN, or documented static ranges: checkable, with a
+    bit more work), <strong>Tier 3 — listed only</strong> (identity established, no technical proof
+    published yet).</p>
+  </section>
+
+  <section>
+    <h2>Who gets listed — and who doesn't</h2>
+    <p>Every candidate faces the same gate: an <strong>identifiable operator</strong> (a real
+    organization with working documentation), a <strong>distinctive, honest User-Agent</strong>
+    (impersonating a browser or another bot disqualifies you), and a <strong>legitimate
+    purpose</strong>. Pass those three and you're listed — verification then decides your tier,
+    not your existence. Fail any of them and you're not listed at all, because the directory
+    could not say anything true and useful about you.</p>
+    <p>The distinction matters: <strong>Tier 3 is an unverified claim by a known party. An
+    unlisted bot is a claim with no party behind it — or no claim at all.</strong> Real cases from
+    this directory's curation:</p>
+    <div class="cases">
+      {cases.map((c) => (
+        <div class="card case">
+          <p class="small mono verdict" data-listed={c.verdict.startsWith('Listed')}>{c.verdict}</p>
+          <h3>{c.name}</h3>
+          <p>{c.body}</p>
+        </div>
+      ))}
+    </div>
+    <p class="small muted">One thing the gate deliberately does <em>not</em> judge: crawl volume or
+    popularity. The directory verifies identity and accountability, not behavior — whether a
+    heavy-but-honest crawler is welcome on your site is your policy call, and verified identity is
+    what makes that call enforceable.</p>
+  </section>
+
+  <section>
+    <h2>Put it to work</h2>
+    <p>Read the <a href="/practices">Good Bot Practices</a> standard entries are measured against,
+    pull the <a href="/data-docs">machine-readable data</a> (every verified IP range, UA pattern,
+    and per-tier slice), or <a href="/submit">submit a bot</a> — operators who publish verification
+    move up tiers, as ClaudeBot, Datadog, and Grafana have all done.</p>
+  </section>
+
+  <style>
+    .head { padding-block: var(--space-5) var(--space-3); max-width: 52rem; }
+    .lede { font-size: 1.35rem; color: var(--muted); line-height: 1.5; }
+    section { margin-block: var(--space-4); max-width: 52rem; }
+    section h2 { margin-bottom: var(--space-2); }
+    section ul { padding-left: 1.2rem; }
+    section li { margin-bottom: 0.6rem; }
+    .ua-anatomy {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: var(--space-2); overflow-x: auto; font-size: 0.85rem; line-height: 1.7;
+    }
+    .hl { color: var(--accent); font-weight: 700; }
+    .hl2 { color: var(--text); font-weight: 700; }
+    .hl3 { text-decoration: underline; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: var(--space-2); margin-block: var(--space-2); }
+    .grid h3, .case h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .cases { display: grid; gap: var(--space-2); margin-block: var(--space-2); }
+    .verdict { margin: 0 0 0.5rem; font-weight: 700; color: var(--muted); }
+    .verdict[data-listed="true"] { color: var(--accent); }
+  </style>
+</Layout>
