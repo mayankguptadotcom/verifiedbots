@@ -35,6 +35,13 @@
     ]
   },
   {
+    "id": "algolia-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "Algolia Crawler/[\\d.]+"
+    ]
+  },
+  {
     "id": "amazon-adbot",
     "category": "search-engine",
     "patterns": [
@@ -551,6 +558,13 @@
     "category": "seo",
     "patterns": [
       "SemrushBot/\\d"
+    ]
+  },
+  {
+    "id": "sentry-uptime",
+    "category": "monitoring",
+    "patterns": [
+      "SentryUptimeBot/[\\d.]+"
     ]
   },
   {

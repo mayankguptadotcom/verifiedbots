@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-13T05:31:36.165Z",
-  "count": 99,
+  "generated_at": "2026-07-13T17:31:56.719Z",
+  "count": 101,
   "bots": [
     {
       "id": "adidxbot",
@@ -282,6 +282,47 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "algolia-crawler",
+      "name": "Algolia Crawler",
+      "operator": {
+        "name": "Algolia",
+        "url": "https://www.algolia.com"
+      },
+      "description": "Algolia's Crawler, which visits a customer's pages, extracts search-relevant content, and pushes it to Algolia search indices. Algolia documents a fixed User-Agent token and a single static egress IP address for allowlisting.",
+      "docs": [
+        "https://www.algolia.com/doc/tools/crawler/getting-started/overview/",
+        "https://support.algolia.com/hc/en-us/articles/17223760387857-What-is-the-user-agent-of-the-Crawler",
+        "https://support.algolia.com/hc/en-us/articles/17223698862993-Which-IP-address-of-the-Crawler-can-I-add-to-my-allowlist"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Algolia Crawler/[\\d.]+"
+        ],
+        "instances": [
+          "Algolia Crawler/1.0.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Algolia Crawler"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.66.202.43/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-13T17:31:56.719Z",
+      "resolved_cidrs": [
+        "34.66.202.43/32"
+      ]
     },
     {
       "id": "amazon-adbot",
@@ -7119,6 +7160,56 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "sentry-uptime",
+      "name": "Sentry Uptime Monitoring",
+      "operator": {
+        "name": "Sentry",
+        "url": "https://sentry.io"
+      },
+      "description": "Sentry's uptime monitoring bot, which probes customer-configured URLs on a schedule from Sentry's uptime-check infrastructure and raises alerts on failures. Sentry documents a fixed User-Agent and publishes the current uptime-check IP addresses at a machine-readable endpoint.",
+      "docs": [
+        "https://docs.sentry.io/product/monitors-and-alerts/monitors/uptime-monitoring/",
+        "https://docs.sentry.io/product/monitors-and-alerts/monitors/uptime-monitoring/troubleshooting/",
+        "https://docs.sentry.io/security-legal-pii/security/ip-ranges/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "SentryUptimeBot/[\\d.]+"
+        ],
+        "instances": [
+          "SentryUptimeBot/1.0 (+https://docs.sentry.io/product/monitors-and-alerts/monitors/uptime-monitoring/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://sentry.io/api/0/uptime-ips/",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-13T17:31:56.719Z",
+      "resolved_cidrs": [
+        "34.107.93.3/32",
+        "34.123.33.225/32",
+        "34.159.197.47/32",
+        "34.169.179.115/32",
+        "34.41.121.171/32",
+        "34.85.249.57/32",
+        "35.196.182.243/32",
+        "35.204.169.245/32",
+        "35.230.15.29/32",
+        "35.237.134.233/32",
+        "35.242.231.10/32",
+        "35.245.72.176/32"
+      ]
     },
     {
       "id": "seznambot",

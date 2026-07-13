@@ -1,0 +1,22 @@
+id: algolia-crawler
+name: Algolia Crawler
+operator: { name: Algolia, url: "https://www.algolia.com" }
+description: >-
+  Algolia's Crawler, which visits a customer's pages, extracts search-relevant
+  content, and pushes it to Algolia search indices. Algolia documents a fixed
+  User-Agent token and a single static egress IP address for allowlisting.
+docs:
+  - "https://www.algolia.com/doc/tools/crawler/getting-started/overview/"
+  - "https://support.algolia.com/hc/en-us/articles/17223760387857-What-is-the-user-agent-of-the-Crawler"
+  - "https://support.algolia.com/hc/en-us/articles/17223698862993-Which-IP-address-of-the-Crawler-can-I-add-to-my-allowlist"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Algolia Crawler/[\d.]+'
+  instances:
+    - 'Algolia Crawler/1.0.0'
+behavior: { respects_robots_txt: true, robots_token: "Algolia Crawler" }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "34.66.202.43/32"

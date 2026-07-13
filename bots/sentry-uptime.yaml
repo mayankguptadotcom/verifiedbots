@@ -1,0 +1,23 @@
+id: sentry-uptime
+name: Sentry Uptime Monitoring
+operator: { name: Sentry, url: "https://sentry.io" }
+description: >-
+  Sentry's uptime monitoring bot, which probes customer-configured URLs on a
+  schedule from Sentry's uptime-check infrastructure and raises alerts on
+  failures. Sentry documents a fixed User-Agent and publishes the current
+  uptime-check IP addresses at a machine-readable endpoint.
+docs:
+  - "https://docs.sentry.io/product/monitors-and-alerts/monitors/uptime-monitoring/"
+  - "https://docs.sentry.io/product/monitors-and-alerts/monitors/uptime-monitoring/troubleshooting/"
+  - "https://docs.sentry.io/security-legal-pii/security/ip-ranges/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'SentryUptimeBot/[\d.]+'
+  instances:
+    - 'SentryUptimeBot/1.0 (+https://docs.sentry.io/product/monitors-and-alerts/monitors/uptime-monitoring/)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://sentry.io/api/0/uptime-ips/"
+    format: text_lines
