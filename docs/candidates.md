@@ -37,6 +37,11 @@ Candidate ids below follow arcjet/well-known-bots ids where applicable.
 | cookiehub-scan | CookieHub | deferred | — | UA `CookieHubScan`; arcjet `ip`. Consent-scanner tool; needs operator doc for UA + IPs. | 2026-07-13 |
 | geedo-crawler-products | Geedo | deferred | — | UA `GeedoProductSearch`; arcjet `cidr,dns`. Operator identity/legitimacy unverified this session. | 2026-07-13 |
 | sentry-crawler | Sentry | rejected | — | Non-uptime `sentry/` UA token is generic/non-distinctive — fails the "distinctive User-Agent" gate. Distinct from the added `sentry-uptime`. | 2026-07-13 |
+| google-inspection-tool | Google | added (`google-inspection-tool`) | 1 | UA `Google-InspectionTool/1.0` (Search Console URL Inspection + Rich Result Test). cidr_feed `common-crawlers.json` (verified live, 315 ranges) + rdns `*.googlebot.com`. Sourced from Google common-crawlers docs + arcjet. | 2026-07-14 |
+| stripe-crawler | Stripe | added (`stripe-crawler`) | 2 | UA `Stripebot/1.0`; rdns `*.crawl.stripe.com` (Stripe publishes no IP list, only the rDNS domain). Respects robots.txt (token `Stripebot`). Distinct from `stripe-webhooks`. Sourced from `https://docs.stripe.com/stripebot-crawler`. Categorized `security` as the least-wrong enum (compliance/risk crawl of merchant sites). | 2026-07-14 |
+| microsoft-preview | Microsoft | deferred | — | UA `MicrosoftPreview/2.0`; arcjet `cidr` (bingbot.json) + `dns` (search.msn.com). Only official source is the JS-rendered Bing crawlers page (`aka.ms/MicrosoftPreview`), which did not render for fetching this session — cannot source UA from official docs yet. Revisit when the doc is fetchable. | 2026-07-14 |
+| google-crawler-store | Google | deferred | — | UA `Storebot-Google/1.0`; cidr `common-crawlers.json`. Plausible Tier 1 but not yet sourced from Google docs this session. | 2026-07-14 |
+| facebook-catalog | Meta | deferred | — | UA `facebookcatalog/1.0`; arcjet verification is the Facebook geofeed CSV (unsupported feed shape). Could list Tier 2 via ASN like the other Meta entries — needs an official Meta doc naming the UA. | 2026-07-14 |
 
 ## Already listed (for reference)
 

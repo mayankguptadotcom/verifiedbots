@@ -282,6 +282,13 @@
     ]
   },
   {
+    "id": "google-inspection-tool",
+    "category": "search-engine",
+    "patterns": [
+      "Google-InspectionTool/\\d"
+    ]
+  },
+  {
     "id": "google-special-crawlers",
     "category": "search-engine",
     "patterns": [
@@ -621,6 +628,13 @@
     "category": "search-engine",
     "patterns": [
       "StractBot/\\d"
+    ]
+  },
+  {
+    "id": "stripe-crawler",
+    "category": "security",
+    "patterns": [
+      "Stripebot/\\d"
     ]
   },
   {

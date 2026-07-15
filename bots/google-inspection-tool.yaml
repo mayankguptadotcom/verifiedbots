@@ -1,0 +1,23 @@
+id: google-inspection-tool
+name: Google-InspectionTool
+operator: { name: Google, url: "https://www.google.com" }
+description: >-
+  Google crawler used by Search testing tools such as the URL Inspection tool
+  in Search Console and the Rich Result Test. Fetches pages on demand to show
+  how Google Search renders them; it has no effect on ranking.
+docs:
+  - "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Google-InspectionTool/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Google-InspectionTool/1.0)'
+    - 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)'
+behavior: { respects_robots_txt: true, robots_token: Google-InspectionTool }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.googlebot.com", "*.geo.googlebot.com"]

@@ -1,0 +1,19 @@
+id: stripe-crawler
+name: Stripebot
+operator: { name: Stripe, url: "https://stripe.com" }
+description: >-
+  Stripe's automated web crawler. Collects data from Stripe users' websites so
+  Stripe can provide its services and comply with financial regulations. Distinct
+  from Stripe's webhook delivery traffic.
+docs:
+  - "https://docs.stripe.com/stripebot-crawler"
+category: security
+user_agents:
+  patterns:
+    - 'Stripebot/\d'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 (Stripebot/1.0; +https://docs.stripe.com/stripebot-crawler)'
+behavior: { respects_robots_txt: true, robots_token: Stripebot }
+verification:
+  - type: rdns
+    masks: ["*.crawl.stripe.com"]
