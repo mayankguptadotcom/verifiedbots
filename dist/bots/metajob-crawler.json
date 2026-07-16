@@ -1,0 +1,43 @@
+{
+  "id": "metajob-crawler",
+  "name": "MetaJobBot",
+  "operator": {
+    "name": "METAJob",
+    "url": "https://www.metajob.de"
+  },
+  "description": "MetaJobBot is the focused web crawler operated by the METAJob job meta-search engine. It searches websites for job listings to include in the METAJob index.",
+  "docs": [
+    "https://www.metajob.de/the/crawler"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "MetaJobBot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; MetaJobBot; http://www.metajob.de/crawler)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "metajobbot"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "157.90.179.220/32",
+        "157.90.179.228/32",
+        "157.90.179.241/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": [
+    "157.90.179.220/32",
+    "157.90.179.228/32",
+    "157.90.179.241/32"
+  ]
+}

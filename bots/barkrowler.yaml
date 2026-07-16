@@ -1,0 +1,19 @@
+id: barkrowler
+name: Barkrowler
+operator: { name: Babbar, url: "https://www.babbar.tech" }
+description: >-
+  Barkrowler is the web crawler operated by Babbar (formerly Exensa). It builds
+  and updates Babbar's graph of the web, which powers the company's SEO and
+  link-analysis tools, and applies a politeness delay between requests.
+docs:
+  - "https://www.babbar.tech/crawler"
+category: seo
+user_agents:
+  patterns:
+    - 'Bark[rR]owler'
+  instances:
+    - 'Barkrowler/0.7 (+http://www.exensa.com/crawl)'
+    - 'BarkRowler/0.7 (+http://www.exensa.com/crawling)'
+behavior: { respects_robots_txt: true, robots_token: barkrowler }
+verification:
+  - { type: cidr_feed, url: "https://www.babbar.tech/barkrowler-ip-ranges.json", format: prefixes }

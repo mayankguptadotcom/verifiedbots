@@ -1,0 +1,29 @@
+{
+  "id": "bombora-crawler",
+  "name": "BomboraBot",
+  "operator": {
+    "name": "Bombora, Inc.",
+    "url": "https://bombora.com"
+  },
+  "description": "BomboraBot is Bombora's web crawler. It classifies the content and topics of web pages that carry Bombora's tags so the company can model B2B purchase intent, visiting each tagged page at most once every 30 days.",
+  "docs": [
+    "https://www.bombora.com/bot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "BomboraBot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; BomboraBot/1.0; +http://www.bombora.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

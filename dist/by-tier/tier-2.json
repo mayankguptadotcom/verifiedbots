@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 36,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 38,
   "bots": [
     {
       "id": "adidxbot",
@@ -959,6 +959,49 @@
       "resolved_cidrs": []
     },
     {
+      "id": "metajob-crawler",
+      "name": "MetaJobBot",
+      "operator": {
+        "name": "METAJob",
+        "url": "https://www.metajob.de"
+      },
+      "description": "MetaJobBot is the focused web crawler operated by the METAJob job meta-search engine. It searches websites for job listings to include in the METAJob index.",
+      "docs": [
+        "https://www.metajob.de/the/crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "MetaJobBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MetaJobBot; http://www.metajob.de/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "metajobbot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "157.90.179.220/32",
+            "157.90.179.228/32",
+            "157.90.179.241/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": [
+        "157.90.179.220/32",
+        "157.90.179.228/32",
+        "157.90.179.241/32"
+      ]
+    },
+    {
       "id": "naver-yeti",
       "name": "Yeti",
       "operator": {
@@ -995,6 +1038,46 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "nict-crawler",
+      "name": "ICC-Crawler",
+      "operator": {
+        "name": "National Institute of Information and Communications Technology (NICT)",
+        "url": "https://www.nict.go.jp/en/"
+      },
+      "description": "ICC-Crawler is a web crawler operated by Japan's NICT that collects web pages across the internet to build datasets for information and language processing research.",
+      "docs": [
+        "https://ucri.nict.go.jp/en/icccrawler.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ICC-Crawler"
+        ],
+        "instances": [
+          "ICC-Crawler/2.0 (Mozilla-compatible; ; http://ucri.nict.go.jp/en/icccrawler.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "202.180.34.186/32",
+            "61.86.246.72/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": [
+        "202.180.34.186/32",
+        "61.86.246.72/32"
+      ]
     },
     {
       "id": "paypal-ipn",

@@ -1,0 +1,18 @@
+id: seokicks-crawler
+name: SEOkicks
+operator:
+  name: Jobkicks SLU
+  url: "https://www.seokicks.de/"
+description: >-
+  SEOkicks operates a web crawler that builds a backlink database powering its
+  SEO tools. The crawler visits sites to collect link data for analysis.
+docs:
+  - "https://www.seokicks.de/robot.html"
+category: seo
+user_agents:
+  patterns:
+    - 'SEOkicks'
+  instances:
+    - 'Mozilla/5.0 (compatible; SEOkicks; +https://www.seokicks.de/robot.html)'
+behavior: { respects_robots_txt: true }
+verification: []

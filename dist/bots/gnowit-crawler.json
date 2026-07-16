@@ -1,0 +1,29 @@
+{
+  "id": "gnowit-crawler",
+  "name": "Gnowit Newsbot",
+  "operator": {
+    "name": "Gnowit",
+    "url": "https://www.gnowit.com"
+  },
+  "description": "Gnowit is an Ottawa-based media and government monitoring company whose crawler continuously fetches news, government, and other public web sources to power real-time monitoring, summarization, and analytics for its clients.",
+  "docs": [
+    "https://www.gnowit.com"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "GnowitNewsbot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0 / GnowitNewsbot / Contact information at http://www.gnowit.com"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

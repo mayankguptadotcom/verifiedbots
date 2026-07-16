@@ -1,0 +1,29 @@
+{
+  "id": "hypefactors-crawler",
+  "name": "Buck",
+  "operator": {
+    "name": "Hypefactors",
+    "url": "https://hypefactors.com"
+  },
+  "description": "Buck is Hypefactors' media-monitoring crawler. It discovers and indexes web pages by following links, gathering publicly available content for the company's media-monitoring platform. It identifies itself and respects robots.txt.",
+  "docs": [
+    "https://app.hypefactors.com/media-monitoring/about.html"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "Buck\\/"
+    ],
+    "instances": [
+      "Buck/2.2; (+https://app.hypefactors.com/media-monitoring/about.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

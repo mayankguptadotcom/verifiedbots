@@ -1,0 +1,20 @@
+id: vkshare-crawler
+name: vkShare
+operator:
+  name: VK
+  url: "https://vk.com"
+description: >-
+  vkShare is VK's link-preview fetcher. When a user shares a URL on the VK
+  social network, it retrieves the target page to build a preview (title,
+  description, and image) for the shared post.
+docs:
+  - "https://vk.com/dev/Share"
+category: social-preview
+user_agents:
+  patterns:
+    - 'vkShare'
+  instances:
+    - 'Mozilla/5.0 (compatible; vkShare; +http://vk.com/dev/Share)'
+behavior:
+  respects_robots_txt: false
+verification: []

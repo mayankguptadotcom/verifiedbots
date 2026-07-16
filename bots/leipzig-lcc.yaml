@@ -1,0 +1,19 @@
+id: leipzig-lcc
+name: Leipzig Corpora Collection Crawler
+operator:
+  name: Leipzig University Natural Language Processing Group
+  url: "https://www.uni-leipzig.de/"
+description: >-
+  The LCC crawler is operated by Leipzig University to collect web text for
+  the Leipzig Corpora Collection, a set of linguistic corpora used in natural
+  language processing research.
+docs:
+  - "https://corpora.wortschatz-leipzig.de/crawler_faq.html"
+category: ai-crawler
+user_agents:
+  patterns:
+    - '^LCC '
+  instances:
+    - 'LCC (+http://corpora.informatik.uni-leipzig.de/crawler_faq.html)'
+behavior: { respects_robots_txt: false }
+verification: []

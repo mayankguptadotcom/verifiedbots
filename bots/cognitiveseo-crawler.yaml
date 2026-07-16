@@ -1,0 +1,17 @@
+id: cognitiveseo-crawler
+name: cognitiveSEO
+operator: { name: cognitiveSEO, url: "https://cognitiveseo.com" }
+description: >-
+  James BOT is the web crawler operated by cognitiveSEO, an SEO toolset. It
+  crawls the web and analyzes links to power the backlink and SEO analysis
+  offered by the cognitiveSEO platform.
+docs:
+  - "https://cognitiveseo.com/bot.html"
+category: seo
+user_agents:
+  patterns:
+    - 'James BOT'
+  instances:
+    - 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6 - James BOT - WebCrawler http://cognitiveseo.com/bot.html'
+behavior: { respects_robots_txt: true, robots_token: JamesBOT }
+verification: []

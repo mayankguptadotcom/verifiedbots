@@ -1,0 +1,18 @@
+id: trendiction-crawler
+name: Trendiction Bot
+operator: { name: Trendiction, url: "https://www.trendiction.com" }
+description: >-
+  Trendiction operates a crawler that fetches public news sites, message
+  boards, and blogs to build a search index and feed media-monitoring and
+  market-research analytics for its clients.
+docs:
+  - "https://www.trendiction.com/bot"
+category: monitoring
+user_agents:
+  patterns:
+    - 'trendictionbot'
+  instances:
+    - 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.0; trendictionbot0.5.0; trendiction search; http://www.trendiction.de/bot; please let us know of any problems; web at trendiction.com) Gecko/20071127 Firefox/3.0.0.11'
+    - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; trendictionbot0.5.0; trendiction search; http://www.trendiction.de/bot; please let us know of any problems; web at trendiction.com) Gecko/20170101 Firefox/67.0'
+behavior: { respects_robots_txt: true, robots_token: trendictionbot }
+verification: []

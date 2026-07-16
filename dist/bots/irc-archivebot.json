@@ -1,0 +1,29 @@
+{
+  "id": "irc-archivebot",
+  "name": "ArchiveBot",
+  "operator": {
+    "name": "Archive Team",
+    "url": "https://www.archiveteam.org/"
+  },
+  "description": "ArchiveBot is an IRC-controlled archiving bot run by Archive Team that crawls websites on request, writes WARC files, and uploads the captures to the Internet Archive.",
+  "docs": [
+    "https://github.com/ArchiveTeam/ArchiveBot"
+  ],
+  "category": "archiver",
+  "user_agents": {
+    "patterns": [
+      "ArchiveTeam ArchiveBot\\/"
+    ],
+    "instances": [
+      "ArchiveTeam ArchiveBot/20170106.02 (wpull 2.0.2)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

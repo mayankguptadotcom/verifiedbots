@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 8,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 11,
   "bots": [
     {
       "id": "apple-podcasts",
@@ -38,6 +38,35 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "facebook-catalog",
+      "name": "Facebook Catalog",
+      "operator": {
+        "name": "Meta",
+        "url": "https://www.meta.com"
+      },
+      "description": "Meta's product-catalog fetcher, identified by the facebookcatalog user-agent. It retrieves merchant product-data feeds used to build and refresh commerce catalogs surfaced across Facebook and Instagram.",
+      "docs": [
+        "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "facebookcatalog/[\\d.]+"
+        ],
+        "instances": [
+          "facebookcatalog/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -105,6 +134,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "feedspot-feedfetcher",
+      "name": "Feedspot",
+      "operator": {
+        "name": "Feedspot",
+        "url": "https://www.feedspot.com/"
+      },
+      "description": "Feedspot is a hosted content reader and feed aggregation service. Its bot fetches RSS and Atom feeds and web content on behalf of Feedspot users.",
+      "docs": [
+        "https://www.feedspot.com/fs/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Feedspot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Feedspotbot/1.0; +http://www.feedspot.com/fs/bot)",
+          "Mozilla/5.0 (compatible; Feedspot/1.0 (+https://www.feedspot.com/fs/fetcher; like FeedFetcher-Google)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -668,6 +727,36 @@
         "92.247.179.240/28",
         "92.247.181.0/26"
       ]
+    },
+    {
+      "id": "miniflux-feedfetcher",
+      "name": "Miniflux",
+      "operator": {
+        "name": "Miniflux",
+        "url": "https://miniflux.app/"
+      },
+      "description": "Miniflux is a minimalist, open-source, self-hosted feed reader. User-run instances fetch the RSS and Atom feeds their subscribers add, identifying themselves with a Miniflux User-Agent.",
+      "docs": [
+        "https://miniflux.app/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Miniflux\\/"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Miniflux/2.0.3; +https://miniflux.net)",
+          "Mozilla/5.0 (compatible; Miniflux/2.0.x-dev; +https://miniflux.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
     },
     {
       "id": "newsblur",

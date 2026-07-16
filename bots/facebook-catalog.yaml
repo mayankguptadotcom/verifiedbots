@@ -1,0 +1,17 @@
+id: facebook-catalog
+name: Facebook Catalog
+operator: { name: Meta, url: "https://www.meta.com" }
+description: >-
+  Meta's product-catalog fetcher, identified by the facebookcatalog
+  user-agent. It retrieves merchant product-data feeds used to build and
+  refresh commerce catalogs surfaced across Facebook and Instagram.
+docs:
+  - "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'facebookcatalog/[\d.]+'
+  instances:
+    - 'facebookcatalog/1.0'
+behavior: { respects_robots_txt: false }
+verification: []

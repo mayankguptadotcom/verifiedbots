@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 16,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 18,
   "bots": [
     {
       "id": "discordbot",
@@ -572,6 +572,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "vkshare-crawler",
+      "name": "vkShare",
+      "operator": {
+        "name": "VK",
+        "url": "https://vk.com"
+      },
+      "description": "vkShare is VK's link-preview fetcher. When a user shares a URL on the VK social network, it retrieves the target page to build a preview (title, description, and image) for the shared post.",
+      "docs": [
+        "https://vk.com/dev/Share"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "vkShare"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; vkShare; +http://vk.com/dev/Share)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "whatsapp",
       "name": "WhatsApp Link Preview Fetcher",
       "operator": {
@@ -606,6 +635,35 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-preview",
+      "name": "Yahoo Link Preview",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com"
+      },
+      "description": "Yahoo Link Preview fetches a page when a Yahoo Mail user includes its URL in an email message, generating a thumbnail, title and description preview. It fetches only user-referenced pages rather than crawling the web.",
+      "docs": [
+        "https://help.yahoo.com/kb/mail/yahoo-link-preview-SLN23615.html"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Yahoo Link Preview"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo Link Preview; https://help.yahoo.com/kb/mail/yahoo-link-preview-SLN23615.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     }
   ]

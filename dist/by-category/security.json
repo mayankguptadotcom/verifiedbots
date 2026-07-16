@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 8,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 9,
   "bots": [
     {
       "id": "censys",
@@ -302,6 +302,35 @@
         "64.227.99.138/32",
         "87.236.176.0/24"
       ]
+    },
+    {
+      "id": "jusprog-crawler",
+      "name": "Jugendschutzprogramm-Crawler",
+      "operator": {
+        "name": "JusProg e.V.",
+        "url": "https://www.jugendschutzprogramm.de"
+      },
+      "description": "Web crawler operated by JusProg e.V., a German non-profit youth-protection association, that fetches and rates web pages to build the age-classification database used by its parental-control filtering software.",
+      "docs": [
+        "https://www.jugendschutzprogramm.de/en/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Jugendschutzprogramm-Crawler"
+        ],
+        "instances": [
+          "Jugendschutzprogramm-Crawler; Info: http://www.jugendschutzprogramm.de"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
     },
     {
       "id": "leakix",

@@ -1,0 +1,30 @@
+{
+  "id": "brandverity-crawler",
+  "name": "BrandVerity",
+  "operator": {
+    "name": "BrandVerity",
+    "url": "https://www.brandverity.com"
+  },
+  "description": "BrandVerity is a brand-protection service that crawls websites and paid search landing pages to detect trademark and affiliate-compliance violations on behalf of its clients.",
+  "docs": [
+    "https://www.brandverity.com/why-is-brandverity-visiting-me"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "BrandVerity\\/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/55.0 BrandVerity/1.0 (http://www.brandverity.com/why-is-brandverity-visiting-me)",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone BrandVerity/1.0 (http://www.brandverity.com/why-is-brandverity-visiting-me)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

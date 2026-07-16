@@ -1,0 +1,17 @@
+id: jusprog-crawler
+name: Jugendschutzprogramm-Crawler
+operator: { name: JusProg e.V., url: "https://www.jugendschutzprogramm.de" }
+description: >-
+  Web crawler operated by JusProg e.V., a German non-profit youth-protection
+  association, that fetches and rates web pages to build the age-classification
+  database used by its parental-control filtering software.
+docs:
+  - "https://www.jugendschutzprogramm.de/en/"
+category: security
+user_agents:
+  patterns:
+    - 'Jugendschutzprogramm-Crawler'
+  instances:
+    - 'Jugendschutzprogramm-Crawler; Info: http://www.jugendschutzprogramm.de'
+behavior: { respects_robots_txt: false }
+verification: []

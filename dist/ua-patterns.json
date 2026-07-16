@@ -77,10 +77,24 @@
     ]
   },
   {
+    "id": "azure-app-insights",
+    "category": "monitoring",
+    "patterns": [
+      "AppInsights"
+    ]
+  },
+  {
     "id": "baiduspider",
     "category": "search-engine",
     "patterns": [
       "Baiduspider/\\d"
+    ]
+  },
+  {
+    "id": "barkrowler",
+    "category": "seo",
+    "patterns": [
+      "Bark[rR]owler"
     ]
   },
   {
@@ -112,10 +126,31 @@
     ]
   },
   {
+    "id": "bombora-crawler",
+    "category": "seo",
+    "patterns": [
+      "BomboraBot"
+    ]
+  },
+  {
     "id": "botify",
     "category": "seo",
     "patterns": [
       "compatible; botify"
+    ]
+  },
+  {
+    "id": "brandverity-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "BrandVerity\\/\\d"
+    ]
+  },
+  {
+    "id": "brandwatch-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "magpie-crawler"
     ]
   },
   {
@@ -182,6 +217,13 @@
     ]
   },
   {
+    "id": "cloudflare-prefetch",
+    "category": "monitoring",
+    "patterns": [
+      "CloudFlare-Prefetch/[\\d.]+"
+    ]
+  },
+  {
     "id": "cloudflare-ssl-detector",
     "category": "security",
     "patterns": [
@@ -201,6 +243,13 @@
     "patterns": [
       "coccocbot-web/\\d",
       "coccocbot-image/\\d"
+    ]
+  },
+  {
+    "id": "cognitiveseo-crawler",
+    "category": "seo",
+    "patterns": [
+      "James BOT"
     ]
   },
   {
@@ -268,6 +317,13 @@
     ]
   },
   {
+    "id": "facebook-catalog",
+    "category": "feed-fetcher",
+    "patterns": [
+      "facebookcatalog/[\\d.]+"
+    ]
+  },
+  {
     "id": "facebookexternalhit",
     "category": "social-preview",
     "patterns": [
@@ -286,6 +342,13 @@
     "category": "feed-fetcher",
     "patterns": [
       "Feedly/[\\d.]+"
+    ]
+  },
+  {
+    "id": "feedspot-feedfetcher",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Feedspot"
     ]
   },
   {
@@ -315,6 +378,13 @@
     "category": "webhook",
     "patterns": [
       "GitHub-Hookshot/[0-9a-f]+"
+    ]
+  },
+  {
+    "id": "gnowit-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "GnowitNewsbot"
     ]
   },
   {
@@ -420,6 +490,13 @@
     ]
   },
   {
+    "id": "hypefactors-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "Buck\\/"
+    ]
+  },
+  {
     "id": "iframely",
     "category": "social-preview",
     "patterns": [
@@ -431,6 +508,13 @@
     "category": "feed-fetcher",
     "patterns": [
       "Inoreader/[\\d.]+"
+    ]
+  },
+  {
+    "id": "integralads-crawler",
+    "category": "seo",
+    "patterns": [
+      "ias_crawler"
     ]
   },
   {
@@ -449,6 +533,20 @@
     ]
   },
   {
+    "id": "irc-archivebot",
+    "category": "archiver",
+    "patterns": [
+      "ArchiveTeam ArchiveBot\\/"
+    ]
+  },
+  {
+    "id": "jusprog-crawler",
+    "category": "security",
+    "patterns": [
+      "Jugendschutzprogramm-Crawler"
+    ]
+  },
+  {
     "id": "kagibot",
     "category": "search-engine",
     "patterns": [
@@ -460,6 +558,13 @@
     "category": "security",
     "patterns": [
       "l9explore/[\\d.]+"
+    ]
+  },
+  {
+    "id": "leipzig-lcc",
+    "category": "ai-crawler",
+    "patterns": [
+      "^LCC "
     ]
   },
   {
@@ -498,6 +603,13 @@
     ]
   },
   {
+    "id": "mediatoolkit-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "Mediatoolkitbot"
+    ]
+  },
+  {
     "id": "megaindex-crawler",
     "category": "seo",
     "patterns": [
@@ -519,10 +631,24 @@
     ]
   },
   {
+    "id": "metajob-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "MetaJobBot"
+    ]
+  },
+  {
     "id": "microsoft-preview",
     "category": "social-preview",
     "patterns": [
       "MicrosoftPreview/\\d"
+    ]
+  },
+  {
+    "id": "miniflux-feedfetcher",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Miniflux\\/"
     ]
   },
   {
@@ -565,6 +691,13 @@
     "category": "feed-fetcher",
     "patterns": [
       "NewsBlur Feed Fetcher"
+    ]
+  },
+  {
+    "id": "nict-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "ICC-Crawler"
     ]
   },
   {
@@ -638,6 +771,13 @@
     ]
   },
   {
+    "id": "pipl-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "PiplBot"
+    ]
+  },
+  {
     "id": "proximic-crawler",
     "category": "seo",
     "patterns": [
@@ -706,6 +846,13 @@
     "category": "monitoring",
     "patterns": [
       "SentryUptimeBot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "seokicks-crawler",
+    "category": "seo",
+    "patterns": [
+      "SEOkicks"
     ]
   },
   {
@@ -814,6 +961,20 @@
     ]
   },
   {
+    "id": "tineye-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "TinEye"
+    ]
+  },
+  {
+    "id": "trendiction-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "trendictionbot"
+    ]
+  },
+  {
     "id": "turnitin-crawler",
     "category": "archiver",
     "patterns": [
@@ -849,6 +1010,13 @@
     ]
   },
   {
+    "id": "vkshare-crawler",
+    "category": "social-preview",
+    "patterns": [
+      "vkShare"
+    ]
+  },
+  {
     "id": "w3c-validator",
     "category": "security",
     "patterns": [
@@ -874,6 +1042,20 @@
     "category": "search-engine",
     "patterns": [
       "Slurp"
+    ]
+  },
+  {
+    "id": "yahoo-crawler-japan",
+    "category": "search-engine",
+    "patterns": [
+      "Y!J-"
+    ]
+  },
+  {
+    "id": "yahoo-preview",
+    "category": "social-preview",
+    "patterns": [
+      "Yahoo Link Preview"
     ]
   },
   {

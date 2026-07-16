@@ -1,0 +1,17 @@
+id: integralads-crawler
+name: IAS Crawler
+operator: { name: Integral Ad Science, url: "https://integralads.com/" }
+description: >-
+  Content-rating and ad-verification crawler operated by Integral Ad Science.
+  It visits web pages to assess content quality and brand safety and to support
+  invalid-traffic detection for advertisers.
+docs:
+  - "https://integralads.com/site-indexing-policy/"
+category: seo
+user_agents:
+  patterns:
+    - 'ias_crawler'
+  instances:
+    - 'IAS Crawler (ias_crawler; http://integralads.com/site-indexing-policy/)'
+behavior: { respects_robots_txt: true }
+verification: []

@@ -1,0 +1,31 @@
+{
+  "id": "pipl-crawler",
+  "name": "PiplBot",
+  "operator": {
+    "name": "Pipl",
+    "url": "https://pipl.com"
+  },
+  "description": "PiplBot is the web-indexing crawler operated by Pipl, an identity and people-search service. It retrieves and indexes publicly available information, including content behind searchable databases, to build Pipl's people-search index.",
+  "docs": [
+    "https://pipl.com/bot/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "PiplBot"
+    ],
+    "instances": [
+      "PiplBot (+http://www.pipl.com/bot/)",
+      "Mozilla/5.0+(compatible;+PiplBot;+http://www.pipl.com/bot/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "PiplBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

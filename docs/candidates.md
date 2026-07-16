@@ -26,119 +26,217 @@ Candidate ids below follow arcjet/well-known-bots ids where applicable.
 | Candidate (arcjet id) | Operator | Status | Tier | Reason / notes | Last reviewed |
 |---|---|---|---|---|---|
 | algolia-crawler | Algolia | added (`algolia-crawler`) | 2 | UA `Algolia Crawler/x.x.x`; static egress IP `34.66.202.43`. Respects robots.txt. | 2026-07-13 |
+| azure-app-insights | — | added (`azure-app-insights`) | 3 | Microsoft Azure Application Insights availability-test synthetic monitor; official docs confirm a fixed reserved User-Agent and shared IPs via the App | 2026-07-14 |
 | bnf-crawler | — | added (`bnf-crawler`) | 3 | Bibliothèque nationale de France legal-deposit web archiver; live official docs, distinctive bnf.fr_bot UA, legally disregards robots.txt. Tier 3, no  | 2026-07-14 |
+| bombora-crawler | — | added (`bombora-crawler`) | 3 | Bombora, Inc. B2B intent-data crawler with distinctive BomboraBot UA and live official docs at bombora.com/bot; no published IP feed so Tier 3. | 2026-07-14 |
+| brandverity-crawler | — | added (`brandverity-crawler`) | 3 | Identifiable operator (BrandVerity) with official docs page confirming UA and robots.txt compliance; brand-protection monitoring, legitimate. No publi | 2026-07-14 |
+| brandwatch-crawler | — | added (`brandwatch-crawler`) | 3 | Brandwatch social-listening crawler 'magpie-crawler' with distinctive UA and live official docs at brandwatch.com/legal/magpie-crawler/ documenting ro | 2026-07-14 |
+| cloudflare-prefetch | — | added (`cloudflare-prefetch`) | 3 | Cloudflare operator, live official docs, distinctive CloudFlare-Prefetch UA. Arcjet cites Cloudflare's published edge ranges (ips-v4/ips-v6) as the CI | 2026-07-14 |
 | cloudflare-ssl-detector | — | added (`cloudflare-ssl-detector`) | 3 | Cloudflare officially documents the Cloudflare-SSLDetector UA (SSL/TLS Recommender) on its site-crawling reference; it fetches origins over HTTP/HTTPS | 2026-07-14 |
 | cloudflare-traffic-manager | — | added (`cloudflare-traffic-manager`) | 3 | Cloudflare officially documents the Cloudflare-Traffic-Manager/1.0 UA (load-balancing monitor) on its site-crawling reference. Like existing cloudflar | 2026-07-14 |
+| cognitiveseo-crawler | — | added (`cognitiveseo-crawler`) | 3 | cognitiveSEO operates James BOT as its link-analysis crawler; cognitiveseo.com/bot.html live with robots.txt (JamesBOT) instructions. Legitimate SEO t | 2026-07-14 |
 | cookiehub-scan | — | added (`cookiehub-scan`) | 1 | CookieHub identifiable; docs (cookie-scanner + FAQ) document the compliance scanner and an official live scanner-IP endpoint. UA CookieHubScan sourced | 2026-07-14 |
 | deadlinkchecker | — | added (`deadlinkchecker`) | 2 | Hosted broken-link scanning service by DLC Websites; operator FAQ documents a distinctive UA token (www.deadlinkchecker.com), robots.txt support (disa | 2026-07-14 |
+| exensa-crawler | — | added (`barkrowler`) | 1 | Barkrowler migrated from Exensa (exensa.com dead) to Babbar; babbar.tech/crawler is live and documents an IP feed at babbar.tech/barkrowler-ip-ranges. | 2026-07-14 |
+| facebook-catalog | — | added (`facebook-catalog`) | 3 | Meta operator (identifiable), distinctive facebookcatalog/1.0 UA sourced from arcjet, legitimate commerce product-catalog fetcher. Meta's peering geof | 2026-07-14 |
+| feedspot-feedfetcher | — | added (`feedspot-feedfetcher`) | 3 | Feedspot is a well-known hosted content-reader/feed-aggregation service; distinctive Feedspot UA and pattern sourced from arcjet (approved source). No | 2026-07-14 |
 | geedo-crawler-products | — | added (`geedo-crawler-products`) | 1 | Geedo product-search engine, identifiable operator, official docs with UA + IP feed + rDNS. cidr_feed live-verified 200. Docs current UA is GeedoShopP | 2026-07-14 |
+| gnowit-crawler | — | added (`gnowit-crawler`) | 3 | Gnowit Inc (Ottawa) is a real media/government-monitoring company with a working site and a self-identifying distinctive UA; no verification feed so T | 2026-07-14 |
 | google-crawler-store | — | added (`google-crawler-store`) | 1 | Distinct Google UA token (Storebot-Google) documented; common-crawlers IP feed live (200, prefixes shape). Tier 1. | 2026-07-14 |
 | google-feedfetcher | — | added (`google-feedfetcher`) | 1 | Distinct Google UA token (Feedfetcher-Google) documented by Google; user-triggered-fetchers IP feed live (200, prefixes shape). Tier 1. | 2026-07-14 |
 | google-inspection-tool | Google | added (`google-inspection-tool`) | 1 | UA `Google-InspectionTool/1.0`; cidr_feed common-crawlers.json + rdns. | 2026-07-14 |
 | google-push-notifications | — | added (`google-push-notifications`) | 1 | Distinct Google UA token (APIs-Google) documented for push-notification delivery; special-crawlers IP feed live (200, prefixes shape). Tier 1. | 2026-07-14 |
 | haosou-crawler | — | added (`haosou-crawler`) | 3 | Official 360 Search help page (so.com) is live and documents 360Spider + robots.txt support; legitimate search engine, honest 360Spider token in UA. T | 2026-07-14 |
 | hydrozen-monitor | — | added (`hydrozen-monitor`) | 1 | Hydrozen.io uptime/monitoring service with official UA and IP-list docs; cidr_feed live-verified 200 in prefixes shape. Tier 1. | 2026-07-14 |
+| hypefactors-crawler | — | added (`hypefactors-crawler`) | 3 | Hypefactors media-monitoring crawler 'Buck' with distinctive UA and live official docs; docs state it respects robots.txt. No published IP feed so Tie | 2026-07-14 |
+| integralads-crawler | — | added (`integralads-crawler`) | 3 | Integral Ad Science publishes an official site-indexing policy documenting the IAS crawler, its content-rating/ad-verification purpose, and robots.txt | 2026-07-14 |
+| irc-archivebot | — | added (`irc-archivebot`) | 3 | Archive Team is an identifiable operator with a GitHub docs repo; UA 'ArchiveTeam ArchiveBot/...' confirmed in the repo's DEFAULT_USER_AGENT. Legitima | 2026-07-14 |
+| jusprog-crawler | — | added (`jusprog-crawler`) | 3 | JusProg e.V. is an identifiable FSM-recognized German youth-protection non-profit whose site documents that it runs content-rating crawlers; distincti | 2026-07-14 |
+| leipzig-lcc | — | added (`leipzig-lcc`) | 3 | Leipzig University (NLP group) is an identifiable academic operator with a live crawler FAQ page; UA/pattern from arcjet. Docs page currently behind a | 2026-07-14 |
 | linkdex-crawler | — | added (`linkdex-crawler`) | 3 | Linkdex (now operated by Authoritas/Analytics SEO Ltd) is an identifiable active operator documenting linkdexbot and robots.txt compliance at a live b | 2026-07-14 |
 | livelap-crawler | — | added (`livelap-crawler`) | 3 | Operator Livelap is identifiable with a live docs page (site.livelap.com/crawler) describing LivelapBot, a distinctive-UA content-discovery/preview cr | 2026-07-14 |
+| mediatoolkit-crawler | — | added (`mediatoolkit-crawler`) | 3 | Determ (formerly Mediatoolkit) is a real media-monitoring operator with an official bot page (determ.com/robot/) documenting the Mediatoolkitbot token | 2026-07-14 |
 | megaindex-crawler | — | added (`megaindex-crawler`) | 3 | Real SEO operator (MegaIndex) with a live bot-documentation page at megaindex.com/crawler, distinctive UA token MegaIndex.ru, documents robots.txt sup | 2026-07-14 |
+| metajob-crawler | — | added (`metajob-crawler`) | 2 | MetaJobBot job meta-search crawler, documented on operator's live page (METAJob) with robots token 'metajobbot' and three fixed IPs; legitimate search | 2026-07-14 |
 | microsoft-preview | — | added (`microsoft-preview`) | 1 | MicrosoftPreview is a Microsoft link-preview fetcher documented on Bing's crawlers page (aka.ms/MicrosoftPreview redirects there); distinct from bingb | 2026-07-14 |
+| miniflux-feedfetcher | — | added (`miniflux-feedfetcher`) | 3 | Minimalist open-source self-hosted feed reader with distinctive Miniflux/ UA; docs live at miniflux.app (miniflux.net redirects there). Self-hosted so | 2026-07-14 |
+| nict-crawler | — | added (`nict-crawler`) | 2 | Official NICT docs page documents UA 'ICC-Crawler', robots.txt compliance, and two fixed IPs (202.180.34.186, 61.86.246.72); legitimate research crawl | 2026-07-14 |
 | openindex-crawler | — | added (`openindex-crawler`) | 3 | Openindex operates a documented search-R&D crawler; live 'About our spider' page gives the OpenindexSpider UA, robots.txt support and token. No publis | 2026-07-14 |
+| pipl-crawler | — | added (`pipl-crawler`) | 3 | Pipl operates PiplBot as a documented people-search indexing crawler; pipl.com/bot live, distinctive UA, robots.txt supported. No IP/ASN feed document | 2026-07-14 |
 | proximic-crawler | — | added (`proximic-crawler`) | 3 | Comscore's Proximic contextual crawler is fully documented at proximic.com/info/spider.php (identifies itself, honors robots.txt, token 'proximic'). D | 2026-07-14 |
 | quantcast-crawler | — | added (`quantcast-crawler`) | 2 | Operator Quantcast identifiable with a bot doc page (quantcast.com/bot) documenting UA Quantcastbot and 7 fixed IPs; legitimate advertising content cr | 2026-07-14 |
 | semanticscholar-crawler | — | added (`semanticscholar-crawler`) | 3 | Operated by Allen Institute for AI (Ai2) with a live crawler-documentation page and distinctive SemanticScholarBot UA; respects robots.txt. Distinct b | 2026-07-14 |
+| seokicks-crawler | — | added (`seokicks-crawler`) | 3 | SEOkicks (Jobkicks SLU) runs a backlink-database web crawler; dedicated crawler-info page live at seokicks.de/robot.html (200). Distinctive SEOkicks U | 2026-07-14 |
 | sogou-crawler | — | added (`sogou-crawler`) | 3 | Sogou (major Chinese search engine, Tencent) is identifiable with a live webmaster docs page that documents robots.txt support; distinctive UA token.  | 2026-07-14 |
-| stripe-crawler | Stripe | added (`stripe-crawler`) | 2 | UA `Stripebot/1.0`; rdns `*.crawl.stripe.com`. Distinct from stripe-webhooks. | 2026-07-14 |
+| stripe-crawler | Stripe | added (`stripe-crawler`) | 2 | UA `Stripebot/1.0`; rdns `*.crawl.stripe.com`. | 2026-07-14 |
+| tineye-crawler | — | added (`tineye-crawler`) | 3 | TinEye (Idee Inc.) reverse image search operates TinEye-bot; crawler.html is a live operator doc (Cloudflare-gated) and robots.txt support is well-att | 2026-07-14 |
+| trendiction-crawler | — | added (`trendiction-crawler`) | 3 | Trendiction S.A. (Luxembourg, now part of Talkwalker) media-monitoring crawler; live official docs, distinctive UA, documents robots.txt token; no ver | 2026-07-14 |
 | turnitin-crawler | — | added (`turnitin-crawler`) | 3 | Turnitin is an active, identifiable operator with a documented crawler (crawlerinfo.html) that respects robots.txt; no verification feed, so Tier 3. | 2026-07-14 |
+| vkshare-crawler | — | added (`vkshare-crawler`) | 3 | VK is a clearly identifiable operator; vkShare is its share-time link-preview fetcher (docs https://vk.com/dev/Share returns 200). Distinctive UA toke | 2026-07-14 |
 | xovibot-crawler | — | added (`xovibot-crawler`) | 3 | XOVI GmbH SEO analytics crawler with a live bot-documentation page (xovibot.net) that explicitly documents robots.txt support and a XoviBot token; dis | 2026-07-14 |
 | yahoo-crawler | — | added (`yahoo-crawler`) | 3 | Yahoo Slurp is Yahoo Search's crawler with live official docs (help.yahoo.com/kb/SLN22600.html), robots token 'Slurp', obeys robots.txt; no published  | 2026-07-14 |
+| yahoo-crawler-japan | — | added (`yahoo-crawler-japan`) | 3 | Yahoo! JAPAN (LY Corporation) is a distinct identifiable operator vs global Yahoo Slurp; live official crawler doc confirms Y!J crawlers follow REP; d | 2026-07-14 |
+| yahoo-preview | — | added (`yahoo-preview`) | 3 | Yahoo Mail link-preview fetcher, documented by Yahoo with a distinctive UA token; legitimate social-preview service. No IP feed/ranges published -> Ti | 2026-07-14 |
 | yandex-crawler-javascript | — | added (`yandex-crawler-javascript`) | 2 | Distinct documented Yandex robot (loads JS/CSS resources for rendering); yandexbot exists but this is a separate bot. Verified via Yandex rDNS to yand | 2026-07-14 |
-| adagio-crawler | — | deferred | — | Operator (Onfocus SAS / Adagio) is real, but the candidate docs URL 404s and no live official Adagiobot doc page found (adagio.io/bot is a soft-404 SP | 2026-07-14 |
-| avira-crawler | — | deferred | — | Avira is a legitimate, active operator and SafeSearch (search.avira.com) is live with a distinctive 'SafeSearch microdata crawler' UA, but the only bo | 2026-07-14 |
-| cloudflare-prefetch | — | deferred | — | Legitimate and documented (CloudFlare-Prefetch/0.1 on Cloudflare's site-crawling reference), but no category in the enum fits an edge prefetch/perform | 2026-07-14 |
-| facebook-catalog | — | deferred | — | Meta's official web-crawlers doc lists facebookexternalhit/meta-externalagent/etc. but NOT facebookcatalog; UA comes only from arcjet, no operator doc | 2026-07-14 |
-| goo-crawler | — | deferred | — | Legit NTT Docomo/goo 'ichiro' search crawler with distinctive UA, but help.goo.ne.jp is DNS-unreachable from this environment so I could not confirm t | 2026-07-14 |
-| google-ads-conversions | — | deferred | — | Google-Ads-Conversions is not documented in any official Google crawler page (overview-google-crawlers, common-crawlers, or special-case-crawlers); th | 2026-07-14 |
-| linguee-crawler | — | deferred | — | Operator identifiable (Linguee, owned by DeepL) but official bot page linguee.com/bot now 404s; only third-party aggregators document it, so no live s | 2026-07-14 |
-| ltx71-crawler | — | deferred | — | Site loads but discloses no identifiable operator/company; self-described 'security research' internet scanner with opaque ownership — legitimacy genu | 2026-07-14 |
-| similartech-crawler | — | deferred | — | Legitimate operator (SimilarTech/Similarweb) and distinctive SMTBot UA, but documented docs page similartech.com/smtbot now 404s (www is NXDOMAIN) and | 2026-07-14 |
-| tiscali-crawler | — | deferred | — | IstellaBot is a real Tiscali/Istella search crawler with a distinctive UA, but no official bot-documentation page could be sourced (arcjet URL is only | 2026-07-14 |
-| yahoo-crawler-japan | — | deferred | — | Operator (Yahoo! JAPAN / LY Corp) is identifiable but the provided docs URL 404s and the current Yahoo Japan user-agent articles are login-gated / JS- | 2026-07-14 |
-| yamanalab-crawler | — | deferred | — | Waseda Yamana Lab crawler is plausibly a legitimate academic crawler, but both EN and JP doc pages are image-only (no readable text to source UA/purpo | 2026-07-14 |
+| adagio-crawler | — | deferred | — | Adagio (adagio.io) is a real publisher SSP, but no live official bot-documentation page could be verified: the arcjet gitbook deep-link returns a 404  | 2026-07-14 |
+| anderspink-crawler | — | deferred | — | Anders Pink (content curation) was acquired by Go1; the arcjet url anderspink.com/bot.html now redirects to the go1.com homepage and no bot-documentat | 2026-07-14 |
+| avira-crawler | — | deferred | — | Avira/Gen is a legitimate operator and the UA carries an abuse contact, but the only official docs URL (safesearch.avira.com) returns HTTP 500 and no  | 2026-07-14 |
+| baidu-cloud-watch | — | deferred | — | Operator is Baidu (identifiable) but ce.baidu.com is unreachable (DNS ENOTFOUND) and the topic doc is dead; no live official YunGuanCe documentation t | 2026-07-14 |
+| bitly-crawler | — | deferred | — | Bitly is a clearly identifiable operator and bitlybot self-identifies, but bit.ly is only a redirect and no official bot-documentation page exists to  | 2026-07-14 |
+| blogmura-crawler | — | deferred | — | blogmura.com is live (Japanese blog-ranking site) but no documentation of blogmuraBot exists on it; the crawler's purpose/category cannot be sourced.  | 2026-07-14 |
+| datenbutler-crawler | — | deferred | — | Site datenbutler.de live, operated by mindUp Web + Intelligence GmbH, but it is a crawl-and-resell data service with no dedicated bot-documentation pa | 2026-07-14 |
+| domainstats-crawler | — | deferred | — | Operator identifiable and live (domainstats.com, SEO/domain metrics by Game Lounge Ltd), but the bot-documentation page (domainstats.io/our-bot -> dom | 2026-07-14 |
+| duckduckgo-crawler-favicons | — | deferred | — | DuckDuckGo is a legit operator but its only official bot docs page covers DuckDuckBot, not the favicons bot; no sourced documentation for this specifi | 2026-07-14 |
+| everyonesocial-crawler | — | deferred | — | EveryoneSocial (employee-advocacy platform) is identifiable and its site is live, but there is no official bot-documentation page (only forum/log sour | 2026-07-14 |
+| extlinks-crawler | — | deferred | — | Operator docs page https://extlinks.com/Bot.html was unreachable this session (connection timed out/refused); cannot source UA, behavior, or legitimac | 2026-07-14 |
+| femtosearch-crawler | — | deferred | — | Legit search crawler (femtosearch.com live, operated by Grier Forensics, respects robots.txt, distinct UA), but the only bot-documentation page is htt | 2026-07-14 |
+| goo-crawler | — | deferred | — | goo (NTT) is a real operator, but the docs host help.goo.ne.jp did not resolve (curl and WebFetch: ENOTFOUND) so the official docs page cannot be veri | 2026-07-14 |
+| google-ads-conversions | — | deferred | — | Operator is clearly Google, but the token is NOT documented in Google's official crawler/fetcher docs (verified the special-case-crawlers page lists A | 2026-07-14 |
+| google-adwords | — | deferred | — | Legitimate Google ads landing-page quality checker, but Google's current official crawler docs document AdsBot-Google / AdsBot-Google-Mobile, not the  | 2026-07-14 |
+| iss-crawler | — | deferred | — | oBot is IBM Germany's content-filter crawler (identifiable, legit, respects robots.txt), but the official docs page filterdb.iss.net/crawler/ 301-redi | 2026-07-14 |
+| jetslide-crawler | — | deferred | — | Could not verify operator docs live this session: http://jetsli.de/crawler is intercepted by a network security filter as 'suspicious' and https fails | 2026-07-14 |
+| k7computing-crawler | — | deferred | — | K7 Computing (real AV vendor) homepage resolves but there is no operator documentation of K7MLWCBot; purpose/legitimacy unconfirmable from any approve | 2026-07-14 |
+| landaumedia-crawler | — | deferred | — | Landau Media (landaumedia.de) is a live real media-monitoring company, but the referenced bot-doc host bots.landaumedia.de does not resolve (DNS ENOTF | 2026-07-14 |
+| linguee-crawler | — | deferred | — | Linguee (DeepL) is an identifiable operator and the bot is widely attested, but the official bot-documentation page http(s)://www.linguee.com/bot retu | 2026-07-14 |
+| linkarchiver | — | deferred | — | Personal Twitter bot that submits URLs to the Wayback Machine; unclear it directly fetches third-party sites (may only call the Archive save API) and  | 2026-07-14 |
+| linkfluence-crawler | — | deferred | — | Operator Linkfluence/Meltwater is identifiable and the YaK social-intelligence crawler is legitimate, but the arcjet url (http://linkfluence.com) only | 2026-07-14 |
+| meltwater-crawler | — | deferred | — | Meltwater is an identifiable, legitimate media-monitoring operator, but no official bot-documentation page could be found (only third-party trackers l | 2026-07-14 |
+| moat-crawler | — | deferred | — | Legitimate ad-verification operator (Oracle Moat) but moat.com is unreachable (TLS error) and there is no reachable official bot-documentation page; U | 2026-07-14 |
+| muckrack-crawler | — | deferred | — | Muck Rack is a real PR/media-intelligence company but publishes no bot-documentation page; homepage documents nothing about the MuckRack crawler, so U | 2026-07-14 |
+| paperli-crawler | — | deferred | — | paper.li site is live and content-curation purpose is legitimate, but the official bot-doc page in the UA (support.paper.li/entries/20023257) no longe | 2026-07-14 |
+| pocket-crawler | — | deferred | — | Mozilla discontinued Pocket in 2025; official docs URL https://getpocket.com/pocketparser_ua returns HTTP 503 ("Pocket temporarily unavailable") and t | 2026-07-14 |
+| prcy-crawler | — | deferred | — | PR-CY (a.pr-cy.ru) is a legitimate Russian SEO/site-analysis service, but has no crawler/bot documentation page: a.pr-cy.ru redirects to the app homep | 2026-07-14 |
+| rankactive-crawler | — | deferred | — | Operator identifiable with a live docs page documenting UA + robots.txt, but that page states the project is no longer supported and all subscriptions | 2026-07-14 |
+| safedns-crawler | — | deferred | — | Operator SafeDNS is identifiable (web-filtering company, site live) and third-party sources show SafeDNSBot respects robots.txt, but the official /sea | 2026-07-14 |
+| similartech-crawler | — | deferred | — | SimilarTech is a real market/technology-intelligence company and SMTBot is a plausibly legitimate tech-detection crawler, but similartech.com/smtbot c | 2026-07-14 |
+| toutiao-crawler | — | deferred | — | Toutiao/ByteDance is an identifiable operator, but the linked media_cooperation page documents nothing about ToutiaoSpider and no official crawler/rob | 2026-07-14 |
+| traackr-crawler | — | deferred | — | Traackr is a live influencer-marketing company but no official bot-documentation page located; UA 'Traackr.com' appears only in third-party bot databa | 2026-07-14 |
+| veooz-crawler | — | deferred | — | Veooz Labs main site is live but the official /veoozbot.html documentation page 404s; no live official bot documentation to source the required docs U | 2026-07-14 |
+| webmeup-crawler | — | deferred | — | Operator link-assistant/SEO PowerSuite is identifiable and BLEXBot is a real SEO backlink crawler class, but webmeup-crawler.com now 301-redirects to  | 2026-07-14 |
+| yamanalab-crawler | — | deferred | — | Waseda Yamana Lab is a real academic operator, but info_en.html is an image with no extractable UA text, and arcjet's pattern 'Sonic'/instances confla | 2026-07-14 |
 | a6corp-crawler | — | rejected | — | a6corp.com web-scraping-policy page is dead (domain now an unrelated health/vitamins site); operator no longer identifiable. | 2026-07-14 |
 | aboundex-crawler | — | rejected | — | Site dead: aboundex.com/crawler/ connection refused on 443; only appears in historical UA-parser archives, no current operator or docs. Fails gate #1. | 2026-07-14 |
 | acoon-crawler | — | rejected | — | acoon.de/robot.asp returns 404 (no live bot documentation) and arcjet records no UA instance to source; leave out. | 2026-07-14 |
 | addthis-crawler | — | rejected | — | AddThis was discontinued by Oracle; addthis.com redirects to oracle.com and returns 403, with no operator bot documentation available. Defunct service | 2026-07-14 |
 | admantx-crawler | — | rejected | — | admantx.com redirects to integralads.com (IAS) with no dedicated live bot-documentation page; also known counterfeit UA variants. | 2026-07-14 |
 | advbot-crawler | — | rejected | — | Operator site is dead — advbot.net DNS does not resolve; no reachable documentation, operator no longer identifiable. | 2026-07-14 |
+| alphaseobot-crawler | — | rejected | — | Operator domain alphaseobot.com does not resolve (ENOTFOUND); service defunct, no docs. | 2026-07-14 |
 | anthropic-crawler | — | rejected | — | already listed as claudebot (same operator Anthropic, same ClaudeBot crawler already in directory) | 2026-07-14 |
+| araturka-crawler | — | rejected | — | araturka.com is unreachable/dead (connection timeout); obscure, unidentifiable operator with no working site or bot documentation. | 2026-07-14 |
 | arocom-crawler | — | rejected | — | arocom GmbH is a real German Drupal agency and the site is live, but www.arocom.de/drupact now serves a generic marketing page (title 'arocom — Drupal | 2026-07-14 |
 | ask-crawler | — | rejected | — | Ask/Teoma crawler is defunct; Ask.com no longer runs its own index and the official webmaster docs URL returns no response (dead). No current official | 2026-07-14 |
 | backlinktest-crawler | — | rejected | — | backlinktest.com/crawler.html returns 404 (no live bot documentation) and arcjet records no UA instance; cannot source fields. | 2026-07-14 |
 | betterstack-monitor | — | rejected | — | Already listed as betterstack-uptime (same operator Better Stack uptime bot). | 2026-07-14 |
+| boxcar-crawler | — | rejected | — | boxcar.io returns HTTP 522 (origin down); Boxcar push service is defunct with no live site or official bot documentation to source. | 2026-07-14 |
 | capsulink-crawler | — | rejected | — | capsulink.com is a live URL-shortener but publishes no crawler/bot documentation; CapsuleChecker (a link validator) has no docs page or sourceable UA/ | 2026-07-14 |
 | careerx-crawler | — | rejected | — | Docs domain www.career-x.de does not resolve (ENOTFOUND); no recorded UA instances; operator defunct and nothing sourceable. | 2026-07-14 |
 | changedetection-crawler | — | rejected | — | changedetection.com/bot.html 301-redirects to the Visualping marketing homepage; no official bot documentation exists and the recorded UA impersonates | 2026-07-14 |
 | cliqz-crawler | — | rejected | — | cliqz.com states 'the Cliqz Search Engine is no longer in operation'; bot doc page /company/cliqzbot returns 403. Operator/bot defunct (fails gate 1). | 2026-07-14 |
 | cloudflare-security-center | — | rejected | — | UA is a full Chrome browser string with only a '+https://developers.cloudflare.com/security-center/' comment (no distinctive bot token; impersonates a | 2026-07-14 |
+| companybook-crawler | — | rejected | — | Operator site companybooknetworking.com is defunct/parked (NameBright 'Coming Soon' placeholder) and the support/crawling KB is unavailable; no workin | 2026-07-14 |
 | convera-crawler | — | rejected | — | Convera search was discontinued around 2007; the docs site ews.converasearch.com is dead (no response) and there is no working operator site or docume | 2026-07-14 |
 | creativecommons-crawler | — | rejected | — | Creative Commons' own wiki page states the Metadata Scraper was decommissioned on 8 January 2018; the bot no longer operates. | 2026-07-14 |
 | crystalsemantics-crawler | — | rejected | — | Operator domain www.crystalsemantics.com does not resolve (defunct) and the candidate has zero recorded UA instances to match the pattern. | 2026-07-14 |
 | cxense-crawler | — | rejected | — | cxense.com/bot.html returns 404; Cxense folded into Piano with no live bot-documentation page. | 2026-07-14 |
 | cyberpatrol-crawler | — | rejected | — | Product discontinued (now part of SafeToNet, described in past tense); crawlerinfo page redirects to homepage with no bot documentation — nothing to s | 2026-07-14 |
+| dareboost-crawler | — | rejected | — | killed by adversarial verify: UA token 'DareBoost', instance, and URL are genuine (match the arcjet dareboost-crawler record, an approved source), so nothing is invented. But indep | 2026-07-14 |
 | datadog-monitor-synthetics | — | rejected | — | already listed as datadog-synthetics (same Datadog Synthetics bot and synthetics.json feed already in directory) | 2026-07-14 |
+| datagnion-crawler | — | rejected | — | datagnion.com does not resolve (dead domain) — operator unreachable and no live site or bot documentation exists to source any field. | 2026-07-14 |
+| daum-crawler | — | rejected | — | killed by adversarial verify: The operator docs page (cs.daum.net/faq/15/4118.html?faqId=28966, fetched HTTP 200) documents ONLY the robots.txt token ("User-agent : DAUM / Disallow | 2026-07-14 |
+| dcrawl | — | rejected | — | Open-source crawler tool (github.com/kgretzky/dcrawl) run by arbitrary end users, not an operator-run service. Fails inclusion gate item 3 (generic to | 2026-07-14 |
 | deusu-crawler | — | rejected | — | DeuSu robot docs page (deusu.de/robot.html) returns 404 and deusu.de now serves only a placeholder; search service appears inactive with no live offic | 2026-07-14 |
+| digg-crawler | — | rejected | — | 'Digg Deeper' is a defunct crawler from the old Digg reader era; digg.com/about returns 404 and current digg.com is an unrelated relaunched AI-news pr | 2026-07-14 |
+| digincore-crawler | — | rejected | — | Operator domain www.digincore.com does not resolve (DNS ENOTFOUND); no working site or bot documentation to source (gate #1). | 2026-07-14 |
 | discoveryengine-crawler | — | rejected | — | Operator defunct: discoveryengine.com/discobot.html 302-redirects to hugedomains.com (parked/for-sale); no working site or bot docs, fails inclusion g | 2026-07-14 |
+| disqus-crawler | — | rejected | — | Disqus is identifiable and legitimate but publishes no official documentation of a Disqus/1.0 fetcher; the UA is only attested in third-party lists, s | 2026-07-14 |
 | domainreanimator-crawler | — | rejected | — | domainreanimator.com homepage is a near-empty placeholder with no bot documentation page to source a UA or verification from; expired-domain harvestin | 2026-07-14 |
 | dotnetdotcom-crawler | — | rejected | — | No identifiable operator: the only 'docs' link is a phpBB forum post and the contact is a gmail address (ezooms.bot@gmail.com); fails the operator/doc | 2026-07-14 |
+| duedil-crawler | — | rejected | — | duedil.com does not resolve; DueDil is defunct/acquired and the /our-crawler/ doc page is gone — no live operator or documentation to source. | 2026-07-14 |
+| epictions-crawler | — | rejected | — | Operator site defunct: http://www.epictions.com/ and /epicbot both return HTTP 404; no working site or bot documentation. | 2026-07-14 |
 | facebook-crawler | — | rejected | — | Meta's docs no longer document a FacebookBot/Facebot UA token (superseded by Meta-ExternalAgent, already listed); geofeed is a licensed CSV, not a sup | 2026-07-14 |
+| feedafever-crawler | — | rejected | — | Fever is discontinued self-hosted RSS-reader software and feedafever.com is dead (connection refused); no live operator docs (gate #1). | 2026-07-14 |
 | findthatfile-crawler | — | rejected | — | No recorded UA instance (empty instances, cannot satisfy >=1 matching instance rule); findthatfile.com returns HTTP 403; operator/legitimacy unverifia | 2026-07-14 |
 | g00g1e-crawler | — | rejected | — | Domain g00g1e.net does not resolve, no recorded instances, and it is a Google-typosquat with no identifiable legitimate operator. | 2026-07-14 |
+| g2reader-crawler | — | rejected | — | g2reader.com is now a generic blog/content site, not a feed-reader service, and documents no g2reader-bot; cannot source docs (gate #1). | 2026-07-14 |
+| g2webservices-crawler | — | rejected | — | G2 Web Services (now G2 Risk Solutions) is a real company but publishes no crawler/bot documentation; the crawler.html docs URL redirects to a corpora | 2026-07-14 |
+| garlik-crawler | — | rejected | — | garlik.com does not resolve; Garlik is defunct (acquired by Experian) with no live site or bot documentation to source any field. | 2026-07-14 |
+| genieo-crawler | — | rejected | — | Genieo is classified as adware/PUP and a browser hijacker (listed in Apple XProtect, flagged by dozens of AV vendors); fails the legitimacy gate (Q3). | 2026-07-14 |
 | gigablast-crawler | — | rejected | — | www.gigablast.com does not resolve (DNS dead); Gigablast search engine is defunct — no working site or bot documentation to source. | 2026-07-14 |
 | gigablast-crawler-oss | — | rejected | — | GigablastOpenSource is self-hosted open-source search-engine software run by end-users, not a single identifiable operator's service — fails inclusion | 2026-07-14 |
 | glutenfreepleasure-crawler | — | rejected | — | Operator domain glutenfreepleasure.com does not resolve (dead site) and there is no bot documentation anywhere; hobby crawler fails inclusion gate #1  | 2026-07-14 |
+| gowiki-crawler | — | rejected | — | gowikibot.com is dead (connection times out); no identifiable operator, working site, or bot documentation, so it fails the identifiability gate. | 2026-07-14 |
 | grapeshot-crawler | — | rejected | — | Oracle Contextual Intelligence (Grapeshot) deprecated Sept 2024; crawler.php redirects to a generic Oracle acquisitions page, no live bot documentatio | 2026-07-14 |
 | infegy-crawler | — | rejected | — | Only recorded UA is a standard 'Mozilla/5.0 (compatible) ... Chrome/47 Safari/537.36 collection@infegy.com' browser string with a contact email append | 2026-07-14 |
 | integromedb-crawler | — | rejected | — | www.integromedb.org/Crawler is an infinite 301 redirect loop to itself, serving no content; bot documentation is inaccessible and the only 'instance'  | 2026-07-14 |
 | internetarchive-crawler-oss | — | rejected | — | Heritrix is open-source crawler software run by many independent archives (recorded instances are webarchiv.cz and netarkivet.dk, not one operator); ' | 2026-07-14 |
+| iskanie-crawler | — | rejected | — | Dead candidate: www.iskanie.com does not resolve (DNS ENOTFOUND); no identifiable operator, no documentation, no live docs URL. | 2026-07-14 |
+| jamiembrown-crawler | — | rejected | — | 'Jamie's Spider' points to an individual's personal site (jamiembrown.com) with no bot documentation and no identifiable legitimate service/purpose; f | 2026-07-14 |
+| java-asynchttpclient | — | rejected | — | 'AHC/2.0' is the default user agent of the async-http-client Java library, a generic programmatic HTTP client run by arbitrary end-users, not an ident | 2026-07-14 |
 | java-crawler4j | — | rejected | — | crawler4j is an open-source Java crawler library (github.com/yasserg/crawler4j) run by end-users, not an operated bot/service; fails gate #3 (generic  | 2026-07-14 |
+| java-snacktory | — | rejected | — | Snacktory is a Java HTML article-extraction library (github.com/karussell/snacktory) embedded and run by end users, not an operator-run crawling servi | 2026-07-14 |
+| kemvi-crawler | — | rejected | — | kemvi.com returns empty/dead; KemVi is defunct (acquired years ago). No working operator site or bot documentation. | 2026-07-14 |
+| kosmio-crawler | — | rejected | — | kosm.io is now 'Kosmio', a French web agency; the /bot.html URL serves only the generic homepage with no crawler documentation of KosmioBot, so the bo | 2026-07-14 |
 | law-unimi-crawler | — | rejected | — | BUbiNG is an open-source crawler framework (LAW, Univ. of Milan) run by arbitrary end-users, not a single operated bot/service; fails inclusion gate # | 2026-07-14 |
+| leiki-crawler | — | rejected | — | Operator site defunct: www.leiki.com does not resolve (DNS failure); no working site or bot documentation. | 2026-07-14 |
+| linkapedia-crawler | — | rejected | — | linkapedia.com is a parked NameBright 'Coming Soon' page; operator defunct, no documentation. | 2026-07-14 |
 | lipperhey-crawler | — | rejected | — | lipperhey.com does not resolve (DNS gone); SEO service defunct with no working site or docs. Fails gate #1. | 2026-07-14 |
 | lssbot | — | rejected | — | lssbot.com is a mobile-game farming automation bot (plays games on user accounts), not a legitimate web crawler/preview/monitoring service; no documen | 2026-07-14 |
+| ltx71-crawler | — | rejected | — | Fails operator-identifiable gate: ltx71.com discloses an anonymous 'security research' crawler but names no company/org/person behind it; no attributa | 2026-07-14 |
 | metauri-crawler | — | rejected | — | Only cited 'docs' is the third-party useragentstring.com catalog; metauri.com has no bot documentation (self-signed cert, empty page). No official ope | 2026-07-14 |
 | mignify-crawler | — | rejected | — | Operator site is dead — mignify.com DNS does not resolve; bot doc page unreachable, operator no longer identifiable. | 2026-07-14 |
+| mignify-imrbot | — | rejected | — | Operator domain www.mignify.com does not resolve (DNS ENOTFOUND); no working site or bot documentation to source (gate #1). | 2026-07-14 |
+| moreover-crawler | — | rejected | — | Operator site moreover.com refuses connection (defunct/absorbed); no live official bot documentation, only third-party listings. | 2026-07-14 |
 | msn-crawler | — | rejected | — | msnbot was retired in 2010 and replaced by bingbot (already listed as bingbot); the arcjet UA instances shown are actually adidxbot, which is already  | 2026-07-14 |
 | naver-crawler | — | rejected | — | already listed as naver-yeti (same Naver 'Yeti' search crawler) | 2026-07-14 |
 | nerdbynature-crawler | — | rejected | — | No working documentation: nerdbynature.net/bot serves a mismatched TLS cert for an unrelated host; operator unclear and public reports describe an agg | 2026-07-14 |
 | nerdybot-crawler | — | rejected | — | nerdybot.com now redirects to a GoDaddy parked/for-sale page; operator gone and no documentation, not identifiable. | 2026-07-14 |
 | netestate-crawler | — | rejected | — | The crawler's documented site website-datenbank.de is dead (no response) and netestate.de does not document the 'netEstate NE Crawler' UA; the referen | 2026-07-14 |
+| netvibes-crawler | — | rejected | — | Netvibes was retired as a standalone service by Dassault Systemes (netvibes.com redirects to a retired-brand landing page); no official crawler docume | 2026-07-14 |
+| newsharecounts-crawler | — | rejected | — | newsharecounts.com now returns an unrelated cricket-betting affiliate site ('App Scout'); the share-count crawler service is defunct and no operator b | 2026-07-14 |
 | openhose-crawler | — | rejected | — | openhose.org no longer resolves (DNS failure); the operator site and bot documentation are gone, nothing sourceable. Defunct. | 2026-07-14 |
+| outclicks-crawler | — | rejected | — | outclicks.net 301-redirects to sovrn.com/commerce (absorbed by Sovrn); original agent/bot documentation pages no longer exist. | 2026-07-14 |
 | page-to-rss | — | rejected | — | No identifiable operator (no company name) and no bot-documentation page; Page2RSS service is defunct though a static landing page still loads. | 2026-07-14 |
+| perl-pcore | — | rejected | — | Pcore-HTTP is a generic Perl HTTP client library/framework with no identifiable operator running it as a service; a programmatic UA, not an attributab | 2026-07-14 |
 | php-phpcrawl | — | rejected | — | phpcrawl is an open-source PHP crawler library run by end-users, not a service with an identifiable operator; generic programmatic tool fails inclusio | 2026-07-14 |
 | picsearch-crawler | — | rejected | — | Official docs URL picsearch.com/bot.html returns HTTP 404; no live documentation page to source UA/robots/verification from. | 2026-07-14 |
 | pingdom-crawler | — | rejected | — | Already listed as pingdom (same operator SolarWinds Pingdom uptime bot). | 2026-07-14 |
+| pintrest-crawler | — | rejected | — | already listed as pinterestbot (same Pinterestbot UA and pinterest.com/bot.html docs). | 2026-07-14 |
 | postrank-crawler | — | rejected | — | Service defunct: PostRank was acquired by Google in 2011 and shut down; www.postrank.com now redirects to Google Analytics marketing platform. No oper | 2026-07-14 |
+| primal-crawler | — | rejected | — | primal.com now hosts an unrelated AI-trust company with no crawler; original Primalbot operator no longer identifiable and no bot documentation exists | 2026-07-14 |
 | privacore-crawler | — | rejected | — | Findx (Privacore) search engine shut down ~2018; findxbot.com returns HTTP 444 with no working site or bot documentation. Fails gate #1 (no identifiab | 2026-07-14 |
 | profound-crawler | — | rejected | — | profound.net/urlappendbot.html returns 404 and no operator documentation of the bot's purpose exists anywhere. | 2026-07-14 |
 | scan-interfax-crawler | — | rejected | — | Candidate has no recorded UA instance to match the InterfaxScanBot pattern and no verifiable official bot documentation; cannot source required fields | 2026-07-14 |
+| scoutjet-crawler | — | rejected | — | scoutjet.com is a parked GoDaddy for-sale domain; ScoutJet was blekko's crawler and blekko is defunct — no operator or docs. | 2026-07-14 |
 | screamingfrog-crawler | — | rejected | — | Screaming Frog SEO Spider is a generic desktop tool run by end-users (each operator supplies their own crawl), which the inclusion gate explicitly exc | 2026-07-14 |
 | scribd-crawler | — | rejected | — | No recorded UA instance in arcjet (instances: []) and no official Scribd bot-documentation page; cannot source a UA instance, so per iron rules leave  | 2026-07-14 |
 | seekbot-crawler | — | rejected | — | Doc page seekbot.net/bot.html 404s; root domain is now a generic 'Reviews, tips and insights' WordPress blog — original crawler operator defunct, no s | 2026-07-14 |
 | semrush-crawler | — | rejected | — | already listed as semrushbot (generic SemrushBot pattern for the same operator+bot is already covered). | 2026-07-14 |
-| sentry-crawler | Sentry | rejected | — | Generic `sentry/` UA token — fails distinctive-UA gate. Distinct from added sentry-uptime. | 2026-07-13 |
+| sentry-crawler | Sentry | rejected | — | Generic `sentry/` UA — fails distinctive-UA gate. | 2026-07-13 |
 | sentry-uptime-monitor | — | rejected | — | already listed as sentry-uptime (same Sentry uptime bot, SentryUptimeBot UA, same uptime-ips feed) | 2026-07-14 |
 | seoprofiler-crawler | — | rejected | — | seoprofiler.com/bot redirects to a repurposed 'Directory of SEO Tools' homepage; no live official bot-documentation page and no verification recipe to | 2026-07-14 |
+| seoscanners-crawler | — | rejected | — | Operator domain seoscanners.net does not resolve (ENOTFOUND); service defunct, no docs. | 2026-07-14 |
 | sistrix-crawler | — | rejected | — | already listed as sistrix (same operator SISTRIX). | 2026-07-14 |
 | sitebot-crawler | — | rejected | — | sitebot.org returns HTTP 436 with empty body and the only arcjet instance ('Whoiswebsitebot...') does not match the 'sitebot' pattern; no valid UA ins | 2026-07-14 |
+| socialrank-crawler | — | rejected | — | socialrank.io no longer resolves (DNS failure); SocialRank was acquired (Trufan) and the service is defunct with no working operator site/docs. Fails  | 2026-07-14 |
+| softbytelabs-crawler | — | rejected | — | SBL-BOT is the UA of SoftByte Labs' BlackWidow/BrownRecluse desktop crawler apps run by end-users — a generic end-user desktop tool, which the gate re | 2026-07-14 |
+| storygize-crawler | — | rejected | — | storygize.com is live (ad DSP) but publishes no documentation of StorygizeBot; crawler undocumented, fails 'some documentation of the bot' gate. | 2026-07-14 |
 | summify-crawler | — | rejected | — | Original Summify was acquired by Twitter and shut down (2011); summify.com is now an unrelated portfolio site with no crawler docs. Operator defunct,  | 2026-07-14 |
 | sysomos-crawler | — | rejected | — | sysomos.com 308-redirects to meltwater.com; the Sysomos brand is defunct/absorbed and no operator bot documentation remains, so the bot cannot be sour | 2026-07-14 |
+| thinklab-crawler | — | rejected | — | Operator site thinklab.com does not resolve (no DNS record) and no bot documentation exists anywhere; operator not identifiable. | 2026-07-14 |
+| tiscali-crawler | — | rejected | — | Operator (Tiscali/Istella) is identifiable but there is no official bot-documentation page anywhere; the candidate docs URL is just the tiscali.it hom | 2026-07-14 |
 | trove-crawler | — | rejected | — | Arcjet has zero recorded UA instances and the pattern 'Trove' is a generic English word; cannot satisfy the >=1 sourced instance requirement or write  | 2026-07-14 |
 | tweetmemebot | — | rejected | — | Operator DataSift was absorbed by Meltwater; datasift.com/bot.html now redirects to meltwater.com and no bot documentation page exists. Fails gate #1  | 2026-07-14 |
 | twenga-crawler | — | rejected | — | Doc page twenga.com/bot.html 404s and there are zero recorded UA instances, so the pattern cannot be matched to any real instance (schema requires >=1 | 2026-07-14 |
+| twurly-crawler | — | rejected | — | twurly.org domain expired/repurposed (redirects to an unrelated site); operator no longer identifiable and no documentation. | 2026-07-14 |
+| utorrent-crawler | — | rejected | — | BTWebClient is the uTorrent BitTorrent client — generic end-user P2P desktop software, not an identifiable bot/crawler service (gate #3). | 2026-07-14 |
+| vebidoo-crawler | — | rejected | — | Operator site defunct: vebidoo.de does not resolve (ENOTFOUND) and blog.vebidoo.de serves a cert for an unrelated host (reranker.oriq.fr); no working  | 2026-07-14 |
 | warebay-crawler | — | rejected | — | warebay.com/bot.html returns HTTP 404; no recorded UA instance and operator/legitimacy unverifiable. Fails inclusion gate. | 2026-07-14 |
 | wocodi-crawler | — | rejected | — | wocodi.com and /crawler both return HTTP 520 (origin down); no recorded UA instances in arcjet and no working operator/docs page to source. Cannot mee | 2026-07-14 |
 | wotbox-crawler | — | rejected | — | Docs domain www.wotbox.com does not resolve (ENOTFOUND); operator defunct, no live documentation to source. | 2026-07-14 |
+| xenu-crawler | — | rejected | — | Xenu Link Sleuth is an end-user desktop link-checking tool (like Nmap/Screaming Frog) explicitly excluded by the gate; no operator-run service, not at | 2026-07-14 |
 | yandex-crawler | — | rejected | — | Already listed as yandexbot (same operator YandexBot crawler). | 2026-07-14 |
 | yooz-crawler | — | rejected | — | yooz.ir does not resolve (DNS gone); operator site/docs defunct. Fails gate #1 (no working operator site). | 2026-07-14 |
+| zgrab | — | rejected | — | ZGrab2 is a general-purpose application-layer Internet-wide network scanner run by end-users/researchers (paired with ZMap); a generic scanning tool l | 2026-07-14 |
 
 ## Already listed (for reference)
 

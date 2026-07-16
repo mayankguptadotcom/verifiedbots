@@ -1,0 +1,29 @@
+{
+  "id": "yahoo-preview",
+  "name": "Yahoo Link Preview",
+  "operator": {
+    "name": "Yahoo",
+    "url": "https://www.yahoo.com"
+  },
+  "description": "Yahoo Link Preview fetches a page when a Yahoo Mail user includes its URL in an email message, generating a thumbnail, title and description preview. It fetches only user-referenced pages rather than crawling the web.",
+  "docs": [
+    "https://help.yahoo.com/kb/mail/yahoo-link-preview-SLN23615.html"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "Yahoo Link Preview"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Yahoo Link Preview; https://help.yahoo.com/kb/mail/yahoo-link-preview-SLN23615.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

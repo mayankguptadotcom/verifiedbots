@@ -1,0 +1,17 @@
+id: mediatoolkit-crawler
+name: Mediatoolkitbot
+operator: { name: Determ, url: "https://determ.com/" }
+description: >-
+  Mediatoolkitbot is the web crawler operated by Determ (formerly Mediatoolkit),
+  a media monitoring platform. It fetches publicly available web content to match
+  brand mentions and topics that Determ's customers track.
+docs:
+  - "https://determ.com/robot/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Mediatoolkitbot'
+  instances:
+    - 'Mediatoolkitbot'
+behavior: { respects_robots_txt: true, robots_token: Mediatoolkitbot }
+verification: []

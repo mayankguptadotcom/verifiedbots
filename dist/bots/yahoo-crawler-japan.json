@@ -1,0 +1,30 @@
+{
+  "id": "yahoo-crawler-japan",
+  "name": "Yahoo! JAPAN Crawler",
+  "operator": {
+    "name": "LY Corporation (Yahoo! JAPAN)",
+    "url": "https://www.yahoo.co.jp/"
+  },
+  "description": "Web crawler operated by Yahoo! JAPAN (LY Corporation) to collect pages for its Japanese search index and related services. It identifies itself with Y!J-prefixed user-agent tokens and follows the Robots Exclusion Protocol.",
+  "docs": [
+    "https://info-search.yahoo.co.jp/crawl/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Y!J-"
+    ],
+    "instances": [
+      "Y!J-ASR/0.1 crawler (http://www.yahoo-help.jp/app/answers/detail/p/595/a_id/42716/)",
+      "Y!J-BRJ/YATS crawler (http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

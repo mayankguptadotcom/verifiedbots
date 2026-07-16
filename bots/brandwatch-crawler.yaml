@@ -1,0 +1,17 @@
+id: brandwatch-crawler
+name: magpie-crawler
+operator: { name: Brandwatch, url: "https://www.brandwatch.com" }
+description: >-
+  magpie-crawler is Brandwatch's web crawler. It downloads publicly available
+  blog, forum, news, and social-media pages to be indexed and analysed by
+  Brandwatch's social-listening platform. It respects robots.txt.
+docs:
+  - "https://www.brandwatch.com/legal/magpie-crawler/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'magpie-crawler'
+  instances:
+    - 'magpie-crawler/1.1 (U; Linux amd64; en-GB; +http://www.brandwatch.net)'
+behavior: { respects_robots_txt: true }
+verification: []

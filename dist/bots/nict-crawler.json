@@ -1,0 +1,40 @@
+{
+  "id": "nict-crawler",
+  "name": "ICC-Crawler",
+  "operator": {
+    "name": "National Institute of Information and Communications Technology (NICT)",
+    "url": "https://www.nict.go.jp/en/"
+  },
+  "description": "ICC-Crawler is a web crawler operated by Japan's NICT that collects web pages across the internet to build datasets for information and language processing research.",
+  "docs": [
+    "https://ucri.nict.go.jp/en/icccrawler.html"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "ICC-Crawler"
+    ],
+    "instances": [
+      "ICC-Crawler/2.0 (Mozilla-compatible; ; http://ucri.nict.go.jp/en/icccrawler.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "202.180.34.186/32",
+        "61.86.246.72/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": [
+    "202.180.34.186/32",
+    "61.86.246.72/32"
+  ]
+}

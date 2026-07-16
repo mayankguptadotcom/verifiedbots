@@ -1,0 +1,18 @@
+id: tineye-crawler
+name: TinEye
+operator: { name: TinEye, url: "https://tineye.com" }
+description: >-
+  TinEye-bot is the web crawler operated by TinEye, the reverse image search
+  engine built by Idee Inc. It crawls the web to discover and index images for
+  TinEye's image-matching search service.
+docs:
+  - "https://www.tineye.com/crawler.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'TinEye'
+  instances:
+    - 'Mozilla/5.0 (compatible; TinEye-bot/1.31; +http://www.tineye.com/crawler.html)'
+    - 'TinEye/1.1 (http://tineye.com/crawler.html)'
+behavior: { respects_robots_txt: false }
+verification: []

@@ -1,0 +1,20 @@
+id: miniflux-feedfetcher
+name: Miniflux
+operator:
+  name: Miniflux
+  url: "https://miniflux.app/"
+description: >-
+  Miniflux is a minimalist, open-source, self-hosted feed reader. User-run
+  instances fetch the RSS and Atom feeds their subscribers add, identifying
+  themselves with a Miniflux User-Agent.
+docs:
+  - "https://miniflux.app/"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Miniflux\/'
+  instances:
+    - 'Mozilla/5.0 (compatible; Miniflux/2.0.3; +https://miniflux.net)'
+    - 'Mozilla/5.0 (compatible; Miniflux/2.0.x-dev; +https://miniflux.net)'
+behavior: { respects_robots_txt: false }
+verification: []

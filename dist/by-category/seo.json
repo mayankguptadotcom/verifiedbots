@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 13,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 18,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -180,6 +180,75 @@
       ]
     },
     {
+      "id": "barkrowler",
+      "name": "Barkrowler",
+      "operator": {
+        "name": "Babbar",
+        "url": "https://www.babbar.tech"
+      },
+      "description": "Barkrowler is the web crawler operated by Babbar (formerly Exensa). It builds and updates Babbar's graph of the web, which powers the company's SEO and link-analysis tools, and applies a politeness delay between requests.",
+      "docs": [
+        "https://www.babbar.tech/crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Bark[rR]owler"
+        ],
+        "instances": [
+          "Barkrowler/0.7 (+http://www.exensa.com/crawl)",
+          "BarkRowler/0.7 (+http://www.exensa.com/crawling)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "barkrowler"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.babbar.tech/barkrowler-ip-ranges.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": [
+        "154.54.249.0/24",
+        "217.113.194.0/24"
+      ]
+    },
+    {
+      "id": "bombora-crawler",
+      "name": "BomboraBot",
+      "operator": {
+        "name": "Bombora, Inc.",
+        "url": "https://bombora.com"
+      },
+      "description": "BomboraBot is Bombora's web crawler. It classifies the content and topics of web pages that carry Bombora's tags so the company can model B2B purchase intent, visiting each tagged page at most once every 30 days.",
+      "docs": [
+        "https://www.bombora.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "BomboraBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; BomboraBot/1.0; +http://www.bombora.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "botify",
       "name": "Botify",
       "operator": {
@@ -210,6 +279,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cognitiveseo-crawler",
+      "name": "cognitiveSEO",
+      "operator": {
+        "name": "cognitiveSEO",
+        "url": "https://cognitiveseo.com"
+      },
+      "description": "James BOT is the web crawler operated by cognitiveSEO, an SEO toolset. It crawls the web and analyzes links to power the backlink and SEO analysis offered by the cognitiveSEO platform.",
+      "docs": [
+        "https://cognitiveseo.com/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "James BOT"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6 - James BOT - WebCrawler http://cognitiveseo.com/bot.html"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "JamesBOT"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "dotbot",
       "name": "DotBot",
       "operator": {
@@ -237,6 +336,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "integralads-crawler",
+      "name": "IAS Crawler",
+      "operator": {
+        "name": "Integral Ad Science",
+        "url": "https://integralads.com/"
+      },
+      "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers.",
+      "docs": [
+        "https://integralads.com/site-indexing-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ias_crawler"
+        ],
+        "instances": [
+          "IAS Crawler (ias_crawler; http://integralads.com/site-indexing-policy/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -447,6 +575,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "seokicks-crawler",
+      "name": "SEOkicks",
+      "operator": {
+        "name": "Jobkicks SLU",
+        "url": "https://www.seokicks.de/"
+      },
+      "description": "SEOkicks operates a web crawler that builds a backlink database powering its SEO tools. The crawler visits sites to collect link data for analysis.",
+      "docs": [
+        "https://www.seokicks.de/robot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SEOkicks"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SEOkicks; +https://www.seokicks.de/robot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {

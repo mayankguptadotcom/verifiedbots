@@ -1,0 +1,29 @@
+{
+  "id": "cloudflare-prefetch",
+  "name": "Cloudflare Prefetch",
+  "operator": {
+    "name": "Cloudflare",
+    "url": "https://www.cloudflare.com"
+  },
+  "description": "Cloudflare's prefetch bot, an Enterprise speed-optimization feature that pre-populates the CDN cache with content a visitor is likely to request next, using a site-owner-supplied manifest of URLs. Requests carry the CloudFlare-Prefetch user-agent.",
+  "docs": [
+    "https://developers.cloudflare.com/speed/optimization/content/prefetch-urls/"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "CloudFlare-Prefetch/[\\d.]+"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; CloudFlare-Prefetch/0.1; +http://www.cloudflare.com/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

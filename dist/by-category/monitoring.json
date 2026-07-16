@@ -1,8 +1,37 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 19,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 27,
   "bots": [
+    {
+      "id": "azure-app-insights",
+      "name": "Azure Application Insights Availability",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://azure.microsoft.com"
+      },
+      "description": "Synthetic availability-test agents from Microsoft Azure Application Insights that send recurring HTTP requests to user-configured URLs to monitor uptime and responsiveness from multiple Azure regions.",
+      "docs": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AppInsights"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; AppInsights)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "betterstack-uptime",
       "name": "Better Stack Uptime",
@@ -72,6 +101,65 @@
         "91.98.38.26/32",
         "91.99.189.210/32"
       ]
+    },
+    {
+      "id": "brandverity-crawler",
+      "name": "BrandVerity",
+      "operator": {
+        "name": "BrandVerity",
+        "url": "https://www.brandverity.com"
+      },
+      "description": "BrandVerity is a brand-protection service that crawls websites and paid search landing pages to detect trademark and affiliate-compliance violations on behalf of its clients.",
+      "docs": [
+        "https://www.brandverity.com/why-is-brandverity-visiting-me"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "BrandVerity\\/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/55.0 BrandVerity/1.0 (http://www.brandverity.com/why-is-brandverity-visiting-me)",
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone BrandVerity/1.0 (http://www.brandverity.com/why-is-brandverity-visiting-me)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "brandwatch-crawler",
+      "name": "magpie-crawler",
+      "operator": {
+        "name": "Brandwatch",
+        "url": "https://www.brandwatch.com"
+      },
+      "description": "magpie-crawler is Brandwatch's web crawler. It downloads publicly available blog, forum, news, and social-media pages to be indexed and analysed by Brandwatch's social-listening platform. It respects robots.txt.",
+      "docs": [
+        "https://www.brandwatch.com/legal/magpie-crawler/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "magpie-crawler"
+        ],
+        "instances": [
+          "magpie-crawler/1.1 (U; Linux amd64; en-GB; +http://www.brandwatch.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
     },
     {
       "id": "checkly",
@@ -333,6 +421,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-prefetch",
+      "name": "Cloudflare Prefetch",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's prefetch bot, an Enterprise speed-optimization feature that pre-populates the CDN cache with content a visitor is likely to request next, using a site-owner-supplied manifest of URLs. Requests carry the CloudFlare-Prefetch user-agent.",
+      "docs": [
+        "https://developers.cloudflare.com/speed/optimization/content/prefetch-urls/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "CloudFlare-Prefetch/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CloudFlare-Prefetch/0.1; +http://www.cloudflare.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -659,6 +776,35 @@
         "52.42.49.200/32",
         "52.60.140.174/32"
       ]
+    },
+    {
+      "id": "gnowit-crawler",
+      "name": "Gnowit Newsbot",
+      "operator": {
+        "name": "Gnowit",
+        "url": "https://www.gnowit.com"
+      },
+      "description": "Gnowit is an Ottawa-based media and government monitoring company whose crawler continuously fetches news, government, and other public web sources to power real-time monitoring, summarization, and analytics for its clients.",
+      "docs": [
+        "https://www.gnowit.com"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "GnowitNewsbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0 / GnowitNewsbot / Contact information at http://www.gnowit.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
     },
     {
       "id": "grafana-synthetic-monitoring",
@@ -1017,6 +1163,65 @@
         "34.229.178.9/32",
         "69.197.187.216/32"
       ]
+    },
+    {
+      "id": "hypefactors-crawler",
+      "name": "Buck",
+      "operator": {
+        "name": "Hypefactors",
+        "url": "https://hypefactors.com"
+      },
+      "description": "Buck is Hypefactors' media-monitoring crawler. It discovers and indexes web pages by following links, gathering publicly available content for the company's media-monitoring platform. It identifies itself and respects robots.txt.",
+      "docs": [
+        "https://app.hypefactors.com/media-monitoring/about.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Buck\\/"
+        ],
+        "instances": [
+          "Buck/2.2; (+https://app.hypefactors.com/media-monitoring/about.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "mediatoolkit-crawler",
+      "name": "Mediatoolkitbot",
+      "operator": {
+        "name": "Determ",
+        "url": "https://determ.com/"
+      },
+      "description": "Mediatoolkitbot is the web crawler operated by Determ (formerly Mediatoolkit), a media monitoring platform. It fetches publicly available web content to match brand mentions and topics that Determ's customers track.",
+      "docs": [
+        "https://determ.com/robot/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Mediatoolkitbot"
+        ],
+        "instances": [
+          "Mediatoolkitbot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Mediatoolkitbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
     },
     {
       "id": "newrelic-synthetics",
@@ -2476,6 +2681,37 @@
         "66.42.84.197/32",
         "68.183.39.102/32"
       ]
+    },
+    {
+      "id": "trendiction-crawler",
+      "name": "Trendiction Bot",
+      "operator": {
+        "name": "Trendiction",
+        "url": "https://www.trendiction.com"
+      },
+      "description": "Trendiction operates a crawler that fetches public news sites, message boards, and blogs to build a search index and feed media-monitoring and market-research analytics for its clients.",
+      "docs": [
+        "https://www.trendiction.com/bot"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "trendictionbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.0; trendictionbot0.5.0; trendiction search; http://www.trendiction.de/bot; please let us know of any problems; web at trendiction.com) Gecko/20071127 Firefox/3.0.0.11",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; trendictionbot0.5.0; trendiction search; http://www.trendiction.de/bot; please let us know of any problems; web at trendiction.com) Gecko/20170101 Firefox/67.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "trendictionbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
     },
     {
       "id": "updown-io",

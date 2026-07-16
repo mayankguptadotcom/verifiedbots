@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 31,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 35,
   "bots": [
     {
       "id": "adidxbot",
@@ -2791,6 +2791,49 @@
       ]
     },
     {
+      "id": "metajob-crawler",
+      "name": "MetaJobBot",
+      "operator": {
+        "name": "METAJob",
+        "url": "https://www.metajob.de"
+      },
+      "description": "MetaJobBot is the focused web crawler operated by the METAJob job meta-search engine. It searches websites for job listings to include in the METAJob index.",
+      "docs": [
+        "https://www.metajob.de/the/crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "MetaJobBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MetaJobBot; http://www.metajob.de/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "metajobbot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "157.90.179.220/32",
+            "157.90.179.228/32",
+            "157.90.179.241/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": [
+        "157.90.179.220/32",
+        "157.90.179.228/32",
+        "157.90.179.241/32"
+      ]
+    },
+    {
       "id": "mojeekbot",
       "name": "MojeekBot",
       "operator": {
@@ -2933,6 +2976,37 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "pipl-crawler",
+      "name": "PiplBot",
+      "operator": {
+        "name": "Pipl",
+        "url": "https://pipl.com"
+      },
+      "description": "PiplBot is the web-indexing crawler operated by Pipl, an identity and people-search service. It retrieves and indexes publicly available information, including content behind searchable databases, to build Pipl's people-search index.",
+      "docs": [
+        "https://pipl.com/bot/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "PiplBot"
+        ],
+        "instances": [
+          "PiplBot (+http://www.pipl.com/bot/)",
+          "Mozilla/5.0+(compatible;+PiplBot;+http://www.pipl.com/bot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PiplBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -3161,6 +3235,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "tineye-crawler",
+      "name": "TinEye",
+      "operator": {
+        "name": "TinEye",
+        "url": "https://tineye.com"
+      },
+      "description": "TinEye-bot is the web crawler operated by TinEye, the reverse image search engine built by Idee Inc. It crawls the web to discover and index images for TinEye's image-matching search service.",
+      "docs": [
+        "https://www.tineye.com/crawler.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "TinEye"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; TinEye-bot/1.31; +http://www.tineye.com/crawler.html)",
+          "TinEye/1.1 (http://tineye.com/crawler.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yahoo-crawler",
       "name": "Yahoo! Slurp",
       "operator": {
@@ -3189,6 +3293,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-crawler-japan",
+      "name": "Yahoo! JAPAN Crawler",
+      "operator": {
+        "name": "LY Corporation (Yahoo! JAPAN)",
+        "url": "https://www.yahoo.co.jp/"
+      },
+      "description": "Web crawler operated by Yahoo! JAPAN (LY Corporation) to collect pages for its Japanese search index and related services. It identifies itself with Y!J-prefixed user-agent tokens and follows the Robots Exclusion Protocol.",
+      "docs": [
+        "https://info-search.yahoo.co.jp/crawl/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Y!J-"
+        ],
+        "instances": [
+          "Y!J-ASR/0.1 crawler (http://www.yahoo-help.jp/app/answers/detail/p/595/a_id/42716/)",
+          "Y!J-BRJ/YATS crawler (http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {

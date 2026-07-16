@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 14,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 16,
   "bots": [
     {
       "id": "ai2bot",
@@ -697,6 +697,35 @@
       ]
     },
     {
+      "id": "leipzig-lcc",
+      "name": "Leipzig Corpora Collection Crawler",
+      "operator": {
+        "name": "Leipzig University Natural Language Processing Group",
+        "url": "https://www.uni-leipzig.de/"
+      },
+      "description": "The LCC crawler is operated by Leipzig University to collect web text for the Leipzig Corpora Collection, a set of linguistic corpora used in natural language processing research.",
+      "docs": [
+        "https://corpora.wortschatz-leipzig.de/crawler_faq.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "^LCC "
+        ],
+        "instances": [
+          "LCC (+http://corpora.informatik.uni-leipzig.de/crawler_faq.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "meta-externalagent",
       "name": "Meta External Agent",
       "operator": {
@@ -732,6 +761,46 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "nict-crawler",
+      "name": "ICC-Crawler",
+      "operator": {
+        "name": "National Institute of Information and Communications Technology (NICT)",
+        "url": "https://www.nict.go.jp/en/"
+      },
+      "description": "ICC-Crawler is a web crawler operated by Japan's NICT that collects web pages across the internet to build datasets for information and language processing research.",
+      "docs": [
+        "https://ucri.nict.go.jp/en/icccrawler.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ICC-Crawler"
+        ],
+        "instances": [
+          "ICC-Crawler/2.0 (Mozilla-compatible; ; http://ucri.nict.go.jp/en/icccrawler.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "202.180.34.186/32",
+            "61.86.246.72/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": [
+        "202.180.34.186/32",
+        "61.86.246.72/32"
+      ]
     },
     {
       "id": "oai-searchbot",

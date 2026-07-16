@@ -1,0 +1,29 @@
+{
+  "id": "azure-app-insights",
+  "name": "Azure Application Insights Availability",
+  "operator": {
+    "name": "Microsoft",
+    "url": "https://azure.microsoft.com"
+  },
+  "description": "Synthetic availability-test agents from Microsoft Azure Application Insights that send recurring HTTP requests to user-configured URLs to monitor uptime and responsiveness from multiple Azure regions.",
+  "docs": [
+    "https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "AppInsights"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; AppInsights)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T01:14:20.999Z",
+  "resolved_cidrs": []
+}

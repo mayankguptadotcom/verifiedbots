@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T01:02:20.418Z",
-  "count": 44,
+  "generated_at": "2026-07-16T01:14:20.999Z",
+  "count": 67,
   "bots": [
     {
       "id": "ai2bot",
@@ -94,6 +94,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "azure-app-insights",
+      "name": "Azure Application Insights Availability",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://azure.microsoft.com"
+      },
+      "description": "Synthetic availability-test agents from Microsoft Azure Application Insights that send recurring HTTP requests to user-configured URLs to monitor uptime and responsiveness from multiple Azure regions.",
+      "docs": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AppInsights"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; AppInsights)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "bnf-crawler",
       "name": "BnF Web Archiving Robot",
       "operator": {
@@ -124,6 +153,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "bombora-crawler",
+      "name": "BomboraBot",
+      "operator": {
+        "name": "Bombora, Inc.",
+        "url": "https://bombora.com"
+      },
+      "description": "BomboraBot is Bombora's web crawler. It classifies the content and topics of web pages that carry Bombora's tags so the company can model B2B purchase intent, visiting each tagged page at most once every 30 days.",
+      "docs": [
+        "https://www.bombora.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "BomboraBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; BomboraBot/1.0; +http://www.bombora.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "botify",
       "name": "Botify",
       "operator": {
@@ -151,6 +209,65 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "brandverity-crawler",
+      "name": "BrandVerity",
+      "operator": {
+        "name": "BrandVerity",
+        "url": "https://www.brandverity.com"
+      },
+      "description": "BrandVerity is a brand-protection service that crawls websites and paid search landing pages to detect trademark and affiliate-compliance violations on behalf of its clients.",
+      "docs": [
+        "https://www.brandverity.com/why-is-brandverity-visiting-me"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "BrandVerity\\/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/55.0 BrandVerity/1.0 (http://www.brandverity.com/why-is-brandverity-visiting-me)",
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11A465 Twitter for iPhone BrandVerity/1.0 (http://www.brandverity.com/why-is-brandverity-visiting-me)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "brandwatch-crawler",
+      "name": "magpie-crawler",
+      "operator": {
+        "name": "Brandwatch",
+        "url": "https://www.brandwatch.com"
+      },
+      "description": "magpie-crawler is Brandwatch's web crawler. It downloads publicly available blog, forum, news, and social-media pages to be indexed and analysed by Brandwatch's social-listening platform. It respects robots.txt.",
+      "docs": [
+        "https://www.brandwatch.com/legal/magpie-crawler/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "magpie-crawler"
+        ],
+        "instances": [
+          "magpie-crawler/1.1 (U; Linux amd64; en-GB; +http://www.brandwatch.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -214,6 +331,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cloudflare-prefetch",
+      "name": "Cloudflare Prefetch",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's prefetch bot, an Enterprise speed-optimization feature that pre-populates the CDN cache with content a visitor is likely to request next, using a site-owner-supplied manifest of URLs. Requests carry the CloudFlare-Prefetch user-agent.",
+      "docs": [
+        "https://developers.cloudflare.com/speed/optimization/content/prefetch-urls/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "CloudFlare-Prefetch/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CloudFlare-Prefetch/0.1; +http://www.cloudflare.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "cloudflare-ssl-detector",
       "name": "Cloudflare SSL Detector",
       "operator": {
@@ -271,6 +417,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cognitiveseo-crawler",
+      "name": "cognitiveSEO",
+      "operator": {
+        "name": "cognitiveSEO",
+        "url": "https://cognitiveseo.com"
+      },
+      "description": "James BOT is the web crawler operated by cognitiveSEO, an SEO toolset. It crawls the web and analyzes links to power the backlink and SEO analysis offered by the cognitiveSEO platform.",
+      "docs": [
+        "https://cognitiveseo.com/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "James BOT"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6 - James BOT - WebCrawler http://cognitiveseo.com/bot.html"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "JamesBOT"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -363,6 +539,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "facebook-catalog",
+      "name": "Facebook Catalog",
+      "operator": {
+        "name": "Meta",
+        "url": "https://www.meta.com"
+      },
+      "description": "Meta's product-catalog fetcher, identified by the facebookcatalog user-agent. It retrieves merchant product-data feeds used to build and refresh commerce catalogs surfaced across Facebook and Instagram.",
+      "docs": [
+        "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "facebookcatalog/[\\d.]+"
+        ],
+        "instances": [
+          "facebookcatalog/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "feedly",
       "name": "Feedly Fetcher",
       "operator": {
@@ -390,6 +595,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "feedspot-feedfetcher",
+      "name": "Feedspot",
+      "operator": {
+        "name": "Feedspot",
+        "url": "https://www.feedspot.com/"
+      },
+      "description": "Feedspot is a hosted content reader and feed aggregation service. Its bot fetches RSS and Atom feeds and web content on behalf of Feedspot users.",
+      "docs": [
+        "https://www.feedspot.com/fs/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Feedspot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Feedspotbot/1.0; +http://www.feedspot.com/fs/bot)",
+          "Mozilla/5.0 (compatible; Feedspot/1.0 (+https://www.feedspot.com/fs/fetcher; like FeedFetcher-Google)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -423,6 +658,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "gnowit-crawler",
+      "name": "Gnowit Newsbot",
+      "operator": {
+        "name": "Gnowit",
+        "url": "https://www.gnowit.com"
+      },
+      "description": "Gnowit is an Ottawa-based media and government monitoring company whose crawler continuously fetches news, government, and other public web sources to power real-time monitoring, summarization, and analytics for its clients.",
+      "docs": [
+        "https://www.gnowit.com"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "GnowitNewsbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0 / GnowitNewsbot / Contact information at http://www.gnowit.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "haosou-crawler",
       "name": "360Spider",
       "operator": {
@@ -450,6 +714,64 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "hypefactors-crawler",
+      "name": "Buck",
+      "operator": {
+        "name": "Hypefactors",
+        "url": "https://hypefactors.com"
+      },
+      "description": "Buck is Hypefactors' media-monitoring crawler. It discovers and indexes web pages by following links, gathering publicly available content for the company's media-monitoring platform. It identifies itself and respects robots.txt.",
+      "docs": [
+        "https://app.hypefactors.com/media-monitoring/about.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Buck\\/"
+        ],
+        "instances": [
+          "Buck/2.2; (+https://app.hypefactors.com/media-monitoring/about.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "integralads-crawler",
+      "name": "IAS Crawler",
+      "operator": {
+        "name": "Integral Ad Science",
+        "url": "https://integralads.com/"
+      },
+      "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers.",
+      "docs": [
+        "https://integralads.com/site-indexing-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ias_crawler"
+        ],
+        "instances": [
+          "IAS Crawler (ias_crawler; http://integralads.com/site-indexing-policy/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -484,6 +806,93 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "irc-archivebot",
+      "name": "ArchiveBot",
+      "operator": {
+        "name": "Archive Team",
+        "url": "https://www.archiveteam.org/"
+      },
+      "description": "ArchiveBot is an IRC-controlled archiving bot run by Archive Team that crawls websites on request, writes WARC files, and uploads the captures to the Internet Archive.",
+      "docs": [
+        "https://github.com/ArchiveTeam/ArchiveBot"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "ArchiveTeam ArchiveBot\\/"
+        ],
+        "instances": [
+          "ArchiveTeam ArchiveBot/20170106.02 (wpull 2.0.2)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "jusprog-crawler",
+      "name": "Jugendschutzprogramm-Crawler",
+      "operator": {
+        "name": "JusProg e.V.",
+        "url": "https://www.jugendschutzprogramm.de"
+      },
+      "description": "Web crawler operated by JusProg e.V., a German non-profit youth-protection association, that fetches and rates web pages to build the age-classification database used by its parental-control filtering software.",
+      "docs": [
+        "https://www.jugendschutzprogramm.de/en/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Jugendschutzprogramm-Crawler"
+        ],
+        "instances": [
+          "Jugendschutzprogramm-Crawler; Info: http://www.jugendschutzprogramm.de"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "leipzig-lcc",
+      "name": "Leipzig Corpora Collection Crawler",
+      "operator": {
+        "name": "Leipzig University Natural Language Processing Group",
+        "url": "https://www.uni-leipzig.de/"
+      },
+      "description": "The LCC crawler is operated by Leipzig University to collect web text for the Leipzig Corpora Collection, a set of linguistic corpora used in natural language processing research.",
+      "docs": [
+        "https://corpora.wortschatz-leipzig.de/crawler_faq.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "^LCC "
+        ],
+        "instances": [
+          "LCC (+http://corpora.informatik.uni-leipzig.de/crawler_faq.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -605,6 +1014,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "mediatoolkit-crawler",
+      "name": "Mediatoolkitbot",
+      "operator": {
+        "name": "Determ",
+        "url": "https://determ.com/"
+      },
+      "description": "Mediatoolkitbot is the web crawler operated by Determ (formerly Mediatoolkit), a media monitoring platform. It fetches publicly available web content to match brand mentions and topics that Determ's customers track.",
+      "docs": [
+        "https://determ.com/robot/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Mediatoolkitbot"
+        ],
+        "instances": [
+          "Mediatoolkitbot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Mediatoolkitbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "megaindex-crawler",
       "name": "MegaIndex Crawler",
       "operator": {
@@ -632,6 +1071,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "miniflux-feedfetcher",
+      "name": "Miniflux",
+      "operator": {
+        "name": "Miniflux",
+        "url": "https://miniflux.app/"
+      },
+      "description": "Miniflux is a minimalist, open-source, self-hosted feed reader. User-run instances fetch the RSS and Atom feeds their subscribers add, identifying themselves with a Miniflux User-Agent.",
+      "docs": [
+        "https://miniflux.app/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Miniflux\\/"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Miniflux/2.0.3; +https://miniflux.net)",
+          "Mozilla/5.0 (compatible; Miniflux/2.0.x-dev; +https://miniflux.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -810,6 +1279,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "pipl-crawler",
+      "name": "PiplBot",
+      "operator": {
+        "name": "Pipl",
+        "url": "https://pipl.com"
+      },
+      "description": "PiplBot is the web-indexing crawler operated by Pipl, an identity and people-search service. It retrieves and indexes publicly available information, including content behind searchable databases, to build Pipl's people-search index.",
+      "docs": [
+        "https://pipl.com/bot/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "PiplBot"
+        ],
+        "instances": [
+          "PiplBot (+http://www.pipl.com/bot/)",
+          "Mozilla/5.0+(compatible;+PiplBot;+http://www.pipl.com/bot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PiplBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     },
     {
@@ -993,6 +1493,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "seokicks-crawler",
+      "name": "SEOkicks",
+      "operator": {
+        "name": "Jobkicks SLU",
+        "url": "https://www.seokicks.de/"
+      },
+      "description": "SEOkicks operates a web crawler that builds a backlink database powering its SEO tools. The crawler visits sites to collect link data for analysis.",
+      "docs": [
+        "https://www.seokicks.de/robot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SEOkicks"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SEOkicks; +https://www.seokicks.de/robot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "slack-imgproxy",
       "name": "Slack-ImgProxy",
       "operator": {
@@ -1172,6 +1701,67 @@
       "resolved_cidrs": []
     },
     {
+      "id": "tineye-crawler",
+      "name": "TinEye",
+      "operator": {
+        "name": "TinEye",
+        "url": "https://tineye.com"
+      },
+      "description": "TinEye-bot is the web crawler operated by TinEye, the reverse image search engine built by Idee Inc. It crawls the web to discover and index images for TinEye's image-matching search service.",
+      "docs": [
+        "https://www.tineye.com/crawler.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "TinEye"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; TinEye-bot/1.31; +http://www.tineye.com/crawler.html)",
+          "TinEye/1.1 (http://tineye.com/crawler.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "trendiction-crawler",
+      "name": "Trendiction Bot",
+      "operator": {
+        "name": "Trendiction",
+        "url": "https://www.trendiction.com"
+      },
+      "description": "Trendiction operates a crawler that fetches public news sites, message boards, and blogs to build a search index and feed media-monitoring and market-research analytics for its clients.",
+      "docs": [
+        "https://www.trendiction.com/bot"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "trendictionbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.0; trendictionbot0.5.0; trendiction search; http://www.trendiction.de/bot; please let us know of any problems; web at trendiction.com) Gecko/20071127 Firefox/3.0.0.11",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; trendictionbot0.5.0; trendiction search; http://www.trendiction.de/bot; please let us know of any problems; web at trendiction.com) Gecko/20170101 Firefox/67.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "trendictionbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "turnitin-crawler",
       "name": "TurnitinBot",
       "operator": {
@@ -1263,6 +1853,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "vkshare-crawler",
+      "name": "vkShare",
+      "operator": {
+        "name": "VK",
+        "url": "https://vk.com"
+      },
+      "description": "vkShare is VK's link-preview fetcher. When a user shares a URL on the VK social network, it retrieves the target page to build a preview (title, description, and image) for the shared post.",
+      "docs": [
+        "https://vk.com/dev/Share"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "vkShare"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; vkShare; +http://vk.com/dev/Share)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "xovibot-crawler",
       "name": "XoviBot",
       "operator": {
@@ -1321,6 +1940,65 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-crawler-japan",
+      "name": "Yahoo! JAPAN Crawler",
+      "operator": {
+        "name": "LY Corporation (Yahoo! JAPAN)",
+        "url": "https://www.yahoo.co.jp/"
+      },
+      "description": "Web crawler operated by Yahoo! JAPAN (LY Corporation) to collect pages for its Japanese search index and related services. It identifies itself with Y!J-prefixed user-agent tokens and follows the Robots Exclusion Protocol.",
+      "docs": [
+        "https://info-search.yahoo.co.jp/crawl/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Y!J-"
+        ],
+        "instances": [
+          "Y!J-ASR/0.1 crawler (http://www.yahoo-help.jp/app/answers/detail/p/595/a_id/42716/)",
+          "Y!J-BRJ/YATS crawler (http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-preview",
+      "name": "Yahoo Link Preview",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com"
+      },
+      "description": "Yahoo Link Preview fetches a page when a Yahoo Mail user includes its URL in an email message, generating a thumbnail, title and description preview. It fetches only user-referenced pages rather than crawling the web.",
+      "docs": [
+        "https://help.yahoo.com/kb/mail/yahoo-link-preview-SLN23615.html"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Yahoo Link Preview"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo Link Preview; https://help.yahoo.com/kb/mail/yahoo-link-preview-SLN23615.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
     }
   ]
