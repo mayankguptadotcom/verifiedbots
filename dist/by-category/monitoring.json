@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 15,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 19,
   "bots": [
     {
       "id": "betterstack-uptime",
@@ -336,6 +336,76 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cloudflare-traffic-manager",
+      "name": "Cloudflare Traffic Manager",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's Load Balancing monitor, which sends health-check requests to customer origin pools at regular intervals to evaluate endpoint health. It embeds the load-balancer pool id in a fixed User-Agent.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/load-balancing/monitors/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-Traffic-Manager/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cloudflare-Traffic-Manager/1.0; +https://www.cloudflare.com/traffic-manager/; pool-id: AAAAAAAAAAAAAAAA)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cookiehub-scan",
+      "name": "CookieHub Scanner",
+      "operator": {
+        "name": "CookieHub",
+        "url": "https://www.cookiehub.com"
+      },
+      "description": "CookieHub's cookie-consent compliance scanner. It crawls customer domains on a roughly monthly schedule to detect cookies and tracking technologies in use and generate a compliance report.",
+      "docs": [
+        "https://docs.cookiehub.com/features/cookie-scanner",
+        "https://docs.cookiehub.com/getting-started/faq"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "CookieHubScan/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 CookieHubScan/3.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://dash.cookiehub.com/scanner-ip",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "34.253.12.149/32",
+        "54.73.82.123/32",
+        "99.80.75.183/32"
+      ]
+    },
+    {
       "id": "datadog-synthetics",
       "name": "Datadog Synthetics",
       "operator": {
@@ -491,6 +561,45 @@
         "63.34.100.178/32",
         "63.35.33.198/32",
         "99.79.87.237/32"
+      ]
+    },
+    {
+      "id": "deadlinkchecker",
+      "name": "Dead Link Checker",
+      "operator": {
+        "name": "DLC Websites",
+        "url": "https://www.deadlinkchecker.com"
+      },
+      "description": "Dead Link Checker is a hosted service that crawls a submitted website to find broken links and report them, with paid tiers that run automated periodic scans and email the results.",
+      "docs": [
+        "https://www.deadlinkchecker.com/faq.asp"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "www\\.deadlinkchecker\\.com"
+        ],
+        "instances": [
+          "www.deadlinkchecker.com Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "www.deadlinkchecker.com"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "74.208.42.172/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "74.208.42.172/32"
       ]
     },
     {
@@ -868,6 +977,45 @@
         "95.179.139.97/32",
         "95.179.193.59/32",
         "96.126.106.201/32"
+      ]
+    },
+    {
+      "id": "hydrozen-monitor",
+      "name": "Hydrozen",
+      "operator": {
+        "name": "Hydrozen",
+        "url": "https://hydrozen.io"
+      },
+      "description": "Hydrozen.io is an uptime and website monitoring service; its checker fetches monitored endpoints from a documented, published set of IP addresses.",
+      "docs": [
+        "https://docs.hydrozen.io/overview/misc/user-agent-and-ip-list"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Hydrozen\\.io/\\d"
+        ],
+        "instances": [
+          "Hydrozen.io/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://hydrozen.io/config/iplist.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "3.109.154.148/32",
+        "34.229.178.9/32",
+        "69.197.187.216/32"
       ]
     },
     {

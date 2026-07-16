@@ -1,0 +1,25 @@
+id: google-crawler-store
+name: Storebot-Google
+operator:
+  name: Google
+  url: "https://www.google.com"
+description: >-
+  Google's crawler for Google Shopping surfaces, including the Shopping tab in
+  Google Search and shopping.google.com. It crawls product and store pages to
+  populate shopping results.
+docs:
+  - "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Storebot-Google'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Mobile Safari/537.36'
+behavior:
+  respects_robots_txt: true
+  robots_token: Storebot-Google
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+    format: prefixes

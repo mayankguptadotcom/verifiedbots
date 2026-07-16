@@ -105,6 +105,13 @@
     ]
   },
   {
+    "id": "bnf-crawler",
+    "category": "archiver",
+    "patterns": [
+      "bnf\\.fr_bot"
+    ]
+  },
+  {
     "id": "botify",
     "category": "seo",
     "patterns": [
@@ -175,6 +182,20 @@
     ]
   },
   {
+    "id": "cloudflare-ssl-detector",
+    "category": "security",
+    "patterns": [
+      "Cloudflare-SSLDetector"
+    ]
+  },
+  {
+    "id": "cloudflare-traffic-manager",
+    "category": "monitoring",
+    "patterns": [
+      "Cloudflare-Traffic-Manager/[\\d.]+"
+    ]
+  },
+  {
     "id": "coccocbot",
     "category": "search-engine",
     "patterns": [
@@ -183,11 +204,25 @@
     ]
   },
   {
+    "id": "cookiehub-scan",
+    "category": "monitoring",
+    "patterns": [
+      "CookieHubScan/[\\d.]+"
+    ]
+  },
+  {
     "id": "datadog-synthetics",
     "category": "monitoring",
     "patterns": [
       "Datadog/Synthetics",
       "DatadogSynthetics"
+    ]
+  },
+  {
+    "id": "deadlinkchecker",
+    "category": "monitoring",
+    "patterns": [
+      "www\\.deadlinkchecker\\.com"
     ]
   },
   {
@@ -268,6 +303,14 @@
     ]
   },
   {
+    "id": "geedo-crawler-products",
+    "category": "search-engine",
+    "patterns": [
+      "GeedoShopProductFinder",
+      "GeedoProductSearch"
+    ]
+  },
+  {
     "id": "github-hooks",
     "category": "webhook",
     "patterns": [
@@ -282,10 +325,31 @@
     ]
   },
   {
+    "id": "google-crawler-store",
+    "category": "search-engine",
+    "patterns": [
+      "Storebot-Google"
+    ]
+  },
+  {
+    "id": "google-feedfetcher",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Feedfetcher-Google"
+    ]
+  },
+  {
     "id": "google-inspection-tool",
     "category": "search-engine",
     "patterns": [
       "Google-InspectionTool/\\d"
+    ]
+  },
+  {
+    "id": "google-push-notifications",
+    "category": "webhook",
+    "patterns": [
+      "APIs-Google"
     ]
   },
   {
@@ -335,10 +399,24 @@
     ]
   },
   {
+    "id": "haosou-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "360Spider"
+    ]
+  },
+  {
     "id": "hetrixtools",
     "category": "monitoring",
     "patterns": [
       "HetrixTools Uptime Monitoring Bot"
+    ]
+  },
+  {
+    "id": "hydrozen-monitor",
+    "category": "monitoring",
+    "patterns": [
+      "Hydrozen\\.io/\\d"
     ]
   },
   {
@@ -385,10 +463,24 @@
     ]
   },
   {
+    "id": "linkdex-crawler",
+    "category": "seo",
+    "patterns": [
+      "linkdexbot"
+    ]
+  },
+  {
     "id": "linkedinbot",
     "category": "social-preview",
     "patterns": [
       "LinkedInBot/\\d"
+    ]
+  },
+  {
+    "id": "livelap-crawler",
+    "category": "social-preview",
+    "patterns": [
+      "Livelap[bB]ot"
     ]
   },
   {
@@ -406,6 +498,13 @@
     ]
   },
   {
+    "id": "megaindex-crawler",
+    "category": "seo",
+    "patterns": [
+      "MegaIndex\\.ru/"
+    ]
+  },
+  {
     "id": "meta-externalagent",
     "category": "ai-crawler",
     "patterns": [
@@ -417,6 +516,13 @@
     "category": "ai-assistant",
     "patterns": [
       "meta-externalfetcher/\\d"
+    ]
+  },
+  {
+    "id": "microsoft-preview",
+    "category": "social-preview",
+    "patterns": [
+      "MicrosoftPreview/\\d"
     ]
   },
   {
@@ -483,6 +589,13 @@
     ]
   },
   {
+    "id": "openindex-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "OpenindexSpider"
+    ]
+  },
+  {
     "id": "paypal-ipn",
     "category": "webhook",
     "patterns": [
@@ -525,10 +638,24 @@
     ]
   },
   {
+    "id": "proximic-crawler",
+    "category": "seo",
+    "patterns": [
+      "proximic"
+    ]
+  },
+  {
     "id": "qualys-ssllabs",
     "category": "security",
     "patterns": [
       "SSL Labs \\(https://www\\.ssllabs\\.com/about/assessment\\.html\\)"
+    ]
+  },
+  {
+    "id": "quantcast-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "Quantcastbot/\\d"
     ]
   },
   {
@@ -558,6 +685,13 @@
     "category": "monitoring",
     "patterns": [
       "Amazon Route 53 Health Check Service"
+    ]
+  },
+  {
+    "id": "semanticscholar-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "SemanticScholarBot"
     ]
   },
   {
@@ -617,6 +751,13 @@
     ]
   },
   {
+    "id": "sogou-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "Sogou"
+    ]
+  },
+  {
     "id": "statuscake",
     "category": "monitoring",
     "patterns": [
@@ -673,6 +814,13 @@
     ]
   },
   {
+    "id": "turnitin-crawler",
+    "category": "archiver",
+    "patterns": [
+      "TurnitinBot"
+    ]
+  },
+  {
     "id": "twilio-webhooks",
     "category": "webhook",
     "patterns": [
@@ -712,6 +860,27 @@
     "category": "social-preview",
     "patterns": [
       "WhatsApp/[\\d.]+ [AIN]"
+    ]
+  },
+  {
+    "id": "xovibot-crawler",
+    "category": "seo",
+    "patterns": [
+      "XoviBot"
+    ]
+  },
+  {
+    "id": "yahoo-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "Slurp"
+    ]
+  },
+  {
+    "id": "yandex-crawler-javascript",
+    "category": "search-engine",
+    "patterns": [
+      "YandexRenderResourcesBot/\\d"
     ]
   },
   {

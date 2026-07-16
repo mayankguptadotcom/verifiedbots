@@ -1,0 +1,30 @@
+{
+  "id": "semanticscholar-crawler",
+  "name": "SemanticScholarBot",
+  "operator": {
+    "name": "Allen Institute for AI (Ai2)",
+    "url": "https://allenai.org"
+  },
+  "description": "SemanticScholarBot is the crawler for Semantic Scholar, an academic search engine built by the Allen Institute for AI. It crawls the web to find scholarly PDFs and metadata for indexing.",
+  "docs": [
+    "https://www.semanticscholar.org/crawler"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "SemanticScholarBot"
+    ],
+    "instances": [
+      "SemanticScholarBot/1.0 (+http://s2.allenai.org/bot.html)",
+      "Mozilla/5.0 (compatible) SemanticScholarBot (+https://www.semanticscholar.org/crawler)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}

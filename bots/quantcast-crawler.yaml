@@ -1,0 +1,20 @@
+id: quantcast-crawler
+name: Quantcastbot
+operator: { name: Quantcast, url: "https://www.quantcast.com" }
+description: >-
+  Quantcast's advertising crawler. It crawls websites to extract page content
+  for interest-based audience categorization and to run quality-assurance
+  checks on advertisement landing pages.
+docs:
+  - "https://www.quantcast.com/bot"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Quantcastbot/\d'
+  instances:
+    - 'Quantcastbot/1.0 (+https://www.quantcast.com/bot)'
+    - 'Quantcastbot/2.0 (+https://www.quantcast.com/bot)'
+behavior: { respects_robots_txt: true }
+verification:
+  - type: static_cidrs
+    cidrs: ["52.34.88.131/32", "54.71.154.151/32", "192.184.74.253/32", "192.184.75.253/32", "192.184.76.253/32", "192.184.77.253/32", "103.229.11.253/32"]

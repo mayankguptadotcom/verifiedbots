@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 22,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 31,
   "bots": [
     {
       "id": "adidxbot",
@@ -880,6 +880,404 @@
         "74.179.232.116/32",
         "74.242.194.48/32",
         "98.70.219.37/32"
+      ]
+    },
+    {
+      "id": "geedo-crawler-products",
+      "name": "Geedo Product Search",
+      "operator": {
+        "name": "Geedo",
+        "url": "https://geedo.com"
+      },
+      "description": "GeedoShopProductFinder is the crawler for Geedo, a product-search engine that indexes publicly accessible product pages from online stores and follows robots.txt rules.",
+      "docs": [
+        "https://geedo.com/product-search/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "GeedoShopProductFinder",
+          "GeedoProductSearch"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; GeedoShopProductFinder) Chrome/142.0.0.0 Safari/537.36",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GeedoProductSearch; +http://www.geedo.com/product-search.html) Chrome/79.0.3945.88 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://geedo.com/product-search/product-search-ip.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.geedo.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "83.99.206.0/24"
+      ]
+    },
+    {
+      "id": "google-crawler-store",
+      "name": "Storebot-Google",
+      "operator": {
+        "name": "Google",
+        "url": "https://www.google.com"
+      },
+      "description": "Google's crawler for Google Shopping surfaces, including the Shopping tab in Google Search and shopping.google.com. It crawls product and store pages to populate shopping results.",
+      "docs": [
+        "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Storebot-Google"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Mobile Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Storebot-Google"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "192.178.4.0/27",
+        "192.178.4.128/27",
+        "192.178.4.160/27",
+        "192.178.4.192/27",
+        "192.178.4.224/27",
+        "192.178.4.32/27",
+        "192.178.4.64/27",
+        "192.178.4.96/27",
+        "192.178.5.0/27",
+        "192.178.6.0/27",
+        "192.178.6.128/27",
+        "192.178.6.160/27",
+        "192.178.6.192/27",
+        "192.178.6.224/27",
+        "192.178.6.32/27",
+        "192.178.6.64/27",
+        "192.178.6.96/27",
+        "192.178.7.0/27",
+        "192.178.7.128/27",
+        "192.178.7.160/27",
+        "192.178.7.192/27",
+        "192.178.7.224/27",
+        "192.178.7.32/27",
+        "192.178.7.64/27",
+        "192.178.7.96/27",
+        "2001:4860:4801:10::/64",
+        "2001:4860:4801:11::/64",
+        "2001:4860:4801:12::/64",
+        "2001:4860:4801:13::/64",
+        "2001:4860:4801:14::/64",
+        "2001:4860:4801:15::/64",
+        "2001:4860:4801:16::/64",
+        "2001:4860:4801:17::/64",
+        "2001:4860:4801:18::/64",
+        "2001:4860:4801:19::/64",
+        "2001:4860:4801:1a::/64",
+        "2001:4860:4801:1b::/64",
+        "2001:4860:4801:1c::/64",
+        "2001:4860:4801:1d::/64",
+        "2001:4860:4801:1e::/64",
+        "2001:4860:4801:1f::/64",
+        "2001:4860:4801:20::/64",
+        "2001:4860:4801:21::/64",
+        "2001:4860:4801:22::/64",
+        "2001:4860:4801:23::/64",
+        "2001:4860:4801:24::/64",
+        "2001:4860:4801:25::/64",
+        "2001:4860:4801:26::/64",
+        "2001:4860:4801:27::/64",
+        "2001:4860:4801:28::/64",
+        "2001:4860:4801:29::/64",
+        "2001:4860:4801:2::/64",
+        "2001:4860:4801:2a::/64",
+        "2001:4860:4801:2b::/64",
+        "2001:4860:4801:2c::/64",
+        "2001:4860:4801:2d::/64",
+        "2001:4860:4801:2e::/64",
+        "2001:4860:4801:2f::/64",
+        "2001:4860:4801:30::/64",
+        "2001:4860:4801:31::/64",
+        "2001:4860:4801:32::/64",
+        "2001:4860:4801:33::/64",
+        "2001:4860:4801:34::/64",
+        "2001:4860:4801:35::/64",
+        "2001:4860:4801:36::/64",
+        "2001:4860:4801:37::/64",
+        "2001:4860:4801:38::/64",
+        "2001:4860:4801:39::/64",
+        "2001:4860:4801:3a::/64",
+        "2001:4860:4801:3b::/64",
+        "2001:4860:4801:3c::/64",
+        "2001:4860:4801:3d::/64",
+        "2001:4860:4801:3e::/64",
+        "2001:4860:4801:3f::/64",
+        "2001:4860:4801:40::/64",
+        "2001:4860:4801:41::/64",
+        "2001:4860:4801:42::/64",
+        "2001:4860:4801:44::/64",
+        "2001:4860:4801:45::/64",
+        "2001:4860:4801:46::/64",
+        "2001:4860:4801:47::/64",
+        "2001:4860:4801:48::/64",
+        "2001:4860:4801:49::/64",
+        "2001:4860:4801:4a::/64",
+        "2001:4860:4801:4b::/64",
+        "2001:4860:4801:4c::/64",
+        "2001:4860:4801:4d::/64",
+        "2001:4860:4801:4e::/64",
+        "2001:4860:4801:50::/64",
+        "2001:4860:4801:51::/64",
+        "2001:4860:4801:52::/64",
+        "2001:4860:4801:53::/64",
+        "2001:4860:4801:54::/64",
+        "2001:4860:4801:55::/64",
+        "2001:4860:4801:56::/64",
+        "2001:4860:4801:57::/64",
+        "2001:4860:4801:58::/64",
+        "2001:4860:4801:59::/64",
+        "2001:4860:4801:60::/64",
+        "2001:4860:4801:61::/64",
+        "2001:4860:4801:62::/64",
+        "2001:4860:4801:63::/64",
+        "2001:4860:4801:64::/64",
+        "2001:4860:4801:65::/64",
+        "2001:4860:4801:66::/64",
+        "2001:4860:4801:67::/64",
+        "2001:4860:4801:68::/64",
+        "2001:4860:4801:69::/64",
+        "2001:4860:4801:6a::/64",
+        "2001:4860:4801:6b::/64",
+        "2001:4860:4801:6c::/64",
+        "2001:4860:4801:6d::/64",
+        "2001:4860:4801:6e::/64",
+        "2001:4860:4801:6f::/64",
+        "2001:4860:4801:70::/64",
+        "2001:4860:4801:71::/64",
+        "2001:4860:4801:72::/64",
+        "2001:4860:4801:73::/64",
+        "2001:4860:4801:74::/64",
+        "2001:4860:4801:75::/64",
+        "2001:4860:4801:76::/64",
+        "2001:4860:4801:77::/64",
+        "2001:4860:4801:78::/64",
+        "2001:4860:4801:79::/64",
+        "2001:4860:4801:7a::/64",
+        "2001:4860:4801:7b::/64",
+        "2001:4860:4801:7c::/64",
+        "2001:4860:4801:7d::/64",
+        "2001:4860:4801:7e::/64",
+        "2001:4860:4801:7f::/64",
+        "2001:4860:4801:80::/64",
+        "2001:4860:4801:81::/64",
+        "2001:4860:4801:82::/64",
+        "2001:4860:4801:83::/64",
+        "2001:4860:4801:84::/64",
+        "2001:4860:4801:85::/64",
+        "2001:4860:4801:86::/64",
+        "2001:4860:4801:87::/64",
+        "2001:4860:4801:88::/64",
+        "2001:4860:4801:90::/64",
+        "2001:4860:4801:91::/64",
+        "2001:4860:4801:92::/64",
+        "2001:4860:4801:93::/64",
+        "2001:4860:4801:94::/64",
+        "2001:4860:4801:95::/64",
+        "2001:4860:4801:96::/64",
+        "2001:4860:4801:97::/64",
+        "2001:4860:4801:a0::/64",
+        "2001:4860:4801:a1::/64",
+        "2001:4860:4801:a2::/64",
+        "2001:4860:4801:a3::/64",
+        "2001:4860:4801:a4::/64",
+        "2001:4860:4801:a5::/64",
+        "2001:4860:4801:a6::/64",
+        "2001:4860:4801:a7::/64",
+        "2001:4860:4801:a8::/64",
+        "2001:4860:4801:a9::/64",
+        "2001:4860:4801:aa::/64",
+        "2001:4860:4801:ab::/64",
+        "2001:4860:4801:ac::/64",
+        "2001:4860:4801:ad::/64",
+        "2001:4860:4801:ae::/64",
+        "2001:4860:4801:b0::/64",
+        "2001:4860:4801:b1::/64",
+        "2001:4860:4801:b2::/64",
+        "2001:4860:4801:b3::/64",
+        "2001:4860:4801:b4::/64",
+        "2001:4860:4801:b5::/64",
+        "2001:4860:4801:b6::/64",
+        "2001:4860:4801:c::/64",
+        "2001:4860:4801:f::/64",
+        "34.100.182.96/28",
+        "34.101.50.144/28",
+        "34.118.254.0/28",
+        "34.118.66.0/28",
+        "34.126.178.96/28",
+        "34.146.150.144/28",
+        "34.147.110.144/28",
+        "34.151.74.144/28",
+        "34.152.50.64/28",
+        "34.154.114.144/28",
+        "34.155.98.32/28",
+        "34.165.18.176/28",
+        "34.175.160.64/28",
+        "34.176.130.16/28",
+        "34.22.85.0/27",
+        "34.64.82.64/28",
+        "34.65.242.112/28",
+        "34.80.50.80/28",
+        "34.88.194.0/28",
+        "34.89.10.80/28",
+        "34.89.198.80/28",
+        "34.96.162.48/28",
+        "35.247.243.240/28",
+        "66.249.64.0/27",
+        "66.249.64.128/27",
+        "66.249.64.160/27",
+        "66.249.64.192/27",
+        "66.249.64.224/27",
+        "66.249.64.32/27",
+        "66.249.64.64/27",
+        "66.249.64.96/27",
+        "66.249.65.0/27",
+        "66.249.65.128/27",
+        "66.249.65.160/27",
+        "66.249.65.192/27",
+        "66.249.65.224/27",
+        "66.249.65.32/27",
+        "66.249.65.64/27",
+        "66.249.65.96/27",
+        "66.249.66.0/27",
+        "66.249.66.128/27",
+        "66.249.66.160/27",
+        "66.249.66.192/27",
+        "66.249.66.224/27",
+        "66.249.66.32/27",
+        "66.249.66.64/27",
+        "66.249.66.96/27",
+        "66.249.67.0/27",
+        "66.249.67.32/27",
+        "66.249.67.64/27",
+        "66.249.68.0/27",
+        "66.249.68.128/27",
+        "66.249.68.160/27",
+        "66.249.68.192/27",
+        "66.249.68.32/27",
+        "66.249.68.64/27",
+        "66.249.68.96/27",
+        "66.249.69.0/27",
+        "66.249.69.128/27",
+        "66.249.69.160/27",
+        "66.249.69.192/27",
+        "66.249.69.224/27",
+        "66.249.69.32/27",
+        "66.249.69.64/27",
+        "66.249.69.96/27",
+        "66.249.70.0/27",
+        "66.249.70.128/27",
+        "66.249.70.160/27",
+        "66.249.70.192/27",
+        "66.249.70.224/27",
+        "66.249.70.32/27",
+        "66.249.70.64/27",
+        "66.249.70.96/27",
+        "66.249.71.0/27",
+        "66.249.71.128/27",
+        "66.249.71.160/27",
+        "66.249.71.192/27",
+        "66.249.71.224/27",
+        "66.249.71.32/27",
+        "66.249.71.64/27",
+        "66.249.71.96/27",
+        "66.249.72.0/27",
+        "66.249.72.128/27",
+        "66.249.72.160/27",
+        "66.249.72.192/27",
+        "66.249.72.224/27",
+        "66.249.72.32/27",
+        "66.249.72.64/27",
+        "66.249.72.96/27",
+        "66.249.73.0/27",
+        "66.249.73.128/27",
+        "66.249.73.160/27",
+        "66.249.73.192/27",
+        "66.249.73.224/27",
+        "66.249.73.32/27",
+        "66.249.73.64/27",
+        "66.249.73.96/27",
+        "66.249.74.0/27",
+        "66.249.74.128/27",
+        "66.249.74.160/27",
+        "66.249.74.192/27",
+        "66.249.74.224/27",
+        "66.249.74.32/27",
+        "66.249.74.64/27",
+        "66.249.74.96/27",
+        "66.249.75.0/27",
+        "66.249.75.128/27",
+        "66.249.75.160/27",
+        "66.249.75.192/27",
+        "66.249.75.224/27",
+        "66.249.75.32/27",
+        "66.249.75.64/27",
+        "66.249.75.96/27",
+        "66.249.76.0/27",
+        "66.249.76.128/27",
+        "66.249.76.160/27",
+        "66.249.76.192/27",
+        "66.249.76.224/27",
+        "66.249.76.32/27",
+        "66.249.76.64/27",
+        "66.249.76.96/27",
+        "66.249.77.0/27",
+        "66.249.77.128/27",
+        "66.249.77.160/27",
+        "66.249.77.192/27",
+        "66.249.77.224/27",
+        "66.249.77.32/27",
+        "66.249.77.64/27",
+        "66.249.77.96/27",
+        "66.249.78.0/27",
+        "66.249.78.128/27",
+        "66.249.78.160/27",
+        "66.249.78.192/27",
+        "66.249.78.224/27",
+        "66.249.78.32/27",
+        "66.249.78.64/27",
+        "66.249.78.96/27",
+        "66.249.79.0/27",
+        "66.249.79.128/27",
+        "66.249.79.160/27",
+        "66.249.79.192/27",
+        "66.249.79.224/27",
+        "66.249.79.32/27",
+        "66.249.79.64/27"
       ]
     },
     {
@@ -2267,6 +2665,36 @@
       ]
     },
     {
+      "id": "haosou-crawler",
+      "name": "360Spider",
+      "operator": {
+        "name": "360 Search (Qihoo 360)",
+        "url": "https://www.so.com/"
+      },
+      "description": "360Spider is the web-search crawler of 360 Search (so.com), the search engine operated by Chinese internet company Qihoo 360. The operator also runs 360Spider-Image and 360Spider-Video for image and video search.",
+      "docs": [
+        "https://www.so.com/help/help_3_2.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "360Spider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1; 360Spider"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "360Spider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "kagibot",
       "name": "Kagibot",
       "operator": {
@@ -2440,6 +2868,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "openindex-crawler",
+      "name": "Openindex Spider",
+      "operator": {
+        "name": "Openindex",
+        "url": "https://www.openindex.io"
+      },
+      "description": "Openindex operates a web-crawling cluster (Apache Nutch on an Apache Hadoop cluster) for research and development of universal and focused search engines. The crawler respects robots.txt and the Crawl-delay directive and identifies itself in the User-Agent.",
+      "docs": [
+        "https://www.openindex.io/about-our-spider/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "OpenindexSpider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; OpenindexSpider; +https://www.openindex.io/saas/about-our-spider/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "OpenindexSpider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "petalbot",
       "name": "PetalBot",
       "operator": {
@@ -2476,6 +2934,57 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "quantcast-crawler",
+      "name": "Quantcastbot",
+      "operator": {
+        "name": "Quantcast",
+        "url": "https://www.quantcast.com"
+      },
+      "description": "Quantcast's advertising crawler. It crawls websites to extract page content for interest-based audience categorization and to run quality-assurance checks on advertisement landing pages.",
+      "docs": [
+        "https://www.quantcast.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Quantcastbot/\\d"
+        ],
+        "instances": [
+          "Quantcastbot/1.0 (+https://www.quantcast.com/bot)",
+          "Quantcastbot/2.0 (+https://www.quantcast.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.34.88.131/32",
+            "54.71.154.151/32",
+            "192.184.74.253/32",
+            "192.184.75.253/32",
+            "192.184.76.253/32",
+            "192.184.77.253/32",
+            "103.229.11.253/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "103.229.11.253/32",
+        "192.184.74.253/32",
+        "192.184.75.253/32",
+        "192.184.76.253/32",
+        "192.184.77.253/32",
+        "52.34.88.131/32",
+        "54.71.154.151/32"
+      ]
     },
     {
       "id": "qwantbot",
@@ -2523,6 +3032,36 @@
       ]
     },
     {
+      "id": "semanticscholar-crawler",
+      "name": "SemanticScholarBot",
+      "operator": {
+        "name": "Allen Institute for AI (Ai2)",
+        "url": "https://allenai.org"
+      },
+      "description": "SemanticScholarBot is the crawler for Semantic Scholar, an academic search engine built by the Allen Institute for AI. It crawls the web to find scholarly PDFs and metadata for indexing.",
+      "docs": [
+        "https://www.semanticscholar.org/crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "SemanticScholarBot"
+        ],
+        "instances": [
+          "SemanticScholarBot/1.0 (+http://s2.allenai.org/bot.html)",
+          "Mozilla/5.0 (compatible) SemanticScholarBot (+https://www.semanticscholar.org/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "seznambot",
       "name": "SeznamBot",
       "operator": {
@@ -2561,6 +3100,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "sogou-crawler",
+      "name": "Sogou Spider",
+      "operator": {
+        "name": "Sogou",
+        "url": "https://www.sogou.com/"
+      },
+      "description": "Sogou Spider is the web crawler for Sogou, a major Chinese search engine (owned by Tencent). It crawls and indexes web pages, news, and images to build Sogou's search index.",
+      "docs": [
+        "https://www.sogou.com/docs/help/webmasters.htm"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Sogou"
+        ],
+        "instances": [
+          "Sogou News Spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)",
+          "Sogou Pic Spider/3.0(+http://www.sogou.com/docs/help/webmasters.htm#07)",
+          "Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "stractbot",
       "name": "StractBot",
       "operator": {
@@ -2588,6 +3158,75 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-crawler",
+      "name": "Yahoo! Slurp",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com/"
+      },
+      "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports.",
+      "docs": [
+        "https://help.yahoo.com/kb/SLN22600.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Slurp"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)",
+          "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Slurp"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-crawler-javascript",
+      "name": "YandexRenderResourcesBot",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex robot that loads resources such as JavaScript and CSS needed to render pages during crawling for Yandex Search.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexRenderResourcesBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexRenderResourcesBot/1.0; +http://yandex.com/bots) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {

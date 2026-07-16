@@ -1,0 +1,18 @@
+id: yandex-crawler-javascript
+name: YandexRenderResourcesBot
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  Yandex robot that loads resources such as JavaScript and CSS needed to
+  render pages during crawling for Yandex Search.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexRenderResourcesBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexRenderResourcesBot/1.0; +http://yandex.com/bots) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

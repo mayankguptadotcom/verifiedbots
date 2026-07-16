@@ -1,0 +1,21 @@
+id: livelap-crawler
+name: LivelapBot
+operator:
+  name: Livelap
+  url: "https://site.livelap.com"
+description: >-
+  LivelapBot is the crawler for Livelap, a content discovery app. It fetches
+  pages shared on social media and crawls RSS feeds on a schedule, indexing
+  HTML and media meta tags to build link previews shown in the Livelap app.
+docs:
+  - "https://site.livelap.com/crawler"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Livelap[bB]ot'
+  instances:
+    - 'LivelapBot/0.2 (http://site.livelap.com/crawler)'
+    - 'Livelapbot/0.1'
+behavior:
+  respects_robots_txt: false
+verification: []

@@ -1,0 +1,22 @@
+id: sogou-crawler
+name: Sogou Spider
+operator:
+  name: Sogou
+  url: "https://www.sogou.com/"
+description: >-
+  Sogou Spider is the web crawler for Sogou, a major Chinese search engine (owned
+  by Tencent). It crawls and indexes web pages, news, and images to build Sogou's
+  search index.
+docs:
+  - "https://www.sogou.com/docs/help/webmasters.htm"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Sogou'
+  instances:
+    - 'Sogou News Spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)'
+    - 'Sogou Pic Spider/3.0(+http://www.sogou.com/docs/help/webmasters.htm#07)'
+    - 'Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)'
+behavior:
+  respects_robots_txt: true
+verification: []

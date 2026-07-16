@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 14,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 16,
   "bots": [
     {
       "id": "discordbot",
@@ -226,6 +226,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "livelap-crawler",
+      "name": "LivelapBot",
+      "operator": {
+        "name": "Livelap",
+        "url": "https://site.livelap.com"
+      },
+      "description": "LivelapBot is the crawler for Livelap, a content discovery app. It fetches pages shared on social media and crawls RSS feeds on a schedule, indexing HTML and media meta tags to build link previews shown in the Livelap app.",
+      "docs": [
+        "https://site.livelap.com/crawler"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Livelap[bB]ot"
+        ],
+        "instances": [
+          "LivelapBot/0.2 (http://site.livelap.com/crawler)",
+          "Livelapbot/0.1"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "mastodon",
       "name": "Mastodon (link preview fetcher)",
       "operator": {
@@ -253,6 +283,76 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "microsoft-preview",
+      "name": "MicrosoftPreview",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com"
+      },
+      "description": "Microsoft fetcher, listed among Bing's crawlers, that retrieves pages to generate link previews for Microsoft products and services.",
+      "docs": [
+        "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "MicrosoftPreview/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MicrosoftPreview/2.0; +https://aka.ms/MicrosoftPreview) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.bing.com/toolbox/bingbot.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.search.msn.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "13.66.139.0/24",
+        "13.66.144.0/24",
+        "13.67.10.16/28",
+        "13.69.66.240/28",
+        "13.71.172.224/28",
+        "139.217.52.0/28",
+        "157.55.39.0/24",
+        "191.233.204.224/28",
+        "199.30.24.0/23",
+        "20.125.163.80/28",
+        "20.15.133.160/27",
+        "20.36.108.32/28",
+        "20.43.120.16/28",
+        "20.74.197.0/28",
+        "20.79.107.240/28",
+        "207.46.13.0/24",
+        "40.77.139.0/25",
+        "40.77.167.0/24",
+        "40.77.177.0/24",
+        "40.77.178.0/23",
+        "40.77.188.0/22",
+        "40.77.202.0/24",
+        "40.79.131.208/28",
+        "40.79.186.176/28",
+        "51.105.67.0/28",
+        "52.167.144.0/24",
+        "52.231.148.0/28",
+        "65.55.210.0/24"
+      ]
     },
     {
       "id": "pinterestbot",

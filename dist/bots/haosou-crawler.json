@@ -1,0 +1,30 @@
+{
+  "id": "haosou-crawler",
+  "name": "360Spider",
+  "operator": {
+    "name": "360 Search (Qihoo 360)",
+    "url": "https://www.so.com/"
+  },
+  "description": "360Spider is the web-search crawler of 360 Search (so.com), the search engine operated by Chinese internet company Qihoo 360. The operator also runs 360Spider-Image and 360Spider-Video for image and video search.",
+  "docs": [
+    "https://www.so.com/help/help_3_2.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "360Spider"
+    ],
+    "instances": [
+      "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1; 360Spider"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "360Spider"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}

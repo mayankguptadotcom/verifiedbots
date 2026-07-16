@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 33,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 36,
   "bots": [
     {
       "id": "adidxbot",
@@ -391,6 +391,45 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "deadlinkchecker",
+      "name": "Dead Link Checker",
+      "operator": {
+        "name": "DLC Websites",
+        "url": "https://www.deadlinkchecker.com"
+      },
+      "description": "Dead Link Checker is a hosted service that crawls a submitted website to find broken links and report them, with paid tiers that run automated periodic scans and email the results.",
+      "docs": [
+        "https://www.deadlinkchecker.com/faq.asp"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "www\\.deadlinkchecker\\.com"
+        ],
+        "instances": [
+          "www.deadlinkchecker.com Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "www.deadlinkchecker.com"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "74.208.42.172/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "74.208.42.172/32"
+      ]
     },
     {
       "id": "detectify",
@@ -1130,6 +1169,57 @@
       ]
     },
     {
+      "id": "quantcast-crawler",
+      "name": "Quantcastbot",
+      "operator": {
+        "name": "Quantcast",
+        "url": "https://www.quantcast.com"
+      },
+      "description": "Quantcast's advertising crawler. It crawls websites to extract page content for interest-based audience categorization and to run quality-assurance checks on advertisement landing pages.",
+      "docs": [
+        "https://www.quantcast.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Quantcastbot/\\d"
+        ],
+        "instances": [
+          "Quantcastbot/1.0 (+https://www.quantcast.com/bot)",
+          "Quantcastbot/2.0 (+https://www.quantcast.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.34.88.131/32",
+            "54.71.154.151/32",
+            "192.184.74.253/32",
+            "192.184.75.253/32",
+            "192.184.76.253/32",
+            "192.184.77.253/32",
+            "103.229.11.253/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "103.229.11.253/32",
+        "192.184.74.253/32",
+        "192.184.75.253/32",
+        "192.184.76.253/32",
+        "192.184.77.253/32",
+        "52.34.88.131/32",
+        "54.71.154.151/32"
+      ]
+    },
+    {
       "id": "seznambot",
       "name": "SeznamBot",
       "operator": {
@@ -1508,6 +1598,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-crawler-javascript",
+      "name": "YandexRenderResourcesBot",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex robot that loads resources such as JavaScript and CSS needed to render pages during crawling for Yandex Search.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexRenderResourcesBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexRenderResourcesBot/1.0; +http://yandex.com/bots) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {

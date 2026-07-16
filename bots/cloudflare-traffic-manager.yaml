@@ -1,0 +1,18 @@
+id: cloudflare-traffic-manager
+name: Cloudflare Traffic Manager
+operator: { name: Cloudflare, url: "https://www.cloudflare.com" }
+description: >-
+  Cloudflare's Load Balancing monitor, which sends health-check requests to
+  customer origin pools at regular intervals to evaluate endpoint health. It
+  embeds the load-balancer pool id in a fixed User-Agent.
+docs:
+  - "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+  - "https://developers.cloudflare.com/load-balancing/monitors/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Cloudflare-Traffic-Manager/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; Cloudflare-Traffic-Manager/1.0; +https://www.cloudflare.com/traffic-manager/; pool-id: AAAAAAAAAAAAAAAA)'
+behavior: { respects_robots_txt: false }
+verification: []

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 2,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 4,
   "bots": [
     {
       "id": "arquivo-pt",
@@ -31,6 +31,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "bnf-crawler",
+      "name": "BnF Web Archiving Robot",
+      "operator": {
+        "name": "Bibliothèque nationale de France",
+        "url": "https://www.bnf.fr"
+      },
+      "description": "The web crawler of the Bibliothèque nationale de France, which harvests French websites for the legal deposit of the web to preserve the national documentary heritage. It runs on Heritrix and applies request delays to avoid overloading servers.",
+      "docs": [
+        "https://www.bnf.fr/en/your-website-harvested-bnfs-robot"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "bnf\\.fr_bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; bnf.fr_bot; +http://www.bnf.fr/fr/outils/a.dl_web_capture_robot.html)",
+          "Mozilla/5.0 (compatible; bnf.fr_bot; +http://bibnum.bnf.fr/robot/bnf.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {
@@ -65,6 +95,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "turnitin-crawler",
+      "name": "TurnitinBot",
+      "operator": {
+        "name": "Turnitin",
+        "url": "https://www.turnitin.com/"
+      },
+      "description": "TurnitinBot is the web crawler operated by Turnitin. It collects publicly available web pages to build the content database used by Turnitin's academic-integrity and plagiarism-detection services.",
+      "docs": [
+        "https://www.turnitin.com/robot/crawlerinfo.html"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "TurnitinBot"
+        ],
+        "instances": [
+          "TurnitinBot (https://turnitin.com/robot/crawlerinfo.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "TurnitinBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     }
   ]

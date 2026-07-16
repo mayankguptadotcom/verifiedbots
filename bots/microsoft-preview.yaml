@@ -1,0 +1,21 @@
+id: microsoft-preview
+name: MicrosoftPreview
+operator: { name: Microsoft, url: "https://www.microsoft.com" }
+description: >-
+  Microsoft fetcher, listed among Bing's crawlers, that retrieves pages to
+  generate link previews for Microsoft products and services.
+docs:
+  - "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+category: social-preview
+user_agents:
+  patterns:
+    - 'MicrosoftPreview/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MicrosoftPreview/2.0; +https://aka.ms/MicrosoftPreview) Chrome/W.X.Y.Z Safari/537.36'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://www.bing.com/toolbox/bingbot.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.search.msn.com"]

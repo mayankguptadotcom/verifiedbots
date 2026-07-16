@@ -1,0 +1,23 @@
+id: google-feedfetcher
+name: Feedfetcher-Google
+operator:
+  name: Google
+  url: "https://www.google.com"
+description: >-
+  Google's feed retrieval agent for RSS and Atom feeds used by Google News and
+  WebSub. It fetches and periodically refreshes feeds that users of an app or
+  service have explicitly subscribed to.
+docs:
+  - "https://developers.google.com/search/docs/crawling-indexing/feedfetcher"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Feedfetcher-Google'
+  instances:
+    - 'Feedfetcher-Google; (+http://www.google.com/feedfetcher.html; 1 subscribers; feed-id=728742641706423)'
+behavior:
+  respects_robots_txt: false
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json"
+    format: prefixes

@@ -1,0 +1,45 @@
+{
+  "id": "geedo-crawler-products",
+  "name": "Geedo Product Search",
+  "operator": {
+    "name": "Geedo",
+    "url": "https://geedo.com"
+  },
+  "description": "GeedoShopProductFinder is the crawler for Geedo, a product-search engine that indexes publicly accessible product pages from online stores and follows robots.txt rules.",
+  "docs": [
+    "https://geedo.com/product-search/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "GeedoShopProductFinder",
+      "GeedoProductSearch"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; GeedoShopProductFinder) Chrome/142.0.0.0 Safari/537.36",
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GeedoProductSearch; +http://www.geedo.com/product-search.html) Chrome/79.0.3945.88 Safari/537.36"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://geedo.com/product-search/product-search-ip.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.geedo.com"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": [
+    "83.99.206.0/24"
+  ]
+}

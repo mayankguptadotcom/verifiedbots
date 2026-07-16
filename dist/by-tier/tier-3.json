@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 30,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 44,
   "bots": [
     {
       "id": "ai2bot",
@@ -94,6 +94,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "bnf-crawler",
+      "name": "BnF Web Archiving Robot",
+      "operator": {
+        "name": "Bibliothèque nationale de France",
+        "url": "https://www.bnf.fr"
+      },
+      "description": "The web crawler of the Bibliothèque nationale de France, which harvests French websites for the legal deposit of the web to preserve the national documentary heritage. It runs on Heritrix and applies request delays to avoid overloading servers.",
+      "docs": [
+        "https://www.bnf.fr/en/your-website-harvested-bnfs-robot"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "bnf\\.fr_bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; bnf.fr_bot; +http://www.bnf.fr/fr/outils/a.dl_web_capture_robot.html)",
+          "Mozilla/5.0 (compatible; bnf.fr_bot; +http://bibnum.bnf.fr/robot/bnf.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "botify",
       "name": "Botify",
       "operator": {
@@ -181,6 +211,66 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-ssl-detector",
+      "name": "Cloudflare SSL Detector",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's SSL/TLS Recommender crawler, which fetches a customer origin over both HTTP and HTTPS to determine whether the site can be served fully over HTTPS and to recommend TLS settings.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/ssl/origin-configuration/ssl-tls-recommender/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-SSLDetector"
+        ],
+        "instances": [
+          "Cloudflare-SSLDetector"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-traffic-manager",
+      "name": "Cloudflare Traffic Manager",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's Load Balancing monitor, which sends health-check requests to customer origin pools at regular intervals to evaluate endpoint health. It embeds the load-balancer pool id in a fixed User-Agent.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/load-balancing/monitors/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-Traffic-Manager/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cloudflare-Traffic-Manager/1.0; +https://www.cloudflare.com/traffic-manager/; pool-id: AAAAAAAAAAAAAAAA)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {
@@ -333,6 +423,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "haosou-crawler",
+      "name": "360Spider",
+      "operator": {
+        "name": "360 Search (Qihoo 360)",
+        "url": "https://www.so.com/"
+      },
+      "description": "360Spider is the web-search crawler of 360 Search (so.com), the search engine operated by Chinese internet company Qihoo 360. The operator also runs 360Spider-Image and 360Spider-Video for image and video search.",
+      "docs": [
+        "https://www.so.com/help/help_3_2.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "360Spider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1; 360Spider"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "360Spider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "internet-archive",
       "name": "archive.org_bot",
       "operator": {
@@ -367,6 +487,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "linkdex-crawler",
+      "name": "Linkdexbot",
+      "operator": {
+        "name": "Authoritas (Analytics SEO Limited)",
+        "url": "https://www.linkdex.com/"
+      },
+      "description": "Linkdexbot is the web crawler for Linkdex, an SEO and search-marketing analytics platform now operated by Authoritas. It gathers link and page data used to power the platform's SEO reporting tools.",
+      "docs": [
+        "https://www.linkdex.com/en-us/about/bots/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "linkdexbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; linkdexbot/2.0; +http://www.linkdex.com/about/bots/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "linkedinbot",
       "name": "LinkedInBot",
       "operator": {
@@ -397,6 +546,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "livelap-crawler",
+      "name": "LivelapBot",
+      "operator": {
+        "name": "Livelap",
+        "url": "https://site.livelap.com"
+      },
+      "description": "LivelapBot is the crawler for Livelap, a content discovery app. It fetches pages shared on social media and crawls RSS feeds on a schedule, indexing HTML and media meta tags to build link previews shown in the Livelap app.",
+      "docs": [
+        "https://site.livelap.com/crawler"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Livelap[bB]ot"
+        ],
+        "instances": [
+          "LivelapBot/0.2 (http://site.livelap.com/crawler)",
+          "Livelapbot/0.1"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "mastodon",
       "name": "Mastodon (link preview fetcher)",
       "operator": {
@@ -423,6 +602,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "megaindex-crawler",
+      "name": "MegaIndex Crawler",
+      "operator": {
+        "name": "MegaIndex",
+        "url": "https://www.megaindex.com"
+      },
+      "description": "MegaIndex is an SEO and web-analytics platform whose crawler indexes links across the web to power backlink analysis, keyword tracking, and site audits for its subscribers.",
+      "docs": [
+        "https://www.megaindex.com/crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "MegaIndex\\.ru/"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MegaIndex.ru/2.0; +https://www.megaindex.ru/?tab=linkAnalyze)",
+          "Mozilla/5.0 (compatible; MegaIndex.ru/2.0; +http://megaindex.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {
@@ -574,6 +783,67 @@
       "resolved_cidrs": []
     },
     {
+      "id": "openindex-crawler",
+      "name": "Openindex Spider",
+      "operator": {
+        "name": "Openindex",
+        "url": "https://www.openindex.io"
+      },
+      "description": "Openindex operates a web-crawling cluster (Apache Nutch on an Apache Hadoop cluster) for research and development of universal and focused search engines. The crawler respects robots.txt and the Crawl-delay directive and identifies itself in the User-Agent.",
+      "docs": [
+        "https://www.openindex.io/about-our-spider/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "OpenindexSpider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; OpenindexSpider; +https://www.openindex.io/saas/about-our-spider/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "OpenindexSpider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "proximic-crawler",
+      "name": "Proximic (Comscore Crawler)",
+      "operator": {
+        "name": "Comscore, Inc.",
+        "url": "https://www.comscore.com"
+      },
+      "description": "Proximic is Comscore's web crawler. It downloads the static textual content of pages to perform contextual analysis (content language, rating, and IAB categories) so advertising partners can match campaigns to page content. It identifies itself and honors robots.txt.",
+      "docs": [
+        "https://www.proximic.com/info/spider.php"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "proximic"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; proximic; +https://www.comscore.com/Web-Crawler)",
+          "Mozilla/5.0 (compatible; proximic; +http://www.proximic.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "proximic"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "redditbot",
       "name": "Redditbot",
       "operator": {
@@ -660,6 +930,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semanticscholar-crawler",
+      "name": "SemanticScholarBot",
+      "operator": {
+        "name": "Allen Institute for AI (Ai2)",
+        "url": "https://allenai.org"
+      },
+      "description": "SemanticScholarBot is the crawler for Semantic Scholar, an academic search engine built by the Allen Institute for AI. It crawls the web to find scholarly PDFs and metadata for indexing.",
+      "docs": [
+        "https://www.semanticscholar.org/crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "SemanticScholarBot"
+        ],
+        "instances": [
+          "SemanticScholarBot/1.0 (+http://s2.allenai.org/bot.html)",
+          "Mozilla/5.0 (compatible) SemanticScholarBot (+https://www.semanticscholar.org/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {
@@ -782,6 +1082,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "sogou-crawler",
+      "name": "Sogou Spider",
+      "operator": {
+        "name": "Sogou",
+        "url": "https://www.sogou.com/"
+      },
+      "description": "Sogou Spider is the web crawler for Sogou, a major Chinese search engine (owned by Tencent). It crawls and indexes web pages, news, and images to build Sogou's search index.",
+      "docs": [
+        "https://www.sogou.com/docs/help/webmasters.htm"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Sogou"
+        ],
+        "instances": [
+          "Sogou News Spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)",
+          "Sogou Pic Spider/3.0(+http://www.sogou.com/docs/help/webmasters.htm#07)",
+          "Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "stractbot",
       "name": "StractBot",
       "operator": {
@@ -838,6 +1169,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "turnitin-crawler",
+      "name": "TurnitinBot",
+      "operator": {
+        "name": "Turnitin",
+        "url": "https://www.turnitin.com/"
+      },
+      "description": "TurnitinBot is the web crawler operated by Turnitin. It collects publicly available web pages to build the content database used by Turnitin's academic-integrity and plagiarism-detection services.",
+      "docs": [
+        "https://www.turnitin.com/robot/crawlerinfo.html"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "TurnitinBot"
+        ],
+        "instances": [
+          "TurnitinBot (https://turnitin.com/robot/crawlerinfo.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "TurnitinBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {
@@ -899,6 +1260,67 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "xovibot-crawler",
+      "name": "XoviBot",
+      "operator": {
+        "name": "Xovi GmbH",
+        "url": "https://www.xovi.net"
+      },
+      "description": "XoviBot is the web crawler for XOVI, an SEO and online-marketing analytics suite. It crawls sites to gather backlink and ranking data for the platform's SEO tools.",
+      "docs": [
+        "https://www.xovibot.net/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "XoviBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; XoviBot/2.0; +http://www.xovibot.net/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "XoviBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-crawler",
+      "name": "Yahoo! Slurp",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com/"
+      },
+      "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports.",
+      "docs": [
+        "https://help.yahoo.com/kb/SLN22600.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Slurp"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)",
+          "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Slurp"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     }
   ]

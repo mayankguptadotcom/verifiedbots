@@ -1,0 +1,30 @@
+{
+  "id": "xovibot-crawler",
+  "name": "XoviBot",
+  "operator": {
+    "name": "Xovi GmbH",
+    "url": "https://www.xovi.net"
+  },
+  "description": "XoviBot is the web crawler for XOVI, an SEO and online-marketing analytics suite. It crawls sites to gather backlink and ranking data for the platform's SEO tools.",
+  "docs": [
+    "https://www.xovibot.net/"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "XoviBot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; XoviBot/2.0; +http://www.xovibot.net/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "XoviBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "openindex-crawler",
+  "name": "Openindex Spider",
+  "operator": {
+    "name": "Openindex",
+    "url": "https://www.openindex.io"
+  },
+  "description": "Openindex operates a web-crawling cluster (Apache Nutch on an Apache Hadoop cluster) for research and development of universal and focused search engines. The crawler respects robots.txt and the Crawl-delay directive and identifies itself in the User-Agent.",
+  "docs": [
+    "https://www.openindex.io/about-our-spider/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "OpenindexSpider"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; OpenindexSpider; +https://www.openindex.io/saas/about-our-spider/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "OpenindexSpider"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}

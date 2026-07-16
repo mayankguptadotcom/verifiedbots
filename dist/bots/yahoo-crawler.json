@@ -1,0 +1,31 @@
+{
+  "id": "yahoo-crawler",
+  "name": "Yahoo! Slurp",
+  "operator": {
+    "name": "Yahoo",
+    "url": "https://www.yahoo.com/"
+  },
+  "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports.",
+  "docs": [
+    "https://help.yahoo.com/kb/SLN22600.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Slurp"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)",
+      "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Slurp"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}

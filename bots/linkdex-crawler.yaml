@@ -1,0 +1,19 @@
+id: linkdex-crawler
+name: Linkdexbot
+operator:
+  name: Authoritas (Analytics SEO Limited)
+  url: "https://www.linkdex.com/"
+description: >-
+  Linkdexbot is the web crawler for Linkdex, an SEO and search-marketing
+  analytics platform now operated by Authoritas. It gathers link and page
+  data used to power the platform's SEO reporting tools.
+docs:
+  - "https://www.linkdex.com/en-us/about/bots/"
+category: seo
+user_agents:
+  patterns:
+    - 'linkdexbot'
+  instances:
+    - 'Mozilla/5.0 (compatible; linkdexbot/2.0; +http://www.linkdex.com/about/bots/)'
+behavior: { respects_robots_txt: true }
+verification: []

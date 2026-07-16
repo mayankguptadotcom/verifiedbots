@@ -1,0 +1,19 @@
+id: turnitin-crawler
+name: TurnitinBot
+operator:
+  name: Turnitin
+  url: "https://www.turnitin.com/"
+description: >-
+  TurnitinBot is the web crawler operated by Turnitin. It collects publicly
+  available web pages to build the content database used by Turnitin's
+  academic-integrity and plagiarism-detection services.
+docs:
+  - "https://www.turnitin.com/robot/crawlerinfo.html"
+category: archiver
+user_agents:
+  patterns:
+    - 'TurnitinBot'
+  instances:
+    - 'TurnitinBot (https://turnitin.com/robot/crawlerinfo.html)'
+behavior: { respects_robots_txt: true, robots_token: TurnitinBot }
+verification: []

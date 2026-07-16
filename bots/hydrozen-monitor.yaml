@@ -1,0 +1,19 @@
+id: hydrozen-monitor
+name: Hydrozen
+operator: { name: Hydrozen, url: "https://hydrozen.io" }
+description: >-
+  Hydrozen.io is an uptime and website monitoring service; its checker fetches
+  monitored endpoints from a documented, published set of IP addresses.
+docs:
+  - "https://docs.hydrozen.io/overview/misc/user-agent-and-ip-list"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Hydrozen\.io/\d'
+  instances:
+    - 'Hydrozen.io/1.0'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://hydrozen.io/config/iplist.json"
+    format: prefixes

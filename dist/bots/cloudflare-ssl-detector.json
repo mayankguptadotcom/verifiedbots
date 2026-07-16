@@ -1,0 +1,30 @@
+{
+  "id": "cloudflare-ssl-detector",
+  "name": "Cloudflare SSL Detector",
+  "operator": {
+    "name": "Cloudflare",
+    "url": "https://www.cloudflare.com"
+  },
+  "description": "Cloudflare's SSL/TLS Recommender crawler, which fetches a customer origin over both HTTP and HTTPS to determine whether the site can be served fully over HTTPS and to recommend TLS settings.",
+  "docs": [
+    "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+    "https://developers.cloudflare.com/ssl/origin-configuration/ssl-tls-recommender/"
+  ],
+  "category": "security",
+  "user_agents": {
+    "patterns": [
+      "Cloudflare-SSLDetector"
+    ],
+    "instances": [
+      "Cloudflare-SSLDetector"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}

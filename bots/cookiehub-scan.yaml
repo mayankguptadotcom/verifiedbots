@@ -1,0 +1,21 @@
+id: cookiehub-scan
+name: CookieHub Scanner
+operator: { name: CookieHub, url: "https://www.cookiehub.com" }
+description: >-
+  CookieHub's cookie-consent compliance scanner. It crawls customer domains on
+  a roughly monthly schedule to detect cookies and tracking technologies in use
+  and generate a compliance report.
+docs:
+  - "https://docs.cookiehub.com/features/cookie-scanner"
+  - "https://docs.cookiehub.com/getting-started/faq"
+category: monitoring
+user_agents:
+  patterns:
+    - 'CookieHubScan/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 CookieHubScan/3.0'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://dash.cookiehub.com/scanner-ip"
+    format: text_lines

@@ -1,0 +1,39 @@
+{
+  "id": "hydrozen-monitor",
+  "name": "Hydrozen",
+  "operator": {
+    "name": "Hydrozen",
+    "url": "https://hydrozen.io"
+  },
+  "description": "Hydrozen.io is an uptime and website monitoring service; its checker fetches monitored endpoints from a documented, published set of IP addresses.",
+  "docs": [
+    "https://docs.hydrozen.io/overview/misc/user-agent-and-ip-list"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "Hydrozen\\.io/\\d"
+    ],
+    "instances": [
+      "Hydrozen.io/1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://hydrozen.io/config/iplist.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": [
+    "3.109.154.148/32",
+    "34.229.178.9/32",
+    "69.197.187.216/32"
+  ]
+}

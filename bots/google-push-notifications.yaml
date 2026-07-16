@@ -1,0 +1,23 @@
+id: google-push-notifications
+name: APIs-Google
+operator:
+  name: Google
+  url: "https://www.google.com"
+description: >-
+  Google's agent that delivers push notification messages sent through Google
+  APIs (such as Pub/Sub and WebSub push subscriptions) to subscriber endpoints.
+docs:
+  - "https://developers.google.com/search/docs/crawling-indexing/google-special-case-crawlers"
+category: webhook
+user_agents:
+  patterns:
+    - 'APIs-Google'
+  instances:
+    - 'APIs-Google (+https://developers.google.com/webmasters/APIs-Google.html)'
+behavior:
+  respects_robots_txt: false
+  robots_token: APIs-Google
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/special-crawlers.json"
+    format: prefixes

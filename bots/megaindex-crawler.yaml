@@ -1,0 +1,18 @@
+id: megaindex-crawler
+name: MegaIndex Crawler
+operator: { name: MegaIndex, url: "https://www.megaindex.com" }
+description: >-
+  MegaIndex is an SEO and web-analytics platform whose crawler indexes links
+  across the web to power backlink analysis, keyword tracking, and site audits
+  for its subscribers.
+docs:
+  - "https://www.megaindex.com/crawler"
+category: seo
+user_agents:
+  patterns:
+    - 'MegaIndex\.ru/'
+  instances:
+    - 'Mozilla/5.0 (compatible; MegaIndex.ru/2.0; +https://www.megaindex.ru/?tab=linkAnalyze)'
+    - 'Mozilla/5.0 (compatible; MegaIndex.ru/2.0; +http://megaindex.com/crawler)'
+behavior: { respects_robots_txt: true }
+verification: []

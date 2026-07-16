@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-15T05:14:52.161Z",
-  "count": 9,
+  "generated_at": "2026-07-16T01:01:55.943Z",
+  "count": 13,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -240,6 +240,65 @@
       "resolved_cidrs": []
     },
     {
+      "id": "linkdex-crawler",
+      "name": "Linkdexbot",
+      "operator": {
+        "name": "Authoritas (Analytics SEO Limited)",
+        "url": "https://www.linkdex.com/"
+      },
+      "description": "Linkdexbot is the web crawler for Linkdex, an SEO and search-marketing analytics platform now operated by Authoritas. It gathers link and page data used to power the platform's SEO reporting tools.",
+      "docs": [
+        "https://www.linkdex.com/en-us/about/bots/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "linkdexbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; linkdexbot/2.0; +http://www.linkdex.com/about/bots/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "megaindex-crawler",
+      "name": "MegaIndex Crawler",
+      "operator": {
+        "name": "MegaIndex",
+        "url": "https://www.megaindex.com"
+      },
+      "description": "MegaIndex is an SEO and web-analytics platform whose crawler indexes links across the web to power backlink analysis, keyword tracking, and site audits for its subscribers.",
+      "docs": [
+        "https://www.megaindex.com/crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "MegaIndex\\.ru/"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MegaIndex.ru/2.0; +https://www.megaindex.ru/?tab=linkAnalyze)",
+          "Mozilla/5.0 (compatible; MegaIndex.ru/2.0; +http://megaindex.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "mj12bot",
       "name": "MJ12bot",
       "operator": {
@@ -297,6 +356,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "proximic-crawler",
+      "name": "Proximic (Comscore Crawler)",
+      "operator": {
+        "name": "Comscore, Inc.",
+        "url": "https://www.comscore.com"
+      },
+      "description": "Proximic is Comscore's web crawler. It downloads the static textual content of pages to perform contextual analysis (content language, rating, and IAB categories) so advertising partners can match campaigns to page content. It identifies itself and honors robots.txt.",
+      "docs": [
+        "https://www.proximic.com/info/spider.php"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "proximic"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; proximic; +https://www.comscore.com/Web-Crawler)",
+          "Mozilla/5.0 (compatible; proximic; +http://www.proximic.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "proximic"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {
@@ -394,6 +484,36 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "xovibot-crawler",
+      "name": "XoviBot",
+      "operator": {
+        "name": "Xovi GmbH",
+        "url": "https://www.xovi.net"
+      },
+      "description": "XoviBot is the web crawler for XOVI, an SEO and online-marketing analytics suite. It crawls sites to gather backlink and ranking data for the platform's SEO tools.",
+      "docs": [
+        "https://www.xovibot.net/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "XoviBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; XoviBot/2.0; +http://www.xovibot.net/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "XoviBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     }
   ]

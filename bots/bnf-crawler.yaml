@@ -1,0 +1,21 @@
+id: bnf-crawler
+name: BnF Web Archiving Robot
+operator:
+  name: Bibliothèque nationale de France
+  url: "https://www.bnf.fr"
+description: >-
+  The web crawler of the Bibliothèque nationale de France, which harvests French
+  websites for the legal deposit of the web to preserve the national documentary
+  heritage. It runs on Heritrix and applies request delays to avoid overloading
+  servers.
+docs:
+  - "https://www.bnf.fr/en/your-website-harvested-bnfs-robot"
+category: archiver
+user_agents:
+  patterns:
+    - 'bnf\.fr_bot'
+  instances:
+    - 'Mozilla/5.0 (compatible; bnf.fr_bot; +http://www.bnf.fr/fr/outils/a.dl_web_capture_robot.html)'
+    - 'Mozilla/5.0 (compatible; bnf.fr_bot; +http://bibnum.bnf.fr/robot/bnf.html)'
+behavior: { respects_robots_txt: false }
+verification: []

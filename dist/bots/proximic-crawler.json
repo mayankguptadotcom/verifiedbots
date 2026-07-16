@@ -1,0 +1,31 @@
+{
+  "id": "proximic-crawler",
+  "name": "Proximic (Comscore Crawler)",
+  "operator": {
+    "name": "Comscore, Inc.",
+    "url": "https://www.comscore.com"
+  },
+  "description": "Proximic is Comscore's web crawler. It downloads the static textual content of pages to perform contextual analysis (content language, rating, and IAB categories) so advertising partners can match campaigns to page content. It identifies itself and honors robots.txt.",
+  "docs": [
+    "https://www.proximic.com/info/spider.php"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "proximic"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; proximic; +https://www.comscore.com/Web-Crawler)",
+      "Mozilla/5.0 (compatible; proximic; +http://www.proximic.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "proximic"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-16T00:59:46.504Z",
+  "resolved_cidrs": []
+}
