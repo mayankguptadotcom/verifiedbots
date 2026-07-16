@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T05:21:24.437Z",
-  "count": 38,
+  "generated_at": "2026-07-16T13:18:54.422Z",
+  "count": 40,
   "bots": [
     {
       "id": "adidxbot",
@@ -391,6 +391,122 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "criteo",
+      "name": "CriteoBot",
+      "operator": {
+        "name": "Criteo",
+        "url": "https://www.criteo.com"
+      },
+      "description": "Criteo's advertising crawler. It fetches merchant and publisher pages to extract product and content data used for Criteo's commerce and retargeting ads, and respects robots.txt and crawl-delay directives.",
+      "docs": [
+        "https://www.criteo.com/criteo-crawler/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "CriteoBot"
+        ],
+        "instances": [
+          "CriteoBot/0.1 (+https://www.criteo.com/criteo-crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "CriteoBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "74.119.116.0/22",
+            "91.199.242.0/24",
+            "91.212.98.0/24",
+            "116.213.20.0/22",
+            "177.73.128.0/21",
+            "178.250.0.0/21",
+            "182.161.72.0/22",
+            "185.235.84.0/22",
+            "199.204.168.0/22",
+            "2406:2600::/32",
+            "2620:100:a000::/44",
+            "2a02:2638::/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T13:18:54.422Z",
+      "resolved_cidrs": [
+        "116.213.20.0/22",
+        "177.73.128.0/21",
+        "178.250.0.0/21",
+        "182.161.72.0/22",
+        "185.235.84.0/22",
+        "199.204.168.0/22",
+        "2406:2600::/32",
+        "2620:100:a000::/44",
+        "2a02:2638::/32",
+        "74.119.116.0/22",
+        "91.199.242.0/24",
+        "91.212.98.0/24"
+      ]
+    },
+    {
+      "id": "dataforseo",
+      "name": "DataForSeoBot",
+      "operator": {
+        "name": "DataForSEO",
+        "url": "https://dataforseo.com"
+      },
+      "description": "DataForSEO's crawler. It fetches pages to build the backlink and SEO datasets that power DataForSEO's marketing-data APIs, and honours robots.txt and crawl-delay directives.",
+      "docs": [
+        "https://dataforseo.com/dataforseo-bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "DataForSeoBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; DataForSeoBot; +https://dataforseo.com/dataforseo-bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "DataForSeoBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "136.243.220.208/29",
+            "136.243.228.176/29",
+            "136.243.228.192/29",
+            "2a01:4f8:2b03:38b::/64",
+            "2a01:4f8:2b03:38c::/64",
+            "2a01:4f8:2b03:38d::/64"
+          ]
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.dataforseo.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-16T13:18:54.422Z",
+      "resolved_cidrs": [
+        "136.243.220.208/29",
+        "136.243.228.176/29",
+        "136.243.228.192/29",
+        "2a01:4f8:2b03:38b::/64",
+        "2a01:4f8:2b03:38c::/64",
+        "2a01:4f8:2b03:38d::/64"
+      ]
     },
     {
       "id": "deadlinkchecker",

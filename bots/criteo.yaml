@@ -1,0 +1,19 @@
+id: criteo
+name: CriteoBot
+operator: { name: Criteo, url: "https://www.criteo.com" }
+description: >-
+  Criteo's advertising crawler. It fetches merchant and publisher pages to
+  extract product and content data used for Criteo's commerce and retargeting
+  ads, and respects robots.txt and crawl-delay directives.
+docs:
+  - "https://www.criteo.com/criteo-crawler/"
+category: seo
+user_agents:
+  patterns:
+    - 'CriteoBot'
+  instances:
+    - 'CriteoBot/0.1 (+https://www.criteo.com/criteo-crawler/)'
+behavior: { respects_robots_txt: true, robots_token: CriteoBot }
+verification:
+  - type: static_cidrs
+    cidrs: ["74.119.116.0/22", "91.199.242.0/24", "91.212.98.0/24", "116.213.20.0/22", "177.73.128.0/21", "178.250.0.0/21", "182.161.72.0/22", "185.235.84.0/22", "199.204.168.0/22", "2406:2600::/32", "2620:100:a000::/44", "2a02:2638::/32"]

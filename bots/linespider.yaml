@@ -1,0 +1,18 @@
+id: linespider
+name: Linespider
+operator: { name: LINE, url: "https://line.me" }
+description: >-
+  LINE's crawler. It fetches web pages to support LINE's search features and
+  content services, and adheres to the Robots Exclusion Protocol outlined in
+  robots.txt.
+docs:
+  - "https://help2.line.me/linesearchbot/web/?contentId=50006055&lang=en"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Linespider'
+  instances:
+    - 'Mozilla/5.0 (compatible; Linespider/1.1; +https://lin.ee/4dwXkTH)'
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Linespider/1.1; +https://lin.ee/4dwXkTH) Chrome/W.X.Y.Z Safari/537.36'
+behavior: { respects_robots_txt: true, robots_token: Linespider }
+verification: []

@@ -1,0 +1,17 @@
+id: imagesift
+name: ImagesiftBot
+operator: { name: Hive, url: "https://imagesift.com" }
+description: >-
+  ImageSift's crawler, operated by Hive. It scrapes publicly available images
+  across the web to support Hive's ImageSift reverse-image-search and web
+  intelligence products. Standard robots.txt directives are respected.
+docs:
+  - "https://imagesift.com/about"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'ImagesiftBot'
+  instances:
+    - 'Mozilla/5.0 (compatible; ImagesiftBot; +imagesift.com)'
+behavior: { respects_robots_txt: true, robots_token: ImagesiftBot }
+verification: []

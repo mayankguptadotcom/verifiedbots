@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-16T05:21:24.437Z",
-  "count": 16,
+  "generated_at": "2026-07-16T13:18:54.422Z",
+  "count": 17,
   "bots": [
     {
       "id": "ai2bot",
@@ -695,6 +695,36 @@
         "74.7.243.128/25",
         "74.7.244.0/25"
       ]
+    },
+    {
+      "id": "imagesift",
+      "name": "ImagesiftBot",
+      "operator": {
+        "name": "Hive",
+        "url": "https://imagesift.com"
+      },
+      "description": "ImageSift's crawler, operated by Hive. It scrapes publicly available images across the web to support Hive's ImageSift reverse-image-search and web intelligence products. Standard robots.txt directives are respected.",
+      "docs": [
+        "https://imagesift.com/about"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ImagesiftBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ImagesiftBot; +imagesift.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ImagesiftBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-16T13:18:54.422Z",
+      "resolved_cidrs": []
     },
     {
       "id": "leipzig-lcc",

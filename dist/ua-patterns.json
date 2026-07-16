@@ -260,11 +260,25 @@
     ]
   },
   {
+    "id": "criteo",
+    "category": "seo",
+    "patterns": [
+      "CriteoBot"
+    ]
+  },
+  {
     "id": "datadog-synthetics",
     "category": "monitoring",
     "patterns": [
       "Datadog/Synthetics",
       "DatadogSynthetics"
+    ]
+  },
+  {
+    "id": "dataforseo",
+    "category": "seo",
+    "patterns": [
+      "DataForSeoBot"
     ]
   },
   {
@@ -504,6 +518,13 @@
     ]
   },
   {
+    "id": "imagesift",
+    "category": "ai-crawler",
+    "patterns": [
+      "ImagesiftBot"
+    ]
+  },
+  {
     "id": "inoreader",
     "category": "feed-fetcher",
     "patterns": [
@@ -565,6 +586,13 @@
     "category": "ai-crawler",
     "patterns": [
       "^LCC "
+    ]
+  },
+  {
+    "id": "linespider",
+    "category": "search-engine",
+    "patterns": [
+      "Linespider"
     ]
   },
   {
@@ -825,6 +853,13 @@
     "category": "monitoring",
     "patterns": [
       "Amazon Route 53 Health Check Service"
+    ]
+  },
+  {
+    "id": "seekport",
+    "category": "search-engine",
+    "patterns": [
+      "SeekportBot"
     ]
   },
   {
