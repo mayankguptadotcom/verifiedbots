@@ -2,7 +2,9 @@
   "name": "verifiedbots-data",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
@@ -10,7 +12,8 @@
     "fetch-feeds": "tsx src/cli/fetch-feeds.ts",
     "verify-wba": "tsx src/cli/verify-wba.ts",
     "build:artifacts": "tsx src/cli/build.ts",
-    "build:site": "npm --prefix site run build"
+    "build:site": "npm --prefix site run build",
+    "check-docs": "tsx src/cli/check-docs.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
