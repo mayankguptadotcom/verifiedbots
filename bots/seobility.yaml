@@ -1,0 +1,20 @@
+id: seobility
+name: SeobilityBot
+operator: { name: Seobility GmbH, url: "https://www.seobility.net" }
+description: >-
+  Crawler for Seobility's hosted SEO analysis and site-audit tooling, fetching
+  pages of sites its customers analyse. Seobility publishes a machine-readable
+  list of the addresses its bots crawl from.
+docs:
+  - "https://www.seobility.net/en/bot/"
+category: seo
+user_agents:
+  patterns:
+    - 'SeobilityBot'
+  instances:
+    - 'SeobilityBot (SEO Tool; https://www.seobility.net/sites/bot.html)'
+behavior: { respects_robots_txt: true, robots_token: Seobility }
+verification:
+  - type: cidr_feed
+    url: "https://www.seobility.net/bots.json"
+    format: prefixes

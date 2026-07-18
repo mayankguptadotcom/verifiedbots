@@ -1,0 +1,22 @@
+id: googlebot-video
+name: Googlebot Video
+operator: { name: Google, url: "https://www.google.com" }
+description: >-
+  Google's video crawler, which fetches video content for Google Search video
+  features. It is a distinct crawler from Googlebot with its own robots.txt
+  token, though rules for Googlebot also apply to it.
+docs:
+  - "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Googlebot-Video/\d'
+  instances:
+    - 'Googlebot-Video/1.0'
+behavior: { respects_robots_txt: true, robots_token: Googlebot-Video }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.googlebot.com", "*.geo.googlebot.com"]

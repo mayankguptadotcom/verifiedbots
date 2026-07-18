@@ -154,6 +154,14 @@
     ]
   },
   {
+    "id": "builtwith",
+    "category": "seo",
+    "patterns": [
+      "BuiltWith/[\\d.]+",
+      "BW/[\\d.]+"
+    ]
+  },
+  {
     "id": "bytespider",
     "category": "ai-crawler",
     "patterns": [
@@ -462,6 +470,20 @@
     ]
   },
   {
+    "id": "googlebot-image",
+    "category": "search-engine",
+    "patterns": [
+      "Googlebot-Image/\\d"
+    ]
+  },
+  {
+    "id": "googlebot-video",
+    "category": "search-engine",
+    "patterns": [
+      "Googlebot-Video/\\d"
+    ]
+  },
+  {
     "id": "googleother",
     "category": "search-engine",
     "patterns": [
@@ -494,6 +516,13 @@
     "category": "monitoring",
     "patterns": [
       "HetrixTools Uptime Monitoring Bot"
+    ]
+  },
+  {
+    "id": "hubspot-crawler",
+    "category": "seo",
+    "patterns": [
+      "HubSpot (Crawler|Webcrawler)"
     ]
   },
   {
@@ -881,6 +910,13 @@
     "category": "monitoring",
     "patterns": [
       "SentryUptimeBot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "seobility",
+    "category": "seo",
+    "patterns": [
+      "SeobilityBot"
     ]
   },
   {

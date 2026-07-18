@@ -1,0 +1,32 @@
+{
+  "id": "builtwith",
+  "name": "BuiltWith",
+  "operator": {
+    "name": "BuiltWith Pty Ltd",
+    "url": "https://builtwith.com"
+  },
+  "description": "Crawler for BuiltWith's technology-profiling service, which visits sites and analyses publicly visible markup to determine which web technologies they use. BuiltWith publishes no IP ranges, so requests cannot be verified.",
+  "docs": [
+    "https://builtwith.com/biup"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "BuiltWith/[\\d.]+",
+      "BW/[\\d.]+"
+    ],
+    "instances": [
+      "BuiltWith/1.4; rb.gy/xprgqj",
+      "BW/1.3; rb.gy/qyzae5"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "BuiltWith"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-18T15:23:43.605Z",
+  "resolved_cidrs": []
+}
