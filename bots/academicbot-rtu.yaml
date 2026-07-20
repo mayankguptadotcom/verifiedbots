@@ -1,0 +1,17 @@
+id: academicbot-rtu
+name: AcademicBotRTU
+operator: { name: Riga Technical University (Institute of Applied Computer Systems), url: "https://academicbot.rtu.lv" }
+description: >-
+  Crawler run by Riga Technical University that indexes websites and documents to
+  compare against student and researcher works for plagiarism detection. The
+  operator publishes no IP ranges, so requests cannot be verified.
+docs:
+  - "https://academicbot.rtu.lv/"
+category: archiver
+user_agents:
+  patterns:
+    - 'AcademicBotRTU'
+  instances:
+    - 'AcademicBotRTU (https://academicbot.rtu.lv; mailto:caps@rtu.lv)'
+behavior: { respects_robots_txt: true, robots_token: AcademicBotRTU }
+verification: []

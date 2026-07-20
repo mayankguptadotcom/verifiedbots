@@ -1,0 +1,30 @@
+{
+  "id": "sbintuitions-bot",
+  "name": "SBIntuitionsBot",
+  "operator": {
+    "name": "SB Intuitions Corp.",
+    "url": "https://www.sbintuitions.co.jp"
+  },
+  "description": "Crawler operated by SB Intuitions (a SoftBank AI subsidiary) that collects web pages for AI development and information analysis, including training of its Sarashina language models. SB Intuitions publishes no IP ranges, so requests cannot be verified.",
+  "docs": [
+    "https://www.sbintuitions.co.jp/bot/"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "SBIntuitionsBot/[\\d.]+"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; SBIntuitionsBot/0.1; +https://www.sbintuitions.co.jp/bot/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "SBIntuitionsBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-20T20:56:47.446Z",
+  "resolved_cidrs": []
+}

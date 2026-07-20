@@ -1,0 +1,17 @@
+id: macocu
+name: MaCoCu
+operator: { name: MaCoCu project (Jožef Stefan Institute), url: "https://www.clarin.si/info/macocu-massive-collection-and-curation-of-monolingual-and-bilingual-data/" }
+description: >-
+  Crawler for the CEF-funded MaCoCu project, which collects, curates and enriches
+  monolingual and parallel web text to build language corpora for under-resourced
+  languages. The project publishes no IP ranges, so requests cannot be verified.
+docs:
+  - "https://www.clarin.si/info/macocu-massive-collection-and-curation-of-monolingual-and-bilingual-data/"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'MaCoCu'
+  instances:
+    - 'Mozilla/5.0 (compatible; MaCoCu; +https://www.clarin.si/info/macocu-massive-collection-and-curation-of-monolingual-and-bilingual-data/)'
+behavior: { respects_robots_txt: true, robots_token: MaCoCu }
+verification: []

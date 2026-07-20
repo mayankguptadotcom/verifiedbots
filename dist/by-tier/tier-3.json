@@ -1,8 +1,38 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-20T05:31:51.698Z",
-  "count": 70,
+  "generated_at": "2026-07-20T20:56:47.446Z",
+  "count": 74,
   "bots": [
+    {
+      "id": "academicbot-rtu",
+      "name": "AcademicBotRTU",
+      "operator": {
+        "name": "Riga Technical University (Institute of Applied Computer Systems)",
+        "url": "https://academicbot.rtu.lv"
+      },
+      "description": "Crawler run by Riga Technical University that indexes websites and documents to compare against student and researcher works for plagiarism detection. The operator publishes no IP ranges, so requests cannot be verified.",
+      "docs": [
+        "https://academicbot.rtu.lv/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "AcademicBotRTU"
+        ],
+        "instances": [
+          "AcademicBotRTU (https://academicbot.rtu.lv; mailto:caps@rtu.lv)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AcademicBotRTU"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "ai2bot",
       "name": "AI2Bot",
@@ -1078,6 +1108,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "macocu",
+      "name": "MaCoCu",
+      "operator": {
+        "name": "MaCoCu project (Jožef Stefan Institute)",
+        "url": "https://www.clarin.si/info/macocu-massive-collection-and-curation-of-monolingual-and-bilingual-data/"
+      },
+      "description": "Crawler for the CEF-funded MaCoCu project, which collects, curates and enriches monolingual and parallel web text to build language corpora for under-resourced languages. The project publishes no IP ranges, so requests cannot be verified.",
+      "docs": [
+        "https://www.clarin.si/info/macocu-massive-collection-and-curation-of-monolingual-and-bilingual-data/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "MaCoCu"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MaCoCu; +https://www.clarin.si/info/macocu-massive-collection-and-curation-of-monolingual-and-bilingual-data/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MaCoCu"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "mastodon",
       "name": "Mastodon (link preview fetcher)",
       "operator": {
@@ -1523,6 +1583,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "sbintuitions-bot",
+      "name": "SBIntuitionsBot",
+      "operator": {
+        "name": "SB Intuitions Corp.",
+        "url": "https://www.sbintuitions.co.jp"
+      },
+      "description": "Crawler operated by SB Intuitions (a SoftBank AI subsidiary) that collects web pages for AI development and information analysis, including training of its Sarashina language models. SB Intuitions publishes no IP ranges, so requests cannot be verified.",
+      "docs": [
+        "https://www.sbintuitions.co.jp/bot/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "SBIntuitionsBot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SBIntuitionsBot/0.1; +https://www.sbintuitions.co.jp/bot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SBIntuitionsBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-20T20:56:47.446Z",
       "resolved_cidrs": []
     },
     {
@@ -1972,6 +2062,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "webzio",
+      "name": "Webzio",
+      "operator": {
+        "name": "Webz.io Ltd.",
+        "url": "https://webz.io"
+      },
+      "description": "Crawler for Webz.io (formerly Webhose.io), a web-data provider that collects publicly available content to build structured data feeds. Webz.io publishes no IP ranges, so requests cannot be verified.",
+      "docs": [
+        "https://webz.io/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "webzio\\s"
+        ],
+        "instances": [
+          "webzio (+https://webz.io/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-20T20:56:47.446Z",
       "resolved_cidrs": []
     },
     {

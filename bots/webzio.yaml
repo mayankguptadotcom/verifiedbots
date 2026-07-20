@@ -1,0 +1,17 @@
+id: webzio
+name: Webzio
+operator: { name: Webz.io Ltd., url: "https://webz.io" }
+description: >-
+  Crawler for Webz.io (formerly Webhose.io), a web-data provider that collects
+  publicly available content to build structured data feeds. Webz.io publishes no
+  IP ranges, so requests cannot be verified.
+docs:
+  - "https://webz.io/bot.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'webzio\s'
+  instances:
+    - 'webzio (+https://webz.io/bot.html)'
+behavior: { respects_robots_txt: true }
+verification: []

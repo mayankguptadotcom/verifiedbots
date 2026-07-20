@@ -1,5 +1,12 @@
 [
   {
+    "id": "academicbot-rtu",
+    "category": "archiver",
+    "patterns": [
+      "AcademicBotRTU"
+    ]
+  },
+  {
     "id": "adidxbot",
     "category": "search-engine",
     "patterns": [
@@ -646,6 +653,13 @@
     ]
   },
   {
+    "id": "macocu",
+    "category": "ai-crawler",
+    "patterns": [
+      "MaCoCu"
+    ]
+  },
+  {
     "id": "marginalia",
     "category": "search-engine",
     "patterns": [
@@ -885,6 +899,13 @@
     ]
   },
   {
+    "id": "sbintuitions-bot",
+    "category": "ai-crawler",
+    "patterns": [
+      "SBIntuitionsBot/[\\d.]+"
+    ]
+  },
+  {
     "id": "seekport",
     "category": "search-engine",
     "patterns": [
@@ -1092,6 +1113,13 @@
     "category": "security",
     "patterns": [
       "W3C_Validator/[\\d.]+"
+    ]
+  },
+  {
+    "id": "webzio",
+    "category": "search-engine",
+    "patterns": [
+      "webzio\\s"
     ]
   },
   {
