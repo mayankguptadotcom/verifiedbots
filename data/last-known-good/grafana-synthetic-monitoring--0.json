@@ -1,6 +1,6 @@
 {
   "url": "https://allowlists.grafana.com/synthetics",
-  "fetched_at": "2026-07-20T05:31:43.562Z",
+  "fetched_at": "2026-07-20T20:59:05.853Z",
   "ranges": [
     "13.124.15.193/32",
     "13.228.17.76/32",
