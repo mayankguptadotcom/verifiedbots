@@ -1,0 +1,57 @@
+{
+  "id": "addsearch",
+  "name": "AddSearchBot",
+  "operator": {
+    "name": "AddSearch",
+    "url": "https://www.addsearch.com"
+  },
+  "description": "Crawler for AddSearch's hosted site-search service. It indexes the pages of customer sites so AddSearch can serve search results for them, obeys robots.txt rules written for the AddSearchBot token, and AddSearch publishes the fixed addresses it crawls from for allowlisting.",
+  "docs": [
+    "https://www.addsearch.com/bot/",
+    "https://www.addsearch.com/docs/indexing/excluding-content/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "AddSearchBot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; AddSearchBot/1.0; +http://www.addsearch.com/bot/)",
+      "Mozilla/5.0 (compatible; AddSearchBot/0.9; +http://www.addsearch.com/bot; info@addsearch.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "AddSearchBot"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "18.211.152.50/32",
+        "34.234.198.218/32",
+        "34.237.39.240/32",
+        "34.237.132.33/32",
+        "50.19.247.197/32",
+        "52.21.18.234/32",
+        "52.22.51.159/32",
+        "52.45.51.99/32",
+        "52.205.33.118/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-07-22T13:35:18.584Z",
+  "resolved_cidrs": [
+    "18.211.152.50/32",
+    "34.234.198.218/32",
+    "34.237.132.33/32",
+    "34.237.39.240/32",
+    "50.19.247.197/32",
+    "52.205.33.118/32",
+    "52.21.18.234/32",
+    "52.22.51.159/32",
+    "52.45.51.99/32"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-22T05:27:36.607Z",
-  "count": 52,
+  "generated_at": "2026-07-22T13:35:18.584Z",
+  "count": 54,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -233,6 +233,88 @@
         "17.246.15.0/24",
         "17.246.19.0/24",
         "17.246.23.0/24"
+      ]
+    },
+    {
+      "id": "audisto",
+      "name": "Audisto Crawler",
+      "operator": {
+        "name": "Audisto GmbH",
+        "url": "https://audisto.com"
+      },
+      "description": "Crawler for Audisto's hosted technical SEO and site-audit platform, fetching pages of the sites its customers analyse. Audisto publishes its crawler addresses as JSON and documents reverse-DNS verification.",
+      "docs": [
+        "https://audisto.com/help/crawler/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Audisto Crawler"
+        ],
+        "instances": [
+          "Audisto Crawler (mobile; +https://audisto.com/bot)",
+          "Audisto Crawler (desktop; +https://audisto.com/bot)",
+          "Audisto Crawler (desktop; essential; +https://audisto.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "audisto"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://audisto.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv4"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://audisto.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv6"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.crawler.audisto.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-22T13:35:18.584Z",
+      "resolved_cidrs": [
+        "116.202.161.186/32",
+        "138.201.254.123/32",
+        "142.132.180.252/32",
+        "148.251.68.22/32",
+        "162.55.235.248/32",
+        "167.235.32.214/32",
+        "168.119.181.43/32",
+        "168.119.245.51/32",
+        "168.119.53.206/32",
+        "176.9.73.44/32",
+        "195.201.226.139/32",
+        "195.201.226.141/32",
+        "195.201.23.108/32",
+        "195.201.233.95/32",
+        "195.201.25.108/32",
+        "195.201.25.74/32",
+        "2a01:4f8:1c1e:8943::1/128",
+        "2a01:4f8:1c1e:8944::1/128",
+        "2a01:4f8:1c1e:91fd::1/128",
+        "2a01:4f8:1c1e:9227::1/128",
+        "2a01:4f8:1c1e:9228::1/128",
+        "2a01:4f8:c010:be17::1/128",
+        "2a01:4f8:c010:be18::1/128",
+        "2a01:4f8:c010:be19::1/128",
+        "2a01:4f8:c010:be34::1/128",
+        "2a01:4f8:c010:be35::1/128",
+        "46.4.40.37/32",
+        "46.4.65.48/32",
+        "5.9.120.199/32",
+        "5.9.152.57/32"
       ]
     },
     {
@@ -8738,6 +8820,123 @@
         "94.130.182.75/32",
         "94.130.186.94/32",
         "94.130.98.118/32"
+      ]
+    },
+    {
+      "id": "serpstatbot",
+      "name": "serpstatbot",
+      "operator": {
+        "name": "Serpstat",
+        "url": "https://serpstat.com"
+      },
+      "description": "Serpstat's backlink crawler. It continuously crawls the web to add new links and track changes in Serpstat's link database, honouring robots.txt and Crawl-delay directives, and publishes the full list of addresses it crawls from.",
+      "docs": [
+        "https://serpstatbot.com/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "serpstatbot/[\\d.]+"
+        ],
+        "instances": [
+          "serpstatbot/1.0 (advanced backlink tracking bot; http://serpstatbot.com/; abuse@serpstatbot.com)",
+          "serpstatbot/1.0 (advanced backlink tracking bot; curl/7.58.0; http://serpstatbot.com/; abuse@serpstatbot.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "serpstatbot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://serpstatbot.com/serpstatbot-ip.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-22T13:35:18.584Z",
+      "resolved_cidrs": [
+        "136.243.144.81/32",
+        "136.243.145.46/32",
+        "136.243.153.17/32",
+        "136.243.155.105/32",
+        "136.243.176.156/32",
+        "136.243.212.110/32",
+        "136.243.212.93/32",
+        "136.243.214.34/32",
+        "138.199.229.125/32",
+        "138.201.194.13/32",
+        "138.201.203.132/32",
+        "138.201.36.87/32",
+        "144.76.13.100/32",
+        "144.76.151.42/32",
+        "144.76.151.45/32",
+        "144.76.61.84/32",
+        "144.76.67.108/32",
+        "144.76.67.110/32",
+        "144.76.67.169/32",
+        "144.76.67.25/32",
+        "144.76.67.250/32",
+        "144.76.68.124/32",
+        "144.76.68.14/32",
+        "144.76.68.17/32",
+        "144.76.68.20/32",
+        "144.76.68.70/32",
+        "144.76.68.76/32",
+        "144.76.68.88/32",
+        "144.76.69.39/32",
+        "144.76.72.24/32",
+        "144.76.72.99/32",
+        "144.76.73.122/32",
+        "144.76.88.54/32",
+        "144.76.98.154/32",
+        "148.251.11.147/32",
+        "148.251.168.205/32",
+        "148.251.241.12/32",
+        "159.69.87.104/32",
+        "159.69.87.105/32",
+        "159.69.87.109/32",
+        "159.69.87.121/32",
+        "159.69.87.155/32",
+        "159.69.87.165/32",
+        "159.69.87.166/32",
+        "159.69.87.192/32",
+        "159.69.87.206/32",
+        "159.69.87.233/32",
+        "159.69.87.26/32",
+        "159.69.87.61/32",
+        "159.69.87.7/32",
+        "159.69.87.78/32",
+        "159.69.87.79/32",
+        "159.69.87.80/32",
+        "159.69.87.90/32",
+        "162.55.54.91/32",
+        "168.119.237.219/32",
+        "176.9.17.6/32",
+        "176.9.18.183/32",
+        "188.245.168.21/32",
+        "188.245.233.162/32",
+        "188.34.166.212/32",
+        "195.201.12.243/32",
+        "195.201.174.92/32",
+        "195.201.235.74/32",
+        "23.88.116.199/32",
+        "49.13.192.12/32",
+        "49.13.90.11/32",
+        "5.9.110.227/32",
+        "5.9.55.228/32",
+        "88.99.149.173/32",
+        "88.99.164.109/32",
+        "88.99.193.224/32",
+        "88.99.215.210/32",
+        "88.99.244.56/32",
+        "88.99.250.124/32",
+        "88.99.95.199/32",
+        "94.130.10.218/32",
+        "94.130.23.168/32",
+        "94.130.237.182/32"
       ]
     },
     {

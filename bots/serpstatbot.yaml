@@ -1,0 +1,22 @@
+id: serpstatbot
+name: serpstatbot
+operator: { name: Serpstat, url: "https://serpstat.com" }
+description: >-
+  Serpstat's backlink crawler. It continuously crawls the web to add new links
+  and track changes in Serpstat's link database, honouring robots.txt and
+  Crawl-delay directives, and publishes the full list of addresses it crawls
+  from.
+docs:
+  - "https://serpstatbot.com/"
+category: seo
+user_agents:
+  patterns:
+    - 'serpstatbot/[\d.]+'
+  instances:
+    - 'serpstatbot/1.0 (advanced backlink tracking bot; http://serpstatbot.com/; abuse@serpstatbot.com)'
+    - 'serpstatbot/1.0 (advanced backlink tracking bot; curl/7.58.0; http://serpstatbot.com/; abuse@serpstatbot.com)'
+behavior: { respects_robots_txt: true, robots_token: serpstatbot }
+verification:
+  - type: cidr_feed
+    url: "https://serpstatbot.com/serpstatbot-ip.txt"
+    format: text_lines

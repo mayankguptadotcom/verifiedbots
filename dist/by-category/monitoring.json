@@ -1,8 +1,42 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-22T05:27:36.607Z",
-  "count": 27,
+  "generated_at": "2026-07-22T13:35:18.584Z",
+  "count": 28,
   "bots": [
+    {
+      "id": "awario",
+      "name": "AwarioBot",
+      "operator": {
+        "name": "Awario",
+        "url": "https://awario.com"
+      },
+      "description": "Awario's social-listening and media-monitoring crawlers, which fetch web pages and RSS feeds to find mentions of the brands and keywords its customers track. Awario states the bots respect robots.txt and honour Crawl-delay, and explicitly asks site owners not to identify them by IP because it uses no consecutive IP blocks.",
+      "docs": [
+        "https://awario.com/bots.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AwarioBot",
+          "AwarioSmartBot",
+          "AwarioRssBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AwarioBot/1.0; +https://awario.com/bots.html)",
+          "AwarioSmartBot/1.0 (+https://awario.com/bots.html; bots@awario.com)",
+          "AwarioRssBot/1.0 (+https://awario.com/bots.html; bots@awario.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AwarioSmartBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-22T13:35:18.584Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "azure-app-insights",
       "name": "Azure Application Insights Availability",

@@ -1,0 +1,23 @@
+id: awario
+name: AwarioBot
+operator: { name: Awario, url: "https://awario.com" }
+description: >-
+  Awario's social-listening and media-monitoring crawlers, which fetch web
+  pages and RSS feeds to find mentions of the brands and keywords its customers
+  track. Awario states the bots respect robots.txt and honour Crawl-delay, and
+  explicitly asks site owners not to identify them by IP because it uses no
+  consecutive IP blocks.
+docs:
+  - "https://awario.com/bots.html"
+category: monitoring
+user_agents:
+  patterns:
+    - 'AwarioBot'
+    - 'AwarioSmartBot'
+    - 'AwarioRssBot'
+  instances:
+    - 'Mozilla/5.0 (compatible; AwarioBot/1.0; +https://awario.com/bots.html)'
+    - 'AwarioSmartBot/1.0 (+https://awario.com/bots.html; bots@awario.com)'
+    - 'AwarioRssBot/1.0 (+https://awario.com/bots.html; bots@awario.com)'
+behavior: { respects_robots_txt: true, robots_token: AwarioSmartBot }
+verification: []

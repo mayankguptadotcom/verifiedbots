@@ -1,0 +1,30 @@
+id: audisto
+name: Audisto Crawler
+operator: { name: Audisto GmbH, url: "https://audisto.com" }
+description: >-
+  Crawler for Audisto's hosted technical SEO and site-audit platform, fetching
+  pages of the sites its customers analyse. Audisto publishes its crawler
+  addresses as JSON and documents reverse-DNS verification.
+docs:
+  - "https://audisto.com/help/crawler/bot/"
+category: seo
+user_agents:
+  patterns:
+    - 'Audisto Crawler'
+  instances:
+    - 'Audisto Crawler (mobile; +https://audisto.com/bot)'
+    - 'Audisto Crawler (desktop; +https://audisto.com/bot)'
+    - 'Audisto Crawler (desktop; essential; +https://audisto.com/bot)'
+behavior: { respects_robots_txt: true, robots_token: audisto }
+verification:
+  # audisto.com/ips.json is an object with separate ipv4/ipv6 arrays — one recipe each.
+  - type: cidr_feed
+    url: "https://audisto.com/ips.json"
+    format: github_meta
+    selector: ipv4
+  - type: cidr_feed
+    url: "https://audisto.com/ips.json"
+    format: github_meta
+    selector: ipv6
+  - type: rdns
+    masks: ["*.crawler.audisto.com"]

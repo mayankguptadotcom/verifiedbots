@@ -7,6 +7,13 @@
     ]
   },
   {
+    "id": "addsearch",
+    "category": "search-engine",
+    "patterns": [
+      "AddSearchBot"
+    ]
+  },
+  {
     "id": "adidxbot",
     "category": "search-engine",
     "patterns": [
@@ -81,6 +88,22 @@
     "category": "archiver",
     "patterns": [
       "Arquivo-web-crawler"
+    ]
+  },
+  {
+    "id": "audisto",
+    "category": "seo",
+    "patterns": [
+      "Audisto Crawler"
+    ]
+  },
+  {
+    "id": "awario",
+    "category": "monitoring",
+    "patterns": [
+      "AwarioBot",
+      "AwarioSmartBot",
+      "AwarioRssBot"
     ]
   },
   {
@@ -945,6 +968,13 @@
     "category": "seo",
     "patterns": [
       "SEOkicks"
+    ]
+  },
+  {
+    "id": "serpstatbot",
+    "category": "seo",
+    "patterns": [
+      "serpstatbot/[\\d.]+"
     ]
   },
   {
