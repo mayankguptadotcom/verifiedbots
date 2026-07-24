@@ -1,0 +1,23 @@
+id: testomato
+name: Testomatobot
+operator: { name: Testomato, url: "https://testomato.com" }
+description: >-
+  Testomato's website-monitoring agent. It downloads pages and resources and
+  submits web forms for the checks its customers configure (uptime, error,
+  SSL, response-time, meta-tag and JSON-LD monitoring), on a schedule the
+  customer sets. Testomato publishes a plain-text list of the addresses its
+  monitoring nodes request from.
+docs:
+  - "https://testomato.com/bot/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Testomatobot/\d'
+  instances:
+    - 'Testomatobot/1.0 (Linux x86_64; +https://testomato.com/bot) minicrawler/5.2.7'
+    - 'Testomatobot/1.0 (Linux x86_64; +https://www.testomato.com/testomatobot) minicrawler/5.2.2'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://testomato.com/bot/ipv4-ipv6.txt"
+    format: text_lines

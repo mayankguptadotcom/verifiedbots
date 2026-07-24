@@ -1,0 +1,23 @@
+id: caliperbot
+name: Caliperbot
+operator: { name: Conductor, url: "https://www.conductor.com" }
+description: >-
+  Conductor's single web crawler. It reads the HTML of pages on sites its
+  customers track, recording on-page elements such as title tags, header tags
+  and other metadata for Conductor's SEO and search-visibility reporting.
+  Conductor publishes the address range it crawls from and will lower the
+  crawl rate on request.
+docs:
+  - "https://www.conductor.com/caliperbot"
+  - "https://www.conductor.com/docs/intelligence/conductors-data-collection-and-crawling-faqs/"
+category: seo
+user_agents:
+  patterns:
+    - 'Caliperbot/\d'
+  instances:
+    - 'Caliperbot/1.0 (+http://www.conductor.com/caliperbot)'
+    - 'Caliperbot/1.0 (+https://www.conductor.com/caliperbot)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs: ["162.246.176.0/21"]

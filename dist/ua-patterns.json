@@ -199,6 +199,13 @@
     ]
   },
   {
+    "id": "caliperbot",
+    "category": "seo",
+    "patterns": [
+      "Caliperbot/\\d"
+    ]
+  },
+  {
     "id": "ccbot",
     "category": "ai-crawler",
     "patterns": [
@@ -288,6 +295,13 @@
     "category": "seo",
     "patterns": [
       "James BOT"
+    ]
+  },
+  {
+    "id": "cookiebot-scanner",
+    "category": "monitoring",
+    "patterns": [
+      "Cookiebot/\\d"
     ]
   },
   {
@@ -613,6 +627,13 @@
     ]
   },
   {
+    "id": "ioncrawl",
+    "category": "search-engine",
+    "patterns": [
+      "IonCrawl"
+    ]
+  },
+  {
     "id": "irc-archivebot",
     "category": "archiver",
     "patterns": [
@@ -774,6 +795,13 @@
     ]
   },
   {
+    "id": "neticle-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "Neticle Crawler"
+    ]
+  },
+  {
     "id": "newrelic-synthetics",
     "category": "monitoring",
     "patterns": [
@@ -820,6 +848,13 @@
     "category": "search-engine",
     "patterns": [
       "OpenindexSpider"
+    ]
+  },
+  {
+    "id": "pagepeeker",
+    "category": "social-preview",
+    "patterns": [
+      "PagePeeker/\\d"
     ]
   },
   {
@@ -999,6 +1034,16 @@
     ]
   },
   {
+    "id": "siteimprove",
+    "category": "seo",
+    "patterns": [
+      "SiteCheck-sitecrawl by Siteimprove\\.com",
+      "LinkCheck by Siteimprove\\.com",
+      "Image size by Siteimprove\\.com",
+      "Probe by Siteimprove\\.com"
+    ]
+  },
+  {
     "id": "slack-imgproxy",
     "category": "social-preview",
     "patterns": [
@@ -1083,6 +1128,13 @@
     ]
   },
   {
+    "id": "testomato",
+    "category": "monitoring",
+    "patterns": [
+      "Testomatobot/\\d"
+    ]
+  },
+  {
     "id": "tineye-crawler",
     "category": "search-engine",
     "patterns": [
@@ -1122,6 +1174,15 @@
     "category": "monitoring",
     "patterns": [
       "updown\\.io"
+    ]
+  },
+  {
+    "id": "uptime-com",
+    "category": "monitoring",
+    "patterns": [
+      "compatible; Uptime/\\d",
+      "Uptime/\\d\\.\\d \\(https://uptime\\.com\\)",
+      "Uptimebot/\\d"
     ]
   },
   {

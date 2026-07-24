@@ -1,0 +1,20 @@
+id: ioncrawl
+name: IONOS Crawler
+operator: { name: IONOS, url: "https://www.ionos.com" }
+description: >-
+  IONOS Crawler (IonCrawl) continuously crawls publicly accessible domains to
+  generate insights into how they are used, which IONOS uses to improve and
+  expand its hosting products. IONOS documents reverse-DNS verification and
+  deletes crawled data after 60 days.
+docs:
+  - "https://www.ionos.de/terms-gtc/faq-crawler-en"
+category: search-engine
+user_agents:
+  patterns:
+    - 'IonCrawl'
+  instances:
+    - 'IonCrawl (https://www.ionos.de/terms-gtc/faq-crawler-en/)'
+behavior: { respects_robots_txt: true, robots_token: IonCrawl }
+verification:
+  - type: rdns
+    masks: ["*.1and1.org"]

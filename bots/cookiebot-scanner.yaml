@@ -1,0 +1,31 @@
+id: cookiebot-scanner
+name: Cookiebot Scanner
+operator: { name: Cookiebot (Usercentrics), url: "https://www.cookiebot.com" }
+description: >-
+  Cookiebot's cookie-consent compliance scanner. It crawls the domains its
+  customers have registered, on a roughly monthly schedule, to detect the
+  cookies and tracking technologies in use and generate a cookie declaration.
+  Cookiebot documents that scans run only from a fixed pool of addresses.
+docs:
+  - "https://support.cookiebot.com/hc/en-us/articles/360003824153-Whitelisting-the-Cookiebot-scanner"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Cookiebot/\d'
+  instances:
+    - 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Cookiebot/1.0; +http://cookiebot.com/) Chrome/97.0.4692.71 Safari/537.36'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "20.223.9.138/32"
+      - "34.107.102.47/32"
+      - "34.141.10.24/32"
+      - "34.159.86.126/32"
+      - "34.159.168.195/32"
+      - "34.159.247.222/32"
+      - "35.198.78.207/32"
+      - "35.198.137.6/32"
+      - "35.198.160.49/32"
+      - "35.246.143.2/32"
+      - "35.246.191.14/32"

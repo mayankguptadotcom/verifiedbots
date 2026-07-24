@@ -1,0 +1,18 @@
+id: neticle-crawler
+name: Neticle Crawler
+operator: { name: Neticle Technologies, url: "https://neticle.com" }
+description: >-
+  Neticle's in-house crawler for its social and online media-monitoring
+  service. It continuously fetches newly published web content so Neticle can
+  score sentiment around the keywords, brands and products its customers
+  track.
+docs:
+  - "https://neticle.com/bot/en/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Neticle Crawler'
+  instances:
+    - 'Neticle Crawler v1.0 ( https://neticle.com/bot/en/ )'
+behavior: { respects_robots_txt: false }
+verification: []

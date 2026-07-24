@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-24T05:28:43.786Z",
-  "count": 28,
+  "generated_at": "2026-07-24T13:19:52.933Z",
+  "count": 32,
   "bots": [
     {
       "id": "awario",
@@ -515,6 +515,64 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "cookiebot-scanner",
+      "name": "Cookiebot Scanner",
+      "operator": {
+        "name": "Cookiebot (Usercentrics)",
+        "url": "https://www.cookiebot.com"
+      },
+      "description": "Cookiebot's cookie-consent compliance scanner. It crawls the domains its customers have registered, on a roughly monthly schedule, to detect the cookies and tracking technologies in use and generate a cookie declaration. Cookiebot documents that scans run only from a fixed pool of addresses.",
+      "docs": [
+        "https://support.cookiebot.com/hc/en-us/articles/360003824153-Whitelisting-the-Cookiebot-scanner"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Cookiebot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Cookiebot/1.0; +http://cookiebot.com/) Chrome/97.0.4692.71 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "20.223.9.138/32",
+            "34.107.102.47/32",
+            "34.141.10.24/32",
+            "34.159.86.126/32",
+            "34.159.168.195/32",
+            "34.159.247.222/32",
+            "35.198.78.207/32",
+            "35.198.137.6/32",
+            "35.198.160.49/32",
+            "35.246.143.2/32",
+            "35.246.191.14/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": [
+        "20.223.9.138/32",
+        "34.107.102.47/32",
+        "34.141.10.24/32",
+        "34.159.168.195/32",
+        "34.159.247.222/32",
+        "34.159.86.126/32",
+        "35.198.137.6/32",
+        "35.198.160.49/32",
+        "35.198.78.207/32",
+        "35.246.143.2/32",
+        "35.246.191.14/32"
+      ]
     },
     {
       "id": "cookiehub-scan",
@@ -1255,6 +1313,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "neticle-crawler",
+      "name": "Neticle Crawler",
+      "operator": {
+        "name": "Neticle Technologies",
+        "url": "https://neticle.com"
+      },
+      "description": "Neticle's in-house crawler for its social and online media-monitoring service. It continuously fetches newly published web content so Neticle can score sentiment around the keywords, brands and products its customers track.",
+      "docs": [
+        "https://neticle.com/bot/en/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Neticle Crawler"
+        ],
+        "instances": [
+          "Neticle Crawler v1.0 ( https://neticle.com/bot/en/ )"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-24T13:19:52.933Z",
       "resolved_cidrs": []
     },
     {
@@ -2717,6 +2804,67 @@
       ]
     },
     {
+      "id": "testomato",
+      "name": "Testomatobot",
+      "operator": {
+        "name": "Testomato",
+        "url": "https://testomato.com"
+      },
+      "description": "Testomato's website-monitoring agent. It downloads pages and resources and submits web forms for the checks its customers configure (uptime, error, SSL, response-time, meta-tag and JSON-LD monitoring), on a schedule the customer sets. Testomato publishes a plain-text list of the addresses its monitoring nodes request from.",
+      "docs": [
+        "https://testomato.com/bot/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Testomatobot/\\d"
+        ],
+        "instances": [
+          "Testomatobot/1.0 (Linux x86_64; +https://testomato.com/bot) minicrawler/5.2.7",
+          "Testomatobot/1.0 (Linux x86_64; +https://www.testomato.com/testomatobot) minicrawler/5.2.2"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://testomato.com/bot/ipv4-ipv6.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": [
+        "139.180.185.29/32",
+        "155.138.245.213/32",
+        "167.235.18.92/32",
+        "192.248.174.43/32",
+        "2001:19f0:1000:6e19:5400:4ff:fea9:cb1f/128",
+        "2001:19f0:4400:2c9a:5400:4ff:fea9:cb3e/128",
+        "2001:19f0:5c01:1491:5400:4ff:fea5:8655/128",
+        "2001:19f0:6402:bd2:5400:4ff:fe7d:e497/128",
+        "2001:19f0:7001:31ef:5400:4ff:feb8:3efd/128",
+        "2001:19f0:7400:81ec:5400:4ff:fea9:c45f/128",
+        "2001:19f0:ac02:689:5400:4ff:feac:58dd/128",
+        "2001:1ab0:f001:face:216:3eff:fe10:bd6c/128",
+        "2001:1ab0:f001:face:216:3eff:fe3b:3e13/128",
+        "2001:1ab0:f001:face:216:3eff:fe7a:5492/128",
+        "2001:1ab0:f001:face:216:3eff:feab:3996/128",
+        "207.246.89.84/32",
+        "217.31.53.144/32",
+        "217.31.53.147/32",
+        "217.31.53.150/32",
+        "217.31.54.206/32",
+        "2a01:4f8:c0c:4aec::1/128",
+        "45.32.23.147/32",
+        "45.77.184.206/32",
+        "66.42.127.176/32"
+      ]
+    },
+    {
       "id": "trendiction-crawler",
       "name": "Trendiction Bot",
       "operator": {
@@ -2804,6 +2952,42 @@
         "45.76.104.117/32",
         "91.121.222.175/32"
       ]
+    },
+    {
+      "id": "uptime-com",
+      "name": "Uptime.com",
+      "operator": {
+        "name": "Uptime.com",
+        "url": "https://uptime.com"
+      },
+      "description": "Uptime.com's synthetic-monitoring probes. They request the URLs its customers configure as checks, from probe servers in many locations, including headless-browser transaction checks that execute JavaScript. Uptime.com publishes its probe IP list only inside the authenticated dashboard, so the user agent is the public identifier.",
+      "docs": [
+        "https://support.uptime.com/hc/en-us/articles/360020716399-How-to-Identify-the-Uptime-com-User-Agent",
+        "https://support.uptime.com/hc/en-us/articles/26061039101084-How-Do-I-Whitelist-Uptime-com-Probe-Servers-and-User-Agents"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "compatible; Uptime/\\d",
+          "Uptime/\\d\\.\\d \\(https://uptime\\.com\\)",
+          "Uptimebot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Uptime/2.0; http://uptime.com)",
+          "Mozilla/5.0 (compatible; Uptime/1.0; http://uptime.com)",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Uptime/2.0 (https://uptime.com)",
+          "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36 Uptime/2.0 (https://uptime.com)",
+          "Mozilla/5.0 (compatible; Uptimebot/1.0; +http://www.uptime.com/uptimebot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": []
     },
     {
       "id": "uptimerobot",

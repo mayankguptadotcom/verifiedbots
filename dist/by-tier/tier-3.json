@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-24T05:28:43.786Z",
-  "count": 75,
+  "generated_at": "2026-07-24T13:19:52.933Z",
+  "count": 78,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1321,6 +1321,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "neticle-crawler",
+      "name": "Neticle Crawler",
+      "operator": {
+        "name": "Neticle Technologies",
+        "url": "https://neticle.com"
+      },
+      "description": "Neticle's in-house crawler for its social and online media-monitoring service. It continuously fetches newly published web content so Neticle can score sentiment around the keywords, brands and products its customers track.",
+      "docs": [
+        "https://neticle.com/bot/en/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Neticle Crawler"
+        ],
+        "instances": [
+          "Neticle Crawler v1.0 ( https://neticle.com/bot/en/ )"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "newrelic-synthetics",
       "name": "New Relic Synthetics",
       "operator": {
@@ -1466,6 +1495,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "pagepeeker",
+      "name": "PagePeeker",
+      "operator": {
+        "name": "PagePeeker SRL",
+        "url": "https://pagepeeker.com"
+      },
+      "description": "PagePeeker's thumbnailing robot. It captures a screenshot of a page when one of PagePeeker's customers requests a thumbnail for it, refetching a given site at most once every five to seven days.",
+      "docs": [
+        "https://pagepeeker.com/robots/"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "PagePeeker/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36 (compatible; PagePeeker/3.0; +https://pagepeeker.com/robots/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PagePeeker"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-24T13:19:52.933Z",
       "resolved_cidrs": []
     },
     {
@@ -2067,6 +2126,42 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "uptime-com",
+      "name": "Uptime.com",
+      "operator": {
+        "name": "Uptime.com",
+        "url": "https://uptime.com"
+      },
+      "description": "Uptime.com's synthetic-monitoring probes. They request the URLs its customers configure as checks, from probe servers in many locations, including headless-browser transaction checks that execute JavaScript. Uptime.com publishes its probe IP list only inside the authenticated dashboard, so the user agent is the public identifier.",
+      "docs": [
+        "https://support.uptime.com/hc/en-us/articles/360020716399-How-to-Identify-the-Uptime-com-User-Agent",
+        "https://support.uptime.com/hc/en-us/articles/26061039101084-How-Do-I-Whitelist-Uptime-com-Probe-Servers-and-User-Agents"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "compatible; Uptime/\\d",
+          "Uptime/\\d\\.\\d \\(https://uptime\\.com\\)",
+          "Uptimebot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Uptime/2.0; http://uptime.com)",
+          "Mozilla/5.0 (compatible; Uptime/1.0; http://uptime.com)",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Uptime/2.0 (https://uptime.com)",
+          "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36 Uptime/2.0 (https://uptime.com)",
+          "Mozilla/5.0 (compatible; Uptimebot/1.0; +http://www.uptime.com/uptimebot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-24T13:19:52.933Z",
       "resolved_cidrs": []
     },
     {

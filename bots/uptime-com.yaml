@@ -1,0 +1,26 @@
+id: uptime-com
+name: Uptime.com
+operator: { name: Uptime.com, url: "https://uptime.com" }
+description: >-
+  Uptime.com's synthetic-monitoring probes. They request the URLs its customers
+  configure as checks, from probe servers in many locations, including
+  headless-browser transaction checks that execute JavaScript. Uptime.com
+  publishes its probe IP list only inside the authenticated dashboard, so the
+  user agent is the public identifier.
+docs:
+  - "https://support.uptime.com/hc/en-us/articles/360020716399-How-to-Identify-the-Uptime-com-User-Agent"
+  - "https://support.uptime.com/hc/en-us/articles/26061039101084-How-Do-I-Whitelist-Uptime-com-Probe-Servers-and-User-Agents"
+category: monitoring
+user_agents:
+  patterns:
+    - 'compatible; Uptime/\d'
+    - 'Uptime/\d\.\d \(https://uptime\.com\)'
+    - 'Uptimebot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Uptime/2.0; http://uptime.com)'
+    - 'Mozilla/5.0 (compatible; Uptime/1.0; http://uptime.com)'
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Uptime/2.0 (https://uptime.com)'
+    - 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36 Uptime/2.0 (https://uptime.com)'
+    - 'Mozilla/5.0 (compatible; Uptimebot/1.0; +http://www.uptime.com/uptimebot)'
+behavior: { respects_robots_txt: false }
+verification: []
