@@ -1,0 +1,19 @@
+id: meta-webindexer
+name: Meta Web Indexer
+operator: { name: Meta, url: "https://www.meta.com" }
+description: >-
+  Meta's crawler that navigates the web to improve the quality of Meta AI
+  search results, analysing page content for relevance and accuracy in Meta AI
+  responses. Verified by ASN lookup (AS32934); Meta publishes no IP feed.
+docs:
+  - "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'meta-webindexer/\d'
+  instances:
+    - 'meta-webindexer/1.1'
+behavior: { respects_robots_txt: true, robots_token: meta-webindexer }
+verification:
+  - type: asn
+    numbers: [32934]

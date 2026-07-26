@@ -1,0 +1,17 @@
+id: metrics-tools
+name: MTRobot
+operator: { name: Metrics Tools (Andreas Knatz), url: "https://metrics-tools.de" }
+description: >-
+  Crawler for Metrics Tools, a German SEO analytics service, collecting page
+  data for its visibility and ranking analyses. The operator publishes no IP
+  ranges, so requests cannot be verified beyond the user agent.
+docs:
+  - "https://metrics-tools.de/robot.html"
+category: seo
+user_agents:
+  patterns:
+    - 'MTRobot/\d'
+  instances:
+    - 'MTRobot/0.2 (Metrics Tools Analytics Crawler; https://metrics-tools.de/robot.html; crawler@metrics-tools.de)'
+behavior: { respects_robots_txt: true }
+verification: []

@@ -1,0 +1,30 @@
+{
+  "id": "amzn-searchbot",
+  "name": "Amzn-SearchBot",
+  "operator": {
+    "name": "Amazon",
+    "url": "https://www.amazon.com"
+  },
+  "description": "Amazon's crawler used to improve search experiences in Amazon products and services; Amazon states it does not crawl content for generative AI model training. Amazon publishes a human-readable IP list but no machine-parseable feed in a format this project's schema supports.",
+  "docs": [
+    "https://developer.amazon.com/amazonbot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Amzn-SearchBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Amzn-SearchBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-26T13:26:40.725Z",
+  "resolved_cidrs": []
+}

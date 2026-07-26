@@ -3,9 +3,11 @@ name: PetalBot
 operator: { name: Huawei, url: "https://www.huawei.com" }
 description: >-
   Huawei's web crawler, fetching pages for the Petal Search engine used in
-  Huawei's mobile services.
+  Huawei's mobile services and for Huawei Assistant content recommendations.
+  Huawei documents reverse-DNS verification against aspiegel.com and
+  petalsearch.com hostnames.
 docs:
-  - "https://webmaster.petalsearch.com/site/petalbot"
+  - "https://aspiegel.com/petalbot"
 category: search-engine
 user_agents:
   patterns:
@@ -16,4 +18,4 @@ user_agents:
 behavior: { respects_robots_txt: true, robots_token: PetalBot }
 verification:
   - type: rdns
-    masks: ["*.petalsearch.com"]
+    masks: ["*.petalsearch.com", "*.aspiegel.com"]

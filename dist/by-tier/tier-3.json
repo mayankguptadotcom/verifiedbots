@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-26T05:32:09.427Z",
-  "count": 78,
+  "generated_at": "2026-07-26T13:26:40.725Z",
+  "count": 85,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -91,6 +91,66 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amzn-searchbot",
+      "name": "Amzn-SearchBot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's crawler used to improve search experiences in Amazon products and services; Amazon states it does not crawl content for generative AI model training. Amazon publishes a human-readable IP list but no machine-parseable feed in a format this project's schema supports.",
+      "docs": [
+        "https://developer.amazon.com/amazonbot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Amzn-SearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Amzn-SearchBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amzn-user",
+      "name": "Amzn-User",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's on-demand fetcher supporting user actions, such as responding to Alexa queries that need up-to-date information; Amazon states it does not crawl content for generative AI model training. Amazon publishes a human-readable live-crawl IP list but no machine-parseable feed.",
+      "docs": [
+        "https://developer.amazon.com/amazonbot"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Amzn-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Amzn-User"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
     },
     {
@@ -516,6 +576,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cocolyzebot",
+      "name": "Cocolyzebot",
+      "operator": {
+        "name": "Cocolyze",
+        "url": "https://www.cocolyze.com"
+      },
+      "description": "Crawler for Cocolyze's SEO analysis platform, fetching pages of sites its users analyse. Cocolyze publishes no IP ranges, so requests cannot be verified beyond the user agent.",
+      "docs": [
+        "https://www.cocolyze.com/en/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Cocolyzebot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cocolyzebot/1.0; https://cocolyze.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "cocolyzebot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "cognitiveseo-crawler",
       "name": "cognitiveSEO",
       "operator": {
@@ -543,6 +633,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "deepnoc",
+      "name": "deepnoc",
+      "operator": {
+        "name": "deepnoc GmbH",
+        "url": "https://deepnoc.com"
+      },
+      "description": "Research crawler operated by deepnoc GmbH that parses and stores public web page content so that new search engines can query it without running their own crawling infrastructure. No IP ranges are published.",
+      "docs": [
+        "https://deepnoc.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "deepnoc"
+        ],
+        "instances": [
+          "deepnoc - https://deepnoc.com/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "deepnoc"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
     },
     {
@@ -1261,6 +1381,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "metrics-tools",
+      "name": "MTRobot",
+      "operator": {
+        "name": "Metrics Tools (Andreas Knatz)",
+        "url": "https://metrics-tools.de"
+      },
+      "description": "Crawler for Metrics Tools, a German SEO analytics service, collecting page data for its visibility and ranking analyses. The operator publishes no IP ranges, so requests cannot be verified beyond the user agent.",
+      "docs": [
+        "https://metrics-tools.de/robot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "MTRobot/\\d"
+        ],
+        "instances": [
+          "MTRobot/0.2 (Metrics Tools Analytics Crawler; https://metrics-tools.de/robot.html; crawler@metrics-tools.de)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "miniflux-feedfetcher",
       "name": "Miniflux",
       "operator": {
@@ -1948,6 +2097,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "t3versions",
+      "name": "t3versionsBot",
+      "operator": {
+        "name": "Torben Hansen (t3versions)",
+        "url": "https://www.t3versions.com"
+      },
+      "description": "Private-project crawler that makes single GET requests to sites and looks for TYPO3 fingerprints, collecting statistics on the worldwide usage and development of the open-source TYPO3 CMS. No IP ranges are published, and the operator documents no robots.txt support (exclusion is by email request).",
+      "docs": [
+        "https://www.t3versions.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "t3versionsBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; t3versionsBot/1.2; +https://www.t3versions.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "telegrambot",
       "name": "TelegramBot (link preview)",
       "operator": {
@@ -2220,6 +2398,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "webzio-extended",
+      "name": "Webzio-extended",
+      "operator": {
+        "name": "Webz.io Ltd.",
+        "url": "https://webz.io"
+      },
+      "description": "Second crawler in Webz.io's crawler pair, which performs ethical validation on the data collected by Webzio and tags it as usable or not usable for AI and machine-learning training. Webz.io publishes no IP ranges.",
+      "docs": [
+        "https://webz.io/blog/company/an-overview-of-the-webz-io-duo-of-crawlers/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "webzio-extended"
+        ],
+        "instances": [
+          "webzio-extended (+https://webz.io/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
     },
     {

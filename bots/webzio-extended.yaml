@@ -1,0 +1,17 @@
+id: webzio-extended
+name: Webzio-extended
+operator: { name: Webz.io Ltd., url: "https://webz.io" }
+description: >-
+  Second crawler in Webz.io's crawler pair, which performs ethical validation on
+  the data collected by Webzio and tags it as usable or not usable for AI and
+  machine-learning training. Webz.io publishes no IP ranges.
+docs:
+  - "https://webz.io/blog/company/an-overview-of-the-webz-io-duo-of-crawlers/"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'webzio-extended'
+  instances:
+    - 'webzio-extended (+https://webz.io/bot.html)'
+behavior: { respects_robots_txt: true }
+verification: []

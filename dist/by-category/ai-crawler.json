@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-26T05:32:09.427Z",
-  "count": 19,
+  "generated_at": "2026-07-26T13:26:40.725Z",
+  "count": 21,
   "bots": [
     {
       "id": "ai2bot",
@@ -823,6 +823,43 @@
       "resolved_cidrs": []
     },
     {
+      "id": "meta-webindexer",
+      "name": "Meta Web Indexer",
+      "operator": {
+        "name": "Meta",
+        "url": "https://www.meta.com"
+      },
+      "description": "Meta's crawler that navigates the web to improve the quality of Meta AI search results, analysing page content for relevance and accuracy in Meta AI responses. Verified by ASN lookup (AS32934); Meta publishes no IP feed.",
+      "docs": [
+        "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "meta-webindexer/\\d"
+        ],
+        "instances": [
+          "meta-webindexer/1.1"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "meta-webindexer"
+      },
+      "verification": [
+        {
+          "type": "asn",
+          "numbers": [
+            32934
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "nict-crawler",
       "name": "ICC-Crawler",
       "operator": {
@@ -1036,6 +1073,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "webzio-extended",
+      "name": "Webzio-extended",
+      "operator": {
+        "name": "Webz.io Ltd.",
+        "url": "https://webz.io"
+      },
+      "description": "Second crawler in Webz.io's crawler pair, which performs ethical validation on the data collected by Webzio and tags it as usable or not usable for AI and machine-learning training. Webz.io publishes no IP ranges.",
+      "docs": [
+        "https://webz.io/blog/company/an-overview-of-the-webz-io-duo-of-crawlers/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "webzio-extended"
+        ],
+        "instances": [
+          "webzio-extended (+https://webz.io/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
     },
     {

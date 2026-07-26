@@ -1,0 +1,18 @@
+id: t3versions
+name: t3versionsBot
+operator: { name: Torben Hansen (t3versions), url: "https://www.t3versions.com" }
+description: >-
+  Private-project crawler that makes single GET requests to sites and looks for
+  TYPO3 fingerprints, collecting statistics on the worldwide usage and
+  development of the open-source TYPO3 CMS. No IP ranges are published, and the
+  operator documents no robots.txt support (exclusion is by email request).
+docs:
+  - "https://www.t3versions.com/bot"
+category: seo
+user_agents:
+  patterns:
+    - 't3versionsBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; t3versionsBot/1.2; +https://www.t3versions.com/bot)'
+behavior: { respects_robots_txt: false }
+verification: []

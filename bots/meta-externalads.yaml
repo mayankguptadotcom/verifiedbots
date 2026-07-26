@@ -1,0 +1,20 @@
+id: meta-externalads
+name: Meta External Ads
+operator: { name: Meta, url: "https://www.meta.com" }
+description: >-
+  Meta's crawler that fetches pages for advertising and other business-related
+  products and services, separate from the AI-training and link-preview
+  crawlers. Verified by ASN lookup (AS32934); Meta publishes no IP feed.
+docs:
+  - "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+category: seo
+user_agents:
+  patterns:
+    - 'meta-externalads/\d'
+  instances:
+    - 'meta-externalads/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)'
+    - 'meta-externalads/1.1'
+behavior: { respects_robots_txt: true, robots_token: meta-externalads }
+verification:
+  - type: asn
+    numbers: [32934]

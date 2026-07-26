@@ -3,7 +3,8 @@ name: Kagibot
 operator: { name: Kagi, url: "https://kagi.com" }
 description: >-
   Kagi's web crawler, fetching pages for the paid Kagi search engine. Kagi
-  publishes a fixed, small set of source IPs rather than a CIDR feed.
+  publishes a fixed, small set of source IPs rather than a CIDR feed, each
+  paired with a kagibot.org hostname.
 docs:
   - "https://kagi.com/bot"
 category: search-engine
@@ -16,3 +17,5 @@ behavior: { respects_robots_txt: true, robots_token: Kagibot }
 verification:
   - type: static_cidrs
     cidrs: ["216.18.205.234/32", "35.212.27.76/32", "104.254.65.50/32", "209.151.156.194/32"]
+  - type: rdns
+    masks: ["*.kagibot.org"]

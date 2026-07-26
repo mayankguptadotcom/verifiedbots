@@ -1,0 +1,30 @@
+{
+  "id": "cocolyzebot",
+  "name": "Cocolyzebot",
+  "operator": {
+    "name": "Cocolyze",
+    "url": "https://www.cocolyze.com"
+  },
+  "description": "Crawler for Cocolyze's SEO analysis platform, fetching pages of sites its users analyse. Cocolyze publishes no IP ranges, so requests cannot be verified beyond the user agent.",
+  "docs": [
+    "https://www.cocolyze.com/en/bot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Cocolyzebot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Cocolyzebot/1.0; https://cocolyze.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "cocolyzebot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-26T13:26:40.725Z",
+  "resolved_cidrs": []
+}

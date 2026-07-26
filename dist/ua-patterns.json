@@ -70,6 +70,20 @@
     ]
   },
   {
+    "id": "amzn-searchbot",
+    "category": "search-engine",
+    "patterns": [
+      "Amzn-SearchBot/\\d"
+    ]
+  },
+  {
+    "id": "amzn-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Amzn-User/\\d"
+    ]
+  },
+  {
     "id": "apple-podcasts",
     "category": "feed-fetcher",
     "patterns": [
@@ -291,6 +305,13 @@
     ]
   },
   {
+    "id": "cocolyzebot",
+    "category": "seo",
+    "patterns": [
+      "Cocolyzebot/\\d"
+    ]
+  },
+  {
     "id": "cognitiveseo-crawler",
     "category": "seo",
     "patterns": [
@@ -341,6 +362,13 @@
     ]
   },
   {
+    "id": "deepnoc",
+    "category": "search-engine",
+    "patterns": [
+      "deepnoc"
+    ]
+  },
+  {
     "id": "detectify",
     "category": "security",
     "patterns": [
@@ -366,6 +394,13 @@
     "category": "seo",
     "patterns": [
       "DotBot/\\d"
+    ]
+  },
+  {
+    "id": "duckassistbot",
+    "category": "ai-assistant",
+    "patterns": [
+      "DuckAssistBot/\\d"
     ]
   },
   {
@@ -732,6 +767,13 @@
     ]
   },
   {
+    "id": "meta-externalads",
+    "category": "seo",
+    "patterns": [
+      "meta-externalads/\\d"
+    ]
+  },
+  {
     "id": "meta-externalagent",
     "category": "ai-crawler",
     "patterns": [
@@ -746,10 +788,24 @@
     ]
   },
   {
+    "id": "meta-webindexer",
+    "category": "ai-crawler",
+    "patterns": [
+      "meta-webindexer/\\d"
+    ]
+  },
+  {
     "id": "metajob-crawler",
     "category": "search-engine",
     "patterns": [
       "MetaJobBot"
+    ]
+  },
+  {
+    "id": "metrics-tools",
+    "category": "seo",
+    "patterns": [
+      "MTRobot/\\d"
     ]
   },
   {
@@ -1114,6 +1170,13 @@
     ]
   },
   {
+    "id": "t3versions",
+    "category": "seo",
+    "patterns": [
+      "t3versionsBot/\\d"
+    ]
+  },
+  {
     "id": "telegram-webhooks",
     "category": "webhook",
     "patterns": [
@@ -1211,6 +1274,13 @@
     "category": "search-engine",
     "patterns": [
       "webzio\\s"
+    ]
+  },
+  {
+    "id": "webzio-extended",
+    "category": "ai-crawler",
+    "patterns": [
+      "webzio-extended"
     ]
   },
   {

@@ -5,7 +5,7 @@
     "name": "Kagi",
     "url": "https://kagi.com"
   },
-  "description": "Kagi's web crawler, fetching pages for the paid Kagi search engine. Kagi publishes a fixed, small set of source IPs rather than a CIDR feed.",
+  "description": "Kagi's web crawler, fetching pages for the paid Kagi search engine. Kagi publishes a fixed, small set of source IPs rather than a CIDR feed, each paired with a kagibot.org hostname.",
   "docs": [
     "https://kagi.com/bot"
   ],
@@ -30,6 +30,12 @@
         "35.212.27.76/32",
         "104.254.65.50/32",
         "209.151.156.194/32"
+      ]
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.kagibot.org"
       ]
     }
   ],

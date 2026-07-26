@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-26T05:32:09.427Z",
-  "count": 42,
+  "generated_at": "2026-07-26T13:26:40.725Z",
+  "count": 44,
   "bots": [
     {
       "id": "addsearch",
@@ -174,6 +174,36 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amzn-searchbot",
+      "name": "Amzn-SearchBot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's crawler used to improve search experiences in Amazon products and services; Amazon states it does not crawl content for generative AI model training. Amazon publishes a human-readable IP list but no machine-parseable feed in a format this project's schema supports.",
+      "docs": [
+        "https://developer.amazon.com/amazonbot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Amzn-SearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Amzn-SearchBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
     },
     {
@@ -418,6 +448,36 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "deepnoc",
+      "name": "deepnoc",
+      "operator": {
+        "name": "deepnoc GmbH",
+        "url": "https://deepnoc.com"
+      },
+      "description": "Research crawler operated by deepnoc GmbH that parses and stores public web page content so that new search engines can query it without running their own crawling infrastructure. No IP ranges are published.",
+      "docs": [
+        "https://deepnoc.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "deepnoc"
+        ],
+        "instances": [
+          "deepnoc - https://deepnoc.com/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "deepnoc"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
     },
     {
@@ -3513,7 +3573,7 @@
         "name": "Kagi",
         "url": "https://kagi.com"
       },
-      "description": "Kagi's web crawler, fetching pages for the paid Kagi search engine. Kagi publishes a fixed, small set of source IPs rather than a CIDR feed.",
+      "description": "Kagi's web crawler, fetching pages for the paid Kagi search engine. Kagi publishes a fixed, small set of source IPs rather than a CIDR feed, each paired with a kagibot.org hostname.",
       "docs": [
         "https://kagi.com/bot"
       ],
@@ -3538,6 +3598,12 @@
             "35.212.27.76/32",
             "104.254.65.50/32",
             "209.151.156.194/32"
+          ]
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.kagibot.org"
           ]
         }
       ],
@@ -3790,9 +3856,9 @@
         "name": "Huawei",
         "url": "https://www.huawei.com"
       },
-      "description": "Huawei's web crawler, fetching pages for the Petal Search engine used in Huawei's mobile services.",
+      "description": "Huawei's web crawler, fetching pages for the Petal Search engine used in Huawei's mobile services and for Huawei Assistant content recommendations. Huawei documents reverse-DNS verification against aspiegel.com and petalsearch.com hostnames.",
       "docs": [
-        "https://webmaster.petalsearch.com/site/petalbot"
+        "https://aspiegel.com/petalbot"
       ],
       "category": "search-engine",
       "user_agents": {
@@ -3812,7 +3878,8 @@
         {
           "type": "rdns",
           "masks": [
-            "*.petalsearch.com"
+            "*.petalsearch.com",
+            "*.aspiegel.com"
           ]
         }
       ],

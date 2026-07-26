@@ -1,0 +1,20 @@
+id: duckassistbot
+name: DuckAssistBot
+operator: { name: DuckDuckGo, url: "https://duckduckgo.com" }
+description: >-
+  DuckDuckGo's real-time fetcher for DuckDuckGo Search's AI-assisted answers,
+  which cite their sources. DuckDuckGo states the data is not used to train AI
+  models, and publishes a machine-readable list of the bot's IP addresses.
+docs:
+  - "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot/"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'DuckAssistBot/\d'
+  instances:
+    - 'DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)'
+behavior: { respects_robots_txt: true, robots_token: DuckAssistBot }
+verification:
+  - type: cidr_feed
+    url: "https://duckduckgo.com/duckassistbot.json"
+    format: prefixes
