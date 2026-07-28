@@ -142,6 +142,13 @@
     ]
   },
   {
+    "id": "bazqux",
+    "category": "feed-fetcher",
+    "patterns": [
+      "BazQux"
+    ]
+  },
+  {
     "id": "betterstack-uptime",
     "category": "monitoring",
     "patterns": [
@@ -195,6 +202,13 @@
     "category": "monitoring",
     "patterns": [
       "magpie-crawler"
+    ]
+  },
+  {
+    "id": "bublupbot",
+    "category": "search-engine",
+    "patterns": [
+      "BublupBot"
     ]
   },
   {
@@ -457,6 +471,13 @@
     "category": "feed-fetcher",
     "patterns": [
       "FlipboardProxy/[\\d.]+"
+    ]
+  },
+  {
+    "id": "freewebmonitoring",
+    "category": "monitoring",
+    "patterns": [
+      "FreeWebMonitoring SiteChecker"
     ]
   },
   {
@@ -1142,6 +1163,13 @@
     ]
   },
   {
+    "id": "streamline3bot",
+    "category": "security",
+    "patterns": [
+      "Streamline3Bot"
+    ]
+  },
+  {
     "id": "stripe-crawler",
     "category": "security",
     "patterns": [
@@ -1209,6 +1237,13 @@
     "category": "monitoring",
     "patterns": [
       "trendictionbot"
+    ]
+  },
+  {
+    "id": "trovitbot",
+    "category": "search-engine",
+    "patterns": [
+      "trovitBot"
     ]
   },
   {
@@ -1323,6 +1358,20 @@
     "category": "search-engine",
     "patterns": [
       "YandexRenderResourcesBot/\\d"
+    ]
+  },
+  {
+    "id": "yandex-images",
+    "category": "search-engine",
+    "patterns": [
+      "YandexImages/\\d"
+    ]
+  },
+  {
+    "id": "yandex-video",
+    "category": "search-engine",
+    "patterns": [
+      "YandexVideo/\\d"
     ]
   },
   {

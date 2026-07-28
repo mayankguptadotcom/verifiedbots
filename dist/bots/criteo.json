@@ -24,6 +24,14 @@
   },
   "verification": [
     {
+      "type": "asn",
+      "numbers": [
+        19750,
+        44788,
+        55569
+      ]
+    },
+    {
       "type": "static_cidrs",
       "cidrs": [
         "74.119.116.0/22",

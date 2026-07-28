@@ -1,0 +1,29 @@
+{
+  "id": "bazqux",
+  "name": "BazQux Fetcher",
+  "operator": {
+    "name": "BazQux Reader",
+    "url": "https://bazqux.com"
+  },
+  "description": "The feed fetcher of the BazQux Reader hosted RSS service. It retrieves and periodically refreshes the RSS/Atom and comment feeds that users have subscribed to, typically no more than once an hour per feed. BazQux documents that the fetcher acts as an agent of those users and therefore ignores robots.txt.",
+  "docs": [
+    "https://bazqux.com/fetcher"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "BazQux"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; BazQux/2.4; +https://bazqux.com/fetcher; 1 subscribers)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-28T19:51:24.263Z",
+  "resolved_cidrs": []
+}

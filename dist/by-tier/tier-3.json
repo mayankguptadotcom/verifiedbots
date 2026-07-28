@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-28T05:24:18.175Z",
-  "count": 85,
+  "generated_at": "2026-07-28T19:51:24.263Z",
+  "count": 87,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -244,6 +244,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "bazqux",
+      "name": "BazQux Fetcher",
+      "operator": {
+        "name": "BazQux Reader",
+        "url": "https://bazqux.com"
+      },
+      "description": "The feed fetcher of the BazQux Reader hosted RSS service. It retrieves and periodically refreshes the RSS/Atom and comment feeds that users have subscribed to, typically no more than once an hour per feed. BazQux documents that the fetcher acts as an agent of those users and therefore ignores robots.txt.",
+      "docs": [
+        "https://bazqux.com/fetcher"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "BazQux"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; BazQux/2.4; +https://bazqux.com/fetcher; 1 subscribers)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-28T19:51:24.263Z",
       "resolved_cidrs": []
     },
     {
@@ -2213,6 +2242,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "trovitbot",
+      "name": "TrovitBot",
+      "operator": {
+        "name": "Trovit",
+        "url": "https://www.trovit.com"
+      },
+      "description": "Trovit's web crawler, which discovers new and updated pages to add to the Trovit classifieds search index. Trovit documents that it does not fetch most sites more than once per second and that it can be blocked with the trovitBot robots.txt token.",
+      "docs": [
+        "https://www.trovit.com/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "trovitBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; trovitBot 1.0; +http://www.trovit.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "trovitBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-28T19:51:24.263Z",
       "resolved_cidrs": []
     },
     {

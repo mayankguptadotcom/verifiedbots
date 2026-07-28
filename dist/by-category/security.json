@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-28T05:24:18.175Z",
-  "count": 9,
+  "generated_at": "2026-07-28T19:51:24.263Z",
+  "count": 10,
   "bots": [
     {
       "id": "censys",
@@ -411,6 +411,43 @@
         "64.39.109.20/32",
         "69.67.183.0/24"
       ]
+    },
+    {
+      "id": "streamline3bot",
+      "name": "Streamline3Bot",
+      "operator": {
+        "name": "UBT (EU) Ltd",
+        "url": "https://www.ubtsupport.com"
+      },
+      "description": "UBT's web crawler, which powers a classification service that categorises public websites by their content. It re-crawls a given site roughly once every three days. UBT publishes no IP list, and instead documents reverse-DNS verification against the ubtsupport.com domain.",
+      "docs": [
+        "https://www.ubtsupport.com/legal/Streamline3Bot.php"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Streamline3Bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1) Streamline3Bot/1.0",
+          "Mozilla/5.0 (Windows NT 6.1; Win64; x64; +https://www.ubtsupport.com/legal/Streamline3Bot.php) Streamline3Bot/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ubtsupport.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
     },
     {
       "id": "stripe-crawler",

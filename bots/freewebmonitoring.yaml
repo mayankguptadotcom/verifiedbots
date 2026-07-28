@@ -1,0 +1,20 @@
+id: freewebmonitoring
+name: FreeWebMonitoring SiteChecker
+operator: { name: "GreenWave Online Inc.", url: "https://www.freewebmonitoring.com" }
+description: >-
+  The website-monitoring robot of the FreeWebMonitoring service. It only checks
+  URLs that registered members have submitted, and the operator documents that
+  all checks originate from a single server address. GreenWave Online also
+  warns that an older 0.1 agent name is forged by an unrelated scanner.
+docs:
+  - "https://www.freewebmonitoring.com/bot.html"
+category: monitoring
+user_agents:
+  patterns:
+    - 'FreeWebMonitoring SiteChecker'
+  instances:
+    - 'FreeWebMonitoring SiteChecker/0.2 (+http://www.freewebmonitoring.com/bot.html)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs: ["70.35.204.181/32"]

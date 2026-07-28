@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-28T05:24:18.175Z",
+  "generated_at": "2026-07-28T19:51:24.263Z",
   "count": 31,
   "bots": [
     {
@@ -517,6 +517,14 @@
         "robots_token": "CriteoBot"
       },
       "verification": [
+        {
+          "type": "asn",
+          "numbers": [
+            19750,
+            44788,
+            55569
+          ]
+        },
         {
           "type": "static_cidrs",
           "cidrs": [

@@ -1,0 +1,18 @@
+id: trovitbot
+name: TrovitBot
+operator: { name: Trovit, url: "https://www.trovit.com" }
+description: >-
+  Trovit's web crawler, which discovers new and updated pages to add to the
+  Trovit classifieds search index. Trovit documents that it does not fetch
+  most sites more than once per second and that it can be blocked with the
+  trovitBot robots.txt token.
+docs:
+  - "https://www.trovit.com/bot.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'trovitBot'
+  instances:
+    - 'Mozilla/5.0 (compatible; trovitBot 1.0; +http://www.trovit.com/bot.html)'
+behavior: { respects_robots_txt: true, robots_token: trovitBot }
+verification: []

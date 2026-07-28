@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-28T05:24:18.175Z",
-  "count": 48,
+  "generated_at": "2026-07-28T19:51:24.263Z",
+  "count": 53,
   "bots": [
     {
       "id": "addsearch",
@@ -327,6 +327,43 @@
       "resolved_cidrs": []
     },
     {
+      "id": "bublupbot",
+      "name": "Bublup Bot",
+      "operator": {
+        "name": "Bublup",
+        "url": "https://www.bublup.com"
+      },
+      "description": "Bublup's content-discovery bot. It fetches pages to build the database behind Bublup's suggestion engine, reading page title, description and related images. Bublup states its crawling IPs are not fixed and documents reverse-DNS verification against the bublup.com domain instead.",
+      "docs": [
+        "https://www.bublup.com/bublup-bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "BublupBot"
+        ],
+        "instances": [
+          "BublupBot (+https://www.bublup.com/bublup-bot.html)",
+          "Mozilla/5.0 (compatible; BublupBot; https://www.bublup.com/bublup-bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.bublup.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "caliperbot",
       "name": "Caliperbot",
       "operator": {
@@ -572,6 +609,14 @@
         "robots_token": "CriteoBot"
       },
       "verification": [
+        {
+          "type": "asn",
+          "numbers": [
+            19750,
+            44788,
+            55569
+          ]
+        },
         {
           "type": "static_cidrs",
           "cidrs": [
@@ -886,6 +931,44 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "freewebmonitoring",
+      "name": "FreeWebMonitoring SiteChecker",
+      "operator": {
+        "name": "GreenWave Online Inc.",
+        "url": "https://www.freewebmonitoring.com"
+      },
+      "description": "The website-monitoring robot of the FreeWebMonitoring service. It only checks URLs that registered members have submitted, and the operator documents that all checks originate from a single server address. GreenWave Online also warns that an older 0.1 agent name is forged by an unrelated scanner.",
+      "docs": [
+        "https://www.freewebmonitoring.com/bot.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "FreeWebMonitoring SiteChecker"
+        ],
+        "instances": [
+          "FreeWebMonitoring SiteChecker/0.2 (+http://www.freewebmonitoring.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "70.35.204.181/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": [
+        "70.35.204.181/32"
+      ]
     },
     {
       "id": "freshping",
@@ -2011,6 +2094,43 @@
       ]
     },
     {
+      "id": "streamline3bot",
+      "name": "Streamline3Bot",
+      "operator": {
+        "name": "UBT (EU) Ltd",
+        "url": "https://www.ubtsupport.com"
+      },
+      "description": "UBT's web crawler, which powers a classification service that categorises public websites by their content. It re-crawls a given site roughly once every three days. UBT publishes no IP list, and instead documents reverse-DNS verification against the ubtsupport.com domain.",
+      "docs": [
+        "https://www.ubtsupport.com/legal/Streamline3Bot.php"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Streamline3Bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1) Streamline3Bot/1.0",
+          "Mozilla/5.0 (Windows NT 6.1; Win64; x64; +https://www.ubtsupport.com/legal/Streamline3Bot.php) Streamline3Bot/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ubtsupport.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "stripe-crawler",
       "name": "Stripebot",
       "operator": {
@@ -2352,6 +2472,84 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-images",
+      "name": "YandexImages",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's image-indexing robot, which fetches images so they can be displayed in Yandex Images. Yandex documents it as a separate robot from YandexBot and lists it as following robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexImages/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexImages/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexImages"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-video",
+      "name": "YandexVideo",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's video-indexing robot, which fetches pages and video content for display in Yandex video search. Yandex documents it as a separate robot from YandexBot and lists it as following robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexVideo/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexVideo/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexVideo"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-28T19:51:24.263Z",
       "resolved_cidrs": []
     },
     {
