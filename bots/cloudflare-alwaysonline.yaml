@@ -1,0 +1,20 @@
+id: cloudflare-alwaysonline
+name: Cloudflare Always Online
+operator: { name: Cloudflare, url: "https://www.cloudflare.com" }
+description: >-
+  Cloudflare's Always Online crawler, which fetches pages from sites that have
+  the feature enabled so a cached copy can be served to visitors when the
+  origin server is unreachable. Cloudflare's crawler reference documents the
+  CloudFlare-AlwaysOnline user agent for this product.
+docs:
+  - "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+  - "https://developers.cloudflare.com/cache/troubleshooting/always-online/"
+category: archiver
+user_agents:
+  patterns:
+    - 'CloudFlare-AlwaysOnline/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; CloudFlare-AlwaysOnline/1.0; +http://www.cloudflare.com/always-online)'
+    - 'Mozilla/5.0 (compatible; CloudFlare-AlwaysOnline/1.0; +https://www.cloudflare.com/always-online) AppleWebKit/534.34'
+behavior: { respects_robots_txt: false }
+verification: []

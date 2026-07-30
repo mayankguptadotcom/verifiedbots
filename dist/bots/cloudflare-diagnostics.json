@@ -1,0 +1,29 @@
+{
+  "id": "cloudflare-diagnostics",
+  "name": "Cloudflare Diagnostics",
+  "operator": {
+    "name": "Cloudflare",
+    "url": "https://www.cloudflare.com"
+  },
+  "description": "Cloudflare's support-diagnostics fetcher. Cloudflare documents that requests with this user agent are triggered when Cloudflare Support Engineers perform error checks, and by the continuous monitoring that raises alerts in the Cloudflare dashboard.",
+  "docs": [
+    "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "Cloudflare-diagnostics"
+    ],
+    "instances": [
+      "Cloudflare-diagnostics"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-30T16:13:28.285Z",
+  "resolved_cidrs": []
+}

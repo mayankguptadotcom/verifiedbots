@@ -1,0 +1,17 @@
+id: jooblebot
+name: Jooblebot
+operator: { name: Jooble, url: "https://jooble.org" }
+description: >-
+  The crawler for Jooble, a job-search aggregator that indexes job listings
+  published across the web. Jooble's bot page states that it uses a web
+  crawler which identifies itself as JoobleBot. No IP ranges are published.
+docs:
+  - "https://jooble.org/jooble-bot"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Jooblebot/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; Jooblebot/2.0; Windows NT 6.1; WOW64; +http://jooble.org/jooble-bot) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36'
+behavior: { respects_robots_txt: false }
+verification: []

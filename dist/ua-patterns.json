@@ -262,6 +262,13 @@
     ]
   },
   {
+    "id": "cincraw",
+    "category": "seo",
+    "patterns": [
+      "Cincraw/[\\d.]+"
+    ]
+  },
+  {
     "id": "claude-searchbot",
     "category": "ai-crawler",
     "patterns": [
@@ -280,6 +287,41 @@
     "category": "ai-crawler",
     "patterns": [
       "ClaudeBot/\\d"
+    ]
+  },
+  {
+    "id": "cloudflare-ai-search",
+    "category": "ai-crawler",
+    "patterns": [
+      "Cloudflare-AI-Search"
+    ]
+  },
+  {
+    "id": "cloudflare-alwaysonline",
+    "category": "archiver",
+    "patterns": [
+      "CloudFlare-AlwaysOnline/[\\d.]+"
+    ]
+  },
+  {
+    "id": "cloudflare-browser-run-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "CloudflareBrowserRenderingCrawler/[\\d.]+"
+    ]
+  },
+  {
+    "id": "cloudflare-custom-hostname-verification",
+    "category": "security",
+    "patterns": [
+      "Cloudflare Custom Hostname Verification"
+    ]
+  },
+  {
+    "id": "cloudflare-diagnostics",
+    "category": "monitoring",
+    "patterns": [
+      "Cloudflare-diagnostics"
     ]
   },
   {
@@ -697,6 +739,13 @@
     ]
   },
   {
+    "id": "jooblebot",
+    "category": "search-engine",
+    "patterns": [
+      "Jooblebot/[\\d.]+"
+    ]
+  },
+  {
     "id": "jusprog-crawler",
     "category": "security",
     "patterns": [
@@ -932,6 +981,14 @@
     "category": "social-preview",
     "patterns": [
       "PagePeeker/\\d"
+    ]
+  },
+  {
+    "id": "panscient",
+    "category": "seo",
+    "patterns": [
+      "panscient\\.com",
+      "pantest"
     ]
   },
   {

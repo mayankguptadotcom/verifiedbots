@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-30T05:20:30.116Z",
-  "count": 87,
+  "generated_at": "2026-07-30T16:13:28.285Z",
+  "count": 94,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -483,6 +483,154 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cincraw",
+      "name": "Cincraw",
+      "operator": {
+        "name": "CINC Corp. (株式会社CINC)",
+        "url": "https://www.cinc-j.co.jp"
+      },
+      "description": "The web crawler operated by CINC, a Japanese data-solutions company, to collect the page data behind its marketing and SEO analytics products. Its documented policy is to fetch page body content, header and HTTP status information and the JS/CSS needed to render a page, then store a rendered screen capture. CINC states that it does not follow advertising links, deletes all cookies between requests, and does not load analytics or ad-measurement tags. No robots.txt policy and no IP ranges are published.",
+      "docs": [
+        "https://cincrawdata.net/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Cincraw/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cincraw/1.0; +http://cincrawdata.net/bot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-ai-search",
+      "name": "Cloudflare AI Search",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "The crawler behind Cloudflare AI Search, which indexes website content so it can be searched. Cloudflare documents that it only crawls a website the customer owns — the domain must exist in the same Cloudflare account and be selected as an AI Search data source.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-AI-Search"
+        ],
+        "instances": [
+          "Cloudflare-AI-Search"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-alwaysonline",
+      "name": "Cloudflare Always Online",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's Always Online crawler, which fetches pages from sites that have the feature enabled so a cached copy can be served to visitors when the origin server is unreachable. Cloudflare's crawler reference documents the CloudFlare-AlwaysOnline user agent for this product.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/cache/troubleshooting/always-online/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "CloudFlare-AlwaysOnline/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CloudFlare-AlwaysOnline/1.0; +http://www.cloudflare.com/always-online)",
+          "Mozilla/5.0 (compatible; CloudFlare-AlwaysOnline/1.0; +https://www.cloudflare.com/always-online) AppleWebKit/534.34"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-custom-hostname-verification",
+      "name": "Cloudflare Custom Hostname Verification",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's custom-hostname ownership checker. Cloudflare documents that requests carrying this user agent are triggered when a customer chooses to validate a custom hostname with an HTTP ownership token, which requires fetching the token from the hostname being claimed.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/domain-support/hostname-validation/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare Custom Hostname Verification"
+        ],
+        "instances": [
+          "Cloudflare Custom Hostname Verification"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-diagnostics",
+      "name": "Cloudflare Diagnostics",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's support-diagnostics fetcher. Cloudflare documents that requests with this user agent are triggered when Cloudflare Support Engineers perform error checks, and by the continuous monitoring that raises alerts in the Cloudflare dashboard.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-diagnostics"
+        ],
+        "instances": [
+          "Cloudflare-diagnostics"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
       "resolved_cidrs": []
     },
     {
@@ -1113,6 +1261,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "jooblebot",
+      "name": "Jooblebot",
+      "operator": {
+        "name": "Jooble",
+        "url": "https://jooble.org"
+      },
+      "description": "The crawler for Jooble, a job-search aggregator that indexes job listings published across the web. Jooble's bot page states that it uses a web crawler which identifies itself as JoobleBot. No IP ranges are published.",
+      "docs": [
+        "https://jooble.org/jooble-bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Jooblebot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Jooblebot/2.0; Windows NT 6.1; WOW64; +http://jooble.org/jooble-bot) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "jusprog-crawler",
       "name": "Jugendschutzprogramm-Crawler",
       "operator": {
@@ -1703,6 +1880,38 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "panscient",
+      "name": "Panscient Crawler",
+      "operator": {
+        "name": "Panscient Inc.",
+        "url": "https://panscient.com"
+      },
+      "description": "Panscient's large-scale crawler, which traverses public websites so that Panscient can build structured company and professional data feeds licensed to enterprise customers. The operator documents a full-corpus refresh each quarter, a rate limit of at most one request per second to any single domain, and compliance with the Robot Exclusion Standard. A separate \"pantest\" agent is used for testing. No IP ranges are published.",
+      "docs": [
+        "https://panscient.com/faq.htm"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "panscient\\.com",
+          "pantest"
+        ],
+        "instances": [
+          "panscient.com",
+          "pantest"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "panscient.com"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,22 @@
+id: panscient
+name: Panscient Crawler
+operator: { name: "Panscient Inc.", url: "https://panscient.com" }
+description: >-
+  Panscient's large-scale crawler, which traverses public websites so that
+  Panscient can build structured company and professional data feeds licensed
+  to enterprise customers. The operator documents a full-corpus refresh each
+  quarter, a rate limit of at most one request per second to any single
+  domain, and compliance with the Robot Exclusion Standard. A separate
+  "pantest" agent is used for testing. No IP ranges are published.
+docs:
+  - "https://panscient.com/faq.htm"
+category: seo
+user_agents:
+  patterns:
+    - 'panscient\.com'
+    - 'pantest'
+  instances:
+    - 'panscient.com'
+    - 'pantest'
+behavior: { respects_robots_txt: true, robots_token: panscient.com }
+verification: []

@@ -1,0 +1,26 @@
+id: cloudflare-browser-run-crawler
+name: Cloudflare Browser Run Crawler
+operator: { name: Cloudflare, url: "https://www.cloudflare.com" }
+description: >-
+  The crawler behind the /crawl endpoint of Cloudflare's Browser Run
+  (Browser Rendering) developer product, which crawls third-party websites on
+  behalf of Cloudflare customers building applications on the platform. Its
+  user agent is not configurable, and every request is signed with Web Bot
+  Auth HTTP message signatures that site owners can verify against
+  Cloudflare's published key directory.
+docs:
+  - "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+  - "https://developers.cloudflare.com/browser-rendering/reference/automatic-request-headers/"
+  - "https://developers.cloudflare.com/browser-rendering/reference/robots-txt/"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'CloudflareBrowserRenderingCrawler/[\d.]+'
+  instances:
+    - 'CloudflareBrowserRenderingCrawler/1.0'
+behavior:
+  respects_robots_txt: true
+  robots_token: CloudflareBrowserRenderingCrawler
+verification:
+  - type: web_bot_auth
+    signature_agent_url: "https://web-bot-auth.cloudflare-browser-rendering-085.workers.dev/.well-known/http-message-signatures-directory"

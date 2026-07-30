@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-30T05:20:30.116Z",
-  "count": 196,
+  "generated_at": "2026-07-30T16:13:28.285Z",
+  "count": 204,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1549,6 +1549,8 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
+        "104.208.184.192/28",
+        "104.208.184.208/28",
         "104.210.139.192/28",
         "104.210.139.224/28",
         "128.85.198.32/28",
@@ -1564,8 +1566,10 @@
         "13.83.167.128/28",
         "13.83.237.176/28",
         "132.196.82.48/28",
+        "134.149.233.80/28",
+        "135.116.136.160/28",
         "135.119.134.128/28",
-        "135.119.134.192/28",
+        "135.13.64.240/28",
         "135.220.73.208/28",
         "135.220.73.240/28",
         "135.237.131.208/28",
@@ -1573,8 +1577,10 @@
         "137.135.191.176/28",
         "138.91.30.48/28",
         "138.91.46.96/28",
+        "145.132.1.32/28",
         "145.132.136.96/28",
         "145.133.0.176/28",
+        "158.158.5.32/28",
         "168.63.252.240/28",
         "172.162.248.64/28",
         "172.170.1.80/28",
@@ -1588,13 +1594,22 @@
         "172.178.141.128/28",
         "172.183.143.224/28",
         "172.183.222.128/28",
+        "172.192.112.208/28",
+        "172.192.88.192/28",
         "172.192.97.32/28",
+        "172.197.160.192/28",
+        "172.197.161.208/28",
         "172.197.170.80/28",
         "172.197.203.16/28",
+        "172.199.137.80/28",
         "172.202.102.112/28",
         "172.204.27.16/28",
+        "172.204.28.224/28",
         "172.204.96.32/28",
         "172.204.96.48/28",
+        "172.204.96.80/28",
+        "172.205.189.192/28",
+        "172.207.1.32/28",
         "172.208.128.32/28",
         "172.208.128.48/28",
         "172.212.159.64/28",
@@ -1613,6 +1628,7 @@
         "191.237.249.64/28",
         "191.239.245.16/28",
         "20.102.212.144/28",
+        "20.113.211.112/28",
         "20.113.225.112/28",
         "20.125.112.224/28",
         "20.125.144.144/28",
@@ -1642,6 +1658,7 @@
         "20.170.184.32/28",
         "20.170.184.48/28",
         "20.170.184.64/28",
+        "20.170.184.80/28",
         "20.172.29.32/28",
         "20.193.233.240/28",
         "20.193.50.32/28",
@@ -1650,6 +1667,7 @@
         "20.198.67.96/28",
         "20.199.211.160/28",
         "20.199.242.0/28",
+        "20.200.212.240/28",
         "20.204.24.240/28",
         "20.210.154.128/28",
         "20.210.174.208/28",
@@ -1671,6 +1689,8 @@
         "20.215.220.80/28",
         "20.215.220.96/28",
         "20.218.30.240/28",
+        "20.219.71.192/28",
+        "20.222.36.192/28",
         "20.226.32.80/28",
         "20.227.140.32/28",
         "20.228.106.176/28",
@@ -1682,12 +1702,15 @@
         "20.250.6.128/28",
         "20.27.94.128/28",
         "20.45.178.144/28",
+        "20.48.120.208/28",
         "20.52.125.160/28",
         "20.55.129.0/28",
         "20.55.229.144/28",
         "20.57.199.192/28",
+        "20.63.180.96/28",
         "20.63.221.64/28",
         "20.79.59.112/28",
+        "20.81.183.64/28",
         "20.83.243.176/28",
         "20.97.189.96/28",
         "23.102.140.144/28",
@@ -1717,17 +1740,18 @@
         "4.201.232.80/28",
         "4.203.96.80/28",
         "4.205.128.176/28",
+        "4.218.24.64/28",
         "4.226.200.16/28",
         "4.226.226.32/28",
         "40.116.73.208/28",
         "40.122.235.112/28",
         "40.67.183.160/28",
         "40.67.183.176/28",
-        "40.75.14.224/28",
         "40.78.161.48/28",
         "40.81.134.128/28",
         "40.81.134.144/28",
         "40.81.234.144/28",
+        "40.81.67.96/28",
         "40.84.181.32/28",
         "40.84.221.208/28",
         "40.84.221.224/28",
@@ -1747,9 +1771,11 @@
         "51.59.40.96/28",
         "51.59.48.80/28",
         "51.59.48.96/28",
+        "51.8.155.112/28",
         "51.8.155.48/28",
         "51.8.155.64/28",
         "51.8.155.80/28",
+        "51.8.187.224/28",
         "52.148.129.32/28",
         "52.153.130.64/28",
         "52.154.22.48/28",
@@ -1812,12 +1838,16 @@
         "68.221.67.192/28",
         "68.221.67.224/28",
         "68.221.67.240/28",
+        "70.153.139.208/28",
         "70.153.189.192/28",
         "70.153.190.16/28",
         "70.153.76.16/28",
+        "70.153.87.224/28",
         "70.156.144.64/28",
         "70.156.152.80/28",
+        "70.156.152.96/28",
         "74.161.200.96/28",
+        "74.224.217.64/28",
         "74.226.253.160/28",
         "74.249.86.176/28",
         "74.7.35.112/28",
@@ -1829,8 +1859,16 @@
         "9.129.0.0/17",
         "9.160.128.16/28",
         "9.160.128.32/28",
+        "9.160.128.64/28",
+        "9.160.163.128/28",
         "9.160.164.128/28",
         "9.160.34.144/28",
+        "9.160.36.16/28",
+        "9.160.96.16/28",
+        "9.163.101.48/28",
+        "9.205.25.128/28",
+        "9.205.8.48/28",
+        "9.223.181.208/28",
         "9.234.96.192/28",
         "9.234.97.128/28",
         "9.234.97.96/28",
@@ -2070,6 +2108,35 @@
       ]
     },
     {
+      "id": "cincraw",
+      "name": "Cincraw",
+      "operator": {
+        "name": "CINC Corp. (株式会社CINC)",
+        "url": "https://www.cinc-j.co.jp"
+      },
+      "description": "The web crawler operated by CINC, a Japanese data-solutions company, to collect the page data behind its marketing and SEO analytics products. Its documented policy is to fetch page body content, header and HTTP status information and the JS/CSS needed to render a page, then store a rendered screen capture. CINC states that it does not follow advertising links, deletes all cookies between requests, and does not load analytics or ad-measurement tags. No robots.txt policy and no IP ranges are published.",
+      "docs": [
+        "https://cincrawdata.net/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Cincraw/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cincraw/1.0; +http://cincrawdata.net/bot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "claude-searchbot",
       "name": "Claude-SearchBot",
       "operator": {
@@ -2239,6 +2306,162 @@
         "35.245.175.129/32",
         "35.245.89.239/32"
       ]
+    },
+    {
+      "id": "cloudflare-ai-search",
+      "name": "Cloudflare AI Search",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "The crawler behind Cloudflare AI Search, which indexes website content so it can be searched. Cloudflare documents that it only crawls a website the customer owns — the domain must exist in the same Cloudflare account and be selected as an AI Search data source.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-AI-Search"
+        ],
+        "instances": [
+          "Cloudflare-AI-Search"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-alwaysonline",
+      "name": "Cloudflare Always Online",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's Always Online crawler, which fetches pages from sites that have the feature enabled so a cached copy can be served to visitors when the origin server is unreachable. Cloudflare's crawler reference documents the CloudFlare-AlwaysOnline user agent for this product.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/cache/troubleshooting/always-online/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "CloudFlare-AlwaysOnline/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CloudFlare-AlwaysOnline/1.0; +http://www.cloudflare.com/always-online)",
+          "Mozilla/5.0 (compatible; CloudFlare-AlwaysOnline/1.0; +https://www.cloudflare.com/always-online) AppleWebKit/534.34"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-browser-run-crawler",
+      "name": "Cloudflare Browser Run Crawler",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "The crawler behind the /crawl endpoint of Cloudflare's Browser Run (Browser Rendering) developer product, which crawls third-party websites on behalf of Cloudflare customers building applications on the platform. Its user agent is not configurable, and every request is signed with Web Bot Auth HTTP message signatures that site owners can verify against Cloudflare's published key directory.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/browser-rendering/reference/automatic-request-headers/",
+        "https://developers.cloudflare.com/browser-rendering/reference/robots-txt/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "CloudflareBrowserRenderingCrawler/[\\d.]+"
+        ],
+        "instances": [
+          "CloudflareBrowserRenderingCrawler/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "CloudflareBrowserRenderingCrawler"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://web-bot-auth.cloudflare-browser-rendering-085.workers.dev/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-custom-hostname-verification",
+      "name": "Cloudflare Custom Hostname Verification",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's custom-hostname ownership checker. Cloudflare documents that requests carrying this user agent are triggered when a customer chooses to validate a custom hostname with an HTTP ownership token, which requires fetching the token from the hostname being claimed.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/",
+        "https://developers.cloudflare.com/cloudflare-for-platforms/cloudflare-for-saas/domain-support/hostname-validation/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare Custom Hostname Verification"
+        ],
+        "instances": [
+          "Cloudflare Custom Hostname Verification"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cloudflare-diagnostics",
+      "name": "Cloudflare Diagnostics",
+      "operator": {
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com"
+      },
+      "description": "Cloudflare's support-diagnostics fetcher. Cloudflare documents that requests with this user agent are triggered when Cloudflare Support Engineers perform error checks, and by the continuous monitoring that raises alerts in the Cloudflare dashboard.",
+      "docs": [
+        "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Cloudflare-diagnostics"
+        ],
+        "instances": [
+          "Cloudflare-diagnostics"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
     },
     {
       "id": "cloudflare-healthchecks",
@@ -10278,6 +10501,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "jooblebot",
+      "name": "Jooblebot",
+      "operator": {
+        "name": "Jooble",
+        "url": "https://jooble.org"
+      },
+      "description": "The crawler for Jooble, a job-search aggregator that indexes job listings published across the web. Jooble's bot page states that it uses a web crawler which identifies itself as JoobleBot. No IP ranges are published.",
+      "docs": [
+        "https://jooble.org/jooble-bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Jooblebot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Jooblebot/2.0; Windows NT 6.1; WOW64; +http://jooble.org/jooble-bot) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "jusprog-crawler",
       "name": "Jugendschutzprogramm-Crawler",
       "operator": {
@@ -11500,6 +11752,38 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "panscient",
+      "name": "Panscient Crawler",
+      "operator": {
+        "name": "Panscient Inc.",
+        "url": "https://panscient.com"
+      },
+      "description": "Panscient's large-scale crawler, which traverses public websites so that Panscient can build structured company and professional data feeds licensed to enterprise customers. The operator documents a full-corpus refresh each quarter, a rate limit of at most one request per second to any single domain, and compliance with the Robot Exclusion Standard. A separate \"pantest\" agent is used for testing. No IP ranges are published.",
+      "docs": [
+        "https://panscient.com/faq.htm"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "panscient\\.com",
+          "pantest"
+        ],
+        "instances": [
+          "panscient.com",
+          "pantest"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "panscient.com"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
       "resolved_cidrs": []
     },
     {

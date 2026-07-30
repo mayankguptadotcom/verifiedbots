@@ -1,0 +1,29 @@
+{
+  "id": "cincraw",
+  "name": "Cincraw",
+  "operator": {
+    "name": "CINC Corp. (株式会社CINC)",
+    "url": "https://www.cinc-j.co.jp"
+  },
+  "description": "The web crawler operated by CINC, a Japanese data-solutions company, to collect the page data behind its marketing and SEO analytics products. Its documented policy is to fetch page body content, header and HTTP status information and the JS/CSS needed to render a page, then store a rendered screen capture. CINC states that it does not follow advertising links, deletes all cookies between requests, and does not load analytics or ad-measurement tags. No robots.txt policy and no IP ranges are published.",
+  "docs": [
+    "https://cincrawdata.net/bot/"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Cincraw/[\\d.]+"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Cincraw/1.0; +http://cincrawdata.net/bot/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-07-30T16:13:28.285Z",
+  "resolved_cidrs": []
+}

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-07-30T05:20:30.116Z",
-  "count": 48,
+  "generated_at": "2026-07-30T16:13:28.285Z",
+  "count": 49,
   "bots": [
     {
       "id": "addsearch",
@@ -3601,6 +3601,35 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "jooblebot",
+      "name": "Jooblebot",
+      "operator": {
+        "name": "Jooble",
+        "url": "https://jooble.org"
+      },
+      "description": "The crawler for Jooble, a job-search aggregator that indexes job listings published across the web. Jooble's bot page states that it uses a web crawler which identifies itself as JoobleBot. No IP ranges are published.",
+      "docs": [
+        "https://jooble.org/jooble-bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Jooblebot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Jooblebot/2.0; Windows NT 6.1; WOW64; +http://jooble.org/jooble-bot) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-07-30T16:13:28.285Z",
       "resolved_cidrs": []
     },
     {

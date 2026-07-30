@@ -1,0 +1,18 @@
+id: cloudflare-ai-search
+name: Cloudflare AI Search
+operator: { name: Cloudflare, url: "https://www.cloudflare.com" }
+description: >-
+  The crawler behind Cloudflare AI Search, which indexes website content so it
+  can be searched. Cloudflare documents that it only crawls a website the
+  customer owns — the domain must exist in the same Cloudflare account and be
+  selected as an AI Search data source.
+docs:
+  - "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'Cloudflare-AI-Search'
+  instances:
+    - 'Cloudflare-AI-Search'
+behavior: { respects_robots_txt: false }
+verification: []
