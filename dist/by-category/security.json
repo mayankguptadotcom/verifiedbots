@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-02T05:29:53.425Z",
-  "count": 11,
+  "generated_at": "2026-08-02T14:52:18.385Z",
+  "count": 12,
   "bots": [
     {
       "id": "censys",
@@ -514,6 +514,36 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-15T01:33:41.731Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "surdotlybot",
+      "name": "SurdotlyBot",
+      "operator": {
+        "name": "Sur.ly",
+        "url": "https://sur.ly"
+      },
+      "description": "Sur.ly's crawler. The operator runs a spam-fighting link-safety service and uses this bot to fetch third-party sites and build a short security profile for each one, querying metadata and favicons and taking a screenshot of the homepage. The operator states it never harvests e-mail addresses or content unrelated to security.",
+      "docs": [
+        "https://sur.ly/bot.html"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "SurdotlyBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SurdotlyBot/1.0; +http://sur.ly/bot.html; Linux; Android 4; iPhone; CPU iPhone OS 6_0_1 like Mac OS X)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SurdotlyBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-02T14:52:18.385Z",
       "resolved_cidrs": []
     },
     {

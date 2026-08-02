@@ -1,0 +1,19 @@
+id: searchatlas
+name: Search Atlas Bot
+operator: { name: Search Atlas, url: "https://searchatlas.com" }
+description: >-
+  The crawler behind Search Atlas's SEO platform, which fetches pages for its
+  Site Auditor and monitoring features. The operator publishes the bot's user
+  agent for allowlisting and states that the crawler does not use static IP
+  addresses, so it can only be identified by its user agent.
+docs:
+  - "https://searchatlas.com/blog/whitelist-monitoring-on-cloudflare/"
+category: seo
+user_agents:
+  patterns:
+    - 'Search ?Atlas(\.com)? ?(Bot|SEO Crawler)'
+  instances:
+    - 'Search Atlas Bot (https://www.searchatlas.com/)'
+    - 'SearchAtlas.com SEO Crawler'
+behavior: { respects_robots_txt: false }
+verification: []

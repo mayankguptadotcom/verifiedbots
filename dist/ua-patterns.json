@@ -411,6 +411,13 @@
     ]
   },
   {
+    "id": "dataprovider",
+    "category": "seo",
+    "patterns": [
+      "Dataprovider\\.com"
+    ]
+  },
+  {
     "id": "deadlinkchecker",
     "category": "monitoring",
     "patterns": [
@@ -450,6 +457,13 @@
     "category": "seo",
     "patterns": [
       "DotBot/\\d"
+    ]
+  },
+  {
+    "id": "dubbot",
+    "category": "monitoring",
+    "patterns": [
+      "Dubbotbot"
     ]
   },
   {
@@ -1098,6 +1112,13 @@
     ]
   },
   {
+    "id": "searchatlas",
+    "category": "seo",
+    "patterns": [
+      "Search ?Atlas(\\.com)? ?(Bot|SEO Crawler)"
+    ]
+  },
+  {
     "id": "seekport",
     "category": "search-engine",
     "patterns": [
@@ -1206,6 +1227,13 @@
     ]
   },
   {
+    "id": "startmebot",
+    "category": "social-preview",
+    "patterns": [
+      "[Ss]tartme[Bb]ot/\\d"
+    ]
+  },
+  {
     "id": "statuscake",
     "category": "monitoring",
     "patterns": [
@@ -1245,6 +1273,13 @@
     "category": "feed-fetcher",
     "patterns": [
       "Superfeedr"
+    ]
+  },
+  {
+    "id": "surdotlybot",
+    "category": "security",
+    "patterns": [
+      "SurdotlyBot"
     ]
   },
   {
@@ -1345,6 +1380,13 @@
     "category": "monitoring",
     "patterns": [
       "UptimeRobot/\\d"
+    ]
+  },
+  {
+    "id": "velen",
+    "category": "seo",
+    "patterns": [
+      "VelenPublicWebCrawler"
     ]
   },
   {

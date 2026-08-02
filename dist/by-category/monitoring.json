@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-02T05:29:53.425Z",
-  "count": 34,
+  "generated_at": "2026-08-02T14:52:18.385Z",
+  "count": 35,
   "bots": [
     {
       "id": "awario",
@@ -838,6 +838,49 @@
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": [
         "74.208.42.172/32"
+      ]
+    },
+    {
+      "id": "dubbot",
+      "name": "Dubbotbot",
+      "operator": {
+        "name": "DubBot",
+        "url": "https://dubbot.com"
+      },
+      "description": "The crawler behind DubBot's web-governance platform. It inventories a customer's own website by following every link from a supplied URL and checks the pages for accessibility, broken links, spelling and content-policy problems. DubBot runs it from AWS on static IP addresses that the operator publishes for allowlisting.",
+      "docs": [
+        "https://help.dubbot.com/en/articles/2923576-dubbot-s-crawler-ip-address",
+        "https://help.dubbot.com/en/articles/6746594-example-custom-user-agent"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Dubbotbot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Dubbotbot/0.2; +http://dubbot.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.213.65.175/32",
+            "52.36.131.191/32",
+            "52.39.13.97/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-02T14:52:18.385Z",
+      "resolved_cidrs": [
+        "34.213.65.175/32",
+        "52.36.131.191/32",
+        "52.39.13.97/32"
       ]
     },
     {

@@ -1,0 +1,21 @@
+id: dataprovider
+name: Dataproviderbot
+operator: { name: Dataprovider.com, url: "https://www.dataprovider.com" }
+description: >-
+  Dataprovider.com's in-house crawler. It indexes more than 400 million domains
+  each month and structures what it finds into the company's web dataset
+  (business information, technology detection, classifications and risk
+  signals). The operator documents that it follows the robot exclusion protocol
+  and that its crawlers can be identified by a reverse DNS lookup.
+docs:
+  - "https://www.dataprovider.com/crawler/"
+category: seo
+user_agents:
+  patterns:
+    - 'Dataprovider\.com'
+  instances:
+    - 'Mozilla/5.0 (compatible; Dataprovider.com)'
+behavior: { respects_robots_txt: true, robots_token: dataprovider }
+verification:
+  - type: rdns
+    masks: ["*.dataproviderbot.com"]

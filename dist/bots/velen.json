@@ -1,0 +1,32 @@
+{
+  "id": "velen",
+  "name": "VelenPublicWebCrawler",
+  "operator": {
+    "name": "Hunter",
+    "url": "https://hunter.io"
+  },
+  "description": "Hunter's public web crawler, written in Go. It analyses millions of publicly accessible pages every month to build the business datasets and machine learning models behind Hunter's products, and never fetches anything behind a login. The operator documents a deliberate rate limit of one page at a time and one page every two seconds per site.",
+  "docs": [
+    "https://hunter.io/robot",
+    "https://velen.io/"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "VelenPublicWebCrawler"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; VelenPublicWebCrawler/1.0; +https://velen.io)",
+      "VelenPublicWebCrawler (velen.io)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "VelenPublicWebCrawler"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-02T14:52:18.385Z",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "startmebot",
+  "name": "StartmeBot",
+  "operator": {
+    "name": "Start.me",
+    "url": "https://start.me"
+  },
+  "description": "Start.me's fetcher. When a user adds a link or an RSS widget to their Start.me start page, this bot retrieves three things from the target site: the page title, the site's favicon, and the contents of any RSS feed the site offers.",
+  "docs": [
+    "https://support.start.me/en/articles/9182933-what-is-startmebot"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "[Ss]tartme[Bb]ot/\\d"
+    ],
+    "instances": [
+      "StartmeBot/1.0 (+https://start.me/bot)",
+      "Mozilla/5.0 (compatible; startmebot/1.0; +https://start.me/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-02T14:52:18.385Z",
+  "resolved_cidrs": []
+}
