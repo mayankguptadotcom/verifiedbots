@@ -5,21 +5,31 @@
     "name": "Google",
     "url": "https://www.google.com"
   },
-  "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, NotebookLM, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
+  "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, Gemini Notebook, Chrome Web Store, Google Messages, Pinpoint, Publisher Center, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
   "docs": [
-    "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+    "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers"
   ],
   "category": "ai-assistant",
   "user_agents": {
     "patterns": [
       "Google-Read-Aloud",
       "Google-Site-Verification",
-      "Google-NotebookLM"
+      "Google-NotebookLM",
+      "Google-GeminiNotebook",
+      "Google-CWS",
+      "GoogleMessages",
+      "Google-Pinpoint",
+      "GoogleProducer"
     ],
     "instances": [
       "Mozilla/5.0 (compatible; Google-Site-Verification/1.0)",
       "Google-Read-Aloud",
-      "Google-NotebookLM"
+      "Google-NotebookLM",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+      "Mozilla/5.0 (compatible; Google-CWS)",
+      "GoogleMessages",
+      "Google-Pinpoint",
+      "GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)"
     ]
   },
   "behavior": {
@@ -28,7 +38,7 @@
   "verification": [
     {
       "type": "cidr_feed",
-      "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json",
+      "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
       "format": "prefixes"
     }
   ],

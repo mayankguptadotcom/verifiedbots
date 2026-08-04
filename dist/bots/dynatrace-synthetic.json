@@ -1,0 +1,29 @@
+{
+  "id": "dynatrace-synthetic",
+  "name": "Dynatrace Synthetic Monitoring",
+  "operator": {
+    "name": "Dynatrace",
+    "url": "https://www.dynatrace.com"
+  },
+  "description": "Dynatrace's synthetic monitoring runs browser and HTTP checks against sites its customers configure. Dynatrace always appends a RuxitSynthetic token to the user agent — even when the customer sets a custom one — so that synthetic traffic can be identified in server logs. Checks are user-configured, not crawling, so robots.txt is not part of the documented behaviour.",
+  "docs": [
+    "https://docs.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "RuxitSynthetic/[\\d.]+"
+    ],
+    "instances": [
+      "RuxitSynthetic/1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-04T20:03:13.870Z",
+  "resolved_cidrs": []
+}

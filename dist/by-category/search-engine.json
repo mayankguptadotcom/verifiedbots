@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-04T05:24:09.920Z",
-  "count": 49,
+  "generated_at": "2026-08-04T20:03:13.870Z",
+  "count": 50,
   "bots": [
     {
       "id": "addsearch",
@@ -299,6 +299,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "bing-video-preview",
+      "name": "BingVideoPreview",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com"
+      },
+      "description": "Microsoft crawler, listed among Bing's crawlers, that fetches pages to generate video previews shown in Bing. It runs desktop and mobile variants and is verifiable through the same reverse-DNS check as Bing's other crawlers.",
+      "docs": [
+        "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+        "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "BingVideoPreview/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; BingVideoPreview/1.0; +https://aka.ms/microsoftbots) Chrome/W.X.Y.Z Safari/537.36",
+          "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36  (compatible; BingVideoPreview/1.0; +https://aka.ms/microsoftbots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.search.msn.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-04T20:03:13.870Z",
       "resolved_cidrs": []
     },
     {

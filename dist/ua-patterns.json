@@ -156,6 +156,13 @@
     ]
   },
   {
+    "id": "bing-video-preview",
+    "category": "search-engine",
+    "patterns": [
+      "BingVideoPreview/\\d"
+    ]
+  },
+  {
     "id": "bingbot",
     "category": "search-engine",
     "patterns": [
@@ -389,6 +396,13 @@
     ]
   },
   {
+    "id": "cortex-xpanse",
+    "category": "security",
+    "patterns": [
+      "Expanse, a Palo Alto Networks company"
+    ]
+  },
+  {
     "id": "criteo",
     "category": "seo",
     "patterns": [
@@ -481,6 +495,13 @@
     ]
   },
   {
+    "id": "dynatrace-synthetic",
+    "category": "monitoring",
+    "patterns": [
+      "RuxitSynthetic/[\\d.]+"
+    ]
+  },
+  {
     "id": "embedly",
     "category": "social-preview",
     "patterns": [
@@ -566,6 +587,13 @@
     ]
   },
   {
+    "id": "google-agent",
+    "category": "ai-assistant",
+    "patterns": [
+      "Google-Agent"
+    ]
+  },
+  {
     "id": "google-cloudvertexbot",
     "category": "ai-crawler",
     "patterns": [
@@ -615,7 +643,12 @@
     "patterns": [
       "Google-Read-Aloud",
       "Google-Site-Verification",
-      "Google-NotebookLM"
+      "Google-NotebookLM",
+      "Google-GeminiNotebook",
+      "Google-CWS",
+      "GoogleMessages",
+      "Google-Pinpoint",
+      "GoogleProducer"
     ]
   },
   {

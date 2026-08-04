@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-04T05:24:09.920Z",
-  "count": 12,
+  "generated_at": "2026-08-04T20:03:13.870Z",
+  "count": 13,
   "bots": [
     {
       "id": "censys",
@@ -146,6 +146,67 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "cortex-xpanse",
+      "name": "Cortex Xpanse",
+      "operator": {
+        "name": "Palo Alto Networks",
+        "url": "https://www.paloaltonetworks.com"
+      },
+      "description": "Palo Alto Networks' attack-surface-management scanner. It continuously scans the global internet from a published set of ranges to map its customers' internet-facing assets and discover emerging threats, and its requests carry a plain-English user agent naming the company and an opt-out contact address.",
+      "docs": [
+        "https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity",
+        "https://www.paloaltonetworks.com/cortex/cortex-xpanse"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Expanse, a Palo Alto Networks company"
+        ],
+        "instances": [
+          "Expanse, a Palo Alto Networks company, searches across the global IPv4 space multiple times per day to identify customers' presences on the Internet. If you would like to be excluded from our scans, please send IP addresses/domains to: scaninfo@paloaltonetworks.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "35.203.210.0/23",
+            "144.86.173.0/24",
+            "147.185.132.0/23",
+            "162.216.149.0/24",
+            "162.216.150.0/24",
+            "172.105.147.0/24",
+            "198.235.24.0/24",
+            "205.210.31.0/24",
+            "216.25.88.0/21",
+            "2604:a940:300:5b6::/64",
+            "2604:a940:301:225::/64",
+            "2604:a940:302:118::/64"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": [
+        "144.86.173.0/24",
+        "147.185.132.0/23",
+        "162.216.149.0/24",
+        "162.216.150.0/24",
+        "172.105.147.0/24",
+        "198.235.24.0/24",
+        "205.210.31.0/24",
+        "216.25.88.0/21",
+        "2604:a940:300:5b6::/64",
+        "2604:a940:301:225::/64",
+        "2604:a940:302:118::/64",
+        "35.203.210.0/23"
+      ]
     },
     {
       "id": "detectify",

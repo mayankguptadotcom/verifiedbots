@@ -1,0 +1,26 @@
+id: google-agent
+name: Google-Agent
+operator: { name: Google, url: "https://www.google.com" }
+description: >-
+  The fetcher used by AI agents hosted on Google infrastructure to navigate the
+  web and perform actions on behalf of a user who asked for them. Google
+  publishes a dedicated IP range list for it and signs a subset of its requests
+  with Web Bot Auth under the agent.bot.goog identity. As a user-triggered
+  fetcher it generally ignores robots.txt rules.
+docs:
+  - "https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent"
+  - "https://developers.google.com/crawling/docs/crawlers-fetchers/web-bot-auth"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'Google-Agent'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36'
+    - 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+    format: prefixes
+  - type: web_bot_auth
+    signature_agent_url: "https://agent.bot.goog/.well-known/http-message-signatures-directory"

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-04T05:24:09.920Z",
-  "count": 8,
+  "generated_at": "2026-08-04T20:03:13.870Z",
+  "count": 9,
   "bots": [
     {
       "id": "amzn-user",
@@ -968,27 +968,25 @@
       ]
     },
     {
-      "id": "google-user-triggered-fetchers",
-      "name": "Google user-triggered fetchers",
+      "id": "google-agent",
+      "name": "Google-Agent",
       "operator": {
         "name": "Google",
         "url": "https://www.google.com"
       },
-      "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, NotebookLM, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
+      "description": "The fetcher used by AI agents hosted on Google infrastructure to navigate the web and perform actions on behalf of a user who asked for them. Google publishes a dedicated IP range list for it and signs a subset of its requests with Web Bot Auth under the agent.bot.goog identity. As a user-triggered fetcher it generally ignores robots.txt rules.",
       "docs": [
-        "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent",
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/web-bot-auth"
       ],
       "category": "ai-assistant",
       "user_agents": {
         "patterns": [
-          "Google-Read-Aloud",
-          "Google-Site-Verification",
-          "Google-NotebookLM"
+          "Google-Agent"
         ],
         "instances": [
-          "Mozilla/5.0 (compatible; Google-Site-Verification/1.0)",
-          "Google-Read-Aloud",
-          "Google-NotebookLM"
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36",
+          "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent)"
         ]
       },
       "behavior": {
@@ -997,7 +995,81 @@
       "verification": [
         {
           "type": "cidr_feed",
-          "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json",
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://agent.bot.goog/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": [
+        "136.121.16.0/24",
+        "136.121.24.0/21",
+        "136.121.40.0/21",
+        "136.122.0.0/16",
+        "2001:4860:c::/124",
+        "2001:4860:c::10/124",
+        "2001:4860:c::20/124",
+        "2001:4860:c::30/124",
+        "2001:4860:c::40/124",
+        "2001:4860:c::50/124",
+        "2001:4860:c::60/124",
+        "2001:4860:c::70/124",
+        "74.125.232.0/28",
+        "74.125.232.112/28",
+        "74.125.232.16/28",
+        "74.125.232.32/28",
+        "74.125.232.48/28",
+        "74.125.232.64/28",
+        "74.125.232.80/28",
+        "74.125.232.96/28"
+      ]
+    },
+    {
+      "id": "google-user-triggered-fetchers",
+      "name": "Google user-triggered fetchers",
+      "operator": {
+        "name": "Google",
+        "url": "https://www.google.com"
+      },
+      "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, Gemini Notebook, Chrome Web Store, Google Messages, Pinpoint, Publisher Center, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
+      "docs": [
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Google-Read-Aloud",
+          "Google-Site-Verification",
+          "Google-NotebookLM",
+          "Google-GeminiNotebook",
+          "Google-CWS",
+          "GoogleMessages",
+          "Google-Pinpoint",
+          "GoogleProducer"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Google-Site-Verification/1.0)",
+          "Google-Read-Aloud",
+          "Google-NotebookLM",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+          "Mozilla/5.0 (compatible; Google-CWS)",
+          "GoogleMessages",
+          "Google-Pinpoint",
+          "GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
           "format": "prefixes"
         }
       ],

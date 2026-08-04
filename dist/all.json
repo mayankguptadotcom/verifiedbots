@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-04T05:24:09.920Z",
-  "count": 210,
+  "generated_at": "2026-08-04T20:03:13.870Z",
+  "count": 214,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -983,6 +983,44 @@
         "91.98.38.26/32",
         "91.99.189.210/32"
       ]
+    },
+    {
+      "id": "bing-video-preview",
+      "name": "BingVideoPreview",
+      "operator": {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com"
+      },
+      "description": "Microsoft crawler, listed among Bing's crawlers, that fetches pages to generate video previews shown in Bing. It runs desktop and mobile variants and is verifiable through the same reverse-DNS check as Bing's other crawlers.",
+      "docs": [
+        "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+        "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "BingVideoPreview/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; BingVideoPreview/1.0; +https://aka.ms/microsoftbots) Chrome/W.X.Y.Z Safari/537.36",
+          "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36  (compatible; BingVideoPreview/1.0; +https://aka.ms/microsoftbots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.search.msn.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": []
     },
     {
       "id": "bingbot",
@@ -2778,6 +2816,67 @@
       ]
     },
     {
+      "id": "cortex-xpanse",
+      "name": "Cortex Xpanse",
+      "operator": {
+        "name": "Palo Alto Networks",
+        "url": "https://www.paloaltonetworks.com"
+      },
+      "description": "Palo Alto Networks' attack-surface-management scanner. It continuously scans the global internet from a published set of ranges to map its customers' internet-facing assets and discover emerging threats, and its requests carry a plain-English user agent naming the company and an opt-out contact address.",
+      "docs": [
+        "https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity",
+        "https://www.paloaltonetworks.com/cortex/cortex-xpanse"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "Expanse, a Palo Alto Networks company"
+        ],
+        "instances": [
+          "Expanse, a Palo Alto Networks company, searches across the global IPv4 space multiple times per day to identify customers' presences on the Internet. If you would like to be excluded from our scans, please send IP addresses/domains to: scaninfo@paloaltonetworks.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "35.203.210.0/23",
+            "144.86.173.0/24",
+            "147.185.132.0/23",
+            "162.216.149.0/24",
+            "162.216.150.0/24",
+            "172.105.147.0/24",
+            "198.235.24.0/24",
+            "205.210.31.0/24",
+            "216.25.88.0/21",
+            "2604:a940:300:5b6::/64",
+            "2604:a940:301:225::/64",
+            "2604:a940:302:118::/64"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": [
+        "144.86.173.0/24",
+        "147.185.132.0/23",
+        "162.216.149.0/24",
+        "162.216.150.0/24",
+        "172.105.147.0/24",
+        "198.235.24.0/24",
+        "205.210.31.0/24",
+        "216.25.88.0/21",
+        "2604:a940:300:5b6::/64",
+        "2604:a940:301:225::/64",
+        "2604:a940:302:118::/64",
+        "35.203.210.0/23"
+      ]
+    },
+    {
       "id": "criteo",
       "name": "CriteoBot",
       "operator": {
@@ -4394,6 +4493,35 @@
       ]
     },
     {
+      "id": "dynatrace-synthetic",
+      "name": "Dynatrace Synthetic Monitoring",
+      "operator": {
+        "name": "Dynatrace",
+        "url": "https://www.dynatrace.com"
+      },
+      "description": "Dynatrace's synthetic monitoring runs browser and HTTP checks against sites its customers configure. Dynatrace always appends a RuxitSynthetic token to the user agent — even when the customer sets a custom one — so that synthetic traffic can be identified in server logs. Checks are user-configured, not crawling, so robots.txt is not part of the documented behaviour.",
+      "docs": [
+        "https://docs.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "RuxitSynthetic/[\\d.]+"
+        ],
+        "instances": [
+          "RuxitSynthetic/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "embedly",
       "name": "Embedly",
       "operator": {
@@ -4850,6 +4978,68 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "google-agent",
+      "name": "Google-Agent",
+      "operator": {
+        "name": "Google",
+        "url": "https://www.google.com"
+      },
+      "description": "The fetcher used by AI agents hosted on Google infrastructure to navigate the web and perform actions on behalf of a user who asked for them. Google publishes a dedicated IP range list for it and signs a subset of its requests with Web Bot Auth under the agent.bot.goog identity. As a user-triggered fetcher it generally ignores robots.txt rules.",
+      "docs": [
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent",
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/web-bot-auth"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Google-Agent"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36",
+          "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://agent.bot.goog/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": [
+        "136.121.16.0/24",
+        "136.121.24.0/21",
+        "136.121.40.0/21",
+        "136.122.0.0/16",
+        "2001:4860:c::/124",
+        "2001:4860:c::10/124",
+        "2001:4860:c::20/124",
+        "2001:4860:c::30/124",
+        "2001:4860:c::40/124",
+        "2001:4860:c::50/124",
+        "2001:4860:c::60/124",
+        "2001:4860:c::70/124",
+        "74.125.232.0/28",
+        "74.125.232.112/28",
+        "74.125.232.16/28",
+        "74.125.232.32/28",
+        "74.125.232.48/28",
+        "74.125.232.64/28",
+        "74.125.232.80/28",
+        "74.125.232.96/28"
+      ]
     },
     {
       "id": "google-cloudvertexbot",
@@ -7070,21 +7260,31 @@
         "name": "Google",
         "url": "https://www.google.com"
       },
-      "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, NotebookLM, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
+      "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, Gemini Notebook, Chrome Web Store, Google Messages, Pinpoint, Publisher Center, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
       "docs": [
-        "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers"
       ],
       "category": "ai-assistant",
       "user_agents": {
         "patterns": [
           "Google-Read-Aloud",
           "Google-Site-Verification",
-          "Google-NotebookLM"
+          "Google-NotebookLM",
+          "Google-GeminiNotebook",
+          "Google-CWS",
+          "GoogleMessages",
+          "Google-Pinpoint",
+          "GoogleProducer"
         ],
         "instances": [
           "Mozilla/5.0 (compatible; Google-Site-Verification/1.0)",
           "Google-Read-Aloud",
-          "Google-NotebookLM"
+          "Google-NotebookLM",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+          "Mozilla/5.0 (compatible; Google-CWS)",
+          "GoogleMessages",
+          "Google-Pinpoint",
+          "GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)"
         ]
       },
       "behavior": {
@@ -7093,7 +7293,7 @@
       "verification": [
         {
           "type": "cidr_feed",
-          "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json",
+          "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
           "format": "prefixes"
         }
       ],
