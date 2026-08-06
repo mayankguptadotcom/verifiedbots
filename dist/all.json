@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-06T05:25:59.385Z",
-  "count": 214,
+  "generated_at": "2026-08-06T15:24:22.779Z",
+  "count": 220,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -3355,6 +3355,38 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "dragonbot",
+      "name": "Dragonbot",
+      "operator": {
+        "name": "Dragon Metrics",
+        "url": "https://www.dragonmetrics.com"
+      },
+      "description": "Dragon Metrics' SEO crawler, which collects data for the platform's Site Audit and Site Explorer features. Its operator documents that it respects robots.txt using Google's open-source parser, and that it crawls from dynamic IP addresses so it can only be identified by user agent.",
+      "docs": [
+        "https://help.dragonmetrics.com/en/articles/4615406-what-is-the-user-agent-string-for-dragon-metrics-crawler-dragonbot",
+        "https://help.dragonmetrics.com/en/articles/4316806-how-to-block-dragonbot-dragon-metrics-crawler-by-robots-txt",
+        "https://help.dragonmetrics.com/en/articles/4615389-what-is-the-ip-address-of-the-dragon-metrics-crawler-dragonbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Dragonbot; http://www\\.dragonmetrics\\.com"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36;Dragonbot; http://www.dragonmetrics.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Dragonbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-06T15:22:58.093Z",
       "resolved_cidrs": []
     },
     {
@@ -11948,6 +11980,66 @@
       "resolved_cidrs": []
     },
     {
+      "id": "outbrain",
+      "name": "Outbrain crawler",
+      "operator": {
+        "name": "Outbrain",
+        "url": "https://www.outbrain.com"
+      },
+      "description": "Outbrain's content-recommendation crawler. It fetches advertiser landing pages so Outbrain's system can pull the correct image and headline for a promoted-content unit, and rejects submitted URLs it cannot reach.",
+      "docs": [
+        "https://www.outbrain.com/help/advertisers/invalid-url/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Mozilla/5\\.0 \\(Java\\) outbrain"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Java) outbrain"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "192.82.211.0/24",
+            "64.202.112.0/24",
+            "70.42.32.0/24",
+            "66.150.103.0/24",
+            "192.82.210.0/24",
+            "50.31.142.0/24",
+            "64.74.236.0/24",
+            "167.88.57.0/24",
+            "165.254.24.192/27",
+            "66.225.223.0/24",
+            "38.104.143.176/28",
+            "38.133.127.0/24"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": [
+        "165.254.24.192/27",
+        "167.88.57.0/24",
+        "192.82.210.0/24",
+        "192.82.211.0/24",
+        "38.104.143.176/28",
+        "38.133.127.0/24",
+        "50.31.142.0/24",
+        "64.202.112.0/24",
+        "64.74.236.0/24",
+        "66.150.103.0/24",
+        "66.225.223.0/24",
+        "70.42.32.0/24"
+      ]
+    },
+    {
       "id": "pagepeeker",
       "name": "PagePeeker",
       "operator": {
@@ -13379,6 +13471,70 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "sentibot",
+      "name": "SentiBot",
+      "operator": {
+        "name": "SentiOne",
+        "url": "https://sentione.com"
+      },
+      "description": "SentiOne's social-listening crawler. It indexes user-generated content for the SentiOne Listen platform, which its operator says analyses over 300,000 domains daily. Robots.txt rules written for \"sentibot\" are honoured, and Yandex-style reverse-DNS plus a published IP list allow verification.",
+      "docs": [
+        "https://sites.google.com/senti1.com/sentibot-eu/home",
+        "https://sites.google.com/senti1.com/sentibot-eu/home/verify-sentibot"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "SentiBot"
+        ],
+        "instances": [
+          "SentiBot www.sentibot.eu (compatible with Googlebot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "sentibot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://cdn.sentione.com/ldo/sentibot-ips.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.sentione.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": [
+        "142.44.240.47/32",
+        "193.201.185.30/32",
+        "195.201.250.245/32",
+        "195.201.251.21/32",
+        "195.201.252.29/32",
+        "78.47.89.254/32",
+        "89.187.155.126/32",
+        "92.240.254.14/32",
+        "95.217.144.155/32",
+        "95.217.144.156/32",
+        "95.217.144.235/32",
+        "95.217.144.237/32",
+        "95.217.144.240/32",
+        "95.217.144.241/32",
+        "95.217.144.242/32",
+        "95.217.144.243/32",
+        "95.217.144.244/32",
+        "95.217.144.245/32",
+        "95.217.144.248/32",
+        "95.217.144.249/32"
+      ]
     },
     {
       "id": "sentry-uptime",
@@ -16731,6 +16887,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-blogs",
+      "name": "YandexBlogs",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's blog-search robot. Yandex's robot table documents it as the blog search robot that indexes post comments, and lists it as following robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexBlogs/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexBlogs/0.99; robot; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexBlogs"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-crawler-javascript",
       "name": "YandexRenderResourcesBot",
       "operator": {
@@ -16766,6 +16961,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-favicons",
+      "name": "YandexFavicons",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's favicon fetcher. Yandex's robot table documents it as downloading a site's favicon file for display in search results, and lists it as one of the Yandex robots that do not follow robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexFavicons/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexFavicons/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
       "resolved_cidrs": []
     },
     {
@@ -16805,6 +17038,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-media",
+      "name": "YandexMedia",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's multimedia-indexing robot. Yandex's robot table documents it as a separate robot from YandexBot, describes it as indexing multimedia data, and lists it as following robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexMedia/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexMedia/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexMedia"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
       "resolved_cidrs": []
     },
     {

@@ -474,6 +474,13 @@
     ]
   },
   {
+    "id": "dragonbot",
+    "category": "seo",
+    "patterns": [
+      "Dragonbot; http://www\\.dragonmetrics\\.com"
+    ]
+  },
+  {
     "id": "dubbot",
     "category": "monitoring",
     "patterns": [
@@ -1024,6 +1031,13 @@
     ]
   },
   {
+    "id": "outbrain",
+    "category": "seo",
+    "patterns": [
+      "Mozilla/5\\.0 \\(Java\\) outbrain"
+    ]
+  },
+  {
     "id": "pagepeeker",
     "category": "social-preview",
     "patterns": [
@@ -1170,6 +1184,13 @@
     "category": "seo",
     "patterns": [
       "SemrushBot/\\d"
+    ]
+  },
+  {
+    "id": "sentibot",
+    "category": "monitoring",
+    "patterns": [
+      "SentiBot"
     ]
   },
   {
@@ -1486,6 +1507,13 @@
     ]
   },
   {
+    "id": "yandex-blogs",
+    "category": "search-engine",
+    "patterns": [
+      "YandexBlogs/[\\d.]+"
+    ]
+  },
+  {
     "id": "yandex-crawler-javascript",
     "category": "search-engine",
     "patterns": [
@@ -1493,10 +1521,24 @@
     ]
   },
   {
+    "id": "yandex-favicons",
+    "category": "search-engine",
+    "patterns": [
+      "YandexFavicons/\\d"
+    ]
+  },
+  {
     "id": "yandex-images",
     "category": "search-engine",
     "patterns": [
       "YandexImages/\\d"
+    ]
+  },
+  {
+    "id": "yandex-media",
+    "category": "search-engine",
+    "patterns": [
+      "YandexMedia/\\d"
     ]
   },
   {

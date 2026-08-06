@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-06T05:25:59.385Z",
-  "count": 99,
+  "generated_at": "2026-08-06T15:24:22.779Z",
+  "count": 100,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -929,6 +929,38 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "dragonbot",
+      "name": "Dragonbot",
+      "operator": {
+        "name": "Dragon Metrics",
+        "url": "https://www.dragonmetrics.com"
+      },
+      "description": "Dragon Metrics' SEO crawler, which collects data for the platform's Site Audit and Site Explorer features. Its operator documents that it respects robots.txt using Google's open-source parser, and that it crawls from dynamic IP addresses so it can only be identified by user agent.",
+      "docs": [
+        "https://help.dragonmetrics.com/en/articles/4615406-what-is-the-user-agent-string-for-dragon-metrics-crawler-dragonbot",
+        "https://help.dragonmetrics.com/en/articles/4316806-how-to-block-dragonbot-dragon-metrics-crawler-by-robots-txt",
+        "https://help.dragonmetrics.com/en/articles/4615389-what-is-the-ip-address-of-the-dragon-metrics-crawler-dragonbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Dragonbot; http://www\\.dragonmetrics\\.com"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36;Dragonbot; http://www.dragonmetrics.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Dragonbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-06T15:22:58.093Z",
       "resolved_cidrs": []
     },
     {

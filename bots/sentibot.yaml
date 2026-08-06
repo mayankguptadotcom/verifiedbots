@@ -1,0 +1,24 @@
+id: sentibot
+name: SentiBot
+operator: { name: SentiOne, url: "https://sentione.com" }
+description: >-
+  SentiOne's social-listening crawler. It indexes user-generated content for
+  the SentiOne Listen platform, which its operator says analyses over 300,000
+  domains daily. Robots.txt rules written for "sentibot" are honoured, and
+  Yandex-style reverse-DNS plus a published IP list allow verification.
+docs:
+  - "https://sites.google.com/senti1.com/sentibot-eu/home"
+  - "https://sites.google.com/senti1.com/sentibot-eu/home/verify-sentibot"
+category: monitoring
+user_agents:
+  patterns:
+    - 'SentiBot'
+  instances:
+    - 'SentiBot www.sentibot.eu (compatible with Googlebot)'
+behavior: { respects_robots_txt: true, robots_token: sentibot }
+verification:
+  - type: cidr_feed
+    url: "https://cdn.sentione.com/ldo/sentibot-ips.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.sentione.com"]

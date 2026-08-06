@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-06T05:25:59.385Z",
-  "count": 50,
+  "generated_at": "2026-08-06T15:24:22.779Z",
+  "count": 53,
   "bots": [
     {
       "id": "addsearch",
@@ -4947,6 +4947,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-blogs",
+      "name": "YandexBlogs",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's blog-search robot. Yandex's robot table documents it as the blog search robot that indexes post comments, and lists it as following robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexBlogs/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexBlogs/0.99; robot; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexBlogs"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-crawler-javascript",
       "name": "YandexRenderResourcesBot",
       "operator": {
@@ -4982,6 +5021,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-favicons",
+      "name": "YandexFavicons",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's favicon fetcher. Yandex's robot table documents it as downloading a site's favicon file for display in search results, and lists it as one of the Yandex robots that do not follow robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexFavicons/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexFavicons/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
       "resolved_cidrs": []
     },
     {
@@ -5021,6 +5098,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-media",
+      "name": "YandexMedia",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's multimedia-indexing robot. Yandex's robot table documents it as a separate robot from YandexBot, describes it as indexing multimedia data, and lists it as following robots.txt directives.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexMedia/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexMedia/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexMedia"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
       "resolved_cidrs": []
     },
     {

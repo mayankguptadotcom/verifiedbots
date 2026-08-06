@@ -1,0 +1,19 @@
+id: yandex-media
+name: YandexMedia
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  Yandex's multimedia-indexing robot. Yandex's robot table documents it as a
+  separate robot from YandexBot, describes it as indexing multimedia data, and
+  lists it as following robots.txt directives.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexMedia/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexMedia/3.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexMedia }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

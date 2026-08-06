@@ -1,0 +1,38 @@
+{
+  "id": "yandex-favicons",
+  "name": "YandexFavicons",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "Yandex's favicon fetcher. Yandex's robot table documents it as downloading a site's favicon file for display in search results, and lists it as one of the Yandex robots that do not follow robots.txt directives.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "YandexFavicons/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexFavicons/1.0; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-06T15:22:58.093Z",
+  "resolved_cidrs": []
+}

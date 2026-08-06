@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-06T05:25:59.385Z",
-  "count": 36,
+  "generated_at": "2026-08-06T15:24:22.779Z",
+  "count": 38,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -713,6 +713,38 @@
       "resolved_cidrs": []
     },
     {
+      "id": "dragonbot",
+      "name": "Dragonbot",
+      "operator": {
+        "name": "Dragon Metrics",
+        "url": "https://www.dragonmetrics.com"
+      },
+      "description": "Dragon Metrics' SEO crawler, which collects data for the platform's Site Audit and Site Explorer features. Its operator documents that it respects robots.txt using Google's open-source parser, and that it crawls from dynamic IP addresses so it can only be identified by user agent.",
+      "docs": [
+        "https://help.dragonmetrics.com/en/articles/4615406-what-is-the-user-agent-string-for-dragon-metrics-crawler-dragonbot",
+        "https://help.dragonmetrics.com/en/articles/4316806-how-to-block-dragonbot-dragon-metrics-crawler-by-robots-txt",
+        "https://help.dragonmetrics.com/en/articles/4615389-what-is-the-ip-address-of-the-dragon-metrics-crawler-dragonbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Dragonbot; http://www\\.dragonmetrics\\.com"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36;Dragonbot; http://www.dragonmetrics.com"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Dragonbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "hubspot-crawler",
       "name": "HubSpot Crawler",
       "operator": {
@@ -1036,6 +1068,66 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "outbrain",
+      "name": "Outbrain crawler",
+      "operator": {
+        "name": "Outbrain",
+        "url": "https://www.outbrain.com"
+      },
+      "description": "Outbrain's content-recommendation crawler. It fetches advertiser landing pages so Outbrain's system can pull the correct image and headline for a promoted-content unit, and rejects submitted URLs it cannot reach.",
+      "docs": [
+        "https://www.outbrain.com/help/advertisers/invalid-url/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Mozilla/5\\.0 \\(Java\\) outbrain"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Java) outbrain"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "192.82.211.0/24",
+            "64.202.112.0/24",
+            "70.42.32.0/24",
+            "66.150.103.0/24",
+            "192.82.210.0/24",
+            "50.31.142.0/24",
+            "64.74.236.0/24",
+            "167.88.57.0/24",
+            "165.254.24.192/27",
+            "66.225.223.0/24",
+            "38.104.143.176/28",
+            "38.133.127.0/24"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": [
+        "165.254.24.192/27",
+        "167.88.57.0/24",
+        "192.82.210.0/24",
+        "192.82.211.0/24",
+        "38.104.143.176/28",
+        "38.133.127.0/24",
+        "50.31.142.0/24",
+        "64.202.112.0/24",
+        "64.74.236.0/24",
+        "66.150.103.0/24",
+        "66.225.223.0/24",
+        "70.42.32.0/24"
+      ]
     },
     {
       "id": "panscient",
