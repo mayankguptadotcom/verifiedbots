@@ -1,0 +1,30 @@
+id: hatena
+name: Hatena service fetchers
+operator: { name: "Hatena Co., Ltd.", url: "https://www.hatena.ne.jp/" }
+description: >-
+  The fetchers Hatena's services use to collect information from pages its
+  users link to. Hatena-Favicon identifies a page's favicon, Hatena::Scissors
+  retrieves image thumbnails, HatenaBookmark fetches article information for
+  Hatena Bookmark, Hatena Star associates stars with pages, and Hatena Antenna
+  fetches update differences for the pages a user is monitoring.
+docs:
+  - "https://developer.hatena.ne.jp/ja/documents/other/apis/useragents/"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Hatena-Favicon/\d'
+    - 'Hatena::Scissors/\d'
+    - 'HatenaBookmark/\d'
+    - 'Hatena Star UserAgent/\d'
+    - 'Hatena Antenna/\d'
+  instances:
+    - 'Hatena-Favicon/2 (https://www.hatena.ne.jp/faq/)'
+    - 'Hatena::Scissors/0.01'
+    - 'HatenaBookmark/4.0 (Hatena::Bookmark; Analyzer)'
+    - 'HatenaBookmark/0.03 (Hatena::Bookmark; master;) Furl/3.13'
+    - 'HatenaBookmark/4.0'
+    - 'Hatena Star UserAgent/2'
+    - 'Hatena Antenna/2 (https://a.hatena.ne.jp/help; alpha)'
+    - 'Hatena Antenna/0.3'
+behavior: { respects_robots_txt: false }
+verification: []

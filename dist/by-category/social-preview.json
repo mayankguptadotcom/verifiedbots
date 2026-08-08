@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-08T04:39:03.426Z",
-  "count": 20,
+  "generated_at": "2026-08-08T14:42:27.853Z",
+  "count": 22,
   "bots": [
     {
       "id": "discordbot",
@@ -119,6 +119,75 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "hatena",
+      "name": "Hatena service fetchers",
+      "operator": {
+        "name": "Hatena Co., Ltd.",
+        "url": "https://www.hatena.ne.jp/"
+      },
+      "description": "The fetchers Hatena's services use to collect information from pages its users link to. Hatena-Favicon identifies a page's favicon, Hatena::Scissors retrieves image thumbnails, HatenaBookmark fetches article information for Hatena Bookmark, Hatena Star associates stars with pages, and Hatena Antenna fetches update differences for the pages a user is monitoring.",
+      "docs": [
+        "https://developer.hatena.ne.jp/ja/documents/other/apis/useragents/"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Hatena-Favicon/\\d",
+          "Hatena::Scissors/\\d",
+          "HatenaBookmark/\\d",
+          "Hatena Star UserAgent/\\d",
+          "Hatena Antenna/\\d"
+        ],
+        "instances": [
+          "Hatena-Favicon/2 (https://www.hatena.ne.jp/faq/)",
+          "Hatena::Scissors/0.01",
+          "HatenaBookmark/4.0 (Hatena::Bookmark; Analyzer)",
+          "HatenaBookmark/0.03 (Hatena::Bookmark; master;) Furl/3.13",
+          "HatenaBookmark/4.0",
+          "Hatena Star UserAgent/2",
+          "Hatena Antenna/2 (https://a.hatena.ne.jp/help; alpha)",
+          "Hatena Antenna/0.3"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-08T14:42:27.853Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "hatenablog-bot",
+      "name": "HatenaBlog-bot",
+      "operator": {
+        "name": "Hatena Co., Ltd.",
+        "url": "https://www.hatena.ne.jp/"
+      },
+      "description": "Hatena Blog's fetcher. It retrieves a linked page when a blog author asks for it: the :title option of Hatena's URL notation pulls the page title, the :embed option collects the title, summary and favicon used to render a blog card, and the blog import feature fetches images so they can be re-uploaded to Hatena Fotolife.",
+      "docs": [
+        "https://help.hatenablog.com/entry/about-hatenablogbot"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "HatenaBlog-bot/\\d"
+        ],
+        "instances": [
+          "HatenaBlog-bot/0.02 (+https://help.hatenablog.com/entry/about-hatenablogbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-08T14:42:27.853Z",
       "resolved_cidrs": []
     },
     {

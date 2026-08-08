@@ -1,0 +1,19 @@
+id: hatenablog-bot
+name: HatenaBlog-bot
+operator: { name: "Hatena Co., Ltd.", url: "https://www.hatena.ne.jp/" }
+description: >-
+  Hatena Blog's fetcher. It retrieves a linked page when a blog author asks for
+  it: the :title option of Hatena's URL notation pulls the page title, the
+  :embed option collects the title, summary and favicon used to render a blog
+  card, and the blog import feature fetches images so they can be re-uploaded
+  to Hatena Fotolife.
+docs:
+  - "https://help.hatenablog.com/entry/about-hatenablogbot"
+category: social-preview
+user_agents:
+  patterns:
+    - 'HatenaBlog-bot/\d'
+  instances:
+    - 'HatenaBlog-bot/0.02 (+https://help.hatenablog.com/entry/about-hatenablogbot)'
+behavior: { respects_robots_txt: false }
+verification: []

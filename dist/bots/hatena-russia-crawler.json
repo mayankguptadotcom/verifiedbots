@@ -1,0 +1,30 @@
+{
+  "id": "hatena-russia-crawler",
+  "name": "Hatena::Russia::Crawler",
+  "operator": {
+    "name": "Hatena Co., Ltd. (Hatelabo)",
+    "url": "https://hatelabo.jp/"
+  },
+  "description": "The fetcher behind Daichecker, the antenna service run on Hatelabo, Hatena's experimental-services lab. It checks the pages and feeds that users have registered for updates. Hatena documents that it parses only the robots.txt groups that name this user agent directly and does not apply the User-agent: * group, so a wildcard rule will not stop it. Hatena notes the name comes from an internal code name for RSS-reader development and has no connection to the country.",
+  "docs": [
+    "https://labo.hatenastaff.com/page/user-agent-russia-crawler"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "Hatena::Russia::Crawler"
+    ],
+    "instances": [
+      "Hatena::Russia::Crawler/0.01"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false,
+    "robots_token": "Hatena::Russia::Crawler"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-08T14:42:27.853Z",
+  "resolved_cidrs": []
+}

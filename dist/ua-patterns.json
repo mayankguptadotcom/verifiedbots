@@ -708,6 +708,31 @@
     ]
   },
   {
+    "id": "hatena",
+    "category": "social-preview",
+    "patterns": [
+      "Hatena-Favicon/\\d",
+      "Hatena::Scissors/\\d",
+      "HatenaBookmark/\\d",
+      "Hatena Star UserAgent/\\d",
+      "Hatena Antenna/\\d"
+    ]
+  },
+  {
+    "id": "hatena-russia-crawler",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Hatena::Russia::Crawler"
+    ]
+  },
+  {
+    "id": "hatenablog-bot",
+    "category": "social-preview",
+    "patterns": [
+      "HatenaBlog-bot/\\d"
+    ]
+  },
+  {
     "id": "hetrixtools",
     "category": "monitoring",
     "patterns": [
