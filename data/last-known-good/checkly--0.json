@@ -1,6 +1,6 @@
 {
   "url": "https://api.checklyhq.com/v1/static-ips",
-  "fetched_at": "2026-08-10T04:52:56.471Z",
+  "fetched_at": "2026-08-10T17:36:25.203Z",
   "ranges": [
     "122.248.238.187/32",
     "13.113.60.181/32",
