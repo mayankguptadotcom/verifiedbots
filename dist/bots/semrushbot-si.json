@@ -1,0 +1,42 @@
+{
+  "id": "semrushbot-si",
+  "name": "SemrushBot-SI",
+  "operator": {
+    "name": "Semrush",
+    "url": "https://www.semrush.com"
+  },
+  "description": "The crawler behind Semrush's On Page SEO Checker and related on-page tools, run against a domain when a Semrush customer sets up a campaign for it. It is a separate robots.txt user agent from SemrushBot, and Semrush documents its own addresses to allowlist for it.",
+  "docs": [
+    "https://www.semrush.com/bot/",
+    "https://www.semrush.com/kb/375-why-did-i-get-a-page-is-not-accessible-note-for-some-of-my-pages"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "SemrushBot-SI"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; SemrushBot-SI/0.97; +http://www.semrush.com/bot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "SemrushBot-SI"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "85.208.98.53",
+        "85.208.98.0/24"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-10T17:35:41.014Z",
+  "resolved_cidrs": [
+    "85.208.98.0/24",
+    "85.208.98.53"
+  ]
+}

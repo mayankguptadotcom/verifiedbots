@@ -1,0 +1,23 @@
+id: semrush-siteauditbot
+name: SiteAuditBot
+operator: { name: Semrush, url: "https://www.semrush.com" }
+description: >-
+  Semrush's site-auditing crawler, distinct from SemrushBot: it crawls a
+  domain on demand when a Semrush customer runs the Site Audit tool, looking
+  for SEO and technical issues. Unlike the backlink crawler, which Semrush
+  says cannot be identified by IP, Site Audit is documented as running from a
+  single dedicated subnet.
+docs:
+  - "https://www.semrush.com/bot/"
+  - "https://www.semrush.com/kb/375-why-did-i-get-a-page-is-not-accessible-note-for-some-of-my-pages"
+category: seo
+user_agents:
+  patterns:
+    - 'SiteAuditBot'
+  instances:
+    - 'SiteAuditBot'
+behavior: { respects_robots_txt: true, robots_token: SiteAuditBot }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "85.208.98.128/25"

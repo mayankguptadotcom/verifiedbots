@@ -1,0 +1,18 @@
+id: rytebot
+name: RyteBot
+operator: { name: Semrush, url: "https://www.semrush.com" }
+description: >-
+  The crawler behind the Ryte.com tools, which analyse on-page SEO, technical
+  and usability issues. Ryte was absorbed by Semrush, and RyteBot is now
+  documented as a member of the Semrush bot family with its own robots.txt
+  user agent. No IP ranges are published for it.
+docs:
+  - "https://www.semrush.com/bot/"
+category: seo
+user_agents:
+  patterns:
+    - 'RyteBot/\d'
+  instances:
+    - 'RyteBot/1.0.0 (+https://bot.ryte.com/)'
+behavior: { respects_robots_txt: true, robots_token: RyteBot }
+verification: []

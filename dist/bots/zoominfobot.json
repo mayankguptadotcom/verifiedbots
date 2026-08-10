@@ -1,0 +1,30 @@
+{
+  "id": "zoominfobot",
+  "name": "Zoominfobot",
+  "operator": {
+    "name": "ZoomInfo Technologies",
+    "url": "https://www.zoominfo.com"
+  },
+  "description": "ZoomInfo's indexing robot, which scans corporate websites, press releases, news services and SEC filings to build ZoomInfo's search index of businesses and business professionals. The operator documents that it obeys robots.txt, spaces out requests on larger sites and never opens more than one connection to a site at a time. No IP ranges are published.",
+  "docs": [
+    "https://www.zoominfo.com/legal/zoominfobot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "ZoominfoBot"
+    ],
+    "instances": [
+      "ZoominfoBot (zoominfobot at zoominfo dot com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Zoominfobot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-10T17:35:41.014Z",
+  "resolved_cidrs": []
+}

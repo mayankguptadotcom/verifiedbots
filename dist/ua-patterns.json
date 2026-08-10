@@ -1177,6 +1177,13 @@
     ]
   },
   {
+    "id": "rytebot",
+    "category": "seo",
+    "patterns": [
+      "RyteBot/\\d"
+    ]
+  },
+  {
     "id": "sbintuitions-bot",
     "category": "ai-crawler",
     "patterns": [
@@ -1205,10 +1212,24 @@
     ]
   },
   {
+    "id": "semrush-siteauditbot",
+    "category": "seo",
+    "patterns": [
+      "SiteAuditBot"
+    ]
+  },
+  {
     "id": "semrushbot",
     "category": "seo",
     "patterns": [
       "SemrushBot/\\d"
+    ]
+  },
+  {
+    "id": "semrushbot-si",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot-SI"
     ]
   },
   {
@@ -1585,6 +1606,13 @@
     "category": "ai-crawler",
     "patterns": [
       "YouBot/\\d"
+    ]
+  },
+  {
+    "id": "zoominfobot",
+    "category": "seo",
+    "patterns": [
+      "ZoominfoBot"
     ]
   }
 ]
