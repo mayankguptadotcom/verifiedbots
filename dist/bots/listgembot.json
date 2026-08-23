@@ -1,0 +1,35 @@
+{
+  "id": "listgembot",
+  "name": "ListGemBot",
+  "operator": {
+    "name": "ListGem",
+    "url": "https://listgem.com"
+  },
+  "description": "ListGem's link unfurler. When someone adds a URL to a ListGem list it fetches that single page to read its public metadata; the operator documents that it does no bulk crawling or link spidering. Every request carries an HTTP Message Signature (RFC 9421, Web Bot Auth profile, Ed25519) and the public key directory is published so requests can be verified.",
+  "docs": [
+    "https://listgem.com/bot"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "ListGemBot/\\d"
+    ],
+    "instances": [
+      "ListGemBot/1.0 (+https://listgem.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "ListGemBot"
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://listgem.com/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": []
+}

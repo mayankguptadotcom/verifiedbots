@@ -1,0 +1,24 @@
+id: channel3bot
+name: Channel3Bot
+operator: { name: Channel3, url: "https://trychannel3.com" }
+description: >-
+  Channel3's product crawler. It visits publicly accessible product detail
+  pages and collects images, titles, descriptions, prices, availability and
+  variants for Channel3's product catalogue, which AI apps and agents query to
+  route shoppers back to the original site. The operator tells site owners not
+  to hard-code its addresses and to verify it by forward-confirmed reverse DNS
+  instead.
+docs:
+  - "https://trychannel3.com/channel3bot"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Channel3Bot/\d'
+    - 'Channel3/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Channel3Bot/1.0; +https://trychannel3.com/channel3bot)'
+    - 'Channel3/1.0 (+https://trychannel3.com/channel3bot)'
+behavior: { respects_robots_txt: true }
+verification:
+  - type: rdns
+    masks: ["*.bot.trychannel3.com"]

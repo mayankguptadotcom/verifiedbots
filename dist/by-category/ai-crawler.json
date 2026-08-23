@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 25,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 30,
   "bots": [
     {
       "id": "ai2bot",
@@ -362,6 +362,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "firecrawl-agent",
+      "name": "FirecrawlAgent",
+      "operator": {
+        "name": "Firecrawl",
+        "url": "https://firecrawl.dev"
+      },
+      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+      "docs": [
+        "https://docs.firecrawl.dev/advanced-scraping-guide"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "FirecrawlAgent"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FirecrawlAgent; +https://firecrawl.dev/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "FirecrawlAgent"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -916,6 +946,44 @@
       "resolved_cidrs": []
     },
     {
+      "id": "linkupbot",
+      "name": "LinkupBot",
+      "operator": {
+        "name": "Linkup",
+        "url": "https://www.linkup.so"
+      },
+      "description": "Linkup's web crawler. It discovers and retrieves publicly accessible pages to build and maintain the Linkup search index, which powers search and web grounding for AI applications. Linkup publishes the CIDR ranges its crawler originates from and asks site owners to check both the source IP and the user-agent token, since user agents can be spoofed.",
+      "docs": [
+        "https://www.linkup.so/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "LinkupBot/\\d"
+        ],
+        "instances": [
+          "LinkupBot/1.0 (LinkupBot for web indexing; https://www.linkup.so/bot; bot@linkup.so)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinkupBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.linkup.so/linkupbot-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "35.198.113.100/32"
+      ]
+    },
+    {
       "id": "macocu",
       "name": "MaCoCu",
       "operator": {
@@ -1017,6 +1085,75 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "mistralai-index",
+      "name": "MistralAI-Index",
+      "operator": {
+        "name": "Mistral AI",
+        "url": "https://mistral.ai"
+      },
+      "description": "Mistral AI's indexing crawler. It crawls the web automatically to build the index behind Mistral search, which answers user questions in Vibe. Mistral documents that content collected by this crawler is not used for generative AI training of any kind, and publishes the crawler's addresses as a JSON feed.",
+      "docs": [
+        "https://docs.mistral.ai/robots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "MistralAI-Index/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MistralAI-Index"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://mistral.ai/mistralai-index-ips.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "135.225.57.92/32",
+        "20.240.192.194/32"
+      ]
+    },
+    {
+      "id": "mistralai-training",
+      "name": "MistralAI-Training",
+      "operator": {
+        "name": "Mistral AI",
+        "url": "https://mistral.ai"
+      },
+      "description": "Mistral AI's training crawler. It collects web content to help build the datasets used to train Mistral's generative AI models, and is documented as separate from both the search-index crawler and the user-triggered fetcher. Mistral states webmasters can disallow this user agent in robots.txt.",
+      "docs": [
+        "https://docs.mistral.ai/robots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "MistralAI-Training/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MistralAI-Training"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -1234,6 +1371,53 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "shapbot",
+      "name": "ShapBot",
+      "operator": {
+        "name": "Parallel Web Systems",
+        "url": "https://parallel.ai"
+      },
+      "description": "Parallel's indexing crawler, which collects publicly available web content to build and maintain the search index behind Parallel's web APIs. The operator documents the robots.txt token ShapBot and publishes the crawler's addresses as a JSON feed.",
+      "docs": [
+        "https://parallel.ai/parallel-web-systems-bots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ShapBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ShapBot/0.1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ShapBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.parallel.ai/resources/shapbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "23.251.146.115/32",
+        "34.122.173.216/32",
+        "34.31.203.120/32",
+        "34.44.142.114/32",
+        "34.44.196.215/32",
+        "34.45.55.180/32",
+        "34.46.138.166/32",
+        "34.68.39.29/32",
+        "34.70.129.79/32",
+        "34.9.172.22/32"
+      ]
     },
     {
       "id": "webzio-extended",

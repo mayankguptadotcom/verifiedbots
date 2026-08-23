@@ -1,0 +1,26 @@
+id: ezoicbot
+name: EzoicBot
+operator: { name: Ezoic, url: "https://www.ezoic.com" }
+description: >-
+  Ezoic's crawler family, run by the digital-publisher technology platform of
+  the same name. A desktop and a mobile variant crawl pages to study how sites,
+  search engines and content interact, alongside named subtypes for Core Web
+  Vitals measurement, uptime checks, ads.txt verification, integration checks
+  and page-topic analysis. All variants share the single robots.txt token
+  EzoicBot.
+docs:
+  - "https://www.ezoic.com/bot"
+category: seo
+user_agents:
+  patterns:
+    - 'EzoicBot-\w+'
+    - 'EzLynx/\d'
+  instances:
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzLynx/0.1; +http://www.ezoic.com/bot.html)'
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-IntegrationCheck; +https://www.ezoic.com/bot/)'
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-Sitespeed; +http://www.ezoic.com/bot)'
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-UptimeOwl; +http://www.ezoic.com/bot)'
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-AdsTxt; +http://www.ezoic.com/bot)'
+    - 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-Nicheiq; +http://www.ezoic.com/bot)'
+behavior: { respects_robots_txt: true, robots_token: EzoicBot }
+verification: []

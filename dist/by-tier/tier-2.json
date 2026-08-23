@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 65,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 70,
   "bots": [
     {
       "id": "addsearch",
@@ -213,6 +213,48 @@
       "resolved_cidrs": []
     },
     {
+      "id": "anomura",
+      "name": "Anomura",
+      "operator": {
+        "name": "Direqt",
+        "url": "https://www.direqt.ai"
+      },
+      "description": "Direqt's search crawler, which discovers links and metadata to surface in Direqt's search features. The operator states it is not used to crawl content for model training, documents the robots.txt token Anomura, and publishes the two addresses the crawler requests come from.",
+      "docs": [
+        "https://docs.direqt-search.com/direqt-bots/direqt-crawlers-and-user-agents"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Anomura/\\d"
+        ],
+        "instances": [
+          "Anomura/1.2 (+https://www.direqt.ai)",
+          "Anomura/1.2 (+https://www.direqt-search.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Anomura"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.56.242.161/32",
+            "35.224.164.246/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.56.242.161/32",
+        "35.224.164.246/32"
+      ]
+    },
+    {
       "id": "apple-podcasts",
       "name": "Apple Podcasts (iTMS)",
       "operator": {
@@ -363,6 +405,44 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "brightbot",
+      "name": "Brightbot",
+      "operator": {
+        "name": "Bright Data",
+        "url": "https://brightdata.com"
+      },
+      "description": "Bright Data's data-collection crawler, documented as the main collection pipeline for its products, with a 24-hour cache layer to avoid re-downloading the same page. The operator states Brightbot is deliberately transparent — a unique user agent plus a single published source subnet — so its traffic can be separated from user traffic. Its documented control mechanism is Bright Data's own collectors.txt file and Web Master console; the page states no robots.txt behaviour.",
+      "docs": [
+        "https://brightdata.com/brightbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Brightbot \\d"
+        ],
+        "instances": [
+          "Brightbot 1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "82.97.199.0/24"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:23:09.318Z",
+      "resolved_cidrs": [
+        "82.97.199.0/24"
+      ]
     },
     {
       "id": "bublupbot",
@@ -524,6 +604,44 @@
         "66.132.195.0/24",
         "66.132.224.0/24"
       ]
+    },
+    {
+      "id": "channel3bot",
+      "name": "Channel3Bot",
+      "operator": {
+        "name": "Channel3",
+        "url": "https://trychannel3.com"
+      },
+      "description": "Channel3's product crawler. It visits publicly accessible product detail pages and collects images, titles, descriptions, prices, availability and variants for Channel3's product catalogue, which AI apps and agents query to route shoppers back to the original site. The operator tells site owners not to hard-code its addresses and to verify it by forward-confirmed reverse DNS instead.",
+      "docs": [
+        "https://trychannel3.com/channel3bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Channel3Bot/\\d",
+          "Channel3/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Channel3Bot/1.0; +https://trychannel3.com/channel3bot)",
+          "Channel3/1.0 (+https://trychannel3.com/channel3bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.bot.trychannel3.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
     },
     {
       "id": "coccocbot",
@@ -1806,6 +1924,49 @@
       ]
     },
     {
+      "id": "nanointeractive-crawler",
+      "name": "Nano Interactive Crawler",
+      "operator": {
+        "name": "Nano Interactive",
+        "url": "https://www.nanointeractive.com"
+      },
+      "description": "Nano Interactive's contextual-advertising crawler. Its published crawler policy lists four desktop and mobile user agents, all carrying the NanoInteractive/1.0 token, and names the two addresses the crawler requests come from so site owners can allow it explicitly.",
+      "docs": [
+        "https://www.nanointeractive.com/resources/legal/crawler-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "NanoInteractive/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 16_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)",
+          "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.117 Mobile Safari/537.36 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.252.254.4/32",
+            "99.81.9.196/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.252.254.4/32",
+        "99.81.9.196/32"
+      ]
+    },
+    {
       "id": "naver-yeti",
       "name": "Yeti",
       "operator": {
@@ -2328,6 +2489,44 @@
         "192.184.77.253/32",
         "52.34.88.131/32",
         "54.71.154.151/32"
+      ]
+    },
+    {
+      "id": "scope3-crawler",
+      "name": "Scope3 Crawler",
+      "operator": {
+        "name": "Scope3",
+        "url": "https://scope3.com"
+      },
+      "description": "Scope3's crawler, which indexes publicly available web content (and paywalled media where the publisher has granted access) to produce content classification and brand-safety assessments for advertising. Scope3 documents adaptive rate limiting of five pages per minute per domain and publishes the single address it crawls from.",
+      "docs": [
+        "https://docs.scope3.com/docs/scope3-crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Scope3/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Scope3/2.0 (scope3.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.70.81.55/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.70.81.55/32"
       ]
     },
     {

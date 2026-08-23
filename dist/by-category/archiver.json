@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 7,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 8,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -185,6 +185,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "plagawarebot",
+      "name": "PlagAwareBot",
+      "operator": {
+        "name": "PlagAware",
+        "url": "https://www.plagaware.com"
+      },
+      "description": "PlagAware's fetcher, used by the German plagiarism-checking service of the same name. Text sections of a submitted document are passed to search engines, and this bot then reads only the individual pages those searches flagged as possible sources, caching them for 48 hours. The operator documents that it does not crawl whole sites and that it adheres to robots.txt directives.",
+      "docs": [
+        "https://www.plagaware.com/bot"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "PlagAwareBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; PlagAwareBot)",
+          "Mozilla/5.0 (compatible; PlagAwareBot/3.2; +https://www.plagaware.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PlagAwareBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {

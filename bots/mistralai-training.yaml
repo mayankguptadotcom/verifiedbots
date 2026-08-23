@@ -1,0 +1,18 @@
+id: mistralai-training
+name: MistralAI-Training
+operator: { name: "Mistral AI", url: "https://mistral.ai" }
+description: >-
+  Mistral AI's training crawler. It collects web content to help build the
+  datasets used to train Mistral's generative AI models, and is documented as
+  separate from both the search-index crawler and the user-triggered fetcher.
+  Mistral states webmasters can disallow this user agent in robots.txt.
+docs:
+  - "https://docs.mistral.ai/robots"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'MistralAI-Training/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)'
+behavior: { respects_robots_txt: true, robots_token: MistralAI-Training }
+verification: []

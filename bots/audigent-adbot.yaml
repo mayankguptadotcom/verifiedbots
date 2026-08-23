@@ -1,0 +1,18 @@
+id: audigent-adbot
+name: AudigentAdBot
+operator: { name: Audigent, url: "https://audigent.com" }
+description: >-
+  Audigent's advertising crawler. The operator documents that it collects only
+  the metadata in the header of an HTML page and does not scrape page body
+  content, and that it must be named explicitly in robots.txt because a
+  wildcard rule does not block it.
+docs:
+  - "https://audigent.com/bot.html"
+category: seo
+user_agents:
+  patterns:
+    - 'AudigentAdBot'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentAdBot; +https://audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36'
+behavior: { respects_robots_txt: true, robots_token: AudigentAdBot }
+verification: []

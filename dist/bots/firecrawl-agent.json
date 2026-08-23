@@ -1,0 +1,30 @@
+{
+  "id": "firecrawl-agent",
+  "name": "FirecrawlAgent",
+  "operator": {
+    "name": "Firecrawl",
+    "url": "https://firecrawl.dev"
+  },
+  "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+  "docs": [
+    "https://docs.firecrawl.dev/advanced-scraping-guide"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "FirecrawlAgent"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; FirecrawlAgent; +https://firecrawl.dev/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "FirecrawlAgent"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": []
+}

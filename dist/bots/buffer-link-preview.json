@@ -1,0 +1,46 @@
+{
+  "id": "buffer-link-preview",
+  "name": "BufferLinkPreviewBot",
+  "operator": {
+    "name": "Buffer",
+    "url": "https://buffer.com"
+  },
+  "description": "The crawler behind link previews in Buffer's social-media management product. When someone shares a link in Buffer it fetches the page's public metadata — title, description, thumbnail and Open Graph or Twitter Card data — so the poster can see how the post will look. Buffer publishes its egress addresses both on that page and as a machine-readable JSON document, and sends X-BufferLinkPreviewBot headers alongside the user agent.",
+  "docs": [
+    "https://scraper.buffer.com/about/bots/link-preview-bot"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "BufferLinkPreviewBot/\\d"
+    ],
+    "instances": [
+      "BufferLinkPreviewBot/1.0 (+https://scraper.buffer.com/about/bots/link-preview-bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "BufferLinkPreviewBot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://scraper.buffer.com/about/bots/link-preview-bot.json",
+      "format": "github_meta",
+      "selector": "ipAddresses"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": [
+    "3.213.140.44/32",
+    "3.220.253.227/32",
+    "3.224.33.156/32",
+    "52.22.148.168/32",
+    "52.3.218.210/32",
+    "52.87.69.215/32",
+    "54.211.190.68/32",
+    "54.235.34.237/32"
+  ]
+}

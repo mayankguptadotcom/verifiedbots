@@ -1,0 +1,21 @@
+id: ttd-content
+name: TTD-Content
+operator: { name: "The Trade Desk", url: "https://www.thetradedesk.com" }
+description: >-
+  The Trade Desk's content scraper. When a page sends an ad request to The
+  Trade Desk, this crawler scans the page to determine the context in which the
+  ads were displayed, and caches that contextual data for ad serving. The
+  operator publishes a plain-text list of the addresses it crawls from at
+  ttd-content.adsrvr.org/ips; that list currently holds 2,640 individual
+  addresses, which is beyond this directory's per-feed range cap, so it is not
+  recorded as a machine-readable recipe here.
+docs:
+  - "https://www.thetradedesk.com/legal/ttd-content"
+category: seo
+user_agents:
+  patterns:
+    - 'TTD-Content'
+  instances:
+    - 'Mozilla/5.0 (compatible; TTD-Content; +https://www.thetradedesk.com/general/ttd-content)'
+behavior: { respects_robots_txt: true, robots_token: TTD-Content }
+verification: []

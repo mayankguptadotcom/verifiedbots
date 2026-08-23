@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 43,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 51,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -240,6 +240,36 @@
       ]
     },
     {
+      "id": "audigent-adbot",
+      "name": "AudigentAdBot",
+      "operator": {
+        "name": "Audigent",
+        "url": "https://audigent.com"
+      },
+      "description": "Audigent's advertising crawler. The operator documents that it collects only the metadata in the header of an HTML page and does not scrape page body content, and that it must be named explicitly in robots.txt because a wildcard rule does not block it.",
+      "docs": [
+        "https://audigent.com/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AudigentAdBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentAdBot; +https://audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AudigentAdBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "audisto",
       "name": "Audisto Crawler",
       "operator": {
@@ -421,6 +451,44 @@
       "resolved_cidrs": []
     },
     {
+      "id": "brightbot",
+      "name": "Brightbot",
+      "operator": {
+        "name": "Bright Data",
+        "url": "https://brightdata.com"
+      },
+      "description": "Bright Data's data-collection crawler, documented as the main collection pipeline for its products, with a 24-hour cache layer to avoid re-downloading the same page. The operator states Brightbot is deliberately transparent — a unique user agent plus a single published source subnet — so its traffic can be separated from user traffic. Its documented control mechanism is Bright Data's own collectors.txt file and Web Master console; the page states no robots.txt behaviour.",
+      "docs": [
+        "https://brightdata.com/brightbot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Brightbot \\d"
+        ],
+        "instances": [
+          "Brightbot 1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "82.97.199.0/24"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:23:09.318Z",
+      "resolved_cidrs": [
+        "82.97.199.0/24"
+      ]
+    },
+    {
       "id": "builtwith",
       "name": "BuiltWith",
       "operator": {
@@ -519,6 +587,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "claritybot",
+      "name": "Claritybot",
+      "operator": {
+        "name": "seoClarity",
+        "url": "https://www.seoclarity.net"
+      },
+      "description": "seoClarity's page and site audit crawler. Crawls are triggered on demand by seoClarity clients to analyse pages for technical and content issues, and clients can also schedule daily managed page crawls. The operator documents that it obeys robots.txt and Crawl-delay, and that its addresses are dynamic.",
+      "docs": [
+        "https://www.seoclarity.net/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ClarityBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ClarityBot/9.0; +https://www.seoclarity.net/bot.html)",
+          "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36 (compatible; ClarityBot/9.0; +https://www.seoclarity.net/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "claritybot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -743,6 +842,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "domcopbot",
+      "name": "DomCopBot",
+      "operator": {
+        "name": "DomCop",
+        "url": "https://www.domcop.com"
+      },
+      "description": "DomCop's availability crawler, used by the domain-research service of the same name. The operator documents that it accesses only the robots.txt file, once per domain, and uses that request to establish whether a website is live on the domain.",
+      "docs": [
+        "https://www.domcop.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "DomCopBot"
+        ],
+        "instances": [
+          "DomCopBot (https://www.domcop.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "DomCopBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "dotbot",
       "name": "DotBot",
       "operator": {
@@ -802,6 +931,42 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-06T15:22:58.093Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "ezoicbot",
+      "name": "EzoicBot",
+      "operator": {
+        "name": "Ezoic",
+        "url": "https://www.ezoic.com"
+      },
+      "description": "Ezoic's crawler family, run by the digital-publisher technology platform of the same name. A desktop and a mobile variant crawl pages to study how sites, search engines and content interact, alongside named subtypes for Core Web Vitals measurement, uptime checks, ads.txt verification, integration checks and page-topic analysis. All variants share the single robots.txt token EzoicBot.",
+      "docs": [
+        "https://www.ezoic.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "EzoicBot-\\w+",
+          "EzLynx/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzLynx/0.1; +http://www.ezoic.com/bot.html)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-IntegrationCheck; +https://www.ezoic.com/bot/)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-Sitespeed; +http://www.ezoic.com/bot)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-UptimeOwl; +http://www.ezoic.com/bot)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-AdsTxt; +http://www.ezoic.com/bot)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-Nicheiq; +http://www.ezoic.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "EzoicBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -1143,6 +1308,49 @@
       ]
     },
     {
+      "id": "nanointeractive-crawler",
+      "name": "Nano Interactive Crawler",
+      "operator": {
+        "name": "Nano Interactive",
+        "url": "https://www.nanointeractive.com"
+      },
+      "description": "Nano Interactive's contextual-advertising crawler. Its published crawler policy lists four desktop and mobile user agents, all carrying the NanoInteractive/1.0 token, and names the two addresses the crawler requests come from so site owners can allow it explicitly.",
+      "docs": [
+        "https://www.nanointeractive.com/resources/legal/crawler-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "NanoInteractive/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 16_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)",
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)",
+          "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.117 Mobile Safari/537.36 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.252.254.4/32",
+            "99.81.9.196/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.252.254.4/32",
+        "99.81.9.196/32"
+      ]
+    },
+    {
       "id": "oncrawl",
       "name": "OnCrawl",
       "operator": {
@@ -1354,6 +1562,44 @@
       "tier_label": "Listed only",
       "first_seen": "2026-08-10T17:35:41.014Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "scope3-crawler",
+      "name": "Scope3 Crawler",
+      "operator": {
+        "name": "Scope3",
+        "url": "https://scope3.com"
+      },
+      "description": "Scope3's crawler, which indexes publicly available web content (and paywalled media where the publisher has granted access) to produce content classification and brand-safety assessments for advertising. Scope3 documents adaptive rate limiting of five pages per minute per domain and publishes the single address it crawls from.",
+      "docs": [
+        "https://docs.scope3.com/docs/scope3-crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Scope3/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Scope3/2.0 (scope3.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.70.81.55/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.70.81.55/32"
+      ]
     },
     {
       "id": "searchatlas",
@@ -2154,6 +2400,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-26T13:26:40.725Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "ttd-content",
+      "name": "TTD-Content",
+      "operator": {
+        "name": "The Trade Desk",
+        "url": "https://www.thetradedesk.com"
+      },
+      "description": "The Trade Desk's content scraper. When a page sends an ad request to The Trade Desk, this crawler scans the page to determine the context in which the ads were displayed, and caches that contextual data for ad serving. The operator publishes a plain-text list of the addresses it crawls from at ttd-content.adsrvr.org/ips; that list currently holds 2,640 individual addresses, which is beyond this directory's per-feed range cap, so it is not recorded as a machine-readable recipe here.",
+      "docs": [
+        "https://www.thetradedesk.com/legal/ttd-content"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "TTD-Content"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; TTD-Content; +https://www.thetradedesk.com/general/ttd-content)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "TTD-Content"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {

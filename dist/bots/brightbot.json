@@ -1,0 +1,38 @@
+{
+  "id": "brightbot",
+  "name": "Brightbot",
+  "operator": {
+    "name": "Bright Data",
+    "url": "https://brightdata.com"
+  },
+  "description": "Bright Data's data-collection crawler, documented as the main collection pipeline for its products, with a 24-hour cache layer to avoid re-downloading the same page. The operator states Brightbot is deliberately transparent — a unique user agent plus a single published source subnet — so its traffic can be separated from user traffic. Its documented control mechanism is Bright Data's own collectors.txt file and Web Master console; the page states no robots.txt behaviour.",
+  "docs": [
+    "https://brightdata.com/brightbot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Brightbot \\d"
+    ],
+    "instances": [
+      "Brightbot 1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "82.97.199.0/24"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-23T13:23:09.318Z",
+  "resolved_cidrs": [
+    "82.97.199.0/24"
+  ]
+}

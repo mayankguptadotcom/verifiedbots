@@ -1,0 +1,18 @@
+id: stepstone-crawler
+name: stepstoneCrawlBot
+operator: { name: "The Stepstone Group", url: "https://www.thestepstonegroup.com" }
+description: >-
+  The Stepstone Group's job-listing crawler. Its crawler page states that it
+  processes only publicly available information, observes robots.txt directives
+  and keeps intervals between requests to avoid loading servers, and publishes
+  the user agent it sends for transparency.
+docs:
+  - "https://www.thestepstonegroup.com/english/crawler/"
+category: search-engine
+user_agents:
+  patterns:
+    - 'stepstoneCrawlBot'
+  instances:
+    - 'Mozilla/5.0 (compatible; stepstoneCrawlBot; +https://www.thestepstonegroup.com/english/crawler/)'
+behavior: { respects_robots_txt: true }
+verification: []

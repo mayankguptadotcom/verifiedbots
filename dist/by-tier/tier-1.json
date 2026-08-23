@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 63,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 69,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -557,6 +557,52 @@
         "52.167.144.0/24",
         "52.231.148.0/28",
         "65.55.210.0/24"
+      ]
+    },
+    {
+      "id": "buffer-link-preview",
+      "name": "BufferLinkPreviewBot",
+      "operator": {
+        "name": "Buffer",
+        "url": "https://buffer.com"
+      },
+      "description": "The crawler behind link previews in Buffer's social-media management product. When someone shares a link in Buffer it fetches the page's public metadata — title, description, thumbnail and Open Graph or Twitter Card data — so the poster can see how the post will look. Buffer publishes its egress addresses both on that page and as a machine-readable JSON document, and sends X-BufferLinkPreviewBot headers alongside the user agent.",
+      "docs": [
+        "https://scraper.buffer.com/about/bots/link-preview-bot"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "BufferLinkPreviewBot/\\d"
+        ],
+        "instances": [
+          "BufferLinkPreviewBot/1.0 (+https://scraper.buffer.com/about/bots/link-preview-bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "BufferLinkPreviewBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://scraper.buffer.com/about/bots/link-preview-bot.json",
+          "format": "github_meta",
+          "selector": "ipAddresses"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "3.213.140.44/32",
+        "3.220.253.227/32",
+        "3.224.33.156/32",
+        "52.22.148.168/32",
+        "52.3.218.210/32",
+        "52.87.69.215/32",
+        "54.211.190.68/32",
+        "54.235.34.237/32"
       ]
     },
     {
@@ -2541,6 +2587,41 @@
         "74.242.194.48/32",
         "98.70.219.37/32"
       ]
+    },
+    {
+      "id": "exa-searchbot",
+      "name": "ExaSearchBot",
+      "operator": {
+        "name": "Exa",
+        "url": "https://exa.ai"
+      },
+      "description": "Exa's search crawler, which discovers and indexes pages on the public web so that people and applications can find, retrieve and cite them through Exa. Every request is signed with HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme, so a request can be verified cryptographically regardless of its source IP address.",
+      "docs": [
+        "https://crawler.exa.ai/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "ExaSearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ExaSearchBot/1.0; +https://crawler.exa.ai/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ExaSearchBot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
     },
     {
       "id": "geedo-crawler-products",
@@ -8099,6 +8180,79 @@
       ]
     },
     {
+      "id": "linkupbot",
+      "name": "LinkupBot",
+      "operator": {
+        "name": "Linkup",
+        "url": "https://www.linkup.so"
+      },
+      "description": "Linkup's web crawler. It discovers and retrieves publicly accessible pages to build and maintain the Linkup search index, which powers search and web grounding for AI applications. Linkup publishes the CIDR ranges its crawler originates from and asks site owners to check both the source IP and the user-agent token, since user agents can be spoofed.",
+      "docs": [
+        "https://www.linkup.so/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "LinkupBot/\\d"
+        ],
+        "instances": [
+          "LinkupBot/1.0 (LinkupBot for web indexing; https://www.linkup.so/bot; bot@linkup.so)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinkupBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.linkup.so/linkupbot-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "35.198.113.100/32"
+      ]
+    },
+    {
+      "id": "listgembot",
+      "name": "ListGemBot",
+      "operator": {
+        "name": "ListGem",
+        "url": "https://listgem.com"
+      },
+      "description": "ListGem's link unfurler. When someone adds a URL to a ListGem list it fetches that single page to read its public metadata; the operator documents that it does no bulk crawling or link spidering. Every request carries an HTTP Message Signature (RFC 9421, Web Bot Auth profile, Ed25519) and the public key directory is published so requests can be verified.",
+      "docs": [
+        "https://listgem.com/bot"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "ListGemBot/\\d"
+        ],
+        "instances": [
+          "ListGemBot/1.0 (+https://listgem.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ListGemBot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://listgem.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "marginalia",
       "name": "Marginalia",
       "operator": {
@@ -8217,6 +8371,45 @@
         "52.167.144.0/24",
         "52.231.148.0/28",
         "65.55.210.0/24"
+      ]
+    },
+    {
+      "id": "mistralai-index",
+      "name": "MistralAI-Index",
+      "operator": {
+        "name": "Mistral AI",
+        "url": "https://mistral.ai"
+      },
+      "description": "Mistral AI's indexing crawler. It crawls the web automatically to build the index behind Mistral search, which answers user questions in Vibe. Mistral documents that content collected by this crawler is not used for generative AI training of any kind, and publishes the crawler's addresses as a JSON feed.",
+      "docs": [
+        "https://docs.mistral.ai/robots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "MistralAI-Index/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MistralAI-Index"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://mistral.ai/mistralai-index-ips.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "135.225.57.92/32",
+        "20.240.192.194/32"
       ]
     },
     {
@@ -9790,6 +9983,53 @@
         "94.130.10.218/32",
         "94.130.23.168/32",
         "94.130.237.182/32"
+      ]
+    },
+    {
+      "id": "shapbot",
+      "name": "ShapBot",
+      "operator": {
+        "name": "Parallel Web Systems",
+        "url": "https://parallel.ai"
+      },
+      "description": "Parallel's indexing crawler, which collects publicly available web content to build and maintain the search index behind Parallel's web APIs. The operator documents the robots.txt token ShapBot and publishes the crawler's addresses as a JSON feed.",
+      "docs": [
+        "https://parallel.ai/parallel-web-systems-bots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ShapBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ShapBot/0.1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ShapBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.parallel.ai/resources/shapbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "23.251.146.115/32",
+        "34.122.173.216/32",
+        "34.31.203.120/32",
+        "34.44.142.114/32",
+        "34.44.196.215/32",
+        "34.45.55.180/32",
+        "34.46.138.166/32",
+        "34.68.39.29/32",
+        "34.70.129.79/32",
+        "34.9.172.22/32"
       ]
     },
     {

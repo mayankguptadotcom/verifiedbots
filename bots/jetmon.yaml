@@ -1,0 +1,18 @@
+id: jetmon
+name: jetmon
+operator: { name: Automattic, url: "https://jetpack.com" }
+description: >-
+  Jetpack's site uptime monitor, operated by Automattic for WordPress sites
+  that enable Jetpack Monitor. It sends an HTTP HEAD request to the site's
+  homepage every five minutes; if that check fails, three further servers in
+  other locations re-check before the site is reported down.
+docs:
+  - "https://jetpack.com/support/monitor/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'jetmon/\d'
+  instances:
+    - 'jetmon/1.0 (Jetpack Site Uptime Monitor by WordPress.com)'
+behavior: { respects_robots_txt: false }
+verification: []

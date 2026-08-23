@@ -1,0 +1,21 @@
+id: plagawarebot
+name: PlagAwareBot
+operator: { name: PlagAware, url: "https://www.plagaware.com" }
+description: >-
+  PlagAware's fetcher, used by the German plagiarism-checking service of the
+  same name. Text sections of a submitted document are passed to search
+  engines, and this bot then reads only the individual pages those searches
+  flagged as possible sources, caching them for 48 hours. The operator
+  documents that it does not crawl whole sites and that it adheres to
+  robots.txt directives.
+docs:
+  - "https://www.plagaware.com/bot"
+category: archiver
+user_agents:
+  patterns:
+    - 'PlagAwareBot'
+  instances:
+    - 'Mozilla/5.0 (compatible; PlagAwareBot)'
+    - 'Mozilla/5.0 (compatible; PlagAwareBot/3.2; +https://www.plagaware.com/bot)'
+behavior: { respects_robots_txt: true, robots_token: PlagAwareBot }
+verification: []

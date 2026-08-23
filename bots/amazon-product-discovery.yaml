@@ -1,0 +1,20 @@
+id: amazon-product-discovery
+name: AmazonProductDiscoverybot
+operator: { name: Amazon, url: "https://www.amazon.com" }
+description: >-
+  Amazon's product crawler, which collects publicly available product details
+  from Amazon selling partner, brand and retailer websites to improve the
+  accuracy and completeness of product information in Amazon's store. Amazon
+  documents that it honours robots.txt user-agent and disallow directives, with
+  changes taking up to 24 hours to apply, and that it does not support
+  crawl-delay, nofollow or noindex.
+docs:
+  - "https://vendorcentral.amazon.com/support/amazonproductbot"
+category: search-engine
+user_agents:
+  patterns:
+    - 'AmazonProductDiscovery/\d'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 (compatible; AmazonProductDiscovery/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)'
+behavior: { respects_robots_txt: true, robots_token: AmazonProductDiscoverybot }
+verification: []

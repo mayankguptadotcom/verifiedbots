@@ -1,0 +1,21 @@
+id: shapbot
+name: ShapBot
+operator: { name: "Parallel Web Systems", url: "https://parallel.ai" }
+description: >-
+  Parallel's indexing crawler, which collects publicly available web content to
+  build and maintain the search index behind Parallel's web APIs. The operator
+  documents the robots.txt token ShapBot and publishes the crawler's addresses
+  as a JSON feed.
+docs:
+  - "https://parallel.ai/parallel-web-systems-bots"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'ShapBot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ShapBot/0.1.0'
+behavior: { respects_robots_txt: true, robots_token: ShapBot }
+verification:
+  - type: cidr_feed
+    url: "https://docs.parallel.ai/resources/shapbot.json"
+    format: prefixes

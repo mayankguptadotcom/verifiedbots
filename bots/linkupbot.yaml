@@ -1,0 +1,22 @@
+id: linkupbot
+name: LinkupBot
+operator: { name: Linkup, url: "https://www.linkup.so" }
+description: >-
+  Linkup's web crawler. It discovers and retrieves publicly accessible pages to
+  build and maintain the Linkup search index, which powers search and web
+  grounding for AI applications. Linkup publishes the CIDR ranges its crawler
+  originates from and asks site owners to check both the source IP and the
+  user-agent token, since user agents can be spoofed.
+docs:
+  - "https://www.linkup.so/bot"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'LinkupBot/\d'
+  instances:
+    - 'LinkupBot/1.0 (LinkupBot for web indexing; https://www.linkup.so/bot; bot@linkup.so)'
+behavior: { respects_robots_txt: true, robots_token: LinkupBot }
+verification:
+  - type: cidr_feed
+    url: "https://www.linkup.so/linkupbot-ips.txt"
+    format: text_lines

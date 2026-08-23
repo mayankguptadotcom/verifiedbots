@@ -1,0 +1,29 @@
+{
+  "id": "shap-user",
+  "name": "Shap-User",
+  "operator": {
+    "name": "Parallel Web Systems",
+    "url": "https://parallel.ai"
+  },
+  "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead.",
+  "docs": [
+    "https://parallel.ai/parallel-web-systems-bots"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "Shap-User/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": []
+}

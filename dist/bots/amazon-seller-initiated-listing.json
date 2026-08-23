@@ -1,0 +1,29 @@
+{
+  "id": "amazon-seller-initiated-listing",
+  "name": "AmazonSellerInitiatedListing",
+  "operator": {
+    "name": "Amazon",
+    "url": "https://www.amazon.com"
+  },
+  "description": "Amazon's seller-initiated fetcher, documented alongside AmazonProductDiscoverybot. It fetches a website URL that a seller has supplied so that Amazon can build a product page in its store from that page. Amazon's robots.txt statement on the page covers AmazonProductDiscoverybot only, so no robots behaviour is recorded for this agent.",
+  "docs": [
+    "https://vendorcentral.amazon.com/support/amazonproductbot"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "AmazonSellerInitiatedListing/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 (compatible; AmazonSellerInitiatedListing/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": []
+}

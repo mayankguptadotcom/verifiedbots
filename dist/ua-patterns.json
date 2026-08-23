@@ -63,6 +63,20 @@
     ]
   },
   {
+    "id": "amazon-product-discovery",
+    "category": "search-engine",
+    "patterns": [
+      "AmazonProductDiscovery/\\d"
+    ]
+  },
+  {
+    "id": "amazon-seller-initiated-listing",
+    "category": "feed-fetcher",
+    "patterns": [
+      "AmazonSellerInitiatedListing/\\d"
+    ]
+  },
+  {
     "id": "amazonbot",
     "category": "ai-crawler",
     "patterns": [
@@ -84,6 +98,13 @@
     ]
   },
   {
+    "id": "anomura",
+    "category": "search-engine",
+    "patterns": [
+      "Anomura/\\d"
+    ]
+  },
+  {
     "id": "apple-podcasts",
     "category": "feed-fetcher",
     "patterns": [
@@ -102,6 +123,13 @@
     "category": "archiver",
     "patterns": [
       "Arquivo-web-crawler"
+    ]
+  },
+  {
+    "id": "audigent-adbot",
+    "category": "seo",
+    "patterns": [
+      "AudigentAdBot"
     ]
   },
   {
@@ -212,10 +240,24 @@
     ]
   },
   {
+    "id": "brightbot",
+    "category": "seo",
+    "patterns": [
+      "Brightbot \\d"
+    ]
+  },
+  {
     "id": "bublupbot",
     "category": "search-engine",
     "patterns": [
       "BublupBot"
+    ]
+  },
+  {
+    "id": "buffer-link-preview",
+    "category": "social-preview",
+    "patterns": [
+      "BufferLinkPreviewBot/\\d"
     ]
   },
   {
@@ -255,6 +297,14 @@
     ]
   },
   {
+    "id": "channel3bot",
+    "category": "search-engine",
+    "patterns": [
+      "Channel3Bot/\\d",
+      "Channel3/\\d"
+    ]
+  },
+  {
     "id": "chatgpt-user",
     "category": "ai-assistant",
     "patterns": [
@@ -273,6 +323,13 @@
     "category": "seo",
     "patterns": [
       "Cincraw/[\\d.]+"
+    ]
+  },
+  {
+    "id": "claritybot",
+    "category": "seo",
+    "patterns": [
+      "ClarityBot/\\d"
     ]
   },
   {
@@ -467,6 +524,13 @@
     ]
   },
   {
+    "id": "domcopbot",
+    "category": "seo",
+    "patterns": [
+      "DomCopBot"
+    ]
+  },
+  {
     "id": "dotbot",
     "category": "seo",
     "patterns": [
@@ -516,6 +580,21 @@
     ]
   },
   {
+    "id": "exa-searchbot",
+    "category": "search-engine",
+    "patterns": [
+      "ExaSearchBot/\\d"
+    ]
+  },
+  {
+    "id": "ezoicbot",
+    "category": "seo",
+    "patterns": [
+      "EzoicBot-\\w+",
+      "EzLynx/\\d"
+    ]
+  },
+  {
     "id": "facebook-catalog",
     "category": "feed-fetcher",
     "patterns": [
@@ -527,6 +606,13 @@
     "category": "social-preview",
     "patterns": [
       "facebookexternalhit/\\d"
+    ]
+  },
+  {
+    "id": "fastmail-ua",
+    "category": "social-preview",
+    "patterns": [
+      "FastmailUA/\\d"
     ]
   },
   {
@@ -551,10 +637,24 @@
     ]
   },
   {
+    "id": "firecrawl-agent",
+    "category": "ai-crawler",
+    "patterns": [
+      "FirecrawlAgent"
+    ]
+  },
+  {
     "id": "flipboard-proxy",
     "category": "feed-fetcher",
     "patterns": [
       "FlipboardProxy/[\\d.]+"
+    ]
+  },
+  {
+    "id": "freespoke-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "FreespokeCrawler/\\d"
     ]
   },
   {
@@ -818,6 +918,13 @@
     ]
   },
   {
+    "id": "jetmon",
+    "category": "monitoring",
+    "patterns": [
+      "jetmon/\\d"
+    ]
+  },
+  {
     "id": "jooblebot",
     "category": "search-engine",
     "patterns": [
@@ -892,6 +999,20 @@
     "category": "social-preview",
     "patterns": [
       "LinkedInBot/\\d"
+    ]
+  },
+  {
+    "id": "linkupbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "LinkupBot/\\d"
+    ]
+  },
+  {
+    "id": "listgembot",
+    "category": "social-preview",
+    "patterns": [
+      "ListGemBot/\\d"
     ]
   },
   {
@@ -993,6 +1114,20 @@
     ]
   },
   {
+    "id": "mistralai-index",
+    "category": "ai-crawler",
+    "patterns": [
+      "MistralAI-Index/\\d"
+    ]
+  },
+  {
+    "id": "mistralai-training",
+    "category": "ai-crawler",
+    "patterns": [
+      "MistralAI-Training/\\d"
+    ]
+  },
+  {
     "id": "mistralai-user",
     "category": "ai-assistant",
     "patterns": [
@@ -1018,6 +1153,13 @@
     "category": "seo",
     "patterns": [
       "Monsidobot/\\d"
+    ]
+  },
+  {
+    "id": "nanointeractive-crawler",
+    "category": "seo",
+    "patterns": [
+      "NanoInteractive/\\d"
     ]
   },
   {
@@ -1155,6 +1297,13 @@
     ]
   },
   {
+    "id": "plagawarebot",
+    "category": "archiver",
+    "patterns": [
+      "PlagAwareBot"
+    ]
+  },
+  {
     "id": "proximic-crawler",
     "category": "seo",
     "patterns": [
@@ -1216,6 +1365,13 @@
     "category": "ai-crawler",
     "patterns": [
       "SBIntuitionsBot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "scope3-crawler",
+    "category": "seo",
+    "patterns": [
+      "Scope3/\\d"
     ]
   },
   {
@@ -1303,6 +1459,20 @@
     ]
   },
   {
+    "id": "shap-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Shap-User/\\d"
+    ]
+  },
+  {
+    "id": "shapbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "ShapBot/\\d"
+    ]
+  },
+  {
     "id": "sistrix",
     "category": "seo",
     "patterns": [
@@ -1366,6 +1536,13 @@
     "category": "monitoring",
     "patterns": [
       "StatusCake"
+    ]
+  },
+  {
+    "id": "stepstone-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "stepstoneCrawlBot"
     ]
   },
   {
@@ -1464,6 +1641,13 @@
     "category": "search-engine",
     "patterns": [
       "trovitBot"
+    ]
+  },
+  {
+    "id": "ttd-content",
+    "category": "seo",
+    "patterns": [
+      "TTD-Content"
     ]
   },
   {

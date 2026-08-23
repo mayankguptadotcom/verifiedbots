@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 104,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 119,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -61,6 +61,65 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-product-discovery",
+      "name": "AmazonProductDiscoverybot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex.",
+      "docs": [
+        "https://vendorcentral.amazon.com/support/amazonproductbot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "AmazonProductDiscovery/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 (compatible; AmazonProductDiscovery/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AmazonProductDiscoverybot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-seller-initiated-listing",
+      "name": "AmazonSellerInitiatedListing",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's seller-initiated fetcher, documented alongside AmazonProductDiscoverybot. It fetches a website URL that a seller has supplied so that Amazon can build a product page in its store from that page. Amazon's robots.txt statement on the page covers AmazonProductDiscoverybot only, so no robots behaviour is recorded for this agent.",
+      "docs": [
+        "https://vendorcentral.amazon.com/support/amazonproductbot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "AmazonSellerInitiatedListing/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 (compatible; AmazonSellerInitiatedListing/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -181,6 +240,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "audigent-adbot",
+      "name": "AudigentAdBot",
+      "operator": {
+        "name": "Audigent",
+        "url": "https://audigent.com"
+      },
+      "description": "Audigent's advertising crawler. The operator documents that it collects only the metadata in the header of an HTML page and does not scrape page body content, and that it must be named explicitly in robots.txt because a wildcard rule does not block it.",
+      "docs": [
+        "https://audigent.com/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AudigentAdBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentAdBot; +https://audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AudigentAdBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -512,6 +601,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "claritybot",
+      "name": "Claritybot",
+      "operator": {
+        "name": "seoClarity",
+        "url": "https://www.seoclarity.net"
+      },
+      "description": "seoClarity's page and site audit crawler. Crawls are triggered on demand by seoClarity clients to analyse pages for technical and content issues, and clients can also schedule daily managed page crawls. The operator documents that it obeys robots.txt and Crawl-delay, and that its addresses are dynamic.",
+      "docs": [
+        "https://www.seoclarity.net/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ClarityBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ClarityBot/9.0; +https://www.seoclarity.net/bot.html)",
+          "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36 (compatible; ClarityBot/9.0; +https://www.seoclarity.net/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "claritybot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -902,6 +1022,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "domcopbot",
+      "name": "DomCopBot",
+      "operator": {
+        "name": "DomCop",
+        "url": "https://www.domcop.com"
+      },
+      "description": "DomCop's availability crawler, used by the domain-research service of the same name. The operator documents that it accesses only the robots.txt file, once per domain, and uses that request to establish whether a website is live on the domain.",
+      "docs": [
+        "https://www.domcop.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "DomCopBot"
+        ],
+        "instances": [
+          "DomCopBot (https://www.domcop.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "DomCopBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "dotbot",
       "name": "DotBot",
       "operator": {
@@ -993,6 +1143,42 @@
       "resolved_cidrs": []
     },
     {
+      "id": "ezoicbot",
+      "name": "EzoicBot",
+      "operator": {
+        "name": "Ezoic",
+        "url": "https://www.ezoic.com"
+      },
+      "description": "Ezoic's crawler family, run by the digital-publisher technology platform of the same name. A desktop and a mobile variant crawl pages to study how sites, search engines and content interact, alongside named subtypes for Core Web Vitals measurement, uptime checks, ads.txt verification, integration checks and page-topic analysis. All variants share the single robots.txt token EzoicBot.",
+      "docs": [
+        "https://www.ezoic.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "EzoicBot-\\w+",
+          "EzLynx/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzLynx/0.1; +http://www.ezoic.com/bot.html)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-IntegrationCheck; +https://www.ezoic.com/bot/)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-Sitespeed; +http://www.ezoic.com/bot)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-UptimeOwl; +http://www.ezoic.com/bot)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-AdsTxt; +http://www.ezoic.com/bot)",
+          "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36 (compatible; EzoicBot-Nicheiq; +http://www.ezoic.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "EzoicBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "facebook-catalog",
       "name": "Facebook Catalog",
       "operator": {
@@ -1019,6 +1205,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "fastmail-ua",
+      "name": "FastmailUA",
+      "operator": {
+        "name": "Fastmail",
+        "url": "https://www.fastmail.com"
+      },
+      "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA.",
+      "docs": [
+        "https://www.fastmail.com/policies/bots/"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "FastmailUA/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36 FastmailUA/1.0",
+          "FastmailUA/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -1082,6 +1298,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "firecrawl-agent",
+      "name": "FirecrawlAgent",
+      "operator": {
+        "name": "Firecrawl",
+        "url": "https://firecrawl.dev"
+      },
+      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+      "docs": [
+        "https://docs.firecrawl.dev/advanced-scraping-guide"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "FirecrawlAgent"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FirecrawlAgent; +https://firecrawl.dev/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "FirecrawlAgent"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "flipboard-proxy",
       "name": "Flipboard Proxy",
       "operator": {
@@ -1109,6 +1355,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "freespoke-crawler",
+      "name": "FreespokeCrawler",
+      "operator": {
+        "name": "Freespoke",
+        "url": "https://freespoke.com"
+      },
+      "description": "Freespoke's search crawler, which fetches pages to build the index behind the Freespoke search engine. The operator documents the crawler's user agent, the robots.txt token FreespokeCrawler and support for the Crawl-delay directive.",
+      "docs": [
+        "https://docs.freespoke.com/search/bot/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "FreespokeCrawler/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "FreespokeCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -1418,6 +1694,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "jetmon",
+      "name": "jetmon",
+      "operator": {
+        "name": "Automattic",
+        "url": "https://jetpack.com"
+      },
+      "description": "Jetpack's site uptime monitor, operated by Automattic for WordPress sites that enable Jetpack Monitor. It sends an HTTP HEAD request to the site's homepage every five minutes; if that check fails, three further servers in other locations re-check before the site is reported down.",
+      "docs": [
+        "https://jetpack.com/support/monitor/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "jetmon/\\d"
+        ],
+        "instances": [
+          "jetmon/1.0 (Jetpack Site Uptime Monitor by WordPress.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -1806,6 +2111,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "mistralai-training",
+      "name": "MistralAI-Training",
+      "operator": {
+        "name": "Mistral AI",
+        "url": "https://mistral.ai"
+      },
+      "description": "Mistral AI's training crawler. It collects web content to help build the datasets used to train Mistral's generative AI models, and is documented as separate from both the search-index crawler and the user-triggered fetcher. Mistral states webmasters can disallow this user agent in robots.txt.",
+      "docs": [
+        "https://docs.mistral.ai/robots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "MistralAI-Training/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MistralAI-Training"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "mj12bot",
       "name": "MJ12bot",
       "operator": {
@@ -2073,6 +2408,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "plagawarebot",
+      "name": "PlagAwareBot",
+      "operator": {
+        "name": "PlagAware",
+        "url": "https://www.plagaware.com"
+      },
+      "description": "PlagAware's fetcher, used by the German plagiarism-checking service of the same name. Text sections of a submitted document are passed to search engines, and this bot then reads only the individual pages those searches flagged as possible sources, caching them for 48 hours. The operator documents that it does not crawl whole sites and that it adheres to robots.txt directives.",
+      "docs": [
+        "https://www.plagaware.com/bot"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "PlagAwareBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; PlagAwareBot)",
+          "Mozilla/5.0 (compatible; PlagAwareBot/3.2; +https://www.plagaware.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PlagAwareBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -2375,6 +2741,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "shap-user",
+      "name": "Shap-User",
+      "operator": {
+        "name": "Parallel Web Systems",
+        "url": "https://parallel.ai"
+      },
+      "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead.",
+      "docs": [
+        "https://parallel.ai/parallel-web-systems-bots"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Shap-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "slack-imgproxy",
       "name": "Slack-ImgProxy",
       "operator": {
@@ -2522,6 +2917,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-02T14:52:18.385Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "stepstone-crawler",
+      "name": "stepstoneCrawlBot",
+      "operator": {
+        "name": "The Stepstone Group",
+        "url": "https://www.thestepstonegroup.com"
+      },
+      "description": "The Stepstone Group's job-listing crawler. Its crawler page states that it processes only publicly available information, observes robots.txt directives and keeps intervals between requests to avoid loading servers, and publishes the user agent it sends for transparency.",
+      "docs": [
+        "https://www.thestepstonegroup.com/english/crawler/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "stepstoneCrawlBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; stepstoneCrawlBot; +https://www.thestepstonegroup.com/english/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -2731,6 +3155,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "ttd-content",
+      "name": "TTD-Content",
+      "operator": {
+        "name": "The Trade Desk",
+        "url": "https://www.thetradedesk.com"
+      },
+      "description": "The Trade Desk's content scraper. When a page sends an ad request to The Trade Desk, this crawler scans the page to determine the context in which the ads were displayed, and caches that contextual data for ad serving. The operator publishes a plain-text list of the addresses it crawls from at ttd-content.adsrvr.org/ips; that list currently holds 2,640 individual addresses, which is beyond this directory's per-feed range cap, so it is not recorded as a machine-readable recipe here.",
+      "docs": [
+        "https://www.thetradedesk.com/legal/ttd-content"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "TTD-Content"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; TTD-Content; +https://www.thetradedesk.com/general/ttd-content)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "TTD-Content"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {

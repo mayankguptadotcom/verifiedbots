@@ -1,0 +1,21 @@
+id: scope3-crawler
+name: Scope3 Crawler
+operator: { name: Scope3, url: "https://scope3.com" }
+description: >-
+  Scope3's crawler, which indexes publicly available web content (and paywalled
+  media where the publisher has granted access) to produce content
+  classification and brand-safety assessments for advertising. Scope3 documents
+  adaptive rate limiting of five pages per minute per domain and publishes the
+  single address it crawls from.
+docs:
+  - "https://docs.scope3.com/docs/scope3-crawler"
+category: seo
+user_agents:
+  patterns:
+    - 'Scope3/\d'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Scope3/2.0 (scope3.com)'
+behavior: { respects_robots_txt: true }
+verification:
+  - type: static_cidrs
+    cidrs: ["34.70.81.55/32"]

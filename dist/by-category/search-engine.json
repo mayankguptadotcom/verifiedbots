@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T06:51:31.099Z",
-  "count": 53,
+  "generated_at": "2026-08-23T13:23:09.318Z",
+  "count": 59,
   "bots": [
     {
       "id": "addsearch",
@@ -177,6 +177,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "amazon-product-discovery",
+      "name": "AmazonProductDiscoverybot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex.",
+      "docs": [
+        "https://vendorcentral.amazon.com/support/amazonproductbot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "AmazonProductDiscovery/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 (compatible; AmazonProductDiscovery/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AmazonProductDiscoverybot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "amzn-searchbot",
       "name": "Amzn-SearchBot",
       "operator": {
@@ -205,6 +235,48 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "anomura",
+      "name": "Anomura",
+      "operator": {
+        "name": "Direqt",
+        "url": "https://www.direqt.ai"
+      },
+      "description": "Direqt's search crawler, which discovers links and metadata to surface in Direqt's search features. The operator states it is not used to crawl content for model training, documents the robots.txt token Anomura, and publishes the two addresses the crawler requests come from.",
+      "docs": [
+        "https://docs.direqt-search.com/direqt-bots/direqt-crawlers-and-user-agents"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Anomura/\\d"
+        ],
+        "instances": [
+          "Anomura/1.2 (+https://www.direqt.ai)",
+          "Anomura/1.2 (+https://www.direqt-search.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Anomura"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "34.56.242.161/32",
+            "35.224.164.246/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.56.242.161/32",
+        "35.224.164.246/32"
+      ]
     },
     {
       "id": "applebot",
@@ -484,6 +556,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "channel3bot",
+      "name": "Channel3Bot",
+      "operator": {
+        "name": "Channel3",
+        "url": "https://trychannel3.com"
+      },
+      "description": "Channel3's product crawler. It visits publicly accessible product detail pages and collects images, titles, descriptions, prices, availability and variants for Channel3's product catalogue, which AI apps and agents query to route shoppers back to the original site. The operator tells site owners not to hard-code its addresses and to verify it by forward-confirmed reverse DNS instead.",
+      "docs": [
+        "https://trychannel3.com/channel3bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Channel3Bot/\\d",
+          "Channel3/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Channel3Bot/1.0; +https://trychannel3.com/channel3bot)",
+          "Channel3/1.0 (+https://trychannel3.com/channel3bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.bot.trychannel3.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
@@ -1073,6 +1183,71 @@
         "74.242.194.48/32",
         "98.70.219.37/32"
       ]
+    },
+    {
+      "id": "exa-searchbot",
+      "name": "ExaSearchBot",
+      "operator": {
+        "name": "Exa",
+        "url": "https://exa.ai"
+      },
+      "description": "Exa's search crawler, which discovers and indexes pages on the public web so that people and applications can find, retrieve and cite them through Exa. Every request is signed with HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme, so a request can be verified cryptographically regardless of its source IP address.",
+      "docs": [
+        "https://crawler.exa.ai/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "ExaSearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ExaSearchBot/1.0; +https://crawler.exa.ai/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ExaSearchBot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "freespoke-crawler",
+      "name": "FreespokeCrawler",
+      "operator": {
+        "name": "Freespoke",
+        "url": "https://freespoke.com"
+      },
+      "description": "Freespoke's search crawler, which fetches pages to build the index behind the Freespoke search engine. The operator documents the crawler's user agent, the robots.txt token FreespokeCrawler and support for the Crawl-delay directive.",
+      "docs": [
+        "https://docs.freespoke.com/search/bot/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "FreespokeCrawler/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "FreespokeCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
     },
     {
       "id": "geedo-crawler-products",
@@ -4764,6 +4939,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "stepstone-crawler",
+      "name": "stepstoneCrawlBot",
+      "operator": {
+        "name": "The Stepstone Group",
+        "url": "https://www.thestepstonegroup.com"
+      },
+      "description": "The Stepstone Group's job-listing crawler. Its crawler page states that it processes only publicly available information, observes robots.txt directives and keeps intervals between requests to avoid loading servers, and publishes the user agent it sends for transparency.",
+      "docs": [
+        "https://www.thestepstonegroup.com/english/crawler/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "stepstoneCrawlBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; stepstoneCrawlBot; +https://www.thestepstonegroup.com/english/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,39 @@
+{
+  "id": "mistralai-index",
+  "name": "MistralAI-Index",
+  "operator": {
+    "name": "Mistral AI",
+    "url": "https://mistral.ai"
+  },
+  "description": "Mistral AI's indexing crawler. It crawls the web automatically to build the index behind Mistral search, which answers user questions in Vibe. Mistral documents that content collected by this crawler is not used for generative AI training of any kind, and publishes the crawler's addresses as a JSON feed.",
+  "docs": [
+    "https://docs.mistral.ai/robots"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "MistralAI-Index/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "MistralAI-Index"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://mistral.ai/mistralai-index-ips.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": [
+    "135.225.57.92/32",
+    "20.240.192.194/32"
+  ]
+}

@@ -1,0 +1,21 @@
+id: exa-searchbot
+name: ExaSearchBot
+operator: { name: Exa, url: "https://exa.ai" }
+description: >-
+  Exa's search crawler, which discovers and indexes pages on the public web so
+  that people and applications can find, retrieve and cite them through Exa.
+  Every request is signed with HTTP Message Signatures (RFC 9421) under the Web
+  Bot Auth scheme, so a request can be verified cryptographically regardless of
+  its source IP address.
+docs:
+  - "https://crawler.exa.ai/"
+category: search-engine
+user_agents:
+  patterns:
+    - 'ExaSearchBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; ExaSearchBot/1.0; +https://crawler.exa.ai/)'
+behavior: { respects_robots_txt: true, robots_token: ExaSearchBot }
+verification:
+  - type: web_bot_auth
+    signature_agent_url: "https://crawler.exa.ai/.well-known/http-message-signatures-directory"

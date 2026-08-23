@@ -1,0 +1,30 @@
+{
+  "id": "freespoke-crawler",
+  "name": "FreespokeCrawler",
+  "operator": {
+    "name": "Freespoke",
+    "url": "https://freespoke.com"
+  },
+  "description": "Freespoke's search crawler, which fetches pages to build the index behind the Freespoke search engine. The operator documents the crawler's user agent, the robots.txt token FreespokeCrawler and support for the Crawl-delay directive.",
+  "docs": [
+    "https://docs.freespoke.com/search/bot/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "FreespokeCrawler/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "FreespokeCrawler"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "fastmail-ua",
+  "name": "FastmailUA",
+  "operator": {
+    "name": "Fastmail",
+    "url": "https://www.fastmail.com"
+  },
+  "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA.",
+  "docs": [
+    "https://www.fastmail.com/policies/bots/"
+  ],
+  "category": "social-preview",
+  "user_agents": {
+    "patterns": [
+      "FastmailUA/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36 FastmailUA/1.0",
+      "FastmailUA/1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-23T13:20:46.873Z",
+  "resolved_cidrs": []
+}

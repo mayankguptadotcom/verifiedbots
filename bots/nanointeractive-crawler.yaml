@@ -1,0 +1,23 @@
+id: nanointeractive-crawler
+name: Nano Interactive Crawler
+operator: { name: "Nano Interactive", url: "https://www.nanointeractive.com" }
+description: >-
+  Nano Interactive's contextual-advertising crawler. Its published crawler
+  policy lists four desktop and mobile user agents, all carrying the
+  NanoInteractive/1.0 token, and names the two addresses the crawler requests
+  come from so site owners can allow it explicitly.
+docs:
+  - "https://www.nanointeractive.com/resources/legal/crawler-policy/"
+category: seo
+user_agents:
+  patterns:
+    - 'NanoInteractive/\d'
+  instances:
+    - 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)'
+    - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)'
+    - 'Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.117 Mobile Safari/537.36 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)'
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15 (compatible; NanoInteractive/1.0; +https://nanointeractive.com/crawler/)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs: ["34.252.254.4/32", "99.81.9.196/32"]
