@@ -1,0 +1,26 @@
+id: watchforbot
+name: WatchForBot
+operator: { name: WatchFor, url: "https://watchfor.io" }
+description: >-
+  WatchFor's monitoring probe, which checks that websites, APIs, servers and
+  certificates its customers have configured are healthy, from fixed locations
+  worldwide. It performs only the specific check each monitor defines and does
+  not crawl sites, follow links or harvest content. WatchFor publishes a
+  machine-readable address list and forward-confirmed reverse DNS under
+  probe.watchfor.io so site owners can tell a genuine probe from a spoofed
+  user agent.
+docs:
+  - "https://watchfor.io/bot"
+category: monitoring
+user_agents:
+  patterns:
+    - 'WatchForBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; WatchForBot/1.0; +https://watchfor.io/bot)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://watchfor.io/ips.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.probe.watchfor.io"]

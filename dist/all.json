@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T04:31:08.289Z",
-  "count": 227,
+  "generated_at": "2026-08-23T04:47:29.753Z",
+  "count": 232,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -4600,7 +4600,7 @@
         "name": "Meta",
         "url": "https://www.meta.com"
       },
-      "description": "Meta's crawler that fetches shared links from Facebook, Instagram, and Messenger to generate rich link previews. Verified by ASN lookup (AS32934); Meta's own docs describe IP-based allowlisting but publish no IP feed.",
+      "description": "Meta's crawler that fetches shared links from Facebook, Instagram, and Messenger to generate rich link previews. Meta documents one exception to its robots.txt compliance: the crawler might bypass robots.txt when performing security or integrity checks, such as looking for malware or malicious content. Verified by ASN lookup (AS32934); Meta's own docs describe IP-based allowlisting but publish no IP feed.",
       "docs": [
         "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
       ],
@@ -10981,6 +10981,128 @@
       ]
     },
     {
+      "id": "kimi-searchbot",
+      "name": "Kimi-SearchBot",
+      "operator": {
+        "name": "Moonshot AI",
+        "url": "https://www.moonshot.ai"
+      },
+      "description": "Moonshot AI's search crawler for Kimi, which analyses pages for relevance and builds the index behind Kimi's search features. Blocking it removes a site from Kimi search results. Listed separately from KimiBot because Moonshot documents it as an independently configurable crawler with its own robots.txt token and its own published address list.",
+      "docs": [
+        "https://www.kimi.ai/policies/kimi-crawlers"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Kimi-SearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Kimi-SearchBot/1.0; +https://www.kimi.com/policies/kimi-crawlers"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Kimi-SearchBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.kimi.ai/policies/kimi-searchbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T04:44:25.122Z",
+      "resolved_cidrs": [
+        "47.79.225.241/32",
+        "47.79.230.254/32",
+        "47.79.253.42/32",
+        "47.79.253.91/32"
+      ]
+    },
+    {
+      "id": "kimi-user",
+      "name": "Kimi-User",
+      "operator": {
+        "name": "Moonshot AI",
+        "url": "https://www.moonshot.ai"
+      },
+      "description": "Moonshot AI's user-triggered fetcher for Kimi, which retrieves a page when a person asks Kimi to summarise it or answers a question needing live web retrieval. Moonshot states it is not used for automated bulk crawling and that, because the actions are user-triggered, robots.txt rules may not directly apply.",
+      "docs": [
+        "https://www.kimi.ai/policies/kimi-crawlers"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Kimi-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Kimi-User/1.0; +https://www.kimi.com/policies/kimi-crawlers"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.kimi.ai/policies/kimi-user.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T04:44:25.122Z",
+      "resolved_cidrs": [
+        "47.79.225.241/32",
+        "47.79.230.254/32",
+        "47.79.253.42/32",
+        "47.79.253.91/32"
+      ]
+    },
+    {
+      "id": "kimibot",
+      "name": "KimiBot",
+      "operator": {
+        "name": "Moonshot AI",
+        "url": "https://www.moonshot.ai"
+      },
+      "description": "Moonshot AI's crawler for the Kimi assistant, gathering content that may be used to train Kimi's foundation models. Moonshot documents robots.txt control per crawler and publishes a machine-readable list of the addresses its crawlers use, while noting the ranges are dynamic and may change.",
+      "docs": [
+        "https://www.kimi.ai/policies/kimi-crawlers"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "KimiBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; KimiBot/1.0; +https://www.kimi.com/policies/kimi-crawlers"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "KimiBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.kimi.ai/policies/kimibot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T04:44:25.122Z",
+      "resolved_cidrs": [
+        "47.79.225.241/32",
+        "47.79.230.254/32",
+        "47.79.253.42/32",
+        "47.79.253.91/32"
+      ]
+    },
+    {
       "id": "leakix",
       "name": "LeakIX (l9explore)",
       "operator": {
@@ -11418,7 +11540,7 @@
         "name": "Meta",
         "url": "https://www.meta.com"
       },
-      "description": "Meta's on-demand fetcher that retrieves a single link at a user's request to support agentic AI features (e.g. an AI assistant navigating a page a user asked about), rather than broad indexing. Verified by ASN lookup (AS32934).",
+      "description": "Meta's on-demand fetcher that retrieves a single link at a user's request to support agentic AI features (e.g. an AI assistant navigating a page a user asked about), rather than broad indexing. Because its fetches are requested by a user, Meta documents that this crawler may bypass robots.txt rules. Verified by ASN lookup (AS32934).",
       "docs": [
         "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/#identify-3"
       ],
@@ -11433,7 +11555,7 @@
         ]
       },
       "behavior": {
-        "respects_robots_txt": true,
+        "respects_robots_txt": false,
         "robots_token": "meta-externalfetcher"
       },
       "verification": [
@@ -11766,6 +11888,49 @@
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "5.102.173.64/28"
+      ]
+    },
+    {
+      "id": "monsidobot",
+      "name": "Monsidobot",
+      "operator": {
+        "name": "Acquia",
+        "url": "https://www.acquia.com"
+      },
+      "description": "Acquia Web Governance (formerly Monsido) crawler, which scans the public websites its customers have configured to run accessibility, quality assurance and policy checks. It also issues link-status checks against third-party sites that customers have linked to, preferring HEAD requests for those. Acquia documents a fallback user agent — a plain Chrome string with no identifying token — used only when the primary one fails, so a share of its traffic is identifiable by address rather than by user agent.",
+      "docs": [
+        "https://docs.acquia.com/web-governance/data-hosting-and-security",
+        "https://docs.acquia.com/web-governance/help/85976-monsidobot-faq"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Monsidobot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Monsidobot/2.2; +http://monsido.com/bot.html; info@monsido.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "35.226.117.128/32",
+            "130.211.65.55/32",
+            "35.189.0.46/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T04:44:25.122Z",
+      "resolved_cidrs": [
+        "130.211.65.55/32",
+        "35.189.0.46/32",
+        "35.226.117.128/32"
       ]
     },
     {
@@ -17030,6 +17195,87 @@
       "resolved_cidrs": [
         "2600:1f18:7d7a:2700::/56",
         "52.22.66.203/32"
+      ]
+    },
+    {
+      "id": "watchforbot",
+      "name": "WatchForBot",
+      "operator": {
+        "name": "WatchFor",
+        "url": "https://watchfor.io"
+      },
+      "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent.",
+      "docs": [
+        "https://watchfor.io/bot"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "WatchForBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; WatchForBot/1.0; +https://watchfor.io/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://watchfor.io/ips.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.probe.watchfor.io"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T04:44:25.122Z",
+      "resolved_cidrs": [
+        "13.114.238.105/32",
+        "13.244.54.44/32",
+        "13.250.143.183/32",
+        "13.63.231.185/32",
+        "15.217.52.23/32",
+        "15.236.177.94/32",
+        "16.164.39.228/32",
+        "16.54.175.65/32",
+        "16.79.55.179/32",
+        "18.132.86.229/32",
+        "18.226.195.23/32",
+        "18.230.13.42/32",
+        "2406:da11:f61:f300:c9c:e64a:61d6:e80e/128",
+        "2406:da12:8bb0:3f00:9f31:99ac:aed7:33fe/128",
+        "2406:da14:13bb:ce00:f883:cbfe:84e7:e1a9/128",
+        "2406:da18:1863:b400:fb92:3b38:6bdd:8386/128",
+        "2406:da19:45b:cd00:909b:f6b4:f77e:51de/128",
+        "2406:da1a:1082:bd00:3d80:8d20:9d2f:5b18/128",
+        "2406:da1c:1682:5900:df7:d42c:8b58:f39e/128",
+        "2600:1f11:26:9200:5230:88f5:ca1c:8dba/128",
+        "2600:1f14:3b0c:6400:914:8212:717f:84b8/128",
+        "2600:1f16:9d5:ec00:310f:fa1:98de:3f60/128",
+        "2600:1f17:428c:c500:8ebb:1f23:21f7:62b4/128",
+        "2600:1f18:7b53:2800:f95c:9c84:6f85:e3e7/128",
+        "2600:1f1e:a43:c500:76cf:93f:7a49:9f8e/128",
+        "2a05:d011:f31:a700:6ab:26fc:e1b6:a2a/128",
+        "2a05:d012:c19:3401:4dc9:840d:8f8d:85d0/128",
+        "2a05:d014:155e:5600:c3a5:473e:e9d7:4fcb/128",
+        "2a05:d016:db4:1200:e052:7feb:a7dd:1cb8/128",
+        "2a05:d01c:d1f:1b00:8c65:d5a7:3b55:f96b/128",
+        "2a05:d025:f8:fa00:fe40:7f04:148e:1f95/128",
+        "3.103.20.111/32",
+        "3.111.4.15/32",
+        "34.210.233.0/32",
+        "35.157.172.211/32",
+        "52.62.237.155/32",
+        "52.73.13.30/32",
+        "78.14.142.185/32",
+        "85.206.149.28/32"
       ]
     },
     {

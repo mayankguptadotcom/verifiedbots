@@ -1,0 +1,41 @@
+{
+  "id": "kimibot",
+  "name": "KimiBot",
+  "operator": {
+    "name": "Moonshot AI",
+    "url": "https://www.moonshot.ai"
+  },
+  "description": "Moonshot AI's crawler for the Kimi assistant, gathering content that may be used to train Kimi's foundation models. Moonshot documents robots.txt control per crawler and publishes a machine-readable list of the addresses its crawlers use, while noting the ranges are dynamic and may change.",
+  "docs": [
+    "https://www.kimi.ai/policies/kimi-crawlers"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "KimiBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; KimiBot/1.0; +https://www.kimi.com/policies/kimi-crawlers"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "KimiBot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://www.kimi.ai/policies/kimibot.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-08-23T04:44:25.122Z",
+  "resolved_cidrs": [
+    "47.79.225.241/32",
+    "47.79.230.254/32",
+    "47.79.253.42/32",
+    "47.79.253.91/32"
+  ]
+}

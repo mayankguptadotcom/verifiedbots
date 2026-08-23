@@ -1,0 +1,27 @@
+id: monsidobot
+name: Monsidobot
+operator: { name: Acquia, url: "https://www.acquia.com" }
+description: >-
+  Acquia Web Governance (formerly Monsido) crawler, which scans the public
+  websites its customers have configured to run accessibility, quality
+  assurance and policy checks. It also issues link-status checks against
+  third-party sites that customers have linked to, preferring HEAD requests
+  for those. Acquia documents a fallback user agent — a plain Chrome string
+  with no identifying token — used only when the primary one fails, so a share
+  of its traffic is identifiable by address rather than by user agent.
+docs:
+  - "https://docs.acquia.com/web-governance/data-hosting-and-security"
+  - "https://docs.acquia.com/web-governance/help/85976-monsidobot-faq"
+category: seo
+user_agents:
+  patterns:
+    - 'Monsidobot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Monsidobot/2.2; +http://monsido.com/bot.html; info@monsido.com)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "35.226.117.128/32"
+      - "130.211.65.55/32"
+      - "35.189.0.46/32"

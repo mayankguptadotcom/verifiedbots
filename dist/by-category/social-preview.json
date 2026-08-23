@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T04:31:08.289Z",
+  "generated_at": "2026-08-23T04:47:29.753Z",
   "count": 22,
   "bots": [
     {
@@ -90,7 +90,7 @@
         "name": "Meta",
         "url": "https://www.meta.com"
       },
-      "description": "Meta's crawler that fetches shared links from Facebook, Instagram, and Messenger to generate rich link previews. Verified by ASN lookup (AS32934); Meta's own docs describe IP-based allowlisting but publish no IP feed.",
+      "description": "Meta's crawler that fetches shared links from Facebook, Instagram, and Messenger to generate rich link previews. Meta documents one exception to its robots.txt compliance: the crawler might bypass robots.txt when performing security or integrity checks, such as looking for malware or malicious content. Verified by ASN lookup (AS32934); Meta's own docs describe IP-based allowlisting but publish no IP feed.",
       "docs": [
         "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
       ],

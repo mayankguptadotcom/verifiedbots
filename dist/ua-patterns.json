@@ -839,6 +839,27 @@
     ]
   },
   {
+    "id": "kimi-searchbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "Kimi-SearchBot/\\d"
+    ]
+  },
+  {
+    "id": "kimi-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Kimi-User/\\d"
+    ]
+  },
+  {
+    "id": "kimibot",
+    "category": "ai-crawler",
+    "patterns": [
+      "KimiBot/\\d"
+    ]
+  },
+  {
     "id": "leakix",
     "category": "security",
     "patterns": [
@@ -990,6 +1011,13 @@
     "category": "search-engine",
     "patterns": [
       "MojeekBot/\\d"
+    ]
+  },
+  {
+    "id": "monsidobot",
+    "category": "seo",
+    "patterns": [
+      "Monsidobot/\\d"
     ]
   },
   {
@@ -1501,6 +1529,13 @@
     "category": "security",
     "patterns": [
       "W3C_Validator/[\\d.]+"
+    ]
+  },
+  {
+    "id": "watchforbot",
+    "category": "monitoring",
+    "patterns": [
+      "WatchForBot/\\d"
     ]
   },
   {

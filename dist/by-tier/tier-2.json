@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-23T04:31:08.289Z",
-  "count": 64,
+  "generated_at": "2026-08-23T04:47:29.753Z",
+  "count": 65,
   "bots": [
     {
       "id": "addsearch",
@@ -1043,7 +1043,7 @@
         "name": "Meta",
         "url": "https://www.meta.com"
       },
-      "description": "Meta's crawler that fetches shared links from Facebook, Instagram, and Messenger to generate rich link previews. Verified by ASN lookup (AS32934); Meta's own docs describe IP-based allowlisting but publish no IP feed.",
+      "description": "Meta's crawler that fetches shared links from Facebook, Instagram, and Messenger to generate rich link previews. Meta documents one exception to its robots.txt compliance: the crawler might bypass robots.txt when performing security or integrity checks, such as looking for malware or malicious content. Verified by ASN lookup (AS32934); Meta's own docs describe IP-based allowlisting but publish no IP feed.",
       "docs": [
         "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
       ],
@@ -1651,7 +1651,7 @@
         "name": "Meta",
         "url": "https://www.meta.com"
       },
-      "description": "Meta's on-demand fetcher that retrieves a single link at a user's request to support agentic AI features (e.g. an AI assistant navigating a page a user asked about), rather than broad indexing. Verified by ASN lookup (AS32934).",
+      "description": "Meta's on-demand fetcher that retrieves a single link at a user's request to support agentic AI features (e.g. an AI assistant navigating a page a user asked about), rather than broad indexing. Because its fetches are requested by a user, Meta documents that this crawler may bypass robots.txt rules. Verified by ASN lookup (AS32934).",
       "docs": [
         "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/#identify-3"
       ],
@@ -1666,7 +1666,7 @@
         ]
       },
       "behavior": {
-        "respects_robots_txt": true,
+        "respects_robots_txt": false,
         "robots_token": "meta-externalfetcher"
       },
       "verification": [
@@ -1760,6 +1760,49 @@
         "157.90.179.220/32",
         "157.90.179.228/32",
         "157.90.179.241/32"
+      ]
+    },
+    {
+      "id": "monsidobot",
+      "name": "Monsidobot",
+      "operator": {
+        "name": "Acquia",
+        "url": "https://www.acquia.com"
+      },
+      "description": "Acquia Web Governance (formerly Monsido) crawler, which scans the public websites its customers have configured to run accessibility, quality assurance and policy checks. It also issues link-status checks against third-party sites that customers have linked to, preferring HEAD requests for those. Acquia documents a fallback user agent — a plain Chrome string with no identifying token — used only when the primary one fails, so a share of its traffic is identifiable by address rather than by user agent.",
+      "docs": [
+        "https://docs.acquia.com/web-governance/data-hosting-and-security",
+        "https://docs.acquia.com/web-governance/help/85976-monsidobot-faq"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Monsidobot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Monsidobot/2.2; +http://monsido.com/bot.html; info@monsido.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "35.226.117.128/32",
+            "130.211.65.55/32",
+            "35.189.0.46/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T04:44:25.122Z",
+      "resolved_cidrs": [
+        "130.211.65.55/32",
+        "35.189.0.46/32",
+        "35.226.117.128/32"
       ]
     },
     {

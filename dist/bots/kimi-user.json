@@ -1,0 +1,40 @@
+{
+  "id": "kimi-user",
+  "name": "Kimi-User",
+  "operator": {
+    "name": "Moonshot AI",
+    "url": "https://www.moonshot.ai"
+  },
+  "description": "Moonshot AI's user-triggered fetcher for Kimi, which retrieves a page when a person asks Kimi to summarise it or answers a question needing live web retrieval. Moonshot states it is not used for automated bulk crawling and that, because the actions are user-triggered, robots.txt rules may not directly apply.",
+  "docs": [
+    "https://www.kimi.ai/policies/kimi-crawlers"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "Kimi-User/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Kimi-User/1.0; +https://www.kimi.com/policies/kimi-crawlers"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://www.kimi.ai/policies/kimi-user.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-08-23T04:44:25.122Z",
+  "resolved_cidrs": [
+    "47.79.225.241/32",
+    "47.79.230.254/32",
+    "47.79.253.42/32",
+    "47.79.253.91/32"
+  ]
+}
