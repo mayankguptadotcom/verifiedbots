@@ -1,0 +1,44 @@
+{
+  "id": "magnetmebot",
+  "name": "MagnetmeBot",
+  "operator": {
+    "name": "Magnet.me",
+    "url": "https://magnet.me"
+  },
+  "description": "Magnet.me's web crawler. It discovers and refreshes career-related pages — vacancies, events and employer information — for the Magnet.me careers platform. The operator documents that it may render JavaScript, follows the canonical version of a page, does not submit forms and adjusts its crawl speed automatically, and it publishes the addresses it crawls from as both a JSON and a plain-text list.",
+  "docs": [
+    "https://magnet.me/bot.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Magnet\\.me-web/\\d"
+    ],
+    "instances": [
+      "Magnet.me-web/1.0 (+https://magnet.me/bot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "MagnetmeBot"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://magnet.me/bot-ips.txt",
+      "format": "text_lines"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": [
+    "136.144.168.12/32",
+    "149.210.159.74/32",
+    "188.241.148.85/32",
+    "80.69.93.43/32",
+    "85.10.151.142/32",
+    "87.253.157.248/32",
+    "93.119.14.105/32"
+  ]
+}

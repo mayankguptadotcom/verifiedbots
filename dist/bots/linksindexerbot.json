@@ -1,0 +1,39 @@
+{
+  "id": "linksindexerbot",
+  "name": "LinksIndexerBot",
+  "operator": {
+    "name": "Links Indexer (Kalpraj Solutions (OPC) Private Limited)",
+    "url": "https://linksindexer.com"
+  },
+  "description": "The crawler behind the Links Indexer URL indexing service. It parses third-party sites to verify their URLs and status for sitemap campaigns, querying pages for metadata and favicons and taking a homepage screenshot. The operator states it never harvests e-mail addresses or content unrelated to sitemap campaigns, runs at most four parallel requests, and publishes the single address it crawls from.",
+  "docs": [
+    "https://linksindexer.com/bot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "LinksIndexerBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; LinksIndexerBot/1.0; +http://linksindexer.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "LinksIndexerBot"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "38.242.228.97/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": [
+    "38.242.228.97/32"
+  ]
+}

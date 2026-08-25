@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 119,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 123,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -632,6 +632,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "classla-web",
+      "name": "CLASSLA-web",
+      "operator": {
+        "name": "CLARIN.SI (CLASSLA Knowledge Centre)",
+        "url": "https://www.clarin.si"
+      },
+      "description": "The CLASSLA-web crawler collects web corpora for South Slavic and other languages under the CLARIN Knowledge Centre for South Slavic languages, continuing the CEF-funded MaCoCu project's crawling infrastructure. It runs the SpiderLing crawler developed at Masaryk University. The operator documents that it adheres to the robots exclusion standard and reads robots.txt on the first access of each crawl run.",
+      "docs": [
+        "https://www.clarin.si/info/classla-web-crawler/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "CLASSLA-web"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CLASSLA-web; +https://www.clarin.si/info/classla-web-crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "CLASSLA-web"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": []
     },
     {
@@ -1933,6 +1963,40 @@
       "resolved_cidrs": []
     },
     {
+      "id": "lyonlbot",
+      "name": "LyonlBot",
+      "operator": {
+        "name": "Lyonl Search",
+        "url": "https://lyonl.com"
+      },
+      "description": "The crawler used by Lyonl Search to discover and refresh public web documents for its index, with separate identities for web, image and news crawling so site owners can control each class independently. The operator documents robots.txt and crawl-delay support, conditional fetches with ETag and Last-Modified, and that the crawler does not submit forms or bypass authentication. It states that crawler address ranges are not currently published, so no verification recipe is recorded.",
+      "docs": [
+        "https://lyonl.com/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "LyonlBot/\\d",
+          "LyonlBot-Image/\\d",
+          "LyonlBot-News/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; LyonlBot/1.0; +https://lyonl.com/bot.html)",
+          "Mozilla/5.0 (compatible; LyonlBot-Image/1.0; +https://lyonl.com/bot.html)",
+          "Mozilla/5.0 (compatible; LyonlBot-News/1.0; +https://lyonl.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "lyonlbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "macocu",
       "name": "MaCoCu",
       "operator": {
@@ -2030,7 +2094,7 @@
       },
       "description": "MegaIndex is an SEO and web-analytics platform whose crawler indexes links across the web to power backlink analysis, keyword tracking, and site audits for its subscribers.",
       "docs": [
-        "https://www.megaindex.com/crawler"
+        "https://ru.megaindex.com/crawler"
       ],
       "category": "seo",
       "user_agents": {
@@ -2226,6 +2290,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "noahbot",
+      "name": "NoahBot",
+      "operator": {
+        "name": "Noah Wire",
+        "url": "https://noahwire.com"
+      },
+      "description": "The crawler powering Noah Wire's search and research engine for journalists and editors. It scans publicly accessible news sources — press releases, newsrooms, blogs and announcement feeds — and the operator states it does not scrape, store or republish full articles, producing linked summaries instead. The bot page says requests are signed with HTTP Message Signatures, but publishes no key directory URL, so no verification recipe is recorded.",
+      "docs": [
+        "https://noahwire.com/bot-info"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "NoahBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; NoahBot/1.0; +https://noahwire.com/bot-info)",
+          "NoahBot/1.0 (+https://noahwire.com/bot-info)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": []
     },
     {
@@ -2917,6 +3011,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-02T14:52:18.385Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "statusnest-backlink-spider",
+      "name": "StatusNest Backlink Spider",
+      "operator": {
+        "name": "StatusNest",
+        "url": "https://statusnest.com"
+      },
+      "description": "StatusNest's link-graph crawler. It visits public web pages to record their outbound and inbound links and maintain a graph of how sites connect to each other, for use by SEO and web analysts. The operator documents a maximum rate of one request per second per domain with automatic backoff, states that it collects only public link data and basic page metadata, and that it re-reads robots.txt before every crawl session. No addresses are published.",
+      "docs": [
+        "https://statusnest.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "StatusNestBacklinkSpider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; StatusNestBacklinkSpider/1.0; +https://statusnest.com/bot)",
+          "Mozilla/5.0 (compatible; StatusNestBacklinkSpider; +https://statusnest.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "StatusNestBacklinkSpider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": []
     },
     {

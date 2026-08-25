@@ -1,0 +1,23 @@
+id: motominerbot
+name: MotoMinerBot
+operator: { name: MotoMiner, url: "https://motominer.com" }
+description: >-
+  MotoMiner's vehicle-listing crawler. It primarily crawls automotive
+  dealership websites and adds their vehicle detail pages to the MotoMiner
+  index. The operator documents robots.txt and crawl-delay support, honours
+  bot-specific noindex meta directives, throttles outbound requests against
+  defined traffic thresholds, and publishes the address the crawler currently
+  requests from.
+docs:
+  - "https://motominer.com/Bot"
+category: search-engine
+user_agents:
+  patterns:
+    - 'MotoMinerBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; MotoMinerBot/1.0; +https://motominer.com/Bot)'
+behavior: { respects_robots_txt: true, robots_token: MotoMinerBot }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "23.101.129.27/32"

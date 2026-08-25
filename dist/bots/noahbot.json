@@ -1,0 +1,30 @@
+{
+  "id": "noahbot",
+  "name": "NoahBot",
+  "operator": {
+    "name": "Noah Wire",
+    "url": "https://noahwire.com"
+  },
+  "description": "The crawler powering Noah Wire's search and research engine for journalists and editors. It scans publicly accessible news sources — press releases, newsrooms, blogs and announcement feeds — and the operator states it does not scrape, store or republish full articles, producing linked summaries instead. The bot page says requests are signed with HTTP Message Signatures, but publishes no key directory URL, so no verification recipe is recorded.",
+  "docs": [
+    "https://noahwire.com/bot-info"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "NoahBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; NoahBot/1.0; +https://noahwire.com/bot-info)",
+      "NoahBot/1.0 (+https://noahwire.com/bot-info)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": []
+}

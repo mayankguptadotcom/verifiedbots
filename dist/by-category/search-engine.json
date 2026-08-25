@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 59,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 65,
   "bots": [
     {
       "id": "addsearch",
@@ -1218,6 +1218,51 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "findfilesbot",
+      "name": "FindFilesBot",
+      "operator": {
+        "name": "FindFiles.net",
+        "url": "https://findfiles.net"
+      },
+      "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address.",
+      "docs": [
+        "https://findfiles.net/en/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "FindFilesBot/\\d",
+          "FindFiles\\.net-[A-Za-z]+/\\d"
+        ],
+        "instances": [
+          "FindFilesBot/1.0 (+https://findfiles.net/en/bot)",
+          "FindFiles.net-LinkChecker/1.1 https://findfiles.net/bot",
+          "FindFiles.net-FaviconFetcher/1.0 (+https://findfiles.net/bot)",
+          "FindFiles.net-VirusScan/1.0 (+https://findfiles.net/bot)",
+          "FindFiles.net-ImageNSFWClassifier/1.0 (+https://findfiles.net/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "65.21.31.180/32",
+            "2a01:4f9:3080:2b61::2/128"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "2a01:4f9:3080:2b61::2/128",
+        "65.21.31.180/32"
+      ]
     },
     {
       "id": "freespoke-crawler",
@@ -3780,6 +3825,50 @@
       "resolved_cidrs": []
     },
     {
+      "id": "iboubot",
+      "name": "IbouBot",
+      "operator": {
+        "name": "Babbar (Ibou)",
+        "url": "https://ibou.io"
+      },
+      "description": "The crawler behind Ibou, a French conversational search engine. It discovers publicly accessible pages and indexes them so Ibou can cite and link back to the sites it answers from. The operator documents a 5-second politeness delay per host, publishes its address ranges as JSON, and documents forward-confirmed reverse DNS as the reliable way to tell a genuine request from a spoofed user agent.",
+      "docs": [
+        "https://ibou.io/iboubot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "IbouBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; IbouBot/1.0; +bot@ibou.io; +https://ibou.io/iboubot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "IbouBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://ibou.io/iboubot-ip-ranges.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ibou.io"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "217.113.196.0/24"
+      ]
+    },
+    {
       "id": "ioncrawl",
       "name": "IONOS Crawler",
       "operator": {
@@ -3928,6 +4017,84 @@
       "resolved_cidrs": []
     },
     {
+      "id": "lyonlbot",
+      "name": "LyonlBot",
+      "operator": {
+        "name": "Lyonl Search",
+        "url": "https://lyonl.com"
+      },
+      "description": "The crawler used by Lyonl Search to discover and refresh public web documents for its index, with separate identities for web, image and news crawling so site owners can control each class independently. The operator documents robots.txt and crawl-delay support, conditional fetches with ETag and Last-Modified, and that the crawler does not submit forms or bypass authentication. It states that crawler address ranges are not currently published, so no verification recipe is recorded.",
+      "docs": [
+        "https://lyonl.com/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "LyonlBot/\\d",
+          "LyonlBot-Image/\\d",
+          "LyonlBot-News/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; LyonlBot/1.0; +https://lyonl.com/bot.html)",
+          "Mozilla/5.0 (compatible; LyonlBot-Image/1.0; +https://lyonl.com/bot.html)",
+          "Mozilla/5.0 (compatible; LyonlBot-News/1.0; +https://lyonl.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "lyonlbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "magnetmebot",
+      "name": "MagnetmeBot",
+      "operator": {
+        "name": "Magnet.me",
+        "url": "https://magnet.me"
+      },
+      "description": "Magnet.me's web crawler. It discovers and refreshes career-related pages — vacancies, events and employer information — for the Magnet.me careers platform. The operator documents that it may render JavaScript, follows the canonical version of a page, does not submit forms and adjusts its crawl speed automatically, and it publishes the addresses it crawls from as both a JSON and a plain-text list.",
+      "docs": [
+        "https://magnet.me/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Magnet\\.me-web/\\d"
+        ],
+        "instances": [
+          "Magnet.me-web/1.0 (+https://magnet.me/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MagnetmeBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://magnet.me/bot-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "136.144.168.12/32",
+        "149.210.159.74/32",
+        "188.241.148.85/32",
+        "80.69.93.43/32",
+        "85.10.151.142/32",
+        "87.253.157.248/32",
+        "93.119.14.105/32"
+      ]
+    },
+    {
       "id": "marginalia",
       "name": "Marginalia",
       "operator": {
@@ -4061,6 +4228,45 @@
       ]
     },
     {
+      "id": "motominerbot",
+      "name": "MotoMinerBot",
+      "operator": {
+        "name": "MotoMiner",
+        "url": "https://motominer.com"
+      },
+      "description": "MotoMiner's vehicle-listing crawler. It primarily crawls automotive dealership websites and adds their vehicle detail pages to the MotoMiner index. The operator documents robots.txt and crawl-delay support, honours bot-specific noindex meta directives, throttles outbound requests against defined traffic thresholds, and publishes the address the crawler currently requests from.",
+      "docs": [
+        "https://motominer.com/Bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "MotoMinerBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MotoMinerBot/1.0; +https://motominer.com/Bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MotoMinerBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "23.101.129.27/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "23.101.129.27/32"
+      ]
+    },
+    {
       "id": "naver-yeti",
       "name": "Yeti",
       "operator": {
@@ -4126,6 +4332,43 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "paqlebot",
+      "name": "Paqlebot",
+      "operator": {
+        "name": "Paqle",
+        "url": "https://www.paqle.dk"
+      },
+      "description": "Paqle's news crawler. It indexes news articles to discover who is mentioned in the media, crawling at most one page per minute per site and tuning its rate to how often a site publishes. Paqle documents that the crawler falls back to a site's Googlebot robots.txt rules when no Paqlebot rules are present, and that its addresses reverse-resolve under paqle.net.",
+      "docs": [
+        "https://www.paqle.dk/about/paqlebot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Paqlebot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Paqlebot/2.0; +http://www.paqle.dk/about/paqlebot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Paqlebot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.paqle.net"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": []
     },
     {

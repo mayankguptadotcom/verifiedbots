@@ -1,0 +1,30 @@
+{
+  "id": "classla-web",
+  "name": "CLASSLA-web",
+  "operator": {
+    "name": "CLARIN.SI (CLASSLA Knowledge Centre)",
+    "url": "https://www.clarin.si"
+  },
+  "description": "The CLASSLA-web crawler collects web corpora for South Slavic and other languages under the CLARIN Knowledge Centre for South Slavic languages, continuing the CEF-funded MaCoCu project's crawling infrastructure. It runs the SpiderLing crawler developed at Masaryk University. The operator documents that it adheres to the robots exclusion standard and reads robots.txt on the first access of each crawl run.",
+  "docs": [
+    "https://www.clarin.si/info/classla-web-crawler/"
+  ],
+  "category": "archiver",
+  "user_agents": {
+    "patterns": [
+      "CLASSLA-web"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; CLASSLA-web; +https://www.clarin.si/info/classla-web-crawler/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "CLASSLA-web"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": []
+}

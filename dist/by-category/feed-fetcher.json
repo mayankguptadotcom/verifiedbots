@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 14,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 15,
   "bots": [
     {
       "id": "amazon-seller-initiated-listing",
@@ -68,6 +68,44 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "artemis-web-reader",
+      "name": "Artemis Web Reader",
+      "operator": {
+        "name": "Artemis (jamesg.blog)",
+        "url": "https://artemis.jamesg.blog"
+      },
+      "description": "The feed poller behind Artemis, a hosted web reader that follows websites and blogs on behalf of its subscribers. It updates once per day and uses HEAD and conditional GET requests with If-Modified-Since and If-None-Match to reduce bandwidth. Artemis publishes the addresses it polls feeds from as a plain-text list.",
+      "docs": [
+        "https://artemis.jamesg.blog/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "artemis web reader/\\d"
+        ],
+        "instances": [
+          "artemis web reader/1.0 - https://artemis.jamesg.blog/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://artemis.jamesg.blog/ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "2a01:4f8:c0c:969c::/64",
+        "94.130.110.118/32"
+      ]
     },
     {
       "id": "bazqux",

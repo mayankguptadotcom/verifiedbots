@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 258,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 274,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -821,6 +821,44 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "artemis-web-reader",
+      "name": "Artemis Web Reader",
+      "operator": {
+        "name": "Artemis (jamesg.blog)",
+        "url": "https://artemis.jamesg.blog"
+      },
+      "description": "The feed poller behind Artemis, a hosted web reader that follows websites and blogs on behalf of its subscribers. It updates once per day and uses HEAD and conditional GET requests with If-Modified-Since and If-None-Match to reduce bandwidth. Artemis publishes the addresses it polls feeds from as a plain-text list.",
+      "docs": [
+        "https://artemis.jamesg.blog/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "artemis web reader/\\d"
+        ],
+        "instances": [
+          "artemis web reader/1.0 - https://artemis.jamesg.blog/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://artemis.jamesg.blog/ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "2a01:4f8:c0c:969c::/64",
+        "94.130.110.118/32"
+      ]
     },
     {
       "id": "audigent-adbot",
@@ -2398,6 +2436,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "classla-web",
+      "name": "CLASSLA-web",
+      "operator": {
+        "name": "CLARIN.SI (CLASSLA Knowledge Centre)",
+        "url": "https://www.clarin.si"
+      },
+      "description": "The CLASSLA-web crawler collects web corpora for South Slavic and other languages under the CLARIN Knowledge Centre for South Slavic languages, continuing the CEF-funded MaCoCu project's crawling infrastructure. It runs the SpiderLing crawler developed at Masaryk University. The operator documents that it adheres to the robots exclusion standard and reads robots.txt on the first access of each crawl run.",
+      "docs": [
+        "https://www.clarin.si/info/classla-web-crawler/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "CLASSLA-web"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CLASSLA-web; +https://www.clarin.si/info/classla-web-crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "CLASSLA-web"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "claude-searchbot",
       "name": "Claude-SearchBot",
       "operator": {
@@ -3117,6 +3185,47 @@
         "2604:a940:301:225::/64",
         "2604:a940:302:118::/64",
         "35.203.210.0/23"
+      ]
+    },
+    {
+      "id": "cotoyogi",
+      "name": "Cotoyogi",
+      "operator": {
+        "name": "ROIS-DS Data Lake Research and Development Center",
+        "url": "https://ds.rois.ac.jp"
+      },
+      "description": "A research web crawler run by the Data Lake Research and Development Center of the Joint Support-Center for Data Science Research (ROIS-DS), Research Organization of Information and Systems, Japan. It collects Japanese-language web data for research use. The operator page documents RFC 9309 robots.txt handling with Crawl-delay support, robots meta tag support, and the address range the crawler requests from.",
+      "docs": [
+        "https://ds.rois.ac.jp/center8/crawler/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "Cotoyogi/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cotoyogi/4.0; +https://ds.rois.ac.jp/center8/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Cotoyogi"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "157.1.136.4/30",
+            "157.1.136.8/30"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "157.1.136.4/30",
+        "157.1.136.8/30"
       ]
     },
     {
@@ -5141,6 +5250,51 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "findfilesbot",
+      "name": "FindFilesBot",
+      "operator": {
+        "name": "FindFiles.net",
+        "url": "https://findfiles.net"
+      },
+      "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address.",
+      "docs": [
+        "https://findfiles.net/en/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "FindFilesBot/\\d",
+          "FindFiles\\.net-[A-Za-z]+/\\d"
+        ],
+        "instances": [
+          "FindFilesBot/1.0 (+https://findfiles.net/en/bot)",
+          "FindFiles.net-LinkChecker/1.1 https://findfiles.net/bot",
+          "FindFiles.net-FaviconFetcher/1.0 (+https://findfiles.net/bot)",
+          "FindFiles.net-VirusScan/1.0 (+https://findfiles.net/bot)",
+          "FindFiles.net-ImageNSFWClassifier/1.0 (+https://findfiles.net/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "65.21.31.180/32",
+            "2a01:4f9:3080:2b61::2/128"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "2a01:4f9:3080:2b61::2/128",
+        "65.21.31.180/32"
+      ]
     },
     {
       "id": "firecrawl-agent",
@@ -10942,6 +11096,50 @@
       "resolved_cidrs": []
     },
     {
+      "id": "iboubot",
+      "name": "IbouBot",
+      "operator": {
+        "name": "Babbar (Ibou)",
+        "url": "https://ibou.io"
+      },
+      "description": "The crawler behind Ibou, a French conversational search engine. It discovers publicly accessible pages and indexes them so Ibou can cite and link back to the sites it answers from. The operator documents a 5-second politeness delay per host, publishes its address ranges as JSON, and documents forward-confirmed reverse DNS as the reliable way to tell a genuine request from a spoofed user agent.",
+      "docs": [
+        "https://ibou.io/iboubot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "IbouBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; IbouBot/1.0; +bot@ibou.io; +https://ibou.io/iboubot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "IbouBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://ibou.io/iboubot-ip-ranges.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ibou.io"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "217.113.196.0/24"
+      ]
+    },
+    {
       "id": "iframely",
       "name": "Iframely",
       "operator": {
@@ -11762,6 +11960,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "linksindexerbot",
+      "name": "LinksIndexerBot",
+      "operator": {
+        "name": "Links Indexer (Kalpraj Solutions (OPC) Private Limited)",
+        "url": "https://linksindexer.com"
+      },
+      "description": "The crawler behind the Links Indexer URL indexing service. It parses third-party sites to verify their URLs and status for sitemap campaigns, querying pages for metadata and favicons and taking a homepage screenshot. The operator states it never harvests e-mail addresses or content unrelated to sitemap campaigns, runs at most four parallel requests, and publishes the single address it crawls from.",
+      "docs": [
+        "https://linksindexer.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "LinksIndexerBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; LinksIndexerBot/1.0; +http://linksindexer.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinksIndexerBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "38.242.228.97/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "38.242.228.97/32"
+      ]
+    },
+    {
       "id": "linkupbot",
       "name": "LinkupBot",
       "operator": {
@@ -11865,6 +12102,40 @@
       "resolved_cidrs": []
     },
     {
+      "id": "lyonlbot",
+      "name": "LyonlBot",
+      "operator": {
+        "name": "Lyonl Search",
+        "url": "https://lyonl.com"
+      },
+      "description": "The crawler used by Lyonl Search to discover and refresh public web documents for its index, with separate identities for web, image and news crawling so site owners can control each class independently. The operator documents robots.txt and crawl-delay support, conditional fetches with ETag and Last-Modified, and that the crawler does not submit forms or bypass authentication. It states that crawler address ranges are not currently published, so no verification recipe is recorded.",
+      "docs": [
+        "https://lyonl.com/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "LyonlBot/\\d",
+          "LyonlBot-Image/\\d",
+          "LyonlBot-News/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; LyonlBot/1.0; +https://lyonl.com/bot.html)",
+          "Mozilla/5.0 (compatible; LyonlBot-Image/1.0; +https://lyonl.com/bot.html)",
+          "Mozilla/5.0 (compatible; LyonlBot-News/1.0; +https://lyonl.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "lyonlbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "macocu",
       "name": "MaCoCu",
       "operator": {
@@ -11893,6 +12164,50 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "magnetmebot",
+      "name": "MagnetmeBot",
+      "operator": {
+        "name": "Magnet.me",
+        "url": "https://magnet.me"
+      },
+      "description": "Magnet.me's web crawler. It discovers and refreshes career-related pages — vacancies, events and employer information — for the Magnet.me careers platform. The operator documents that it may render JavaScript, follows the canonical version of a page, does not submit forms and adjusts its crawl speed automatically, and it publishes the addresses it crawls from as both a JSON and a plain-text list.",
+      "docs": [
+        "https://magnet.me/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Magnet\\.me-web/\\d"
+        ],
+        "instances": [
+          "Magnet.me-web/1.0 (+https://magnet.me/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MagnetmeBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://magnet.me/bot-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "136.144.168.12/32",
+        "149.210.159.74/32",
+        "188.241.148.85/32",
+        "80.69.93.43/32",
+        "85.10.151.142/32",
+        "87.253.157.248/32",
+        "93.119.14.105/32"
+      ]
     },
     {
       "id": "marginalia",
@@ -12013,7 +12328,7 @@
       },
       "description": "MegaIndex is an SEO and web-analytics platform whose crawler indexes links across the web to power backlink analysis, keyword tracking, and site audits for its subscribers.",
       "docs": [
-        "https://www.megaindex.com/crawler"
+        "https://ru.megaindex.com/crawler"
       ],
       "category": "seo",
       "user_agents": {
@@ -12579,6 +12894,45 @@
       ]
     },
     {
+      "id": "motominerbot",
+      "name": "MotoMinerBot",
+      "operator": {
+        "name": "MotoMiner",
+        "url": "https://motominer.com"
+      },
+      "description": "MotoMiner's vehicle-listing crawler. It primarily crawls automotive dealership websites and adds their vehicle detail pages to the MotoMiner index. The operator documents robots.txt and crawl-delay support, honours bot-specific noindex meta directives, throttles outbound requests against defined traffic thresholds, and publishes the address the crawler currently requests from.",
+      "docs": [
+        "https://motominer.com/Bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "MotoMinerBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MotoMinerBot/1.0; +https://motominer.com/Bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MotoMinerBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "23.101.129.27/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "23.101.129.27/32"
+      ]
+    },
+    {
       "id": "nanointeractive-crawler",
       "name": "Nano Interactive Crawler",
       "operator": {
@@ -12921,6 +13275,36 @@
       ]
     },
     {
+      "id": "noahbot",
+      "name": "NoahBot",
+      "operator": {
+        "name": "Noah Wire",
+        "url": "https://noahwire.com"
+      },
+      "description": "The crawler powering Noah Wire's search and research engine for journalists and editors. It scans publicly accessible news sources — press releases, newsrooms, blogs and announcement feeds — and the operator states it does not scrape, store or republish full articles, producing linked summaries instead. The bot page says requests are signed with HTTP Message Signatures, but publishes no key directory URL, so no verification recipe is recorded.",
+      "docs": [
+        "https://noahwire.com/bot-info"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "NoahBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; NoahBot/1.0; +https://noahwire.com/bot-info)",
+          "NoahBot/1.0 (+https://noahwire.com/bot-info)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "oai-searchbot",
       "name": "OAI-SearchBot",
       "operator": {
@@ -13201,6 +13585,43 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "paqlebot",
+      "name": "Paqlebot",
+      "operator": {
+        "name": "Paqle",
+        "url": "https://www.paqle.dk"
+      },
+      "description": "Paqle's news crawler. It indexes news articles to discover who is mentioned in the media, crawling at most one page per minute per site and tuning its rate to how often a site publishes. Paqle documents that the crawler falls back to a site's Googlebot robots.txt rules when no Paqlebot rules are present, and that its addresses reverse-resolve under paqle.net.",
+      "docs": [
+        "https://www.paqle.dk/about/paqlebot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Paqlebot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Paqlebot/2.0; +http://www.paqle.dk/about/paqlebot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Paqlebot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.paqle.net"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": []
     },
     {
@@ -13708,6 +14129,50 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "qualifiedbot",
+      "name": "QualifiedBot",
+      "operator": {
+        "name": "Qualified",
+        "url": "https://www.qualified.com"
+      },
+      "description": "Qualified's crawler. It crawls customer websites to power Qualified's AI products, such as its AI SDR, during initial setup, on major feature releases and on a schedule the customer's Qualified representative sets. The operator publishes the three source addresses its crawlers request from and asks site owners to allow-list them.",
+      "docs": [
+        "https://www.qualified.com/legal/qualified-crawler-user-agent",
+        "https://www.qualified.com/legal/bot-ip-addresses"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "QualifiedBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.29 QualifiedBot/1.0 +https://www.qualified.com/legal/qualified-crawler-user-agent Safari/537.36",
+          "Mozilla/5.0 (compatible; QualifiedBot/1.0; +https://www.qualified.com/legal/qualified-crawler-user-agent)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "3.92.37.95/32",
+            "34.236.78.183/32",
+            "52.20.17.105/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "3.92.37.95/32",
+        "34.236.78.183/32",
+        "52.20.17.105/32"
+      ]
     },
     {
       "id": "qualys-ssllabs",
@@ -16607,6 +17072,82 @@
       "resolved_cidrs": []
     },
     {
+      "id": "smartologybot",
+      "name": "SmartologyBot",
+      "operator": {
+        "name": "Smartology",
+        "url": "https://smartology.net"
+      },
+      "description": "Smartology's SmartMatch contextual advertising crawler. It reads pages on domains where an advertiser is buying advertising space, so that ads can be matched to page context; the operator states the bot is only active on a domain while suitable ad slots and advertiser budget exist. Smartology publishes its current address list and user-agent match pattern as a JSON document.",
+      "docs": [
+        "https://smartology.net/smartologybot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SmartologyBot/\\d"
+        ],
+        "instances": [
+          "SmartologyBot/1.0 (+ http://www.smartology.net/smartologybot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "18.139.53.199/32",
+            "18.138.221.92/32",
+            "18.194.24.115/32",
+            "3.120.106.90/32",
+            "34.241.116.137/32",
+            "46.51.168.99/32",
+            "52.208.50.46/32",
+            "3.218.75.247/32",
+            "3.217.67.93/32",
+            "23.21.139.94/32",
+            "13.52.188.53/32",
+            "54.153.59.175/32",
+            "18.185.12.238/32",
+            "3.120.239.69/32",
+            "108.128.167.95/32",
+            "54.194.214.164/32",
+            "54.76.42.92/32",
+            "46.51.177.212/32",
+            "52.211.184.32/32",
+            "52.209.125.94/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "108.128.167.95/32",
+        "13.52.188.53/32",
+        "18.138.221.92/32",
+        "18.139.53.199/32",
+        "18.185.12.238/32",
+        "18.194.24.115/32",
+        "23.21.139.94/32",
+        "3.120.106.90/32",
+        "3.120.239.69/32",
+        "3.217.67.93/32",
+        "3.218.75.247/32",
+        "34.241.116.137/32",
+        "46.51.168.99/32",
+        "46.51.177.212/32",
+        "52.208.50.46/32",
+        "52.209.125.94/32",
+        "52.211.184.32/32",
+        "54.153.59.175/32",
+        "54.194.214.164/32",
+        "54.76.42.92/32"
+      ]
+    },
+    {
       "id": "snapchat",
       "name": "Snap URL Preview Service",
       "operator": {
@@ -16665,6 +17206,59 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "spectate",
+      "name": "Spectate uptime monitor",
+      "operator": {
+        "name": "Spectate",
+        "url": "https://spectate.net"
+      },
+      "description": "Spectate's uptime and performance monitoring agent. It requests the URLs a Spectate customer has added to their monitors, from fixed probe locations, to check that the target is reachable. Spectate publishes the addresses those probes request from as a plain-text list grouped by location.",
+      "docs": [
+        "https://docs.spectate.net/faq/uptime-monitor-bot",
+        "https://docs.spectate.net/faq/ip-addresses"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Spectate/\\d"
+        ],
+        "instances": [
+          "Spectate/1.0 (+https://docs.spectate.net/faq/uptime-monitor-bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.spectate.net/ip-addresses.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "128.140.120.107/32",
+        "143.244.136.23/32",
+        "144.126.194.142/32",
+        "147.182.194.57/32",
+        "159.203.94.177/32",
+        "159.223.85.1/32",
+        "167.71.7.11/32",
+        "170.64.137.51/32",
+        "2400:6180:0:d0::e77:3001/128",
+        "2400:6180:100:d0::8e9:6001/128",
+        "2400:6180:10:200::9a:d000/128",
+        "2604:a880:4:1d0::341:4000/128",
+        "2604:a880:800:10::e36:2001/128",
+        "2a01:4f8:c17:b095::1/128",
+        "2a03:b0c0:1:d0::fe5:a001/128",
+        "2a03:b0c0:2:d0::1276:9001/128"
+      ]
     },
     {
       "id": "startmebot",
@@ -16914,6 +17508,37 @@
         "66.42.84.197/32",
         "68.183.39.102/32"
       ]
+    },
+    {
+      "id": "statusnest-backlink-spider",
+      "name": "StatusNest Backlink Spider",
+      "operator": {
+        "name": "StatusNest",
+        "url": "https://statusnest.com"
+      },
+      "description": "StatusNest's link-graph crawler. It visits public web pages to record their outbound and inbound links and maintain a graph of how sites connect to each other, for use by SEO and web analysts. The operator documents a maximum rate of one request per second per domain with automatic backoff, states that it collects only public link data and basic page metadata, and that it re-reads robots.txt before every crawl session. No addresses are published.",
+      "docs": [
+        "https://statusnest.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "StatusNestBacklinkSpider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; StatusNestBacklinkSpider/1.0; +https://statusnest.com/bot)",
+          "Mozilla/5.0 (compatible; StatusNestBacklinkSpider; +https://statusnest.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "StatusNestBacklinkSpider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
     },
     {
       "id": "stepstone-crawler",
@@ -18088,6 +18713,43 @@
         "2600:1f18:7d7a:2700::/56",
         "52.22.66.203/32"
       ]
+    },
+    {
+      "id": "wardbot",
+      "name": "WARDBot",
+      "operator": {
+        "name": "WEBSPARK (W.A.R.D.)",
+        "url": "https://ward.ai"
+      },
+      "description": "The monitoring agent behind W.A.R.D. It requests URLs that users have added to their monitoring list and records the HTTP status code so the user can be notified of downtime, at an average frequency of ten minutes or more per URL. The operator documents that its addresses reverse-resolve under the robot.ward.host suffix.",
+      "docs": [
+        "https://ward.ai/robot"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "WARDBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; WARDBot/1.0; http://ward.ai/robot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "WARDBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.robot.ward.host"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
     },
     {
       "id": "watchforbot",

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 51,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 54,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -1138,6 +1138,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "linksindexerbot",
+      "name": "LinksIndexerBot",
+      "operator": {
+        "name": "Links Indexer (Kalpraj Solutions (OPC) Private Limited)",
+        "url": "https://linksindexer.com"
+      },
+      "description": "The crawler behind the Links Indexer URL indexing service. It parses third-party sites to verify their URLs and status for sitemap campaigns, querying pages for metadata and favicons and taking a homepage screenshot. The operator states it never harvests e-mail addresses or content unrelated to sitemap campaigns, runs at most four parallel requests, and publishes the single address it crawls from.",
+      "docs": [
+        "https://linksindexer.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "LinksIndexerBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; LinksIndexerBot/1.0; +http://linksindexer.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinksIndexerBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "38.242.228.97/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "38.242.228.97/32"
+      ]
+    },
+    {
       "id": "megaindex-crawler",
       "name": "MegaIndex Crawler",
       "operator": {
@@ -1146,7 +1185,7 @@
       },
       "description": "MegaIndex is an SEO and web-analytics platform whose crawler indexes links across the web to power backlink analysis, keyword tracking, and site audits for its subscribers.",
       "docs": [
-        "https://www.megaindex.com/crawler"
+        "https://ru.megaindex.com/crawler"
       ],
       "category": "seo",
       "user_agents": {
@@ -2372,6 +2411,113 @@
         "52.64.209.168/32",
         "52.7.141.1/32"
       ]
+    },
+    {
+      "id": "smartologybot",
+      "name": "SmartologyBot",
+      "operator": {
+        "name": "Smartology",
+        "url": "https://smartology.net"
+      },
+      "description": "Smartology's SmartMatch contextual advertising crawler. It reads pages on domains where an advertiser is buying advertising space, so that ads can be matched to page context; the operator states the bot is only active on a domain while suitable ad slots and advertiser budget exist. Smartology publishes its current address list and user-agent match pattern as a JSON document.",
+      "docs": [
+        "https://smartology.net/smartologybot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SmartologyBot/\\d"
+        ],
+        "instances": [
+          "SmartologyBot/1.0 (+ http://www.smartology.net/smartologybot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "18.139.53.199/32",
+            "18.138.221.92/32",
+            "18.194.24.115/32",
+            "3.120.106.90/32",
+            "34.241.116.137/32",
+            "46.51.168.99/32",
+            "52.208.50.46/32",
+            "3.218.75.247/32",
+            "3.217.67.93/32",
+            "23.21.139.94/32",
+            "13.52.188.53/32",
+            "54.153.59.175/32",
+            "18.185.12.238/32",
+            "3.120.239.69/32",
+            "108.128.167.95/32",
+            "54.194.214.164/32",
+            "54.76.42.92/32",
+            "46.51.177.212/32",
+            "52.211.184.32/32",
+            "52.209.125.94/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "108.128.167.95/32",
+        "13.52.188.53/32",
+        "18.138.221.92/32",
+        "18.139.53.199/32",
+        "18.185.12.238/32",
+        "18.194.24.115/32",
+        "23.21.139.94/32",
+        "3.120.106.90/32",
+        "3.120.239.69/32",
+        "3.217.67.93/32",
+        "3.218.75.247/32",
+        "34.241.116.137/32",
+        "46.51.168.99/32",
+        "46.51.177.212/32",
+        "52.208.50.46/32",
+        "52.209.125.94/32",
+        "52.211.184.32/32",
+        "54.153.59.175/32",
+        "54.194.214.164/32",
+        "54.76.42.92/32"
+      ]
+    },
+    {
+      "id": "statusnest-backlink-spider",
+      "name": "StatusNest Backlink Spider",
+      "operator": {
+        "name": "StatusNest",
+        "url": "https://statusnest.com"
+      },
+      "description": "StatusNest's link-graph crawler. It visits public web pages to record their outbound and inbound links and maintain a graph of how sites connect to each other, for use by SEO and web analysts. The operator documents a maximum rate of one request per second per domain with automatic backoff, states that it collects only public link data and basic page metadata, and that it re-reads robots.txt before every crawl session. No addresses are published.",
+      "docs": [
+        "https://statusnest.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "StatusNestBacklinkSpider"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; StatusNestBacklinkSpider/1.0; +https://statusnest.com/bot)",
+          "Mozilla/5.0 (compatible; StatusNestBacklinkSpider; +https://statusnest.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "StatusNestBacklinkSpider"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
     },
     {
       "id": "t3versions",

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 30,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 32,
   "bots": [
     {
       "id": "ai2bot",
@@ -1196,6 +1196,36 @@
       ]
     },
     {
+      "id": "noahbot",
+      "name": "NoahBot",
+      "operator": {
+        "name": "Noah Wire",
+        "url": "https://noahwire.com"
+      },
+      "description": "The crawler powering Noah Wire's search and research engine for journalists and editors. It scans publicly accessible news sources — press releases, newsrooms, blogs and announcement feeds — and the operator states it does not scrape, store or republish full articles, producing linked summaries instead. The bot page says requests are signed with HTTP Message Signatures, but publishes no key directory URL, so no verification recipe is recorded.",
+      "docs": [
+        "https://noahwire.com/bot-info"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "NoahBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; NoahBot/1.0; +https://noahwire.com/bot-info)",
+          "NoahBot/1.0 (+https://noahwire.com/bot-info)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "oai-searchbot",
       "name": "OAI-SearchBot",
       "operator": {
@@ -1339,6 +1369,50 @@
         "3.222.232.239/32",
         "3.224.62.45/32",
         "3.231.139.107/32"
+      ]
+    },
+    {
+      "id": "qualifiedbot",
+      "name": "QualifiedBot",
+      "operator": {
+        "name": "Qualified",
+        "url": "https://www.qualified.com"
+      },
+      "description": "Qualified's crawler. It crawls customer websites to power Qualified's AI products, such as its AI SDR, during initial setup, on major feature releases and on a schedule the customer's Qualified representative sets. The operator publishes the three source addresses its crawlers request from and asks site owners to allow-list them.",
+      "docs": [
+        "https://www.qualified.com/legal/qualified-crawler-user-agent",
+        "https://www.qualified.com/legal/bot-ip-addresses"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "QualifiedBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.29 QualifiedBot/1.0 +https://www.qualified.com/legal/qualified-crawler-user-agent Safari/537.36",
+          "Mozilla/5.0 (compatible; QualifiedBot/1.0; +https://www.qualified.com/legal/qualified-crawler-user-agent)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "3.92.37.95/32",
+            "34.236.78.183/32",
+            "52.20.17.105/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "3.92.37.95/32",
+        "34.236.78.183/32",
+        "52.20.17.105/32"
       ]
     },
     {

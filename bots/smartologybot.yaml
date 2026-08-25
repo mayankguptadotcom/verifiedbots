@@ -1,0 +1,42 @@
+id: smartologybot
+name: SmartologyBot
+operator: { name: Smartology, url: "https://smartology.net" }
+description: >-
+  Smartology's SmartMatch contextual advertising crawler. It reads pages on
+  domains where an advertiser is buying advertising space, so that ads can be
+  matched to page context; the operator states the bot is only active on a
+  domain while suitable ad slots and advertiser budget exist. Smartology
+  publishes its current address list and user-agent match pattern as a JSON
+  document.
+docs:
+  - "https://smartology.net/smartologybot/"
+category: seo
+user_agents:
+  patterns:
+    - 'SmartologyBot/\d'
+  instances:
+    - 'SmartologyBot/1.0 (+ http://www.smartology.net/smartologybot)'
+behavior: { respects_robots_txt: true }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "18.139.53.199/32"
+      - "18.138.221.92/32"
+      - "18.194.24.115/32"
+      - "3.120.106.90/32"
+      - "34.241.116.137/32"
+      - "46.51.168.99/32"
+      - "52.208.50.46/32"
+      - "3.218.75.247/32"
+      - "3.217.67.93/32"
+      - "23.21.139.94/32"
+      - "13.52.188.53/32"
+      - "54.153.59.175/32"
+      - "18.185.12.238/32"
+      - "3.120.239.69/32"
+      - "108.128.167.95/32"
+      - "54.194.214.164/32"
+      - "54.76.42.92/32"
+      - "46.51.177.212/32"
+      - "52.211.184.32/32"
+      - "52.209.125.94/32"

@@ -1,0 +1,45 @@
+{
+  "id": "findfilesbot",
+  "name": "FindFilesBot",
+  "operator": {
+    "name": "FindFiles.net",
+    "url": "https://findfiles.net"
+  },
+  "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address.",
+  "docs": [
+    "https://findfiles.net/en/bot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "FindFilesBot/\\d",
+      "FindFiles\\.net-[A-Za-z]+/\\d"
+    ],
+    "instances": [
+      "FindFilesBot/1.0 (+https://findfiles.net/en/bot)",
+      "FindFiles.net-LinkChecker/1.1 https://findfiles.net/bot",
+      "FindFiles.net-FaviconFetcher/1.0 (+https://findfiles.net/bot)",
+      "FindFiles.net-VirusScan/1.0 (+https://findfiles.net/bot)",
+      "FindFiles.net-ImageNSFWClassifier/1.0 (+https://findfiles.net/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "65.21.31.180/32",
+        "2a01:4f9:3080:2b61::2/128"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": [
+    "2a01:4f9:3080:2b61::2/128",
+    "65.21.31.180/32"
+  ]
+}

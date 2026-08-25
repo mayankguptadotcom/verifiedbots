@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 8,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 10,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -94,6 +94,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "classla-web",
+      "name": "CLASSLA-web",
+      "operator": {
+        "name": "CLARIN.SI (CLASSLA Knowledge Centre)",
+        "url": "https://www.clarin.si"
+      },
+      "description": "The CLASSLA-web crawler collects web corpora for South Slavic and other languages under the CLARIN Knowledge Centre for South Slavic languages, continuing the CEF-funded MaCoCu project's crawling infrastructure. It runs the SpiderLing crawler developed at Masaryk University. The operator documents that it adheres to the robots exclusion standard and reads robots.txt on the first access of each crawl run.",
+      "docs": [
+        "https://www.clarin.si/info/classla-web-crawler/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "CLASSLA-web"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; CLASSLA-web; +https://www.clarin.si/info/classla-web-crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "CLASSLA-web"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "cloudflare-alwaysonline",
       "name": "Cloudflare Always Online",
       "operator": {
@@ -123,6 +153,47 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-30T16:13:28.285Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "cotoyogi",
+      "name": "Cotoyogi",
+      "operator": {
+        "name": "ROIS-DS Data Lake Research and Development Center",
+        "url": "https://ds.rois.ac.jp"
+      },
+      "description": "A research web crawler run by the Data Lake Research and Development Center of the Joint Support-Center for Data Science Research (ROIS-DS), Research Organization of Information and Systems, Japan. It collects Japanese-language web data for research use. The operator page documents RFC 9309 robots.txt handling with Crawl-delay support, robots meta tag support, and the address range the crawler requests from.",
+      "docs": [
+        "https://ds.rois.ac.jp/center8/crawler/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "Cotoyogi/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Cotoyogi/4.0; +https://ds.rois.ac.jp/center8/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Cotoyogi"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "157.1.136.4/30",
+            "157.1.136.8/30"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "157.1.136.4/30",
+        "157.1.136.8/30"
+      ]
     },
     {
       "id": "internet-archive",

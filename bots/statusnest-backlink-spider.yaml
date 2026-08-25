@@ -1,0 +1,21 @@
+id: statusnest-backlink-spider
+name: StatusNest Backlink Spider
+operator: { name: StatusNest, url: "https://statusnest.com" }
+description: >-
+  StatusNest's link-graph crawler. It visits public web pages to record their
+  outbound and inbound links and maintain a graph of how sites connect to each
+  other, for use by SEO and web analysts. The operator documents a maximum rate
+  of one request per second per domain with automatic backoff, states that it
+  collects only public link data and basic page metadata, and that it re-reads
+  robots.txt before every crawl session. No addresses are published.
+docs:
+  - "https://statusnest.com/bot"
+category: seo
+user_agents:
+  patterns:
+    - 'StatusNestBacklinkSpider'
+  instances:
+    - 'Mozilla/5.0 (compatible; StatusNestBacklinkSpider/1.0; +https://statusnest.com/bot)'
+    - 'Mozilla/5.0 (compatible; StatusNestBacklinkSpider; +https://statusnest.com/)'
+behavior: { respects_robots_txt: true, robots_token: StatusNestBacklinkSpider }
+verification: []

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-25T04:31:48.313Z",
-  "count": 69,
+  "generated_at": "2026-08-25T13:22:40.172Z",
+  "count": 73,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -293,6 +293,44 @@
         "17.246.15.0/24",
         "17.246.19.0/24",
         "17.246.23.0/24"
+      ]
+    },
+    {
+      "id": "artemis-web-reader",
+      "name": "Artemis Web Reader",
+      "operator": {
+        "name": "Artemis (jamesg.blog)",
+        "url": "https://artemis.jamesg.blog"
+      },
+      "description": "The feed poller behind Artemis, a hosted web reader that follows websites and blogs on behalf of its subscribers. It updates once per day and uses HEAD and conditional GET requests with If-Modified-Since and If-None-Match to reduce bandwidth. Artemis publishes the addresses it polls feeds from as a plain-text list.",
+      "docs": [
+        "https://artemis.jamesg.blog/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "artemis web reader/\\d"
+        ],
+        "instances": [
+          "artemis web reader/1.0 - https://artemis.jamesg.blog/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://artemis.jamesg.blog/ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "2a01:4f8:c0c:969c::/64",
+        "94.130.110.118/32"
       ]
     },
     {
@@ -7939,6 +7977,50 @@
       ]
     },
     {
+      "id": "iboubot",
+      "name": "IbouBot",
+      "operator": {
+        "name": "Babbar (Ibou)",
+        "url": "https://ibou.io"
+      },
+      "description": "The crawler behind Ibou, a French conversational search engine. It discovers publicly accessible pages and indexes them so Ibou can cite and link back to the sites it answers from. The operator documents a 5-second politeness delay per host, publishes its address ranges as JSON, and documents forward-confirmed reverse DNS as the reliable way to tell a genuine request from a spoofed user agent.",
+      "docs": [
+        "https://ibou.io/iboubot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "IbouBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; IbouBot/1.0; +bot@ibou.io; +https://ibou.io/iboubot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "IbouBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://ibou.io/iboubot-ip-ranges.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ibou.io"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "217.113.196.0/24"
+      ]
+    },
+    {
       "id": "iframely",
       "name": "Iframely",
       "operator": {
@@ -8250,6 +8332,50 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "magnetmebot",
+      "name": "MagnetmeBot",
+      "operator": {
+        "name": "Magnet.me",
+        "url": "https://magnet.me"
+      },
+      "description": "Magnet.me's web crawler. It discovers and refreshes career-related pages — vacancies, events and employer information — for the Magnet.me careers platform. The operator documents that it may render JavaScript, follows the canonical version of a page, does not submit forms and adjusts its crawl speed automatically, and it publishes the addresses it crawls from as both a JSON and a plain-text list.",
+      "docs": [
+        "https://magnet.me/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Magnet\\.me-web/\\d"
+        ],
+        "instances": [
+          "Magnet.me-web/1.0 (+https://magnet.me/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MagnetmeBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://magnet.me/bot-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "136.144.168.12/32",
+        "149.210.159.74/32",
+        "188.241.148.85/32",
+        "80.69.93.43/32",
+        "85.10.151.142/32",
+        "87.253.157.248/32",
+        "93.119.14.105/32"
+      ]
     },
     {
       "id": "marginalia",
@@ -10962,6 +11088,59 @@
         "95.168.184.26/32",
         "95.179.200.188/32",
         "95.85.76.215/32"
+      ]
+    },
+    {
+      "id": "spectate",
+      "name": "Spectate uptime monitor",
+      "operator": {
+        "name": "Spectate",
+        "url": "https://spectate.net"
+      },
+      "description": "Spectate's uptime and performance monitoring agent. It requests the URLs a Spectate customer has added to their monitors, from fixed probe locations, to check that the target is reachable. Spectate publishes the addresses those probes request from as a plain-text list grouped by location.",
+      "docs": [
+        "https://docs.spectate.net/faq/uptime-monitor-bot",
+        "https://docs.spectate.net/faq/ip-addresses"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Spectate/\\d"
+        ],
+        "instances": [
+          "Spectate/1.0 (+https://docs.spectate.net/faq/uptime-monitor-bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.spectate.net/ip-addresses.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "128.140.120.107/32",
+        "143.244.136.23/32",
+        "144.126.194.142/32",
+        "147.182.194.57/32",
+        "159.203.94.177/32",
+        "159.223.85.1/32",
+        "167.71.7.11/32",
+        "170.64.137.51/32",
+        "2400:6180:0:d0::e77:3001/128",
+        "2400:6180:100:d0::8e9:6001/128",
+        "2400:6180:10:200::9a:d000/128",
+        "2604:a880:4:1d0::341:4000/128",
+        "2604:a880:800:10::e36:2001/128",
+        "2a01:4f8:c17:b095::1/128",
+        "2a03:b0c0:1:d0::fe5:a001/128",
+        "2a03:b0c0:2:d0::1276:9001/128"
       ]
     },
     {

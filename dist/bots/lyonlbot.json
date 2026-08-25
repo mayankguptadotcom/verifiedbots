@@ -1,0 +1,34 @@
+{
+  "id": "lyonlbot",
+  "name": "LyonlBot",
+  "operator": {
+    "name": "Lyonl Search",
+    "url": "https://lyonl.com"
+  },
+  "description": "The crawler used by Lyonl Search to discover and refresh public web documents for its index, with separate identities for web, image and news crawling so site owners can control each class independently. The operator documents robots.txt and crawl-delay support, conditional fetches with ETag and Last-Modified, and that the crawler does not submit forms or bypass authentication. It states that crawler address ranges are not currently published, so no verification recipe is recorded.",
+  "docs": [
+    "https://lyonl.com/bot.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "LyonlBot/\\d",
+      "LyonlBot-Image/\\d",
+      "LyonlBot-News/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; LyonlBot/1.0; +https://lyonl.com/bot.html)",
+      "Mozilla/5.0 (compatible; LyonlBot-Image/1.0; +https://lyonl.com/bot.html)",
+      "Mozilla/5.0 (compatible; LyonlBot-News/1.0; +https://lyonl.com/bot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "lyonlbot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": []
+}

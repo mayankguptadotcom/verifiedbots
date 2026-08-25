@@ -126,6 +126,13 @@
     ]
   },
   {
+    "id": "artemis-web-reader",
+    "category": "feed-fetcher",
+    "patterns": [
+      "artemis web reader/\\d"
+    ]
+  },
+  {
     "id": "audigent-adbot",
     "category": "seo",
     "patterns": [
@@ -333,6 +340,13 @@
     ]
   },
   {
+    "id": "classla-web",
+    "category": "archiver",
+    "patterns": [
+      "CLASSLA-web"
+    ]
+  },
+  {
     "id": "claude-searchbot",
     "category": "ai-crawler",
     "patterns": [
@@ -457,6 +471,13 @@
     "category": "security",
     "patterns": [
       "Expanse, a Palo Alto Networks company"
+    ]
+  },
+  {
+    "id": "cotoyogi",
+    "category": "archiver",
+    "patterns": [
+      "Cotoyogi/\\d"
     ]
   },
   {
@@ -634,6 +655,14 @@
     "category": "feed-fetcher",
     "patterns": [
       "Feedspot"
+    ]
+  },
+  {
+    "id": "findfilesbot",
+    "category": "search-engine",
+    "patterns": [
+      "FindFilesBot/\\d",
+      "FindFiles\\.net-[A-Za-z]+/\\d"
     ]
   },
   {
@@ -861,6 +890,13 @@
     ]
   },
   {
+    "id": "iboubot",
+    "category": "search-engine",
+    "patterns": [
+      "IbouBot/\\d"
+    ]
+  },
+  {
     "id": "iframely",
     "category": "social-preview",
     "patterns": [
@@ -1002,6 +1038,13 @@
     ]
   },
   {
+    "id": "linksindexerbot",
+    "category": "seo",
+    "patterns": [
+      "LinksIndexerBot/\\d"
+    ]
+  },
+  {
     "id": "linkupbot",
     "category": "ai-crawler",
     "patterns": [
@@ -1023,10 +1066,26 @@
     ]
   },
   {
+    "id": "lyonlbot",
+    "category": "search-engine",
+    "patterns": [
+      "LyonlBot/\\d",
+      "LyonlBot-Image/\\d",
+      "LyonlBot-News/\\d"
+    ]
+  },
+  {
     "id": "macocu",
     "category": "ai-crawler",
     "patterns": [
       "MaCoCu"
+    ]
+  },
+  {
+    "id": "magnetmebot",
+    "category": "search-engine",
+    "patterns": [
+      "Magnet\\.me-web/\\d"
     ]
   },
   {
@@ -1156,6 +1215,13 @@
     ]
   },
   {
+    "id": "motominerbot",
+    "category": "search-engine",
+    "patterns": [
+      "MotoMinerBot/\\d"
+    ]
+  },
+  {
     "id": "nanointeractive-crawler",
     "category": "seo",
     "patterns": [
@@ -1195,6 +1261,13 @@
     "category": "ai-crawler",
     "patterns": [
       "ICC-Crawler"
+    ]
+  },
+  {
+    "id": "noahbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "NoahBot/\\d"
     ]
   },
   {
@@ -1245,6 +1318,13 @@
     "patterns": [
       "panscient\\.com",
       "pantest"
+    ]
+  },
+  {
+    "id": "paqlebot",
+    "category": "search-engine",
+    "patterns": [
+      "Paqlebot/\\d"
     ]
   },
   {
@@ -1308,6 +1388,13 @@
     "category": "seo",
     "patterns": [
       "proximic"
+    ]
+  },
+  {
+    "id": "qualifiedbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "QualifiedBot/\\d"
     ]
   },
   {
@@ -1511,6 +1598,13 @@
     ]
   },
   {
+    "id": "smartologybot",
+    "category": "seo",
+    "patterns": [
+      "SmartologyBot/\\d"
+    ]
+  },
+  {
     "id": "snapchat",
     "category": "social-preview",
     "patterns": [
@@ -1525,6 +1619,13 @@
     ]
   },
   {
+    "id": "spectate",
+    "category": "monitoring",
+    "patterns": [
+      "Spectate/\\d"
+    ]
+  },
+  {
     "id": "startmebot",
     "category": "social-preview",
     "patterns": [
@@ -1536,6 +1637,13 @@
     "category": "monitoring",
     "patterns": [
       "StatusCake"
+    ]
+  },
+  {
+    "id": "statusnest-backlink-spider",
+    "category": "seo",
+    "patterns": [
+      "StatusNestBacklinkSpider"
     ]
   },
   {
@@ -1713,6 +1821,13 @@
     "category": "security",
     "patterns": [
       "W3C_Validator/[\\d.]+"
+    ]
+  },
+  {
+    "id": "wardbot",
+    "category": "monitoring",
+    "patterns": [
+      "WARDBot/\\d"
     ]
   },
   {

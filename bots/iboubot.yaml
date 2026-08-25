@@ -1,0 +1,25 @@
+id: iboubot
+name: IbouBot
+operator: { name: Babbar (Ibou), url: "https://ibou.io" }
+description: >-
+  The crawler behind Ibou, a French conversational search engine. It discovers
+  publicly accessible pages and indexes them so Ibou can cite and link back to
+  the sites it answers from. The operator documents a 5-second politeness delay
+  per host, publishes its address ranges as JSON, and documents
+  forward-confirmed reverse DNS as the reliable way to tell a genuine request
+  from a spoofed user agent.
+docs:
+  - "https://ibou.io/iboubot.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'IbouBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; IbouBot/1.0; +bot@ibou.io; +https://ibou.io/iboubot.html)'
+behavior: { respects_robots_txt: true, robots_token: IbouBot }
+verification:
+  - type: cidr_feed
+    url: "https://ibou.io/iboubot-ip-ranges.json"
+    format: prefixes
+  - type: rdns
+    masks: ["*.ibou.io"]

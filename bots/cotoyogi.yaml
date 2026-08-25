@@ -1,0 +1,24 @@
+id: cotoyogi
+name: Cotoyogi
+operator: { name: ROIS-DS Data Lake Research and Development Center, url: "https://ds.rois.ac.jp" }
+description: >-
+  A research web crawler run by the Data Lake Research and Development Center
+  of the Joint Support-Center for Data Science Research (ROIS-DS), Research
+  Organization of Information and Systems, Japan. It collects Japanese-language
+  web data for research use. The operator page documents RFC 9309 robots.txt
+  handling with Crawl-delay support, robots meta tag support, and the address
+  range the crawler requests from.
+docs:
+  - "https://ds.rois.ac.jp/center8/crawler/"
+category: archiver
+user_agents:
+  patterns:
+    - 'Cotoyogi/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; Cotoyogi/4.0; +https://ds.rois.ac.jp/center8/crawler/)'
+behavior: { respects_robots_txt: true, robots_token: Cotoyogi }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "157.1.136.4/30"
+      - "157.1.136.8/30"

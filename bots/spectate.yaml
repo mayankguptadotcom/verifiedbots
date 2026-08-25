@@ -1,0 +1,22 @@
+id: spectate
+name: Spectate uptime monitor
+operator: { name: Spectate, url: "https://spectate.net" }
+description: >-
+  Spectate's uptime and performance monitoring agent. It requests the URLs a
+  Spectate customer has added to their monitors, from fixed probe locations, to
+  check that the target is reachable. Spectate publishes the addresses those
+  probes request from as a plain-text list grouped by location.
+docs:
+  - "https://docs.spectate.net/faq/uptime-monitor-bot"
+  - "https://docs.spectate.net/faq/ip-addresses"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Spectate/\d'
+  instances:
+    - 'Spectate/1.0 (+https://docs.spectate.net/faq/uptime-monitor-bot)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://docs.spectate.net/ip-addresses.txt"
+    format: text_lines

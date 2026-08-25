@@ -1,0 +1,37 @@
+{
+  "id": "wardbot",
+  "name": "WARDBot",
+  "operator": {
+    "name": "WEBSPARK (W.A.R.D.)",
+    "url": "https://ward.ai"
+  },
+  "description": "The monitoring agent behind W.A.R.D. It requests URLs that users have added to their monitoring list and records the HTTP status code so the user can be notified of downtime, at an average frequency of ten minutes or more per URL. The operator documents that its addresses reverse-resolve under the robot.ward.host suffix.",
+  "docs": [
+    "https://ward.ai/robot"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "WARDBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; WARDBot/1.0; http://ward.ai/robot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "WARDBot"
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.robot.ward.host"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-25T13:21:31.852Z",
+  "resolved_cidrs": []
+}
