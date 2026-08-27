@@ -1,0 +1,19 @@
+id: mcontextual-bot
+name: McontextualBot
+operator: { name: MContextual, url: "https://mcontextual.net" }
+description: >-
+  MContextual's crawler for contextual advertising. The operator documents that
+  it reads page content so advertisers can build cookieless contextual audiences
+  from a site's subject matter, that it can be blocked with standard robots.txt
+  directives, and that its requests originate from AWS and GCP addresses rather
+  than a published range.
+docs:
+  - "https://mcontextual.net/mcontextual-bot"
+category: seo
+user_agents:
+  patterns:
+    - 'McontextualBot/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; McontextualBot/0.1; +http://mcontextual.net/mcontextual-bot)'
+behavior: { respects_robots_txt: true }
+verification: []

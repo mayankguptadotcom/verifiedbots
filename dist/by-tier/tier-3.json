@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-27T06:30:54.330Z",
-  "count": 123,
+  "generated_at": "2026-08-27T13:23:13.415Z",
+  "count": 132,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -993,6 +993,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "deskyobot",
+      "name": "Deskyobot",
+      "operator": {
+        "name": "Deskyo",
+        "url": "https://www.deskyo.com"
+      },
+      "description": "Link-preview fetcher for Deskyo, a service that lets its members save web pages. The operator's bot page documents that Deskyo must display information tied to a saved page — its title, description and favicon — which is what this fetcher retrieves, and gives a legal contact for questions about links saved by a member. The page states no robots.txt policy and publishes no addresses.",
+      "docs": [
+        "https://www.deskyo.com/bot"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Deskyobot/[\\d.]+"
+        ],
+        "instances": [
+          "Deskyobot/1.0 (+https://www.deskyo.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "diffbot",
       "name": "Diffbot",
       "operator": {
@@ -1268,6 +1297,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "feeder-co",
+      "name": "Feeder Crawler",
+      "operator": {
+        "name": "Feeder",
+        "url": "https://feeder.co"
+      },
+      "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification.",
+      "docs": [
+        "https://feeder.co/crawler"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "feeder\\.co(?:/crawler)?[;)]"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36",
+          "Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "feedly",
       "name": "Feedly Fetcher",
       "operator": {
@@ -1358,6 +1418,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "fleebsbot",
+      "name": "FleebsBot",
+      "operator": {
+        "name": "iontic GmbH (fleebs.com)",
+        "url": "https://fleebs.com"
+      },
+      "description": "Crawler for fleebs.com, a German real-time search engine. The operator's bot page documents two identities: one that searches for new information and one that analyses the pages it finds. It documents robots.txt blocking with the FleebsBot token and notes that pages indexed before a block may take time to drop out of the index.",
+      "docs": [
+        "https://fleebs.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "FleebsBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FleebsBot/1~w; +https://fleebs.com/bot)",
+          "Mozilla/5.0 (compatible; FleebsBot/1~c; +https://fleebs.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "FleebsBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "flipboard-proxy",
       "name": "Flipboard Proxy",
       "operator": {
@@ -1401,10 +1492,11 @@
       "category": "search-engine",
       "user_agents": {
         "patterns": [
-          "FreespokeCrawler/\\d"
+          "Freespoke(?:Crawler)?/[\\d.]+"
         ],
         "instances": [
-          "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)"
+          "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)",
+          "Mozilla/5.0 (compatible; Freespoke/2.0; +https://crawler.freespoke.com)"
         ]
       },
       "behavior": {
@@ -1632,6 +1724,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T13:18:54.422Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "innguma-fetcher",
+      "name": "Innguma Fetcher",
+      "operator": {
+        "name": "Innguma",
+        "url": "https://www.innguma.com"
+      },
+      "description": "Innguma's feed fetcher. It retrieves RSS and Atom feeds that users have added to Innguma or to another application built on the Innguma cloud, and refreshes them roughly once an hour. The operator states that because the requests follow explicit action by human users rather than automated crawling, the fetcher does not follow robots.txt, and documents serving an error status to the Innguma/1.0 user agent as the opt-out.",
+      "docs": [
+        "https://factory.innguma.com/fetcher/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Innguma/[\\d.]+"
+        ],
+        "instances": [
+          "Innguma/1.0 (+https://factory.innguma.com/fetcher/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {
@@ -2056,6 +2177,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "mcontextual-bot",
+      "name": "McontextualBot",
+      "operator": {
+        "name": "MContextual",
+        "url": "https://mcontextual.net"
+      },
+      "description": "MContextual's crawler for contextual advertising. The operator documents that it reads page content so advertisers can build cookieless contextual audiences from a site's subject matter, that it can be blocked with standard robots.txt directives, and that its requests originate from AWS and GCP addresses rather than a published range.",
+      "docs": [
+        "https://mcontextual.net/mcontextual-bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "McontextualBot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; McontextualBot/0.1; +http://mcontextual.net/mcontextual-bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "mediatoolkit-crawler",
       "name": "Mediatoolkitbot",
       "operator": {
@@ -2232,6 +2382,67 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "mozilla-tabstack",
+      "name": "Mozilla-Tabstack",
+      "operator": {
+        "name": "Mozilla (Tabstack)",
+        "url": "https://tabstack.ai"
+      },
+      "description": "Fetcher for Tabstack, Mozilla's developer-facing platform for programmatic, AI-driven interaction with web content. Every request carries a dedicated user agent, and the operator documents that Tabstack respects robots.txt rules addressed to it, stops immediately on a disallowed path, fails fast rather than retrying, and caches robots.txt results to reduce follow-up requests.",
+      "docs": [
+        "https://docs.tabstack.ai/trust/controlling-access"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Mozilla-Tabstack/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla-Tabstack/1.0 (+https://tabstack.ai)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Mozilla-Tabstack"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "nestdaddybot",
+      "name": "NestDaddyBot",
+      "operator": {
+        "name": "NestDaddy Technologies",
+        "url": "https://nestdaddy.com"
+      },
+      "description": "Web crawler behind the NestDaddy search engine. The operator's webmaster page documents that it extracts page title, meta description, headings, language and link structure to build the index, filters adult and abusive content out of results, and fully respects robots.txt including the Crawl-delay directive. It states that the crawler runs from a distributed network whose current ranges are available only on request.",
+      "docs": [
+        "https://nestdaddy.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "NestDaddy[Bb]ot/[\\d.]+"
+        ],
+        "instances": [
+          "NestDaddyBot/2.0 (+https://nestdaddy.com/bot)",
+          "NestDaddybot/1.0.0 (+https://nestdaddy.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "NestDaddyBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {
@@ -2713,6 +2924,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scour-rss-bot",
+      "name": "ScourRSSBot",
+      "operator": {
+        "name": "Scour (Evan Schwartz)",
+        "url": "https://scour.ing"
+      },
+      "description": "Feed fetcher for Scour, a personalized content feed service in which users subscribe to RSS, Atom and JSON feeds and topics of interest. It polls each subscribed feed once every 900 seconds regardless of subscriber count, uses conditional requests, rate-limits itself to two requests per second per registrable domain, and backs off on error responses.",
+      "docs": [
+        "https://scour.ing/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "ScourRSSBot/[\\d.]+"
+        ],
+        "instances": [
+          "ScourRSSBot/1.0 (+https://scour.ing/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {
@@ -3437,6 +3677,38 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-24T13:19:52.933Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "urlsuma",
+      "name": "urlsuma",
+      "operator": {
+        "name": "urlsuma.de (Gerhard Stöbe)",
+        "url": "https://urlsuma.de"
+      },
+      "description": "Crawler for urlsuma.de, a German general-purpose web search engine under construction. The operator documents that it re-reads robots.txt without caching before every single fetch, makes about two requests per visit (robots.txt plus one page), executes no JavaScript, and treats a 4xx response as a permanent block. Current crawler addresses are shared on request only.",
+      "docs": [
+        "https://urlsuma.de/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "urlsuma/[\\d.]+",
+          "UrlSuMa\\.de crawler"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; urlsuma/2.0; +https://urlsuma.de/bot.html)",
+          "Mozilla/5.0 (compatible; UrlSuMa.de crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "urlsuma"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {

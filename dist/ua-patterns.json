@@ -524,6 +524,13 @@
     ]
   },
   {
+    "id": "deskyobot",
+    "category": "social-preview",
+    "patterns": [
+      "Deskyobot/[\\d.]+"
+    ]
+  },
+  {
     "id": "detectify",
     "category": "security",
     "patterns": [
@@ -644,6 +651,13 @@
     ]
   },
   {
+    "id": "feeder-co",
+    "category": "feed-fetcher",
+    "patterns": [
+      "feeder\\.co(?:/crawler)?[;)]"
+    ]
+  },
+  {
     "id": "feedly",
     "category": "feed-fetcher",
     "patterns": [
@@ -673,6 +687,13 @@
     ]
   },
   {
+    "id": "fleebsbot",
+    "category": "search-engine",
+    "patterns": [
+      "FleebsBot/\\d"
+    ]
+  },
+  {
     "id": "flipboard-proxy",
     "category": "feed-fetcher",
     "patterns": [
@@ -683,7 +704,7 @@
     "id": "freespoke-crawler",
     "category": "search-engine",
     "patterns": [
-      "FreespokeCrawler/\\d"
+      "Freespoke(?:Crawler)?/[\\d.]+"
     ]
   },
   {
@@ -911,6 +932,13 @@
     ]
   },
   {
+    "id": "innguma-fetcher",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Innguma/[\\d.]+"
+    ]
+  },
+  {
     "id": "inoreader",
     "category": "feed-fetcher",
     "patterns": [
@@ -1024,6 +1052,13 @@
     ]
   },
   {
+    "id": "linkcheckerbot",
+    "category": "seo",
+    "patterns": [
+      "LinkCheckerBot/[\\d.]+"
+    ]
+  },
+  {
     "id": "linkdex-crawler",
     "category": "seo",
     "patterns": [
@@ -1100,6 +1135,20 @@
     "category": "social-preview",
     "patterns": [
       "http\\.rb/[\\d.]+ \\(Mastodon/[\\d.]+;"
+    ]
+  },
+  {
+    "id": "mcontextual-bot",
+    "category": "seo",
+    "patterns": [
+      "McontextualBot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "mediamonitoringbot",
+    "category": "monitoring",
+    "patterns": [
+      "MediaMonitoringBot/[\\d.]+"
     ]
   },
   {
@@ -1222,6 +1271,13 @@
     ]
   },
   {
+    "id": "mozilla-tabstack",
+    "category": "ai-assistant",
+    "patterns": [
+      "Mozilla-Tabstack/[\\d.]+"
+    ]
+  },
+  {
     "id": "nanointeractive-crawler",
     "category": "seo",
     "patterns": [
@@ -1233,6 +1289,13 @@
     "category": "search-engine",
     "patterns": [
       "Yeti/\\d"
+    ]
+  },
+  {
+    "id": "nestdaddybot",
+    "category": "search-engine",
+    "patterns": [
+      "NestDaddy[Bb]ot/[\\d.]+"
     ]
   },
   {
@@ -1275,6 +1338,13 @@
     "category": "ai-crawler",
     "patterns": [
       "OAI-SearchBot/\\d"
+    ]
+  },
+  {
+    "id": "observepoint",
+    "category": "monitoring",
+    "patterns": [
+      "ObservePoint"
     ]
   },
   {
@@ -1459,6 +1529,13 @@
     "category": "seo",
     "patterns": [
       "Scope3/\\d"
+    ]
+  },
+  {
+    "id": "scour-rss-bot",
+    "category": "feed-fetcher",
+    "patterns": [
+      "ScourRSSBot/[\\d.]+"
     ]
   },
   {
@@ -1803,6 +1880,14 @@
     ]
   },
   {
+    "id": "urlsuma",
+    "category": "search-engine",
+    "patterns": [
+      "urlsuma/[\\d.]+",
+      "UrlSuMa\\.de crawler"
+    ]
+  },
+  {
     "id": "velen",
     "category": "seo",
     "patterns": [
@@ -1877,6 +1962,13 @@
     "category": "search-engine",
     "patterns": [
       "Y!J-"
+    ]
+  },
+  {
+    "id": "yahoo-mail-proxy",
+    "category": "social-preview",
+    "patterns": [
+      "YahooMailProxy"
     ]
   },
   {

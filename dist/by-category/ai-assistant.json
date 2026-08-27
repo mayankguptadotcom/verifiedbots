@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-27T06:30:54.330Z",
-  "count": 11,
+  "generated_at": "2026-08-27T13:23:13.415Z",
+  "count": 12,
   "bots": [
     {
       "id": "amzn-user",
@@ -2141,6 +2141,36 @@
         "20.240.194.83/32",
         "51.12.243.114/32"
       ]
+    },
+    {
+      "id": "mozilla-tabstack",
+      "name": "Mozilla-Tabstack",
+      "operator": {
+        "name": "Mozilla (Tabstack)",
+        "url": "https://tabstack.ai"
+      },
+      "description": "Fetcher for Tabstack, Mozilla's developer-facing platform for programmatic, AI-driven interaction with web content. Every request carries a dedicated user agent, and the operator documents that Tabstack respects robots.txt rules addressed to it, stops immediately on a disallowed path, fails fast rather than retrying, and caches robots.txt results to reduce follow-up requests.",
+      "docs": [
+        "https://docs.tabstack.ai/trust/controlling-access"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Mozilla-Tabstack/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla-Tabstack/1.0 (+https://tabstack.ai)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Mozilla-Tabstack"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
     },
     {
       "id": "perplexity-user",

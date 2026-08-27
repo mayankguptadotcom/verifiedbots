@@ -10,8 +10,9 @@ docs:
 category: search-engine
 user_agents:
   patterns:
-    - 'FreespokeCrawler/\d'
+    - 'Freespoke(?:Crawler)?/[\d.]+'
   instances:
     - 'Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)'
+    - 'Mozilla/5.0 (compatible; Freespoke/2.0; +https://crawler.freespoke.com)'
 behavior: { respects_robots_txt: true, robots_token: FreespokeCrawler }
 verification: []

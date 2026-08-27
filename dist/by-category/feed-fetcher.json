@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-27T06:30:54.330Z",
-  "count": 15,
+  "generated_at": "2026-08-27T13:23:13.415Z",
+  "count": 18,
   "bots": [
     {
       "id": "amazon-seller-initiated-listing",
@@ -200,6 +200,37 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "feeder-co",
+      "name": "Feeder Crawler",
+      "operator": {
+        "name": "Feeder",
+        "url": "https://feeder.co"
+      },
+      "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification.",
+      "docs": [
+        "https://feeder.co/crawler"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "feeder\\.co(?:/crawler)?[;)]"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36",
+          "Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {
@@ -853,6 +884,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "innguma-fetcher",
+      "name": "Innguma Fetcher",
+      "operator": {
+        "name": "Innguma",
+        "url": "https://www.innguma.com"
+      },
+      "description": "Innguma's feed fetcher. It retrieves RSS and Atom feeds that users have added to Innguma or to another application built on the Innguma cloud, and refreshes them roughly once an hour. The operator states that because the requests follow explicit action by human users rather than automated crawling, the fetcher does not follow robots.txt, and documents serving an error status to the Innguma/1.0 user agent as the opt-out.",
+      "docs": [
+        "https://factory.innguma.com/fetcher/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Innguma/[\\d.]+"
+        ],
+        "instances": [
+          "Innguma/1.0 (+https://factory.innguma.com/fetcher/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "inoreader",
       "name": "Inoreader Fetcher",
       "operator": {
@@ -953,6 +1013,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scour-rss-bot",
+      "name": "ScourRSSBot",
+      "operator": {
+        "name": "Scour (Evan Schwartz)",
+        "url": "https://scour.ing"
+      },
+      "description": "Feed fetcher for Scour, a personalized content feed service in which users subscribe to RSS, Atom and JSON feeds and topics of interest. It polls each subscribed feed once every 900 seconds regardless of subscriber count, uses conditional requests, rate-limits itself to two requests per second per registrable domain, and backs off on error responses.",
+      "docs": [
+        "https://scour.ing/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "ScourRSSBot/[\\d.]+"
+        ],
+        "instances": [
+          "ScourRSSBot/1.0 (+https://scour.ing/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {

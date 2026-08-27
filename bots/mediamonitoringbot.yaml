@@ -1,0 +1,26 @@
+id: mediamonitoringbot
+name: MediaMonitoringBot
+operator: { name: MediaMonitoringBot, url: "https://mediamonitoringbot.com" }
+description: >-
+  Crawler behind MediaMonitoringBot, a Ukrainian media-monitoring service that
+  indexes news and media publisher pages and delivers mention alerts to PR and
+  communications subscribers. The operator documents that it strictly respects
+  robots.txt allow and disallow rules, publishes its main crawler addresses, and
+  documents a reverse-DNS suffix for verification.
+docs:
+  - "https://mediamonitoringbot.com/crawler"
+category: monitoring
+user_agents:
+  patterns:
+    - 'MediaMonitoringBot/[\d.]+'
+  instances:
+    - 'MediaMonitoringBot/1.1 (+https://mediamonitoringbot.com/crawler; crawler@mediamonitoringbot.com)'
+    - 'MediaMonitoringBot/1.0 (+https://mediamonitoringbot.com)'
+behavior: { respects_robots_txt: true }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "34.140.18.108/32"
+      - "104.199.105.26/32"
+  - type: rdns
+    masks: ["*.mediamonitoringbot.com"]

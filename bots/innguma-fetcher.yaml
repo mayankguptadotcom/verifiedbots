@@ -1,0 +1,20 @@
+id: innguma-fetcher
+name: Innguma Fetcher
+operator: { name: Innguma, url: "https://www.innguma.com" }
+description: >-
+  Innguma's feed fetcher. It retrieves RSS and Atom feeds that users have added
+  to Innguma or to another application built on the Innguma cloud, and refreshes
+  them roughly once an hour. The operator states that because the requests
+  follow explicit action by human users rather than automated crawling, the
+  fetcher does not follow robots.txt, and documents serving an error status to
+  the Innguma/1.0 user agent as the opt-out.
+docs:
+  - "https://factory.innguma.com/fetcher/"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Innguma/[\d.]+'
+  instances:
+    - 'Innguma/1.0 (+https://factory.innguma.com/fetcher/)'
+behavior: { respects_robots_txt: false }
+verification: []

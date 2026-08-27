@@ -1,0 +1,21 @@
+id: urlsuma
+name: urlsuma
+operator: { name: urlsuma.de (Gerhard Stöbe), url: "https://urlsuma.de" }
+description: >-
+  Crawler for urlsuma.de, a German general-purpose web search engine under
+  construction. The operator documents that it re-reads robots.txt without
+  caching before every single fetch, makes about two requests per visit
+  (robots.txt plus one page), executes no JavaScript, and treats a 4xx response
+  as a permanent block. Current crawler addresses are shared on request only.
+docs:
+  - "https://urlsuma.de/bot.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'urlsuma/[\d.]+'
+    - 'UrlSuMa\.de crawler'
+  instances:
+    - 'Mozilla/5.0 (compatible; urlsuma/2.0; +https://urlsuma.de/bot.html)'
+    - 'Mozilla/5.0 (compatible; UrlSuMa.de crawler)'
+behavior: { respects_robots_txt: true, robots_token: urlsuma }
+verification: []

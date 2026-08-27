@@ -1,0 +1,31 @@
+{
+  "id": "nestdaddybot",
+  "name": "NestDaddyBot",
+  "operator": {
+    "name": "NestDaddy Technologies",
+    "url": "https://nestdaddy.com"
+  },
+  "description": "Web crawler behind the NestDaddy search engine. The operator's webmaster page documents that it extracts page title, meta description, headings, language and link structure to build the index, filters adult and abusive content out of results, and fully respects robots.txt including the Crawl-delay directive. It states that the crawler runs from a distributed network whose current ranges are available only on request.",
+  "docs": [
+    "https://nestdaddy.com/bot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "NestDaddy[Bb]ot/[\\d.]+"
+    ],
+    "instances": [
+      "NestDaddyBot/2.0 (+https://nestdaddy.com/bot)",
+      "NestDaddybot/1.0.0 (+https://nestdaddy.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "NestDaddyBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-27T13:23:13.415Z",
+  "resolved_cidrs": []
+}

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-27T06:30:54.330Z",
-  "count": 65,
+  "generated_at": "2026-08-27T13:23:13.415Z",
+  "count": 68,
   "bots": [
     {
       "id": "addsearch",
@@ -1265,6 +1265,37 @@
       ]
     },
     {
+      "id": "fleebsbot",
+      "name": "FleebsBot",
+      "operator": {
+        "name": "iontic GmbH (fleebs.com)",
+        "url": "https://fleebs.com"
+      },
+      "description": "Crawler for fleebs.com, a German real-time search engine. The operator's bot page documents two identities: one that searches for new information and one that analyses the pages it finds. It documents robots.txt blocking with the FleebsBot token and notes that pages indexed before a block may take time to drop out of the index.",
+      "docs": [
+        "https://fleebs.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "FleebsBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; FleebsBot/1~w; +https://fleebs.com/bot)",
+          "Mozilla/5.0 (compatible; FleebsBot/1~c; +https://fleebs.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "FleebsBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "freespoke-crawler",
       "name": "FreespokeCrawler",
       "operator": {
@@ -1278,10 +1309,11 @@
       "category": "search-engine",
       "user_agents": {
         "patterns": [
-          "FreespokeCrawler/\\d"
+          "Freespoke(?:Crawler)?/[\\d.]+"
         ],
         "instances": [
-          "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)"
+          "Mozilla/5.0 (compatible; FreespokeCrawler/2.0; +https://crawler.freespoke.com)",
+          "Mozilla/5.0 (compatible; Freespoke/2.0; +https://crawler.freespoke.com)"
         ]
       },
       "behavior": {
@@ -4305,6 +4337,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "nestdaddybot",
+      "name": "NestDaddyBot",
+      "operator": {
+        "name": "NestDaddy Technologies",
+        "url": "https://nestdaddy.com"
+      },
+      "description": "Web crawler behind the NestDaddy search engine. The operator's webmaster page documents that it extracts page title, meta description, headings, language and link structure to build the index, filters adult and abusive content out of results, and fully respects robots.txt including the Crawl-delay directive. It states that the crawler runs from a distributed network whose current ranges are available only on request.",
+      "docs": [
+        "https://nestdaddy.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "NestDaddy[Bb]ot/[\\d.]+"
+        ],
+        "instances": [
+          "NestDaddyBot/2.0 (+https://nestdaddy.com/bot)",
+          "NestDaddybot/1.0.0 (+https://nestdaddy.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "NestDaddyBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "openindex-crawler",
       "name": "Openindex Spider",
       "operator": {
@@ -5301,6 +5364,38 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "urlsuma",
+      "name": "urlsuma",
+      "operator": {
+        "name": "urlsuma.de (Gerhard Stöbe)",
+        "url": "https://urlsuma.de"
+      },
+      "description": "Crawler for urlsuma.de, a German general-purpose web search engine under construction. The operator documents that it re-reads robots.txt without caching before every single fetch, makes about two requests per visit (robots.txt plus one page), executes no JavaScript, and treats a 4xx response as a permanent block. Current crawler addresses are shared on request only.",
+      "docs": [
+        "https://urlsuma.de/bot.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "urlsuma/[\\d.]+",
+          "UrlSuMa\\.de crawler"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; urlsuma/2.0; +https://urlsuma.de/bot.html)",
+          "Mozilla/5.0 (compatible; UrlSuMa.de crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "urlsuma"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
       "resolved_cidrs": []
     },
     {

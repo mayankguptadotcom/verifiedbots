@@ -1,0 +1,21 @@
+id: linkcheckerbot
+name: LinkCheckerBot
+operator: { name: Local Profy LLC (LinkChecker.pro), url: "https://linkchecker.pro" }
+description: >-
+  LinkChecker.pro's backlink-monitoring crawler. It revisits the backlinks that
+  the service's customers track, checking whether each link is still present and
+  how it is marked. The operator documents that the crawler strictly respects
+  robots.txt and Crawl-delay, and publishes the addresses it crawls from.
+docs:
+  - "https://linkchecker.pro/robot/"
+category: seo
+user_agents:
+  patterns:
+    - 'LinkCheckerBot/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; LinkCheckerBot/2.0; +https://linkchecker.pro/robot/)'
+behavior: { respects_robots_txt: true, robots_token: LinkCheckerBot }
+verification:
+  - type: cidr_feed
+    url: "https://linkchecker.pro/robot-ips"
+    format: text_lines

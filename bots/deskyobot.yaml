@@ -1,0 +1,19 @@
+id: deskyobot
+name: Deskyobot
+operator: { name: Deskyo, url: "https://www.deskyo.com" }
+description: >-
+  Link-preview fetcher for Deskyo, a service that lets its members save web
+  pages. The operator's bot page documents that Deskyo must display information
+  tied to a saved page — its title, description and favicon — which is what this
+  fetcher retrieves, and gives a legal contact for questions about links saved
+  by a member. The page states no robots.txt policy and publishes no addresses.
+docs:
+  - "https://www.deskyo.com/bot"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Deskyobot/[\d.]+'
+  instances:
+    - 'Deskyobot/1.0 (+https://www.deskyo.com/bot)'
+behavior: { respects_robots_txt: false }
+verification: []

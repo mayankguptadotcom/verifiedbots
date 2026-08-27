@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-27T06:30:54.330Z",
-  "count": 54,
+  "generated_at": "2026-08-27T13:23:13.415Z",
+  "count": 56,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -1109,6 +1109,47 @@
       "resolved_cidrs": []
     },
     {
+      "id": "linkcheckerbot",
+      "name": "LinkCheckerBot",
+      "operator": {
+        "name": "Local Profy LLC (LinkChecker.pro)",
+        "url": "https://linkchecker.pro"
+      },
+      "description": "LinkChecker.pro's backlink-monitoring crawler. It revisits the backlinks that the service's customers track, checking whether each link is still present and how it is marked. The operator documents that the crawler strictly respects robots.txt and Crawl-delay, and publishes the addresses it crawls from.",
+      "docs": [
+        "https://linkchecker.pro/robot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "LinkCheckerBot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; LinkCheckerBot/2.0; +https://linkchecker.pro/robot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinkCheckerBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://linkchecker.pro/robot-ips",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": [
+        "135.181.4.247/32",
+        "46.4.94.146/32",
+        "65.21.142.87/32",
+        "95.217.230.117/32"
+      ]
+    },
+    {
       "id": "linkdex-crawler",
       "name": "Linkdexbot",
       "operator": {
@@ -1175,6 +1216,35 @@
       "resolved_cidrs": [
         "38.242.228.97/32"
       ]
+    },
+    {
+      "id": "mcontextual-bot",
+      "name": "McontextualBot",
+      "operator": {
+        "name": "MContextual",
+        "url": "https://mcontextual.net"
+      },
+      "description": "MContextual's crawler for contextual advertising. The operator documents that it reads page content so advertisers can build cookieless contextual audiences from a site's subject matter, that it can be blocked with standard robots.txt directives, and that its requests originate from AWS and GCP addresses rather than a published range.",
+      "docs": [
+        "https://mcontextual.net/mcontextual-bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "McontextualBot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; McontextualBot/0.1; +http://mcontextual.net/mcontextual-bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
     },
     {
       "id": "megaindex-crawler",

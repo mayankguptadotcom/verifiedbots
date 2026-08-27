@@ -1,0 +1,31 @@
+{
+  "id": "feeder-co",
+  "name": "Feeder Crawler",
+  "operator": {
+    "name": "Feeder",
+    "url": "https://feeder.co"
+  },
+  "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification.",
+  "docs": [
+    "https://feeder.co/crawler"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "feeder\\.co(?:/crawler)?[;)]"
+    ],
+    "instances": [
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36",
+      "Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-27T13:23:13.415Z",
+  "resolved_cidrs": []
+}

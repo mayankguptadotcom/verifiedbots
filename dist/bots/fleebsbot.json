@@ -1,0 +1,31 @@
+{
+  "id": "fleebsbot",
+  "name": "FleebsBot",
+  "operator": {
+    "name": "iontic GmbH (fleebs.com)",
+    "url": "https://fleebs.com"
+  },
+  "description": "Crawler for fleebs.com, a German real-time search engine. The operator's bot page documents two identities: one that searches for new information and one that analyses the pages it finds. It documents robots.txt blocking with the FleebsBot token and notes that pages indexed before a block may take time to drop out of the index.",
+  "docs": [
+    "https://fleebs.com/bot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "FleebsBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; FleebsBot/1~w; +https://fleebs.com/bot)",
+      "Mozilla/5.0 (compatible; FleebsBot/1~c; +https://fleebs.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "FleebsBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-27T13:23:13.415Z",
+  "resolved_cidrs": []
+}

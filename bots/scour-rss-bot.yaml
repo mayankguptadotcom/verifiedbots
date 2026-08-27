@@ -1,0 +1,19 @@
+id: scour-rss-bot
+name: ScourRSSBot
+operator: { name: Scour (Evan Schwartz), url: "https://scour.ing" }
+description: >-
+  Feed fetcher for Scour, a personalized content feed service in which users
+  subscribe to RSS, Atom and JSON feeds and topics of interest. It polls each
+  subscribed feed once every 900 seconds regardless of subscriber count, uses
+  conditional requests, rate-limits itself to two requests per second per
+  registrable domain, and backs off on error responses.
+docs:
+  - "https://scour.ing/bot"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'ScourRSSBot/[\d.]+'
+  instances:
+    - 'ScourRSSBot/1.0 (+https://scour.ing/bot)'
+behavior: { respects_robots_txt: false }
+verification: []
