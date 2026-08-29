@@ -1,0 +1,30 @@
+{
+  "id": "yahoo-ad-monitoring",
+  "name": "Yahoo Ad Monitoring",
+  "operator": {
+    "name": "Yahoo",
+    "url": "https://www.yahoo.com"
+  },
+  "description": "Page-fetch client that retrieves the landing pages of URLs listed with Yahoo advertising services. Yahoo documents that it fetches each advertiser-supplied landing page to check policy compliance and to improve the accuracy of the ad listing, and that it uses separate desktop and mobile user agents.",
+  "docs": [
+    "https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Yahoo Ad [Mm]onitoring"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Yahoo Ad monitoring; https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html)",
+      "Mozilla/5.0 (compatible; Yahoo Ad Monitoring https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html) <YahooInternalTag>"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-29T13:18:16.426Z",
+  "resolved_cidrs": []
+}

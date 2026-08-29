@@ -1,0 +1,38 @@
+{
+  "id": "edgewatch",
+  "name": "EdgeWatch",
+  "operator": {
+    "name": "EdgeWatch",
+    "url": "https://edgewatch.com"
+  },
+  "description": "Internet-wide scanner for EdgeWatch's attack-surface and threat-intelligence platform. It makes connection attempts to public IPv4 and IPv6 addresses daily and completes protocol handshakes to fingerprint the services it finds; EdgeWatch documents the subnet its scanners use and an e-mail opt-out.",
+  "docs": [
+    "https://about.edgewatch.com/"
+  ],
+  "category": "security",
+  "user_agents": {
+    "patterns": [
+      "EdgeWatch/[\\d.]+"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; EdgeWatch/1.1; +https://about.edgewatch.com/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "185.114.175.0/24"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-29T13:18:16.426Z",
+  "resolved_cidrs": [
+    "185.114.175.0/24"
+  ]
+}

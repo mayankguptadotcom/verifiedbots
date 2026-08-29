@@ -1,0 +1,21 @@
+id: sirdata-bot
+name: SirdataBot
+operator: { name: Sirdata, url: "https://www.sirdata.com" }
+description: >-
+  Crawler for Sirdata's contextual advertising API. It fetches and categorises
+  page content when Sirdata's on-page script cannot read the document from the
+  parent frame, and Sirdata publishes the addresses the bot crawls from as a
+  plain-text list it recommends refreshing every ten minutes.
+docs:
+  - "https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction"
+category: seo
+user_agents:
+  patterns:
+    - 'SirdataBot'
+  instances:
+    - 'SirdataBot (+https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction)'
+behavior: { respects_robots_txt: true, robots_token: SirdataBot }
+verification:
+  - type: cidr_feed
+    url: "https://proxies-list.sirdata.fr"
+    format: text_lines

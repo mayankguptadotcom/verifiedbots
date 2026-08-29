@@ -1,0 +1,30 @@
+{
+  "id": "fedreporter-bot",
+  "name": "FedReporterDataBot",
+  "operator": {
+    "name": "Fed Reporter Inc.",
+    "url": "https://fedreporter.net"
+  },
+  "description": "Scheduled data-retrieval bot that pulls publicly available banking-institution records from the FFIEC National Information Center for Fed Reporter's internal research dashboards. Its documentation states it targets only public data, uses no CAPTCHA bypass, and runs a separate testing agent off-peak.",
+  "docs": [
+    "https://fedreporter.net/FedReporterBotDocumentation/Readme.txt"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "FedReporterDataBot"
+    ],
+    "instances": [
+      "FedReporterDataBot/1.0 (+https://fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)",
+      "FedReporterDataBot-Testing/0.1 (+https://dev-pipe1.fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-29T13:18:16.426Z",
+  "resolved_cidrs": []
+}

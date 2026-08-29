@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T04:29:09.670Z",
-  "count": 81,
+  "generated_at": "2026-08-29T13:18:16.426Z",
+  "count": 84,
   "bots": [
     {
       "id": "addsearch",
@@ -290,6 +290,67 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "atlassian-bot",
+      "name": "atlassian-bot",
+      "operator": {
+        "name": "Atlassian",
+        "url": "https://www.atlassian.com"
+      },
+      "description": "Crawler behind the Teamwork Graph \"custom website\" connector, which indexes a site an Atlassian customer has connected so its content is searchable in Rovo. Atlassian documents the robots.txt token and publishes the connector's egress ranges under the rovo-crawler product in its IP-ranges feed.",
+      "docs": [
+        "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "atlassian-bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; atlassian-bot; +https://www.atlassian.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "atlassian-bot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "13.200.41.240/28",
+            "16.63.53.240/28",
+            "18.246.31.208/28",
+            "43.202.69.112/28",
+            "104.192.136.224/28",
+            "104.192.137.224/28",
+            "104.192.142.224/28",
+            "104.192.143.224/28",
+            "185.166.140.128/28",
+            "185.166.141.128/28",
+            "185.166.142.224/28",
+            "185.166.143.224/28"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "104.192.136.224/28",
+        "104.192.137.224/28",
+        "104.192.142.224/28",
+        "104.192.143.224/28",
+        "13.200.41.240/28",
+        "16.63.53.240/28",
+        "18.246.31.208/28",
+        "185.166.140.128/28",
+        "185.166.141.128/28",
+        "185.166.142.224/28",
+        "185.166.143.224/28",
+        "43.202.69.112/28"
+      ]
     },
     {
       "id": "baiduspider",
@@ -1142,6 +1203,44 @@
         "34.213.65.175/32",
         "52.36.131.191/32",
         "52.39.13.97/32"
+      ]
+    },
+    {
+      "id": "edgewatch",
+      "name": "EdgeWatch",
+      "operator": {
+        "name": "EdgeWatch",
+        "url": "https://edgewatch.com"
+      },
+      "description": "Internet-wide scanner for EdgeWatch's attack-surface and threat-intelligence platform. It makes connection attempts to public IPv4 and IPv6 addresses daily and completes protocol handshakes to fingerprint the services it finds; EdgeWatch documents the subnet its scanners use and an e-mail opt-out.",
+      "docs": [
+        "https://about.edgewatch.com/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "EdgeWatch/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; EdgeWatch/1.1; +https://about.edgewatch.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "185.114.175.0/24"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "185.114.175.0/24"
       ]
     },
     {
@@ -3739,6 +3838,45 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "xy-archive-compliance",
+      "name": "XY-Archive-Compliance",
+      "operator": {
+        "name": "XY Planning Network",
+        "url": "https://www.xyplanningnetwork.com"
+      },
+      "description": "Website archiver for XY Archive, XYPN's compliance-archiving product for financial advisory firms. It crawls a subscribing firm's site to decide which pages to capture and then screenshots each page for the archive; XYPN documents the single address it archives from.",
+      "docs": [
+        "https://xy-archive.helpscoutdocs.com/article/61-does-xy-archive-have-a-dedicated-ip-address"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "XY-Archive-Compliance"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; XY-Archive-Compliance-Crawler; +https://archive.xyplanningnetwork.com/)",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 (compatible; XY-Archive-Compliance-Archiver; +https://archive.xyplanningnetwork.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.167.157.173/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "54.167.157.173/32"
+      ]
     },
     {
       "id": "yahoo-mail-proxy",

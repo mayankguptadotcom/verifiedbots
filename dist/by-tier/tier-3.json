@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T04:29:09.670Z",
-  "count": 132,
+  "generated_at": "2026-08-29T13:18:16.426Z",
+  "count": 137,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1294,6 +1294,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "fedreporter-bot",
+      "name": "FedReporterDataBot",
+      "operator": {
+        "name": "Fed Reporter Inc.",
+        "url": "https://fedreporter.net"
+      },
+      "description": "Scheduled data-retrieval bot that pulls publicly available banking-institution records from the FFIEC National Information Center for Fed Reporter's internal research dashboards. Its documentation states it targets only public data, uses no CAPTCHA bypass, and runs a separate testing agent off-peak.",
+      "docs": [
+        "https://fedreporter.net/FedReporterBotDocumentation/Readme.txt"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "FedReporterDataBot"
+        ],
+        "instances": [
+          "FedReporterDataBot/1.0 (+https://fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)",
+          "FedReporterDataBot-Testing/0.1 (+https://dev-pipe1.fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
@@ -2747,6 +2777,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "productsup-crawler",
+      "name": "Productsup Website Crawler",
+      "operator": {
+        "name": "Productsup",
+        "url": "https://www.productsup.com"
+      },
+      "description": "Crawler behind Productsup's website data-import source, which reads pages of a site a Productsup customer has configured and turns them into a product data feed. Productsup documents the default user agent, and notes that customers may append a hash to it for their own filtering.",
+      "docs": [
+        "https://help.productsup.com/docs/help-center/import-data-feeds/import-data-from-internal-systems/import-web-data-with-website-crawler"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "productsup\\.io/crawler"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20070802 SeaMonkey/1.1.4 (productsup.io/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "proximic-crawler",
       "name": "Proximic (Comscore Crawler)",
       "operator": {
@@ -2775,6 +2834,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "rakuten-usa-image-bot",
+      "name": "rakutenusabot-image",
+      "operator": {
+        "name": "Rakuten",
+        "url": "https://www.rakuten.com"
+      },
+      "description": "Rakuten's image-extraction bot, which retrieves product images from merchant sites that have partnered with Rakuten. Its bot page names the identifying token that appears in the user-agent string and gives an abuse contact.",
+      "docs": [
+        "https://product-image.ebates.com/item-gsp/rakutenusabot.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "rakutenusabot-image/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; rakutenusabot-image/1.0; +https://product-image.ebates.com/item-gsp/rakutenusabot.html) Chrome/114.0.0.0 Safari/537.36",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; rakutenusabot-image/1.0) Chrome/114.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
@@ -2953,6 +3042,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scrunchbot",
+      "name": "Scrunchbot",
+      "operator": {
+        "name": "Scrunch AI",
+        "url": "https://scrunch.com"
+      },
+      "description": "Fetcher for Scrunch AI's brand-visibility product. Scrunch documents that it accesses customer websites to diagnose issues with their content and configuration, and that it does not proactively crawl or spider the general internet — requests are made only in response to customer configuration.",
+      "docs": [
+        "https://scrunch.com/bots/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Scrunchbot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Scrunchbot/1.0; +https://scrunchai.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
@@ -3858,6 +3976,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yahoo-ad-monitoring",
+      "name": "Yahoo Ad Monitoring",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com"
+      },
+      "description": "Page-fetch client that retrieves the landing pages of URLs listed with Yahoo advertising services. Yahoo documents that it fetches each advertiser-supplied landing page to check policy compliance and to improve the accuracy of the ad listing, and that it uses separate desktop and mobile user agents.",
+      "docs": [
+        "https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Yahoo Ad [Mm]onitoring"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo Ad monitoring; https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html)",
+          "Mozilla/5.0 (compatible; Yahoo Ad Monitoring https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html) <YahooInternalTag>"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {

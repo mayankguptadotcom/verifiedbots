@@ -1,0 +1,39 @@
+{
+  "id": "xy-archive-compliance",
+  "name": "XY-Archive-Compliance",
+  "operator": {
+    "name": "XY Planning Network",
+    "url": "https://www.xyplanningnetwork.com"
+  },
+  "description": "Website archiver for XY Archive, XYPN's compliance-archiving product for financial advisory firms. It crawls a subscribing firm's site to decide which pages to capture and then screenshots each page for the archive; XYPN documents the single address it archives from.",
+  "docs": [
+    "https://xy-archive.helpscoutdocs.com/article/61-does-xy-archive-have-a-dedicated-ip-address"
+  ],
+  "category": "archiver",
+  "user_agents": {
+    "patterns": [
+      "XY-Archive-Compliance"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; XY-Archive-Compliance-Crawler; +https://archive.xyplanningnetwork.com/)",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 (compatible; XY-Archive-Compliance-Archiver; +https://archive.xyplanningnetwork.com/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "54.167.157.173/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-29T13:18:16.426Z",
+  "resolved_cidrs": [
+    "54.167.157.173/32"
+  ]
+}

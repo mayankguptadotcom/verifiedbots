@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T04:29:09.670Z",
-  "count": 8,
+  "generated_at": "2026-08-29T13:18:16.426Z",
+  "count": 9,
   "bots": [
     {
       "id": "adyen-webhooks",
@@ -38,6 +38,58 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "easycron",
+      "name": "EasyCron",
+      "operator": {
+        "name": "EasyCron",
+        "url": "https://www.easycron.com"
+      },
+      "description": "Hosted cron service that calls URLs its users schedule, on the interval or cron expression they configure. Requests go only to endpoints the user entered, and EasyCron publishes the IPv4 and IPv6 addresses its execution bots call from as a JSON list.",
+      "docs": [
+        "https://www.easycron.com/faq/What-user-agent-is-EasyCron-using",
+        "https://www.easycron.com/ips"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "EasyCron/[\\d.]+"
+        ],
+        "instances": [
+          "EasyCron/1.0 (https://www.easycron.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.easycron.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv4"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://www.easycron.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv6"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "167.114.64.21/32",
+        "167.114.64.88/32",
+        "192.99.21.124/32",
+        "198.27.83.222/32",
+        "2607:5300:60:24de::/128",
+        "2607:5300:60:467c::/128",
+        "2607:5300:60:6515::/128",
+        "2607:5300:60:6558::/128"
+      ]
     },
     {
       "id": "github-hooks",

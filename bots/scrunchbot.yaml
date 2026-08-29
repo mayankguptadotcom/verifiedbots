@@ -1,0 +1,18 @@
+id: scrunchbot
+name: Scrunchbot
+operator: { name: Scrunch AI, url: "https://scrunch.com" }
+description: >-
+  Fetcher for Scrunch AI's brand-visibility product. Scrunch documents that it
+  accesses customer websites to diagnose issues with their content and
+  configuration, and that it does not proactively crawl or spider the general
+  internet — requests are made only in response to customer configuration.
+docs:
+  - "https://scrunch.com/bots/"
+category: monitoring
+user_agents:
+  patterns:
+    - 'Scrunchbot/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Scrunchbot/1.0; +https://scrunchai.com/bots)'
+behavior: { respects_robots_txt: false }
+verification: []

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T04:29:09.670Z",
-  "count": 287,
+  "generated_at": "2026-08-29T13:18:16.426Z",
+  "count": 297,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -858,6 +858,67 @@
       "resolved_cidrs": [
         "2a01:4f8:c0c:969c::/64",
         "94.130.110.118/32"
+      ]
+    },
+    {
+      "id": "atlassian-bot",
+      "name": "atlassian-bot",
+      "operator": {
+        "name": "Atlassian",
+        "url": "https://www.atlassian.com"
+      },
+      "description": "Crawler behind the Teamwork Graph \"custom website\" connector, which indexes a site an Atlassian customer has connected so its content is searchable in Rovo. Atlassian documents the robots.txt token and publishes the connector's egress ranges under the rovo-crawler product in its IP-ranges feed.",
+      "docs": [
+        "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "atlassian-bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; atlassian-bot; +https://www.atlassian.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "atlassian-bot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "13.200.41.240/28",
+            "16.63.53.240/28",
+            "18.246.31.208/28",
+            "43.202.69.112/28",
+            "104.192.136.224/28",
+            "104.192.137.224/28",
+            "104.192.142.224/28",
+            "104.192.143.224/28",
+            "185.166.140.128/28",
+            "185.166.141.128/28",
+            "185.166.142.224/28",
+            "185.166.143.224/28"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "104.192.136.224/28",
+        "104.192.137.224/28",
+        "104.192.142.224/28",
+        "104.192.143.224/28",
+        "13.200.41.240/28",
+        "16.63.53.240/28",
+        "18.246.31.208/28",
+        "185.166.140.128/28",
+        "185.166.141.128/28",
+        "185.166.142.224/28",
+        "185.166.143.224/28",
+        "43.202.69.112/28"
       ]
     },
     {
@@ -4960,6 +5021,96 @@
       "resolved_cidrs": []
     },
     {
+      "id": "easycron",
+      "name": "EasyCron",
+      "operator": {
+        "name": "EasyCron",
+        "url": "https://www.easycron.com"
+      },
+      "description": "Hosted cron service that calls URLs its users schedule, on the interval or cron expression they configure. Requests go only to endpoints the user entered, and EasyCron publishes the IPv4 and IPv6 addresses its execution bots call from as a JSON list.",
+      "docs": [
+        "https://www.easycron.com/faq/What-user-agent-is-EasyCron-using",
+        "https://www.easycron.com/ips"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "EasyCron/[\\d.]+"
+        ],
+        "instances": [
+          "EasyCron/1.0 (https://www.easycron.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.easycron.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv4"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://www.easycron.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv6"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "167.114.64.21/32",
+        "167.114.64.88/32",
+        "192.99.21.124/32",
+        "198.27.83.222/32",
+        "2607:5300:60:24de::/128",
+        "2607:5300:60:467c::/128",
+        "2607:5300:60:6515::/128",
+        "2607:5300:60:6558::/128"
+      ]
+    },
+    {
+      "id": "edgewatch",
+      "name": "EdgeWatch",
+      "operator": {
+        "name": "EdgeWatch",
+        "url": "https://edgewatch.com"
+      },
+      "description": "Internet-wide scanner for EdgeWatch's attack-surface and threat-intelligence platform. It makes connection attempts to public IPv4 and IPv6 addresses daily and completes protocol handshakes to fingerprint the services it finds; EdgeWatch documents the subnet its scanners use and an e-mail opt-out.",
+      "docs": [
+        "https://about.edgewatch.com/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "EdgeWatch/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; EdgeWatch/1.1; +https://about.edgewatch.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "185.114.175.0/24"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "185.114.175.0/24"
+      ]
+    },
+    {
       "id": "embedly",
       "name": "Embedly",
       "operator": {
@@ -5176,6 +5327,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "fedreporter-bot",
+      "name": "FedReporterDataBot",
+      "operator": {
+        "name": "Fed Reporter Inc.",
+        "url": "https://fedreporter.net"
+      },
+      "description": "Scheduled data-retrieval bot that pulls publicly available banking-institution records from the FFIEC National Information Center for Fed Reporter's internal research dashboards. Its documentation states it targets only public data, uses no CAPTCHA bypass, and runs a separate testing agent off-peak.",
+      "docs": [
+        "https://fedreporter.net/FedReporterBotDocumentation/Readme.txt"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "FedReporterDataBot"
+        ],
+        "instances": [
+          "FedReporterDataBot/1.0 (+https://fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)",
+          "FedReporterDataBot-Testing/0.1 (+https://dev-pipe1.fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
@@ -14567,6 +14748,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "productsup-crawler",
+      "name": "Productsup Website Crawler",
+      "operator": {
+        "name": "Productsup",
+        "url": "https://www.productsup.com"
+      },
+      "description": "Crawler behind Productsup's website data-import source, which reads pages of a site a Productsup customer has configured and turns them into a product data feed. Productsup documents the default user agent, and notes that customers may append a hash to it for their own filtering.",
+      "docs": [
+        "https://help.productsup.com/docs/help-center/import-data-feeds/import-data-from-internal-systems/import-web-data-with-website-crawler"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "productsup\\.io/crawler"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20070802 SeaMonkey/1.1.4 (productsup.io/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "proximic-crawler",
       "name": "Proximic (Comscore Crawler)",
       "operator": {
@@ -14779,6 +14989,36 @@
       "resolved_cidrs": [
         "194.187.171.0/24"
       ]
+    },
+    {
+      "id": "rakuten-usa-image-bot",
+      "name": "rakutenusabot-image",
+      "operator": {
+        "name": "Rakuten",
+        "url": "https://www.rakuten.com"
+      },
+      "description": "Rakuten's image-extraction bot, which retrieves product images from merchant sites that have partnered with Rakuten. Its bot page names the identifying token that appears in the user-agent string and gives an abuse contact.",
+      "docs": [
+        "https://product-image.ebates.com/item-gsp/rakutenusabot.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "rakutenusabot-image/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; rakutenusabot-image/1.0; +https://product-image.ebates.com/item-gsp/rakutenusabot.html) Chrome/114.0.0.0 Safari/537.36",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; rakutenusabot-image/1.0) Chrome/114.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": []
     },
     {
       "id": "redditbot",
@@ -14994,6 +15234,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scrunchbot",
+      "name": "Scrunchbot",
+      "operator": {
+        "name": "Scrunch AI",
+        "url": "https://scrunch.com"
+      },
+      "description": "Fetcher for Scrunch AI's brand-visibility product. Scrunch documents that it accesses customer websites to diagnose issues with their content and configuration, and that it does not proactively crawl or spider the general internet — requests are made only in response to customer configuration.",
+      "docs": [
+        "https://scrunch.com/bots/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Scrunchbot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Scrunchbot/1.0; +https://scrunchai.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
@@ -16402,6 +16671,139 @@
         "34.68.39.29/32",
         "34.70.129.79/32",
         "34.9.172.22/32"
+      ]
+    },
+    {
+      "id": "sirdata-bot",
+      "name": "SirdataBot",
+      "operator": {
+        "name": "Sirdata",
+        "url": "https://www.sirdata.com"
+      },
+      "description": "Crawler for Sirdata's contextual advertising API. It fetches and categorises page content when Sirdata's on-page script cannot read the document from the parent frame, and Sirdata publishes the addresses the bot crawls from as a plain-text list it recommends refreshing every ten minutes.",
+      "docs": [
+        "https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SirdataBot"
+        ],
+        "instances": [
+          "SirdataBot (+https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SirdataBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://proxies-list.sirdata.fr",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "104.105.81.52/32",
+        "104.248.163.15/32",
+        "104.248.43.96/32",
+        "134.122.59.103/32",
+        "134.122.85.221/32",
+        "134.209.201.135/32",
+        "134.209.250.238/32",
+        "138.68.100.72/32",
+        "138.68.163.153/32",
+        "138.68.92.147/32",
+        "139.162.128.159/32",
+        "139.162.146.174/32",
+        "139.162.146.92/32",
+        "139.162.149.117/32",
+        "139.162.159.197/32",
+        "139.162.159.235/32",
+        "139.162.159.32/32",
+        "139.162.160.151/32",
+        "139.162.164.73/32",
+        "139.162.166.156/32",
+        "139.162.172.248/32",
+        "144.126.226.143/32",
+        "146.190.23.33/32",
+        "146.190.235.84/32",
+        "157.230.107.239/32",
+        "157.230.126.81/32",
+        "159.223.221.41/32",
+        "159.223.4.177/32",
+        "159.223.6.186/32",
+        "159.89.19.9/32",
+        "161.35.144.17/32",
+        "164.90.201.172/32",
+        "164.92.150.109/32",
+        "164.92.230.187/32",
+        "164.92.250.41/32",
+        "165.22.19.46/32",
+        "165.22.207.17/32",
+        "165.227.137.9/32",
+        "165.232.83.136/32",
+        "165.232.88.250/32",
+        "165.232.90.182/32",
+        "167.172.177.175/32",
+        "167.71.2.64/32",
+        "172.104.128.245/32",
+        "172.104.135.110/32",
+        "172.104.136.77/32",
+        "172.104.140.154/32",
+        "172.104.150.51/32",
+        "172.104.242.128/32",
+        "172.105.69.33/32",
+        "172.105.69.47/32",
+        "172.105.75.211/32",
+        "172.105.95.92/32",
+        "172.232.194.149/32",
+        "172.232.194.91/32",
+        "172.232.197.111/32",
+        "172.232.213.216/32",
+        "172.232.219.233/32",
+        "172.232.221.184/32",
+        "172.232.56.18/32",
+        "172.233.240.10/32",
+        "172.233.240.13/32",
+        "172.233.240.17/32",
+        "172.233.240.203/32",
+        "172.233.240.204/32",
+        "172.233.240.205/32",
+        "172.233.240.244/32",
+        "172.233.240.251/32",
+        "172.233.32.216/32",
+        "172.233.41.23/32",
+        "172.233.41.86/32",
+        "172.233.43.244/32",
+        "172.233.60.224/32",
+        "172.234.160.173/32",
+        "172.234.170.16/32",
+        "172.234.56.115/32",
+        "172.234.56.213/32",
+        "172.234.56.234/32",
+        "172.234.56.239/32",
+        "172.234.56.84/32",
+        "172.234.57.185/32",
+        "172.234.57.36/32",
+        "172.235.163.221/32",
+        "172.235.163.45/32",
+        "172.235.183.127/32",
+        "172.238.224.63/32",
+        "172.238.224.75/32",
+        "172.239.242.19/32",
+        "178.62.214.251/32",
+        "178.62.234.139/32",
+        "178.62.255.83/32",
+        "207.154.233.206/32",
+        "46.101.206.56/32",
+        "46.101.218.245/32",
+        "64.225.110.14/32",
+        "85.90.246.81/32"
       ]
     },
     {
@@ -19485,6 +19887,75 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "xy-archive-compliance",
+      "name": "XY-Archive-Compliance",
+      "operator": {
+        "name": "XY Planning Network",
+        "url": "https://www.xyplanningnetwork.com"
+      },
+      "description": "Website archiver for XY Archive, XYPN's compliance-archiving product for financial advisory firms. It crawls a subscribing firm's site to decide which pages to capture and then screenshots each page for the archive; XYPN documents the single address it archives from.",
+      "docs": [
+        "https://xy-archive.helpscoutdocs.com/article/61-does-xy-archive-have-a-dedicated-ip-address"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "XY-Archive-Compliance"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; XY-Archive-Compliance-Crawler; +https://archive.xyplanningnetwork.com/)",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 (compatible; XY-Archive-Compliance-Archiver; +https://archive.xyplanningnetwork.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.167.157.173/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "54.167.157.173/32"
+      ]
+    },
+    {
+      "id": "yahoo-ad-monitoring",
+      "name": "Yahoo Ad Monitoring",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com"
+      },
+      "description": "Page-fetch client that retrieves the landing pages of URLs listed with Yahoo advertising services. Yahoo documents that it fetches each advertiser-supplied landing page to check policy compliance and to improve the accuracy of the ad listing, and that it uses separate desktop and mobile user agents.",
+      "docs": [
+        "https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Yahoo Ad [Mm]onitoring"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo Ad monitoring; https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html)",
+          "Mozilla/5.0 (compatible; Yahoo Ad Monitoring https://help.yahoo.com/kb/yahoo-ad-monitoring-SLN24857.html) <YahooInternalTag>"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {

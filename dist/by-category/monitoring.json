@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T04:29:09.670Z",
-  "count": 43,
+  "generated_at": "2026-08-29T13:18:16.426Z",
+  "count": 45,
   "bots": [
     {
       "id": "awario",
@@ -905,6 +905,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "fedreporter-bot",
+      "name": "FedReporterDataBot",
+      "operator": {
+        "name": "Fed Reporter Inc.",
+        "url": "https://fedreporter.net"
+      },
+      "description": "Scheduled data-retrieval bot that pulls publicly available banking-institution records from the FFIEC National Information Center for Fed Reporter's internal research dashboards. Its documentation states it targets only public data, uses no CAPTCHA bypass, and runs a separate testing agent off-peak.",
+      "docs": [
+        "https://fedreporter.net/FedReporterBotDocumentation/Readme.txt"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "FedReporterDataBot"
+        ],
+        "instances": [
+          "FedReporterDataBot/1.0 (+https://fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)",
+          "FedReporterDataBot-Testing/0.1 (+https://dev-pipe1.fedreporter.net/FedReporterBotDocumentation; contact: support@fedreporter.net)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
@@ -2115,6 +2145,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scrunchbot",
+      "name": "Scrunchbot",
+      "operator": {
+        "name": "Scrunch AI",
+        "url": "https://scrunch.com"
+      },
+      "description": "Fetcher for Scrunch AI's brand-visibility product. Scrunch documents that it accesses customer websites to diagnose issues with their content and configuration, and that it does not proactively crawl or spider the general internet — requests are made only in response to customer configuration.",
+      "docs": [
+        "https://scrunch.com/bots/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Scrunchbot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Scrunchbot/1.0; +https://scrunchai.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {

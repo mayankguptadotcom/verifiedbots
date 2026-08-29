@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T04:29:09.670Z",
-  "count": 74,
+  "generated_at": "2026-08-29T13:18:16.426Z",
+  "count": 76,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -2618,6 +2618,58 @@
         "74.179.232.116/32",
         "74.242.194.48/32",
         "98.70.219.37/32"
+      ]
+    },
+    {
+      "id": "easycron",
+      "name": "EasyCron",
+      "operator": {
+        "name": "EasyCron",
+        "url": "https://www.easycron.com"
+      },
+      "description": "Hosted cron service that calls URLs its users schedule, on the interval or cron expression they configure. Requests go only to endpoints the user entered, and EasyCron publishes the IPv4 and IPv6 addresses its execution bots call from as a JSON list.",
+      "docs": [
+        "https://www.easycron.com/faq/What-user-agent-is-EasyCron-using",
+        "https://www.easycron.com/ips"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "EasyCron/[\\d.]+"
+        ],
+        "instances": [
+          "EasyCron/1.0 (https://www.easycron.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.easycron.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv4"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://www.easycron.com/ips.json",
+          "format": "github_meta",
+          "selector": "ipv6"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "167.114.64.21/32",
+        "167.114.64.88/32",
+        "192.99.21.124/32",
+        "198.27.83.222/32",
+        "2607:5300:60:24de::/128",
+        "2607:5300:60:467c::/128",
+        "2607:5300:60:6515::/128",
+        "2607:5300:60:6558::/128"
       ]
     },
     {
@@ -10191,6 +10243,139 @@
         "34.68.39.29/32",
         "34.70.129.79/32",
         "34.9.172.22/32"
+      ]
+    },
+    {
+      "id": "sirdata-bot",
+      "name": "SirdataBot",
+      "operator": {
+        "name": "Sirdata",
+        "url": "https://www.sirdata.com"
+      },
+      "description": "Crawler for Sirdata's contextual advertising API. It fetches and categorises page content when Sirdata's on-page script cannot read the document from the parent frame, and Sirdata publishes the addresses the bot crawls from as a plain-text list it recommends refreshing every ten minutes.",
+      "docs": [
+        "https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SirdataBot"
+        ],
+        "instances": [
+          "SirdataBot (+https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SirdataBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://proxies-list.sirdata.fr",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": [
+        "104.105.81.52/32",
+        "104.248.163.15/32",
+        "104.248.43.96/32",
+        "134.122.59.103/32",
+        "134.122.85.221/32",
+        "134.209.201.135/32",
+        "134.209.250.238/32",
+        "138.68.100.72/32",
+        "138.68.163.153/32",
+        "138.68.92.147/32",
+        "139.162.128.159/32",
+        "139.162.146.174/32",
+        "139.162.146.92/32",
+        "139.162.149.117/32",
+        "139.162.159.197/32",
+        "139.162.159.235/32",
+        "139.162.159.32/32",
+        "139.162.160.151/32",
+        "139.162.164.73/32",
+        "139.162.166.156/32",
+        "139.162.172.248/32",
+        "144.126.226.143/32",
+        "146.190.23.33/32",
+        "146.190.235.84/32",
+        "157.230.107.239/32",
+        "157.230.126.81/32",
+        "159.223.221.41/32",
+        "159.223.4.177/32",
+        "159.223.6.186/32",
+        "159.89.19.9/32",
+        "161.35.144.17/32",
+        "164.90.201.172/32",
+        "164.92.150.109/32",
+        "164.92.230.187/32",
+        "164.92.250.41/32",
+        "165.22.19.46/32",
+        "165.22.207.17/32",
+        "165.227.137.9/32",
+        "165.232.83.136/32",
+        "165.232.88.250/32",
+        "165.232.90.182/32",
+        "167.172.177.175/32",
+        "167.71.2.64/32",
+        "172.104.128.245/32",
+        "172.104.135.110/32",
+        "172.104.136.77/32",
+        "172.104.140.154/32",
+        "172.104.150.51/32",
+        "172.104.242.128/32",
+        "172.105.69.33/32",
+        "172.105.69.47/32",
+        "172.105.75.211/32",
+        "172.105.95.92/32",
+        "172.232.194.149/32",
+        "172.232.194.91/32",
+        "172.232.197.111/32",
+        "172.232.213.216/32",
+        "172.232.219.233/32",
+        "172.232.221.184/32",
+        "172.232.56.18/32",
+        "172.233.240.10/32",
+        "172.233.240.13/32",
+        "172.233.240.17/32",
+        "172.233.240.203/32",
+        "172.233.240.204/32",
+        "172.233.240.205/32",
+        "172.233.240.244/32",
+        "172.233.240.251/32",
+        "172.233.32.216/32",
+        "172.233.41.23/32",
+        "172.233.41.86/32",
+        "172.233.43.244/32",
+        "172.233.60.224/32",
+        "172.234.160.173/32",
+        "172.234.170.16/32",
+        "172.234.56.115/32",
+        "172.234.56.213/32",
+        "172.234.56.234/32",
+        "172.234.56.239/32",
+        "172.234.56.84/32",
+        "172.234.57.185/32",
+        "172.234.57.36/32",
+        "172.235.163.221/32",
+        "172.235.163.45/32",
+        "172.235.183.127/32",
+        "172.238.224.63/32",
+        "172.238.224.75/32",
+        "172.239.242.19/32",
+        "178.62.214.251/32",
+        "178.62.234.139/32",
+        "178.62.255.83/32",
+        "207.154.233.206/32",
+        "46.101.206.56/32",
+        "46.101.218.245/32",
+        "64.225.110.14/32",
+        "85.90.246.81/32"
       ]
     },
     {

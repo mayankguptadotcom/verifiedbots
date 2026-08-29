@@ -133,6 +133,13 @@
     ]
   },
   {
+    "id": "atlassian-bot",
+    "category": "search-engine",
+    "patterns": [
+      "atlassian-bot"
+    ]
+  },
+  {
     "id": "audigent-adbot",
     "category": "seo",
     "patterns": [
@@ -601,6 +608,20 @@
     ]
   },
   {
+    "id": "easycron",
+    "category": "webhook",
+    "patterns": [
+      "EasyCron/[\\d.]+"
+    ]
+  },
+  {
+    "id": "edgewatch",
+    "category": "security",
+    "patterns": [
+      "EdgeWatch/[\\d.]+"
+    ]
+  },
+  {
     "id": "embedly",
     "category": "social-preview",
     "patterns": [
@@ -641,6 +662,13 @@
     "category": "social-preview",
     "patterns": [
       "FastmailUA/\\d"
+    ]
+  },
+  {
+    "id": "fedreporter-bot",
+    "category": "monitoring",
+    "patterns": [
+      "FedReporterDataBot"
     ]
   },
   {
@@ -1454,6 +1482,13 @@
     ]
   },
   {
+    "id": "productsup-crawler",
+    "category": "feed-fetcher",
+    "patterns": [
+      "productsup\\.io/crawler"
+    ]
+  },
+  {
     "id": "proximic-crawler",
     "category": "seo",
     "patterns": [
@@ -1487,6 +1522,13 @@
     "patterns": [
       "Qwantify/\\d",
       "Qwantbot/\\d"
+    ]
+  },
+  {
+    "id": "rakuten-usa-image-bot",
+    "category": "feed-fetcher",
+    "patterns": [
+      "rakutenusabot-image/[\\d.]+"
     ]
   },
   {
@@ -1536,6 +1578,13 @@
     "category": "feed-fetcher",
     "patterns": [
       "ScourRSSBot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "scrunchbot",
+    "category": "monitoring",
+    "patterns": [
+      "Scrunchbot/[\\d.]+"
     ]
   },
   {
@@ -1634,6 +1683,13 @@
     "category": "ai-crawler",
     "patterns": [
       "ShapBot/\\d"
+    ]
+  },
+  {
+    "id": "sirdata-bot",
+    "category": "seo",
+    "patterns": [
+      "SirdataBot"
     ]
   },
   {
@@ -1948,6 +2004,20 @@
     "category": "seo",
     "patterns": [
       "XoviBot"
+    ]
+  },
+  {
+    "id": "xy-archive-compliance",
+    "category": "archiver",
+    "patterns": [
+      "XY-Archive-Compliance"
+    ]
+  },
+  {
+    "id": "yahoo-ad-monitoring",
+    "category": "seo",
+    "patterns": [
+      "Yahoo Ad [Mm]onitoring"
     ]
   },
   {

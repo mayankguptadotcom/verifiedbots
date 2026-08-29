@@ -1,0 +1,18 @@
+id: productsup-crawler
+name: Productsup Website Crawler
+operator: { name: Productsup, url: "https://www.productsup.com" }
+description: >-
+  Crawler behind Productsup's website data-import source, which reads pages of a
+  site a Productsup customer has configured and turns them into a product data
+  feed. Productsup documents the default user agent, and notes that customers
+  may append a hash to it for their own filtering.
+docs:
+  - "https://help.productsup.com/docs/help-center/import-data-feeds/import-data-from-internal-systems/import-web-data-with-website-crawler"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'productsup\.io/crawler'
+  instances:
+    - 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.6) Gecko/20070802 SeaMonkey/1.1.4 (productsup.io/crawler)'
+behavior: { respects_robots_txt: false }
+verification: []
