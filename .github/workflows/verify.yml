@@ -16,8 +16,8 @@ jobs:
       - run: npm run validate
       - name: Web Bot Auth key directories
         run: npm run verify-wba
-      - name: Live feed verification
-        run: npm run fetch-feeds
+      - name: Live feed verification (exit 2 = held/transient, covered by last-known-good)
+        run: npm run fetch-feeds || [ $? -eq 2 ]
 
   site:
     runs-on: ubuntu-latest

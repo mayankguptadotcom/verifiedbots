@@ -92,3 +92,99 @@ describe('fetchAllFeeds', () => {
     expect(out[0]).toMatchObject({ status: 'error', ranges: [] });
   });
 });
+
+describe('failure severity', () => {
+  const run = (fetcher: Fetcher, url = 'https://feeds.example/g.json') =>
+    fetchAllFeeds([bot('googlebot', url)], lkg, fetcher);
+
+  it('marks a gone URL hard so CI fails on it', async () => {
+    for (const status of [400, 404, 405, 410, 414, 451]) {
+      const out = await run(async () => ({ status, body: '' }));
+      expect(out[0], `HTTP ${status}`).toMatchObject({ status: 'error', severity: 'hard' });
+    }
+  });
+
+  it('marks a throttled or broken origin soft so last-known-good covers it', async () => {
+    for (const status of [403, 429, 500, 502, 503]) {
+      const out = await run(async () => ({ status, body: '' }));
+      expect(out[0], `HTTP ${status}`).toMatchObject({ status: 'error', severity: 'soft' });
+    }
+  });
+
+  it('marks a transport failure soft but DNS NXDOMAIN hard', async () => {
+    const flaky = await run(async () => { throw new Error('fetch failed'); });
+    expect(flaky[0]).toMatchObject({ severity: 'soft' });
+
+    const gone = await run(async () => {
+      const cause = Object.assign(new Error('getaddrinfo ENOTFOUND feeds.example'), { code: 'ENOTFOUND' });
+      throw new Error('fetch failed', { cause });
+    });
+    expect(gone[0]).toMatchObject({ severity: 'hard' });
+  });
+
+  it('marks a non-https URL and an unparseable body hard', async () => {
+    const b = bot('badbot', 'https://ok.example/f.json');
+    (b.verification[0] as any).url = 'http://evil.example/f.json';
+    const insecure = await fetchAllFeeds([b], lkg, async () => ({ status: 200, body: '{}' }));
+    expect(insecure[0]).toMatchObject({ severity: 'hard' });
+
+    const wrongShape = await run(async () => ({ status: 200, body: '<html>Just a moment…</html>' }));
+    expect(wrongShape[0]).toMatchObject({ status: 'error', severity: 'hard' });
+  });
+
+  it('marks a held diff soft and leaves ok outcomes with no severity', async () => {
+    const oldRanges = Array.from({ length: 50 }, (_, i) => `8.${i}.0.0/16`).sort();
+    writeFileSync(join(lkg, 'googlebot--0.json'), JSON.stringify({ url: 'x', fetched_at: 'y', ranges: oldRanges }));
+    const newRanges = Array.from({ length: 50 }, (_, i) => `9.${i}.0.0/16`);
+    const held = await run(async () => ({ status: 200, body: prefixBody(newRanges) }));
+    expect(held[0]).toMatchObject({ status: 'held', severity: 'soft' });
+
+    const fine = await fetchAllFeeds([bot('other', 'https://feeds.example/o.json')], lkg, async () => ({
+      status: 200,
+      body: prefixBody(['66.249.64.0/27']),
+    }));
+    expect(fine[0].severity).toBeUndefined();
+  });
+});
+
+describe('acceptHeld', () => {
+  const oldRanges = Array.from({ length: 50 }, (_, i) => `8.${i}.0.0/16`).sort();
+  const newRanges = Array.from({ length: 50 }, (_, i) => `9.${i}.0.0/16`).sort();
+  const fetcher: Fetcher = async () => ({ status: 200, body: prefixBody(newRanges) });
+  const seed = () =>
+    writeFileSync(join(lkg, 'googlebot--0.json'), JSON.stringify({ url: 'x', fetched_at: 'y', ranges: oldRanges }));
+
+  it('writes LKG for an accepted diff, unsticking a permanently held feed', async () => {
+    seed();
+    const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher, {
+      acceptHeld: new Set(['googlebot']),
+    });
+    expect(out[0]).toMatchObject({ status: 'ok', ranges: newRanges });
+    expect(out[0].detail).toContain('accepted diff');
+    expect(JSON.parse(readFileSync(join(lkg, 'googlebot--0.json'), 'utf8')).ranges).toEqual(newRanges);
+  });
+
+  it('accepts a single feed by index without affecting the bot other feeds', async () => {
+    seed();
+    const byIndex = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher, {
+      acceptHeld: new Set(['googlebot--0']),
+    });
+    expect(byIndex[0].status).toBe('ok');
+
+    seed();
+    const wrongIndex = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, fetcher, {
+      acceptHeld: new Set(['googlebot--1']),
+    });
+    expect(wrongIndex[0].status).toBe('held');
+  });
+
+  it('never bypasses the poisoned-range check, only the diff guard', async () => {
+    seed();
+    const out = await fetchAllFeeds([bot('googlebot', 'https://feeds.example/g.json')], lkg, async () => ({
+      status: 200,
+      body: prefixBody(['10.0.0.0/16']),
+    }), { acceptHeld: new Set(['googlebot']) });
+    expect(out[0]).toMatchObject({ status: 'error', severity: 'hard' });
+    expect(JSON.parse(readFileSync(join(lkg, 'googlebot--0.json'), 'utf8')).ranges).toEqual(oldRanges);
+  });
+});

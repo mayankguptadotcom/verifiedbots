@@ -7,7 +7,16 @@ recipes) at verifiedbots.dev. Data lives in `bots/*.yaml` (one file per bot);
 ## Commands
 
 - `npm run validate` — schema + rules check on all `bots/*.yaml`. Must print `OK: <n> bots valid`.
-- `npm run fetch-feeds` — live-fetches every claimed feed URL. Must exit 0.
+- `npm run fetch-feeds` — live-fetches every claimed feed URL. Exit 0 = all clean;
+  **exit 2 = held or transiently failed** (published data falls back to
+  last-known-good — this is the design working, and CI tolerates it); **exit 1 =
+  a recipe is genuinely broken** (URL gone/404, not https, or no longer serving
+  the declared shape) and needs a human. Only exit 1 is a failure.
+  - `npm run fetch-feeds -- --accept-held <botId>[--<index>][,…]` rewrites
+    last-known-good for a feed the diff guard is holding. Needed because a held
+    feed never writes LKG, so the identical diff recurs forever. **Review the
+    diff first** — confirm the additions are really the operator's (e.g. inside
+    their own netblock) and that nothing legitimate was dropped.
 - `npm run build:artifacts` — rebuilds `dist/` (also refreshes `data/first-seen.json`).
 - `npm test` — full test suite (vitest).
 - Site: `cd site && npm run build` (Astro; only needed when `site/` changes).
@@ -73,19 +82,25 @@ only when it fails the gate above.
 3. `behavior.respects_robots_txt`: true only if the operator documents it.
    Non-crawler service traffic (webhooks, user-configured monitors) is
    `false` with a category that explains why.
-4. Feed formats for `cidr_feed`: `prefixes` (Google/OpenAI style),
+4. A feed that rotates faster than the daily build publishes is **not** a Tier 1
+   recipe. Check churn before attaching one: re-fetch a few hours later and see
+   how much of the first snapshot is still live. `sirdata-bot` turned over 56 of
+   96 addresses in 2.5 hours, so a daily snapshot would misattribute most of
+   them — it is Tier 3 with a comment saying why. A stale IP list is worse than
+   no IP list.
+5. Feed formats for `cidr_feed`: `prefixes` (Google/OpenAI style),
    `json_array`, `text_lines`, `github_meta` (+`selector` — a dot-path into
    nested objects, e.g. `synthetics.prefixes_ipv4` for Datadog-style feeds;
    one recipe per array), `stripe_webhooks`. A feed in any other shape →
    use `static_cidrs` with documented ranges, or omit the recipe.
-5. Run `npm run validate && npm run fetch-feeds && npm test`. Fix or drop
-   anything red. A feed that errors means the URL is wrong — never leave a
-   broken recipe in.
-6. Commit the YAML change (plus `dist/` + `data/first-seen.json` if you ran
+6. Run `npm run validate && npm run fetch-feeds && npm test`. Fix or drop
+   anything red. An exit-1 feed means the URL is wrong — never leave a broken
+   recipe in; exit 2 (held/transient) is fine to commit through.
+7. Commit the YAML change (plus `dist/` + `data/first-seen.json` if you ran
    the build). One bot or one coherent batch per commit. Never commit
    `data/last-known-good/` churn from local fetch runs
    (`git checkout -- data/last-known-good` before staging).
-7. TRAP: `dist/` is gitignored (tracked files are force-added by the daily
+8. TRAP: `dist/` is gitignored (tracked files are force-added by the daily
    workflow), so `git add -A` silently skips NEW bots' dist artifacts —
    stage them with `git add -f dist` or the site 404s on the new per-bot
    JSON until the next scheduled refresh. Also: a PR whose branch conflicts

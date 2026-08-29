@@ -4,8 +4,9 @@ operator: { name: Sirdata, url: "https://www.sirdata.com" }
 description: >-
   Crawler for Sirdata's contextual advertising API. It fetches and categorises
   page content when Sirdata's on-page script cannot read the document from the
-  parent frame, and Sirdata publishes the addresses the bot crawls from as a
-  plain-text list it recommends refreshing every ten minutes.
+  parent frame. Sirdata publishes the addresses it crawls from at
+  proxies-list.sirdata.fr, but that pool rotates continuously — it recommends
+  re-fetching every ten minutes — so no snapshot of it stays accurate.
 docs:
   - "https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction"
 category: seo
@@ -15,7 +16,8 @@ user_agents:
   instances:
     - 'SirdataBot (+https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction)'
 behavior: { respects_robots_txt: true, robots_token: SirdataBot }
-verification:
-  - type: cidr_feed
-    url: "https://proxies-list.sirdata.fr"
-    format: text_lines
+# No cidr_feed: proxies-list.sirdata.fr is live and correct, but it rotates far faster than
+# this pipeline publishes. Measured 2026-08-29: 56 of 96 addresses turned over in 2.5 hours,
+# so a once-daily snapshot would attribute a majority of its addresses wrongly. Identity
+# without a verification recipe (Tier 3) is honest here; a stale IP list is not.
+verification: []

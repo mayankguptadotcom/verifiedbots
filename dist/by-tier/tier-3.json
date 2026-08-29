@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-29T13:18:16.426Z",
-  "count": 137,
+  "generated_at": "2026-08-29T15:58:31.279Z",
+  "count": 138,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -3219,6 +3219,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "sirdata-bot",
+      "name": "SirdataBot",
+      "operator": {
+        "name": "Sirdata",
+        "url": "https://www.sirdata.com"
+      },
+      "description": "Crawler for Sirdata's contextual advertising API. It fetches and categorises page content when Sirdata's on-page script cannot read the document from the parent frame. Sirdata publishes the addresses it crawls from at proxies-list.sirdata.fr, but that pool rotates continuously — it recommends re-fetching every ten minutes — so no snapshot of it stays accurate.",
+      "docs": [
+        "https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SirdataBot"
+        ],
+        "instances": [
+          "SirdataBot (+https://semantic-api.docs.sirdata.net/contextual-api/contextual-api/introduction)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SirdataBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": []
     },
     {
