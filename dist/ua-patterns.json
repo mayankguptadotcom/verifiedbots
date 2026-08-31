@@ -49,6 +49,13 @@
     ]
   },
   {
+    "id": "alertsite",
+    "category": "monitoring",
+    "patterns": [
+      "AlertSite"
+    ]
+  },
+  {
     "id": "algolia-crawler",
     "category": "search-engine",
     "patterns": [
@@ -700,6 +707,13 @@
     ]
   },
   {
+    "id": "feedwind-crawler",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Feedwind/\\d"
+    ]
+  },
+  {
     "id": "findfilesbot",
     "category": "search-engine",
     "patterns": [
@@ -755,6 +769,13 @@
     "patterns": [
       "GeedoShopProductFinder",
       "GeedoProductSearch"
+    ]
+  },
+  {
+    "id": "ghost-inspector",
+    "category": "monitoring",
+    "patterns": [
+      "Ghost Inspector"
     ]
   },
   {
@@ -1539,6 +1560,13 @@
     ]
   },
   {
+    "id": "repo-lookout-bot",
+    "category": "security",
+    "patterns": [
+      "RepoLookoutBot/"
+    ]
+  },
+  {
     "id": "rogerbot",
     "category": "seo",
     "patterns": [
@@ -1990,6 +2018,13 @@
     "category": "ai-crawler",
     "patterns": [
       "webzio-extended"
+    ]
+  },
+  {
+    "id": "wepch-searchengine",
+    "category": "search-engine",
+    "patterns": [
+      "WepchSearchEngine"
     ]
   },
   {

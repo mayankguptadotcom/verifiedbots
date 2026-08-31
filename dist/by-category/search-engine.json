@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-31T04:34:32.711Z",
-  "count": 69,
+  "generated_at": "2026-08-31T13:21:56.174Z",
+  "count": 70,
   "bots": [
     {
       "id": "addsearch",
@@ -5507,6 +5507,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "wepch-searchengine",
+      "name": "WepchSearchEngine",
+      "operator": {
+        "name": "Wepch",
+        "url": "https://www.wepch.com"
+      },
+      "description": "The crawler for Wepch, an independent privacy-focused search engine still in development. Its operator page states the project's purpose, gives a contact address for crawl complaints, and documents the robots.txt token site owners can use to crawl-delay or disallow it.",
+      "docs": [
+        "https://www.wepch.com/search-engine"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "WepchSearchEngine"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; WepchSearchEngine; +https://www.wepch.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "WepchSearchEngine"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-08-31T13:20:25.762Z",
       "resolved_cidrs": []
     },
     {

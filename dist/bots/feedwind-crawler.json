@@ -1,0 +1,29 @@
+{
+  "id": "feedwind-crawler",
+  "name": "FeedWind Crawler",
+  "operator": {
+    "name": "Mikle KK (FeedWind)",
+    "url": "https://feed.mikle.com"
+  },
+  "description": "The crawler behind FeedWind, an embeddable RSS/Atom widget. It fetches the feed sources that a widget owner has configured, every five minutes to five hours depending on their plan, so the rendered widget stays current. The operator's support page prints the crawler's full user agent and asks feed publishers to unblock it if a firewall is turning it away.",
+  "docs": [
+    "https://feed.mikle.com/support/description/"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "Feedwind/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; Feedwind/3.0; +https://feed.mikle.com/support/description/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-08-31T13:20:25.762Z",
+  "resolved_cidrs": []
+}

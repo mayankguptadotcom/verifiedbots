@@ -1,0 +1,114 @@
+{
+  "id": "ghost-inspector",
+  "name": "Ghost Inspector",
+  "operator": {
+    "name": "Ghost Inspector",
+    "url": "https://ghostinspector.com"
+  },
+  "description": "Ghost Inspector runs customer-authored browser tests against the sites their owners point it at, from a fixed pool of cloud test runners in 18 regions. Its runners append the literal string \"Ghost Inspector\" to the browser user agent they run, and the operator publishes the full list of test-runner addresses so site owners can filter the traffic out of their analytics.",
+  "docs": [
+    "https://docs.ghostinspector.com/faq/",
+    "https://docs.ghostinspector.com/public-api/test-runner-ip-addresses/"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "Ghost Inspector"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0 Safari/537.36 Ghost Inspector",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0 Safari/537.36 Ghost Inspector (63c85ddbde52d6697f57c623)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "52.4.55.112/32",
+        "52.20.108.143/32",
+        "52.201.131.218/32",
+        "52.205.11.111/32",
+        "15.185.63.107/32",
+        "15.185.63.176/32",
+        "52.60.48.246/32",
+        "52.60.90.232/32",
+        "13.244.48.162/32",
+        "13.244.136.56/32",
+        "52.210.60.111/32",
+        "52.210.234.253/32",
+        "52.29.147.57/32",
+        "52.57.15.241/32",
+        "18.162.186.232/32",
+        "18.162.226.126/32",
+        "52.56.51.140/32",
+        "52.56.60.61/32",
+        "15.161.196.95/32",
+        "15.161.220.58/32",
+        "52.66.94.141/32",
+        "52.66.144.183/32",
+        "52.9.221.14/32",
+        "52.52.37.140/32",
+        "52.47.76.126/32",
+        "52.47.157.89/32",
+        "52.67.38.171/32",
+        "52.67.99.152/32",
+        "52.78.158.117/32",
+        "52.78.175.144/32",
+        "52.220.124.147/32",
+        "52.220.131.87/32",
+        "13.53.114.221/32",
+        "13.53.164.156/32",
+        "52.62.56.25/32",
+        "52.63.16.151/32",
+        "52.198.43.67/32",
+        "52.198.43.160/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-08-31T13:20:25.762Z",
+  "resolved_cidrs": [
+    "13.244.136.56/32",
+    "13.244.48.162/32",
+    "13.53.114.221/32",
+    "13.53.164.156/32",
+    "15.161.196.95/32",
+    "15.161.220.58/32",
+    "15.185.63.107/32",
+    "15.185.63.176/32",
+    "18.162.186.232/32",
+    "18.162.226.126/32",
+    "52.198.43.160/32",
+    "52.198.43.67/32",
+    "52.20.108.143/32",
+    "52.201.131.218/32",
+    "52.205.11.111/32",
+    "52.210.234.253/32",
+    "52.210.60.111/32",
+    "52.220.124.147/32",
+    "52.220.131.87/32",
+    "52.29.147.57/32",
+    "52.4.55.112/32",
+    "52.47.157.89/32",
+    "52.47.76.126/32",
+    "52.52.37.140/32",
+    "52.56.51.140/32",
+    "52.56.60.61/32",
+    "52.57.15.241/32",
+    "52.60.48.246/32",
+    "52.60.90.232/32",
+    "52.62.56.25/32",
+    "52.63.16.151/32",
+    "52.66.144.183/32",
+    "52.66.94.141/32",
+    "52.67.38.171/32",
+    "52.67.99.152/32",
+    "52.78.158.117/32",
+    "52.78.175.144/32",
+    "52.9.221.14/32"
+  ]
+}

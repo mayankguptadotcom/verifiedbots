@@ -2,8 +2,11 @@ id: mistralai-user
 name: MistralAI-User
 operator: { name: "Mistral AI", url: "https://mistral.ai" }
 description: >-
-  Mistral AI's user-triggered fetcher, used when a user of a Mistral product
-  (e.g. Le Chat) asks it to visit a specific web page to answer a question.
+  Mistral AI's user-triggered fetcher. When someone asks Vibe a question, it may
+  visit a web page to help answer and link to the source in its response.
+  Mistral documents that it is not used for automatic crawling of the web, nor
+  to collect content for generative AI training, and publishes the addresses it
+  fetches from.
 docs:
   - "https://docs.mistral.ai/robots"
 category: ai-assistant

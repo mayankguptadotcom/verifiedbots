@@ -1,0 +1,19 @@
+id: repo-lookout-bot
+name: RepoLookoutBot
+operator: { name: "Crissy Field GmbH (Repo Lookout)", url: "https://www.repo-lookout.org" }
+description: >-
+  Repo Lookout is a non-commercial internet-wide security scanner that looks for
+  source-code repositories accidentally exposed to the public web and reports
+  them to the domain's technical contact. The operator documents the scanner's
+  user-agent prefix and offers two opt-outs: an email request, or denying every
+  request whose user agent starts with RepoLookoutBot.
+docs:
+  - "https://www.repo-lookout.org/"
+category: security
+user_agents:
+  patterns:
+    - 'RepoLookoutBot/'
+  instances:
+    - 'RepoLookoutBot/v1.1.0-297-gcf436d3 (abuse reports to abuse@repo-lookout.org)'
+behavior: { respects_robots_txt: false }
+verification: []

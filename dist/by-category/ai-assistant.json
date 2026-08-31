@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-08-31T04:34:32.711Z",
+  "generated_at": "2026-08-31T13:21:56.174Z",
   "count": 12,
   "bots": [
     {
@@ -2108,7 +2108,7 @@
         "name": "Mistral AI",
         "url": "https://mistral.ai"
       },
-      "description": "Mistral AI's user-triggered fetcher, used when a user of a Mistral product (e.g. Le Chat) asks it to visit a specific web page to answer a question.",
+      "description": "Mistral AI's user-triggered fetcher. When someone asks Vibe a question, it may visit a web page to help answer and link to the source in its response. Mistral documents that it is not used for automatic crawling of the web, nor to collect content for generative AI training, and publishes the addresses it fetches from.",
       "docs": [
         "https://docs.mistral.ai/robots"
       ],
