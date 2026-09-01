@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-01T04:32:41.594Z",
-  "count": 58,
+  "generated_at": "2026-09-01T13:17:25.816Z",
+  "count": 66,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -1460,6 +1460,44 @@
       ]
     },
     {
+      "id": "oai-adsbot",
+      "name": "OAI-AdsBot",
+      "operator": {
+        "name": "OpenAI",
+        "url": "https://openai.com"
+      },
+      "description": "OpenAI's fetcher for advertising on ChatGPT. When an advertiser submits an ad, OAI-AdsBot visits the submitted landing page to check that it complies with OpenAI's ad policies and to judge when the ad is relevant to show. OpenAI states it only visits pages submitted as ads and that what it collects is not used to train generative AI foundation models. It has its own published IP range list, separate from GPTBot, OAI-SearchBot and ChatGPT-User.",
+      "docs": [
+        "https://developers.openai.com/api/docs/bots"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "OAI-AdsBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://openai.com/adsbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": [
+        "130.131.229.128/25",
+        "20.168.90.128/25"
+      ]
+    },
+    {
       "id": "oncrawl",
       "name": "OnCrawl",
       "operator": {
@@ -2711,6 +2749,207 @@
       "resolved_cidrs": []
     },
     {
+      "id": "w3c-checklink",
+      "name": "W3C Link Checker",
+      "operator": {
+        "name": "World Wide Web Consortium (W3C)",
+        "url": "https://www.w3.org"
+      },
+      "description": "W3C's link checker, which follows the links on a user-submitted page to report broken and redirected references. W3C's validation services page marks it as the one validator that, being a crawling service, honors robots.txt directives, and gives the same published source addresses as the other W3C validators.",
+      "docs": [
+        "https://validator.w3.org/services"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "W3C-checklink"
+        ],
+        "instances": [
+          "W3C-checklink"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "W3C-checklink"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.22.66.203/32",
+            "2600:1f18:7d7a:2700::/56"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": [
+        "2600:1f18:7d7a:2700::/56",
+        "52.22.66.203/32"
+      ]
+    },
+    {
+      "id": "w3c-css-validator",
+      "name": "W3C CSS Validation Service",
+      "operator": {
+        "name": "World Wide Web Consortium (W3C)",
+        "url": "https://www.w3.org"
+      },
+      "description": "W3C's CSS validator, which fetches a user-submitted page and its stylesheets to check them against the CSS specifications. It runs on W3C's Jigsaw server and identifies itself with a Jigsaw prefix followed by its own W3C_CSS_Validator_JFouffa token, from the same published validator addresses.",
+      "docs": [
+        "https://validator.w3.org/services"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "W3C_CSS_Validator_JFouffa/[\\d.]+"
+        ],
+        "instances": [
+          "Jigsaw/2.3.0 W3C_CSS_Validator_JFouffa/2.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.22.66.203/32",
+            "2600:1f18:7d7a:2700::/56"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": [
+        "2600:1f18:7d7a:2700::/56",
+        "52.22.66.203/32"
+      ]
+    },
+    {
+      "id": "w3c-i18n-checker",
+      "name": "W3C Internationalization Checker",
+      "operator": {
+        "name": "World Wide Web Consortium (W3C)",
+        "url": "https://www.w3.org"
+      },
+      "description": "The fetcher behind W3C's Internationalization Checker, which retrieves a user-submitted page and reports on its language, encoding and other i18n markup. W3C's validation services page lists its user agent alongside the single IPv4 address and IPv6 prefix all W3C validators fetch from.",
+      "docs": [
+        "https://validator.w3.org/services"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "W3C_I18n-Checker/[\\d.]+"
+        ],
+        "instances": [
+          "W3C_I18n-Checker/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.22.66.203/32",
+            "2600:1f18:7d7a:2700::/56"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": [
+        "2600:1f18:7d7a:2700::/56",
+        "52.22.66.203/32"
+      ]
+    },
+    {
+      "id": "w3c-validator",
+      "name": "W3C Markup Validator",
+      "operator": {
+        "name": "World Wide Web Consortium (W3C)",
+        "url": "https://www.w3.org"
+      },
+      "description": "The W3C Markup Validation Service's fetcher, used when a user submits a URL to be checked for HTML conformance. W3C documents a fixed source address for its validation services alongside the user-agent string.",
+      "docs": [
+        "https://validator.w3.org/services"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "W3C_Validator/[\\d.]+"
+        ],
+        "instances": [
+          "W3C_Validator/1.3"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.22.66.203/32",
+            "2600:1f18:7d7a:2700::/56"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": [
+        "2600:1f18:7d7a:2700::/56",
+        "52.22.66.203/32"
+      ]
+    },
+    {
+      "id": "w3c-validator-nu",
+      "name": "Validator.nu (W3C Nu HTML Checker)",
+      "operator": {
+        "name": "World Wide Web Consortium (W3C)",
+        "url": "https://www.w3.org"
+      },
+      "description": "The fetcher behind the Nu HTML Checker, the W3C validation service that checks a user-submitted URL against current HTML conformance rules. W3C's validation services page lists its user agent and states that all W3C validator traffic comes from one published IPv4 address and one IPv6 prefix.",
+      "docs": [
+        "https://validator.w3.org/services"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Validator\\.nu/"
+        ],
+        "instances": [
+          "Validator.nu/LV"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.22.66.203/32",
+            "2600:1f18:7d7a:2700::/56"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": [
+        "2600:1f18:7d7a:2700::/56",
+        "52.22.66.203/32"
+      ]
+    },
+    {
       "id": "xovibot-crawler",
       "name": "XoviBot",
       "operator": {
@@ -2768,6 +3007,83 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-29T13:18:16.426Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-accessibility",
+      "name": "YandexAccessibilityBot",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's accessibility checker, which downloads pages to assess how accessible they are to users. Yandex documents that it sends up to three requests per second, ignores the crawl-rate setting in Yandex Webmaster, and does not follow the general robots.txt rules written for arbitrary robots.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexAccessibilityBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexAccessibilityBot/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-pagechecker",
+      "name": "YandexPagechecker",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The fetcher behind Yandex's structured data validator, which retrieves a page so its markup can be validated. Yandex's robot table records it as taking the general robots.txt rules into account.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexPagechecker/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexPagechecker/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexPagechecker"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-01T13:17:25.816Z",
       "resolved_cidrs": []
     },
     {

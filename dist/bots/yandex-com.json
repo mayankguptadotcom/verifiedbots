@@ -1,0 +1,38 @@
+{
+  "id": "yandex-com",
+  "name": "YandexComBot",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "Yandex's indexing robot for content in languages other than Russian, feeding the international yandex.com search index. Yandex's robot table documents that it can index content when there is no explicit robot-specific restriction, and lists it among the robots that do not follow the general robots.txt rules written for arbitrary robots.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "YandexComBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexComBot/3.0; +http://ya.cc/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-01T13:17:25.816Z",
+  "resolved_cidrs": []
+}

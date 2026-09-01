@@ -1,0 +1,22 @@
+id: w3c-validator-nu
+name: Validator.nu (W3C Nu HTML Checker)
+operator: { name: "World Wide Web Consortium (W3C)", url: "https://www.w3.org" }
+description: >-
+  The fetcher behind the Nu HTML Checker, the W3C validation service that checks
+  a user-submitted URL against current HTML conformance rules. W3C's validation
+  services page lists its user agent and states that all W3C validator traffic
+  comes from one published IPv4 address and one IPv6 prefix.
+docs:
+  - "https://validator.w3.org/services"
+category: seo
+user_agents:
+  patterns:
+    - 'Validator\.nu/'
+  instances:
+    - 'Validator.nu/LV'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "52.22.66.203/32"
+      - "2600:1f18:7d7a:2700::/56"

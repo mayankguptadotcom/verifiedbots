@@ -1,0 +1,41 @@
+{
+  "id": "w3c-checklink",
+  "name": "W3C Link Checker",
+  "operator": {
+    "name": "World Wide Web Consortium (W3C)",
+    "url": "https://www.w3.org"
+  },
+  "description": "W3C's link checker, which follows the links on a user-submitted page to report broken and redirected references. W3C's validation services page marks it as the one validator that, being a crawling service, honors robots.txt directives, and gives the same published source addresses as the other W3C validators.",
+  "docs": [
+    "https://validator.w3.org/services"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "W3C-checklink"
+    ],
+    "instances": [
+      "W3C-checklink"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "W3C-checklink"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "52.22.66.203/32",
+        "2600:1f18:7d7a:2700::/56"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-01T13:17:25.816Z",
+  "resolved_cidrs": [
+    "2600:1f18:7d7a:2700::/56",
+    "52.22.66.203/32"
+  ]
+}

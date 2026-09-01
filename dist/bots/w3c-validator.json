@@ -9,7 +9,7 @@
   "docs": [
     "https://validator.w3.org/services"
   ],
-  "category": "security",
+  "category": "seo",
   "user_agents": {
     "patterns": [
       "W3C_Validator/[\\d.]+"

@@ -1,0 +1,40 @@
+{
+  "id": "w3c-i18n-checker",
+  "name": "W3C Internationalization Checker",
+  "operator": {
+    "name": "World Wide Web Consortium (W3C)",
+    "url": "https://www.w3.org"
+  },
+  "description": "The fetcher behind W3C's Internationalization Checker, which retrieves a user-submitted page and reports on its language, encoding and other i18n markup. W3C's validation services page lists its user agent alongside the single IPv4 address and IPv6 prefix all W3C validators fetch from.",
+  "docs": [
+    "https://validator.w3.org/services"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "W3C_I18n-Checker/[\\d.]+"
+    ],
+    "instances": [
+      "W3C_I18n-Checker/1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "52.22.66.203/32",
+        "2600:1f18:7d7a:2700::/56"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-01T13:17:25.816Z",
+  "resolved_cidrs": [
+    "2600:1f18:7d7a:2700::/56",
+    "52.22.66.203/32"
+  ]
+}

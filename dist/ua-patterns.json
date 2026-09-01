@@ -1383,6 +1383,13 @@
     ]
   },
   {
+    "id": "oai-adsbot",
+    "category": "seo",
+    "patterns": [
+      "OAI-AdsBot/\\d"
+    ]
+  },
+  {
     "id": "oai-searchbot",
     "category": "ai-crawler",
     "patterns": [
@@ -1986,10 +1993,45 @@
     ]
   },
   {
+    "id": "w3c-checklink",
+    "category": "seo",
+    "patterns": [
+      "W3C-checklink"
+    ]
+  },
+  {
+    "id": "w3c-css-validator",
+    "category": "seo",
+    "patterns": [
+      "W3C_CSS_Validator_JFouffa/[\\d.]+"
+    ]
+  },
+  {
+    "id": "w3c-feed-validator",
+    "category": "feed-fetcher",
+    "patterns": [
+      "FeedValidator/[\\d.]+"
+    ]
+  },
+  {
+    "id": "w3c-i18n-checker",
+    "category": "seo",
+    "patterns": [
+      "W3C_I18n-Checker/[\\d.]+"
+    ]
+  },
+  {
     "id": "w3c-validator",
-    "category": "security",
+    "category": "seo",
     "patterns": [
       "W3C_Validator/[\\d.]+"
+    ]
+  },
+  {
+    "id": "w3c-validator-nu",
+    "category": "seo",
+    "patterns": [
+      "Validator\\.nu/"
     ]
   },
   {
@@ -2084,10 +2126,32 @@
     ]
   },
   {
+    "id": "yandex-accessibility",
+    "category": "seo",
+    "patterns": [
+      "YandexAccessibilityBot/\\d"
+    ]
+  },
+  {
+    "id": "yandex-additional",
+    "category": "ai-crawler",
+    "patterns": [
+      "YandexAdditionalBot/\\d",
+      "YandexAdditional/\\d"
+    ]
+  },
+  {
     "id": "yandex-blogs",
     "category": "search-engine",
     "patterns": [
       "YandexBlogs/[\\d.]+"
+    ]
+  },
+  {
+    "id": "yandex-com",
+    "category": "search-engine",
+    "patterns": [
+      "YandexComBot/\\d"
     ]
   },
   {
@@ -2116,6 +2180,20 @@
     "category": "search-engine",
     "patterns": [
       "YandexMedia/\\d"
+    ]
+  },
+  {
+    "id": "yandex-mobile",
+    "category": "search-engine",
+    "patterns": [
+      "YandexMobileBot/\\d"
+    ]
+  },
+  {
+    "id": "yandex-pagechecker",
+    "category": "seo",
+    "patterns": [
+      "YandexPagechecker/\\d"
     ]
   },
   {

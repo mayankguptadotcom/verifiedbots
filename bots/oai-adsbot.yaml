@@ -1,0 +1,23 @@
+id: oai-adsbot
+name: OAI-AdsBot
+operator: { name: OpenAI, url: "https://openai.com" }
+description: >-
+  OpenAI's fetcher for advertising on ChatGPT. When an advertiser submits an ad,
+  OAI-AdsBot visits the submitted landing page to check that it complies with
+  OpenAI's ad policies and to judge when the ad is relevant to show. OpenAI
+  states it only visits pages submitted as ads and that what it collects is not
+  used to train generative AI foundation models. It has its own published IP
+  range list, separate from GPTBot, OAI-SearchBot and ChatGPT-User.
+docs:
+  - "https://developers.openai.com/api/docs/bots"
+category: seo
+user_agents:
+  patterns:
+    - 'OAI-AdsBot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: cidr_feed
+    url: "https://openai.com/adsbot.json"
+    format: prefixes

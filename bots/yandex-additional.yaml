@@ -1,0 +1,22 @@
+id: yandex-additional
+name: YandexAdditionalBot
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  Yandex's robot for processing robots.txt so that site owners can keep already
+  indexed page content out of the AI responses shown in Yandex Search. Yandex's
+  robot table states it applies to pages that have already been indexed by the
+  primary crawler and that it makes no indexing requests of its own.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'YandexAdditionalBot/\d'
+    - 'YandexAdditional/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexAdditionalBot/1.0; +http://yandex.com/bots)'
+    - 'Mozilla/5.0 (compatible; YandexAdditional/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

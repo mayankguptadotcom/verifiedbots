@@ -1,0 +1,22 @@
+id: w3c-css-validator
+name: W3C CSS Validation Service
+operator: { name: "World Wide Web Consortium (W3C)", url: "https://www.w3.org" }
+description: >-
+  W3C's CSS validator, which fetches a user-submitted page and its stylesheets
+  to check them against the CSS specifications. It runs on W3C's Jigsaw server
+  and identifies itself with a Jigsaw prefix followed by its own
+  W3C_CSS_Validator_JFouffa token, from the same published validator addresses.
+docs:
+  - "https://validator.w3.org/services"
+category: seo
+user_agents:
+  patterns:
+    - 'W3C_CSS_Validator_JFouffa/[\d.]+'
+  instances:
+    - 'Jigsaw/2.3.0 W3C_CSS_Validator_JFouffa/2.0'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "52.22.66.203/32"
+      - "2600:1f18:7d7a:2700::/56"

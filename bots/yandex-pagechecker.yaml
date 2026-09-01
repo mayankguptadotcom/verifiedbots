@@ -1,0 +1,19 @@
+id: yandex-pagechecker
+name: YandexPagechecker
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The fetcher behind Yandex's structured data validator, which retrieves a page
+  so its markup can be validated. Yandex's robot table records it as taking the
+  general robots.txt rules into account.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: seo
+user_agents:
+  patterns:
+    - 'YandexPagechecker/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexPagechecker/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexPagechecker }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

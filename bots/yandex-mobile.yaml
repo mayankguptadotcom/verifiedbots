@@ -1,0 +1,21 @@
+id: yandex-mobile
+name: YandexMobileBot
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  Yandex's mobile-layout robot, which fetches pages to determine whether their
+  layout is suitable for mobile devices. It advertises an iPhone Safari prefix
+  followed by its own YandexMobileBot token, and Yandex lists it among the
+  robots that do not follow the general robots.txt rules written for arbitrary
+  robots.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexMobileBot/\d'
+  instances:
+    - 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4 (compatible; YandexMobileBot/3.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

@@ -1,0 +1,22 @@
+id: w3c-feed-validator
+name: W3C Feed Validation Service
+operator: { name: "World Wide Web Consortium (W3C)", url: "https://www.w3.org" }
+description: >-
+  W3C's feed validator, which fetches a user-submitted RSS or Atom feed to check
+  it against the feed specifications. It is a one-off conformance check rather
+  than a subscription fetcher, and W3C publishes its user agent and the shared
+  validator source addresses.
+docs:
+  - "https://validator.w3.org/services"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'FeedValidator/[\d.]+'
+  instances:
+    - 'FeedValidator/1.3'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "52.22.66.203/32"
+      - "2600:1f18:7d7a:2700::/56"
