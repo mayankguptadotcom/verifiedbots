@@ -1,6 +1,6 @@
 {
   "url": "https://ip-ranges.datadoghq.com/synthetics.json",
-  "fetched_at": "2026-08-31T13:22:44.429Z",
+  "fetched_at": "2026-09-01T04:32:11.232Z",
   "ranges": [
     "2607:4240:4000::/34"
   ]
