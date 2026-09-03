@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-03T05:25:35.017Z",
-  "count": 72,
+  "generated_at": "2026-09-03T13:20:13.415Z",
+  "count": 73,
   "bots": [
     {
       "id": "addsearch",
@@ -6436,6 +6436,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "swiftbot",
+      "name": "Swiftbot",
+      "operator": {
+        "name": "Elasticsearch B.V. (Swiftype)",
+        "url": "https://swiftype.com"
+      },
+      "description": "The web crawler behind Swiftype's site-search product, now operated by Elasticsearch B.V. Unlike a general search-engine crawler it only visits sites that Swiftype customers have asked it to crawl, in order to build a search index for those sites. The operator documents that Swiftbot obeys every restriction it finds in robots.txt, including a full-site disallow, and that it looks for the token Swiftbot.",
+      "docs": [
+        "https://swiftype.com/swiftbot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Swiftbot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Swiftbot/1.0; UID/649dce5512ab734096a50277; +http://swiftype.com/swiftbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Swiftbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-03T13:20:13.415Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,21 @@
+id: fedicabot
+name: Fedicabot
+operator: { name: Fedica, url: "https://fedica.com" }
+description: >-
+  The fetcher used by Fedica's social-media publishing platform. The operator
+  documents that it does not crawl whole sites: it reads only the page or RSS
+  feed a Fedica user has specified, downloading feed content so the user can
+  schedule posts from it, and reading Open Graph metadata so a shared link
+  renders as a card. Fedica publishes the robots.txt token but states no
+  robots.txt policy and no address ranges.
+docs:
+  - "https://fedica.com/info/fedicabot"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Fedicabot'
+    - 'FedicaApp'
+  instances:
+    - 'Fedicabot / FedicaApp'
+behavior: { respects_robots_txt: false, robots_token: Fedicabot }
+verification: []

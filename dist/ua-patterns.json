@@ -672,6 +672,14 @@
     ]
   },
   {
+    "id": "fedicabot",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Fedicabot",
+      "FedicaApp"
+    ]
+  },
+  {
     "id": "fedreporter-bot",
     "category": "monitoring",
     "patterns": [
@@ -1868,6 +1876,13 @@
     "category": "webhook",
     "patterns": [
       "Svix-Webhooks/[\\d.]+"
+    ]
+  },
+  {
+    "id": "swiftbot",
+    "category": "search-engine",
+    "patterns": [
+      "Swiftbot/\\d"
     ]
   },
   {
