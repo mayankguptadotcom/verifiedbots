@@ -1,0 +1,38 @@
+{
+  "id": "yandex-feed",
+  "name": "YandexFeed",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "A Yandex robot that downloads structured data from links website owners have themselves submitted to Yandex services. Yandex's robot table records that it makes no indexing requests and does not follow the general robots.txt rules.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "YandexFeed/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexFeed/1.0; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-05T13:14:04.599Z",
+  "resolved_cidrs": []
+}

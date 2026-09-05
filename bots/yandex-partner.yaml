@@ -1,0 +1,19 @@
+id: yandex-partner
+name: YandexPartner
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  A Yandex robot that downloads information about the content of Yandex
+  partner sites. Yandex's robot table lists it separately from the indexing
+  robots and records that it does not follow the general robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: seo
+user_agents:
+  patterns:
+    - 'YandexPartner/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexPartner/3.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

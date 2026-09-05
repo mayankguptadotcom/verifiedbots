@@ -1,0 +1,22 @@
+id: yandex-direct
+name: YandexDirect
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The Yandex Advertising Network robots. YandexDirect downloads information
+  about the content of partner sites to identify their topic categories so
+  that relevant advertising can be matched to them, and YandexDirectDyn
+  generates dynamic banners. Neither follows the general robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: seo
+user_agents:
+  patterns:
+    - 'YandexDirect/\d'
+    - 'YandexDirectDyn/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexDirect/3.0; +http://yandex.com/bots)'
+    - 'Mozilla/5.0 (compatible; YandexDirectDyn/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

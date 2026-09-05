@@ -1,0 +1,38 @@
+{
+  "id": "yandex-videoparser",
+  "name": "YandexVideoParser",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "A second Yandex robot that indexes videos for display in Yandex video search, listed separately from YandexVideo. Unlike YandexVideo, Yandex's robot table records that it does not take the general robots.txt rules into account.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "YandexVideoParser/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexVideoParser/1.0; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-05T13:14:04.599Z",
+  "resolved_cidrs": []
+}

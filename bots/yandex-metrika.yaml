@@ -1,0 +1,22 @@
+id: yandex-metrika
+name: YandexMetrika
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The robot behind Yandex Metrica, Yandex's web analytics product. Yandex
+  documents several versions of it: one downloads site pages to check their
+  availability, including the landing pages of Yandex Direct ads, and another
+  downloads and caches CSS styles so pages can be rendered in Webvisor. The
+  robot table records that it ignores the directives set for it in robots.txt.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: monitoring
+user_agents:
+  patterns:
+    - 'YandexMetrika/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexMetrika/2.0; +http://yandex.com/bots yabs01)'
+    - 'Mozilla/5.0 (compatible; YandexMetrika/4.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

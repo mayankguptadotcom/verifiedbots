@@ -1,0 +1,20 @@
+id: yandex-checkbot
+name: YandexCheckBot
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  Yandex's availability checker, which downloads pages from websites in
+  different regions of the world to check whether they are reachable for
+  users. Yandex's robot table records that it makes no indexing requests and
+  does not follow the general robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: monitoring
+user_agents:
+  patterns:
+    - 'YandexCheckBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexCheckBot/3.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

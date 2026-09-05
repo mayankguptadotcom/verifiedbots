@@ -1,0 +1,20 @@
+id: cloudflare-security-insights
+name: Cloudflare Security Insights
+operator: { name: Cloudflare, url: "https://www.cloudflare.com" }
+description: >-
+  The crawler behind Cloudflare Security Insights, which reviews a zone for
+  security problems and surfaces them in the Cloudflare dashboard. Its user
+  agent is a Chrome string with a Cloudflare self-identification appended;
+  Cloudflare's crawler reference documents it but does not tie the traffic to
+  any published address list, so no CIDR recipe is attached.
+docs:
+  - "https://developers.cloudflare.com/fundamentals/reference/cloudflare-site-crawling/"
+  - "https://developers.cloudflare.com/security/security-insights/review-insights/"
+category: security
+user_agents:
+  patterns:
+    - 'compatible; \+https://developers\.cloudflare\.com/security-center/'
+  instances:
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36 (compatible; +https://developers.cloudflare.com/security-center/)'
+behavior: { respects_robots_txt: false }
+verification: []

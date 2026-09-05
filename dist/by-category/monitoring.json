@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-05T04:30:11.403Z",
-  "count": 47,
+  "generated_at": "2026-09-05T13:18:13.632Z",
+  "count": 49,
   "bots": [
     {
       "id": "alertsite",
@@ -4856,6 +4856,83 @@
         "80.209.238.252/32",
         "85.206.149.28/32"
       ]
+    },
+    {
+      "id": "yandex-checkbot",
+      "name": "YandexCheckBot",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "Yandex's availability checker, which downloads pages from websites in different regions of the world to check whether they are reachable for users. Yandex's robot table records that it makes no indexing requests and does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "YandexCheckBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexCheckBot/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-metrika",
+      "name": "YandexMetrika",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot behind Yandex Metrica, Yandex's web analytics product. Yandex documents several versions of it: one downloads site pages to check their availability, including the landing pages of Yandex Direct ads, and another downloads and caches CSS styles so pages can be rendered in Webvisor. The robot table records that it ignores the directives set for it in robots.txt.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "YandexMetrika/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexMetrika/2.0; +http://yandex.com/bots yabs01)",
+          "Mozilla/5.0 (compatible; YandexMetrika/4.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
     }
   ]
 }

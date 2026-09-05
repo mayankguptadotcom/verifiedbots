@@ -431,6 +431,13 @@
     ]
   },
   {
+    "id": "cloudflare-security-insights",
+    "category": "security",
+    "patterns": [
+      "compatible; \\+https://developers\\.cloudflare\\.com/security-center/"
+    ]
+  },
+  {
     "id": "cloudflare-ssl-detector",
     "category": "security",
     "patterns": [
@@ -2106,6 +2113,13 @@
     ]
   },
   {
+    "id": "yadirectfetcher",
+    "category": "seo",
+    "patterns": [
+      "YaDirectFetcher/\\d"
+    ]
+  },
+  {
     "id": "yahoo-ad-monitoring",
     "category": "seo",
     "patterns": [
@@ -2163,6 +2177,20 @@
     ]
   },
   {
+    "id": "yandex-calendar",
+    "category": "feed-fetcher",
+    "patterns": [
+      "YandexCalendar/\\d"
+    ]
+  },
+  {
+    "id": "yandex-checkbot",
+    "category": "monitoring",
+    "patterns": [
+      "YandexCheckBot/\\d"
+    ]
+  },
+  {
     "id": "yandex-com",
     "category": "search-engine",
     "patterns": [
@@ -2177,10 +2205,25 @@
     ]
   },
   {
+    "id": "yandex-direct",
+    "category": "seo",
+    "patterns": [
+      "YandexDirect/\\d",
+      "YandexDirectDyn/\\d"
+    ]
+  },
+  {
     "id": "yandex-favicons",
     "category": "search-engine",
     "patterns": [
       "YandexFavicons/\\d"
+    ]
+  },
+  {
+    "id": "yandex-feed",
+    "category": "feed-fetcher",
+    "patterns": [
+      "YandexFeed/\\d"
     ]
   },
   {
@@ -2198,6 +2241,13 @@
     ]
   },
   {
+    "id": "yandex-metrika",
+    "category": "monitoring",
+    "patterns": [
+      "YandexMetrika/\\d"
+    ]
+  },
+  {
     "id": "yandex-mobile",
     "category": "search-engine",
     "patterns": [
@@ -2212,10 +2262,67 @@
     ]
   },
   {
+    "id": "yandex-partner",
+    "category": "seo",
+    "patterns": [
+      "YandexPartner/\\d"
+    ]
+  },
+  {
+    "id": "yandex-rca",
+    "category": "social-preview",
+    "patterns": [
+      "YandexRCA/\\d"
+    ]
+  },
+  {
+    "id": "yandex-screenshot",
+    "category": "search-engine",
+    "patterns": [
+      "YandexScreenshotBot/\\d",
+      "YandexMobileScreenShotBot/\\d"
+    ]
+  },
+  {
+    "id": "yandex-searchshop",
+    "category": "feed-fetcher",
+    "patterns": [
+      "YandexSearchShop/\\d"
+    ]
+  },
+  {
+    "id": "yandex-sitelinks",
+    "category": "search-engine",
+    "patterns": [
+      "YandexSitelinks"
+    ]
+  },
+  {
+    "id": "yandex-userproxy",
+    "category": "ai-assistant",
+    "patterns": [
+      "YandexUserproxy"
+    ]
+  },
+  {
+    "id": "yandex-verticals",
+    "category": "search-engine",
+    "patterns": [
+      "YandexVerticals/\\d"
+    ]
+  },
+  {
     "id": "yandex-video",
     "category": "search-engine",
     "patterns": [
       "YandexVideo/\\d"
+    ]
+  },
+  {
+    "id": "yandex-videoparser",
+    "category": "search-engine",
+    "patterns": [
+      "YandexVideoParser/\\d"
     ]
   },
   {

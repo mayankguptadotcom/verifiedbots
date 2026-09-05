@@ -1,0 +1,38 @@
+{
+  "id": "yandex-userproxy",
+  "name": "YandexUserproxy",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "A Yandex robot that proxies user actions taken on Yandex services: it sends requests in response to button clicks and downloads pages for online translation, so its requests to a site follow from something a person just did. It does not follow the general robots.txt rules.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "YandexUserproxy"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexUserproxy; robot; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-05T13:14:04.599Z",
+  "resolved_cidrs": []
+}

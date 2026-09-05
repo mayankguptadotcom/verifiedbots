@@ -1,0 +1,38 @@
+{
+  "id": "yandex-searchshop",
+  "name": "YandexSearchShop",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "A Yandex robot that downloads product catalogs in YML files at the request of users. Yandex notes that these files are often placed in directories that are disallowed for indexing, and that the robot does not follow the general robots.txt rules.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "YandexSearchShop/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexSearchShop/1.0; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-05T13:14:04.599Z",
+  "resolved_cidrs": []
+}

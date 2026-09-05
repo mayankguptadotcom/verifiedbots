@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-05T04:30:11.403Z",
-  "count": 23,
+  "generated_at": "2026-09-05T13:18:13.632Z",
+  "count": 26,
   "bots": [
     {
       "id": "amazon-seller-initiated-listing",
@@ -1280,6 +1280,120 @@
         "2600:1f18:7d7a:2700::/56",
         "52.22.66.203/32"
       ]
+    },
+    {
+      "id": "yandex-calendar",
+      "name": "YandexCalendar",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex Calendar robot, which downloads calendar files at the request of Yandex Calendar users. Yandex notes that these files are often located in directories that are disallowed for indexing, and that the robot does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "YandexCalendar/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexCalendar/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-feed",
+      "name": "YandexFeed",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "A Yandex robot that downloads structured data from links website owners have themselves submitted to Yandex services. Yandex's robot table records that it makes no indexing requests and does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "YandexFeed/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexFeed/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-searchshop",
+      "name": "YandexSearchShop",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "A Yandex robot that downloads product catalogs in YML files at the request of users. Yandex notes that these files are often placed in directories that are disallowed for indexing, and that the robot does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "YandexSearchShop/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexSearchShop/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
     }
   ]
 }

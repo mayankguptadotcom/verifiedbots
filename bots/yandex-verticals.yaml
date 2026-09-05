@@ -1,0 +1,19 @@
+id: yandex-verticals
+name: YandexVerticals
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The robot of Yandex Verticals, the classifieds group that covers Auto.ru,
+  Yandex Realty, Yandex Jobs and Yandex Reviews. Yandex's robot table records
+  it as taking the general robots.txt rules into account.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexVerticals/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexVerticals/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexVerticals }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

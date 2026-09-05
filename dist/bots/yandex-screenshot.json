@@ -1,0 +1,40 @@
+{
+  "id": "yandex-screenshot",
+  "name": "YandexScreenshotBot",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "Yandex's screenshot robots, which fetch a page so a picture of it can be taken. Yandex documents two of them: YandexScreenshotBot for the desktop rendering and YandexMobileScreenShotBot for the mobile one. Neither follows the general robots.txt rules.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "YandexScreenshotBot/\\d",
+      "YandexMobileScreenShotBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Safari/537.36 (compatible; YandexScreenshotBot/3.0; +http://yandex.com/bots)",
+      "Mozilla/5.0 (compatible; YandexMobileScreenShotBot/1.0; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-05T13:14:04.599Z",
+  "resolved_cidrs": []
+}

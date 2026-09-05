@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-05T04:30:11.403Z",
-  "count": 66,
+  "generated_at": "2026-09-05T13:18:13.632Z",
+  "count": 69,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -2980,6 +2980,44 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yadirectfetcher",
+      "name": "YaDirectFetcher",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The fetcher for Yandex Direct advertising, which downloads the target pages of ads to check their availability and topic before the ads are placed in search results and on partner sites. Yandex states plainly that this robot does not use the robots.txt file and ignores the directives set for it.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YaDirectFetcher/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YaDirectFetcher/1.0; Dyatel; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yahoo-ad-monitoring",
       "name": "Yahoo Ad Monitoring",
       "operator": {
@@ -3048,6 +3086,46 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-direct",
+      "name": "YandexDirect",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex Advertising Network robots. YandexDirect downloads information about the content of partner sites to identify their topic categories so that relevant advertising can be matched to them, and YandexDirectDyn generates dynamic banners. Neither follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexDirect/\\d",
+          "YandexDirectDyn/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexDirect/3.0; +http://yandex.com/bots)",
+          "Mozilla/5.0 (compatible; YandexDirectDyn/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-pagechecker",
       "name": "YandexPagechecker",
       "operator": {
@@ -3084,6 +3162,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-partner",
+      "name": "YandexPartner",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "A Yandex robot that downloads information about the content of Yandex partner sites. Yandex's robot table lists it separately from the indexing robots and records that it does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexPartner/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexPartner/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-05T13:14:04.599Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,20 @@
+id: yadirectfetcher
+name: YaDirectFetcher
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The fetcher for Yandex Direct advertising, which downloads the target pages
+  of ads to check their availability and topic before the ads are placed in
+  search results and on partner sites. Yandex states plainly that this robot
+  does not use the robots.txt file and ignores the directives set for it.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: seo
+user_agents:
+  patterns:
+    - 'YaDirectFetcher/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YaDirectFetcher/1.0; Dyatel; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

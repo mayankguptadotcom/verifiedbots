@@ -1,0 +1,19 @@
+id: yandex-sitelinks
+name: YandexSitelinks
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  Yandex's sitelinks checker, which fetches the pages a site offers as
+  sitelinks in search results to confirm they are still available. Yandex's
+  robot table records it as taking the general robots.txt rules into account.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexSitelinks'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexSitelinks; Dyatel; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexSitelinks }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]
