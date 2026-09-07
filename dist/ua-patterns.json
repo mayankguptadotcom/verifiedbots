@@ -566,6 +566,13 @@
     ]
   },
   {
+    "id": "diffbot-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Diffbot-User"
+    ]
+  },
+  {
     "id": "discordbot",
     "category": "social-preview",
     "patterns": [
@@ -1617,6 +1624,13 @@
     ]
   },
   {
+    "id": "sbintuitions-searchbot",
+    "category": "ai-assistant",
+    "patterns": [
+      "SBIntuitions-SearchBot"
+    ]
+  },
+  {
     "id": "scope3-crawler",
     "category": "seo",
     "patterns": [
@@ -1967,6 +1981,13 @@
     "category": "social-preview",
     "patterns": [
       "Twitterbot/\\d"
+    ]
+  },
+  {
+    "id": "uaslinkchecker",
+    "category": "monitoring",
+    "patterns": [
+      "UASlinkChecker/\\d"
     ]
   },
   {

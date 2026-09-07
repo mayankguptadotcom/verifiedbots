@@ -1,0 +1,23 @@
+id: sbintuitions-searchbot
+name: SBIntuitions-SearchBot
+operator:
+  name: SB Intuitions Corp.
+  url: "https://www.sbintuitions.co.jp/"
+description: >-
+  SB Intuitions' user-triggered fetcher. The operator documents that when
+  someone asks its Sarashina service a question, this agent visits websites on
+  that person's behalf to improve the quality of the search results it reasons
+  over, that answers may include links to the pages it visited, and that what
+  it retrieves is not used for AI development. That last point distinguishes it
+  from SBIntuitionsBot, which the same page says is used for AI development and
+  information analysis.
+docs:
+  - "https://www.sbintuitions.co.jp/bot/"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'SBIntuitions-SearchBot'
+  instances:
+    - 'SBIntuitions-SearchBot'
+behavior: { respects_robots_txt: true, robots_token: SBIntuitions-SearchBot }
+verification: []

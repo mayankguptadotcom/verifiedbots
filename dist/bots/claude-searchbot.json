@@ -7,7 +7,7 @@
   },
   "description": "Anthropic's crawler that indexes pages to improve search-style answer quality in Claude products, distinct from ClaudeBot's training-data crawl.",
   "docs": [
-    "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
   ],
   "category": "ai-crawler",
   "user_agents": {

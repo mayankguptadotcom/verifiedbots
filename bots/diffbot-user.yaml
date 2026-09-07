@@ -1,0 +1,19 @@
+id: diffbot-user
+name: Diffbot-User
+operator: { name: Diffbot, url: "https://www.diffbot.com" }
+description: >-
+  Diffbot's user-triggered fetcher, which Diffbot documents as being used by
+  requests originating on behalf of a human user browsing a URL through
+  Diffbot software, in response to that person's input. Diffbot's robots.txt
+  guidance covers its web crawls; it makes no separate statement about these
+  user-initiated fetches, and publishes no IP list, ASN or reverse-DNS pattern.
+docs:
+  - "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'Diffbot-User'
+  instances:
+    - 'Diffbot-User'
+behavior: { respects_robots_txt: false, robots_token: Diffbot-User }
+verification: []

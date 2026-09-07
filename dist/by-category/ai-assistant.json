@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-07T04:34:20.565Z",
-  "count": 13,
+  "generated_at": "2026-09-07T13:25:52.411Z",
+  "count": 15,
   "bots": [
     {
       "id": "amzn-user",
@@ -2339,7 +2339,7 @@
       },
       "description": "Anthropic's user-triggered fetcher, used when a person asks Claude to visit a specific web page (e.g. via tool use in a conversation).",
       "docs": [
-        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
       "category": "ai-assistant",
       "user_agents": {
@@ -2392,6 +2392,36 @@
         "35.245.89.239/32",
         "40.124.101.48/28"
       ]
+    },
+    {
+      "id": "diffbot-user",
+      "name": "Diffbot-User",
+      "operator": {
+        "name": "Diffbot",
+        "url": "https://www.diffbot.com"
+      },
+      "description": "Diffbot's user-triggered fetcher, which Diffbot documents as being used by requests originating on behalf of a human user browsing a URL through Diffbot software, in response to that person's input. Diffbot's robots.txt guidance covers its web crawls; it makes no separate statement about these user-initiated fetches, and publishes no IP list, ASN or reverse-DNS pattern.",
+      "docs": [
+        "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Diffbot-User"
+        ],
+        "instances": [
+          "Diffbot-User"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false,
+        "robots_token": "Diffbot-User"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-07T13:25:52.411Z",
+      "resolved_cidrs": []
     },
     {
       "id": "duckassistbot",
@@ -4275,6 +4305,36 @@
         "34.193.163.52/32",
         "44.208.221.197/32"
       ]
+    },
+    {
+      "id": "sbintuitions-searchbot",
+      "name": "SBIntuitions-SearchBot",
+      "operator": {
+        "name": "SB Intuitions Corp.",
+        "url": "https://www.sbintuitions.co.jp/"
+      },
+      "description": "SB Intuitions' user-triggered fetcher. The operator documents that when someone asks its Sarashina service a question, this agent visits websites on that person's behalf to improve the quality of the search results it reasons over, that answers may include links to the pages it visited, and that what it retrieves is not used for AI development. That last point distinguishes it from SBIntuitionsBot, which the same page says is used for AI development and information analysis.",
+      "docs": [
+        "https://www.sbintuitions.co.jp/bot/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "SBIntuitions-SearchBot"
+        ],
+        "instances": [
+          "SBIntuitions-SearchBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SBIntuitions-SearchBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-07T13:25:52.411Z",
+      "resolved_cidrs": []
     },
     {
       "id": "shap-user",

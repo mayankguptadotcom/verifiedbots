@@ -6,7 +6,7 @@ description: >-
   and power its structured-extraction APIs. Diffbot documents robots.txt
   behavior but publishes no IP list, ASN, or reverse-DNS pattern.
 docs:
-  - "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt"
+  - "https://www.diffbot.com/docs/crawl/faq/robots-txt"
 category: ai-crawler
 user_agents:
   patterns:

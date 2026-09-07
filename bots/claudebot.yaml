@@ -5,7 +5,7 @@ description: >-
   Anthropic's web crawler collecting publicly available web data for training
   Claude models. Anthropic publishes its crawler source IPs as a machine-readable feed.
 docs:
-  - "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  - "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
 category: ai-crawler
 user_agents:
   patterns:

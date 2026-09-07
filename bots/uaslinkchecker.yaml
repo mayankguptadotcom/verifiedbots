@@ -1,0 +1,19 @@
+id: uaslinkchecker
+name: UASlinkChecker
+operator: { name: Udger s.r.o., url: "https://udger.com" }
+description: >-
+  Udger's link checker, which visits the websites of browser, operating-system
+  and robot vendors to confirm they are still reachable while the company
+  maintains its user-agent database. Udger documents the user-agent string it
+  sends but publishes no allowlist of the addresses it crawls from, and states
+  no robots.txt policy for it.
+docs:
+  - "https://udger.com/support/UASlinkChecker"
+category: monitoring
+user_agents:
+  patterns:
+    - 'UASlinkChecker/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; UASlinkChecker/2.1; +https://udger.com/support/UASlinkChecker)'
+behavior: { respects_robots_txt: false }
+verification: []

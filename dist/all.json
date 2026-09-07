@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-07T04:34:20.565Z",
-  "count": 330,
+  "generated_at": "2026-09-07T13:25:52.411Z",
+  "count": 333,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -7227,7 +7227,7 @@
       },
       "description": "Anthropic's crawler that indexes pages to improve search-style answer quality in Claude products, distinct from ClaudeBot's training-data crawl.",
       "docs": [
-        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
       "category": "ai-crawler",
       "user_agents": {
@@ -7290,7 +7290,7 @@
       },
       "description": "Anthropic's user-triggered fetcher, used when a person asks Claude to visit a specific web page (e.g. via tool use in a conversation).",
       "docs": [
-        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
       "category": "ai-assistant",
       "user_agents": {
@@ -7353,7 +7353,7 @@
       },
       "description": "Anthropic's web crawler collecting publicly available web data for training Claude models. Anthropic publishes its crawler source IPs as a machine-readable feed.",
       "docs": [
-        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
       "category": "ai-crawler",
       "user_agents": {
@@ -8491,7 +8491,7 @@
       },
       "description": "Diffbot's general-purpose web crawler, used to build its Knowledge Graph and power its structured-extraction APIs. Diffbot documents robots.txt behavior but publishes no IP list, ASN, or reverse-DNS pattern.",
       "docs": [
-        "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt"
+        "https://www.diffbot.com/docs/crawl/faq/robots-txt"
       ],
       "category": "ai-crawler",
       "user_agents": {
@@ -8510,6 +8510,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "diffbot-user",
+      "name": "Diffbot-User",
+      "operator": {
+        "name": "Diffbot",
+        "url": "https://www.diffbot.com"
+      },
+      "description": "Diffbot's user-triggered fetcher, which Diffbot documents as being used by requests originating on behalf of a human user browsing a URL through Diffbot software, in response to that person's input. Diffbot's robots.txt guidance covers its web crawls; it makes no separate statement about these user-initiated fetches, and publishes no IP list, ASN or reverse-DNS pattern.",
+      "docs": [
+        "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Diffbot-User"
+        ],
+        "instances": [
+          "Diffbot-User"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false,
+        "robots_token": "Diffbot-User"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-07T13:25:52.411Z",
       "resolved_cidrs": []
     },
     {
@@ -20336,6 +20366,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "sbintuitions-searchbot",
+      "name": "SBIntuitions-SearchBot",
+      "operator": {
+        "name": "SB Intuitions Corp.",
+        "url": "https://www.sbintuitions.co.jp/"
+      },
+      "description": "SB Intuitions' user-triggered fetcher. The operator documents that when someone asks its Sarashina service a question, this agent visits websites on that person's behalf to improve the quality of the search results it reasons over, that answers may include links to the pages it visited, and that what it retrieves is not used for AI development. That last point distinguishes it from SBIntuitionsBot, which the same page says is used for AI development and information analysis.",
+      "docs": [
+        "https://www.sbintuitions.co.jp/bot/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "SBIntuitions-SearchBot"
+        ],
+        "instances": [
+          "SBIntuitions-SearchBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SBIntuitions-SearchBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-07T13:25:52.411Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "scope3-crawler",
       "name": "Scope3 Crawler",
       "operator": {
@@ -21732,7 +21792,7 @@
         "name": "Seznam.cz",
         "url": "https://www.seznam.cz"
       },
-      "description": "Seznam's web crawler, fetching pages for the Seznam.cz search engine used primarily in the Czech Republic.",
+      "description": "Seznam's web crawler, fetching pages for the Seznam.cz search engine used primarily in the Czech Republic. Seznam publishes the full list of addresses the crawler uses as JSON, and documents that every SeznamBot address carries a fulltextrobot-*.seznam.cz reverse-DNS record.",
       "docs": [
         "https://o-seznam.cz/napoveda/vyhledavani/en/seznambot-crawler/"
       ],
@@ -21752,16 +21812,114 @@
       },
       "verification": [
         {
+          "type": "cidr_feed",
+          "url": "https://search.seznam.cz/ipranges/seznambot.json",
+          "format": "prefixes"
+        },
+        {
           "type": "rdns",
           "masks": [
             "*.seznam.cz"
           ]
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "2a02:598:64:8a00::302:340/123",
+        "2a02:598:64:8a00::302:360/123",
+        "2a02:598:64:8a00::302:380/123",
+        "2a02:598:64:8a00::302:3a0/123",
+        "2a02:598:64:8a00::302:3c0/123",
+        "2a02:598:64:8a00::302:3e0/123",
+        "2a02:598:64:8a00::302:500/123",
+        "2a02:598:64:8a00::302:520/123",
+        "2a02:598:64:8a00::302:540/123",
+        "2a02:598:64:8a00::302:560/123",
+        "2a02:598:64:8a00::302:580/123",
+        "2a02:598:64:8a00::302:5a0/123",
+        "2a02:598:64:8a00::302:5c0/123",
+        "2a02:598:64:8a00::302:5e0/123",
+        "2a02:598:64:8a00::302:600/123",
+        "2a02:598:64:8a00::302:620/123",
+        "2a02:598:64:8a00::302:640/123",
+        "2a02:598:64:8a00::302:660/123",
+        "2a02:598:64:8a00::302:680/123",
+        "2a02:598:64:8a00::302:6a0/123",
+        "2a02:598:64:8a00::302:6c0/123",
+        "2a02:598:64:8a00::302:6e0/123",
+        "2a02:598:64:8a00::f00:0/123",
+        "2a02:598:96:8a00::1200:100/123",
+        "2a02:598:96:8a00::b00:100/123",
+        "2a02:598:96:8a00::b00:120/123",
+        "2a02:598:96:8a00::b00:140/123",
+        "2a02:598:96:8a00::b00:160/123",
+        "2a02:598:96:8a00::b00:180/123",
+        "2a02:598:96:8a00::b00:1a0/123",
+        "2a02:598:96:8a00::b00:1c0/123",
+        "2a02:598:96:8a00::b00:1e0/123",
+        "2a02:598:96:8a00::b00:200/123",
+        "2a02:598:96:8a00::b00:220/123",
+        "2a02:598:96:8a00::b00:240/123",
+        "2a02:598:96:8a00::b00:260/123",
+        "2a02:598:96:8a00::b00:280/123",
+        "2a02:598:96:8a00::b00:2a0/123",
+        "2a02:598:96:8a00::b00:2c0/123",
+        "2a02:598:96:8a00::b00:2e0/123",
+        "2a02:598:96:8a00::b00:300/123",
+        "2a02:598:96:8a00::b00:320/123",
+        "2a02:598:96:8a00::b00:80/123",
+        "2a02:598:96:8a00::b00:a0/123",
+        "2a02:598:96:8a00::b00:c0/123",
+        "2a02:598:96:8a00::b00:e0/123",
+        "77.75.72.26/32",
+        "77.75.73.26/32",
+        "77.75.76.160/32",
+        "77.75.76.161/32",
+        "77.75.76.162/32",
+        "77.75.76.163/32",
+        "77.75.76.164/32",
+        "77.75.76.165/32",
+        "77.75.76.166/32",
+        "77.75.76.167/32",
+        "77.75.76.168/32",
+        "77.75.76.169/32",
+        "77.75.76.170/32",
+        "77.75.76.171/32",
+        "77.75.76.172/32",
+        "77.75.77.101/32",
+        "77.75.77.109/32",
+        "77.75.77.17/32",
+        "77.75.77.32/32",
+        "77.75.77.36/32",
+        "77.75.77.54/32",
+        "77.75.77.62/32",
+        "77.75.77.72/32",
+        "77.75.77.95/32",
+        "77.75.78.160/32",
+        "77.75.78.161/32",
+        "77.75.78.162/32",
+        "77.75.78.163/32",
+        "77.75.78.164/32",
+        "77.75.78.165/32",
+        "77.75.78.166/32",
+        "77.75.78.167/32",
+        "77.75.78.168/32",
+        "77.75.78.169/32",
+        "77.75.78.170/32",
+        "77.75.78.171/32",
+        "77.75.78.172/32",
+        "77.75.79.101/32",
+        "77.75.79.109/32",
+        "77.75.79.17/32",
+        "77.75.79.32/32",
+        "77.75.79.36/32",
+        "77.75.79.54/32",
+        "77.75.79.62/32",
+        "77.75.79.72/32",
+        "77.75.79.95/32"
+      ]
     },
     {
       "id": "shap-user",
@@ -24266,6 +24424,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "uaslinkchecker",
+      "name": "UASlinkChecker",
+      "operator": {
+        "name": "Udger s.r.o.",
+        "url": "https://udger.com"
+      },
+      "description": "Udger's link checker, which visits the websites of browser, operating-system and robot vendors to confirm they are still reachable while the company maintains its user-agent database. Udger documents the user-agent string it sends but publishes no allowlist of the addresses it crawls from, and states no robots.txt policy for it.",
+      "docs": [
+        "https://udger.com/support/UASlinkChecker"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "UASlinkChecker/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; UASlinkChecker/2.1; +https://udger.com/support/UASlinkChecker)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-07T13:25:52.411Z",
       "resolved_cidrs": []
     },
     {

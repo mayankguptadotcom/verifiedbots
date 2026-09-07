@@ -3,7 +3,9 @@ name: SeznamBot
 operator: { name: Seznam.cz, url: "https://www.seznam.cz" }
 description: >-
   Seznam's web crawler, fetching pages for the Seznam.cz search engine used
-  primarily in the Czech Republic.
+  primarily in the Czech Republic. Seznam publishes the full list of addresses
+  the crawler uses as JSON, and documents that every SeznamBot address carries
+  a fulltextrobot-*.seznam.cz reverse-DNS record.
 docs:
   - "https://o-seznam.cz/napoveda/vyhledavani/en/seznambot-crawler/"
 category: search-engine
@@ -15,5 +17,8 @@ user_agents:
     - 'Mozilla/5.0 (compatible; SeznamBot/3.2; +http://napoveda.seznam.cz/en/seznambot-intro/)'
 behavior: { respects_robots_txt: true, robots_token: SeznamBot }
 verification:
+  - type: cidr_feed
+    url: "https://search.seznam.cz/ipranges/seznambot.json"
+    format: prefixes
   - type: rdns
     masks: ["*.seznam.cz"]

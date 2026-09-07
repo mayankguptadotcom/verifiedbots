@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-07T04:34:20.565Z",
+  "generated_at": "2026-09-07T13:25:52.411Z",
   "count": 33,
   "bots": [
     {
@@ -1205,7 +1205,7 @@
       },
       "description": "Anthropic's crawler that indexes pages to improve search-style answer quality in Claude products, distinct from ClaudeBot's training-data crawl.",
       "docs": [
-        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
       "category": "ai-crawler",
       "user_agents": {
@@ -1268,7 +1268,7 @@
       },
       "description": "Anthropic's web crawler collecting publicly available web data for training Claude models. Anthropic publishes its crawler source IPs as a machine-readable feed.",
       "docs": [
-        "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
       ],
       "category": "ai-crawler",
       "user_agents": {
@@ -1397,7 +1397,7 @@
       },
       "description": "Diffbot's general-purpose web crawler, used to build its Knowledge Graph and power its structured-extraction APIs. Diffbot documents robots.txt behavior but publishes no IP list, ASN, or reverse-DNS pattern.",
       "docs": [
-        "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt"
+        "https://www.diffbot.com/docs/crawl/faq/robots-txt"
       ],
       "category": "ai-crawler",
       "user_agents": {
