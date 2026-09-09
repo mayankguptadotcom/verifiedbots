@@ -1,8 +1,45 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-09T04:32:54.555Z",
-  "count": 69,
+  "generated_at": "2026-09-09T13:25:41.927Z",
+  "count": 77,
   "bots": [
+    {
+      "id": "ads-naver",
+      "name": "Ads-Naver",
+      "operator": {
+        "name": "Naver",
+        "url": "https://www.naver.com"
+      },
+      "description": "Naver's advertising crawler. It periodically visits the landing pages advertisers register in Naver Search Ads, reading the HTML, content and meta information so Naver can assess page quality and match ads to relevant queries. Naver states this robot deliberately ignores robots.txt for registered landing pages, and tells site owners to verify it by reverse DNS.",
+      "docs": [
+        "https://ads.naver.com/help/faq/994",
+        "https://searchadvisor.naver.com/guide/seo-basic-firewall"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Ads-Naver/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Ads-Naver/1.1; +https://naver.me/adsn) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.naver.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "ahrefs-siteaudit",
       "name": "AhrefsSiteAudit",
@@ -1086,7 +1123,7 @@
         "name": "Integral Ad Science",
         "url": "https://integralads.com/"
       },
-      "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers.",
+      "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers. IAS publishes the public-facing addresses its robots crawl from as a JSON file linked from its indexing policy; the file is in a shape this directory's feed formats cannot consume, so the ranges are snapshotted here instead.",
       "docs": [
         "https://integralads.com/site-indexing-policy/"
       ],
@@ -1100,13 +1137,182 @@
         ]
       },
       "behavior": {
-        "respects_robots_txt": true
+        "respects_robots_txt": true,
+        "robots_token": "ias_crawler"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "3.217.168.199",
+            "3.226.51.67",
+            "18.214.43.70",
+            "23.21.212.31",
+            "34.195.212.30",
+            "35.175.92.196",
+            "92.42.105.32",
+            "92.42.105.33",
+            "92.42.105.34",
+            "92.42.105.35",
+            "92.42.105.36",
+            "92.42.105.37",
+            "92.42.105.38",
+            "92.42.105.39",
+            "92.204.170.15",
+            "92.204.190.235",
+            "92.204.248.55",
+            "151.106.17.251",
+            "162.211.125.4",
+            "162.211.125.5",
+            "162.211.125.6",
+            "162.211.125.7",
+            "162.211.125.8",
+            "173.224.127.64",
+            "173.224.127.65",
+            "173.224.127.66",
+            "173.224.127.67",
+            "173.224.127.68",
+            "173.224.127.69",
+            "173.224.127.70",
+            "173.224.127.71"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
       "first_seen": "2026-07-16T01:14:20.999Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "151.106.17.251",
+        "162.211.125.4",
+        "162.211.125.5",
+        "162.211.125.6",
+        "162.211.125.7",
+        "162.211.125.8",
+        "173.224.127.64",
+        "173.224.127.65",
+        "173.224.127.66",
+        "173.224.127.67",
+        "173.224.127.68",
+        "173.224.127.69",
+        "173.224.127.70",
+        "173.224.127.71",
+        "18.214.43.70",
+        "23.21.212.31",
+        "3.217.168.199",
+        "3.226.51.67",
+        "34.195.212.30",
+        "35.175.92.196",
+        "92.204.170.15",
+        "92.204.190.235",
+        "92.204.248.55",
+        "92.42.105.32",
+        "92.42.105.33",
+        "92.42.105.34",
+        "92.42.105.35",
+        "92.42.105.36",
+        "92.42.105.37",
+        "92.42.105.38",
+        "92.42.105.39"
+      ]
+    },
+    {
+      "id": "integralads-wombles",
+      "name": "IAS Wombles",
+      "operator": {
+        "name": "Integral Ad Science",
+        "url": "https://integralads.com/"
+      },
+      "description": "The second crawler Integral Ad Science documents alongside IAS Crawler. IAS says Wombles captures additional information used to refine its invalid traffic models, as distinct from the content-rating work IAS Crawler does. Both robots are covered by the public IP list IAS publishes.",
+      "docs": [
+        "https://integralads.com/site-indexing-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ias_wombles"
+        ],
+        "instances": [
+          "IAS Wombles (ias_wombles; http://integralads.com/site-indexing-policy/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ias_wombles"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "3.217.168.199",
+            "3.226.51.67",
+            "18.214.43.70",
+            "23.21.212.31",
+            "34.195.212.30",
+            "35.175.92.196",
+            "92.42.105.32",
+            "92.42.105.33",
+            "92.42.105.34",
+            "92.42.105.35",
+            "92.42.105.36",
+            "92.42.105.37",
+            "92.42.105.38",
+            "92.42.105.39",
+            "92.204.170.15",
+            "92.204.190.235",
+            "92.204.248.55",
+            "151.106.17.251",
+            "162.211.125.4",
+            "162.211.125.5",
+            "162.211.125.6",
+            "162.211.125.7",
+            "162.211.125.8",
+            "173.224.127.64",
+            "173.224.127.65",
+            "173.224.127.66",
+            "173.224.127.67",
+            "173.224.127.68",
+            "173.224.127.69",
+            "173.224.127.70",
+            "173.224.127.71"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": [
+        "151.106.17.251",
+        "162.211.125.4",
+        "162.211.125.5",
+        "162.211.125.6",
+        "162.211.125.7",
+        "162.211.125.8",
+        "173.224.127.64",
+        "173.224.127.65",
+        "173.224.127.66",
+        "173.224.127.67",
+        "173.224.127.68",
+        "173.224.127.69",
+        "173.224.127.70",
+        "173.224.127.71",
+        "18.214.43.70",
+        "23.21.212.31",
+        "3.217.168.199",
+        "3.226.51.67",
+        "34.195.212.30",
+        "35.175.92.196",
+        "92.204.170.15",
+        "92.204.190.235",
+        "92.204.248.55",
+        "92.42.105.32",
+        "92.42.105.33",
+        "92.42.105.34",
+        "92.42.105.35",
+        "92.42.105.36",
+        "92.42.105.37",
+        "92.42.105.38",
+        "92.42.105.39"
+      ]
     },
     {
       "id": "linkcheckerbot",
@@ -1849,6 +2055,126 @@
       "resolved_cidrs": []
     },
     {
+      "id": "semrushbot-ba",
+      "name": "SemrushBot-BA",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler behind Semrush's Backlink Audit tool, which helps a customer discover and clean up potentially dangerous backlinks in their profile. Semrush documents it as a robots.txt user agent separate from SemrushBot and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-BA"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SemrushBot-BA; +http://www.semrush.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-BA"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-esi",
+      "name": "SemrushBot-ESI",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler for Semrush Enterprise Site Intelligence, which analyses a customer's site for on-page SEO, technical and usability issues. Semrush documents it as its own robots.txt user agent, separate from the SiteAuditBot used by the standard Site Audit tool, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-ESI"
+        ],
+        "instances": [
+          "SemrushBot-ESI"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-ESI"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-ft",
+      "name": "SemrushBot-FT",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The fetcher behind Semrush's Plagiarism Checker and similar tools, used to verify whether the content being checked also appears on your website. Semrush documents it as its own robots.txt user agent and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-FT"
+        ],
+        "instances": [
+          "SemrushBot-FT"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-FT"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-ocob",
+      "name": "SemrushBot-OCOB",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler that gathers pages for the reports in Semrush's Content Toolkit. Semrush documents it as its own robots.txt user agent, separate from the SemrushBot backlink crawler, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-OCOB"
+        ],
+        "instances": [
+          "SemrushBot-OCOB"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-OCOB"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "semrushbot-si",
       "name": "SemrushBot-SI",
       "operator": {
@@ -1889,6 +2215,36 @@
         "85.208.98.0/24",
         "85.208.98.53"
       ]
+    },
+    {
+      "id": "semrushbot-swa",
+      "name": "SemrushBot-SWA",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The fetcher Semrush's SEO Writing Assistant uses to check whether a URL is accessible. Semrush documents it as its own robots.txt user agent, separate from the SemrushBot backlink crawler, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-SWA"
+        ],
+        "instances": [
+          "SemrushBot-SWA"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-SWA"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
     },
     {
       "id": "seobility",
@@ -2625,6 +2981,36 @@
         "54.194.214.164/32",
         "54.76.42.92/32"
       ]
+    },
+    {
+      "id": "splitsignalbot",
+      "name": "SplitSignalBot",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler behind Semrush's SplitSignal tool, which runs SEO A/B tests on a customer's own website. Semrush documents it under its own robots.txt user agent, distinct from the SemrushBot family name, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SplitSignalBot"
+        ],
+        "instances": [
+          "SplitSignalBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SplitSignalBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
     },
     {
       "id": "statusnest-backlink-spider",

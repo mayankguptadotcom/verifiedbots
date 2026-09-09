@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-09T04:32:54.555Z",
-  "count": 77,
+  "generated_at": "2026-09-09T13:25:41.927Z",
+  "count": 79,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -314,6 +314,45 @@
         "17.246.15.0/24",
         "17.246.19.0/24",
         "17.246.23.0/24"
+      ]
+    },
+    {
+      "id": "arquivo-pt",
+      "name": "Arquivo.pt Web Crawler",
+      "operator": {
+        "name": "Arquivo.pt (FCCN/FCT)",
+        "url": "https://arquivo.pt"
+      },
+      "description": "The crawler behind Arquivo.pt, Portugal's public web archive, which captures full page renders (HTML, CSS, JS, images) for long-term preservation. Built on Heritrix. Arquivo.pt publishes the ranges its crawlers operate from as a machine-readable JSON file in the JAFAR format, and recommends combining that IP check with the User-Agent check.",
+      "docs": [
+        "https://sobre.arquivo.pt/en/help/crawling-and-archiving-web-content/"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "Arquivo-web-crawler"
+        ],
+        "instances": [
+          "Arquivo-web-crawler (compatible; heritrix/3.4.0-20200304 +https://arquivo.pt/faq-crawling)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Arquivo-web-crawler"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://arquivo.pt/crawlerips.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": [
+        "194.210.235.0/26",
+        "2001:690:a00:1039::/64"
       ]
     },
     {
@@ -8760,6 +8799,86 @@
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "5.102.173.64/28"
+      ]
+    },
+    {
+      "id": "naver-yeti",
+      "name": "Yeti",
+      "operator": {
+        "name": "Naver",
+        "url": "https://www.naver.com"
+      },
+      "description": "Naver's web crawler, fetching pages for Naver Search indexing across South Korea's largest search engine. Naver documents two ways to confirm a request is really its search robot: a reverse-DNS lookup that resolves under naver.com, and a published JSON list of the IP ranges its search robots use.",
+      "docs": [
+        "https://searchadvisor.naver.com/guide/seo-basic-firewall"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Yeti/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yeti/1.1; +http://naver.me/spd)",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Yeti/1.1; +https://naver.me/spd) Chrome/106.0.5249.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Yeti"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://searchadvisor.naver.com/doc/naverbot.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.naver.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": [
+        "110.93.146.32/29",
+        "110.93.150.128/26",
+        "110.93.150.192/28",
+        "110.93.150.208/29",
+        "110.93.150.21/32",
+        "110.93.150.216/30",
+        "110.93.150.22/31",
+        "110.93.150.220/32",
+        "110.93.150.24/29",
+        "110.93.150.32/27",
+        "110.93.150.64/26",
+        "114.111.32.128/26",
+        "114.111.32.192/28",
+        "114.111.32.208/29",
+        "114.111.32.21/32",
+        "114.111.32.216/30",
+        "114.111.32.22/31",
+        "114.111.32.220/32",
+        "114.111.32.24/29",
+        "114.111.32.32/27",
+        "114.111.32.64/26",
+        "125.209.235.167/32",
+        "125.209.235.168/29",
+        "125.209.235.176/29",
+        "125.209.235.184/31",
+        "125.209.235.186/32",
+        "211.249.46.128/26",
+        "211.249.46.192/28",
+        "211.249.46.208/29",
+        "211.249.46.21/32",
+        "211.249.46.216/30",
+        "211.249.46.22/31",
+        "211.249.46.220/32",
+        "211.249.46.24/29",
+        "211.249.46.32/27",
+        "211.249.46.64/26"
       ]
     },
     {

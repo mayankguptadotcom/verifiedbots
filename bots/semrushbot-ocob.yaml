@@ -1,0 +1,17 @@
+id: semrushbot-ocob
+name: SemrushBot-OCOB
+operator: { name: Semrush, url: "https://www.semrush.com" }
+description: >-
+  The crawler that gathers pages for the reports in Semrush's Content Toolkit.
+  Semrush documents it as its own robots.txt user agent, separate from the
+  SemrushBot backlink crawler, and publishes no IP ranges for it.
+docs:
+  - "https://www.semrush.com/bot/"
+category: seo
+user_agents:
+  patterns:
+    - 'SemrushBot-OCOB'
+  instances:
+    - 'SemrushBot-OCOB'
+behavior: { respects_robots_txt: true, robots_token: SemrushBot-OCOB }
+verification: []

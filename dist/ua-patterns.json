@@ -21,6 +21,13 @@
     ]
   },
   {
+    "id": "ads-naver",
+    "category": "seo",
+    "patterns": [
+      "Ads-Naver/\\d"
+    ]
+  },
+  {
     "id": "adyen-webhooks",
     "category": "webhook",
     "patterns": [
@@ -1024,6 +1031,13 @@
     ]
   },
   {
+    "id": "integralads-wombles",
+    "category": "seo",
+    "patterns": [
+      "ias_wombles"
+    ]
+  },
+  {
     "id": "internet-archive",
     "category": "archiver",
     "patterns": [
@@ -1687,10 +1701,45 @@
     ]
   },
   {
+    "id": "semrushbot-ba",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot-BA"
+    ]
+  },
+  {
+    "id": "semrushbot-esi",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot-ESI"
+    ]
+  },
+  {
+    "id": "semrushbot-ft",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot-FT"
+    ]
+  },
+  {
+    "id": "semrushbot-ocob",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot-OCOB"
+    ]
+  },
+  {
     "id": "semrushbot-si",
     "category": "seo",
     "patterns": [
       "SemrushBot-SI"
+    ]
+  },
+  {
+    "id": "semrushbot-swa",
+    "category": "seo",
+    "patterns": [
+      "SemrushBot-SWA"
     ]
   },
   {
@@ -1820,6 +1869,13 @@
     "category": "monitoring",
     "patterns": [
       "Spectate/\\d"
+    ]
+  },
+  {
+    "id": "splitsignalbot",
+    "category": "seo",
+    "patterns": [
+      "SplitSignalBot"
     ]
   },
   {

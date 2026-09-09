@@ -1,26 +1,26 @@
 {
-  "id": "integralads-crawler",
-  "name": "IAS Crawler",
+  "id": "integralads-wombles",
+  "name": "IAS Wombles",
   "operator": {
     "name": "Integral Ad Science",
     "url": "https://integralads.com/"
   },
-  "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers. IAS publishes the public-facing addresses its robots crawl from as a JSON file linked from its indexing policy; the file is in a shape this directory's feed formats cannot consume, so the ranges are snapshotted here instead.",
+  "description": "The second crawler Integral Ad Science documents alongside IAS Crawler. IAS says Wombles captures additional information used to refine its invalid traffic models, as distinct from the content-rating work IAS Crawler does. Both robots are covered by the public IP list IAS publishes.",
   "docs": [
     "https://integralads.com/site-indexing-policy/"
   ],
   "category": "seo",
   "user_agents": {
     "patterns": [
-      "ias_crawler"
+      "ias_wombles"
     ],
     "instances": [
-      "IAS Crawler (ias_crawler; http://integralads.com/site-indexing-policy/)"
+      "IAS Wombles (ias_wombles; http://integralads.com/site-indexing-policy/)"
     ]
   },
   "behavior": {
     "respects_robots_txt": true,
-    "robots_token": "ias_crawler"
+    "robots_token": "ias_wombles"
   },
   "verification": [
     {
@@ -62,7 +62,7 @@
   ],
   "tier": 2,
   "tier_label": "Verifiable",
-  "first_seen": "2026-07-16T01:14:20.999Z",
+  "first_seen": "2026-09-09T13:23:28.996Z",
   "resolved_cidrs": [
     "151.106.17.251",
     "162.211.125.4",

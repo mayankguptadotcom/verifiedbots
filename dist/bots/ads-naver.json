@@ -1,0 +1,37 @@
+{
+  "id": "ads-naver",
+  "name": "Ads-Naver",
+  "operator": {
+    "name": "Naver",
+    "url": "https://www.naver.com"
+  },
+  "description": "Naver's advertising crawler. It periodically visits the landing pages advertisers register in Naver Search Ads, reading the HTML, content and meta information so Naver can assess page quality and match ads to relevant queries. Naver states this robot deliberately ignores robots.txt for registered landing pages, and tells site owners to verify it by reverse DNS.",
+  "docs": [
+    "https://ads.naver.com/help/faq/994",
+    "https://searchadvisor.naver.com/guide/seo-basic-firewall"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Ads-Naver/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Ads-Naver/1.1; +https://naver.me/adsn) Chrome/W.X.Y.Z Safari/537.36"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.naver.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-09T13:23:28.996Z",
+  "resolved_cidrs": []
+}

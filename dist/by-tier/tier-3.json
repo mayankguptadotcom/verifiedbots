@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-09T04:32:54.555Z",
-  "count": 143,
+  "generated_at": "2026-09-09T13:25:41.927Z",
+  "count": 147,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -120,36 +120,6 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
-      "resolved_cidrs": []
-    },
-    {
-      "id": "arquivo-pt",
-      "name": "Arquivo.pt Web Crawler",
-      "operator": {
-        "name": "Arquivo.pt (FCCN/FCT)",
-        "url": "https://arquivo.pt"
-      },
-      "description": "The crawler behind Arquivo.pt, Portugal's public web archive, which captures full page renders (HTML, CSS, JS, images) for long-term preservation. Built on Heritrix; the operator documents no fixed IP range.",
-      "docs": [
-        "https://sobre.arquivo.pt/en/help/crawling-and-archiving-web-content/"
-      ],
-      "category": "archiver",
-      "user_agents": {
-        "patterns": [
-          "Arquivo-web-crawler"
-        ],
-        "instances": [
-          "Arquivo-web-crawler (compatible; heritrix/3.4.0-20200304 +https://arquivo.pt/faq-crawling)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "Arquivo-web-crawler"
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -1816,35 +1786,6 @@
       "resolved_cidrs": []
     },
     {
-      "id": "integralads-crawler",
-      "name": "IAS Crawler",
-      "operator": {
-        "name": "Integral Ad Science",
-        "url": "https://integralads.com/"
-      },
-      "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers.",
-      "docs": [
-        "https://integralads.com/site-indexing-policy/"
-      ],
-      "category": "seo",
-      "user_agents": {
-        "patterns": [
-          "ias_crawler"
-        ],
-        "instances": [
-          "IAS Crawler (ias_crawler; http://integralads.com/site-indexing-policy/)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-07-16T01:14:20.999Z",
-      "resolved_cidrs": []
-    },
-    {
       "id": "internet-archive",
       "name": "archive.org_bot",
       "operator": {
@@ -3223,6 +3164,156 @@
       "resolved_cidrs": []
     },
     {
+      "id": "semrushbot-ba",
+      "name": "SemrushBot-BA",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler behind Semrush's Backlink Audit tool, which helps a customer discover and clean up potentially dangerous backlinks in their profile. Semrush documents it as a robots.txt user agent separate from SemrushBot and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-BA"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SemrushBot-BA; +http://www.semrush.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-BA"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-esi",
+      "name": "SemrushBot-ESI",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler for Semrush Enterprise Site Intelligence, which analyses a customer's site for on-page SEO, technical and usability issues. Semrush documents it as its own robots.txt user agent, separate from the SiteAuditBot used by the standard Site Audit tool, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-ESI"
+        ],
+        "instances": [
+          "SemrushBot-ESI"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-ESI"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-ft",
+      "name": "SemrushBot-FT",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The fetcher behind Semrush's Plagiarism Checker and similar tools, used to verify whether the content being checked also appears on your website. Semrush documents it as its own robots.txt user agent and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-FT"
+        ],
+        "instances": [
+          "SemrushBot-FT"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-FT"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-ocob",
+      "name": "SemrushBot-OCOB",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler that gathers pages for the reports in Semrush's Content Toolkit. Semrush documents it as its own robots.txt user agent, separate from the SemrushBot backlink crawler, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-OCOB"
+        ],
+        "instances": [
+          "SemrushBot-OCOB"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-OCOB"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "semrushbot-swa",
+      "name": "SemrushBot-SWA",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The fetcher Semrush's SEO Writing Assistant uses to check whether a URL is accessible. Semrush documents it as its own robots.txt user agent, separate from the SemrushBot backlink crawler, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SemrushBot-SWA"
+        ],
+        "instances": [
+          "SemrushBot-SWA"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SemrushBot-SWA"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "seokicks-crawler",
       "name": "SEOkicks",
       "operator": {
@@ -3428,6 +3519,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "splitsignalbot",
+      "name": "SplitSignalBot",
+      "operator": {
+        "name": "Semrush",
+        "url": "https://www.semrush.com"
+      },
+      "description": "The crawler behind Semrush's SplitSignal tool, which runs SEO A/B tests on a customer's own website. Semrush documents it under its own robots.txt user agent, distinct from the SemrushBot family name, and publishes no IP ranges for it.",
+      "docs": [
+        "https://www.semrush.com/bot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SplitSignalBot"
+        ],
+        "instances": [
+          "SplitSignalBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SplitSignalBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-09T13:23:28.996Z",
       "resolved_cidrs": []
     },
     {
