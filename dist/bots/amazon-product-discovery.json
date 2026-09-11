@@ -5,7 +5,7 @@
     "name": "Amazon",
     "url": "https://www.amazon.com"
   },
-  "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex.",
+  "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex. Amazon signs every request from this crawler with HTTP message signatures, publishing the Ed25519 key directory the Signature-Agent header points at.",
   "docs": [
     "https://vendorcentral.amazon.com/support/amazonproductbot"
   ],
@@ -22,9 +22,14 @@
     "respects_robots_txt": true,
     "robots_token": "AmazonProductDiscoverybot"
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://d3sqdbcybbdvkr.cloudfront.net/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-08-23T13:20:46.873Z",
   "resolved_cidrs": []
 }

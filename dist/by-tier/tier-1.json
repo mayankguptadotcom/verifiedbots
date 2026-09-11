@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-11T04:32:34.227Z",
-  "count": 79,
+  "generated_at": "2026-09-11T13:22:28.998Z",
+  "count": 81,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -237,6 +237,81 @@
         "92.222.104.192/27",
         "92.222.108.96/27",
         "94.23.188.192/27"
+      ]
+    },
+    {
+      "id": "amazon-product-discovery",
+      "name": "AmazonProductDiscoverybot",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://www.amazon.com"
+      },
+      "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex. Amazon signs every request from this crawler with HTTP message signatures, publishing the Ed25519 key directory the Signature-Agent header points at.",
+      "docs": [
+        "https://vendorcentral.amazon.com/support/amazonproductbot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "AmazonProductDiscovery/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 (compatible; AmazonProductDiscovery/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AmazonProductDiscoverybot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://d3sqdbcybbdvkr.cloudfront.net/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "anomura",
+      "name": "Anomura",
+      "operator": {
+        "name": "Direqt",
+        "url": "https://www.direqt.ai"
+      },
+      "description": "Direqt's search crawler, which discovers links and metadata to surface in Direqt's search features. The operator states it is not used to crawl content for model training, documents the robots.txt token Anomura, and publishes the addresses the crawler requests come from both on the page and as a JSON feed it says it will update if more are added.",
+      "docs": [
+        "https://docs.direqt-search.com/direqt-bots/direqt-crawlers-and-user-agents"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Anomura/\\d"
+        ],
+        "instances": [
+          "Anomura/1.2 (+https://www.direqt.ai)",
+          "Anomura/1.2 (+https://www.direqt-search.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Anomura"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.direqt.ai/crawler.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "34.56.242.161/32",
+        "35.224.164.246/32"
       ]
     },
     {
@@ -12273,7 +12348,7 @@
         "name": "WatchFor",
         "url": "https://watchfor.io"
       },
-      "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent.",
+      "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent, and also signs every probe with an Ed25519 key under the Web Bot Auth profile of RFC 9421 HTTP message signatures.",
       "docs": [
         "https://watchfor.io/bot"
       ],
@@ -12300,6 +12375,10 @@
           "masks": [
             "*.probe.watchfor.io"
           ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://watchfor.io/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

@@ -5,7 +5,7 @@
     "name": "WatchFor",
     "url": "https://watchfor.io"
   },
-  "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent.",
+  "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent, and also signs every probe with an Ed25519 key under the Web Bot Auth profile of RFC 9421 HTTP message signatures.",
   "docs": [
     "https://watchfor.io/bot"
   ],
@@ -32,6 +32,10 @@
       "masks": [
         "*.probe.watchfor.io"
       ]
+    },
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://watchfor.io/.well-known/http-message-signatures-directory"
     }
   ],
   "tier": 1,

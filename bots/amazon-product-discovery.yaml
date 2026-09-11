@@ -7,7 +7,9 @@ description: >-
   accuracy and completeness of product information in Amazon's store. Amazon
   documents that it honours robots.txt user-agent and disallow directives, with
   changes taking up to 24 hours to apply, and that it does not support
-  crawl-delay, nofollow or noindex.
+  crawl-delay, nofollow or noindex. Amazon signs every request from this
+  crawler with HTTP message signatures, publishing the Ed25519 key directory
+  the Signature-Agent header points at.
 docs:
   - "https://vendorcentral.amazon.com/support/amazonproductbot"
 category: search-engine
@@ -17,4 +19,10 @@ user_agents:
   instances:
     - 'Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 (compatible; AmazonProductDiscovery/1.0; https://vendorcentral.amazon.com/support/amazonproductbot)'
 behavior: { respects_robots_txt: true, robots_token: AmazonProductDiscoverybot }
-verification: []
+verification:
+  # The docs page hyperlinks the word "directory" in "fetch our public key from
+  # the directory listed in the Signature-Agent header" to this URL. Amazon
+  # scopes the signing claim to AmazonProductDiscoverybot only, so the sibling
+  # AmazonSellerInitiatedListing entry carries no recipe.
+  - type: web_bot_auth
+    signature_agent_url: "https://d3sqdbcybbdvkr.cloudfront.net/.well-known/http-message-signatures-directory"

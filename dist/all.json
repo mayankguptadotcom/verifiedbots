@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-11T04:32:34.227Z",
-  "count": 341,
+  "generated_at": "2026-09-11T13:22:28.998Z",
+  "count": 342,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1081,7 +1081,7 @@
         "name": "Amazon",
         "url": "https://www.amazon.com"
       },
-      "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex.",
+      "description": "Amazon's product crawler, which collects publicly available product details from Amazon selling partner, brand and retailer websites to improve the accuracy and completeness of product information in Amazon's store. Amazon documents that it honours robots.txt user-agent and disallow directives, with changes taking up to 24 hours to apply, and that it does not support crawl-delay, nofollow or noindex. Amazon signs every request from this crawler with HTTP message signatures, publishing the Ed25519 key directory the Signature-Agent header points at.",
       "docs": [
         "https://vendorcentral.amazon.com/support/amazonproductbot"
       ],
@@ -1098,9 +1098,14 @@
         "respects_robots_txt": true,
         "robots_token": "AmazonProductDiscoverybot"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://d3sqdbcybbdvkr.cloudfront.net/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
@@ -5369,7 +5374,7 @@
         "name": "Direqt",
         "url": "https://www.direqt.ai"
       },
-      "description": "Direqt's search crawler, which discovers links and metadata to surface in Direqt's search features. The operator states it is not used to crawl content for model training, documents the robots.txt token Anomura, and publishes the two addresses the crawler requests come from.",
+      "description": "Direqt's search crawler, which discovers links and metadata to surface in Direqt's search features. The operator states it is not used to crawl content for model training, documents the robots.txt token Anomura, and publishes the addresses the crawler requests come from both on the page and as a JSON feed it says it will update if more are added.",
       "docs": [
         "https://docs.direqt-search.com/direqt-bots/direqt-crawlers-and-user-agents"
       ],
@@ -5389,15 +5394,13 @@
       },
       "verification": [
         {
-          "type": "static_cidrs",
-          "cidrs": [
-            "34.56.242.161/32",
-            "35.224.164.246/32"
-          ]
+          "type": "cidr_feed",
+          "url": "https://www.direqt.ai/crawler.json",
+          "format": "prefixes"
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": [
         "34.56.242.161/32",
@@ -18594,6 +18597,44 @@
       ]
     },
     {
+      "id": "naver-blueno",
+      "name": "Blueno",
+      "operator": {
+        "name": "Naver",
+        "url": "https://www.naver.com"
+      },
+      "description": "Naver's summary-information robot. When a user attaches or shares a link in Naver Blog, Cafe, SmartEditor and similar services, Blueno fetches the linked page to build the preview, reading Open Graph or Twitter Cards markup first and falling back to summarising the document. Naver documents that it runs on user-initiated requests rather than as a search crawler, caches each summary for a period to avoid repeat visits, and can be confirmed by a forward-confirmed reverse DNS lookup. Its user agent carries a facebookexternalhit prefix, so a pattern written for Meta's link preview fetcher will also match it.",
+      "docs": [
+        "https://help.naver.com/service/5626/contents/19008",
+        "https://searchadvisor.naver.com/guide/seo-basic-firewall"
+      ],
+      "category": "social-preview",
+      "user_agents": {
+        "patterns": [
+          "Blueno/\\d"
+        ],
+        "instances": [
+          "facebookexternalhit/1.1 (compatible; Blueno/1.0; +http://naver.me/scrap)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.naver.com",
+            "*.line-apps.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-11T13:22:28.998Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "naver-yeti",
       "name": "Yeti",
       "operator": {
@@ -25611,7 +25652,7 @@
         "name": "WatchFor",
         "url": "https://watchfor.io"
       },
-      "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent.",
+      "description": "WatchFor's monitoring probe, which checks that websites, APIs, servers and certificates its customers have configured are healthy, from fixed locations worldwide. It performs only the specific check each monitor defines and does not crawl sites, follow links or harvest content. WatchFor publishes a machine-readable address list and forward-confirmed reverse DNS under probe.watchfor.io so site owners can tell a genuine probe from a spoofed user agent, and also signs every probe with an Ed25519 key under the Web Bot Auth profile of RFC 9421 HTTP message signatures.",
       "docs": [
         "https://watchfor.io/bot"
       ],
@@ -25638,6 +25679,10 @@
           "masks": [
             "*.probe.watchfor.io"
           ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://watchfor.io/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

@@ -1,0 +1,26 @@
+id: naver-blueno
+name: Blueno
+operator: { name: Naver, url: "https://www.naver.com" }
+description: >-
+  Naver's summary-information robot. When a user attaches or shares a link in
+  Naver Blog, Cafe, SmartEditor and similar services, Blueno fetches the linked
+  page to build the preview, reading Open Graph or Twitter Cards markup first
+  and falling back to summarising the document. Naver documents that it runs on
+  user-initiated requests rather than as a search crawler, caches each summary
+  for a period to avoid repeat visits, and can be confirmed by a
+  forward-confirmed reverse DNS lookup. Its user agent carries a
+  facebookexternalhit prefix, so a pattern written for Meta's link preview
+  fetcher will also match it.
+docs:
+  - "https://help.naver.com/service/5626/contents/19008"
+  - "https://searchadvisor.naver.com/guide/seo-basic-firewall"
+category: social-preview
+user_agents:
+  patterns:
+    - 'Blueno/\d'
+  instances:
+    - 'facebookexternalhit/1.1 (compatible; Blueno/1.0; +http://naver.me/scrap)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.naver.com", "*.line-apps.com"]
