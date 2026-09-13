@@ -808,6 +808,13 @@
     ]
   },
   {
+    "id": "gist-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "ProRataInc"
+    ]
+  },
+  {
     "id": "github-hooks",
     "category": "webhook",
     "patterns": [
@@ -1501,6 +1508,13 @@
     "category": "webhook",
     "patterns": [
       "PayPal IPN"
+    ]
+  },
+  {
+    "id": "peer39-crawler",
+    "category": "seo",
+    "patterns": [
+      "peer39_crawler"
     ]
   },
   {

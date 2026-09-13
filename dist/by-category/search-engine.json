@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-13T04:31:42.495Z",
+  "generated_at": "2026-09-13T13:19:53.561Z",
   "count": 77,
   "bots": [
     {
@@ -2374,6 +2374,12 @@
           "cidrs": [
             "65.21.31.180/32",
             "2a01:4f9:3080:2b61::2/128"
+          ]
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.findfiles.net"
           ]
         }
       ],

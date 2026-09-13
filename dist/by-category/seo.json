@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-13T04:31:42.495Z",
-  "count": 77,
+  "generated_at": "2026-09-13T13:19:53.561Z",
+  "count": 78,
   "bots": [
     {
       "id": "ads-naver",
@@ -1823,6 +1823,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-30T16:13:28.285Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "peer39-crawler",
+      "name": "peer39_crawler",
+      "operator": {
+        "name": "Peer39",
+        "url": "https://www.peer39.com"
+      },
+      "description": "Contextual-intelligence crawler operated by Peer39, an advertising data company. It visits publisher pages to categorise their content so that advertisers buying through programmatic platforms can judge the context and suitability of the pages their ads appear on. Peer39's crawler notice states that it drops no cookies and does not track or append browsing behaviour to individual users, and that the crawler reads robots.txt so administrators can allow or disallow it.",
+      "docs": [
+        "https://www.peer39.com/crawler-notice"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "peer39_crawler"
+        ],
+        "instances": [
+          "peer39_crawler/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "peer39_crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-13T13:17:22.509Z",
       "resolved_cidrs": []
     },
     {

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-13T04:31:42.495Z",
-  "count": 81,
+  "generated_at": "2026-09-13T13:19:53.561Z",
+  "count": 82,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -11983,6 +11983,87 @@
         "54.187.216.72/32",
         "54.88.130.119/32",
         "54.88.130.237/32"
+      ]
+    },
+    {
+      "id": "svix-webhooks",
+      "name": "Svix Webhooks",
+      "operator": {
+        "name": "Svix",
+        "url": "https://www.svix.com"
+      },
+      "description": "Webhook-sending infrastructure used by Svix's customers to deliver events. Not a crawler; Pro/Enterprise plans get a documented, static set of per-region source IPs, and requests include a Svix sender identifier in the User-Agent. Svix publishes those addresses as a JSON file grouped by region, and notes that every webhook from its hosted service also carries the sender identifier sender-9YMgn.",
+      "docs": [
+        "https://docs.svix.com/receiving/source-ips"
+      ],
+      "category": "webhook",
+      "user_agents": {
+        "patterns": [
+          "Svix-Webhooks/[\\d.]+"
+        ],
+        "instances": [
+          "Svix-Webhooks/1.68.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.svix.com/webhook-ips.json",
+          "format": "github_meta",
+          "selector": "us"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.svix.com/webhook-ips.json",
+          "format": "github_meta",
+          "selector": "us-east"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.svix.com/webhook-ips.json",
+          "format": "github_meta",
+          "selector": "eu"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.svix.com/webhook-ips.json",
+          "format": "github_meta",
+          "selector": "au"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.svix.com/webhook-ips.json",
+          "format": "github_meta",
+          "selector": "ca"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-08T19:13:49.571Z",
+      "resolved_cidrs": [
+        "13.239.204.236/32",
+        "2406:da2c:13:4000::/56",
+        "2600:1f21:1c:4000::/56",
+        "2600:1f24:64:8000::/56",
+        "2600:1f28:37:4000::/56",
+        "2a05:d028:17:8000::/56",
+        "3.96.105.27/32",
+        "3.98.68.230/32",
+        "44.228.126.217/32",
+        "50.112.21.217/32",
+        "52.215.16.239/32",
+        "52.24.126.164/32",
+        "52.60.44.49/32",
+        "54.148.139.208/32",
+        "54.164.207.221/32",
+        "54.216.8.72/32",
+        "54.252.65.96/32",
+        "54.66.246.217/32",
+        "54.90.7.123/32",
+        "63.33.109.123/32"
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-13T04:31:42.495Z",
+  "generated_at": "2026-09-13T13:19:53.561Z",
   "count": 115,
   "bots": [
     {
@@ -6157,6 +6157,12 @@
             "65.21.31.180/32",
             "2a01:4f9:3080:2b61::2/128"
           ]
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.findfiles.net"
+          ]
         }
       ],
       "tier": 2,
@@ -6375,6 +6381,46 @@
         "52.78.158.117/32",
         "52.78.175.144/32",
         "52.9.221.14/32"
+      ]
+    },
+    {
+      "id": "gist-crawler",
+      "name": "Gist Crawler Bot",
+      "operator": {
+        "name": "ProRata.ai",
+        "url": "https://prorata.ai"
+      },
+      "description": "ProRata.ai's crawler for Gist.ai. It systematically fetches licensed and publicly accessible content to power the retrieval-augmented generation model behind Gist Answers, following internal and external links to discover new and changed pages, and may also download the CSS and JavaScript a page needs for accurate content extraction. ProRata documents that the crawler only visits content that is either freely accessible without credentials or explicitly licensed, spaces out its requests, and publishes the two addresses it crawls from, one for production and one for testing.",
+      "docs": [
+        "https://platform.gist.ai/docs/prorata-ai-crawler-bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ProRataInc"
+        ],
+        "instances": [
+          "ProRataInc"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "172.190.46.235/32",
+            "172.171.95.51/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-13T13:17:22.509Z",
+      "resolved_cidrs": [
+        "172.171.95.51/32",
+        "172.190.46.235/32"
       ]
     },
     {
@@ -8785,82 +8831,6 @@
         "198.58.99.82/32",
         "50.116.28.209/32",
         "50.116.30.23/32"
-      ]
-    },
-    {
-      "id": "svix-webhooks",
-      "name": "Svix Webhooks",
-      "operator": {
-        "name": "Svix",
-        "url": "https://www.svix.com"
-      },
-      "description": "Webhook-sending infrastructure used by Svix's customers to deliver events. Not a crawler; Pro/Enterprise plans get a documented, static set of per-region source IPs, and requests include a Svix sender identifier in the User-Agent.",
-      "docs": [
-        "https://docs.svix.com/receiving/source-ips"
-      ],
-      "category": "webhook",
-      "user_agents": {
-        "patterns": [
-          "Svix-Webhooks/[\\d.]+"
-        ],
-        "instances": [
-          "Svix-Webhooks/1.68.0"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": false
-      },
-      "verification": [
-        {
-          "type": "static_cidrs",
-          "cidrs": [
-            "44.228.126.217/32",
-            "50.112.21.217/32",
-            "52.24.126.164/32",
-            "54.148.139.208/32",
-            "2600:1f24:64:8000::/56",
-            "54.164.207.221/32",
-            "54.90.7.123/32",
-            "2600:1f28:37:4000::/56",
-            "52.215.16.239/32",
-            "54.216.8.72/32",
-            "63.33.109.123/32",
-            "2a05:d028:17:8000::/56",
-            "13.239.204.236/32",
-            "54.66.246.217/32",
-            "54.252.65.96/32",
-            "2406:da2c:13:4000::/56",
-            "52.60.44.49/32",
-            "3.98.68.230/32",
-            "3.96.105.27/32",
-            "2600:1f21:1c:4000::/56"
-          ]
-        }
-      ],
-      "tier": 2,
-      "tier_label": "Verifiable",
-      "first_seen": "2026-07-08T19:13:49.571Z",
-      "resolved_cidrs": [
-        "13.239.204.236/32",
-        "2406:da2c:13:4000::/56",
-        "2600:1f21:1c:4000::/56",
-        "2600:1f24:64:8000::/56",
-        "2600:1f28:37:4000::/56",
-        "2a05:d028:17:8000::/56",
-        "3.96.105.27/32",
-        "3.98.68.230/32",
-        "44.228.126.217/32",
-        "50.112.21.217/32",
-        "52.215.16.239/32",
-        "52.24.126.164/32",
-        "52.60.44.49/32",
-        "54.148.139.208/32",
-        "54.164.207.221/32",
-        "54.216.8.72/32",
-        "54.252.65.96/32",
-        "54.66.246.217/32",
-        "54.90.7.123/32",
-        "63.33.109.123/32"
       ]
     },
     {

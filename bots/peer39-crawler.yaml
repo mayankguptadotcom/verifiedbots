@@ -1,0 +1,21 @@
+id: peer39-crawler
+name: peer39_crawler
+operator: { name: Peer39, url: "https://www.peer39.com" }
+description: >-
+  Contextual-intelligence crawler operated by Peer39, an advertising data
+  company. It visits publisher pages to categorise their content so that
+  advertisers buying through programmatic platforms can judge the context and
+  suitability of the pages their ads appear on. Peer39's crawler notice states
+  that it drops no cookies and does not track or append browsing behaviour to
+  individual users, and that the crawler reads robots.txt so administrators can
+  allow or disallow it.
+docs:
+  - "https://www.peer39.com/crawler-notice"
+category: seo
+user_agents:
+  patterns:
+    - 'peer39_crawler'
+  instances:
+    - 'peer39_crawler/1.0'
+behavior: { respects_robots_txt: true, robots_token: peer39_crawler }
+verification: []

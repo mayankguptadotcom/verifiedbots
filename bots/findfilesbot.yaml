@@ -28,3 +28,8 @@ verification:
     cidrs:
       - "65.21.31.180/32"
       - "2a01:4f9:3080:2b61::2/128"
+  # The operator tells site owners to confirm that reverse DNS points to the
+  # crawler hostname bot.findfiles.net and that the hostname resolves back to
+  # the same address; the PTR for 65.21.31.180 was confirmed this session.
+  - type: rdns
+    masks: ["*.findfiles.net"]

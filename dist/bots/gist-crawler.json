@@ -1,0 +1,40 @@
+{
+  "id": "gist-crawler",
+  "name": "Gist Crawler Bot",
+  "operator": {
+    "name": "ProRata.ai",
+    "url": "https://prorata.ai"
+  },
+  "description": "ProRata.ai's crawler for Gist.ai. It systematically fetches licensed and publicly accessible content to power the retrieval-augmented generation model behind Gist Answers, following internal and external links to discover new and changed pages, and may also download the CSS and JavaScript a page needs for accurate content extraction. ProRata documents that the crawler only visits content that is either freely accessible without credentials or explicitly licensed, spaces out its requests, and publishes the two addresses it crawls from, one for production and one for testing.",
+  "docs": [
+    "https://platform.gist.ai/docs/prorata-ai-crawler-bot"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "ProRataInc"
+    ],
+    "instances": [
+      "ProRataInc"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "172.190.46.235/32",
+        "172.171.95.51/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-13T13:17:22.509Z",
+  "resolved_cidrs": [
+    "172.171.95.51/32",
+    "172.190.46.235/32"
+  ]
+}
