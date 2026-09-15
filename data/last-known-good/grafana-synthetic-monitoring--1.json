@@ -1,6 +1,6 @@
 {
   "url": "https://allowlists.grafana.com/synthetics",
-  "fetched_at": "2026-09-15T04:32:56.631Z",
+  "fetched_at": "2026-09-15T13:25:33.576Z",
   "ranges": [
     "2406:da11:d40:6a20::/60",
     "2406:da11:d40:6a30::/60",
