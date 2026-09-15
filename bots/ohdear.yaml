@@ -1,0 +1,35 @@
+id: ohdear
+name: Oh Dear
+operator: { name: Oh Dear, url: "https://ohdear.app" }
+description: >-
+  Website monitoring service that crawls the sites its customers monitor,
+  checking for broken links, mixed content and sitemap validity, and that
+  also verifies outgoing links found on a customer's site, which is why it
+  reaches pages on third-party domains. Oh Dear documents that it throttles
+  itself and follows robots.txt by default, honouring rules written for the
+  OhDear token, though a customer can switch "Respect robots.txt" off for
+  their own monitor. Every user agent it sends starts with OhDear.app and
+  links the feature page explaining the check, and Oh Dear publishes the
+  fixed list of monitoring servers it runs from.
+docs:
+  - "https://ohdear.app/docs/faq/what-is-the-oh-dear-crawler-doing-in-my-logs"
+  - "https://ohdear.app/docs/faq/what-ips-does-oh-dear-monitor-from"
+  - "https://ohdear.app/docs/faq/can-i-add-oh-dear-to-my-robotstxt"
+category: monitoring
+user_agents:
+  patterns:
+    - 'OhDear\.app'
+  instances:
+    - 'OhDear.app (+https://ohdear.app/docs/features/broken-links-detection)'
+    - 'OhDear.app (+https://ohdear.app/docs/features/sitemap-monitoring)'
+    - 'OhDear.app (+https://ohdear.app/docs/features/application-health-monitoring)'
+behavior: { respects_robots_txt: true, robots_token: OhDear }
+verification:
+  # ohdear.app/used-ips is the plain-text twin of the JSON/CSV/Cloudflare
+  # exports the same page links; it lists one bare address per line, IPv4 and
+  # IPv6, which normalizeCidr turns into /32 and /128. Oh Dear says the list
+  # changes only when a monitoring server is added or retired and that it is
+  # safe to fetch on a schedule, so a daily snapshot tracks it.
+  - type: cidr_feed
+    url: "https://ohdear.app/used-ips"
+    format: text_lines

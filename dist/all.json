@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-15T04:33:26.104Z",
-  "count": 344,
+  "generated_at": "2026-09-15T13:22:09.518Z",
+  "count": 351,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -5507,18 +5507,9 @@
         "17.166.240.48/28",
         "17.166.248.48/28",
         "17.166.25.0/24",
-        "17.22.237.0/24",
-        "17.22.245.0/24",
-        "17.22.253.0/24",
         "17.241.193.160/27",
         "17.241.200.160/27",
-        "17.241.208.160/27",
-        "17.241.219.0/24",
-        "17.241.227.0/24",
-        "17.241.75.0/24",
-        "17.246.15.0/24",
-        "17.246.19.0/24",
-        "17.246.23.0/24"
+        "17.241.208.160/27"
       ]
     },
     {
@@ -7768,6 +7759,48 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cludo",
+      "name": "Cludo",
+      "operator": {
+        "name": "Cludo",
+        "url": "https://cludo.com"
+      },
+      "description": "Crawler for Cludo's hosted site-search product. It scans the domains a customer configures, follows links and sitemap URLs, and extracts page content and metadata into that customer's search index. Cludo documents that site owners can steer it with robots.txt rules addressed to the cludo token, and publishes the two proxy addresses — one per cluster, EU and US — that all of its services, crawlers included, make outbound requests from.",
+      "docs": [
+        "https://help.cludo.com/faq/what-are-the-crawlers-ip-addresses/",
+        "https://help.cludo.com/configuration/exclude-pages/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "cludo\\.com bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; cludo.com bot) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.98 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "cludo"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.57.207.129/32",
+            "52.6.240.133/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "52.57.207.129/32",
+        "52.6.240.133/32"
+      ]
+    },
+    {
       "id": "coccocbot",
       "name": "coccocbot",
       "operator": {
@@ -8381,6 +8414,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "daumbot",
+      "name": "Daumbot",
+      "operator": {
+        "name": "Kakao Corp.",
+        "url": "https://www.kakaocorp.com"
+      },
+      "description": "Web-document crawler for Kakao's Daum search service in Korea. It collects pages so they can appear in Daum web search results, and Kakao's help centre states that the robot adheres to the robots exclusion standard when collecting documents from all sources, honouring both robots.txt rules written for the Daum token and noindex/none/nosnippet robots meta tags. The same help centre notes a blocked page's title can still appear in results when other pages link to it, because that text comes from the anchor text of the linking page rather than from a fetch of the blocked page.",
+      "docs": [
+        "https://cs.daum.net/faq/service/15/category/4118/detail/36354",
+        "https://cs.daum.net/faq/service/15/category/4118/detail/28966"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "compatible; Daum/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Daum/4.1; +https://cs.daum.net/faq/service/15/category/4118/detail/28966)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Daum"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "deadlinkchecker",
       "name": "Dead Link Checker",
       "operator": {
@@ -8655,6 +8719,48 @@
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "doofinder",
+      "name": "Doofinder",
+      "operator": {
+        "name": "Doofinder",
+        "url": "https://www.doofinder.com"
+      },
+      "description": "Fetcher for Doofinder's e-commerce site-search service. It retrieves the product data feed and page content of the shops that subscribe to Doofinder so their catalogue can be indexed for on-site search. The operator's security FAQ prints the user agent it sends and the three regional addresses it requests from, offering them as an alternative to putting credentials in a protected feed URL.",
+      "docs": [
+        "https://support.doofinder.com/faq/security"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Doofinder/[\\d.]+"
+        ],
+        "instances": [
+          "Doofinder/4.0 (+http://www.doofinder.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.171.4.216/32",
+            "52.2.218.41/32",
+            "18.143.220.25/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "18.143.220.25/32",
+        "52.2.218.41/32",
+        "54.171.4.216/32"
+      ]
     },
     {
       "id": "dotbot",
@@ -17098,6 +17204,53 @@
       "resolved_cidrs": []
     },
     {
+      "id": "jetoctopus",
+      "name": "JetOctopus",
+      "operator": {
+        "name": "JetOctopus",
+        "url": "https://jetoctopus.com"
+      },
+      "description": "Cloud SEO crawler and log analyzer that crawls the sites its customers configure. Its regular user agent is the JetOctopus token recorded here; the crawl configuration also offers desktop browser, mobile browser and Googlebot desktop/mobile strings so a customer can see how their own site renders for those clients, and in those modes the requests are not distinguishable by user agent, only by source address. Robots.txt rules are followed when the crawl's \"Respect robots rules\" setting is on, which is why the flag below is false, and JetOctopus publishes the servers it crawls from so site owners can allowlist them.",
+      "docs": [
+        "https://jetoctopus.com/a-complete-list-of-user-agents-used-by-jetoctopus/",
+        "https://jetoctopus.com/how-does-the-jetoctopus-crawler-work/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "JetOctopus/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; JetOctopus/0.1; +https://jetoctopus.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.38.81.9/32",
+            "198.244.200.110/32",
+            "57.129.76.223/32",
+            "147.135.5.64/32",
+            "139.99.131.40/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "139.99.131.40/32",
+        "147.135.5.64/32",
+        "198.244.200.110/32",
+        "54.38.81.9/32",
+        "57.129.76.223/32"
+      ]
+    },
+    {
       "id": "jooblebot",
       "name": "Jooblebot",
       "operator": {
@@ -19375,6 +19528,127 @@
       ]
     },
     {
+      "id": "ohdear",
+      "name": "Oh Dear",
+      "operator": {
+        "name": "Oh Dear",
+        "url": "https://ohdear.app"
+      },
+      "description": "Website monitoring service that crawls the sites its customers monitor, checking for broken links, mixed content and sitemap validity, and that also verifies outgoing links found on a customer's site, which is why it reaches pages on third-party domains. Oh Dear documents that it throttles itself and follows robots.txt by default, honouring rules written for the OhDear token, though a customer can switch \"Respect robots.txt\" off for their own monitor. Every user agent it sends starts with OhDear.app and links the feature page explaining the check, and Oh Dear publishes the fixed list of monitoring servers it runs from.",
+      "docs": [
+        "https://ohdear.app/docs/faq/what-is-the-oh-dear-crawler-doing-in-my-logs",
+        "https://ohdear.app/docs/faq/what-ips-does-oh-dear-monitor-from",
+        "https://ohdear.app/docs/faq/can-i-add-oh-dear-to-my-robotstxt"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "OhDear\\.app"
+        ],
+        "instances": [
+          "OhDear.app (+https://ohdear.app/docs/features/broken-links-detection)",
+          "OhDear.app (+https://ohdear.app/docs/features/sitemap-monitoring)",
+          "OhDear.app (+https://ohdear.app/docs/features/application-health-monitoring)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "OhDear"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://ohdear.app/used-ips",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "104.236.192.248/32",
+        "13.245.37.23/32",
+        "134.209.122.208/32",
+        "134.209.243.63/32",
+        "137.184.22.216/32",
+        "138.68.138.12/32",
+        "138.68.138.180/32",
+        "139.59.61.47/32",
+        "142.93.110.196/32",
+        "152.42.202.101/32",
+        "158.247.212.166/32",
+        "159.203.38.39/32",
+        "159.203.60.48/32",
+        "159.65.3.76/32",
+        "164.90.176.102/32",
+        "164.90.189.172/32",
+        "165.22.36.80/32",
+        "165.22.95.234/32",
+        "165.227.31.113/32",
+        "167.172.97.55/32",
+        "167.71.40.86/32",
+        "167.71.54.244/32",
+        "167.71.57.77/32",
+        "167.99.69.81/32",
+        "176.62.160.106/32",
+        "178.62.45.205/32",
+        "198.13.48.175/32",
+        "199.247.9.185/32",
+        "2001:19f0:4400:737b:5400:3ff:fe1a:5634/128",
+        "2001:19f0:5801:1e90:5400:1ff:fecb:f1f2/128",
+        "2001:19f0:6001:5ef0:5400:3ff:fe1a:5666/128",
+        "2001:19f0:6401:19d5:5400:2ff:feb3:6d28/128",
+        "2001:19f0:6401:3a:5400:5ff:fe8b:5e4b/128",
+        "2001:19f0:6401:f5a:5400:1ff:fe57:57e9/128",
+        "2001:19f0:6801:15d7:5400:1ff:fef9:8e1d/128",
+        "2001:19f0:6801:5f3:5400:1ff:fe38:3572/128",
+        "2001:19f0:6801:9d3:5400:2ff:feda:fb6e/128",
+        "2001:19f0:7002:3d5:5400:2ff:fedb:8dc0/128",
+        "216.128.128.104/32",
+        "217.19.225.103/32",
+        "217.69.10.40/32",
+        "23.88.67.24/32",
+        "2400:6180:0:d0::157d:f001/128",
+        "2400:6180:0:d2:0:2:e274:b000/128",
+        "2400:6180:100:d0::12:e001/128",
+        "2401:c080:1c02:b4:5400:3ff:fe1a:56a2/128",
+        "2604:a880:2:d0::15d9:c001/128",
+        "2604:a880:400:d0::1a7d:4001/128",
+        "2604:a880:400:d0::1ce6:d001/128",
+        "2604:a880:400:d1:0:4:73cc:d001/128",
+        "2604:a880:cad:d0::7aa:6001/128",
+        "2a01:4f8:272:426a::2/128",
+        "2a03:b0c0:1:d0::81:e001/128",
+        "2a03:b0c0:3:d0::10b8:8001/128",
+        "2a03:b0c0:3:d0::4f5:f001/128",
+        "2a03:b0c0:3:d0::e8d:1001/128",
+        "2a03:b0c0:3:e0::220:2001/128",
+        "2a03:b0c0:3:e0::2a8:6001/128",
+        "2a03:b0c0:3:e0::386:1/128",
+        "2a03:b0c0:3:f0:0:1:58e7:9000/128",
+        "2a03:b0c0:3:f0:0:1:8224:4000/128",
+        "2a03:b0c0:3:f0::173:0/128",
+        "2a05:f480:1c00:5f0:5400:3ff:fe50:e0c5/128",
+        "2a05:f480:1c00:7dd:5400:2ff:fe68:af7/128",
+        "2a05:f480:1c00:c80:5400:2ff:feda:ca89/128",
+        "2a05:f480:2000:295b:5400:5ff:fe85:e8c9/128",
+        "45.32.107.252/32",
+        "45.32.146.84/32",
+        "45.32.147.8/32",
+        "45.32.189.194/32",
+        "45.63.54.118/32",
+        "45.76.236.54/32",
+        "45.76.46.251/32",
+        "45.76.59.200/32",
+        "46.101.122.201/32",
+        "54.94.4.151/32",
+        "67.205.187.125/32",
+        "68.183.121.207/32",
+        "70.34.203.58/32",
+        "95.179.211.184/32"
+      ]
+    },
+    {
       "id": "omgili",
       "name": "omgili",
       "operator": {
@@ -20236,6 +20510,129 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "pulsetic",
+      "name": "Pulsetic",
+      "operator": {
+        "name": "Pulsetic",
+        "url": "https://pulsetic.com"
+      },
+      "description": "Uptime monitoring service that probes the sites its customers configure. Primary checks come from the monitoring engine chosen in the customer's account, and when downtime is detected Pulsetic sends confirmation requests from remote nodes in other countries, so a single monitored site can be hit from several of its addresses. Pulsetic publishes both its IPv4 and IPv6 node lists for allowlisting and documents the user agent it sends.",
+      "docs": [
+        "https://help.pulsetic.com/article/198-pulsetic-user-agent",
+        "https://help.pulsetic.com/article/195-locations"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "pulsetic\\.com"
+        ],
+        "instances": [
+          "pulsetic.com (+https://pulsetic.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://api.pulsetic.com/ip-ranges.txt",
+          "format": "text_lines"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://api.pulsetic.com/ipv6-ranges.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "107.191.47.164/32",
+        "108.61.219.226/32",
+        "108.61.250.227/32",
+        "116.203.121.253/32",
+        "139.180.183.114/32",
+        "139.84.134.95/32",
+        "139.84.211.213/32",
+        "139.84.215.78/32",
+        "139.84.227.72/32",
+        "139.84.228.151/32",
+        "139.84.237.134/32",
+        "149.28.170.157/32",
+        "149.28.83.249/32",
+        "155.138.140.15/32",
+        "167.235.89.6/32",
+        "178.63.62.125/32",
+        "2001:19f0:4000:10eb:5400:5ff:fec7:d9cd/128",
+        "2001:19f0:4000:1260:5400:6ff:fe46:8182/128",
+        "2001:19f0:5800:1d9b:5400:6ff:fe46:818f/128",
+        "2001:19f0:5801:1e04:5400:5ff:fef3:fe8a/128",
+        "2001:19f0:6000:35e7:5400:6ff:fe46:818c/128",
+        "2001:19f0:6000:97b2:5400:5ff:fec7:d9c6/128",
+        "2001:19f0:6001:59c0:5400:5ff:fecd:df14/128",
+        "2001:19f0:6801:15a3:5400:6ff:fe46:8190/128",
+        "2001:19f0:6801:19a:5400:5ff:fec7:d9c5/128",
+        "2001:19f0:7001:2ea0:5400:6ff:fe46:81a5/128",
+        "2001:19f0:7001:58a7:5400:5ff:fec7:d9c4/128",
+        "2001:19f0:7400:1a39:5400:6ff:fe46:81a6/128",
+        "2001:19f0:7402:3cd:5400:5ff:fec7:d9cb/128",
+        "2001:19f0:b002:70c:5400:6ff:fe46:818b/128",
+        "2001:19f0:b002:c48:5400:5ff:fec7:d9c7/128",
+        "2001:19f0:b800:11af:5400:6ff:fe46:8185/128",
+        "2001:19f0:b800:1362:5400:5ff:fec7:d9c3/128",
+        "2001:19f0:b800:1793:5400:5ff:fec7:da55/128",
+        "207.148.71.205/32",
+        "216.128.176.204/32",
+        "216.238.109.23/32",
+        "216.238.122.220/32",
+        "216.238.99.176/32",
+        "2401:c080:1000:176e:5400:5ff:fec7:da54/128",
+        "2401:c080:1400:1524:5400:6ff:fe46:818a/128",
+        "2401:c080:1400:5cb7:5400:5ff:fec7:d9c9/128",
+        "2401:c080:1800:4687:5400:5ff:fef3:ff1d/128",
+        "2401:c080:3000:2f1e:5400:5ff:fec7:dd98/128",
+        "2401:c080:3000:3a54:5400:6ff:fe46:8187/128",
+        "2401:c080:3000:439b:5400:5ff:fec7:d9cc/128",
+        "2a01:4f8:1c18:a1fd::1/128",
+        "2a01:4f8:2190:29e3::/64",
+        "2a01:4f8:c015:149e::1/128",
+        "2a01:4f8:c2c:9b3b::1/128",
+        "2a01:4f9:c012:7a1b::1/128",
+        "2a01:4f9:c014:6f71::1/128",
+        "2a01:4ff:2f0:226a::1/128",
+        "2a01:4ff:f0:4156::/64",
+        "2a01:4ff:f0:98da::1/128",
+        "2a01:4ff:f4:425::1/128",
+        "2a05:f480:2000:2549:5400:5ff:fec7:d9d2/128",
+        "2a05:f480:2000:2da3:5400:6ff:fe46:8188/128",
+        "2a05:f480:3000:226a:5400:5ff:fec7:d9ca/128",
+        "2a05:f480:3000:23bb:5400:6ff:fe46:8197/128",
+        "2a05:f480:3000:2cb0:5400:5ff:fec7:dd99/128",
+        "45.32.66.130/32",
+        "45.63.31.206/32",
+        "45.76.207.53/32",
+        "45.77.103.97/32",
+        "45.77.12.252/32",
+        "45.77.36.132/32",
+        "45.77.57.53/32",
+        "45.77.59.102/32",
+        "46.224.40.12/32",
+        "5.161.16.172/32",
+        "5.161.247.34/32",
+        "5.161.60.52/32",
+        "5.223.61.55/32",
+        "64.176.218.54/32",
+        "65.21.109.209/32",
+        "65.21.249.207/32",
+        "70.34.216.110/32",
+        "70.34.218.144/32",
+        "91.99.238.179/32",
+        "95.179.223.208/32"
+      ]
     },
     {
       "id": "qualifiedbot",
@@ -23662,6 +24059,63 @@
         "52.60.34.56/32",
         "52.64.209.168/32",
         "52.7.141.1/32"
+      ]
+    },
+    {
+      "id": "sitesearch360",
+      "name": "Site Search 360",
+      "operator": {
+        "name": "Zoovu (Germany) GmbH",
+        "url": "https://sitesearch360.com"
+      },
+      "description": "Crawler for the Site Search 360 hosted site-search product, operated by Zoovu (Germany) GmbH, formerly SEMKNOX. It indexes the pages of the customer sites it is pointed at, following links from the configured root domains and skipping external hosts. Robots.txt is not applied automatically: the control panel offers a \"Fill Blacklist from robots.txt\" action that imports a site's disallow rules into the crawl blacklist, and the crawler honours noindex robots meta tags. The operator publishes the addresses it crawls from for firewall allowlisting.",
+      "docs": [
+        "https://docs.sitesearch360.com/your-search-index/",
+        "https://docs.sitesearch360.com/advanced-crawler-settings/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "SiteSearch360/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SiteSearch360/1.0; +https://sitesearch360.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "88.99.218.202/32",
+            "88.99.149.30/32",
+            "88.99.162.232/32",
+            "88.99.29.101/32",
+            "149.56.240.229/32",
+            "51.79.176.191/32",
+            "51.222.153.207/32",
+            "139.99.121.235/32",
+            "94.130.54.189/32",
+            "116.202.85.24/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "116.202.85.24/32",
+        "139.99.121.235/32",
+        "149.56.240.229/32",
+        "51.222.153.207/32",
+        "51.79.176.191/32",
+        "88.99.149.30/32",
+        "88.99.162.232/32",
+        "88.99.218.202/32",
+        "88.99.29.101/32",
+        "94.130.54.189/32"
       ]
     },
     {

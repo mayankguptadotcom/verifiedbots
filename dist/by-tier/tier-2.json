@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-15T04:33:26.104Z",
-  "count": 115,
+  "generated_at": "2026-09-15T13:22:09.518Z",
+  "count": 119,
   "bots": [
     {
       "id": "addsearch",
@@ -5458,6 +5458,48 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cludo",
+      "name": "Cludo",
+      "operator": {
+        "name": "Cludo",
+        "url": "https://cludo.com"
+      },
+      "description": "Crawler for Cludo's hosted site-search product. It scans the domains a customer configures, follows links and sitemap URLs, and extracts page content and metadata into that customer's search index. Cludo documents that site owners can steer it with robots.txt rules addressed to the cludo token, and publishes the two proxy addresses — one per cluster, EU and US — that all of its services, crawlers included, make outbound requests from.",
+      "docs": [
+        "https://help.cludo.com/faq/what-are-the-crawlers-ip-addresses/",
+        "https://help.cludo.com/configuration/exclude-pages/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "cludo\\.com bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; cludo.com bot) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.98 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "cludo"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.57.207.129/32",
+            "52.6.240.133/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "52.57.207.129/32",
+        "52.6.240.133/32"
+      ]
+    },
+    {
       "id": "coccocbot",
       "name": "coccocbot",
       "operator": {
@@ -5913,6 +5955,48 @@
         "52.208.235.127/32",
         "54.73.182.190/32",
         "63.32.130.39/32"
+      ]
+    },
+    {
+      "id": "doofinder",
+      "name": "Doofinder",
+      "operator": {
+        "name": "Doofinder",
+        "url": "https://www.doofinder.com"
+      },
+      "description": "Fetcher for Doofinder's e-commerce site-search service. It retrieves the product data feed and page content of the shops that subscribe to Doofinder so their catalogue can be indexed for on-site search. The operator's security FAQ prints the user agent it sends and the three regional addresses it requests from, offering them as an alternative to putting credentials in a protected feed URL.",
+      "docs": [
+        "https://support.doofinder.com/faq/security"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Doofinder/[\\d.]+"
+        ],
+        "instances": [
+          "Doofinder/4.0 (+http://www.doofinder.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.171.4.216/32",
+            "52.2.218.41/32",
+            "18.143.220.25/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "18.143.220.25/32",
+        "52.2.218.41/32",
+        "54.171.4.216/32"
       ]
     },
     {
@@ -6894,6 +6978,53 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-24T13:19:52.933Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "jetoctopus",
+      "name": "JetOctopus",
+      "operator": {
+        "name": "JetOctopus",
+        "url": "https://jetoctopus.com"
+      },
+      "description": "Cloud SEO crawler and log analyzer that crawls the sites its customers configure. Its regular user agent is the JetOctopus token recorded here; the crawl configuration also offers desktop browser, mobile browser and Googlebot desktop/mobile strings so a customer can see how their own site renders for those clients, and in those modes the requests are not distinguishable by user agent, only by source address. Robots.txt rules are followed when the crawl's \"Respect robots rules\" setting is on, which is why the flag below is false, and JetOctopus publishes the servers it crawls from so site owners can allowlist them.",
+      "docs": [
+        "https://jetoctopus.com/a-complete-list-of-user-agents-used-by-jetoctopus/",
+        "https://jetoctopus.com/how-does-the-jetoctopus-crawler-work/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "JetOctopus/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; JetOctopus/0.1; +https://jetoctopus.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.38.81.9/32",
+            "198.244.200.110/32",
+            "57.129.76.223/32",
+            "147.135.5.64/32",
+            "139.99.131.40/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "139.99.131.40/32",
+        "147.135.5.64/32",
+        "198.244.200.110/32",
+        "54.38.81.9/32",
+        "57.129.76.223/32"
+      ]
     },
     {
       "id": "kagibot",
@@ -8605,6 +8736,63 @@
         "52.60.34.56/32",
         "52.64.209.168/32",
         "52.7.141.1/32"
+      ]
+    },
+    {
+      "id": "sitesearch360",
+      "name": "Site Search 360",
+      "operator": {
+        "name": "Zoovu (Germany) GmbH",
+        "url": "https://sitesearch360.com"
+      },
+      "description": "Crawler for the Site Search 360 hosted site-search product, operated by Zoovu (Germany) GmbH, formerly SEMKNOX. It indexes the pages of the customer sites it is pointed at, following links from the configured root domains and skipping external hosts. Robots.txt is not applied automatically: the control panel offers a \"Fill Blacklist from robots.txt\" action that imports a site's disallow rules into the crawl blacklist, and the crawler honours noindex robots meta tags. The operator publishes the addresses it crawls from for firewall allowlisting.",
+      "docs": [
+        "https://docs.sitesearch360.com/your-search-index/",
+        "https://docs.sitesearch360.com/advanced-crawler-settings/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "SiteSearch360/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SiteSearch360/1.0; +https://sitesearch360.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "88.99.218.202/32",
+            "88.99.149.30/32",
+            "88.99.162.232/32",
+            "88.99.29.101/32",
+            "149.56.240.229/32",
+            "51.79.176.191/32",
+            "51.222.153.207/32",
+            "139.99.121.235/32",
+            "94.130.54.189/32",
+            "116.202.85.24/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "116.202.85.24/32",
+        "139.99.121.235/32",
+        "149.56.240.229/32",
+        "51.222.153.207/32",
+        "51.79.176.191/32",
+        "88.99.149.30/32",
+        "88.99.162.232/32",
+        "88.99.218.202/32",
+        "88.99.29.101/32",
+        "94.130.54.189/32"
       ]
     },
     {

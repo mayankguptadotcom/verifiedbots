@@ -1,0 +1,31 @@
+id: cludo
+name: Cludo
+operator: { name: Cludo, url: "https://cludo.com" }
+description: >-
+  Crawler for Cludo's hosted site-search product. It scans the domains a
+  customer configures, follows links and sitemap URLs, and extracts page
+  content and metadata into that customer's search index. Cludo documents
+  that site owners can steer it with robots.txt rules addressed to the cludo
+  token, and publishes the two proxy addresses — one per cluster, EU and US —
+  that all of its services, crawlers included, make outbound requests from.
+docs:
+  - "https://help.cludo.com/faq/what-are-the-crawlers-ip-addresses/"
+  - "https://help.cludo.com/configuration/exclude-pages/"
+category: search-engine
+user_agents:
+  # Chrome-shaped, so the pattern anchors on the self-identification Cludo
+  # prints inside the platform comment; the operator asks site owners to match
+  # on "cludo" rather than on the full string, which carries a Chrome version.
+  patterns:
+    - 'cludo\.com bot'
+  instances:
+    - 'Mozilla/5.0 (Windows NT 10.0; cludo.com bot) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.98 Safari/537.36'
+behavior: { respects_robots_txt: true, robots_token: cludo }
+verification:
+  # "Our crawler's IP addresses are: EU: 52.57.207.129 / US: 52.6.240.133"
+  # (page dated 15 May 2026). Two documented addresses and no feed URL, so
+  # they are snapshotted rather than fetched.
+  - type: static_cidrs
+    cidrs:
+      - "52.57.207.129/32"
+      - "52.6.240.133/32"

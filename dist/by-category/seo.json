@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-15T04:33:26.104Z",
-  "count": 78,
+  "generated_at": "2026-09-15T13:22:09.518Z",
+  "count": 79,
   "bots": [
     {
       "id": "ads-naver",
@@ -1312,6 +1312,53 @@
         "92.42.105.37",
         "92.42.105.38",
         "92.42.105.39"
+      ]
+    },
+    {
+      "id": "jetoctopus",
+      "name": "JetOctopus",
+      "operator": {
+        "name": "JetOctopus",
+        "url": "https://jetoctopus.com"
+      },
+      "description": "Cloud SEO crawler and log analyzer that crawls the sites its customers configure. Its regular user agent is the JetOctopus token recorded here; the crawl configuration also offers desktop browser, mobile browser and Googlebot desktop/mobile strings so a customer can see how their own site renders for those clients, and in those modes the requests are not distinguishable by user agent, only by source address. Robots.txt rules are followed when the crawl's \"Respect robots rules\" setting is on, which is why the flag below is false, and JetOctopus publishes the servers it crawls from so site owners can allowlist them.",
+      "docs": [
+        "https://jetoctopus.com/a-complete-list-of-user-agents-used-by-jetoctopus/",
+        "https://jetoctopus.com/how-does-the-jetoctopus-crawler-work/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "JetOctopus/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; JetOctopus/0.1; +https://jetoctopus.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.38.81.9/32",
+            "198.244.200.110/32",
+            "57.129.76.223/32",
+            "147.135.5.64/32",
+            "139.99.131.40/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "139.99.131.40/32",
+        "147.135.5.64/32",
+        "198.244.200.110/32",
+        "54.38.81.9/32",
+        "57.129.76.223/32"
       ]
     },
     {

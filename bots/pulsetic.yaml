@@ -1,0 +1,31 @@
+id: pulsetic
+name: Pulsetic
+operator: { name: Pulsetic, url: "https://pulsetic.com" }
+description: >-
+  Uptime monitoring service that probes the sites its customers configure.
+  Primary checks come from the monitoring engine chosen in the customer's
+  account, and when downtime is detected Pulsetic sends confirmation requests
+  from remote nodes in other countries, so a single monitored site can be hit
+  from several of its addresses. Pulsetic publishes both its IPv4 and IPv6
+  node lists for allowlisting and documents the user agent it sends.
+docs:
+  - "https://help.pulsetic.com/article/198-pulsetic-user-agent"
+  - "https://help.pulsetic.com/article/195-locations"
+category: monitoring
+user_agents:
+  patterns:
+    - 'pulsetic\.com'
+  instances:
+    - 'pulsetic.com (+https://pulsetic.com)'
+behavior: { respects_robots_txt: false }
+verification:
+  # Two plain-text lists of bare addresses, one per line, linked from the
+  # operator's "Locations and IPs" article: 41 IPv4 and 40 IPv6 nodes when
+  # fetched. These are fixed monitoring nodes, not a rotating pool — the same
+  # article also offers them as A/AAAA records on nodes.pulsetic.com.
+  - type: cidr_feed
+    url: "https://api.pulsetic.com/ip-ranges.txt"
+    format: text_lines
+  - type: cidr_feed
+    url: "https://api.pulsetic.com/ipv6-ranges.txt"
+    format: text_lines

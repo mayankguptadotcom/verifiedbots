@@ -1,0 +1,23 @@
+id: daumbot
+name: Daumbot
+operator: { name: Kakao Corp., url: "https://www.kakaocorp.com" }
+description: >-
+  Web-document crawler for Kakao's Daum search service in Korea. It collects
+  pages so they can appear in Daum web search results, and Kakao's help centre
+  states that the robot adheres to the robots exclusion standard when
+  collecting documents from all sources, honouring both robots.txt rules
+  written for the Daum token and noindex/none/nosnippet robots meta tags. The
+  same help centre notes a blocked page's title can still appear in results
+  when other pages link to it, because that text comes from the anchor text
+  of the linking page rather than from a fetch of the blocked page.
+docs:
+  - "https://cs.daum.net/faq/service/15/category/4118/detail/36354"
+  - "https://cs.daum.net/faq/service/15/category/4118/detail/28966"
+category: search-engine
+user_agents:
+  patterns:
+    - 'compatible; Daum/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; Daum/4.1; +https://cs.daum.net/faq/service/15/category/4118/detail/28966)'
+behavior: { respects_robots_txt: true, robots_token: Daum }
+verification: []

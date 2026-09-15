@@ -459,6 +459,13 @@
     ]
   },
   {
+    "id": "cludo",
+    "category": "search-engine",
+    "patterns": [
+      "cludo\\.com bot"
+    ]
+  },
+  {
     "id": "coccocbot",
     "category": "search-engine",
     "patterns": [
@@ -538,6 +545,13 @@
     ]
   },
   {
+    "id": "daumbot",
+    "category": "search-engine",
+    "patterns": [
+      "compatible; Daum/[\\d.]+"
+    ]
+  },
+  {
     "id": "deadlinkchecker",
     "category": "monitoring",
     "patterns": [
@@ -591,6 +605,13 @@
     "category": "seo",
     "patterns": [
       "DomCopBot"
+    ]
+  },
+  {
+    "id": "doofinder",
+    "category": "search-engine",
+    "patterns": [
+      "Doofinder/[\\d.]+"
     ]
   },
   {
@@ -1081,6 +1102,13 @@
     ]
   },
   {
+    "id": "jetoctopus",
+    "category": "seo",
+    "patterns": [
+      "JetOctopus/[\\d.]+"
+    ]
+  },
+  {
     "id": "jooblebot",
     "category": "search-engine",
     "patterns": [
@@ -1454,6 +1482,13 @@
     ]
   },
   {
+    "id": "ohdear",
+    "category": "monitoring",
+    "patterns": [
+      "OhDear\\.app"
+    ]
+  },
+  {
     "id": "omgili",
     "category": "ai-crawler",
     "patterns": [
@@ -1578,6 +1613,13 @@
     "category": "seo",
     "patterns": [
       "proximic"
+    ]
+  },
+  {
+    "id": "pulsetic",
+    "category": "monitoring",
+    "patterns": [
+      "pulsetic\\.com"
     ]
   },
   {
@@ -1848,6 +1890,13 @@
       "LinkCheck by Siteimprove\\.com",
       "Image size by Siteimprove\\.com",
       "Probe by Siteimprove\\.com"
+    ]
+  },
+  {
+    "id": "sitesearch360",
+    "category": "search-engine",
+    "patterns": [
+      "SiteSearch360/[\\d.]+"
     ]
   },
   {

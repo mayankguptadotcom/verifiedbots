@@ -1,0 +1,42 @@
+{
+  "id": "doofinder",
+  "name": "Doofinder",
+  "operator": {
+    "name": "Doofinder",
+    "url": "https://www.doofinder.com"
+  },
+  "description": "Fetcher for Doofinder's e-commerce site-search service. It retrieves the product data feed and page content of the shops that subscribe to Doofinder so their catalogue can be indexed for on-site search. The operator's security FAQ prints the user agent it sends and the three regional addresses it requests from, offering them as an alternative to putting credentials in a protected feed URL.",
+  "docs": [
+    "https://support.doofinder.com/faq/security"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Doofinder/[\\d.]+"
+    ],
+    "instances": [
+      "Doofinder/4.0 (+http://www.doofinder.com)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "54.171.4.216/32",
+        "52.2.218.41/32",
+        "18.143.220.25/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-15T13:22:09.518Z",
+  "resolved_cidrs": [
+    "18.143.220.25/32",
+    "52.2.218.41/32",
+    "54.171.4.216/32"
+  ]
+}

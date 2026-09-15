@@ -1,0 +1,29 @@
+id: doofinder
+name: Doofinder
+operator: { name: Doofinder, url: "https://www.doofinder.com" }
+description: >-
+  Fetcher for Doofinder's e-commerce site-search service. It retrieves the
+  product data feed and page content of the shops that subscribe to Doofinder
+  so their catalogue can be indexed for on-site search. The operator's
+  security FAQ prints the user agent it sends and the three regional
+  addresses it requests from, offering them as an alternative to putting
+  credentials in a protected feed URL.
+docs:
+  - "https://support.doofinder.com/faq/security"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Doofinder/[\d.]+'
+  instances:
+    - 'Doofinder/4.0 (+http://www.doofinder.com)'
+behavior: { respects_robots_txt: false }
+verification:
+  # "The Doofinder IPs are: Europe 54.171.4.216 / USA 52.2.218.41 / Asia
+  # 18.143.220.25" (page last updated 26/02/2026). Three documented addresses
+  # and no feed URL, so they are snapshotted rather than fetched. No Doofinder
+  # page states a robots.txt policy, hence respects_robots_txt: false.
+  - type: static_cidrs
+    cidrs:
+      - "54.171.4.216/32"
+      - "52.2.218.41/32"
+      - "18.143.220.25/32"

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-15T04:33:26.104Z",
-  "count": 77,
+  "generated_at": "2026-09-15T13:22:09.518Z",
+  "count": 81,
   "bots": [
     {
       "id": "addsearch",
@@ -1375,18 +1375,9 @@
         "17.166.240.48/28",
         "17.166.248.48/28",
         "17.166.25.0/24",
-        "17.22.237.0/24",
-        "17.22.245.0/24",
-        "17.22.253.0/24",
         "17.241.193.160/27",
         "17.241.200.160/27",
-        "17.241.208.160/27",
-        "17.241.219.0/24",
-        "17.241.227.0/24",
-        "17.241.75.0/24",
-        "17.246.15.0/24",
-        "17.246.19.0/24",
-        "17.246.23.0/24"
+        "17.241.208.160/27"
       ]
     },
     {
@@ -1713,6 +1704,48 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cludo",
+      "name": "Cludo",
+      "operator": {
+        "name": "Cludo",
+        "url": "https://cludo.com"
+      },
+      "description": "Crawler for Cludo's hosted site-search product. It scans the domains a customer configures, follows links and sitemap URLs, and extracts page content and metadata into that customer's search index. Cludo documents that site owners can steer it with robots.txt rules addressed to the cludo token, and publishes the two proxy addresses — one per cluster, EU and US — that all of its services, crawlers included, make outbound requests from.",
+      "docs": [
+        "https://help.cludo.com/faq/what-are-the-crawlers-ip-addresses/",
+        "https://help.cludo.com/configuration/exclude-pages/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "cludo\\.com bot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; cludo.com bot) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.98 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "cludo"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "52.57.207.129/32",
+            "52.6.240.133/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "52.57.207.129/32",
+        "52.6.240.133/32"
+      ]
+    },
+    {
       "id": "coccocbot",
       "name": "coccocbot",
       "operator": {
@@ -1752,6 +1785,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "daumbot",
+      "name": "Daumbot",
+      "operator": {
+        "name": "Kakao Corp.",
+        "url": "https://www.kakaocorp.com"
+      },
+      "description": "Web-document crawler for Kakao's Daum search service in Korea. It collects pages so they can appear in Daum web search results, and Kakao's help centre states that the robot adheres to the robots exclusion standard when collecting documents from all sources, honouring both robots.txt rules written for the Daum token and noindex/none/nosnippet robots meta tags. The same help centre notes a blocked page's title can still appear in results when other pages link to it, because that text comes from the anchor text of the linking page rather than from a fetch of the blocked page.",
+      "docs": [
+        "https://cs.daum.net/faq/service/15/category/4118/detail/36354",
+        "https://cs.daum.net/faq/service/15/category/4118/detail/28966"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "compatible; Daum/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Daum/4.1; +https://cs.daum.net/faq/service/15/category/4118/detail/28966)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Daum"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "deepnoc",
       "name": "deepnoc",
       "operator": {
@@ -1780,6 +1844,48 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-26T13:26:40.725Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "doofinder",
+      "name": "Doofinder",
+      "operator": {
+        "name": "Doofinder",
+        "url": "https://www.doofinder.com"
+      },
+      "description": "Fetcher for Doofinder's e-commerce site-search service. It retrieves the product data feed and page content of the shops that subscribe to Doofinder so their catalogue can be indexed for on-site search. The operator's security FAQ prints the user agent it sends and the three regional addresses it requests from, offering them as an alternative to putting credentials in a protected feed URL.",
+      "docs": [
+        "https://support.doofinder.com/faq/security"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Doofinder/[\\d.]+"
+        ],
+        "instances": [
+          "Doofinder/4.0 (+http://www.doofinder.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.171.4.216/32",
+            "52.2.218.41/32",
+            "18.143.220.25/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "18.143.220.25/32",
+        "52.2.218.41/32",
+        "54.171.4.216/32"
+      ]
     },
     {
       "id": "duckduckbot",
@@ -6495,6 +6601,63 @@
         "77.75.79.62/32",
         "77.75.79.72/32",
         "77.75.79.95/32"
+      ]
+    },
+    {
+      "id": "sitesearch360",
+      "name": "Site Search 360",
+      "operator": {
+        "name": "Zoovu (Germany) GmbH",
+        "url": "https://sitesearch360.com"
+      },
+      "description": "Crawler for the Site Search 360 hosted site-search product, operated by Zoovu (Germany) GmbH, formerly SEMKNOX. It indexes the pages of the customer sites it is pointed at, following links from the configured root domains and skipping external hosts. Robots.txt is not applied automatically: the control panel offers a \"Fill Blacklist from robots.txt\" action that imports a site's disallow rules into the crawl blacklist, and the crawler honours noindex robots meta tags. The operator publishes the addresses it crawls from for firewall allowlisting.",
+      "docs": [
+        "https://docs.sitesearch360.com/your-search-index/",
+        "https://docs.sitesearch360.com/advanced-crawler-settings/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "SiteSearch360/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SiteSearch360/1.0; +https://sitesearch360.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "88.99.218.202/32",
+            "88.99.149.30/32",
+            "88.99.162.232/32",
+            "88.99.29.101/32",
+            "149.56.240.229/32",
+            "51.79.176.191/32",
+            "51.222.153.207/32",
+            "139.99.121.235/32",
+            "94.130.54.189/32",
+            "116.202.85.24/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-15T13:22:09.518Z",
+      "resolved_cidrs": [
+        "116.202.85.24/32",
+        "139.99.121.235/32",
+        "149.56.240.229/32",
+        "51.222.153.207/32",
+        "51.79.176.191/32",
+        "88.99.149.30/32",
+        "88.99.162.232/32",
+        "88.99.218.202/32",
+        "88.99.29.101/32",
+        "94.130.54.189/32"
       ]
     },
     {

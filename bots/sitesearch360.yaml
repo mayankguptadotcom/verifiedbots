@@ -1,0 +1,41 @@
+id: sitesearch360
+name: Site Search 360
+operator: { name: Zoovu (Germany) GmbH, url: "https://sitesearch360.com" }
+description: >-
+  Crawler for the Site Search 360 hosted site-search product, operated by
+  Zoovu (Germany) GmbH, formerly SEMKNOX. It indexes the pages of the customer
+  sites it is pointed at, following links from the configured root domains and
+  skipping external hosts. Robots.txt is not applied automatically: the
+  control panel offers a "Fill Blacklist from robots.txt" action that imports
+  a site's disallow rules into the crawl blacklist, and the crawler honours
+  noindex robots meta tags. The operator publishes the addresses it crawls
+  from for firewall allowlisting.
+docs:
+  - "https://docs.sitesearch360.com/your-search-index/"
+  - "https://docs.sitesearch360.com/advanced-crawler-settings/"
+category: search-engine
+user_agents:
+  # The operator documents a second agent for its JavaScript crawler, but that
+  # one is a verbatim Chrome string with nothing to anchor on, so only the
+  # standard crawler's self-identifying token is patterned here.
+  patterns:
+    - 'SiteSearch360/[\d.]+'
+  instances:
+    - 'Mozilla/5.0 (compatible; SiteSearch360/1.0; +https://sitesearch360.com/)'
+behavior: { respects_robots_txt: false }
+verification:
+  # The "Crawler IP Addresses and User Agents" section of the operator's
+  # search-index guide lists these ten addresses for allowlisting. No feed
+  # URL is published, so they are snapshotted rather than fetched.
+  - type: static_cidrs
+    cidrs:
+      - "88.99.218.202/32"
+      - "88.99.149.30/32"
+      - "88.99.162.232/32"
+      - "88.99.29.101/32"
+      - "149.56.240.229/32"
+      - "51.79.176.191/32"
+      - "51.222.153.207/32"
+      - "139.99.121.235/32"
+      - "94.130.54.189/32"
+      - "116.202.85.24/32"
