@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-17T04:33:40.697Z",
-  "count": 119,
+  "generated_at": "2026-09-17T13:24:43.183Z",
+  "count": 120,
   "bots": [
     {
       "id": "addsearch",
@@ -7991,6 +7991,42 @@
         "66.225.223.0/24",
         "70.42.32.0/24"
       ]
+    },
+    {
+      "id": "overcast",
+      "name": "Overcast Feed Crawler",
+      "operator": {
+        "name": "Overcast Radio, LLC",
+        "url": "https://overcast.fm"
+      },
+      "description": "The server-side feed crawler of the Overcast podcast app. Overcast fetches each podcast's RSS feed centrally rather than from every listener's device, at intervals from a few minutes to 24 hours depending on the show's popularity, and reports the show's Overcast subscriber count in its User-Agent. Standard HTTP caching headers are obeyed. Note that Overcast's iOS and Apple Watch apps send their own Overcast User-Agents when downloading episode audio, but those requests come from listeners' own devices rather than from Overcast's crawlers, so they are outside the hostnames this entry verifies.",
+      "docs": [
+        "https://overcast.fm/podcasterinfo"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Overcast/[\\d.]+ Podcast Sync"
+        ],
+        "instances": [
+          "Overcast/1.0 Podcast Sync (123 subscribers; feed-id=456789; +http://overcast.fm/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.overcast.fm"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-17T13:24:43.183Z",
+      "resolved_cidrs": []
     },
     {
       "id": "paqlebot",

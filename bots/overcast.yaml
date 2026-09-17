@@ -1,0 +1,29 @@
+id: overcast
+name: Overcast Feed Crawler
+operator: { name: "Overcast Radio, LLC", url: "https://overcast.fm" }
+description: >-
+  The server-side feed crawler of the Overcast podcast app. Overcast fetches
+  each podcast's RSS feed centrally rather than from every listener's device,
+  at intervals from a few minutes to 24 hours depending on the show's
+  popularity, and reports the show's Overcast subscriber count in its
+  User-Agent. Standard HTTP caching headers are obeyed. Note that Overcast's
+  iOS and Apple Watch apps send their own Overcast User-Agents when
+  downloading episode audio, but those requests come from listeners' own
+  devices rather than from Overcast's crawlers, so they are outside the
+  hostnames this entry verifies.
+docs:
+  - "https://overcast.fm/podcasterinfo"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Overcast/[\d.]+ Podcast Sync'
+  instances:
+    - 'Overcast/1.0 Podcast Sync (123 subscribers; feed-id=456789; +http://overcast.fm/)'
+behavior: { respects_robots_txt: false }
+verification:
+  # The operator names six crawler hosts (crawl1..crawl6.overcast.fm) and asks
+  # publishers not to block them. All six were resolved this run and every
+  # address reverses to its own crawlN.overcast.fm name, so the PTR mask is
+  # forward-confirmed rather than a hostname the page merely labels.
+  - type: rdns
+    masks: ["*.overcast.fm"]

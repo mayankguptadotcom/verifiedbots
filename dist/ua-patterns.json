@@ -1517,6 +1517,13 @@
     ]
   },
   {
+    "id": "overcast",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Overcast/[\\d.]+ Podcast Sync"
+    ]
+  },
+  {
     "id": "pagepeeker",
     "category": "social-preview",
     "patterns": [
@@ -1599,6 +1606,13 @@
     "category": "archiver",
     "patterns": [
       "PlagAwareBot"
+    ]
+  },
+  {
+    "id": "podscanbot",
+    "category": "feed-fetcher",
+    "patterns": [
+      "PodscanBot"
     ]
   },
   {

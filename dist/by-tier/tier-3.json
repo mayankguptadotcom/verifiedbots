@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-17T04:33:40.697Z",
-  "count": 148,
+  "generated_at": "2026-09-17T13:24:43.183Z",
+  "count": 149,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -2776,6 +2776,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "podscanbot",
+      "name": "PodscanBot",
+      "operator": {
+        "name": "Podscan Inc.",
+        "url": "https://podscan.fm"
+      },
+      "description": "The ingestion crawler of Podscan, a podcast monitoring and full-text search platform. It fetches podcast RSS feeds and episode content so the platform can index and alert on what is said in them. Podscan documents conditional GET requests with If-Modified-Since and ETag, gzip support, exponential backoff up to 24 hours for feeds that have not changed, and that it honours Cache-Control max-age, Retry-After, and the RSS skipDays and skipHours tags. It publishes no IP ranges, so requests cannot be attributed to the operator beyond the User-Agent.",
+      "docs": [
+        "https://podscan.fm/insights/crawlers"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "PodscanBot"
+        ],
+        "instances": [
+          "PodscanBot/1.1.0 Ubuntu/22.04 (Linux) Podscan.fm"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-17T13:24:43.183Z",
       "resolved_cidrs": []
     },
     {
