@@ -12,7 +12,8 @@
   "category": "feed-fetcher",
   "user_agents": {
     "patterns": [
-      "Inoreader/[\\d.]+"
+      "Inoreader/[\\d.]+",
+      "compatible; inoreader\\.com"
     ],
     "instances": [
       "Inoreader/1.0 (+http://www.inoreader.com/feed-fetcher; 3 subscribers; )",

@@ -1,0 +1,44 @@
+{
+  "id": "pocket-casts",
+  "name": "Pocket Casts Feed Parser",
+  "operator": {
+    "name": "Automattic, Inc.",
+    "url": "https://pocketcasts.com"
+  },
+  "description": "The server-side feed parser of the Pocket Casts podcast app. It periodically downloads podcast RSS feeds to check for new episodes, update show metadata such as titles, descriptions and artwork, and verify that feeds are still reachable, so that listeners' apps do not each fetch the feed themselves. The operator documents reasonable delays between requests and asks publishers not to block the parser's user agent or addresses.",
+  "docs": [
+    "https://support.pocketcasts.com/knowledge-base/about-pocket-casts-feed-parser/"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "PocketCasts/[\\d.]+ \\(Pocket Casts Feed Parser"
+    ],
+    "instances": [
+      "PocketCasts/1.0 (Pocket Casts Feed Parser; +http://pocketcasts.com/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "35.169.190.168/32",
+        "3.219.254.95/32",
+        "3.215.36.60/32",
+        "3.216.185.164/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-19T13:19:11.647Z",
+  "resolved_cidrs": [
+    "3.215.36.60/32",
+    "3.216.185.164/32",
+    "3.219.254.95/32",
+    "35.169.190.168/32"
+  ]
+}

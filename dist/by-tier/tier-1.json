@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-19T04:31:29.345Z",
+  "generated_at": "2026-09-19T13:19:11.647Z",
   "count": 84,
   "bots": [
     {
@@ -8328,7 +8328,8 @@
       "category": "feed-fetcher",
       "user_agents": {
         "patterns": [
-          "Inoreader/[\\d.]+"
+          "Inoreader/[\\d.]+",
+          "compatible; inoreader\\.com"
         ],
         "instances": [
           "Inoreader/1.0 (+http://www.inoreader.com/feed-fetcher; 3 subscribers; )",
@@ -8685,8 +8686,7 @@
         "193.183.0.171/32",
         "193.183.0.172/32",
         "193.183.0.173/32",
-        "193.183.0.174/32",
-        "81.170.128.52/32"
+        "193.183.0.174/32"
       ]
     },
     {

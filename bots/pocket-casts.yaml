@@ -1,0 +1,30 @@
+id: pocket-casts
+name: Pocket Casts Feed Parser
+operator: { name: "Automattic, Inc.", url: "https://pocketcasts.com" }
+description: >-
+  The server-side feed parser of the Pocket Casts podcast app. It periodically
+  downloads podcast RSS feeds to check for new episodes, update show metadata
+  such as titles, descriptions and artwork, and verify that feeds are still
+  reachable, so that listeners' apps do not each fetch the feed themselves. The
+  operator documents reasonable delays between requests and asks publishers not
+  to block the parser's user agent or addresses.
+docs:
+  - "https://support.pocketcasts.com/knowledge-base/about-pocket-casts-feed-parser/"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'PocketCasts/[\d.]+ \(Pocket Casts Feed Parser'
+  instances:
+    - 'PocketCasts/1.0 (Pocket Casts Feed Parser; +http://pocketcasts.com/)'
+behavior: { respects_robots_txt: false }
+verification:
+  # The support article names four crawler hosts with their addresses and asks
+  # publishers to allowlist them. All four were resolved this run and each
+  # address reverses to the crawlerN.pocketcasts.com/.net name the page gives
+  # it, so the published /32s are forward-confirmed rather than taken on trust.
+  - type: static_cidrs
+    cidrs:
+      - "35.169.190.168/32"
+      - "3.219.254.95/32"
+      - "3.215.36.60/32"
+      - "3.216.185.164/32"

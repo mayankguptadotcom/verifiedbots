@@ -1048,7 +1048,8 @@
     "id": "inoreader",
     "category": "feed-fetcher",
     "patterns": [
-      "Inoreader/[\\d.]+"
+      "Inoreader/[\\d.]+",
+      "compatible; inoreader\\.com"
     ]
   },
   {
@@ -1606,6 +1607,13 @@
     "category": "archiver",
     "patterns": [
       "PlagAwareBot"
+    ]
+  },
+  {
+    "id": "pocket-casts",
+    "category": "feed-fetcher",
+    "patterns": [
+      "PocketCasts/[\\d.]+ \\(Pocket Casts Feed Parser"
     ]
   },
   {
