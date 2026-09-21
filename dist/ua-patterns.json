@@ -52,7 +52,8 @@
     "id": "ai2bot",
     "category": "ai-crawler",
     "patterns": [
-      "AI2Bot"
+      "AI2Bot",
+      "Ai2Bot-Dolma"
     ]
   },
   {
@@ -74,6 +75,14 @@
     "category": "search-engine",
     "patterns": [
       "AmazonAdBot/\\d"
+    ]
+  },
+  {
+    "id": "amazon-bedrock-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "bedrockbot",
+      "amazon-bedrock-knowledgebase-on-behalf-of"
     ]
   },
   {
@@ -1163,6 +1172,13 @@
     "category": "ai-crawler",
     "patterns": [
       "^LCC "
+    ]
+  },
+  {
+    "id": "linerbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "LinerBot/\\d"
     ]
   },
   {

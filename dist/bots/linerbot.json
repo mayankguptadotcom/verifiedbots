@@ -1,0 +1,30 @@
+{
+  "id": "linerbot",
+  "name": "LinerBot",
+  "operator": {
+    "name": "Liner",
+    "url": "https://liner.com"
+  },
+  "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules.",
+  "docs": [
+    "https://docs.getliner.com/docs/linerbot"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "LinerBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; LinerBot/1.0; +https://docs.getliner.com/docs/linerbot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "LinerBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-09-21T13:18:16.867Z",
+  "resolved_cidrs": []
+}

@@ -3,14 +3,33 @@ name: AI2Bot
 operator: { name: "Allen Institute for AI", url: "https://allenai.org" }
 description: >-
   The Allen Institute for AI's crawler, used to build open training datasets
-  such as Dolma. AI2 publishes no IP ranges, ASN, or reverse-DNS pattern.
+  such as Dolma. It crawls selected domains for web content that is then used
+  to train open language models. Ai2 runs it under two user agents, a plain
+  AI2Bot and an Ai2Bot-Dolma variant that names the dataset, both pointing at
+  the same crawling notice. Ai2 publishes no IP ranges, ASN, or reverse-DNS
+  pattern, and its crawling notice offers user-agent filtering as the only
+  documented control.
 docs:
   - "https://allenai.org/crawler"
 category: ai-crawler
 user_agents:
+  # Two patterns, not one: the site's matcher is case-sensitive, and the
+  # dataset variant capitalises the token differently (Ai2Bot-Dolma vs
+  # AI2Bot), so a single 'AI2Bot' pattern silently misses it even though
+  # publishers address Ai2Bot-Dolma in robots.txt more often than the plain
+  # token. The Dolma instance comes from arcjet/well-known-bots.
   patterns:
     - 'AI2Bot'
+    - 'Ai2Bot-Dolma'
   instances:
     - 'Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)'
-behavior: { respects_robots_txt: true, robots_token: AI2Bot }
+    - 'Mozilla/5.0 (compatible) Ai2Bot-Dolma (+https://www.allenai.org/crawler)'
+# respects_robots_txt was true here until 2026-09-21, when allenai.org/crawler
+# was re-read in full: the page documents the user agent and says "This user
+# agent string can be used to filter or reject traffic from our crawler if
+# desired", but states no robots.txt policy anywhere, and arcjet carries no
+# robots data for either token. CLAUDE.md allows true only where the operator
+# documents it, so this is false until Ai2 says otherwise. Do not flip it back
+# without a quote from an Ai2-owned page.
+behavior: { respects_robots_txt: false }
 verification: []

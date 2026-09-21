@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-21T04:36:04.471Z",
-  "count": 354,
+  "generated_at": "2026-09-21T13:18:16.867Z",
+  "count": 356,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -444,22 +444,23 @@
         "name": "Allen Institute for AI",
         "url": "https://allenai.org"
       },
-      "description": "The Allen Institute for AI's crawler, used to build open training datasets such as Dolma. AI2 publishes no IP ranges, ASN, or reverse-DNS pattern.",
+      "description": "The Allen Institute for AI's crawler, used to build open training datasets such as Dolma. It crawls selected domains for web content that is then used to train open language models. Ai2 runs it under two user agents, a plain AI2Bot and an Ai2Bot-Dolma variant that names the dataset, both pointing at the same crawling notice. Ai2 publishes no IP ranges, ASN, or reverse-DNS pattern, and its crawling notice offers user-agent filtering as the only documented control.",
       "docs": [
         "https://allenai.org/crawler"
       ],
       "category": "ai-crawler",
       "user_agents": {
         "patterns": [
-          "AI2Bot"
+          "AI2Bot",
+          "Ai2Bot-Dolma"
         ],
         "instances": [
-          "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)"
+          "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)",
+          "Mozilla/5.0 (compatible) Ai2Bot-Dolma (+https://www.allenai.org/crawler)"
         ]
       },
       "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "AI2Bot"
+        "respects_robots_txt": false
       },
       "verification": [],
       "tier": 3,
@@ -1072,6 +1073,39 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-bedrock-crawler",
+      "name": "Amazon Bedrock Web Crawler",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://aws.amazon.com"
+      },
+      "description": "The web crawler AWS runs for Amazon Bedrock Knowledge Bases, which fetches the site URLs an AWS customer has configured as a data source and ingests the pages into that customer's knowledge base. Like Google-CloudVertexBot it is customer-directed but operator-run: the requests come from Amazon's infrastructure, and AWS requires the customer to confirm they are authorised to crawl the domains they supply. AWS documents that the crawler follows robots.txt per RFC 9309 and that it defaults to disallow when a site serves no robots.txt at all.",
+      "docs": [
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/webcrawl-data-source-connector.html",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-ds-webcrawler.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "bedrockbot",
+          "amazon-bedrock-knowledgebase-on-behalf-of"
+        ],
+        "instances": [
+          "bedrockbot-UUID",
+          "amazon-bedrock-knowledgebase-on-behalf-of-<hash>"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "bedrockbot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-21T13:18:16.867Z",
       "resolved_cidrs": []
     },
     {
@@ -17552,6 +17586,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "linerbot",
+      "name": "LinerBot",
+      "operator": {
+        "name": "Liner",
+        "url": "https://liner.com"
+      },
+      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules.",
+      "docs": [
+        "https://docs.getliner.com/docs/linerbot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "LinerBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; LinerBot/1.0; +https://docs.getliner.com/docs/linerbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinerBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-21T13:18:16.867Z",
       "resolved_cidrs": []
     },
     {

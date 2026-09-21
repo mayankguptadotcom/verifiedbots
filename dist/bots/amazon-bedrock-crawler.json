@@ -1,0 +1,33 @@
+{
+  "id": "amazon-bedrock-crawler",
+  "name": "Amazon Bedrock Web Crawler",
+  "operator": {
+    "name": "Amazon",
+    "url": "https://aws.amazon.com"
+  },
+  "description": "The web crawler AWS runs for Amazon Bedrock Knowledge Bases, which fetches the site URLs an AWS customer has configured as a data source and ingests the pages into that customer's knowledge base. Like Google-CloudVertexBot it is customer-directed but operator-run: the requests come from Amazon's infrastructure, and AWS requires the customer to confirm they are authorised to crawl the domains they supply. AWS documents that the crawler follows robots.txt per RFC 9309 and that it defaults to disallow when a site serves no robots.txt at all.",
+  "docs": [
+    "https://docs.aws.amazon.com/bedrock/latest/userguide/webcrawl-data-source-connector.html",
+    "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-ds-webcrawler.html"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "bedrockbot",
+      "amazon-bedrock-knowledgebase-on-behalf-of"
+    ],
+    "instances": [
+      "bedrockbot-UUID",
+      "amazon-bedrock-knowledgebase-on-behalf-of-<hash>"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "bedrockbot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-09-21T13:18:16.867Z",
+  "resolved_cidrs": []
+}
