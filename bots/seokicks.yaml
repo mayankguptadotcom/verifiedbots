@@ -1,0 +1,29 @@
+id: seokicks
+name: SEOkicks
+operator: { name: "Jobkicks S.L.U.", url: "https://www.seokicks.de" }
+description: >-
+  The crawler behind SEOkicks, a German backlink database. It follows links
+  across the public web and records the external links it finds, with their
+  anchor text and link attributes, so site owners can query which sites link
+  to a given domain. The operator's crawler page documents the user agent, a
+  minimum one-second pause between two page requests that lengthens when the
+  origin responds slowly, and that the crawler issues GET requests only.
+docs:
+  - "https://www.seokicks.de/robot.html"
+category: seo
+user_agents:
+  # The operator's page prints this exact string in a sample log line and then
+  # states that the SEOkicks crawlers use the user agent "SEOkicks";
+  # arcjet/well-known-bots records the identical instance.
+  patterns:
+    - 'SEOkicks'
+  instances:
+    - 'Mozilla/5.0 (compatible; SEOkicks; +https://www.seokicks.de/robot.html)'
+# The page states the crawlers are voluntarily configured to honour the common
+# robots.txt directives, including blocking single files, directories or the
+# whole domain.
+behavior: { respects_robots_txt: true, robots_token: SEOkicks }
+# No IP ranges, ASN or rDNS mask anywhere on the operator's site — the single
+# address in the log example is illustrative, not a published source list — so
+# this is Tier 3 on identity alone.
+verification: []

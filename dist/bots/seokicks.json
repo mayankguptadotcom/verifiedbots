@@ -1,0 +1,30 @@
+{
+  "id": "seokicks",
+  "name": "SEOkicks",
+  "operator": {
+    "name": "Jobkicks S.L.U.",
+    "url": "https://www.seokicks.de"
+  },
+  "description": "The crawler behind SEOkicks, a German backlink database. It follows links across the public web and records the external links it finds, with their anchor text and link attributes, so site owners can query which sites link to a given domain. The operator's crawler page documents the user agent, a minimum one-second pause between two page requests that lengthens when the origin responds slowly, and that the crawler issues GET requests only.",
+  "docs": [
+    "https://www.seokicks.de/robot.html"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "SEOkicks"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; SEOkicks; +https://www.seokicks.de/robot.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "SEOkicks"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-09-23T13:22:16.850Z",
+  "resolved_cidrs": []
+}

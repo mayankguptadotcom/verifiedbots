@@ -1,0 +1,36 @@
+id: klaviyo-ai-bot
+name: KlaviyoAIBot
+operator: { name: Klaviyo, url: "https://www.klaviyo.com" }
+description: >-
+  The crawler behind Klaviyo's Kai Customer Agent. It fetches publicly
+  available pages only from the domains and URLs a Klaviyo customer has
+  explicitly connected to their own account — their store plus any help
+  centre, documentation portal, blog or news source they add — and indexes
+  them so Klaviyo can answer shopper questions and generate content. Klaviyo
+  documents that it does not bypass authentication, paywalls or access
+  controls, that it slows down on 429 and 503 responses with Retry-After, and
+  that it deletes indexed content within days once a page is removed or
+  disallowed.
+docs:
+  - "https://help.klaviyo.com/hc/en-us/articles/40496146232219"
+category: ai-crawler
+user_agents:
+  # Recorded verbatim from the operator's page, including the <article_id>
+  # placeholder Klaviyo prints in the self-referencing URL.
+  patterns:
+    - 'KlaviyoAIBot/\d'
+  instances:
+    - 'KlaviyoAIBot/1.0 (+https://help.klaviyo.com/hc/en-us/articles/<article_id>)'
+behavior: { respects_robots_txt: true, robots_token: KlaviyoAIBot }
+verification:
+  # The operator's page documents the verification method but not the location
+  # of the key set: "Every request is signed using HTTP Message Signatures RFC
+  # 9421 and Cloudflare's Web Bot Auth", and "Do you publish IP ranges? No.
+  # Verification is based on cryptographic signatures and Cloudflare's Verified
+  # bots program rather than static IP allowlists." The directory below is
+  # Klaviyo's own, served from their primary domain with the
+  # application/http-message-signatures-directory+json media type and a single
+  # Ed25519 key; it was fetched live this run. Re-check the help article for a
+  # named Signature-Agent URL and replace this if Klaviyo publishes one.
+  - type: web_bot_auth
+    signature_agent_url: "https://www.klaviyo.com/.well-known/http-message-signatures-directory"

@@ -354,5 +354,10 @@
   "podscanbot": "2026-09-17T13:24:43.183Z",
   "pocket-casts": "2026-09-19T13:19:11.647Z",
   "amazon-bedrock-crawler": "2026-09-21T13:18:16.867Z",
-  "linerbot": "2026-09-21T13:18:16.867Z"
+  "linerbot": "2026-09-21T13:18:16.867Z",
+  "amazon-kendra-crawler": "2026-09-23T13:22:16.850Z",
+  "amazon-qbusiness-crawler": "2026-09-23T13:22:16.850Z",
+  "icc-crawler": "2026-09-23T13:22:16.850Z",
+  "klaviyo-ai-bot": "2026-09-23T13:22:16.850Z",
+  "seokicks": "2026-09-23T13:22:16.850Z"
 }

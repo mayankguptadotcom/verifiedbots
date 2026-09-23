@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-23T04:34:02.123Z",
-  "count": 151,
+  "generated_at": "2026-09-23T13:22:16.850Z",
+  "count": 154,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -95,6 +95,68 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-21T13:18:16.867Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-kendra-crawler",
+      "name": "Amazon Kendra Web Crawler",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://aws.amazon.com"
+      },
+      "description": "The web crawler AWS runs for Amazon Kendra, its enterprise search service, which fetches the site URLs an AWS customer has configured as a data source and indexes them for that customer. Like the Bedrock knowledge-base crawler it is customer-directed but operator-run, and AWS states that customers must only point it at their own pages or pages they are authorised to index, and that using it to aggressively crawl sites the customer does not own is not acceptable use.",
+      "docs": [
+        "https://docs.aws.amazon.com/kendra/latest/dg/stop-web-crawler.html",
+        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-web-crawler.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "amazon-kendra"
+        ],
+        "instances": [
+          "amazon-kendra"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "amazon-kendra"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-23T13:22:16.850Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-qbusiness-crawler",
+      "name": "Amazon Q Business Web Crawler",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://aws.amazon.com"
+      },
+      "description": "The web crawler AWS runs for Amazon Q Business, which fetches the websites an AWS customer has connected as a data source and indexes them into that customer's Q Business application. It is customer-directed but operator-run: AWS states the customer must only index their own webpages or webpages they have authorisation to index, and documents the robots.txt token site owners can use to allow or stop it.",
+      "docs": [
+        "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/stop-web-crawler.html",
+        "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/connector-webcrawler.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "amazon-QBusiness"
+        ],
+        "instances": [
+          "amazon-QBusiness"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "amazon-QBusiness"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-23T13:22:16.850Z",
       "resolved_cidrs": []
     },
     {
@@ -3435,6 +3497,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "seokicks",
+      "name": "SEOkicks",
+      "operator": {
+        "name": "Jobkicks S.L.U.",
+        "url": "https://www.seokicks.de"
+      },
+      "description": "The crawler behind SEOkicks, a German backlink database. It follows links across the public web and records the external links it finds, with their anchor text and link attributes, so site owners can query which sites link to a given domain. The operator's crawler page documents the user agent, a minimum one-second pause between two page requests that lengthens when the origin responds slowly, and that the crawler issues GET requests only.",
+      "docs": [
+        "https://www.seokicks.de/robot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SEOkicks"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; SEOkicks; +https://www.seokicks.de/robot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SEOkicks"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-23T13:22:16.850Z",
       "resolved_cidrs": []
     },
     {

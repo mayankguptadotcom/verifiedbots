@@ -1,0 +1,30 @@
+id: amazon-qbusiness-crawler
+name: Amazon Q Business Web Crawler
+operator: { name: Amazon, url: "https://aws.amazon.com" }
+description: >-
+  The web crawler AWS runs for Amazon Q Business, which fetches the websites
+  an AWS customer has connected as a data source and indexes them into that
+  customer's Q Business application. It is customer-directed but operator-run:
+  AWS states the customer must only index their own webpages or webpages they
+  have authorisation to index, and documents the robots.txt token site owners
+  can use to allow or stop it.
+docs:
+  - "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/stop-web-crawler.html"
+  - "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/connector-webcrawler.html"
+category: search-engine
+user_agents:
+  # As with Kendra, AWS prints this identity only as the robots.txt user-agent
+  # token ("User-agent: amazon-QBusiness    # Amazon Q Web Crawler"), with no
+  # full User-Agent header anywhere in the guide and no arcjet record, so the
+  # documented token is recorded as both pattern and instance.
+  patterns:
+    - 'amazon-QBusiness'
+  instances:
+    - 'amazon-QBusiness'
+# "Amazon Q Business Web Crawler adheres to the rules set in your website's
+# robots.txt file… respects standard robots.txt directives like Allow and
+# Disallow."
+behavior: { respects_robots_txt: true, robots_token: amazon-QBusiness }
+# No crawler-specific IP list is published; AWS's ip-ranges.json covers the
+# whole cloud, so no recipe is attached.
+verification: []

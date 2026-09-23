@@ -5,28 +5,32 @@
     "name": "Qwant",
     "url": "https://www.qwant.com"
   },
-  "description": "Qwant's web crawler, fetching pages for the privacy-focused Qwant search engine. Older crawls identify as Qwantify; current documentation uses the Qwantbot name.",
+  "description": "Qwant's web crawler, fetching pages to build and refresh the index that powers the privacy-focused Qwant search engine. Qwant runs it under two documented forms — the plain crawler and a Qwantbot-news variant dedicated to Qwant News — and the user agent carries a worker id identifying the machine that made the request. Older crawls identify as Qwantify.",
   "docs": [
+    "https://help.qwant.com/hc/en-us/articles/51146433634833-The-Qwant-bot-QwantBot-and-the-robots-txt-file",
     "https://help.qwant.com/bot/"
   ],
   "category": "search-engine",
   "user_agents": {
     "patterns": [
       "Qwantify/\\d",
-      "Qwantbot/\\d"
+      "Qwantbot/\\d",
+      "Qwantbot-news/\\d"
     ],
     "instances": [
       "Mozilla/5.0 (compatible; Qwantify/2.4w; +https://www.qwant.com/)/2.4w",
-      "Mozilla/5.0 (compatible; Qwantbot/1.0_12345; +https://help.qwant.com/bot/)"
+      "Mozilla/5.0 (compatible; Qwantbot/1.0_12345; +https://help.qwant.com/bot/)",
+      "Mozilla/5.0 (compatible; Qwantbot-news/2.0; +https://help.qwant.com/bot/)"
     ]
   },
   "behavior": {
-    "respects_robots_txt": true
+    "respects_robots_txt": true,
+    "robots_token": "Qwantbot"
   },
   "verification": [
     {
       "type": "cidr_feed",
-      "url": "https://help.qwant.com/wp-content/uploads/sites/latest/qwantbot.json",
+      "url": "https://help.qwant.com/hc/article_attachments/51147492481937",
       "format": "prefixes"
     },
     {

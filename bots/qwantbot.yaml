@@ -2,23 +2,42 @@ id: qwantbot
 name: Qwantbot
 operator: { name: Qwant, url: "https://www.qwant.com" }
 description: >-
-  Qwant's web crawler, fetching pages for the privacy-focused Qwant search
-  engine. Older crawls identify as Qwantify; current documentation uses the
-  Qwantbot name.
+  Qwant's web crawler, fetching pages to build and refresh the index that
+  powers the privacy-focused Qwant search engine. Qwant runs it under two
+  documented forms — the plain crawler and a Qwantbot-news variant dedicated
+  to Qwant News — and the user agent carries a worker id identifying the
+  machine that made the request. Older crawls identify as Qwantify.
 docs:
+  - "https://help.qwant.com/hc/en-us/articles/51146433634833-The-Qwant-bot-QwantBot-and-the-robots-txt-file"
   - "https://help.qwant.com/bot/"
 category: search-engine
 user_agents:
+  # Qwant's page gives the general form
+  # `Mozilla/5.0 (compatible; Qwantbot{-news}/X.Y_{worker_id}; +https://help.qwant.com/bot/)`
+  # and prints both concrete examples below. Two patterns, not one: the news
+  # variant's token is `Qwantbot-news/2.0`, which a bare `Qwantbot/\d` pattern
+  # does not match.
   patterns:
     - 'Qwantify/\d'
     - 'Qwantbot/\d'
+    - 'Qwantbot-news/\d'
   instances:
     - 'Mozilla/5.0 (compatible; Qwantify/2.4w; +https://www.qwant.com/)/2.4w'
     - 'Mozilla/5.0 (compatible; Qwantbot/1.0_12345; +https://help.qwant.com/bot/)'
-behavior: { respects_robots_txt: true }
+    - 'Mozilla/5.0 (compatible; Qwantbot-news/2.0; +https://help.qwant.com/bot/)'
+behavior: { respects_robots_txt: true, robots_token: Qwantbot }
 verification:
+  # Qwant's help centre migrated from WordPress to Zendesk on 2026-09-22 and
+  # the old feed path (help.qwant.com/wp-content/uploads/sites/latest/
+  # qwantbot.json) now serves Qwant's 404 page. The bot article's "IP address
+  # ranges" paragraph links the replacement file below, which was fetched live
+  # this run and serves the same 194.187.171.0/24 range the old URL last
+  # returned. It is an article attachment, so re-check this URL whenever the
+  # article is republished.
   - type: cidr_feed
-    url: "https://help.qwant.com/wp-content/uploads/sites/latest/qwantbot.json"
+    url: "https://help.qwant.com/hc/article_attachments/51147492481937"
     format: prefixes
+  # "Perform a reverse DNS lookup on the IP address… and verify that it points
+  # to a name ending in qwant.com", with a forward-confirm step.
   - type: rdns
     masks: ["*.qwant.com"]

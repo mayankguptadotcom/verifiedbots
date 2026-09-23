@@ -86,10 +86,24 @@
     ]
   },
   {
+    "id": "amazon-kendra-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "amazon-kendra"
+    ]
+  },
+  {
     "id": "amazon-product-discovery",
     "category": "search-engine",
     "patterns": [
       "AmazonProductDiscovery/\\d"
+    ]
+  },
+  {
+    "id": "amazon-qbusiness-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "amazon-QBusiness"
     ]
   },
   {
@@ -1033,6 +1047,13 @@
     ]
   },
   {
+    "id": "icc-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "ICC-Crawler"
+    ]
+  },
+  {
     "id": "iframely",
     "category": "social-preview",
     "patterns": [
@@ -1158,6 +1179,13 @@
     "category": "ai-crawler",
     "patterns": [
       "KimiBot/\\d"
+    ]
+  },
+  {
+    "id": "klaviyo-ai-bot",
+    "category": "ai-crawler",
+    "patterns": [
+      "KlaviyoAIBot/\\d"
     ]
   },
   {
@@ -1686,7 +1714,8 @@
     "category": "search-engine",
     "patterns": [
       "Qwantify/\\d",
-      "Qwantbot/\\d"
+      "Qwantbot/\\d",
+      "Qwantbot-news/\\d"
     ]
   },
   {
@@ -1862,6 +1891,13 @@
     "category": "seo",
     "patterns": [
       "SeobilityBot"
+    ]
+  },
+  {
+    "id": "seokicks",
+    "category": "seo",
+    "patterns": [
+      "SEOkicks"
     ]
   },
   {

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-23T04:34:02.123Z",
-  "count": 84,
+  "generated_at": "2026-09-23T13:22:16.850Z",
+  "count": 85,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -8490,6 +8490,41 @@
       ]
     },
     {
+      "id": "klaviyo-ai-bot",
+      "name": "KlaviyoAIBot",
+      "operator": {
+        "name": "Klaviyo",
+        "url": "https://www.klaviyo.com"
+      },
+      "description": "The crawler behind Klaviyo's Kai Customer Agent. It fetches publicly available pages only from the domains and URLs a Klaviyo customer has explicitly connected to their own account — their store plus any help centre, documentation portal, blog or news source they add — and indexes them so Klaviyo can answer shopper questions and generate content. Klaviyo documents that it does not bypass authentication, paywalls or access controls, that it slows down on 429 and 503 responses with Retry-After, and that it deletes indexed content within days once a page is removed or disallowed.",
+      "docs": [
+        "https://help.klaviyo.com/hc/en-us/articles/40496146232219"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "KlaviyoAIBot/\\d"
+        ],
+        "instances": [
+          "KlaviyoAIBot/1.0 (+https://help.klaviyo.com/hc/en-us/articles/<article_id>)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "KlaviyoAIBot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.klaviyo.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-09-23T13:22:16.850Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "linkcheckerbot",
       "name": "LinkCheckerBot",
       "operator": {
@@ -9664,28 +9699,32 @@
         "name": "Qwant",
         "url": "https://www.qwant.com"
       },
-      "description": "Qwant's web crawler, fetching pages for the privacy-focused Qwant search engine. Older crawls identify as Qwantify; current documentation uses the Qwantbot name.",
+      "description": "Qwant's web crawler, fetching pages to build and refresh the index that powers the privacy-focused Qwant search engine. Qwant runs it under two documented forms — the plain crawler and a Qwantbot-news variant dedicated to Qwant News — and the user agent carries a worker id identifying the machine that made the request. Older crawls identify as Qwantify.",
       "docs": [
+        "https://help.qwant.com/hc/en-us/articles/51146433634833-The-Qwant-bot-QwantBot-and-the-robots-txt-file",
         "https://help.qwant.com/bot/"
       ],
       "category": "search-engine",
       "user_agents": {
         "patterns": [
           "Qwantify/\\d",
-          "Qwantbot/\\d"
+          "Qwantbot/\\d",
+          "Qwantbot-news/\\d"
         ],
         "instances": [
           "Mozilla/5.0 (compatible; Qwantify/2.4w; +https://www.qwant.com/)/2.4w",
-          "Mozilla/5.0 (compatible; Qwantbot/1.0_12345; +https://help.qwant.com/bot/)"
+          "Mozilla/5.0 (compatible; Qwantbot/1.0_12345; +https://help.qwant.com/bot/)",
+          "Mozilla/5.0 (compatible; Qwantbot-news/2.0; +https://help.qwant.com/bot/)"
         ]
       },
       "behavior": {
-        "respects_robots_txt": true
+        "respects_robots_txt": true,
+        "robots_token": "Qwantbot"
       },
       "verification": [
         {
           "type": "cidr_feed",
-          "url": "https://help.qwant.com/wp-content/uploads/sites/latest/qwantbot.json",
+          "url": "https://help.qwant.com/hc/article_attachments/51147492481937",
           "format": "prefixes"
         },
         {

@@ -1,0 +1,31 @@
+{
+  "id": "amazon-qbusiness-crawler",
+  "name": "Amazon Q Business Web Crawler",
+  "operator": {
+    "name": "Amazon",
+    "url": "https://aws.amazon.com"
+  },
+  "description": "The web crawler AWS runs for Amazon Q Business, which fetches the websites an AWS customer has connected as a data source and indexes them into that customer's Q Business application. It is customer-directed but operator-run: AWS states the customer must only index their own webpages or webpages they have authorisation to index, and documents the robots.txt token site owners can use to allow or stop it.",
+  "docs": [
+    "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/stop-web-crawler.html",
+    "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/connector-webcrawler.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "amazon-QBusiness"
+    ],
+    "instances": [
+      "amazon-QBusiness"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "amazon-QBusiness"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-09-23T13:22:16.850Z",
+  "resolved_cidrs": []
+}

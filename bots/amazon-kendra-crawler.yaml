@@ -1,0 +1,32 @@
+id: amazon-kendra-crawler
+name: Amazon Kendra Web Crawler
+operator: { name: Amazon, url: "https://aws.amazon.com" }
+description: >-
+  The web crawler AWS runs for Amazon Kendra, its enterprise search service,
+  which fetches the site URLs an AWS customer has configured as a data source
+  and indexes them for that customer. Like the Bedrock knowledge-base crawler
+  it is customer-directed but operator-run, and AWS states that customers must
+  only point it at their own pages or pages they are authorised to index, and
+  that using it to aggressively crawl sites the customer does not own is not
+  acceptable use.
+docs:
+  - "https://docs.aws.amazon.com/kendra/latest/dg/stop-web-crawler.html"
+  - "https://docs.aws.amazon.com/kendra/latest/dg/data-source-web-crawler.html"
+category: search-engine
+user_agents:
+  # AWS documents this identity only as the robots.txt user-agent token it
+  # answers to ("User-agent: amazon-kendra    # Amazon Kendra Web Crawler"),
+  # never as a full User-Agent header, and arcjet has no Kendra record — so
+  # the token is recorded as both the pattern and the instance, exactly as the
+  # sibling amazon-bedrock-crawler entry records `bedrockbot`.
+  patterns:
+    - 'amazon-kendra'
+  instances:
+    - 'amazon-kendra'
+# "Amazon Kendra Web Crawler respects standard robots.txt directives like
+# Allow and Disallow."
+behavior: { respects_robots_txt: true, robots_token: amazon-kendra }
+# AWS publishes no crawler-specific IP list — ip-ranges.json covers all of AWS
+# and would attribute any EC2 tenant's traffic to this bot — so no recipe is
+# attached and the entry is Tier 3 on identity alone.
+verification: []

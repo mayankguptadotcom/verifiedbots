@@ -1,0 +1,33 @@
+id: icc-crawler
+name: ICC-Crawler
+operator: { name: "National Institute of Information and Communications Technology (NICT)", url: "https://ucri.nict.go.jp" }
+description: >-
+  The web crawler of the Universal Communication Research Institute at Japan's
+  National Institute of Information and Communications Technology. It collects
+  web pages for NICT's research and development of information processing
+  technologies including multilingual translation, information analysis and
+  artificial intelligence, and NICT states that collected information and
+  research products may be provided to third parties for joint or further
+  research. The crawler page documents a load policy that caps connections per
+  unit of time across a host's several addresses or hostnames.
+docs:
+  - "https://ucri.nict.go.jp/en/icccrawler.html"
+category: ai-crawler
+user_agents:
+  # Instance from arcjet/well-known-bots (id nict-crawler), which cites this
+  # same operator page; the page itself prints the robots.txt token only.
+  patterns:
+    - 'ICC-Crawler'
+  instances:
+    - 'ICC-Crawler/2.0 (Mozilla-compatible; ; http://ucri.nict.go.jp/en/icccrawler.html)'
+# "ICC-Crawler supports the REP (Robots Exclusion Protocol)"; the page also
+# documents Crawl-Delay handling, using the larger of the site's value and the
+# crawler's own minimum interval.
+behavior: { respects_robots_txt: true, robots_token: ICC-Crawler }
+verification:
+  # The operator's page publishes two addresses under "Crawler IP addresses",
+  # as bare hosts, recorded here as /32s. No feed URL, so this is static.
+  - type: static_cidrs
+    cidrs:
+      - "202.180.34.186/32"
+      - "61.86.246.72/32"
