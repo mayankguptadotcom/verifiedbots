@@ -1,6 +1,6 @@
 {
   "url": "https://api.pulsetic.com/ipv6-ranges.txt",
-  "fetched_at": "2026-09-25T04:34:10.750Z",
+  "fetched_at": "2026-09-25T13:32:18.065Z",
   "ranges": [
     "2001:19f0:4000:10eb:5400:5ff:fec7:d9cd/128",
     "2001:19f0:4000:1260:5400:6ff:fe46:8182/128",
