@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-25T04:34:29.536Z",
-  "count": 122,
+  "generated_at": "2026-09-25T13:31:23.814Z",
+  "count": 131,
   "bots": [
     {
       "id": "addsearch",
@@ -11869,6 +11869,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-adnet",
+      "name": "YandexAdNet",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex Advertising Network robot. Yandex's robot table lists it separately from the indexing robots and records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexAdNet/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexAdNet/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexAdNet"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-blogs",
       "name": "YandexBlogs",
       "operator": {
@@ -12176,6 +12215,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-imageresizer",
+      "name": "YandexImageResizer",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "A Yandex robot that Yandex's robot table describes as the mobile devices robot, listed alongside YandexImages and recorded as following the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexImageResizer/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexImageResizer/2.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexImageResizer"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-images",
       "name": "YandexImages",
       "operator": {
@@ -12212,6 +12290,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-market",
+      "name": "YandexMarket",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot used by Yandex Market, Yandex's shopping service. Yandex's robot table lists two versions with different robots.txt behaviour — version 1.0 follows the general rules and version 2.0 does not — so this entry records the more permissive of the two.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexMarket/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexMarket/1.0; +http://yandex.com/bots)",
+          "Mozilla/5.0 (compatible; YandexMarket/2.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {
@@ -12328,6 +12445,83 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-ontodb",
+      "name": "YandexOntoDB",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex information card robot, which fetches pages used to build the object cards Yandex shows in search results. Yandex's robot table records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexOntoDB/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexOntoDB/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexOntoDB"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-ontodbapi",
+      "name": "YandexOntoDBAPI",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex information card robot that downloads dynamic data, listed separately from YandexOntoDB. Yandex's robot table records that it does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexOntoDBAPI/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexOntoDBAPI/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {
@@ -12563,6 +12757,83 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-sprav",
+      "name": "YandexSpravBot",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex Business robot, which fetches pages for Yandex's business directory listings. Yandex's robot table records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexSpravBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexSpravBot/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexSpravBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-tracker",
+      "name": "YandexTracker",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot of Yandex Tracker, Yandex's work-management service. Yandex's robot table lists it among the robots that download web documents for purposes other than indexing, and records that it does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "YandexTracker/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexTracker/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-userproxy",
       "name": "YandexUserproxy",
       "operator": {
@@ -12640,6 +12911,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-vertis",
+      "name": "YandexVertis",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex search verticals robot, listed separately from YandexVerticals in Yandex's robot table. Yandex records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexVertis/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexVertis/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexVertis"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-video",
       "name": "YandexVideo",
       "operator": {
@@ -12714,6 +13024,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-webmaster",
+      "name": "YandexWebmaster",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot of Yandex Webmaster, the site-owner console Yandex publishes its crawler documentation in. Yandex's robot table records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexWebmaster/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexWebmaster/2.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexWebmaster"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {

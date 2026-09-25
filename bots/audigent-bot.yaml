@@ -1,0 +1,20 @@
+id: audigent-bot
+name: AudigentBot
+operator: { name: Audigent, url: "https://audigent.com" }
+description: >-
+  The broader of the two crawlers Audigent documents on its bot page. Unlike
+  AudigentAdBot, which reads only HTML head metadata, Audigent states that
+  AudigentBot can scrape any content available on the page, from both the
+  header and the body, and that it can be blocked with a wildcard robots.txt
+  rule. Audigent says it crawls only sites where it or its advertiser partners
+  may serve ads.
+docs:
+  - "https://audigent.com/bot.html"
+category: seo
+user_agents:
+  patterns:
+    - 'AudigentBot'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentBot; +https://audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36'
+behavior: { respects_robots_txt: true, robots_token: AudigentBot }
+verification: []

@@ -1,0 +1,19 @@
+id: yandex-vertis
+name: YandexVertis
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The Yandex search verticals robot, listed separately from YandexVerticals in
+  Yandex's robot table. Yandex records that it follows the general robots.txt
+  rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexVertis/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexVertis/3.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexVertis }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

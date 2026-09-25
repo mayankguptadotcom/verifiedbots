@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-25T04:34:29.536Z",
-  "count": 29,
+  "generated_at": "2026-09-25T13:31:23.814Z",
+  "count": 30,
   "bots": [
     {
       "id": "amazon-seller-initiated-listing",
@@ -1507,6 +1507,44 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-tracker",
+      "name": "YandexTracker",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot of Yandex Tracker, Yandex's work-management service. Yandex's robot table lists it among the robots that download web documents for purposes other than indexing, and records that it does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "YandexTracker/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexTracker/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     }
   ]

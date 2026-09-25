@@ -1,0 +1,31 @@
+{
+  "id": "netestate-ne-crawler",
+  "name": "netEstate NE Crawler",
+  "operator": {
+    "name": "netEstate GmbH",
+    "url": "https://www.netestate.de"
+  },
+  "description": "The crawler netEstate GmbH runs for its information-extraction products. The operator documents two uses: an Impressums-Crawler that locates a site's imprint page and extracts postal addresses, contact data and company names for address verification, and a Jobcrawler that finds job postings on employer websites. netEstate states that the crawler observes robots.txt, the robots meta element and common opt-out wordings, and that it returns only a hash of any email address rather than the address itself.",
+  "docs": [
+    "https://www.netestate.de/informationsextraktion/software/impressums-crawler/",
+    "https://www.netestate.de/informationsextraktion/software/jobcrawler/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "netEstate NE Crawler"
+    ],
+    "instances": [
+      "netEstate NE Crawler (+http://www.sengine.info/)",
+      "netEstate NE Crawler (+http://www.website-datenbank.de/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-09-25T13:31:23.814Z",
+  "resolved_cidrs": []
+}

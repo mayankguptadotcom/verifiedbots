@@ -1,0 +1,39 @@
+{
+  "id": "yandex-market",
+  "name": "YandexMarket",
+  "operator": {
+    "name": "Yandex",
+    "url": "https://yandex.com"
+  },
+  "description": "The robot used by Yandex Market, Yandex's shopping service. Yandex's robot table lists two versions with different robots.txt behaviour — version 1.0 follows the general rules and version 2.0 does not — so this entry records the more permissive of the two.",
+  "docs": [
+    "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "YandexMarket/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YandexMarket/1.0; +http://yandex.com/bots)",
+      "Mozilla/5.0 (compatible; YandexMarket/2.0; +http://yandex.com/bots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "rdns",
+      "masks": [
+        "*.yandex.ru",
+        "*.yandex.net",
+        "*.yandex.com"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-25T13:31:23.814Z",
+  "resolved_cidrs": []
+}

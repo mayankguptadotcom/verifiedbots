@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-25T04:34:29.536Z",
-  "count": 83,
+  "generated_at": "2026-09-25T13:31:23.814Z",
+  "count": 90,
   "bots": [
     {
       "id": "addsearch",
@@ -6326,6 +6326,37 @@
       "resolved_cidrs": []
     },
     {
+      "id": "netestate-ne-crawler",
+      "name": "netEstate NE Crawler",
+      "operator": {
+        "name": "netEstate GmbH",
+        "url": "https://www.netestate.de"
+      },
+      "description": "The crawler netEstate GmbH runs for its information-extraction products. The operator documents two uses: an Impressums-Crawler that locates a site's imprint page and extracts postal addresses, contact data and company names for address verification, and a Jobcrawler that finds job postings on employer websites. netEstate states that the crawler observes robots.txt, the robots meta element and common opt-out wordings, and that it returns only a hash of any email address rather than the address itself.",
+      "docs": [
+        "https://www.netestate.de/informationsextraktion/software/impressums-crawler/",
+        "https://www.netestate.de/informationsextraktion/software/jobcrawler/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "netEstate NE Crawler"
+        ],
+        "instances": [
+          "netEstate NE Crawler (+http://www.sengine.info/)",
+          "netEstate NE Crawler (+http://www.website-datenbank.de/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "openindex-crawler",
       "name": "Openindex Spider",
       "operator": {
@@ -7819,6 +7850,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-imageresizer",
+      "name": "YandexImageResizer",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "A Yandex robot that Yandex's robot table describes as the mobile devices robot, listed alongside YandexImages and recorded as following the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexImageResizer/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexImageResizer/2.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexImageResizer"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-images",
       "name": "YandexImages",
       "operator": {
@@ -7855,6 +7925,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-market",
+      "name": "YandexMarket",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot used by Yandex Market, Yandex's shopping service. Yandex's robot table lists two versions with different robots.txt behaviour — version 1.0 follows the general rules and version 2.0 does not — so this entry records the more permissive of the two.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexMarket/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexMarket/1.0; +http://yandex.com/bots)",
+          "Mozilla/5.0 (compatible; YandexMarket/2.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {
@@ -7932,6 +8041,83 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-01T13:17:25.816Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-ontodb",
+      "name": "YandexOntoDB",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex information card robot, which fetches pages used to build the object cards Yandex shows in search results. Yandex's robot table records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexOntoDB/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexOntoDB/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexOntoDB"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-ontodbapi",
+      "name": "YandexOntoDBAPI",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex information card robot that downloads dynamic data, listed separately from YandexOntoDB. Yandex's robot table records that it does not follow the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexOntoDBAPI/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexOntoDBAPI/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {
@@ -8014,6 +8200,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-sprav",
+      "name": "YandexSpravBot",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex Business robot, which fetches pages for Yandex's business directory listings. Yandex's robot table records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexSpravBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexSpravBot/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexSpravBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-verticals",
       "name": "YandexVerticals",
       "operator": {
@@ -8050,6 +8275,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-vertis",
+      "name": "YandexVertis",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex search verticals robot, listed separately from YandexVerticals in Yandex's robot table. Yandex records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YandexVertis/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexVertis/3.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexVertis"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {

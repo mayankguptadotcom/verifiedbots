@@ -1,0 +1,19 @@
+id: yandex-ontodbapi
+name: YandexOntoDBAPI
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The Yandex information card robot that downloads dynamic data, listed
+  separately from YandexOntoDB. Yandex's robot table records that it does not
+  follow the general robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexOntoDBAPI/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexOntoDBAPI/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: false }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

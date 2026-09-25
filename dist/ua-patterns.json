@@ -184,6 +184,13 @@
     ]
   },
   {
+    "id": "audigent-bot",
+    "category": "seo",
+    "patterns": [
+      "AudigentBot"
+    ]
+  },
+  {
     "id": "audisto",
     "category": "seo",
     "patterns": [
@@ -1471,6 +1478,13 @@
     ]
   },
   {
+    "id": "netestate-ne-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "netEstate NE Crawler"
+    ]
+  },
+  {
     "id": "neticle-crawler",
     "category": "monitoring",
     "patterns": [
@@ -2391,6 +2405,13 @@
     ]
   },
   {
+    "id": "yandex-adnet",
+    "category": "seo",
+    "patterns": [
+      "YandexAdNet/\\d"
+    ]
+  },
+  {
     "id": "yandex-blogs",
     "category": "search-engine",
     "patterns": [
@@ -2448,10 +2469,24 @@
     ]
   },
   {
+    "id": "yandex-imageresizer",
+    "category": "search-engine",
+    "patterns": [
+      "YandexImageResizer/\\d"
+    ]
+  },
+  {
     "id": "yandex-images",
     "category": "search-engine",
     "patterns": [
       "YandexImages/\\d"
+    ]
+  },
+  {
+    "id": "yandex-market",
+    "category": "search-engine",
+    "patterns": [
+      "YandexMarket/\\d"
     ]
   },
   {
@@ -2473,6 +2508,20 @@
     "category": "search-engine",
     "patterns": [
       "YandexMobileBot/\\d"
+    ]
+  },
+  {
+    "id": "yandex-ontodb",
+    "category": "search-engine",
+    "patterns": [
+      "YandexOntoDB/\\d"
+    ]
+  },
+  {
+    "id": "yandex-ontodbapi",
+    "category": "search-engine",
+    "patterns": [
+      "YandexOntoDBAPI/\\d"
     ]
   },
   {
@@ -2519,6 +2568,20 @@
     ]
   },
   {
+    "id": "yandex-sprav",
+    "category": "search-engine",
+    "patterns": [
+      "YandexSpravBot/\\d"
+    ]
+  },
+  {
+    "id": "yandex-tracker",
+    "category": "feed-fetcher",
+    "patterns": [
+      "YandexTracker/\\d"
+    ]
+  },
+  {
     "id": "yandex-userproxy",
     "category": "ai-assistant",
     "patterns": [
@@ -2533,6 +2596,13 @@
     ]
   },
   {
+    "id": "yandex-vertis",
+    "category": "search-engine",
+    "patterns": [
+      "YandexVertis/\\d"
+    ]
+  },
+  {
     "id": "yandex-video",
     "category": "search-engine",
     "patterns": [
@@ -2544,6 +2614,13 @@
     "category": "search-engine",
     "patterns": [
       "YandexVideoParser/\\d"
+    ]
+  },
+  {
+    "id": "yandex-webmaster",
+    "category": "seo",
+    "patterns": [
+      "YandexWebmaster/\\d"
     ]
   },
   {

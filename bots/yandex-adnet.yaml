@@ -1,0 +1,19 @@
+id: yandex-adnet
+name: YandexAdNet
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The Yandex Advertising Network robot. Yandex's robot table lists it
+  separately from the indexing robots and records that it follows the general
+  robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: seo
+user_agents:
+  patterns:
+    - 'YandexAdNet/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexAdNet/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexAdNet }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

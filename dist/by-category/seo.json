@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-25T04:34:29.536Z",
-  "count": 80,
+  "generated_at": "2026-09-25T13:31:23.814Z",
+  "count": 83,
   "bots": [
     {
       "id": "ads-naver",
@@ -304,6 +304,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "audigent-bot",
+      "name": "AudigentBot",
+      "operator": {
+        "name": "Audigent",
+        "url": "https://audigent.com"
+      },
+      "description": "The broader of the two crawlers Audigent documents on its bot page. Unlike AudigentAdBot, which reads only HTML head metadata, Audigent states that AudigentBot can scrape any content available on the page, from both the header and the body, and that it can be blocked with a wildcard robots.txt rule. Audigent says it crawls only sites where it or its advertiser partners may serve ads.",
+      "docs": [
+        "https://audigent.com/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AudigentBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentBot; +https://audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AudigentBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {
@@ -3579,6 +3609,45 @@
       "resolved_cidrs": []
     },
     {
+      "id": "yandex-adnet",
+      "name": "YandexAdNet",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The Yandex Advertising Network robot. Yandex's robot table lists it separately from the indexing robots and records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexAdNet/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexAdNet/1.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexAdNet"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "yandex-direct",
       "name": "YandexDirect",
       "operator": {
@@ -3693,6 +3762,45 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-09-05T13:14:04.599Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "yandex-webmaster",
+      "name": "YandexWebmaster",
+      "operator": {
+        "name": "Yandex",
+        "url": "https://yandex.com"
+      },
+      "description": "The robot of Yandex Webmaster, the site-owner console Yandex publishes its crawler documentation in. Yandex's robot table records that it follows the general robots.txt rules.",
+      "docs": [
+        "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "YandexWebmaster/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YandexWebmaster/2.0; +http://yandex.com/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YandexWebmaster"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.yandex.ru",
+            "*.yandex.net",
+            "*.yandex.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {

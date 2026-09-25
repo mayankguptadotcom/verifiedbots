@@ -1,0 +1,19 @@
+id: yandex-webmaster
+name: YandexWebmaster
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The robot of Yandex Webmaster, the site-owner console Yandex publishes its
+  crawler documentation in. Yandex's robot table records that it follows the
+  general robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: seo
+user_agents:
+  patterns:
+    - 'YandexWebmaster/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexWebmaster/2.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexWebmaster }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]

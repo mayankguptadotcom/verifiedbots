@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-25T04:34:29.536Z",
-  "count": 154,
+  "generated_at": "2026-09-25T13:31:23.814Z",
+  "count": 156,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -216,6 +216,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "audigent-bot",
+      "name": "AudigentBot",
+      "operator": {
+        "name": "Audigent",
+        "url": "https://audigent.com"
+      },
+      "description": "The broader of the two crawlers Audigent documents on its bot page. Unlike AudigentAdBot, which reads only HTML head metadata, Audigent states that AudigentBot can scrape any content available on the page, from both the header and the body, and that it can be blocked with a wildcard robots.txt rule. Audigent says it crawls only sites where it or its advertiser partners may serve ads.",
+      "docs": [
+        "https://audigent.com/bot.html"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AudigentBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AudigentBot; +https://audigent.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AudigentBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {
@@ -2571,6 +2601,37 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "netestate-ne-crawler",
+      "name": "netEstate NE Crawler",
+      "operator": {
+        "name": "netEstate GmbH",
+        "url": "https://www.netestate.de"
+      },
+      "description": "The crawler netEstate GmbH runs for its information-extraction products. The operator documents two uses: an Impressums-Crawler that locates a site's imprint page and extracts postal addresses, contact data and company names for address verification, and a Jobcrawler that finds job postings on employer websites. netEstate states that the crawler observes robots.txt, the robots meta element and common opt-out wordings, and that it returns only a hash of any email address rather than the address itself.",
+      "docs": [
+        "https://www.netestate.de/informationsextraktion/software/impressums-crawler/",
+        "https://www.netestate.de/informationsextraktion/software/jobcrawler/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "netEstate NE Crawler"
+        ],
+        "instances": [
+          "netEstate NE Crawler (+http://www.sengine.info/)",
+          "netEstate NE Crawler (+http://www.website-datenbank.de/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-09-25T13:31:23.814Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,19 @@
+id: yandex-sprav
+name: YandexSpravBot
+operator: { name: Yandex, url: "https://yandex.com" }
+description: >-
+  The Yandex Business robot, which fetches pages for Yandex's business
+  directory listings. Yandex's robot table records that it follows the general
+  robots.txt rules.
+docs:
+  - "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'YandexSpravBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; YandexSpravBot/1.0; +http://yandex.com/bots)'
+behavior: { respects_robots_txt: true, robots_token: YandexSpravBot }
+verification:
+  - type: rdns
+    masks: ["*.yandex.ru", "*.yandex.net", "*.yandex.com"]
