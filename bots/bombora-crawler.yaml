@@ -6,6 +6,10 @@ description: >-
   web pages that carry Bombora's tags so the company can model B2B purchase
   intent, visiting each tagged page at most once every 30 days.
 docs:
+  # Bombora's bot page 404s as of 2026-09-27; bombora.com/bot/ answers 200 but
+  # serves the marketing homepage (same <title>), i.e. a soft 404. The URL is
+  # kept because it is the one BomboraBot's own user agent advertises and is
+  # the source the fields below were taken from; re-check before relying on it.
   - "https://www.bombora.com/bot"
 category: seo
 user_agents:

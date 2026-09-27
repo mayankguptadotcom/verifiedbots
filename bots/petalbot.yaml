@@ -7,7 +7,11 @@ description: >-
   Huawei documents reverse-DNS verification against aspiegel.com and
   petalsearch.com hostnames.
 docs:
-  - "https://aspiegel.com/petalbot"
+  # aspiegel.com/petalbot 404s as of 2026-09-27 (checked with and without a
+  # trailing slash, and on www). The replacement is the URL PetalBot's own user
+  # agent advertises; it answers 200 but renders its text with JavaScript, so
+  # the fields below stay as previously sourced from the Aspiegel page.
+  - "https://webmaster.petalsearch.com/site/petalbot"
 category: search-engine
 user_agents:
   patterns:

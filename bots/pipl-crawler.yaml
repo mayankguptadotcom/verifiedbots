@@ -7,6 +7,10 @@ description: >-
   information, including content behind searchable databases, to build Pipl's
   people-search index.
 docs:
+  # Pipl's bot page 404s as of 2026-09-27 (both /bot and /bot/; pipl.com itself
+  # answers 200 and no replacement page could be located). The URL is kept
+  # because it is the one PiplBot's own user agent advertises and is the source
+  # the fields below were taken from; re-check before relying on it.
   - "https://pipl.com/bot/"
 category: search-engine
 user_agents:

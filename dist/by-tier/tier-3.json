@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-27T04:35:02.541Z",
+  "generated_at": "2026-09-27T13:41:30.661Z",
   "count": 156,
   "bots": [
     {
@@ -4329,6 +4329,8 @@
         "instances": [
           "Mozilla/5.0 (compatible; Uptime/2.0; http://uptime.com)",
           "Mozilla/5.0 (compatible; Uptime/1.0; http://uptime.com)",
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Uptime/1.0 (https://uptime.com)",
+          "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36 Uptime/1.0 (https://uptime.com)",
           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Uptime/2.0 (https://uptime.com)",
           "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36 Uptime/2.0 (https://uptime.com)",
           "Mozilla/5.0 (compatible; Uptimebot/1.0; +http://www.uptime.com/uptimebot)"

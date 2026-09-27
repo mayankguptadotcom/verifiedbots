@@ -7,7 +7,7 @@
   },
   "description": "Huawei's web crawler, fetching pages for the Petal Search engine used in Huawei's mobile services and for Huawei Assistant content recommendations. Huawei documents reverse-DNS verification against aspiegel.com and petalsearch.com hostnames.",
   "docs": [
-    "https://aspiegel.com/petalbot"
+    "https://webmaster.petalsearch.com/site/petalbot"
   ],
   "category": "search-engine",
   "user_agents": {
