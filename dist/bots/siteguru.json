@@ -1,0 +1,49 @@
+{
+  "id": "siteguru",
+  "name": "SiteGuru Crawler",
+  "operator": {
+    "name": "SiteGuru",
+    "url": "https://www.siteguru.co"
+  },
+  "description": "The crawler behind SiteGuru, a hosted SEO auditing tool. It crawls a site either because someone added that site to SiteGuru to monitor its SEO health, or because a site already being audited links to it and SiteGuru is checking that link for breakage. The operator documents that it reads only publicly available content, uses the HTML source to derive meta descriptions, page titles and missing alt text, submits no forms, crawls only pages that are in the sitemap or linked from another page, and limits concurrent requests to bound the load it puts on an origin. For sites it is auditing it also calls the W3 Validator and Google's PageSpeed API.",
+  "docs": [
+    "https://www.siteguru.co/crawler",
+    "https://www.siteguru.co/seo-academy/solving-crawl-issues",
+    "https://www.siteguru.co/seo-academy/fix-cloudflare-issues"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "SiteGuruCrawler"
+    ],
+    "instances": [
+      "SiteGuruCrawler"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "SiteGuruCrawler"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "54.78.126.239/32",
+        "52.17.9.255/32",
+        "34.246.125.226/32",
+        "3.248.73.25/32",
+        "34.253.76.180/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-29T13:30:54.911Z",
+  "resolved_cidrs": [
+    "3.248.73.25/32",
+    "34.246.125.226/32",
+    "34.253.76.180/32",
+    "52.17.9.255/32",
+    "54.78.126.239/32"
+  ]
+}

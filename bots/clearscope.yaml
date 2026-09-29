@@ -1,0 +1,39 @@
+id: clearscope
+name: Clearscopebot
+operator: { name: "Clearscope", url: "https://www.clearscope.io" }
+description: >-
+  The crawler behind Clearscope, a hosted content-optimisation and SEO platform.
+  The operator describes it as a web scraper that retrieves publicly available
+  content from websites in order to power Clearscope's products, naming Content
+  Grade recommendations and Content Inventory specifically. The support page
+  states the crawler is built to be efficient and respectful and to comply with
+  industry standards, and directs site owners whose WAF or host blocks crawlers
+  to allow its published addresses.
+docs:
+  - "https://www.clearscope.io/support/clearscopebot"
+category: seo
+user_agents:
+  # The operator's support page is titled "What is Clearscopebot?" and names the
+  # crawler as Clearscopebot throughout, but never prints a full User-Agent
+  # header, and arcjet has no Clearscope record. The documented name is therefore
+  # recorded as both pattern and instance, as amazon-kendra-crawler does.
+  patterns:
+    - 'Clearscopebot'
+  instances:
+    - 'Clearscopebot'
+# "Clearscopebot is designed to be efficient, respectful, and compliant with
+# industry standards, including adherence to robots.txt rules." No robots_token
+# is recorded: the page prints no `User-agent:` line, so a token would be an
+# inference from the crawler's name.
+behavior: { respects_robots_txt: true }
+verification:
+  # "Clearscopebot uses the following IP addresses for crawling" — five bare
+  # addresses, read live from the support page this run and recorded as /32s.
+  # No JSON feed is offered, so this is static rather than a cidr_feed.
+  - type: static_cidrs
+    cidrs:
+      - "35.212.41.100/32"
+      - "35.212.43.110/32"
+      - "35.212.80.198/32"
+      - "35.212.21.16/32"
+      - "35.212.6.64/32"

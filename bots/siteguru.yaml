@@ -1,0 +1,47 @@
+id: siteguru
+name: SiteGuru Crawler
+operator: { name: "SiteGuru", url: "https://www.siteguru.co" }
+description: >-
+  The crawler behind SiteGuru, a hosted SEO auditing tool. It crawls a site
+  either because someone added that site to SiteGuru to monitor its SEO health,
+  or because a site already being audited links to it and SiteGuru is checking
+  that link for breakage. The operator documents that it reads only publicly
+  available content, uses the HTML source to derive meta descriptions, page
+  titles and missing alt text, submits no forms, crawls only pages that are in
+  the sitemap or linked from another page, and limits concurrent requests to
+  bound the load it puts on an origin. For sites it is auditing it also calls
+  the W3 Validator and Google's PageSpeed API.
+docs:
+  - "https://www.siteguru.co/crawler"
+  - "https://www.siteguru.co/seo-academy/solving-crawl-issues"
+  - "https://www.siteguru.co/seo-academy/fix-cloudflare-issues"
+category: seo
+user_agents:
+  # The crawler page names the user agent once — "You'll recognize them by the
+  # user agent SiteGuruCrawler" — and prints it in worked robots.txt blocks; it
+  # never prints a full User-Agent header, and arcjet has no SiteGuru record, so
+  # the documented token is recorded as both pattern and instance (the same
+  # treatment amazon-kendra-crawler gives its token). Note the operator also
+  # documents that a customer may change the user agent SiteGuru crawls their
+  # own site with; SiteGuruCrawler is the documented default and the string the
+  # operator tells third parties to match on.
+  patterns:
+    - 'SiteGuruCrawler'
+  instances:
+    - 'SiteGuruCrawler'
+# The crawler page prints both an Allow and a Disallow block keyed on
+# `User-agent: SiteGuruCrawler` and states "Our crawler will respect these
+# instructions and won't access your site."
+behavior: { respects_robots_txt: true, robots_token: SiteGuruCrawler }
+verification:
+  # "These are our current crawler IPs. We keep this list up to date." The same
+  # five addresses are published identically on both the crawl-issues and the
+  # Cloudflare-issues pages, read live this run. They are bare hosts, recorded
+  # as /32s. No JSON feed is offered, so this is static rather than a cidr_feed.
+  - type: static_cidrs
+    cidrs:
+      - "54.78.126.239/32"
+      - "52.17.9.255/32"
+      - "34.246.125.226/32"
+      - "3.248.73.25/32"
+      - "34.253.76.180/32"

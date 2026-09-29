@@ -1,0 +1,30 @@
+{
+  "id": "digitalocean-gradient-ai-crawler",
+  "name": "DigitalOcean Gradient AI Website Crawler",
+  "operator": {
+    "name": "DigitalOcean, LLC",
+    "url": "https://www.digitalocean.com"
+  },
+  "description": "The crawler DigitalOcean runs when a customer adds a website URL as a data source for a DigitalOcean Knowledge Base, which indexes the content so it can power retrieval-augmented generation for that customer's own agents. The documentation states the crawler indexes up to 5,500 pages per job and skips inaccessible or disallowed links to keep indexing jobs bounded, follows HTML links depending on the behaviour the customer selects, indexes text and certain image types, and ignores videos and navigation links.",
+  "docs": [
+    "https://docs.digitalocean.com/products/knowledge-bases/details/website-crawler/",
+    "https://docs.digitalocean.com/products/inference/details/website-crawler/"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "DigitalOceanGradientAICrawler"
+    ],
+    "instances": [
+      "DigitalOceanGradientAICrawler/1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-09-29T13:30:54.911Z",
+  "resolved_cidrs": []
+}

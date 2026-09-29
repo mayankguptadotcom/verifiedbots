@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-29T04:35:56.633Z",
-  "count": 83,
+  "generated_at": "2026-09-29T13:30:54.911Z",
+  "count": 85,
   "bots": [
     {
       "id": "ads-naver",
@@ -343,7 +343,7 @@
         "name": "Audisto GmbH",
         "url": "https://audisto.com"
       },
-      "description": "Crawler for Audisto's hosted technical SEO and site-audit platform, fetching pages of the sites its customers analyse. Audisto publishes its crawler addresses as JSON and documents reverse-DNS verification.",
+      "description": "The crawler behind Audisto, a German SaaS platform for technical website analysis and continuous website monitoring. It fetches the accessible URLs of a site so the product can report crawling and indexation errors, hreflang and canonical problems, and internal link-graph issues. The operator runs two crawlers: an Essential crawler that may crawl any site, and a Full crawler that only crawls sites whose ownership has been verified. The bot reference documents automated overload protection — after 10 error responses within a hundred requests the crawler lengthens its delay and reduces parallelism, and relaxes again once the error rate drops below 5 percent — plus a 30-second total request budget and per-content-type response size caps.",
       "docs": [
         "https://audisto.com/help/crawler/bot/"
       ],
@@ -355,6 +355,7 @@
         "instances": [
           "Audisto Crawler (mobile; +https://audisto.com/bot)",
           "Audisto Crawler (desktop; +https://audisto.com/bot)",
+          "Audisto Crawler (mobile; essential; +https://audisto.com/bot)",
           "Audisto Crawler (desktop; essential; +https://audisto.com/bot)"
         ]
       },
@@ -686,6 +687,52 @@
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "clearscope",
+      "name": "Clearscopebot",
+      "operator": {
+        "name": "Clearscope",
+        "url": "https://www.clearscope.io"
+      },
+      "description": "The crawler behind Clearscope, a hosted content-optimisation and SEO platform. The operator describes it as a web scraper that retrieves publicly available content from websites in order to power Clearscope's products, naming Content Grade recommendations and Content Inventory specifically. The support page states the crawler is built to be efficient and respectful and to comply with industry standards, and directs site owners whose WAF or host blocks crawlers to allow its published addresses.",
+      "docs": [
+        "https://www.clearscope.io/support/clearscopebot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Clearscopebot"
+        ],
+        "instances": [
+          "Clearscopebot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "35.212.41.100/32",
+            "35.212.43.110/32",
+            "35.212.80.198/32",
+            "35.212.21.16/32",
+            "35.212.6.64/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-29T13:30:54.911Z",
+      "resolved_cidrs": [
+        "35.212.21.16/32",
+        "35.212.41.100/32",
+        "35.212.43.110/32",
+        "35.212.6.64/32",
+        "35.212.80.198/32"
+      ]
     },
     {
       "id": "cocolyzebot",
@@ -2909,6 +2956,55 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "siteguru",
+      "name": "SiteGuru Crawler",
+      "operator": {
+        "name": "SiteGuru",
+        "url": "https://www.siteguru.co"
+      },
+      "description": "The crawler behind SiteGuru, a hosted SEO auditing tool. It crawls a site either because someone added that site to SiteGuru to monitor its SEO health, or because a site already being audited links to it and SiteGuru is checking that link for breakage. The operator documents that it reads only publicly available content, uses the HTML source to derive meta descriptions, page titles and missing alt text, submits no forms, crawls only pages that are in the sitemap or linked from another page, and limits concurrent requests to bound the load it puts on an origin. For sites it is auditing it also calls the W3 Validator and Google's PageSpeed API.",
+      "docs": [
+        "https://www.siteguru.co/crawler",
+        "https://www.siteguru.co/seo-academy/solving-crawl-issues",
+        "https://www.siteguru.co/seo-academy/fix-cloudflare-issues"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SiteGuruCrawler"
+        ],
+        "instances": [
+          "SiteGuruCrawler"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "SiteGuruCrawler"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.78.126.239/32",
+            "52.17.9.255/32",
+            "34.246.125.226/32",
+            "3.248.73.25/32",
+            "34.253.76.180/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-09-29T13:30:54.911Z",
+      "resolved_cidrs": [
+        "3.248.73.25/32",
+        "34.246.125.226/32",
+        "34.253.76.180/32",
+        "52.17.9.255/32",
+        "54.78.126.239/32"
+      ]
     },
     {
       "id": "siteimprove",

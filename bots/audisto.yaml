@@ -1,23 +1,48 @@
 id: audisto
 name: Audisto Crawler
-operator: { name: Audisto GmbH, url: "https://audisto.com" }
+operator: { name: "Audisto GmbH", url: "https://audisto.com" }
 description: >-
-  Crawler for Audisto's hosted technical SEO and site-audit platform, fetching
-  pages of the sites its customers analyse. Audisto publishes its crawler
-  addresses as JSON and documents reverse-DNS verification.
+  The crawler behind Audisto, a German SaaS platform for technical website
+  analysis and continuous website monitoring. It fetches the accessible URLs of
+  a site so the product can report crawling and indexation errors, hreflang and
+  canonical problems, and internal link-graph issues. The operator runs two
+  crawlers: an Essential crawler that may crawl any site, and a Full crawler
+  that only crawls sites whose ownership has been verified. The bot reference
+  documents automated overload protection — after 10 error responses within a
+  hundred requests the crawler lengthens its delay and reduces parallelism, and
+  relaxes again once the error rate drops below 5 percent — plus a 30-second
+  total request budget and per-content-type response size caps.
 docs:
   - "https://audisto.com/help/crawler/bot/"
 category: seo
 user_agents:
+  # The operator's bot reference prints the user-agent form
+  # "Audisto Crawler ([features]; +https://audisto.com/bot)" and then enumerates
+  # all four possible combinations verbatim; they are recorded as-is. The page
+  # also says to match against "Audisto Crawler" when identifying the bot.
   patterns:
     - 'Audisto Crawler'
   instances:
     - 'Audisto Crawler (mobile; +https://audisto.com/bot)'
     - 'Audisto Crawler (desktop; +https://audisto.com/bot)'
+    - 'Audisto Crawler (mobile; essential; +https://audisto.com/bot)'
     - 'Audisto Crawler (desktop; essential; +https://audisto.com/bot)'
+# "The crawler obeys the Robot Exclusion Protocol", and the page prints a
+# worked block using `User-agent: audisto` (full crawler) and
+# `User-agent: audisto-essential`, with audisto-mobile / audisto-desktop and
+# their -essential variants falling back to `audisto`. The page also documents
+# handling of rel="nofollow", the nofollow meta tag and the X-Robots-Tag header.
 behavior: { respects_robots_txt: true, robots_token: audisto }
 verification:
-  # audisto.com/ips.json is an object with separate ipv4/ipv6 arrays — one recipe each.
+  # The bot reference publishes the crawler addresses in the page body and links
+  # the same list as JSON at https://audisto.com/ips.json, offered explicitly
+  # "if you are setting up rules against IPs". Fetched live this run: HTTP 200,
+  # application/json, shape {"ipv4":[...],"ipv6":[...]} with bare addresses that
+  # the pipeline normalises to /32 and /128. Re-confirmed as a curated allowlist
+  # rather than a rotating pool: the JSON matched the hand-written HTML list on
+  # the same page exactly (20 IPv4 + 10 IPv6), and the page's "addresses could
+  # change from crawl to crawl" describes which server is used, not churn in the
+  # published set. One recipe per array, as github_meta takes a single dot-path.
   - type: cidr_feed
     url: "https://audisto.com/ips.json"
     format: github_meta
@@ -26,5 +51,8 @@ verification:
     url: "https://audisto.com/ips.json"
     format: github_meta
     selector: ipv6
+  # The page documents the forward-confirmed reverse DNS convention and walks
+  # through it for both IPv4 and IPv6: rDNS points into crawler.audisto.com,
+  # then an A/AAAA lookup of that host must return the original address.
   - type: rdns
     masks: ["*.crawler.audisto.com"]

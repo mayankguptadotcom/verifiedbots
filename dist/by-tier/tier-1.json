@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-09-29T04:35:56.633Z",
+  "generated_at": "2026-09-29T13:30:54.911Z",
   "count": 85,
   "bots": [
     {
@@ -466,7 +466,7 @@
         "name": "Audisto GmbH",
         "url": "https://audisto.com"
       },
-      "description": "Crawler for Audisto's hosted technical SEO and site-audit platform, fetching pages of the sites its customers analyse. Audisto publishes its crawler addresses as JSON and documents reverse-DNS verification.",
+      "description": "The crawler behind Audisto, a German SaaS platform for technical website analysis and continuous website monitoring. It fetches the accessible URLs of a site so the product can report crawling and indexation errors, hreflang and canonical problems, and internal link-graph issues. The operator runs two crawlers: an Essential crawler that may crawl any site, and a Full crawler that only crawls sites whose ownership has been verified. The bot reference documents automated overload protection — after 10 error responses within a hundred requests the crawler lengthens its delay and reduces parallelism, and relaxes again once the error rate drops below 5 percent — plus a 30-second total request budget and per-content-type response size caps.",
       "docs": [
         "https://audisto.com/help/crawler/bot/"
       ],
@@ -478,6 +478,7 @@
         "instances": [
           "Audisto Crawler (mobile; +https://audisto.com/bot)",
           "Audisto Crawler (desktop; +https://audisto.com/bot)",
+          "Audisto Crawler (mobile; essential; +https://audisto.com/bot)",
           "Audisto Crawler (desktop; essential; +https://audisto.com/bot)"
         ]
       },

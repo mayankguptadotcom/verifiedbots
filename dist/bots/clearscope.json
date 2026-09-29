@@ -1,0 +1,46 @@
+{
+  "id": "clearscope",
+  "name": "Clearscopebot",
+  "operator": {
+    "name": "Clearscope",
+    "url": "https://www.clearscope.io"
+  },
+  "description": "The crawler behind Clearscope, a hosted content-optimisation and SEO platform. The operator describes it as a web scraper that retrieves publicly available content from websites in order to power Clearscope's products, naming Content Grade recommendations and Content Inventory specifically. The support page states the crawler is built to be efficient and respectful and to comply with industry standards, and directs site owners whose WAF or host blocks crawlers to allow its published addresses.",
+  "docs": [
+    "https://www.clearscope.io/support/clearscopebot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Clearscopebot"
+    ],
+    "instances": [
+      "Clearscopebot"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "35.212.41.100/32",
+        "35.212.43.110/32",
+        "35.212.80.198/32",
+        "35.212.21.16/32",
+        "35.212.6.64/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-09-29T13:30:54.911Z",
+  "resolved_cidrs": [
+    "35.212.21.16/32",
+    "35.212.41.100/32",
+    "35.212.43.110/32",
+    "35.212.6.64/32",
+    "35.212.80.198/32"
+  ]
+}

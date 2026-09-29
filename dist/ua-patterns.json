@@ -419,6 +419,13 @@
     ]
   },
   {
+    "id": "clearscope",
+    "category": "seo",
+    "patterns": [
+      "Clearscopebot"
+    ]
+  },
+  {
     "id": "cloudflare-ai-search",
     "category": "ai-crawler",
     "patterns": [
@@ -621,6 +628,13 @@
     "category": "ai-assistant",
     "patterns": [
       "Diffbot-User"
+    ]
+  },
+  {
+    "id": "digitalocean-gradient-ai-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "DigitalOceanGradientAICrawler"
     ]
   },
   {
@@ -1968,6 +1982,13 @@
     "category": "monitoring",
     "patterns": [
       "Site24x7/[\\d.]+"
+    ]
+  },
+  {
+    "id": "siteguru",
+    "category": "seo",
+    "patterns": [
+      "SiteGuruCrawler"
     ]
   },
   {
