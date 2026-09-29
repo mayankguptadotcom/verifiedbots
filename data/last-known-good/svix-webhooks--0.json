@@ -1,6 +1,6 @@
 {
   "url": "https://docs.svix.com/webhook-ips.json",
-  "fetched_at": "2026-09-28T04:38:19.240Z",
+  "fetched_at": "2026-09-29T04:35:54.062Z",
   "ranges": [
     "2600:1f24:64:8000::/56",
     "44.228.126.217/32",
