@@ -12,11 +12,14 @@
   "category": "social-preview",
   "user_agents": {
     "patterns": [
-      "WhatsApp/[\\d.]+ [AIN]"
+      "WhatsApp/[\\d.]+ [AINin]",
+      "WhatsApp/[\\d.]+/[AINin]"
     ],
     "instances": [
       "WhatsApp/2.19.330 A",
-      "WhatsApp/2.19.92 i"
+      "WhatsApp/2.19.92 i",
+      "WhatsApp/0.3.4479 N",
+      "WhatsApp/2.16.1/i"
     ]
   },
   "behavior": {

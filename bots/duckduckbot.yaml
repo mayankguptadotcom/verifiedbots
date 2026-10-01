@@ -7,8 +7,14 @@ docs:
   - "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/"
 category: search-engine
 user_agents:
+  # `DuckDuckBot-Https/1.1` is not matched by `DuckDuckBot/\d` and needs its
+  # own pattern. DuckDuckGo's own page (fetched this run) prints only
+  # `DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)`; the -Https
+  # form is recorded on arcjet's `duckduckgo-crawler` entry (iron rule 1b)
+  # and is the source for both the instance and the pattern.
   patterns:
     - 'DuckDuckBot/\d'
+    - 'DuckDuckBot-Https/\d'
   instances:
     - 'DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)'
     - 'Mozilla/5.0 (compatible; DuckDuckBot-Https/1.1; https://duckduckgo.com/duckduckbot)'

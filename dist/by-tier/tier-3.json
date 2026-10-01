@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-01T04:37:06.315Z",
+  "generated_at": "2026-10-01T13:49:51.902Z",
   "count": 157,
   "bots": [
     {
@@ -1499,7 +1499,8 @@
       "category": "feed-fetcher",
       "user_agents": {
         "patterns": [
-          "Feedly/[\\d.]+"
+          "Feedly/[\\d.]+",
+          "FeedlyBot/[\\d.]+"
         ],
         "instances": [
           "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)",

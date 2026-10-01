@@ -1,0 +1,46 @@
+id: isonsearch-crawler
+name: IsonSearchBot
+operator: { name: "PT Epithre Teknologi Indonesia", url: "https://epithre.com" }
+description: >-
+  The crawler that builds the index behind Ison Search, an Indonesian web
+  search engine that also grounds cited AI answers linking back to the
+  original page. Epithre states it trains no model on what the crawler reads.
+  Crawling is paced per site rather than per crawler process: it starts at two
+  requests per second, speeds up only while responses stay fast and
+  error-free, never exceeds about ten per second or four concurrent
+  connections, halves on slow responses and 5xx, and drops to the minimum and
+  pauses on 429 or 403, with robots.txt Crawl-delay always taking precedence.
+  Pages whose text appears only under JavaScript are rendered in a headless
+  browser that sends the same token and follows the same rules. Epithre says
+  it submits no forms, attempts no authentication, reads a CAPTCHA or bot
+  challenge as a refusal rather than solving or retrying past it, and fetches
+  nothing behind a paywall.
+docs:
+  - "https://search.isonai.com/bot"
+category: search-engine
+user_agents:
+  # The bot page documents two versioned forms of one token ("IsonSearchBot/1.0
+  # or IsonSearchBot/2.0") and states "We never present ourselves as a
+  # browser"; both instances below are also arcjet's accepted instances.
+  patterns:
+    - 'IsonSearchBot/\d'
+  instances:
+    - 'IsonSearchBot/1.0 (+https://search.isonai.com/bot)'
+    - 'IsonSearchBot/2.0 (+https://search.isonai.com/bot)'
+behavior: { respects_robots_txt: true, robots_token: IsonSearchBot }
+verification:
+  # "Match the source address of the request against the list we publish."
+  # Fetched live this run: 200 application/json, Google-style `prefixes`
+  # shape, creationTime 2026-09-14T19:01:19Z — a published set 17 days old,
+  # so it is not a fast-rotating list.
+  #
+  # Epithre documents one deliberate gap and the entry records it rather than
+  # hiding it: one fleet node egresses through a shared mobile network and
+  # that address is unpublished on purpose, because allowlisting it would
+  # open a pool belonging to thousands of unrelated subscribers. The operator
+  # states that node is not used to crawl sites that have allowlisted
+  # IsonSearchBot, so the feed is authoritative for the traffic a site owner
+  # would be verifying.
+  - type: cidr_feed
+    url: "https://search.isonai.com/bot/ips.json"
+    format: prefixes

@@ -217,7 +217,8 @@
     "id": "baiduspider",
     "category": "search-engine",
     "patterns": [
-      "Baiduspider/\\d"
+      "Baiduspider/\\d",
+      "Baiduspider-render/\\d"
     ]
   },
   {
@@ -690,7 +691,8 @@
     "id": "duckduckbot",
     "category": "search-engine",
     "patterns": [
-      "DuckDuckBot/\\d"
+      "DuckDuckBot/\\d",
+      "DuckDuckBot-Https/\\d"
     ]
   },
   {
@@ -790,7 +792,8 @@
     "id": "feedly",
     "category": "feed-fetcher",
     "patterns": [
-      "Feedly/[\\d.]+"
+      "Feedly/[\\d.]+",
+      "FeedlyBot/[\\d.]+"
     ]
   },
   {
@@ -1144,6 +1147,13 @@
     "category": "archiver",
     "patterns": [
       "ArchiveTeam ArchiveBot\\/"
+    ]
+  },
+  {
+    "id": "isonsearch-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "IsonSearchBot/\\d"
     ]
   },
   {
@@ -2351,7 +2361,8 @@
     "id": "whatsapp",
     "category": "social-preview",
     "patterns": [
-      "WhatsApp/[\\d.]+ [AIN]"
+      "WhatsApp/[\\d.]+ [AINin]",
+      "WhatsApp/[\\d.]+/[AINin]"
     ]
   },
   {

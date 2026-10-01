@@ -12,7 +12,8 @@
   "category": "search-engine",
   "user_agents": {
     "patterns": [
-      "DuckDuckBot/\\d"
+      "DuckDuckBot/\\d",
+      "DuckDuckBot-Https/\\d"
     ],
     "instances": [
       "DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)",

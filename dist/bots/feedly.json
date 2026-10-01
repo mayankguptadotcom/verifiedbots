@@ -12,7 +12,8 @@
   "category": "feed-fetcher",
   "user_agents": {
     "patterns": [
-      "Feedly/[\\d.]+"
+      "Feedly/[\\d.]+",
+      "FeedlyBot/[\\d.]+"
     ],
     "instances": [
       "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)",

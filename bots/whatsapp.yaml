@@ -9,11 +9,20 @@ docs:
   - "https://developers.facebook.com/documentation/business-messaging/whatsapp/link-previews/"
 category: social-preview
 user_agents:
+  # The platform suffix is not reliably uppercase and is not always
+  # space-separated: arcjet's `whatsapp-crawler` instances record ` A`, ` N`
+  # and ` i` (lowercase) as well as the iOS `/i` slash form. The original
+  # single pattern `WhatsApp/[\d.]+ [AIN]` matched none of the lowercase or
+  # slash forms, so that traffic was unidentifiable. All instances below are
+  # arcjet's.
   patterns:
-    - 'WhatsApp/[\d.]+ [AIN]'
+    - 'WhatsApp/[\d.]+ [AINin]'
+    - 'WhatsApp/[\d.]+/[AINin]'
   instances:
     - 'WhatsApp/2.19.330 A'
     - 'WhatsApp/2.19.92 i'
+    - 'WhatsApp/0.3.4479 N'
+    - 'WhatsApp/2.16.1/i'
 behavior: { respects_robots_txt: false }
 verification:
   - type: asn

@@ -7,8 +7,13 @@ docs:
   - "https://help.baidu.com/question?prod_en=master&class=Baiduspider"
 category: search-engine
 user_agents:
+  # Two patterns, not one: Baidu's rendering fetcher identifies as
+  # `Baiduspider-render/2.0`, which a bare `Baiduspider/\d` pattern does not
+  # match, so that half of Baidu's traffic was unidentifiable. Both instances
+  # below are arcjet's accepted instances for `baidu-crawler`.
   patterns:
     - 'Baiduspider/\d'
+    - 'Baiduspider-render/\d'
   instances:
     - 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)'
     - 'Mozilla/5.0 (compatible; Baiduspider-render/2.0; +http://www.baidu.com/search/spider.html)'

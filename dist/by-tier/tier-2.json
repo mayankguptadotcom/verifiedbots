@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-01T04:37:06.315Z",
+  "generated_at": "2026-10-01T13:49:51.902Z",
   "count": 133,
   "bots": [
     {
@@ -7263,7 +7263,8 @@
       "category": "search-engine",
       "user_agents": {
         "patterns": [
-          "Baiduspider/\\d"
+          "Baiduspider/\\d",
+          "Baiduspider-render/\\d"
         ],
         "instances": [
           "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)",
@@ -11713,11 +11714,14 @@
       "category": "social-preview",
       "user_agents": {
         "patterns": [
-          "WhatsApp/[\\d.]+ [AIN]"
+          "WhatsApp/[\\d.]+ [AINin]",
+          "WhatsApp/[\\d.]+/[AINin]"
         ],
         "instances": [
           "WhatsApp/2.19.330 A",
-          "WhatsApp/2.19.92 i"
+          "WhatsApp/2.19.92 i",
+          "WhatsApp/0.3.4479 N",
+          "WhatsApp/2.16.1/i"
         ]
       },
       "behavior": {

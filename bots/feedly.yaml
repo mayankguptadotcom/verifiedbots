@@ -10,8 +10,12 @@ docs:
   - "https://feedly.com/fetcher.html"
 category: feed-fetcher
 user_agents:
+  # `FeedlyBot/1.0` (arcjet's second accepted instance for
+  # `feedly-feedfetcher`) is not matched by `Feedly/[\d.]+` — the token is
+  # `FeedlyBot/`, not `Feedly/` — so it needs its own pattern.
   patterns:
     - 'Feedly/[\d.]+'
+    - 'FeedlyBot/[\d.]+'
   instances:
     - 'Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)'
     - 'FeedlyBot/1.0 (http://feedly.com)'

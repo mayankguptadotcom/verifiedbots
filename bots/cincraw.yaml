@@ -10,6 +10,15 @@ description: >-
   deletes all cookies between requests, and does not load analytics or
   ad-measurement tags. No robots.txt policy and no IP ranges are published.
 docs:
+  # 2026-10-01: cincrawdata.net no longer resolves from this egress — DNS
+  # fails for both the apex and www, and http:// and https:// both fail to
+  # connect, where the same sweep reached 293 other cited pages. The URL is
+  # kept because it is the one Cincraw's own user agent advertises and the
+  # source every field here was taken from (same call as pipl-crawler and
+  # bombora-crawler on 2026-09-27). The operator itself is still live:
+  # www.cinc-j.co.jp answered 200 on the same run. Re-probe next run; if the
+  # host stays dead, a human may want to decide whether an entry whose only
+  # documentation has vanished should stay listed.
   - "https://cincrawdata.net/bot/"
 category: seo
 user_agents:

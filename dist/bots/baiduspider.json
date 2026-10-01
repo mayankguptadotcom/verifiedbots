@@ -12,7 +12,8 @@
   "category": "search-engine",
   "user_agents": {
     "patterns": [
-      "Baiduspider/\\d"
+      "Baiduspider/\\d",
+      "Baiduspider-render/\\d"
     ],
     "instances": [
       "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)",
