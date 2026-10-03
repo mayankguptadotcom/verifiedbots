@@ -7,6 +7,8 @@ description: >-
   research agents can retrieve and cite them. Liner's crawler page documents
   the user agent, states that access is controlled through robots.txt, and
   gives worked examples for both a full disallow and path-scoped allow rules.
+  Liner also publishes the crawler's addresses as a JSON feed under the
+  heading "IP address ranges", noting the pool may change over time.
 docs:
   - "https://docs.getliner.com/docs/linerbot"
 category: ai-crawler
@@ -16,7 +18,10 @@ user_agents:
   instances:
     - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; LinerBot/1.0; +https://docs.getliner.com/docs/linerbot)'
 behavior: { respects_robots_txt: true, robots_token: LinerBot }
-# Liner publishes no IP ranges, ASN or rDNS mask for the crawler anywhere on
-# its docs site, so this is Tier 3 on identity alone. Re-check the crawler
-# page for an address list before attaching any recipe.
-verification: []
+verification:
+  # The crawler page's "IP address ranges" section links this feed as the
+  # latest list of LinerBot addresses; fetched live this run (10 /32s, in the
+  # Google-style `prefixes` shape, creationTime 2024-05-27).
+  - type: cidr_feed
+    url: "https://docs.getliner.com/linerbot.json"
+    format: prefixes

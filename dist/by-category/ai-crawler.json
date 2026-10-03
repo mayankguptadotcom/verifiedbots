@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-03T09:55:38.623Z",
-  "count": 39,
+  "generated_at": "2026-10-03T13:31:02.196Z",
+  "count": 40,
   "bots": [
     {
       "id": "ai2bot",
@@ -3725,7 +3725,7 @@
         "name": "Liner",
         "url": "https://liner.com"
       },
-      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules.",
+      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules. Liner also publishes the crawler's addresses as a JSON feed under the heading \"IP address ranges\", noting the pool may change over time.",
       "docs": [
         "https://docs.getliner.com/docs/linerbot"
       ],
@@ -3742,11 +3742,28 @@
         "respects_robots_txt": true,
         "robots_token": "LinerBot"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.getliner.com/linerbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-09-21T13:18:16.867Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "34.121.11.68/32",
+        "34.134.213.56/32",
+        "34.16.62.88/32",
+        "34.171.199.186/32",
+        "34.29.166.174/32",
+        "34.29.23.49/32",
+        "34.29.249.74/32",
+        "34.66.1.86/32",
+        "35.224.198.28/32",
+        "35.226.131.201/32"
+      ]
     },
     {
       "id": "linkupbot",
@@ -4251,6 +4268,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scalepostbot",
+      "name": "ScalePostBot",
+      "operator": {
+        "name": "ScalePost Corporation",
+        "url": "https://scalepost.ai"
+      },
+      "description": "ScalePost's on-demand fetcher. The operator documents that it fetches a publicly available page with a single GET request when a customer asks for an analysis of how that content is being crawled, cited and referenced by AI systems, that it does not execute JavaScript, submit forms or follow links out of the page body, and that it retains only extracted metadata. ScalePost states it fetches robots.txt before any URL on a host and obeys both its own token and the wildcard, honours Crawl-Delay across its parallel workers, and backs off on Retry-After.",
+      "docs": [
+        "https://scalepost.ai/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ScalePostBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ScalePostBot/1.0; +https://scalepost.ai/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ScalePostBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-03T13:31:02.196Z",
       "resolved_cidrs": []
     },
     {

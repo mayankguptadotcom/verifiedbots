@@ -1,0 +1,42 @@
+id: conductor-monitoring
+name: Conductor Monitoring
+operator: { name: Conductor, url: "https://www.conductor.com" }
+description: >-
+  The crawler behind Conductor Monitoring, the website auditing product
+  formerly sold as ContentKing. The operator documents that it makes HTTP GET
+  requests to customer-owned websites for continuous auditing of performance
+  and search visibility, that it throttles itself when a server responds slowly
+  or serves errors and stops entirely if problems persist, and that it reviews
+  robots.txt and meta robots rules. Conductor publishes the four address
+  subnets its monitoring runs from.
+docs:
+  - "https://whatis.conductor.com/"
+  - "https://www.conductor.com/docs/monitoring/monitoring-faqs/"
+category: seo
+user_agents:
+  patterns:
+    - 'Conductor Monitoring'
+  instances:
+    - 'Mozilla/5.0 (compatible; Conductor Monitoring; +https://whatis.conductor.com)'
+# Conductor documents that a customer may change the user agent the product
+# crawls *their own* verified website with, including picking a predefined
+# search-engine or browser string, and may "unbrand" the whatis.conductor.com
+# identifier. The string above is the documented default and the one Conductor
+# tells third parties to identify its monitoring by; it is not a claim that
+# every request from these subnets carries it. The docs also list a
+# "ContentKing (To be deprecated)" predefined agent, whose full string the
+# live pages do not print, so no pattern is recorded for it.
+# Conductor prints no `User-agent:` token for its own crawler — the
+# "Relevant Search Engine" setting chooses whose robots.txt directives it
+# follows — so robots_token is omitted rather than inferred.
+behavior: { respects_robots_txt: true }
+verification:
+  # "We monitor websites from the following IP address subnets" — the four
+  # subnets published on the Conductor Monitoring FAQ, read live this run.
+  # No JSON feed is offered, so this is static rather than a cidr_feed.
+  - type: static_cidrs
+    cidrs:
+      - "89.149.192.96/27"
+      - "81.17.55.192/27"
+      - "23.105.12.64/27"
+      - "173.234.16.0/28"

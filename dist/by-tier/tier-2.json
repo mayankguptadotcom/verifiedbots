@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-03T09:55:38.623Z",
-  "count": 133,
+  "generated_at": "2026-10-03T13:31:02.196Z",
+  "count": 134,
   "bots": [
     {
       "id": "addsearch",
@@ -7728,6 +7728,51 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "conductor-monitoring",
+      "name": "Conductor Monitoring",
+      "operator": {
+        "name": "Conductor",
+        "url": "https://www.conductor.com"
+      },
+      "description": "The crawler behind Conductor Monitoring, the website auditing product formerly sold as ContentKing. The operator documents that it makes HTTP GET requests to customer-owned websites for continuous auditing of performance and search visibility, that it throttles itself when a server responds slowly or serves errors and stops entirely if problems persist, and that it reviews robots.txt and meta robots rules. Conductor publishes the four address subnets its monitoring runs from.",
+      "docs": [
+        "https://whatis.conductor.com/",
+        "https://www.conductor.com/docs/monitoring/monitoring-faqs/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Conductor Monitoring"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Conductor Monitoring; +https://whatis.conductor.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "89.149.192.96/27",
+            "81.17.55.192/27",
+            "23.105.12.64/27",
+            "173.234.16.0/28"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-03T13:31:02.196Z",
+      "resolved_cidrs": [
+        "173.234.16.0/28",
+        "23.105.12.64/27",
+        "81.17.55.192/27",
+        "89.149.192.96/27"
+      ]
     },
     {
       "id": "cookiebot-scanner",

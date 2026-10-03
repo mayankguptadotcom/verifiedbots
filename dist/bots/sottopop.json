@@ -1,0 +1,30 @@
+{
+  "id": "sottopop",
+  "name": "Sottopop",
+  "operator": {
+    "name": "UpContent",
+    "url": "https://www.upcontent.com"
+  },
+  "description": "UpContent's page requester and web crawler, which the operator describes as identifying and downloading elements of web pages so those pages can be found by UpContent's content-curation users. UpContent documents that Sottopop paces itself to keep requests minimised and sporadic and fetches only when new information is available, and states plainly that it does not currently respect robots.txt while asking site owners to publish a Sottopop rule now so it takes effect when support ships; the documented immediate opt-out is to serve 404 or 410 to the user agent.",
+  "docs": [
+    "https://www.upcontent.com/robots"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "Sottopop/[\\d.]+"
+    ],
+    "instances": [
+      "Sottopop/1.0(+https://upcontent.com/robots)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false,
+    "robots_token": "Sottopop"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-03T13:31:02.196Z",
+  "resolved_cidrs": []
+}

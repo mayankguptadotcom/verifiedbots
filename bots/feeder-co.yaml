@@ -7,7 +7,10 @@ description: >-
   agent on the user's behalf and therefore does not check robots.txt, and that
   rate limits can be arranged by contacting support. Its user agent is a
   browser-shaped string in which Feeder deliberately inserts the feeder.co
-  identifier as the honest self-identification.
+  identifier as the honest self-identification. The operator publishes the
+  addresses of its crawler servers, each with a reverse DNS name under
+  feeder.co that resolves back to the same address, and offers the same list
+  as JSON.
 docs:
   - "https://feeder.co/crawler"
 category: feed-fetcher
@@ -19,4 +22,19 @@ user_agents:
     - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'
     - 'Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
 behavior: { respects_robots_txt: false }
-verification: []
+verification:
+  # "These are the addresses of Feeder's crawler servers … The list is also
+  # available as JSON" — fetched live this run. The document is an object with
+  # an `ips` array of bare addresses (normalised to /32s), so github_meta with
+  # a dot-path selector rather than json_array.
+  - type: cidr_feed
+    url: "https://feeder.co/1/service-urls/crawlers.json"
+    format: github_meta
+    selector: ips
+  # Same page: "Each one has a reverse DNS name under feeder.co that points
+  # back to the same address, so you can verify a request with a reverse
+  # lookup followed by a forward lookup." The published names sit under
+  # per-provider labels (spider-crawler1.do.feeder.co, bhs-crawl1.ovh.feeder.co),
+  # so the mask is the apex the operator names.
+  - type: rdns
+    masks: ["*.feeder.co"]

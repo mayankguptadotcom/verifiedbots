@@ -5,7 +5,7 @@
     "name": "Liner",
     "url": "https://liner.com"
   },
-  "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules.",
+  "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules. Liner also publishes the crawler's addresses as a JSON feed under the heading \"IP address ranges\", noting the pool may change over time.",
   "docs": [
     "https://docs.getliner.com/docs/linerbot"
   ],
@@ -22,9 +22,26 @@
     "respects_robots_txt": true,
     "robots_token": "LinerBot"
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://docs.getliner.com/linerbot.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-09-21T13:18:16.867Z",
-  "resolved_cidrs": []
+  "resolved_cidrs": [
+    "34.121.11.68/32",
+    "34.134.213.56/32",
+    "34.16.62.88/32",
+    "34.171.199.186/32",
+    "34.29.166.174/32",
+    "34.29.23.49/32",
+    "34.29.249.74/32",
+    "34.66.1.86/32",
+    "35.224.198.28/32",
+    "35.226.131.201/32"
+  ]
 }

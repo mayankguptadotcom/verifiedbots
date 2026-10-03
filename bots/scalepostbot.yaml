@@ -1,0 +1,26 @@
+id: scalepostbot
+name: ScalePostBot
+operator: { name: "ScalePost Corporation", url: "https://scalepost.ai" }
+description: >-
+  ScalePost's on-demand fetcher. The operator documents that it fetches a
+  publicly available page with a single GET request when a customer asks for an
+  analysis of how that content is being crawled, cited and referenced by AI
+  systems, that it does not execute JavaScript, submit forms or follow links
+  out of the page body, and that it retains only extracted metadata. ScalePost
+  states it fetches robots.txt before any URL on a host and obeys both its own
+  token and the wildcard, honours Crawl-Delay across its parallel workers, and
+  backs off on Retry-After.
+docs:
+  - "https://scalepost.ai/bot"
+category: ai-crawler
+user_agents:
+  patterns:
+    - 'ScalePostBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; ScalePostBot/1.0; +https://scalepost.ai/bot)'
+behavior: { respects_robots_txt: true, robots_token: ScalePostBot }
+# The bot page (last updated May 7, 2026) publishes the User-Agent and From
+# headers but no address list, ASN or rDNS convention, so this is Tier 3 on
+# identity alone. Re-check the same page for an IP list before attaching a
+# recipe.
+verification: []

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-03T09:55:38.623Z",
-  "count": 376,
+  "generated_at": "2026-10-03T13:31:02.196Z",
+  "count": 380,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -10241,6 +10241,51 @@
       "resolved_cidrs": []
     },
     {
+      "id": "conductor-monitoring",
+      "name": "Conductor Monitoring",
+      "operator": {
+        "name": "Conductor",
+        "url": "https://www.conductor.com"
+      },
+      "description": "The crawler behind Conductor Monitoring, the website auditing product formerly sold as ContentKing. The operator documents that it makes HTTP GET requests to customer-owned websites for continuous auditing of performance and search visibility, that it throttles itself when a server responds slowly or serves errors and stops entirely if problems persist, and that it reviews robots.txt and meta robots rules. Conductor publishes the four address subnets its monitoring runs from.",
+      "docs": [
+        "https://whatis.conductor.com/",
+        "https://www.conductor.com/docs/monitoring/monitoring-faqs/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Conductor Monitoring"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Conductor Monitoring; +https://whatis.conductor.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "89.149.192.96/27",
+            "81.17.55.192/27",
+            "23.105.12.64/27",
+            "173.234.16.0/28"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-03T13:31:02.196Z",
+      "resolved_cidrs": [
+        "173.234.16.0/28",
+        "23.105.12.64/27",
+        "81.17.55.192/27",
+        "89.149.192.96/27"
+      ]
+    },
+    {
       "id": "cookiebot-scanner",
       "name": "Cookiebot Scanner",
       "operator": {
@@ -12729,7 +12774,7 @@
         "name": "Feeder",
         "url": "https://feeder.co"
       },
-      "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification.",
+      "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification. The operator publishes the addresses of its crawler servers, each with a reverse DNS name under feeder.co that resolves back to the same address, and offers the same list as JSON.",
       "docs": [
         "https://feeder.co/crawler"
       ],
@@ -12747,11 +12792,45 @@
       "behavior": {
         "respects_robots_txt": false
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://feeder.co/1/service-urls/crawlers.json",
+          "format": "github_meta",
+          "selector": "ips"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.feeder.co"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-27T13:23:13.415Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "104.131.105.190/32",
+        "138.197.71.121/32",
+        "142.93.74.129/32",
+        "144.217.180.83/32",
+        "144.217.180.84/32",
+        "144.217.76.102/32",
+        "15.235.82.82/32",
+        "157.245.117.2/32",
+        "157.245.117.25/32",
+        "159.89.183.157/32",
+        "159.89.43.145/32",
+        "165.227.116.114/32",
+        "165.227.125.60/32",
+        "165.227.76.164/32",
+        "167.71.89.133/32",
+        "174.138.49.150/32",
+        "174.138.57.235/32",
+        "209.97.147.246/32",
+        "68.183.151.227/32",
+        "68.183.157.237/32"
+      ]
     },
     {
       "id": "feedly",
@@ -20055,7 +20134,7 @@
         "name": "Liner",
         "url": "https://liner.com"
       },
-      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules.",
+      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules. Liner also publishes the crawler's addresses as a JSON feed under the heading \"IP address ranges\", noting the pool may change over time.",
       "docs": [
         "https://docs.getliner.com/docs/linerbot"
       ],
@@ -20072,11 +20151,28 @@
         "respects_robots_txt": true,
         "robots_token": "LinerBot"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.getliner.com/linerbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-09-21T13:18:16.867Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "34.121.11.68/32",
+        "34.134.213.56/32",
+        "34.16.62.88/32",
+        "34.171.199.186/32",
+        "34.29.166.174/32",
+        "34.29.23.49/32",
+        "34.29.249.74/32",
+        "34.66.1.86/32",
+        "35.224.198.28/32",
+        "35.226.131.201/32"
+      ]
     },
     {
       "id": "linespider",
@@ -20994,6 +21090,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "missinglettrbot",
+      "name": "MissinglettrBot",
+      "operator": {
+        "name": "Missinglettr",
+        "url": "https://missinglettr.com"
+      },
+      "description": "The fetcher behind Missinglettr's social-media campaign builder. The operator documents that it crawls a blog post or web page only when a Missinglettr customer submits that content, extracting it so the platform can auto-create social posts, and states explicitly that it does not crawl the web at large like a traditional search engine. Missinglettr documents robots.txt control with a worked MissinglettrBot block and notes that blocking it stops social campaigns being created from the site's content.",
+      "docs": [
+        "https://missinglettr.com/bot/"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "MissinglettrBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; MissinglettrBot/2.0; +http://missinglettr.com/bot/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "MissinglettrBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-03T13:31:02.196Z",
       "resolved_cidrs": []
     },
     {
@@ -23848,6 +23974,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-07T13:25:52.411Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "scalepostbot",
+      "name": "ScalePostBot",
+      "operator": {
+        "name": "ScalePost Corporation",
+        "url": "https://scalepost.ai"
+      },
+      "description": "ScalePost's on-demand fetcher. The operator documents that it fetches a publicly available page with a single GET request when a customer asks for an analysis of how that content is being crawled, cited and referenced by AI systems, that it does not execute JavaScript, submit forms or follow links out of the page body, and that it retains only extracted metadata. ScalePost states it fetches robots.txt before any URL on a host and obeys both its own token and the wildcard, honours Crawl-Delay across its parallel workers, and backs off on Retry-After.",
+      "docs": [
+        "https://scalepost.ai/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ScalePostBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ScalePostBot/1.0; +https://scalepost.ai/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ScalePostBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-03T13:31:02.196Z",
       "resolved_cidrs": []
     },
     {
@@ -27065,6 +27221,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "sottopop",
+      "name": "Sottopop",
+      "operator": {
+        "name": "UpContent",
+        "url": "https://www.upcontent.com"
+      },
+      "description": "UpContent's page requester and web crawler, which the operator describes as identifying and downloading elements of web pages so those pages can be found by UpContent's content-curation users. UpContent documents that Sottopop paces itself to keep requests minimised and sporadic and fetches only when new information is available, and states plainly that it does not currently respect robots.txt while asking site owners to publish a Sottopop rule now so it takes effect when support ships; the documented immediate opt-out is to serve 404 or 410 to the user agent.",
+      "docs": [
+        "https://www.upcontent.com/robots"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "Sottopop/[\\d.]+"
+        ],
+        "instances": [
+          "Sottopop/1.0(+https://upcontent.com/robots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false,
+        "robots_token": "Sottopop"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-03T13:31:02.196Z",
       "resolved_cidrs": []
     },
     {

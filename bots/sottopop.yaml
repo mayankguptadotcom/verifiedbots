@@ -1,0 +1,29 @@
+id: sottopop
+name: Sottopop
+operator: { name: UpContent, url: "https://www.upcontent.com" }
+description: >-
+  UpContent's page requester and web crawler, which the operator describes as
+  identifying and downloading elements of web pages so those pages can be found
+  by UpContent's content-curation users. UpContent documents that Sottopop
+  paces itself to keep requests minimised and sporadic and fetches only when
+  new information is available, and states plainly that it does not currently
+  respect robots.txt while asking site owners to publish a Sottopop rule now so
+  it takes effect when support ships; the documented immediate opt-out is to
+  serve 404 or 410 to the user agent.
+docs:
+  - "https://www.upcontent.com/robots"
+category: feed-fetcher
+user_agents:
+  patterns:
+    - 'Sottopop/[\d.]+'
+  instances:
+    - 'Sottopop/1.0(+https://upcontent.com/robots)'
+# robots_token is recorded because UpContent prints the directive itself
+# ("you may use the line User-agent: Sottopop in your robots.txt file now"),
+# while respects_robots_txt stays false on the operator's own admission that
+# support is not yet implemented.
+behavior: { respects_robots_txt: false, robots_token: Sottopop }
+# The page invites a reverse DNS lookup to verify a server claiming to be
+# Sottopop but publishes no hostname suffix, address list or ASN, so no rdns
+# recipe can be written and this stays Tier 3. Re-check for a documented mask.
+verification: []

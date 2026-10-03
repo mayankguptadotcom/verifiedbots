@@ -1,0 +1,30 @@
+{
+  "id": "missinglettrbot",
+  "name": "MissinglettrBot",
+  "operator": {
+    "name": "Missinglettr",
+    "url": "https://missinglettr.com"
+  },
+  "description": "The fetcher behind Missinglettr's social-media campaign builder. The operator documents that it crawls a blog post or web page only when a Missinglettr customer submits that content, extracting it so the platform can auto-create social posts, and states explicitly that it does not crawl the web at large like a traditional search engine. Missinglettr documents robots.txt control with a worked MissinglettrBot block and notes that blocking it stops social campaigns being created from the site's content.",
+  "docs": [
+    "https://missinglettr.com/bot/"
+  ],
+  "category": "feed-fetcher",
+  "user_agents": {
+    "patterns": [
+      "MissinglettrBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; MissinglettrBot/2.0; +http://missinglettr.com/bot/)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "MissinglettrBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-03T13:31:02.196Z",
+  "resolved_cidrs": []
+}

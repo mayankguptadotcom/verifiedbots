@@ -526,6 +526,13 @@
     ]
   },
   {
+    "id": "conductor-monitoring",
+    "category": "seo",
+    "patterns": [
+      "Conductor Monitoring"
+    ]
+  },
+  {
     "id": "cookiebot-scanner",
     "category": "monitoring",
     "patterns": [
@@ -1418,6 +1425,13 @@
     ]
   },
   {
+    "id": "missinglettrbot",
+    "category": "feed-fetcher",
+    "patterns": [
+      "MissinglettrBot/\\d"
+    ]
+  },
+  {
     "id": "mistralai-index",
     "category": "ai-crawler",
     "patterns": [
@@ -1813,6 +1827,13 @@
     ]
   },
   {
+    "id": "scalepostbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "ScalePostBot/\\d"
+    ]
+  },
+  {
     "id": "scope3-crawler",
     "category": "seo",
     "patterns": [
@@ -2051,6 +2072,13 @@
     "category": "search-engine",
     "patterns": [
       "Sogou"
+    ]
+  },
+  {
+    "id": "sottopop",
+    "category": "feed-fetcher",
+    "patterns": [
+      "Sottopop/[\\d.]+"
     ]
   },
   {

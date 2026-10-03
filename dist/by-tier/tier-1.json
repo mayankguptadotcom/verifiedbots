@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-03T09:55:38.623Z",
-  "count": 86,
+  "generated_at": "2026-10-03T13:31:02.196Z",
+  "count": 88,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -2876,6 +2876,71 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "feeder-co",
+      "name": "Feeder Crawler",
+      "operator": {
+        "name": "Feeder",
+        "url": "https://feeder.co"
+      },
+      "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification. The operator publishes the addresses of its crawler servers, each with a reverse DNS name under feeder.co that resolves back to the same address, and offers the same list as JSON.",
+      "docs": [
+        "https://feeder.co/crawler"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "feeder\\.co(?:/crawler)?[;)]"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36",
+          "Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://feeder.co/1/service-urls/crawlers.json",
+          "format": "github_meta",
+          "selector": "ips"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.feeder.co"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-27T13:23:13.415Z",
+      "resolved_cidrs": [
+        "104.131.105.190/32",
+        "138.197.71.121/32",
+        "142.93.74.129/32",
+        "144.217.180.83/32",
+        "144.217.180.84/32",
+        "144.217.76.102/32",
+        "15.235.82.82/32",
+        "157.245.117.2/32",
+        "157.245.117.25/32",
+        "159.89.183.157/32",
+        "159.89.43.145/32",
+        "165.227.116.114/32",
+        "165.227.125.60/32",
+        "165.227.76.164/32",
+        "167.71.89.133/32",
+        "174.138.49.150/32",
+        "174.138.57.235/32",
+        "209.97.147.246/32",
+        "68.183.151.227/32",
+        "68.183.157.237/32"
+      ]
     },
     {
       "id": "geedo-crawler-products",
@@ -8585,6 +8650,53 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-09-23T13:22:16.850Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "linerbot",
+      "name": "LinerBot",
+      "operator": {
+        "name": "Liner",
+        "url": "https://liner.com"
+      },
+      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules. Liner also publishes the crawler's addresses as a JSON feed under the heading \"IP address ranges\", noting the pool may change over time.",
+      "docs": [
+        "https://docs.getliner.com/docs/linerbot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "LinerBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; LinerBot/1.0; +https://docs.getliner.com/docs/linerbot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "LinerBot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://docs.getliner.com/linerbot.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-09-21T13:18:16.867Z",
+      "resolved_cidrs": [
+        "34.121.11.68/32",
+        "34.134.213.56/32",
+        "34.16.62.88/32",
+        "34.171.199.186/32",
+        "34.29.166.174/32",
+        "34.29.23.49/32",
+        "34.29.249.74/32",
+        "34.66.1.86/32",
+        "35.224.198.28/32",
+        "35.226.131.201/32"
+      ]
     },
     {
       "id": "linkcheckerbot",

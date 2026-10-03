@@ -5,7 +5,7 @@
     "name": "Feeder",
     "url": "https://feeder.co"
   },
-  "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification.",
+  "description": "Crawler for Feeder, a hosted RSS reading service. The operator documents that it only fetches feeds users have actively subscribed to, that it acts as an agent on the user's behalf and therefore does not check robots.txt, and that rate limits can be arranged by contacting support. Its user agent is a browser-shaped string in which Feeder deliberately inserts the feeder.co identifier as the honest self-identification. The operator publishes the addresses of its crawler servers, each with a reverse DNS name under feeder.co that resolves back to the same address, and offers the same list as JSON.",
   "docs": [
     "https://feeder.co/crawler"
   ],
@@ -23,9 +23,43 @@
   "behavior": {
     "respects_robots_txt": false
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://feeder.co/1/service-urls/crawlers.json",
+      "format": "github_meta",
+      "selector": "ips"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.feeder.co"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-08-27T13:23:13.415Z",
-  "resolved_cidrs": []
+  "resolved_cidrs": [
+    "104.131.105.190/32",
+    "138.197.71.121/32",
+    "142.93.74.129/32",
+    "144.217.180.83/32",
+    "144.217.180.84/32",
+    "144.217.76.102/32",
+    "15.235.82.82/32",
+    "157.245.117.2/32",
+    "157.245.117.25/32",
+    "159.89.183.157/32",
+    "159.89.43.145/32",
+    "165.227.116.114/32",
+    "165.227.125.60/32",
+    "165.227.76.164/32",
+    "167.71.89.133/32",
+    "174.138.49.150/32",
+    "174.138.57.235/32",
+    "209.97.147.246/32",
+    "68.183.151.227/32",
+    "68.183.157.237/32"
+  ]
 }
