@@ -3,10 +3,14 @@ name: OnCrawl
 operator: { name: OnCrawl, url: "https://www.oncrawl.com" }
 description: >-
   OnCrawl's SEO crawler, used to analyze a customer's own site structure and
-  content for technical SEO reporting. OnCrawl's help docs describe no fixed
-  IP range; the bot's identity is user-configurable per crawl.
+  content for technical SEO reporting. OnCrawl publishes the fixed set of
+  static addresses its crawler uses — three in the EU (Belgium), which crawls
+  use by default, and three in the US available on request — and tells
+  customers to allow them. The bot's name is configurable per crawl, so the
+  user agent alone does not establish identity.
 docs:
   - "https://help.oncrawl.com/en/articles/2767653-oncrawl-crawler-how-does-the-oncrawl-bot-find-and-crawl-pages"
+  - "https://help.oncrawl.com/en/articles/2288662-what-ips-does-oncrawl-use-to-crawl-a-website"
 category: seo
 user_agents:
   patterns:
@@ -14,4 +18,16 @@ user_agents:
   instances:
     - 'Mozilla/5.0 (compatible; Oncrawl/1.0; +http://www.oncrawl.com/)'
 behavior: { respects_robots_txt: true, robots_token: Oncrawl }
-verification: []
+verification:
+  # The operator's help centre lists these as the complete set of static
+  # addresses OnCrawl crawls from, for customers to greenlist.
+  - type: static_cidrs
+    cidrs:
+      # EU (Belgium) — used by default
+      - "35.187.15.33/32"
+      - "35.187.69.66/32"
+      - "104.199.98.197/32"
+      # US — set up on request
+      - "35.199.9.128/32"
+      - "35.230.188.244/32"
+      - "35.245.139.31/32"

@@ -5,9 +5,10 @@
     "name": "Botify",
     "url": "https://www.botify.com"
   },
-  "description": "Botify's SEO crawler, used by its SiteCrawler product to analyze enterprise websites for search-indexing insights. Botify does not publish a fixed IP range or CIDR list for site owners to allowlist.",
+  "description": "Botify's SEO crawler, used by its SiteCrawler product to analyze enterprise websites for search-indexing insights. Botify publishes the addresses its crawls originate from and recommends site owners allow the full list, which it documents as shared by SiteCrawler, AlertPanel and SpeedWorkers. The crawler's user agent is configurable per crawl, so identity rests on the published ranges rather than the agent string alone.",
   "docs": [
-    "https://support.botify.com/en/articles/9108549-crawling-with-a-custom-user-agent"
+    "https://support.botify.com/en/articles/9108549-crawling-with-a-custom-user-agent",
+    "https://support.botify.com/en/articles/9108634-allowing-botify-ip-addresses"
   ],
   "category": "seo",
   "user_agents": {
@@ -22,9 +23,34 @@
     "respects_robots_txt": true,
     "robots_token": "Botify"
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "31.41.37.0/24",
+        "44.206.2.192/26",
+        "15.235.106.96/27",
+        "52.6.26.195/32",
+        "52.203.178.227/32",
+        "52.0.46.73/32",
+        "52.204.9.239/32",
+        "52.204.10.127/32",
+        "52.204.10.46/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
   "first_seen": "2026-07-08T19:13:49.571Z",
-  "resolved_cidrs": []
+  "resolved_cidrs": [
+    "15.235.106.96/27",
+    "31.41.37.0/24",
+    "44.206.2.192/26",
+    "52.0.46.73/32",
+    "52.203.178.227/32",
+    "52.204.10.127/32",
+    "52.204.10.46/32",
+    "52.204.9.239/32",
+    "52.6.26.195/32"
+  ]
 }

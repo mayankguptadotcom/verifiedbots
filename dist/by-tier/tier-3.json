@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-05T11:37:06.302Z",
-  "count": 158,
+  "generated_at": "2026-10-05T13:42:21.668Z",
+  "count": 156,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -397,36 +397,6 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
-      "resolved_cidrs": []
-    },
-    {
-      "id": "botify",
-      "name": "Botify",
-      "operator": {
-        "name": "Botify",
-        "url": "https://www.botify.com"
-      },
-      "description": "Botify's SEO crawler, used by its SiteCrawler product to analyze enterprise websites for search-indexing insights. Botify does not publish a fixed IP range or CIDR list for site owners to allowlist.",
-      "docs": [
-        "https://support.botify.com/en/articles/9108549-crawling-with-a-custom-user-agent"
-      ],
-      "category": "seo",
-      "user_agents": {
-        "patterns": [
-          "compatible; botify"
-        ],
-        "instances": [
-          "Mozilla/5.0 (compatible; botify; http://botify.com)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "Botify"
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
     },
     {
@@ -2744,36 +2714,6 @@
       },
       "behavior": {
         "respects_robots_txt": true
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-07-08T19:13:49.571Z",
-      "resolved_cidrs": []
-    },
-    {
-      "id": "oncrawl",
-      "name": "OnCrawl",
-      "operator": {
-        "name": "OnCrawl",
-        "url": "https://www.oncrawl.com"
-      },
-      "description": "OnCrawl's SEO crawler, used to analyze a customer's own site structure and content for technical SEO reporting. OnCrawl's help docs describe no fixed IP range; the bot's identity is user-configurable per crawl.",
-      "docs": [
-        "https://help.oncrawl.com/en/articles/2767653-oncrawl-crawler-how-does-the-oncrawl-bot-find-and-crawl-pages"
-      ],
-      "category": "seo",
-      "user_agents": {
-        "patterns": [
-          "Oncrawl/\\d"
-        ],
-        "instances": [
-          "Mozilla/5.0 (compatible; Oncrawl/1.0; +http://www.oncrawl.com/)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "Oncrawl"
       },
       "verification": [],
       "tier": 3,

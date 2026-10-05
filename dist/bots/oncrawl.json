@@ -5,9 +5,10 @@
     "name": "OnCrawl",
     "url": "https://www.oncrawl.com"
   },
-  "description": "OnCrawl's SEO crawler, used to analyze a customer's own site structure and content for technical SEO reporting. OnCrawl's help docs describe no fixed IP range; the bot's identity is user-configurable per crawl.",
+  "description": "OnCrawl's SEO crawler, used to analyze a customer's own site structure and content for technical SEO reporting. OnCrawl publishes the fixed set of static addresses its crawler uses — three in the EU (Belgium), which crawls use by default, and three in the US available on request — and tells customers to allow them. The bot's name is configurable per crawl, so the user agent alone does not establish identity.",
   "docs": [
-    "https://help.oncrawl.com/en/articles/2767653-oncrawl-crawler-how-does-the-oncrawl-bot-find-and-crawl-pages"
+    "https://help.oncrawl.com/en/articles/2767653-oncrawl-crawler-how-does-the-oncrawl-bot-find-and-crawl-pages",
+    "https://help.oncrawl.com/en/articles/2288662-what-ips-does-oncrawl-use-to-crawl-a-website"
   ],
   "category": "seo",
   "user_agents": {
@@ -22,9 +23,28 @@
     "respects_robots_txt": true,
     "robots_token": "Oncrawl"
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "35.187.15.33/32",
+        "35.187.69.66/32",
+        "104.199.98.197/32",
+        "35.199.9.128/32",
+        "35.230.188.244/32",
+        "35.245.139.31/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
   "first_seen": "2026-07-08T19:13:49.571Z",
-  "resolved_cidrs": []
+  "resolved_cidrs": [
+    "104.199.98.197/32",
+    "35.187.15.33/32",
+    "35.187.69.66/32",
+    "35.199.9.128/32",
+    "35.230.188.244/32",
+    "35.245.139.31/32"
+  ]
 }
