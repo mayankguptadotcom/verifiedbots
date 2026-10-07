@@ -1,0 +1,8 @@
+{
+  "url": "https://reflection.ai/bot/ips.json",
+  "fetched_at": "2026-10-07T13:39:48.596Z",
+  "ranges": [
+    "16.216.88.0/23",
+    "16.216.94.0/23"
+  ]
+}
