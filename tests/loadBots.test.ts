@@ -36,6 +36,23 @@ describe('loadBots', () => {
     writeFileSync(join(dir, 'b.yaml'), 'id: b\nname: B\n');
     expect(() => loadBots(dir)).toThrow(/a\.yaml[\s\S]*b\.yaml/);
   });
+  it('rejects two files describing the same bot', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'bots-'));
+    writeFileSync(join(dir, 'testbot.yaml'), MINIMAL);
+    writeFileSync(join(dir, 'testbot-dup.yaml'), MINIMAL.replace('id: testbot', 'id: testbot-dup'));
+    expect(() => loadBots(dir)).toThrow(/duplicate bot/);
+  });
+  it('allows differently named bots that share a documented UA instance', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'bots-'));
+    writeFileSync(join(dir, 'testbot.yaml'), MINIMAL);
+    writeFileSync(
+      join(dir, 'testbot-webhooks.yaml'),
+      MINIMAL.replace('id: testbot', 'id: testbot-webhooks')
+        .replace('name: TestBot', 'name: TestBot Webhooks')
+        .replace("patterns: ['TestBot/\\d']", "patterns: ['TestBot']"),
+    );
+    expect(loadBots(dir)).toHaveLength(2);
+  });
   it('loads the real seed dataset', () => {
     const bots = loadBots(new URL('../bots', import.meta.url).pathname);
     expect(bots.length).toBeGreaterThanOrEqual(6);

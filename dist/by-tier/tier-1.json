@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-07T11:09:07.043Z",
-  "count": 87,
+  "generated_at": "2026-10-07T13:37:45.193Z",
+  "count": 88,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -9878,6 +9878,51 @@
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
         "194.187.171.0/24"
+      ]
+    },
+    {
+      "id": "reflectionbot",
+      "name": "Reflectionbot",
+      "operator": {
+        "name": "Reflection AI",
+        "url": "https://reflection.ai"
+      },
+      "description": "The web crawler of Reflection AI, which visits publicly available pages to help build and improve the company's open models. Its bot page is unusually complete for an AI crawler: it names the single user-agent token the crawler uses, tells site owners to match on that token rather than the whole string, publishes the crawler's address ranges as a JSON feed, and states that the addresses reverse-resolve under the operator's own domain.",
+      "docs": [
+        "https://reflection.ai/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Reflectionbot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Reflectionbot/1.0; +https://reflection.ai/bot) Chrome/151.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Reflectionbot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://reflection.ai/bot/ips.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.reflection.ai"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-07T13:37:45.193Z",
+      "resolved_cidrs": [
+        "16.216.88.0/23",
+        "16.216.94.0/23"
       ]
     },
     {

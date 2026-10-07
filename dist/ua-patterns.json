@@ -1078,13 +1078,6 @@
     ]
   },
   {
-    "id": "icc-crawler",
-    "category": "ai-crawler",
-    "patterns": [
-      "ICC-Crawler"
-    ]
-  },
-  {
     "id": "iframely",
     "category": "social-preview",
     "patterns": [
@@ -1785,6 +1778,13 @@
     ]
   },
   {
+    "id": "reflectionbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "Reflectionbot/\\d"
+    ]
+  },
+  {
     "id": "repo-lookout-bot",
     "category": "security",
     "patterns": [
@@ -1950,13 +1950,6 @@
     "category": "seo",
     "patterns": [
       "SeobilityBot"
-    ]
-  },
-  {
-    "id": "seokicks",
-    "category": "seo",
-    "patterns": [
-      "SEOkicks"
     ]
   },
   {

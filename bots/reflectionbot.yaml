@@ -1,0 +1,36 @@
+id: reflectionbot
+name: Reflectionbot
+operator: { name: "Reflection AI", url: "https://reflection.ai" }
+description: >-
+  The web crawler of Reflection AI, which visits publicly available pages to
+  help build and improve the company's open models. Its bot page is unusually
+  complete for an AI crawler: it names the single user-agent token the crawler
+  uses, tells site owners to match on that token rather than the whole string,
+  publishes the crawler's address ranges as a JSON feed, and states that the
+  addresses reverse-resolve under the operator's own domain.
+docs:
+  - "https://reflection.ai/bot"
+category: ai-crawler
+user_agents:
+  # The operator's page prints this example string and states that
+  # Reflectionbot is the only user agent Reflection AI crawls with today,
+  # noting the version numbers may change.
+  patterns:
+    - 'Reflectionbot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Reflectionbot/1.0; +https://reflection.ai/bot) Chrome/151.0.0.0 Safari/537.36'
+# "Reflectionbot reads and honors robots.txt, and changes are typically picked
+# up within about a day"; the page asks site owners to use robots.txt rather
+# than blocking with HTTP 403.
+behavior: { respects_robots_txt: true, robots_token: Reflectionbot }
+verification:
+  # Feed linked from the bot page, served as application/json in the same
+  # "prefixes" shape as Google's and OpenAI's lists.
+  - type: cidr_feed
+    url: "https://reflection.ai/bot/ips.json"
+    format: prefixes
+  # The page states Reflectionbot's addresses "resolve to hostnames under
+  # reflection.ai". Forward-confirmed this session: 20 addresses sampled
+  # across both published ranges each reverse to reflectionbot-<a>-<b>.reflection.ai.
+  - type: rdns
+    masks: ["*.reflection.ai"]

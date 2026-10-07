@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-07T11:09:07.043Z",
+  "generated_at": "2026-10-07T13:37:45.193Z",
   "count": 40,
   "bots": [
     {
@@ -3502,47 +3502,6 @@
       ]
     },
     {
-      "id": "icc-crawler",
-      "name": "ICC-Crawler",
-      "operator": {
-        "name": "National Institute of Information and Communications Technology (NICT)",
-        "url": "https://ucri.nict.go.jp"
-      },
-      "description": "The web crawler of the Universal Communication Research Institute at Japan's National Institute of Information and Communications Technology. It collects web pages for NICT's research and development of information processing technologies including multilingual translation, information analysis and artificial intelligence, and NICT states that collected information and research products may be provided to third parties for joint or further research. The crawler page documents a load policy that caps connections per unit of time across a host's several addresses or hostnames.",
-      "docs": [
-        "https://ucri.nict.go.jp/en/icccrawler.html"
-      ],
-      "category": "ai-crawler",
-      "user_agents": {
-        "patterns": [
-          "ICC-Crawler"
-        ],
-        "instances": [
-          "ICC-Crawler/2.0 (Mozilla-compatible; ; http://ucri.nict.go.jp/en/icccrawler.html)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "ICC-Crawler"
-      },
-      "verification": [
-        {
-          "type": "static_cidrs",
-          "cidrs": [
-            "202.180.34.186/32",
-            "61.86.246.72/32"
-          ]
-        }
-      ],
-      "tier": 2,
-      "tier_label": "Verifiable",
-      "first_seen": "2026-09-23T13:22:16.850Z",
-      "resolved_cidrs": [
-        "202.180.34.186/32",
-        "61.86.246.72/32"
-      ]
-    },
-    {
       "id": "imagesift",
       "name": "ImagesiftBot",
       "operator": {
@@ -3981,9 +3940,9 @@
       "name": "ICC-Crawler",
       "operator": {
         "name": "National Institute of Information and Communications Technology (NICT)",
-        "url": "https://www.nict.go.jp/en/"
+        "url": "https://ucri.nict.go.jp"
       },
-      "description": "ICC-Crawler is a web crawler operated by Japan's NICT that collects web pages across the internet to build datasets for information and language processing research.",
+      "description": "The web crawler of the Universal Communication Research Institute at Japan's National Institute of Information and Communications Technology. It collects web pages for NICT's research and development of information processing technologies including multilingual translation, information analysis and artificial intelligence, and NICT states that collected information and research products may be provided to third parties for joint or further research. The crawler page documents a load policy that caps connections per unit of time across a host's several addresses or hostnames.",
       "docs": [
         "https://ucri.nict.go.jp/en/icccrawler.html"
       ],
@@ -3997,7 +3956,8 @@
         ]
       },
       "behavior": {
-        "respects_robots_txt": true
+        "respects_robots_txt": true,
+        "robots_token": "ICC-Crawler"
       },
       "verification": [
         {
@@ -4238,6 +4198,51 @@
         "3.92.37.95/32",
         "34.236.78.183/32",
         "52.20.17.105/32"
+      ]
+    },
+    {
+      "id": "reflectionbot",
+      "name": "Reflectionbot",
+      "operator": {
+        "name": "Reflection AI",
+        "url": "https://reflection.ai"
+      },
+      "description": "The web crawler of Reflection AI, which visits publicly available pages to help build and improve the company's open models. Its bot page is unusually complete for an AI crawler: it names the single user-agent token the crawler uses, tells site owners to match on that token rather than the whole string, publishes the crawler's address ranges as a JSON feed, and states that the addresses reverse-resolve under the operator's own domain.",
+      "docs": [
+        "https://reflection.ai/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Reflectionbot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Reflectionbot/1.0; +https://reflection.ai/bot) Chrome/151.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Reflectionbot"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://reflection.ai/bot/ips.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.reflection.ai"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-07T13:37:45.193Z",
+      "resolved_cidrs": [
+        "16.216.88.0/23",
+        "16.216.94.0/23"
       ]
     },
     {
