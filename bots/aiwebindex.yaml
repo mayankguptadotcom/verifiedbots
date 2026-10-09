@@ -1,0 +1,45 @@
+id: aiwebindex
+name: AIWebIndex
+operator: { name: "Aleksma Ai, Inc. (Lyrenth)", url: "https://lyrenth.com" }
+description: >-
+  The crawler behind Lyrenth, an index of the public web that serves each page
+  to software agents as a single structured "AIDocument". The operator states
+  the crawler is an indexer and not a model trainer, that it implements RFC 9309
+  robots.txt including Crawl-delay, Sitemap and HTTP 429/503 backoff, that it
+  fails closed when robots.txt cannot be read, and that it fetches at most once
+  every two seconds per domain across the whole fleet. The bot page offers three
+  independent ways to confirm a request: a published address feed, Web Bot Auth
+  request signatures, and forward-confirmed reverse DNS under lyrenth.com.
+docs:
+  - "https://lyrenth.com/bot"
+category: ai-crawler
+user_agents:
+  # Both strings are printed on the operator's bot page. The second is used for
+  # the domain-ownership verification probes described in the same section.
+  patterns:
+    - 'AIWebIndex/\d'
+  instances:
+    - 'AIWebIndex/2.0 (+https://lyrenth.com/bot; AI-readable web index)'
+    - 'AIWebIndex/2.0 verification (+https://lyrenth.com/bot)'
+behavior: { respects_robots_txt: true, robots_token: AIWebIndex }
+verification:
+  # Feed linked from the bot page as "our published list". Verified live this
+  # session: 200, application/json, Google/OpenAI-style "prefixes" shape, 22
+  # /32s, and a creationTime of 2026-08-16 — stable rather than fast-rotating.
+  # Its own "userAgents" array names this crawler and AIWebIndex-Agent.
+  - type: cidr_feed
+    url: "https://lyrenth.com/bot/ip-ranges.json"
+    format: prefixes
+  # "Requests carry a Web Bot Auth signature (RFC 9421); our public key
+  # directory is at api.lyrenth.com/.well-known/http-message-signatures-directory".
+  # Fetched live: 200 with the correct
+  # application/http-message-signatures-directory+json media type and one
+  # Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://api.lyrenth.com/.well-known/http-message-signatures-directory"
+  # "Every IP has forward-confirmed reverse DNS under lyrenth.com."
+  # Forward-confirmed this session rather than taken on trust: 11 of the 22
+  # published addresses each reverse to crawler-<n>.lyrenth.com or
+  # render-<n>.lyrenth.com and forward-resolve back to the same address.
+  - type: rdns
+    masks: ["*.lyrenth.com"]

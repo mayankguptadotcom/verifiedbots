@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-09T11:23:20.700Z",
-  "count": 136,
+  "generated_at": "2026-10-09T13:36:27.971Z",
+  "count": 137,
   "bots": [
     {
       "id": "addsearch",
@@ -8289,6 +8289,45 @@
         "52.208.235.127/32",
         "54.73.182.190/32",
         "63.32.130.39/32"
+      ]
+    },
+    {
+      "id": "domcopbot",
+      "name": "DomCopBot",
+      "operator": {
+        "name": "DomCop",
+        "url": "https://www.domcop.com"
+      },
+      "description": "The crawler behind DomCop's domain-research service. DomCop members ask it to crawl websites of their choice; it reads those pages, follows links to the depth the member chose and checks the domain behind every outgoing link to find expired domains, recording only the domain names of links that lead nowhere. It also reads a domain's robots.txt once per domain to establish whether a site is still live there. The operator documents robots.txt and Crawl-delay support, a minimum three seconds between requests to the same host, HTML-only fetches capped at 2 MB, and the single address the crawler requests from.",
+      "docs": [
+        "https://www.domcop.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "DomCopBot"
+        ],
+        "instances": [
+          "DomCopBot (https://www.domcop.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "DomCopBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "45.79.173.72/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": [
+        "45.79.173.72/32"
       ]
     },
     {

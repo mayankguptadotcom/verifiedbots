@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-09T11:23:20.700Z",
-  "count": 379,
+  "generated_at": "2026-10-09T13:36:27.971Z",
+  "count": 381,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -467,6 +467,144 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "aiwebindex",
+      "name": "AIWebIndex",
+      "operator": {
+        "name": "Aleksma Ai, Inc. (Lyrenth)",
+        "url": "https://lyrenth.com"
+      },
+      "description": "The crawler behind Lyrenth, an index of the public web that serves each page to software agents as a single structured \"AIDocument\". The operator states the crawler is an indexer and not a model trainer, that it implements RFC 9309 robots.txt including Crawl-delay, Sitemap and HTTP 429/503 backoff, that it fails closed when robots.txt cannot be read, and that it fetches at most once every two seconds per domain across the whole fleet. The bot page offers three independent ways to confirm a request: a published address feed, Web Bot Auth request signatures, and forward-confirmed reverse DNS under lyrenth.com.",
+      "docs": [
+        "https://lyrenth.com/bot"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "AIWebIndex/\\d"
+        ],
+        "instances": [
+          "AIWebIndex/2.0 (+https://lyrenth.com/bot; AI-readable web index)",
+          "AIWebIndex/2.0 verification (+https://lyrenth.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AIWebIndex"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://lyrenth.com/bot/ip-ranges.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://api.lyrenth.com/.well-known/http-message-signatures-directory"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.lyrenth.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-09T13:36:27.971Z",
+      "resolved_cidrs": [
+        "138.201.157.96/32",
+        "142.132.225.162/32",
+        "152.53.93.229/32",
+        "159.69.116.231/32",
+        "159.69.189.54/32",
+        "168.119.98.242/32",
+        "178.104.212.30/32",
+        "178.105.121.172/32",
+        "178.105.146.59/32",
+        "178.105.195.233/32",
+        "178.105.197.214/32",
+        "178.105.200.108/32",
+        "178.105.207.129/32",
+        "178.105.210.26/32",
+        "178.105.220.145/32",
+        "178.105.223.90/32",
+        "178.105.66.244/32",
+        "178.105.70.116/32",
+        "178.105.9.229/32",
+        "46.224.73.201/32",
+        "46.225.147.220/32",
+        "49.13.94.158/32"
+      ]
+    },
+    {
+      "id": "aiwebindex-agent",
+      "name": "AIWebIndex-Agent",
+      "operator": {
+        "name": "Aleksma Ai, Inc. (Lyrenth)",
+        "url": "https://lyrenth.com"
+      },
+      "description": "Lyrenth's on-demand fetcher. It identifies itself separately from the AIWebIndex crawler when a customer asks the index for a URL that is not in it yet, so site owners can tell scheduled crawling and on-demand fetches apart in their logs. The operator states both user agents honour robots.txt the same way, and the crawler's address feed covers this user agent too.",
+      "docs": [
+        "https://lyrenth.com/bot"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "AIWebIndex-Agent/\\d"
+        ],
+        "instances": [
+          "AIWebIndex-Agent/2.0 (+https://lyrenth.com/bot; on-demand index fetch)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://lyrenth.com/bot/ip-ranges.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://api.lyrenth.com/.well-known/http-message-signatures-directory"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.lyrenth.com"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-09T13:36:27.971Z",
+      "resolved_cidrs": [
+        "138.201.157.96/32",
+        "142.132.225.162/32",
+        "152.53.93.229/32",
+        "159.69.116.231/32",
+        "159.69.189.54/32",
+        "168.119.98.242/32",
+        "178.104.212.30/32",
+        "178.105.121.172/32",
+        "178.105.146.59/32",
+        "178.105.195.233/32",
+        "178.105.197.214/32",
+        "178.105.200.108/32",
+        "178.105.207.129/32",
+        "178.105.210.26/32",
+        "178.105.220.145/32",
+        "178.105.223.90/32",
+        "178.105.66.244/32",
+        "178.105.70.116/32",
+        "178.105.9.229/32",
+        "46.224.73.201/32",
+        "46.225.147.220/32",
+        "49.13.94.158/32"
+      ]
     },
     {
       "id": "alertsite",
@@ -11175,7 +11313,7 @@
         "name": "DomCop",
         "url": "https://www.domcop.com"
       },
-      "description": "DomCop's availability crawler, used by the domain-research service of the same name. The operator documents that it accesses only the robots.txt file, once per domain, and uses that request to establish whether a website is live on the domain.",
+      "description": "The crawler behind DomCop's domain-research service. DomCop members ask it to crawl websites of their choice; it reads those pages, follows links to the depth the member chose and checks the domain behind every outgoing link to find expired domains, recording only the domain names of links that lead nowhere. It also reads a domain's robots.txt once per domain to establish whether a site is still live there. The operator documents robots.txt and Crawl-delay support, a minimum three seconds between requests to the same host, HTML-only fetches capped at 2 MB, and the single address the crawler requests from.",
       "docs": [
         "https://www.domcop.com/bot"
       ],
@@ -11192,11 +11330,20 @@
         "respects_robots_txt": true,
         "robots_token": "DomCopBot"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "45.79.173.72/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "45.79.173.72/32"
+      ]
     },
     {
       "id": "doofinder",

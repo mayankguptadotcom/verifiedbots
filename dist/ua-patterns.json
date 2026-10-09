@@ -57,6 +57,20 @@
     ]
   },
   {
+    "id": "aiwebindex",
+    "category": "ai-crawler",
+    "patterns": [
+      "AIWebIndex/\\d"
+    ]
+  },
+  {
+    "id": "aiwebindex-agent",
+    "category": "ai-assistant",
+    "patterns": [
+      "AIWebIndex-Agent/\\d"
+    ]
+  },
+  {
     "id": "alertsite",
     "category": "monitoring",
     "patterns": [

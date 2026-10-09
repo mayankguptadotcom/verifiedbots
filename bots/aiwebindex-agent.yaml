@@ -1,0 +1,34 @@
+id: aiwebindex-agent
+name: AIWebIndex-Agent
+operator: { name: "Aleksma Ai, Inc. (Lyrenth)", url: "https://lyrenth.com" }
+description: >-
+  Lyrenth's on-demand fetcher. It identifies itself separately from the
+  AIWebIndex crawler when a customer asks the index for a URL that is not in it
+  yet, so site owners can tell scheduled crawling and on-demand fetches apart in
+  their logs. The operator states both user agents honour robots.txt the same
+  way, and the crawler's address feed covers this user agent too.
+docs:
+  - "https://lyrenth.com/bot"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'AIWebIndex-Agent/\d'
+  instances:
+    - 'AIWebIndex-Agent/2.0 (+https://lyrenth.com/bot; on-demand index fetch)'
+# The bot page states on-demand fetches "honor robots.txt the same way" as the
+# crawler, but the only opt-out token it documents is AIWebIndex, so no separate
+# robots token is claimed here.
+behavior: { respects_robots_txt: true }
+verification:
+  # Same three mechanisms as the AIWebIndex crawler, and scoped to this user
+  # agent by the feed itself: the JSON lists both
+  # "AIWebIndex/2.0 (+https://lyrenth.com/bot; AI-readable web index)" and
+  # "AIWebIndex-Agent/2.0 (+https://lyrenth.com/bot; on-demand index fetch)" in
+  # its "userAgents" array. All three were verified live this session.
+  - type: cidr_feed
+    url: "https://lyrenth.com/bot/ip-ranges.json"
+    format: prefixes
+  - type: web_bot_auth
+    signature_agent_url: "https://api.lyrenth.com/.well-known/http-message-signatures-directory"
+  - type: rdns
+    masks: ["*.lyrenth.com"]
