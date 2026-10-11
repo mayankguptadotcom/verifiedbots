@@ -278,6 +278,14 @@
     ]
   },
   {
+    "id": "bl-uk-lddc-bot",
+    "category": "archiver",
+    "patterns": [
+      "bl\\.uk_lddc_bot",
+      "bl\\.uk_lddc_renderbot"
+    ]
+  },
+  {
     "id": "bnf-crawler",
     "category": "archiver",
     "patterns": [

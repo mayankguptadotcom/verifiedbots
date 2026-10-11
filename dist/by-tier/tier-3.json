@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-11T10:53:20.671Z",
-  "count": 154,
+  "generated_at": "2026-10-11T13:35:18.236Z",
+  "count": 155,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -338,6 +338,39 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-28T19:51:24.263Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "bl-uk-lddc-bot",
+      "name": "bl.uk_lddc_bot",
+      "operator": {
+        "name": "The British Library (UK legal deposit libraries)",
+        "url": "https://www.bl.uk"
+      },
+      "description": "The web crawler of the UK legal deposit libraries, which harvests UK-published websites so that the British Library and the other five legal deposit libraries can archive online publications as they are entitled to do under legal deposit. It runs on Heritrix and is throttled to avoid taking too much bandwidth or overloading a site. A separate rendering component identifies itself as bl.uk_lddc_renderbot. The libraries state the crawler generally follows the robots.txt exclusion protocol and normally respects robots META tags, but that they may choose to overrule robots.txt in order to harvest content successfully — for example to collect JavaScript or CSS that robots.txt excludes. No IP ranges are published, so requests cannot be verified; the guidance for publishers who want to stop the crawl is to name it in robots.txt.",
+      "docs": [
+        "https://www.bl.uk/services/legal-deposit/web-archiving",
+        "https://www.nls.uk/guides/publishers/web-harvesting"
+      ],
+      "category": "archiver",
+      "user_agents": {
+        "patterns": [
+          "bl\\.uk_lddc_bot",
+          "bl\\.uk_lddc_renderbot"
+        ],
+        "instances": [
+          "bl.uk_lddc_bot",
+          "Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1 bl.uk_lddc_renderbot/2.0.0 (+ http://www.bl.uk/aboutus/legaldeposit/websites/websites/faqswebmaster/index.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "bl.uk_lddc_bot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-11T13:35:18.236Z",
       "resolved_cidrs": []
     },
     {
