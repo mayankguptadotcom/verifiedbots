@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-12T12:09:22.473Z",
+  "generated_at": "2026-10-13T11:54:31.768Z",
   "count": 91,
   "bots": [
     {
@@ -5894,8 +5894,7 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-10-01T13:49:51.902Z",
       "resolved_cidrs": [
-        "103.121.17.220/32",
-        "103.156.115.103/32"
+        "103.121.17.220/32"
       ]
     },
     {
