@@ -1,0 +1,37 @@
+id: powermapper
+name: PowerMapper
+operator:
+  name: PowerMapper Software
+  url: "https://www.powermapper.com"
+description: >-
+  The crawler behind PowerMapper Software's website testing tools — SortSite
+  and PowerMapper — which scan a site's pages for accessibility, broken links,
+  browser-compatibility and SEO problems and build visual sitemaps. The
+  operator documents one robots.txt user agent shared by all of its products
+  and tells site owners to allow it explicitly to bypass blocks meant for
+  other crawlers. It publishes no IP ranges or reverse-DNS method, so requests
+  cannot be attributed and the entry carries no verification recipe.
+docs:
+  - "https://www.powermapper.com/support/faq/tn-w17/"
+  - "https://www.powermapper.com/products/sortsite/rules/errcrawlblockedbyrobotstxt/"
+category: seo
+user_agents:
+  # Both of the cited pages document exactly one token, in the same words:
+  # "The PowerMapper user agent in robots.txt is understood by all PowerMapper
+  # products", with the sample entry `User-agent: PowerMapper` / `Allow: /`.
+  # No fuller instance string is published on either page, and the token is
+  # absent from arcjet/well-known-bots, so the documented token is recorded
+  # as-is (as with bl.uk_lddc_bot). Observed in the wild as a robots.txt
+  # group on www.britishmuseum.org during this run's sweep.
+  patterns:
+    - 'PowerMapper'
+  instances:
+    - 'PowerMapper'
+behavior: { respects_robots_txt: true, robots_token: PowerMapper }
+# The operator's SortSite technical overview
+# (https://www.powermapper.com/download/sortsite/sortsite-technical-overview.pdf,
+# read this run) states: "Like other well-behaved web crawlers, SortSite obeys
+# the Robots Exclusion Protocol (robots.txt)". Note the desktop products expose
+# an "Obey Robots.txt" option a customer can switch off, so robots obedience is
+# the documented default rather than an absolute guarantee.
+verification: []

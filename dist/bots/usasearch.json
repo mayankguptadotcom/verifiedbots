@@ -1,0 +1,42 @@
+{
+  "id": "usasearch",
+  "name": "usasearch (SearchGov)",
+  "operator": {
+    "name": "U.S. General Services Administration (Technology Transformation Services)",
+    "url": "https://www.gsa.gov"
+  },
+  "description": "The crawler for SearchGov (formerly Search.gov), the search service GSA's Technology Transformation Services runs for U.S. federal, state and local government websites. It indexes publicly accessible content only — the operator tells agencies not to register domains that serve secure content such as intranets — and agencies are told to allow it in robots.txt and to allowlist its two published source addresses. GSA's guidance names the user agent and the addresses but offers no feed or reverse-DNS method, so the addresses are recorded as static ranges.",
+  "docs": [
+    "https://digital.gov/guides/search/optimize",
+    "https://digital.gov/guides/search/about"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "usasearch"
+    ],
+    "instances": [
+      "usasearch"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "usasearch"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "23.22.149.231/32",
+        "35.169.255.4/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-10-13T13:38:51.424Z",
+  "resolved_cidrs": [
+    "23.22.149.231/32",
+    "35.169.255.4/32"
+  ]
+}

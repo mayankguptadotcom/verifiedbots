@@ -1735,6 +1735,13 @@
     ]
   },
   {
+    "id": "powermapper",
+    "category": "seo",
+    "patterns": [
+      "PowerMapper"
+    ]
+  },
+  {
     "id": "productsup-crawler",
     "category": "feed-fetcher",
     "patterns": [
@@ -2307,6 +2314,13 @@
     "patterns": [
       "urlsuma/[\\d.]+",
       "UrlSuMa\\.de crawler"
+    ]
+  },
+  {
+    "id": "usasearch",
+    "category": "search-engine",
+    "patterns": [
+      "usasearch"
     ]
   },
   {

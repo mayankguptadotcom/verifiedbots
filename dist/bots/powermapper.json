@@ -1,0 +1,31 @@
+{
+  "id": "powermapper",
+  "name": "PowerMapper",
+  "operator": {
+    "name": "PowerMapper Software",
+    "url": "https://www.powermapper.com"
+  },
+  "description": "The crawler behind PowerMapper Software's website testing tools — SortSite and PowerMapper — which scan a site's pages for accessibility, broken links, browser-compatibility and SEO problems and build visual sitemaps. The operator documents one robots.txt user agent shared by all of its products and tells site owners to allow it explicitly to bypass blocks meant for other crawlers. It publishes no IP ranges or reverse-DNS method, so requests cannot be attributed and the entry carries no verification recipe.",
+  "docs": [
+    "https://www.powermapper.com/support/faq/tn-w17/",
+    "https://www.powermapper.com/products/sortsite/rules/errcrawlblockedbyrobotstxt/"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "PowerMapper"
+    ],
+    "instances": [
+      "PowerMapper"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "PowerMapper"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-13T13:38:51.424Z",
+  "resolved_cidrs": []
+}
