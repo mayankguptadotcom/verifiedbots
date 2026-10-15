@@ -27,6 +27,13 @@
       "type": "cidr_feed",
       "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
       "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.ahrefs.com",
+        "*.ahrefs.net"
+      ]
     }
   ],
   "tier": 1,

@@ -121,6 +121,13 @@
     ]
   },
   {
+    "id": "amazon-quick-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "amazon-Quick-on-behalf-of-"
+    ]
+  },
+  {
     "id": "amazon-seller-initiated-listing",
     "category": "feed-fetcher",
     "patterns": [
@@ -1325,6 +1332,13 @@
       "LyonlBot/\\d",
       "LyonlBot-Image/\\d",
       "LyonlBot-News/\\d"
+    ]
+  },
+  {
+    "id": "mackerel-monitor",
+    "category": "monitoring",
+    "patterns": [
+      "mackerel-http-checker/"
     ]
   },
   {

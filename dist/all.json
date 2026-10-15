@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-15T09:12:53.937Z",
-  "count": 384,
+  "generated_at": "2026-10-15T13:34:42.375Z",
+  "count": 386,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -230,6 +230,13 @@
           "type": "cidr_feed",
           "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
           "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ahrefs.com",
+            "*.ahrefs.net"
+          ]
         }
       ],
       "tier": 1,
@@ -348,6 +355,13 @@
           "type": "cidr_feed",
           "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
           "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ahrefs.com",
+            "*.ahrefs.net"
+          ]
         }
       ],
       "tier": 1,
@@ -1341,6 +1355,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-23T13:22:16.850Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-quick-crawler",
+      "name": "Amazon Quick Web Crawler",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://aws.amazon.com"
+      },
+      "description": "The web crawler AWS runs for Amazon Quick, which fetches the website content an AWS customer has configured as a data source and indexes it into that customer's knowledge base. Like the Bedrock and Q Business crawlers it is customer-directed but operator-run. AWS documents that it respects the robots.txt protocol, honours user-agent, allow, disallow and crawl-delay fields, reads robots.txt per host, and that it crawls anyway when robots.txt cannot be fetched because of blocking, parsing errors or timeouts.",
+      "docs": [
+        "https://docs.aws.amazon.com/quicksuite/latest/userguide/web-crawler-integration.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "amazon-Quick-on-behalf-of-"
+        ],
+        "instances": [
+          "amazon-Quick-on-behalf-of-<UUID>"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-15T13:34:42.375Z",
       "resolved_cidrs": []
     },
     {
@@ -20695,6 +20738,60 @@
       "tier_label": "Listed only",
       "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "mackerel-monitor",
+      "name": "mackerel-http-checker",
+      "operator": {
+        "name": "Hatena Co., Ltd.",
+        "url": "https://www.hatena.ne.jp/"
+      },
+      "description": "The prober behind Mackerel's external URL monitoring. Mackerel is Hatena's hosted server-monitoring service; when a customer configures an external URL monitor, Mackerel requests that URL from its own servers on a schedule and alerts the customer when the response fails their conditions. It checks only the URLs a customer has configured and does not crawl or follow links. Hatena publishes the address ranges Mackerel sends from as a machine-readable feed covering both webhook notifications and these monitoring requests.",
+      "docs": [
+        "https://mackerel.io/docs/entry/external-monitoring",
+        "https://mackerel.io/ja/docs/entry/spec/metadata"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "mackerel-http-checker/"
+        ],
+        "instances": [
+          "mackerel-http-checker/x.y.z"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://mackerel.io/meta/ip-ranges.json",
+          "format": "github_meta",
+          "selector": "outgoing"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://mackerel.io/meta/ip-ranges.json",
+          "format": "github_meta",
+          "selector": "outgoing_ipv6"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-15T13:34:42.375Z",
+      "resolved_cidrs": [
+        "13.112.142.176/32",
+        "13.113.213.40/32",
+        "13.113.240.89/32",
+        "13.114.12.29/32",
+        "2406:da14:f83:2600::/56",
+        "52.193.111.118/32",
+        "52.196.125.133/32",
+        "52.197.186.229/32",
+        "52.198.79.40/32",
+        "52.68.245.9/32"
+      ]
     },
     {
       "id": "macocu",

@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-15T09:12:53.937Z",
+  "generated_at": "2026-10-15T13:34:42.375Z",
   "count": 86,
   "bots": [
     {
@@ -69,6 +69,13 @@
           "type": "cidr_feed",
           "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
           "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ahrefs.com",
+            "*.ahrefs.net"
+          ]
         }
       ],
       "tier": 1,
@@ -187,6 +194,13 @@
           "type": "cidr_feed",
           "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
           "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.ahrefs.com",
+            "*.ahrefs.net"
+          ]
         }
       ],
       "tier": 1,

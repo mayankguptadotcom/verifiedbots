@@ -18,3 +18,10 @@ verification:
   - type: cidr_feed
     url: "https://api.ahrefs.com/v3/public/crawler-ip-ranges"
     format: prefixes
+  # "The reverse DNS suffix of the IPs hostname is always ahrefs.com or
+  # ahrefs.net" — quoted from the operator's bot page, re-read in full this
+  # run. Not forward-confirmed here: this environment has no working reverse
+  # resolver (no dig/host/nslookup, and socket.gethostbyaddr fails even for
+  # 8.8.8.8), so the masks rest on the operator's statement alone.
+  - type: rdns
+    masks: ["*.ahrefs.com", "*.ahrefs.net"]

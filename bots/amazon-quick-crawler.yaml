@@ -1,0 +1,37 @@
+id: amazon-quick-crawler
+name: Amazon Quick Web Crawler
+operator: { name: Amazon, url: "https://aws.amazon.com" }
+description: >-
+  The web crawler AWS runs for Amazon Quick, which fetches the website content
+  an AWS customer has configured as a data source and indexes it into that
+  customer's knowledge base. Like the Bedrock and Q Business crawlers it is
+  customer-directed but operator-run. AWS documents that it respects the
+  robots.txt protocol, honours user-agent, allow, disallow and crawl-delay
+  fields, reads robots.txt per host, and that it crawls anyway when robots.txt
+  cannot be fetched because of blocking, parsing errors or timeouts.
+docs:
+  - "https://docs.aws.amazon.com/quicksuite/latest/userguide/web-crawler-integration.html"
+category: ai-crawler
+user_agents:
+  # AWS prints one identity for this crawler: "Identifies itself with the
+  # user-agent string `amazon-Quick-on-behalf-of-<UUID>` in request headers.
+  # You can target this user-agent in your `robots.txt` file to allow or
+  # disallow the crawler specifically." The UUID varies per integration, so the
+  # pattern anchors on the fixed prefix rather than a whole string — the same
+  # treatment as amazon-bedrock-knowledgebase-on-behalf-of in
+  # amazon-bedrock-crawler. The instance is the string as AWS prints it; no
+  # concrete UUID is published and arcjet has no record of this agent.
+  patterns:
+    - 'amazon-Quick-on-behalf-of-'
+  instances:
+    - 'amazon-Quick-on-behalf-of-<UUID>'
+# "Web Crawler respects the robots.txt protocol and honors user-agent and allow
+# or disallow directives." AWS names no short robots token for this crawler —
+# it tells site owners to target the user-agent string itself — so no
+# robots_token is asserted here.
+behavior: { respects_robots_txt: true }
+# No crawler-specific IP list is published. AWS's ip-ranges.json covers the
+# whole cloud, and this crawler can additionally run inside a customer's own
+# VPC with customer-chosen DNS, so no address recipe could attribute traffic
+# to it. Tier 3 on identity alone.
+verification: []

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-15T09:12:53.937Z",
-  "count": 41,
+  "generated_at": "2026-10-15T13:34:42.375Z",
+  "count": 42,
   "bots": [
     {
       "id": "ai2bot",
@@ -135,6 +135,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-21T13:18:16.867Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "amazon-quick-crawler",
+      "name": "Amazon Quick Web Crawler",
+      "operator": {
+        "name": "Amazon",
+        "url": "https://aws.amazon.com"
+      },
+      "description": "The web crawler AWS runs for Amazon Quick, which fetches the website content an AWS customer has configured as a data source and indexes it into that customer's knowledge base. Like the Bedrock and Q Business crawlers it is customer-directed but operator-run. AWS documents that it respects the robots.txt protocol, honours user-agent, allow, disallow and crawl-delay fields, reads robots.txt per host, and that it crawls anyway when robots.txt cannot be fetched because of blocking, parsing errors or timeouts.",
+      "docs": [
+        "https://docs.aws.amazon.com/quicksuite/latest/userguide/web-crawler-integration.html"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "amazon-Quick-on-behalf-of-"
+        ],
+        "instances": [
+          "amazon-Quick-on-behalf-of-<UUID>"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-15T13:34:42.375Z",
       "resolved_cidrs": []
     },
     {
