@@ -1,0 +1,33 @@
+id: se-ranking-crawler
+name: SEBot-WA
+operator: { name: SE Ranking, url: "https://seranking.com" }
+description: >-
+  SE Ranking's Website Audit crawler, which crawls a domain on demand when an
+  SE Ranking customer runs the Website Audit tool and reports SEO and
+  technical issues. It is distinct from SERankingBacklinksBot, the operator's
+  backlink crawler. SE Ranking runs the crawler from hosts under its own
+  sr-srv.net domain, so requests can be checked by reverse DNS.
+docs:
+  - "https://help.seranking.com/hc/en-us/articles/16335355751196-Verifying-SE-Ranking-Crawler-FAQ"
+category: seo
+user_agents:
+  patterns:
+    - 'SEBot-WA'
+  instances:
+    - 'SEBot-WA'
+# Website Audit runs on a customer's own site when they trigger it, and the UA
+# is user-configurable in the audit settings, so this is user-configured
+# service traffic. The operator's robots.txt behaviour could not be read this
+# run (help.seranking.com answers 403 behind a Cloudflare JS challenge on
+# every path and locale tried), so the conservative value is kept here and no
+# robots_token is claimed.
+behavior: { respects_robots_txt: false }
+verification:
+  # UA token and rDNS mask both come from arcjet/well-known-bots (fetched this
+  # run, id `se-ranking-crawler`, added 2026/10/16). The operator's own FAQ
+  # could not be fetched, so sr-srv.net was corroborated independently over
+  # DNS: it is a registered domain on Route53 nameservers carrying Google and
+  # GlobalSign site-verification TXT records, i.e. a company-controlled domain
+  # rather than a shared hosting suffix. Re-read the FAQ when it is reachable.
+  - type: rdns
+    masks: ["*.sr-srv.net"]

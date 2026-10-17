@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-17T08:38:50.692Z",
-  "count": 91,
+  "generated_at": "2026-10-17T13:26:18.038Z",
+  "count": 94,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -1700,6 +1700,41 @@
       "resolved_cidrs": []
     },
     {
+      "id": "context7-crawler",
+      "name": "Context7-Crawler",
+      "operator": {
+        "name": "Upstash",
+        "url": "https://context7.com"
+      },
+      "description": "Context7's documentation crawler, an Upstash project. It reads public documentation pages so that AI coding agents can retrieve and cite them, and the operator states the content is used for AI search with links back to the source rather than for model training. Requests are signed with HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme.",
+      "docs": [
+        "https://context7.com/crawler"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Context7-Crawler/\\d"
+        ],
+        "instances": [
+          "Context7-Crawler/1.0 (+https://context7.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Context7-Crawler"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://context7.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-17T13:26:18.038Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "cookiehub-scan",
       "name": "CookieHub Scanner",
       "operator": {
@@ -1921,6 +1956,10 @@
           "type": "cidr_feed",
           "url": "https://duckduckgo.com/duckassistbot.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://assistbot.duckduckgo.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -8655,6 +8694,41 @@
       ]
     },
     {
+      "id": "kernel-search",
+      "name": "KernelSearchBot",
+      "operator": {
+        "name": "Kernel",
+        "url": "https://www.kernel.sh"
+      },
+      "description": "Kernel's search crawler, which fetches pages to build search indexes and retrieval databases. The operator documents it as the Kernel-operated identity, distinct from the user-directed Kernel Agent, and signs its requests with HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme using the Signature-Agent https://search.bot.kernel.sh.",
+      "docs": [
+        "https://www.kernel.sh/docs/bots"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "KernelSearchBot"
+        ],
+        "instances": [
+          "KernelSearchBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "KernelSearchBot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://search.bot.kernel.sh/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-17T13:26:18.038Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "kimi-searchbot",
       "name": "Kimi-SearchBot",
       "operator": {
@@ -9623,6 +9697,42 @@
         "70.34.203.58/32",
         "95.179.211.184/32"
       ]
+    },
+    {
+      "id": "osanobot",
+      "name": "OsanoBot",
+      "operator": {
+        "name": "Osano",
+        "url": "https://www.osano.com"
+      },
+      "description": "Osano's web retrieval agent for Compliance Check, which loads pages on a customer's own monitored hostname to assess cookie, consent and privacy-signal behavior. Requests are signed with Ed25519 HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme with the Signature-Agent https://bots.osano.com, so they can be verified independently of source IP.",
+      "docs": [
+        "https://developers.osano.com/web-bot-auth",
+        "https://developers.osano.com/compliance-check/verified-bots/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "OsanoBot"
+        ],
+        "instances": [
+          "OsanoBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "OsanoBot"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://bots.osano.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-17T13:26:18.038Z",
+      "resolved_cidrs": []
     },
     {
       "id": "perplexity-user",

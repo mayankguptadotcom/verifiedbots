@@ -562,6 +562,13 @@
     ]
   },
   {
+    "id": "context7-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "Context7-Crawler/\\d"
+    ]
+  },
+  {
     "id": "cookiebot-scanner",
     "category": "monitoring",
     "patterns": [
@@ -1221,6 +1228,13 @@
     ]
   },
   {
+    "id": "kernel-search",
+    "category": "search-engine",
+    "patterns": [
+      "KernelSearchBot"
+    ]
+  },
+  {
     "id": "kimi-searchbot",
     "category": "ai-crawler",
     "patterns": [
@@ -1636,6 +1650,13 @@
     ]
   },
   {
+    "id": "osanobot",
+    "category": "monitoring",
+    "patterns": [
+      "OsanoBot"
+    ]
+  },
+  {
     "id": "outbrain",
     "category": "seo",
     "patterns": [
@@ -1895,6 +1916,13 @@
     "category": "monitoring",
     "patterns": [
       "Scrunchbot/[\\d.]+"
+    ]
+  },
+  {
+    "id": "se-ranking-crawler",
+    "category": "seo",
+    "patterns": [
+      "SEBot-WA"
     ]
   },
   {

@@ -1,0 +1,36 @@
+{
+  "id": "osanobot",
+  "name": "OsanoBot",
+  "operator": {
+    "name": "Osano",
+    "url": "https://www.osano.com"
+  },
+  "description": "Osano's web retrieval agent for Compliance Check, which loads pages on a customer's own monitored hostname to assess cookie, consent and privacy-signal behavior. Requests are signed with Ed25519 HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme with the Signature-Agent https://bots.osano.com, so they can be verified independently of source IP.",
+  "docs": [
+    "https://developers.osano.com/web-bot-auth",
+    "https://developers.osano.com/compliance-check/verified-bots/"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "OsanoBot"
+    ],
+    "instances": [
+      "OsanoBot"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "OsanoBot"
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://bots.osano.com/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-10-17T13:26:18.038Z",
+  "resolved_cidrs": []
+}

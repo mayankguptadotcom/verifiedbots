@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-17T08:38:50.692Z",
-  "count": 138,
+  "generated_at": "2026-10-17T13:26:18.038Z",
+  "count": 139,
   "bots": [
     {
       "id": "addsearch",
@@ -10989,6 +10989,42 @@
       "resolved_cidrs": [
         "34.70.81.55/32"
       ]
+    },
+    {
+      "id": "se-ranking-crawler",
+      "name": "SEBot-WA",
+      "operator": {
+        "name": "SE Ranking",
+        "url": "https://seranking.com"
+      },
+      "description": "SE Ranking's Website Audit crawler, which crawls a domain on demand when an SE Ranking customer runs the Website Audit tool and reports SEO and technical issues. It is distinct from SERankingBacklinksBot, the operator's backlink crawler. SE Ranking runs the crawler from hosts under its own sr-srv.net domain, so requests can be checked by reverse DNS.",
+      "docs": [
+        "https://help.seranking.com/hc/en-us/articles/16335355751196-Verifying-SE-Ranking-Crawler-FAQ"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SEBot-WA"
+        ],
+        "instances": [
+          "SEBot-WA"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.sr-srv.net"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-17T13:26:18.038Z",
+      "resolved_cidrs": []
     },
     {
       "id": "semrush-siteauditbot",

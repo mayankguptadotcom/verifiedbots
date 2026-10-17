@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-17T08:38:50.692Z",
+  "generated_at": "2026-10-17T13:26:18.038Z",
   "count": 16,
   "bots": [
     {
@@ -2559,6 +2559,10 @@
           "type": "cidr_feed",
           "url": "https://duckduckgo.com/duckassistbot.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://assistbot.duckduckgo.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

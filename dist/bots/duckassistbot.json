@@ -27,6 +27,10 @@
       "type": "cidr_feed",
       "url": "https://duckduckgo.com/duckassistbot.json",
       "format": "prefixes"
+    },
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://assistbot.duckduckgo.com/.well-known/http-message-signatures-directory"
     }
   ],
   "tier": 1,

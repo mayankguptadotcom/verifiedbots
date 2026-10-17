@@ -18,3 +18,10 @@ verification:
   - type: cidr_feed
     url: "https://duckduckgo.com/duckassistbot.json"
     format: prefixes
+  # Web Bot Auth directory declared by arcjet/well-known-bots and fetched live
+  # this run (200, application/http-message-signatures-directory+json, one
+  # Ed25519 key) on DuckDuckGo's own assistbot subdomain. DuckDuckGo's help
+  # page documents the UA and IP feed but does not itself mention signing, so
+  # re-check it for an operator statement.
+  - type: web_bot_auth
+    signature_agent_url: "https://assistbot.duckduckgo.com/.well-known/http-message-signatures-directory"

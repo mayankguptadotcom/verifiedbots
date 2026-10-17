@@ -1,0 +1,35 @@
+{
+  "id": "kernel-search",
+  "name": "KernelSearchBot",
+  "operator": {
+    "name": "Kernel",
+    "url": "https://www.kernel.sh"
+  },
+  "description": "Kernel's search crawler, which fetches pages to build search indexes and retrieval databases. The operator documents it as the Kernel-operated identity, distinct from the user-directed Kernel Agent, and signs its requests with HTTP Message Signatures (RFC 9421) under the Web Bot Auth scheme using the Signature-Agent https://search.bot.kernel.sh.",
+  "docs": [
+    "https://www.kernel.sh/docs/bots"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "KernelSearchBot"
+    ],
+    "instances": [
+      "KernelSearchBot"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "KernelSearchBot"
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://search.bot.kernel.sh/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-10-17T13:26:18.038Z",
+  "resolved_cidrs": []
+}
