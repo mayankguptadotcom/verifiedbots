@@ -1,0 +1,104 @@
+id: dotcom-monitor
+name: Dotcom-Monitor
+operator: { name: Dotcom-Monitor, url: "https://www.dotcom-monitor.com" }
+description: >-
+  The synthetic monitoring agent of Dotcom-Monitor's web monitoring platform,
+  which loads a customer's own sites and APIs from fixed monitoring locations
+  to check availability and performance. Dotcom-Monitor documents a product
+  identifier appended to the browser user agent of the engine running the
+  check: ServerView checks send DMBrowser/2.1 (SV), BrowserView checks
+  DMBrowser/2.1 (BV), and UserView scripted checks DMBrowser/2.1 (UV). It runs
+  only against targets the customer configured, so it is not a crawler and
+  Dotcom-Monitor documents no robots.txt handling for it.
+docs:
+  - "https://www.dotcom-monitor.com/wiki/knowledge-base/monitoring-location-ip-addresses/"
+  - "https://www.dotcom-monitor.com/wiki/knowledge-base/network-location-ip-addresses"
+category: monitoring
+user_agents:
+  patterns:
+    - 'DMBrowser/[\d.]+ \((?:SV|BV|UV)\)'
+  instances:
+    - 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0; .NET CLR 1.1.4322; .NET CLR 1.0.3705; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729) DMBrowser/2.1 (SV)'
+    - 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 DMBrowser/2.1 (BV)'
+    - 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 DMBrowser/2.1 (UV)'
+behavior:
+  respects_robots_txt: false
+verification:
+  - type: static_cidrs
+    cidrs:
+      - "5.255.77.225/32"
+      - "5.255.77.226/32"
+      - "5.255.77.227/32"
+      - "8.29.57.100/32"
+      - "8.29.57.102/32"
+      - "8.29.57.103/32"
+      - "8.29.57.105/32"
+      - "8.134.33.121/32"
+      - "8.134.35.216/32"
+      - "46.248.187.100/32"
+      - "46.248.187.101/32"
+      - "47.104.1.98/32"
+      - "47.105.112.158/32"
+      - "47.108.30.196/32"
+      - "47.108.182.80/32"
+      - "47.119.122.121/32"
+      - "47.119.149.69/32"
+      - "59.110.156.123/32"
+      - "65.49.22.66/32"
+      - "65.49.22.72/32"
+      - "65.49.22.73/32"
+      - "69.162.81.155/32"
+      - "69.162.81.156/32"
+      - "69.162.81.157/32"
+      - "82.180.144.149/32"
+      - "92.204.243.227/32"
+      - "92.204.243.228/32"
+      - "101.0.86.43/32"
+      - "101.0.86.44/32"
+      - "101.132.103.113/32"
+      - "103.230.15.118/32"
+      - "103.230.15.119/32"
+      - "106.14.156.213/32"
+      - "108.163.153.6/32"
+      - "108.163.153.7/32"
+      - "122.128.106.143/32"
+      - "123.56.223.180/32"
+      - "131.255.7.26/32"
+      - "131.255.7.27/32"
+      - "144.48.104.219/32"
+      - "144.48.104.220/32"
+      - "144.126.146.105/32"
+      - "154.12.246.225/32"
+      - "155.212.242.85/32"
+      - "156.67.111.96/32"
+      - "162.254.206.227/32"
+      - "162.254.206.228/32"
+      - "162.254.206.229/32"
+      - "180.188.198.162/32"
+      - "185.158.241.176/32"
+      - "185.158.241.177/32"
+      - "185.158.241.178/32"
+      - "185.206.224.67/32"
+      - "185.206.224.68/32"
+      - "185.229.226.83/32"
+      - "185.229.226.130/32"
+      - "185.235.10.211/32"
+      - "185.235.10.212/32"
+      - "192.199.248.74/32"
+      - "192.199.248.75/32"
+      - "192.199.248.76/32"
+      - "195.201.213.233/32"
+      - "195.201.213.247/32"
+      - "197.221.23.194/32"
+      - "197.221.23.197/32"
+      - "200.7.98.19/32"
+      - "200.7.98.20/32"
+      - "206.71.50.230/32"
+      - "206.71.50.231/32"
+      - "206.71.50.232/32"
+      - "207.228.238.7/32"
+      - "207.228.238.188/32"
+      - "207.228.238.192/32"
+      - "212.46.38.67/32"
+      - "223.252.19.130/32"
+      - "223.252.19.131/32"

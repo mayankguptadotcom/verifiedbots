@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-19T10:01:28.208Z",
-  "count": 15,
+  "generated_at": "2026-10-19T13:17:36.255Z",
+  "count": 16,
   "bots": [
     {
       "id": "censys",
@@ -333,6 +333,52 @@
       "first_seen": "2026-08-29T13:18:16.426Z",
       "resolved_cidrs": [
         "185.114.175.0/24"
+      ]
+    },
+    {
+      "id": "halo-security",
+      "name": "Halo Security",
+      "operator": {
+        "name": "Halo Security",
+        "url": "https://www.halosecurity.com"
+      },
+      "description": "The scanning engine of Halo Security's attack-surface-management platform, which probes web applications a customer has added as a target to find vulnerabilities and inventory their external assets. Halo Security documents that it appends the string vuln_scan_by_trustedsite_com_halo_security to the User-Agent header so site owners can tell its traffic apart, and publishes the network ranges its scanners and web-preview \"webshot\" service originate from. It scans only customer-configured targets rather than crawling the open web, so Halo Security documents no robots.txt handling for it.",
+      "docs": [
+        "https://docs.halosecurity.com/docs/platform/targets/scan-configuration"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "vuln_scan_by_trustedsite_com_halo_security"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_10_3; en-us) AppleWebKit/600.6.3 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/600.6.3 vuln_scan_by_trustedsite_com_halo_security"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "3.18.82.183/32",
+            "54.187.125.96/32",
+            "64.39.96.0/20",
+            "74.82.62.128/26",
+            "139.87.112.0/23"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-19T13:17:36.255Z",
+      "resolved_cidrs": [
+        "139.87.112.0/23",
+        "3.18.82.183/32",
+        "54.187.125.96/32",
+        "64.39.96.0/20",
+        "74.82.62.128/26"
       ]
     },
     {

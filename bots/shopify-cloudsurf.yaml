@@ -1,0 +1,26 @@
+id: shopify-cloudsurf
+name: Cloudsurf
+operator: { name: Shopify, url: "https://www.shopify.com" }
+description: >-
+  Shopify's cloud browser agent, which loads pages so that Shopify AI agents
+  such as Sidekick can act on a merchant's or customer's request, and so that
+  Shopify tools can screenshot pages and check them for display problems. It
+  visits a page only when a Shopify tool directs it to and does not crawl or
+  index the web on its own. Shopify documents that the Cloudsurf token is
+  appended to the standard user agent of the browser running the session, so
+  the browser prefix varies; requests from mobile-emulation tools carry a plain
+  phone user agent with no Cloudsurf token at all, which is why Shopify directs
+  site owners to verify the Web Bot Auth signature rather than the user agent.
+docs:
+  - "https://help.shopify.com/en/manual/intro-to-shopify/bots/cloudsurf"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'Shopify/Cloudsurf \(bot;'
+  instances:
+    - 'Shopify/Cloudsurf (bot; +https://www.shopify.com)'
+behavior:
+  respects_robots_txt: false
+verification:
+  - type: web_bot_auth
+    signature_agent_url: "https://cloudsurf.shopify.io/.well-known/http-message-signatures-directory"

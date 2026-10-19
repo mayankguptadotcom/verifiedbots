@@ -710,6 +710,13 @@
     ]
   },
   {
+    "id": "dotcom-monitor",
+    "category": "monitoring",
+    "patterns": [
+      "DMBrowser/[\\d.]+ \\((?:SV|BV|UV)\\)"
+    ]
+  },
+  {
     "id": "dragonbot",
     "category": "seo",
     "patterns": [
@@ -986,6 +993,7 @@
     "category": "search-engine",
     "patterns": [
       "AdsBot-Google",
+      "AdsBot-Google-Mobile",
       "Mediapartners-Google",
       "Google-Safety"
     ]
@@ -1044,6 +1052,13 @@
     "category": "monitoring",
     "patterns": [
       "synthetic-monitoring-agent/v[\\d.]+"
+    ]
+  },
+  {
+    "id": "halo-security",
+    "category": "security",
+    "patterns": [
+      "vuln_scan_by_trustedsite_com_halo_security"
     ]
   },
   {
@@ -2056,6 +2071,13 @@
     "category": "ai-crawler",
     "patterns": [
       "ShapBot/\\d"
+    ]
+  },
+  {
+    "id": "shopify-cloudsurf",
+    "category": "ai-assistant",
+    "patterns": [
+      "Shopify/Cloudsurf \\(bot;"
     ]
   },
   {

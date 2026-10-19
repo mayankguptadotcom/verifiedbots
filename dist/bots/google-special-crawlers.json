@@ -5,7 +5,7 @@
     "name": "Google",
     "url": "https://www.google.com"
   },
-  "description": "A group of Google crawlers that operate under separate agreements between the crawled site and a specific Google product (AdsBot, AdSense, Google Safety scanning, and similar). Several members of this group ignore the wildcard robots.txt rule and must be targeted explicitly.",
+  "description": "A group of Google crawlers that operate under separate agreements between the crawled site and a specific Google product (AdsBot, AdSense, Google Safety scanning, and similar). Several members of this group ignore the wildcard robots.txt rule and must be targeted explicitly. Google documents AdsBot-Google-Mobile, which checks ad quality on mobile web pages, as a current member of the group alongside AdsBot-Google; the group crawls from its own published IP ranges, separate from the common crawlers, and under the reverse-DNS mask rate-limited-proxy-***-***-***-***.google.com.",
   "docs": [
     "https://developers.google.com/crawling/docs/crawlers-fetchers/google-special-case-crawlers"
   ],
@@ -13,11 +13,13 @@
   "user_agents": {
     "patterns": [
       "AdsBot-Google",
+      "AdsBot-Google-Mobile",
       "Mediapartners-Google",
       "Google-Safety"
     ],
     "instances": [
       "AdsBot-Google (+http://www.google.com/adsbot.html)",
+      "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; AdsBot-Google-Mobile; +http://www.google.com/mobile/adsbot.html)",
       "Mediapartners-Google",
       "Google-Safety"
     ]

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-19T10:01:28.208Z",
-  "count": 94,
+  "generated_at": "2026-10-19T13:17:36.255Z",
+  "count": 95,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -5211,7 +5211,7 @@
         "name": "Google",
         "url": "https://www.google.com"
       },
-      "description": "A group of Google crawlers that operate under separate agreements between the crawled site and a specific Google product (AdsBot, AdSense, Google Safety scanning, and similar). Several members of this group ignore the wildcard robots.txt rule and must be targeted explicitly.",
+      "description": "A group of Google crawlers that operate under separate agreements between the crawled site and a specific Google product (AdsBot, AdSense, Google Safety scanning, and similar). Several members of this group ignore the wildcard robots.txt rule and must be targeted explicitly. Google documents AdsBot-Google-Mobile, which checks ad quality on mobile web pages, as a current member of the group alongside AdsBot-Google; the group crawls from its own published IP ranges, separate from the common crawlers, and under the reverse-DNS mask rate-limited-proxy-***-***-***-***.google.com.",
       "docs": [
         "https://developers.google.com/crawling/docs/crawlers-fetchers/google-special-case-crawlers"
       ],
@@ -5219,11 +5219,13 @@
       "user_agents": {
         "patterns": [
           "AdsBot-Google",
+          "AdsBot-Google-Mobile",
           "Mediapartners-Google",
           "Google-Safety"
         ],
         "instances": [
           "AdsBot-Google (+http://www.google.com/adsbot.html)",
+          "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; AdsBot-Google-Mobile; +http://www.google.com/mobile/adsbot.html)",
           "Mediapartners-Google",
           "Google-Safety"
         ]
@@ -11560,6 +11562,40 @@
         "34.70.129.79/32",
         "34.9.172.22/32"
       ]
+    },
+    {
+      "id": "shopify-cloudsurf",
+      "name": "Cloudsurf",
+      "operator": {
+        "name": "Shopify",
+        "url": "https://www.shopify.com"
+      },
+      "description": "Shopify's cloud browser agent, which loads pages so that Shopify AI agents such as Sidekick can act on a merchant's or customer's request, and so that Shopify tools can screenshot pages and check them for display problems. It visits a page only when a Shopify tool directs it to and does not crawl or index the web on its own. Shopify documents that the Cloudsurf token is appended to the standard user agent of the browser running the session, so the browser prefix varies; requests from mobile-emulation tools carry a plain phone user agent with no Cloudsurf token at all, which is why Shopify directs site owners to verify the Web Bot Auth signature rather than the user agent.",
+      "docs": [
+        "https://help.shopify.com/en/manual/intro-to-shopify/bots/cloudsurf"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Shopify/Cloudsurf \\(bot;"
+        ],
+        "instances": [
+          "Shopify/Cloudsurf (bot; +https://www.shopify.com)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://cloudsurf.shopify.io/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-19T13:17:36.255Z",
+      "resolved_cidrs": []
     },
     {
       "id": "site24x7",
