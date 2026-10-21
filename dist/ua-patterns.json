@@ -21,6 +21,13 @@
     ]
   },
   {
+    "id": "adobe-edge-optimize",
+    "category": "seo",
+    "patterns": [
+      "AdobeEdgeOptimize/\\d"
+    ]
+  },
+  {
     "id": "ads-naver",
     "category": "seo",
     "patterns": [
@@ -1184,6 +1191,13 @@
     "category": "security",
     "patterns": [
       "InternetMeasurement/[\\d.]+"
+    ]
+  },
+  {
+    "id": "internetvista-monitor",
+    "category": "monitoring",
+    "patterns": [
+      "internetvista monitor"
     ]
   },
   {

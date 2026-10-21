@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-21T09:25:32.405Z",
-  "count": 393,
+  "generated_at": "2026-10-21T13:22:56.517Z",
+  "count": 395,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -126,6 +126,35 @@
       "tier": 2,
       "tier_label": "Verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "adobe-edge-optimize",
+      "name": "AdobeEdgeOptimize",
+      "operator": {
+        "name": "Adobe",
+        "url": "https://www.adobe.com"
+      },
+      "description": "The origin fetcher behind Adobe's Optimize at Edge capability, which sits at a site's CDN and serves pre-rendered or optimized versions of pages to AI agents. Adobe documents that the fetcher must be allowlisted by user agent in robots.txt and in WAF or bot-management rules so it can reach the origin, and that pages without a deployed optimization are proxied unchanged.",
+      "docs": [
+        "https://experienceleague.adobe.com/en/docs/llm-optimizer/using/resources/optimize-at-edge/overview"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AdobeEdgeOptimize/\\d"
+        ],
+        "instances": [
+          "AdobeEdgeOptimize/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-21T13:22:56.517Z",
       "resolved_cidrs": []
     },
     {
@@ -20151,6 +20180,68 @@
       ]
     },
     {
+      "id": "internetvista-monitor",
+      "name": "internetVista monitor",
+      "operator": {
+        "name": "internetVista",
+        "url": "https://www.internetvista.com"
+      },
+      "description": "internetVista's uptime-monitoring probes, which request customer URLs from a fixed set of monitoring centres in ten cities. The operator documents the user agent and publishes each centre's IPv4 and IPv6 address, both as a table and as two plain-text lists it tells customers to use for firewall configuration. The probes download only a page's HTML and do not execute JavaScript.",
+      "docs": [
+        "https://www.internetvista.com/en/website-monitoring-user-agent.htm",
+        "https://www.internetvista.com/en/what-are-monitoring-centers-ip-addresses.htm"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "internetvista monitor"
+        ],
+        "instances": [
+          "internetvista monitor (Mozilla compatible)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.internetvista.com/monitoring-centers-ipv4.htm",
+          "format": "text_lines"
+        },
+        {
+          "type": "cidr_feed",
+          "url": "https://www.internetvista.com/monitoring-centers-ipv6.htm",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-21T13:22:56.517Z",
+      "resolved_cidrs": [
+        "109.69.218.20/32",
+        "145.239.6.150/32",
+        "178.170.62.47/32",
+        "192.99.63.84/32",
+        "2001:1af8:4100:a066:4::/128",
+        "2001:41d0:203:84bc::1/128",
+        "2001:41d0:800:296::/128",
+        "2605:9f80:c000:88::2/128",
+        "2607:5300:61:54::1/128",
+        "2a00:8da0::a:2/128",
+        "2a00:c70:1:178:170:62:47:1/128",
+        "2a01:4f8:120:92c3::2/128",
+        "2a02:752:100:d::100/128",
+        "2a03:2040:0:207::42/128",
+        "37.35.105.42/32",
+        "46.21.97.228/32",
+        "51.210.1.188/32",
+        "66.23.200.98/32",
+        "78.46.102.213/32",
+        "85.17.224.82/32"
+      ]
+    },
+    {
       "id": "ioncrawl",
       "name": "IONOS Crawler",
       "operator": {
@@ -28886,7 +28977,7 @@
         "name": "Telegram",
         "url": "https://telegram.org"
       },
-      "description": "Telegram's fetcher for generating link previews in chats. Telegram's docs document static CIDR ranges only for inbound webhook delivery to bot servers, not for this outbound preview fetcher, so no IP verification is attached here.",
+      "description": "Telegram's fetcher for generating link previews in chats. Telegram publishes the network ranges its infrastructure uses as a plain-text list on its own documentation host, which is what attributes a request to Telegram; the separate webhook guide documents only the two subnets used for inbound webhook delivery to bot servers.",
       "docs": [
         "https://core.telegram.org/bots/webhooks"
       ],
@@ -28902,11 +28993,32 @@
       "behavior": {
         "respects_robots_txt": false
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://core.telegram.org/resources/cidr.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "149.154.160.0/20",
+        "185.76.151.0/24",
+        "2001:67c:4e8::/48",
+        "2001:b28:f23c::/48",
+        "2001:b28:f23d::/48",
+        "2001:b28:f23f::/48",
+        "2a0a:f280::/32",
+        "91.105.192.0/23",
+        "91.108.12.0/22",
+        "91.108.16.0/22",
+        "91.108.20.0/22",
+        "91.108.4.0/22",
+        "91.108.56.0/22",
+        "91.108.8.0/22"
+      ]
     },
     {
       "id": "testomato",

@@ -1,0 +1,35 @@
+id: internetvista-monitor
+name: internetVista monitor
+operator: { name: internetVista, url: "https://www.internetvista.com" }
+description: >-
+  internetVista's uptime-monitoring probes, which request customer URLs from a
+  fixed set of monitoring centres in ten cities. The operator documents the
+  user agent and publishes each centre's IPv4 and IPv6 address, both as a table
+  and as two plain-text lists it tells customers to use for firewall
+  configuration. The probes download only a page's HTML and do not execute
+  JavaScript.
+docs:
+  - "https://www.internetvista.com/en/website-monitoring-user-agent.htm"
+  - "https://www.internetvista.com/en/what-are-monitoring-centers-ip-addresses.htm"
+category: monitoring
+user_agents:
+  # The operator's user-agent page prints the string in full. The pattern
+  # matches on the distinctive leading token rather than the whole string,
+  # because customers may override the header per monitored application.
+  patterns:
+    - 'internetvista monitor'
+  instances:
+    - 'internetvista monitor (Mozilla compatible)'
+# User-configured monitoring of the customer's own URLs, not crawling; the
+# operator's pages say nothing about robots.txt.
+behavior: { respects_robots_txt: false }
+verification:
+  # Two plain-text lists linked from the monitoring-centre IP page, one per
+  # address family. Fetched live this session: both 200 text/plain, ten bare
+  # addresses each, one per monitoring centre.
+  - type: cidr_feed
+    url: "https://www.internetvista.com/monitoring-centers-ipv4.htm"
+    format: text_lines
+  - type: cidr_feed
+    url: "https://www.internetvista.com/monitoring-centers-ipv6.htm"
+    format: text_lines

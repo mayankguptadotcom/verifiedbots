@@ -1,8 +1,37 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-21T09:25:32.405Z",
-  "count": 87,
+  "generated_at": "2026-10-21T13:22:56.517Z",
+  "count": 88,
   "bots": [
+    {
+      "id": "adobe-edge-optimize",
+      "name": "AdobeEdgeOptimize",
+      "operator": {
+        "name": "Adobe",
+        "url": "https://www.adobe.com"
+      },
+      "description": "The origin fetcher behind Adobe's Optimize at Edge capability, which sits at a site's CDN and serves pre-rendered or optimized versions of pages to AI agents. Adobe documents that the fetcher must be allowlisted by user agent in robots.txt and in WAF or bot-management rules so it can reach the origin, and that pages without a deployed optimization are proxied unchanged.",
+      "docs": [
+        "https://experienceleague.adobe.com/en/docs/llm-optimizer/using/resources/optimize-at-edge/overview"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "AdobeEdgeOptimize/\\d"
+        ],
+        "instances": [
+          "AdobeEdgeOptimize/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-21T13:22:56.517Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "ads-naver",
       "name": "Ads-Naver",

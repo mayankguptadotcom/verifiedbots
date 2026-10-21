@@ -2,10 +2,11 @@ id: telegrambot
 name: TelegramBot (link preview)
 operator: { name: Telegram, url: "https://telegram.org" }
 description: >-
-  Telegram's fetcher for generating link previews in chats. Telegram's docs
-  document static CIDR ranges only for inbound webhook delivery to bot
-  servers, not for this outbound preview fetcher, so no IP verification is
-  attached here.
+  Telegram's fetcher for generating link previews in chats. Telegram publishes
+  the network ranges its infrastructure uses as a plain-text list on its own
+  documentation host, which is what attributes a request to Telegram; the
+  separate webhook guide documents only the two subnets used for inbound
+  webhook delivery to bot servers.
 docs:
   - "https://core.telegram.org/bots/webhooks"
 category: social-preview
@@ -15,4 +16,11 @@ user_agents:
   instances:
     - 'TelegramBot (like TwitterBot)'
 behavior: { respects_robots_txt: false }
-verification: []
+verification:
+  # Telegram's own CIDR list, served from core.telegram.org. arcjet pairs this
+  # feed with the same `TelegramBot` pattern and instance this entry carries.
+  # Fetched live this session: 200 text/plain, 9 IPv4 and 5 IPv6 prefixes,
+  # a superset of the two subnets the webhook guide documents.
+  - type: cidr_feed
+    url: "https://core.telegram.org/resources/cidr.txt"
+    format: text_lines

@@ -1,0 +1,31 @@
+id: adobe-edge-optimize
+name: AdobeEdgeOptimize
+operator: { name: Adobe, url: "https://www.adobe.com" }
+description: >-
+  The origin fetcher behind Adobe's Optimize at Edge capability, which sits at
+  a site's CDN and serves pre-rendered or optimized versions of pages to AI
+  agents. Adobe documents that the fetcher must be allowlisted by user agent in
+  robots.txt and in WAF or bot-management rules so it can reach the origin, and
+  that pages without a deployed optimization are proxied unchanged.
+docs:
+  - "https://experienceleague.adobe.com/en/docs/llm-optimizer/using/resources/optimize-at-edge/overview"
+category: seo
+user_agents:
+  # Adobe's onboarding requirements print the token as the user agent to
+  # allowlist. No full UA string is published, so the pattern matches the
+  # documented token only.
+  patterns:
+    - 'AdobeEdgeOptimize/\d'
+  instances:
+    - 'AdobeEdgeOptimize/1.0'
+# Adobe tells site owners to allowlist the agent in robots.txt, i.e. the
+# fetcher is subject to robots.txt. No robots token is recorded because Adobe
+# prints the string wildcarded (*AdobeEdgeOptimize/1.0*) as a bot-rule pattern
+# rather than as a robots.txt user-agent line.
+behavior: { respects_robots_txt: true }
+# Adobe publishes no addresses, ranges, ASN or rDNS suffix for the fetcher.
+# The only verification it offers is an optional x-edgeoptimize-fetcher-key
+# header whose value the customer chooses, which is a shared secret between
+# Adobe and that one customer rather than a recipe anyone can check, so this
+# stays Tier 3.
+verification: []
