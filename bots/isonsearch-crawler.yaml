@@ -45,14 +45,23 @@ verification:
   - type: cidr_feed
     url: "https://search.isonai.com/bot/ips.json"
     format: prefixes
-  # Added this run from Epithre's bots page (docs.isonai.com/en/bots/, now
-  # cited above), which documents a second mechanism the crawler's own page
-  # does not: "Both agents support HTTP Message Signatures (Web Bot Auth) ...
-  # IsonSearchBot: Signature-Agent is "https://search.isonai.com", with public
-  # keys in the IsonSearchBot key directory", adding that "Signing is being
-  # rolled out gradually" so unsigned requests still have to be recognised by
-  # user agent and address. Directory fetched live this run: HTTP 200,
-  # content-type application/http-message-signatures-directory+json, one
-  # Ed25519 key.
-  - type: web_bot_auth
-    signature_agent_url: "https://search.isonai.com/.well-known/http-message-signatures-directory"
+  # NOT attached, and the reason is an outage rather than a withdrawal — read
+  # this before re-adding it, because the evidence for it is complete.
+  # Epithre's bots page (docs.isonai.com/en/bots/, cited above) documents a
+  # second mechanism this entry's own crawler page does not: "Both agents
+  # support HTTP Message Signatures (Web Bot Auth) ... IsonSearchBot:
+  # Signature-Agent is "https://search.isonai.com", with public keys in the
+  # IsonSearchBot key directory", adding that "Signing is being rolled out
+  # gradually". That directory —
+  # https://search.isonai.com/.well-known/http-message-signatures-directory —
+  # was fetched twice on 2026-10-23 (HTTP 200,
+  # application/http-message-signatures-directory+json, one Ed25519 key
+  # x=t_iaNPu2RFGwTpzVDF4WQssq3hI8JSWL8q_TKih0LpE) and the recipe was added.
+  # Roughly twenty minutes later the entire isonai.com origin stopped
+  # answering: DNS still resolves every host to 103.150.197.169, but www,
+  # search and docs all fail at connect, from this sandbox (503, then
+  # SSL_ERROR_SYSCALL) and from GitHub's runners ("fetch failed") alike, which
+  # turned `verify-wba` — and therefore CI — red. `verify-wba` has no
+  # last-known-good fallback, so the recipe was removed rather than left
+  # failing the build. Re-attach it (one line) on a single successful fetch of
+  # that URL.

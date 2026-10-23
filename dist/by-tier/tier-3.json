@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T13:37:28.280Z",
-  "count": 163,
+  "generated_at": "2026-10-23T13:39:35.803Z",
+  "count": 164,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -2126,6 +2126,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "isonai-user",
+      "name": "IsonAI-User",
+      "operator": {
+        "name": "PT Epithre Teknologi Indonesia",
+        "url": "https://epithre.com"
+      },
+      "description": "Epithre's on-demand fetcher for IsonAI, the assistant built on Ison Search. It visits a page in real time when a person using IsonAI asks about that page or asks the assistant to read, summarise or analyse a link, and the answer then cites the source. The operator states plainly that it is not used to crawl the web automatically and not used to build or rank the Ison Search index, so it is listed separately from IsonSearchBot. Because the fetches are started by a user, Epithre says robots.txt rules may not apply and that site owners who want to stop it should block on the user agent or ask. It has no published address range by design, and the operator directs verifiers to its signature instead.",
+      "docs": [
+        "https://docs.isonai.com/en/bots/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "IsonAI-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; IsonAI-User/1.0; +https://www.isonai.com/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": []
     },
     {

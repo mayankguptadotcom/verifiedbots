@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T13:37:28.280Z",
+  "generated_at": "2026-10-23T13:39:35.803Z",
   "count": 95,
   "bots": [
     {
@@ -5931,10 +5931,6 @@
           "type": "cidr_feed",
           "url": "https://search.isonai.com/bot/ips.json",
           "format": "prefixes"
-        },
-        {
-          "type": "web_bot_auth",
-          "signature_agent_url": "https://search.isonai.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

@@ -29,11 +29,28 @@ user_agents:
 # claimed here.
 behavior: { respects_robots_txt: false }
 verification:
-  # "IsonAI-User: Signature-Agent is "https://www.isonai.com", with public keys
-  # in the IsonAI-User key directory." Fetched live this run: HTTP 200 with
-  # content-type application/http-message-signatures-directory+json and one
-  # Ed25519 key. The page also states "IsonAI-User does not use a fixed,
-  # published IP range, so verify its signature rather than the IP address",
-  # which is why this entry carries the signature recipe and no address feed.
-  - type: web_bot_auth
-    signature_agent_url: "https://www.isonai.com/.well-known/http-message-signatures-directory"
+  # Tier 3 for now, and NOT because Epithre publishes nothing — read this
+  # before concluding that, because the evidence for a Tier 1 recipe is
+  # complete and only the origin is missing.
+  #
+  # The bot page states: "IsonAI-User: Signature-Agent is
+  # "https://www.isonai.com", with public keys in the IsonAI-User key
+  # directory", and "IsonAI-User does not use a fixed, published IP range, so
+  # verify its signature rather than the IP address" — so signatures are the
+  # only mechanism this agent will ever have. That directory —
+  # https://www.isonai.com/.well-known/http-message-signatures-directory —
+  # was fetched twice on 2026-10-23 (HTTP 200,
+  # application/http-message-signatures-directory+json, one Ed25519 key
+  # x=ey8Sb4XONbAx_7NXcjhZXgk4gnAbMYbEojo6XJBOwhI) and this entry was added at
+  # Tier 1 on it. Roughly twenty minutes later the whole isonai.com origin
+  # stopped answering: DNS still resolves every host to 103.150.197.169, but
+  # www, search and docs all fail at connect, from this sandbox (503, then
+  # SSL_ERROR_SYSCALL) and from GitHub's runners ("fetch failed") alike,
+  # which turned `verify-wba` — and so CI — red. Unlike a feed there is no
+  # last-known-good fallback, so the recipe was removed rather than left
+  # failing the build, and the entry keeps the identity it is sourced for.
+  #
+  # Re-attach on a single successful fetch of that URL:
+  #   - type: web_bot_auth
+  #     signature_agent_url: "https://www.isonai.com/.well-known/http-message-signatures-directory"
+  []
