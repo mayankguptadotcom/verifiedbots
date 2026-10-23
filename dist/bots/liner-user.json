@@ -1,0 +1,35 @@
+{
+  "id": "liner-user",
+  "name": "Liner-User",
+  "operator": {
+    "name": "Liner",
+    "url": "https://liner.com"
+  },
+  "description": "Liner's on-demand fetcher. It retrieves a page in real time when a Liner user asks a question, and the answer cites that page as its source. Liner documents it alongside LinerBot as the second of two agents, each with its own user agent, robots.txt token and signing key, and states explicitly that rules written for LinerBot do not apply to Liner-User. Liner publishes no address ranges for either agent and points site owners at the HTTP Message Signatures key directory instead.",
+  "docs": [
+    "https://liner-user.liner.com/docs/liner-user"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "Liner-User/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Liner-User/1.0; +https://liner-user.liner.com/docs/liner-user)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Liner-User"
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://liner-user.liner.com/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": []
+}

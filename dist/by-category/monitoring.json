@@ -1,8 +1,46 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 56,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 59,
   "bots": [
+    {
+      "id": "accessiblewebbot",
+      "name": "AccessibleWebBot",
+      "operator": {
+        "name": "Accessible Web",
+        "url": "https://accessibleweb.com"
+      },
+      "description": "The crawler Accessible Web runs for its RAMP accessibility-monitoring product. It reads customers' sitemaps to find newly added pages and fetches the individual pages RAMP users ask to have scanned for accessibility problems, in both a plain and a headless-browser profile. The operator documents both user agents and a reverse-DNS method for confirming that a request really came from it, and explains how to allow the bot past robots.txt rules meant for search engines.",
+      "docs": [
+        "https://accessibleweb.com/bot/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AccessibleWebBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/)",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/) HeadlessChrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AccessibleWebBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.accessiblewebbot.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "alertsite",
       "name": "AlertSite",
@@ -2095,6 +2133,65 @@
         "98.130.70.90/32",
         "99.79.159.33/32"
       ]
+    },
+    {
+      "id": "greenweb-carbon-txt-crawler",
+      "name": "gwf-carbon-txt-crawler",
+      "operator": {
+        "name": "Green Web Foundation",
+        "url": "https://www.thegreenwebfoundation.org"
+      },
+      "description": "The Green Web Foundation's annual crawl measuring adoption of carbon.txt, an open standard for publishing sustainability data about a website and its hosting. Once a year it works through the top 100 million hostnames in the Common Crawl web graph, making a small number of requests per host: robots.txt, the root page, the two carbon.txt locations, and any URL named in a carbon.txt DNS record or HTTP header. The operator states it crawls no other pages and stores nothing but the carbon.txt files it finds.",
+      "docs": [
+        "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "gwf-carbon-txt-crawler"
+        ],
+        "instances": [
+          "gwf-carbon-txt-crawler"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "gwf-carbon-txt-crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "greenweb-checker",
+      "name": "GreenWebChecker",
+      "operator": {
+        "name": "Green Web Foundation",
+        "url": "https://www.thegreenwebfoundation.org"
+      },
+      "description": "The fetcher behind the Green Web Foundation's Green Web Checker. When somebody runs a green check against a domain, the service tries to match that domain to a known green hosting provider by green IP range, by ASN, or by finding a carbon.txt file served over HTTP — and this user agent is used for that last request only. The operator states it will only ever request /carbon.txt and /.well-known/carbon.txt, with a HEAD or GET, and will not touch any other part of a site.",
+      "docs": [
+        "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "GreenWebChecker/\\d"
+        ],
+        "instances": [
+          "GreenWebChecker/1.0.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
     },
     {
       "id": "hetrixtools",

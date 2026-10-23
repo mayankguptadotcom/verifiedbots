@@ -1,0 +1,31 @@
+id: piperic-bot
+name: PipericBot
+operator: { name: "Piperic (Rácz Akácosi Laura)", url: "https://piperic.com" }
+description: >-
+  The crawler behind Piperic, a B2B website-intelligence service that profiles
+  public sites by technology, category and language. The operator describes it
+  as comparable to BuiltWith or Wappalyzer: it fetches publicly accessible
+  home pages plus standard public files such as robots.txt, llms.txt, ai.txt
+  and humans.txt, typically a single home-page request per domain at a low
+  rate. It states it bypasses no login or paywall, reaches no private or
+  restricted area, and submits no forms, and it publishes a removal page for
+  site owners who want their domain out of the index.
+docs:
+  - "https://piperic.com/bot"
+category: seo
+user_agents:
+  # The bot page's identity table gives "User-agent: PipericBot/1.0
+  # (+https://piperic.com/bot)".
+  patterns:
+    - 'PipericBot/\d'
+  instances:
+    - 'PipericBot/1.0 (+https://piperic.com/bot)'
+# The page documents a working opt-out: "To block the crawler, add to your
+# robots.txt: User-agent: PipericBot / Disallow: /".
+behavior: { respects_robots_txt: true, robots_token: PipericBot }
+# No recipe: the page says "our crawl traffic originates from identified IPs
+# with valid reverse DNS" and invites network operators to ask for an
+# exclusion, but it publishes neither the addresses nor the reverse-DNS
+# hostname they resolve to, so there is nothing to verify against. If Piperic
+# ever names that domain or an address list, this entry becomes Tier 2 or 1.
+verification: []

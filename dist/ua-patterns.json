@@ -7,6 +7,13 @@
     ]
   },
   {
+    "id": "accessiblewebbot",
+    "category": "monitoring",
+    "patterns": [
+      "AccessibleWebBot/\\d"
+    ]
+  },
+  {
     "id": "addsearch",
     "category": "search-engine",
     "patterns": [
@@ -418,6 +425,13 @@
     "category": "seo",
     "patterns": [
       "Cincraw/[\\d.]+"
+    ]
+  },
+  {
+    "id": "cl0q-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "cl0q-(?:crawler|discovery|favicon)/\\d"
     ]
   },
   {
@@ -954,6 +968,14 @@
     ]
   },
   {
+    "id": "goguides-crawler",
+    "category": "seo",
+    "patterns": [
+      "GoGuidesCrawler/\\d",
+      "GoGuidesDiscoveryBot/\\d"
+    ]
+  },
+  {
     "id": "google-agent",
     "category": "ai-assistant",
     "patterns": [
@@ -1059,6 +1081,20 @@
     "category": "monitoring",
     "patterns": [
       "synthetic-monitoring-agent/v[\\d.]+"
+    ]
+  },
+  {
+    "id": "greenweb-carbon-txt-crawler",
+    "category": "monitoring",
+    "patterns": [
+      "gwf-carbon-txt-crawler"
+    ]
+  },
+  {
+    "id": "greenweb-checker",
+    "category": "monitoring",
+    "patterns": [
+      "GreenWebChecker/\\d"
     ]
   },
   {
@@ -1215,6 +1251,13 @@
     ]
   },
   {
+    "id": "isonai-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "IsonAI-User/\\d"
+    ]
+  },
+  {
     "id": "isonsearch-crawler",
     "category": "search-engine",
     "patterns": [
@@ -1306,6 +1349,13 @@
     ]
   },
   {
+    "id": "liner-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Liner-User/\\d"
+    ]
+  },
+  {
     "id": "linerbot",
     "category": "ai-crawler",
     "patterns": [
@@ -1366,6 +1416,14 @@
     "category": "social-preview",
     "patterns": [
       "Livelap[bB]ot"
+    ]
+  },
+  {
+    "id": "lumar-crawler",
+    "category": "seo",
+    "patterns": [
+      "[Ll]umar",
+      "[Dd]eepcrawl"
     ]
   },
   {
@@ -1644,6 +1702,13 @@
     ]
   },
   {
+    "id": "obot-crawler",
+    "category": "security",
+    "patterns": [
+      "oBot/\\d"
+    ]
+  },
+  {
     "id": "observepoint",
     "category": "monitoring",
     "patterns": [
@@ -1757,6 +1822,13 @@
     ]
   },
   {
+    "id": "pigafetta",
+    "category": "seo",
+    "patterns": [
+      "Pigafetta/\\d"
+    ]
+  },
+  {
     "id": "pingdom",
     "category": "monitoring",
     "patterns": [
@@ -1768,6 +1840,13 @@
     "category": "social-preview",
     "patterns": [
       "Pinterest(bot)?/\\d"
+    ]
+  },
+  {
+    "id": "piperic-bot",
+    "category": "seo",
+    "patterns": [
+      "PipericBot/\\d"
     ]
   },
   {
@@ -1803,6 +1882,13 @@
     "category": "seo",
     "patterns": [
       "PowerMapper"
+    ]
+  },
+  {
+    "id": "prerender-bot",
+    "category": "seo",
+    "patterns": [
+      "Prerender \\(\\+https://github\\.com/prerender/prerender\\)"
     ]
   },
   {
@@ -2795,6 +2881,13 @@
     "category": "search-engine",
     "patterns": [
       "YandexBot/\\d"
+    ]
+  },
+  {
+    "id": "yioop-bot",
+    "category": "search-engine",
+    "patterns": [
+      "YioopBot"
     ]
   },
   {

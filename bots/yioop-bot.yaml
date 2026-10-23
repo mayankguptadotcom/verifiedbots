@@ -1,0 +1,41 @@
+id: yioop-bot
+name: YioopBot
+operator: { name: "Seekquarry LLC (Chris Pollett)", url: "https://www.seekquarry.com" }
+description: >-
+  The crawler for Yioop, an open-source PHP search engine written and run by
+  Chris Pollett, whose crawls feed the live search engine at yioop.com. The
+  bot page names the operator, the small block of addresses the crawl runs
+  from, and an unusually detailed account of how the crawler reads robots.txt,
+  robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical,
+  Crawl-delay and Sitemap directives. The crawler and search engine source are
+  published under the GPLv3, so the documented behaviour can be checked
+  against the code.
+docs:
+  - "https://www.yioop.com/bot"
+category: search-engine
+user_agents:
+  # "you noticed traffic from a User-Agent that identified itself with the
+  # string: Mozilla/5.0 (compatible; YioopBot; +https://www.yioop.com/bot.php)"
+  patterns:
+    - 'YioopBot'
+  instances:
+    - 'Mozilla/5.0 (compatible; YioopBot; +https://www.yioop.com/bot.php)'
+# "Yioop Bot understands robots.txt ... and will obey commands in them except
+# for commands that prevent the crawling of the host page (aka landing page) of
+# a site" — robots obedience is documented, with that one stated exception, and
+# the page's own examples use `User-agent: YioopBot`.
+behavior: { respects_robots_txt: true, robots_token: YioopBot }
+verification:
+  # "If the IP Address was also 173.13.143.73 to 78, then you have come to the
+  # right place ... If it was a different IP address, then someone else is
+  # hijacking my crawler's name." The published range is six consecutive
+  # addresses, enumerated here as the six /32s it names rather than widened to
+  # a block the operator did not publish.
+  - type: static_cidrs
+    cidrs:
+      - "173.13.143.73/32"
+      - "173.13.143.74/32"
+      - "173.13.143.75/32"
+      - "173.13.143.76/32"
+      - "173.13.143.77/32"
+      - "173.13.143.78/32"

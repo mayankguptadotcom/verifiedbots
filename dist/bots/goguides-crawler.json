@@ -1,0 +1,33 @@
+{
+  "id": "goguides-crawler",
+  "name": "GoGuidesCrawler",
+  "operator": {
+    "name": "GoGuides, LLC",
+    "url": "https://www.goguides.com"
+  },
+  "description": "The two crawlers GoGuides runs for its web-evidence service, which publishes machine-readable records about public websites — crawl status, first-seen and last-seen history, freshness and canonical matching — for people and automated systems that query it about a domain. GoGuidesCrawler checks publicly accessible pages to refresh those observations and GoGuidesDiscoveryBot performs limited discovery checks on supported public URLs. The operator states the bots request public URLs only and should not sign in, defeat access controls or enter private account areas.",
+  "docs": [
+    "https://www.goguides.com/crawler"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "GoGuidesCrawler/\\d",
+      "GoGuidesDiscoveryBot/\\d"
+    ],
+    "instances": [
+      "GoGuidesCrawler/3.0 (trust-transparency; +https://www.goguides.com/crawler)",
+      "GoGuidesCrawler/3.0",
+      "GoGuidesDiscoveryBot/1.0 (+https://www.goguides.com/crawler)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "GoGuidesCrawler"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": []
+}

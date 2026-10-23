@@ -1,0 +1,54 @@
+id: obot-crawler
+name: oBot
+operator:
+  name: "IBM Deutschland Research & Development GmbH"
+  url: "https://www.xforce-security.com"
+description: >-
+  The web crawler of the Content Security Division of IBM Germany Research &
+  Development, which crawls pages and classifies their content into more than
+  65 categories to build the URL-filter database shipped in IBM's content
+  filtering products and OEM SDK. The crawler page explains that the name
+  predates IBM — it comes from ONLY Solutions GmbH, which built the crawler in
+  the late 1990s — and that the token was deliberately never renamed so that
+  existing robots.txt entries keep working. The operator documents its user
+  agent, its address ranges and a hostname to check them against.
+docs:
+  - "https://www.xforce-security.com/crawler/"
+category: security
+user_agents:
+  # "- user-agent: Mozilla/5.0 (compatible; oBot/2.3.1;
+  # +http://www.xforce-security.com/crawler/)", under the page's own heading
+  # "How to verify oBot's identity?".
+  patterns:
+    - 'oBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; oBot/2.3.1; +http://www.xforce-security.com/crawler/)'
+# "During its visits oBot obeys the entries in your robots.txt", and "The IBM
+# Content Security Crawler's ID that should be used in your robots.txt file
+# is: oBot".
+behavior: { respects_robots_txt: true, robots_token: oBot }
+verification:
+  # The page lists, verbatim: "our IPV4 ranges are 206.253.224.x, 194.153.113.x
+  # and 206.253.225.x, 206.253.226.x and 161.156.29.32/27" and "our IPV6 ranges
+  # are 2001:1be0:1000:160:0:0:0:0/64, 2001:1be0:1000:167:0:0:0:0/64,
+  # 2001:1be0:1000:168:0:0:0:0/64; 2001:1be0:1000:169:0:0:0:0/64 and
+  # 2a03:8180:1c01:c1::/64". The ".x" is the operator's own wildcard for the
+  # final octet and is transcribed here as the /24 it denotes; everything else
+  # is copied as published (the IPv6 entries only compressed, not altered).
+  #
+  # No rDNS recipe: the page's third method is "use nslookup/dig
+  # obot.cobion.com to verify the IP" — a forward lookup of one fixed hostname,
+  # not a reverse-DNS mask, so it cannot be expressed as an `rdns` recipe and is
+  # recorded here as prose instead.
+  - type: static_cidrs
+    cidrs:
+      - "206.253.224.0/24"
+      - "206.253.225.0/24"
+      - "206.253.226.0/24"
+      - "194.153.113.0/24"
+      - "161.156.29.32/27"
+      - "2001:1be0:1000:160::/64"
+      - "2001:1be0:1000:167::/64"
+      - "2001:1be0:1000:168::/64"
+      - "2001:1be0:1000:169::/64"
+      - "2a03:8180:1c01:c1::/64"

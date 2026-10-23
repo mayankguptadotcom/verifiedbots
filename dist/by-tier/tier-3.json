@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 157,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 162,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1727,6 +1727,98 @@
       "resolved_cidrs": []
     },
     {
+      "id": "goguides-crawler",
+      "name": "GoGuidesCrawler",
+      "operator": {
+        "name": "GoGuides, LLC",
+        "url": "https://www.goguides.com"
+      },
+      "description": "The two crawlers GoGuides runs for its web-evidence service, which publishes machine-readable records about public websites — crawl status, first-seen and last-seen history, freshness and canonical matching — for people and automated systems that query it about a domain. GoGuidesCrawler checks publicly accessible pages to refresh those observations and GoGuidesDiscoveryBot performs limited discovery checks on supported public URLs. The operator states the bots request public URLs only and should not sign in, defeat access controls or enter private account areas.",
+      "docs": [
+        "https://www.goguides.com/crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "GoGuidesCrawler/\\d",
+          "GoGuidesDiscoveryBot/\\d"
+        ],
+        "instances": [
+          "GoGuidesCrawler/3.0 (trust-transparency; +https://www.goguides.com/crawler)",
+          "GoGuidesCrawler/3.0",
+          "GoGuidesDiscoveryBot/1.0 (+https://www.goguides.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "GoGuidesCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "greenweb-carbon-txt-crawler",
+      "name": "gwf-carbon-txt-crawler",
+      "operator": {
+        "name": "Green Web Foundation",
+        "url": "https://www.thegreenwebfoundation.org"
+      },
+      "description": "The Green Web Foundation's annual crawl measuring adoption of carbon.txt, an open standard for publishing sustainability data about a website and its hosting. Once a year it works through the top 100 million hostnames in the Common Crawl web graph, making a small number of requests per host: robots.txt, the root page, the two carbon.txt locations, and any URL named in a carbon.txt DNS record or HTTP header. The operator states it crawls no other pages and stores nothing but the carbon.txt files it finds.",
+      "docs": [
+        "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "gwf-carbon-txt-crawler"
+        ],
+        "instances": [
+          "gwf-carbon-txt-crawler"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "gwf-carbon-txt-crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "greenweb-checker",
+      "name": "GreenWebChecker",
+      "operator": {
+        "name": "Green Web Foundation",
+        "url": "https://www.thegreenwebfoundation.org"
+      },
+      "description": "The fetcher behind the Green Web Foundation's Green Web Checker. When somebody runs a green check against a domain, the service tries to match that domain to a known green hosting provider by green IP range, by ASN, or by finding a carbon.txt file served over HTTP — and this user agent is used for that last request only. The operator states it will only ever request /carbon.txt and /.well-known/carbon.txt, with a HEAD or GET, and will not touch any other part of a site.",
+      "docs": [
+        "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "GreenWebChecker/\\d"
+        ],
+        "instances": [
+          "GreenWebChecker/1.0.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "haosou-crawler",
       "name": "360Spider",
       "operator": {
@@ -2902,6 +2994,66 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-13T13:17:22.509Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "pigafetta",
+      "name": "Pigafetta",
+      "operator": {
+        "name": "Visual SEO Studio",
+        "url": "https://visual-seo.com"
+      },
+      "description": "The crawler inside Visual SEO Studio, a desktop SEO auditing tool, which walks a site's structure and HTML pages to assess technical SEO. Its bot page is an unusually explicit statement of crawling manners: it uses one explicit agent name, checks robots.txt before entering a domain or subdomain, takes the most restrictive reading of conflicting rules, obeys robots meta tags, X-Robots-Tag and rel=nofollow, caps Crawl-delay handling at 2 seconds, waits for each response to complete before issuing the next request, and sends a From header so site owners can make contact.",
+      "docs": [
+        "https://visual-seo.com/Pigafetta-Bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Pigafetta/\\d"
+        ],
+        "instances": [
+          "Mozilla 5.0 (compatible; Pigafetta/0.5; +http://visual-seo.com/Pigafetta-Bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Pigafetta"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "piperic-bot",
+      "name": "PipericBot",
+      "operator": {
+        "name": "Piperic (Rácz Akácosi Laura)",
+        "url": "https://piperic.com"
+      },
+      "description": "The crawler behind Piperic, a B2B website-intelligence service that profiles public sites by technology, category and language. The operator describes it as comparable to BuiltWith or Wappalyzer: it fetches publicly accessible home pages plus standard public files such as robots.txt, llms.txt, ai.txt and humans.txt, typically a single home-page request per domain at a low rate. It states it bypasses no login or paywall, reaches no private or restricted area, and submits no forms, and it publishes a removal page for site owners who want their domain out of the index.",
+      "docs": [
+        "https://piperic.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "PipericBot/\\d"
+        ],
+        "instances": [
+          "PipericBot/1.0 (+https://piperic.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PipericBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,31 @@
+id: greenweb-carbon-txt-crawler
+name: gwf-carbon-txt-crawler
+operator: { name: "Green Web Foundation", url: "https://www.thegreenwebfoundation.org" }
+description: >-
+  The Green Web Foundation's annual crawl measuring adoption of carbon.txt, an
+  open standard for publishing sustainability data about a website and its
+  hosting. Once a year it works through the top 100 million hostnames in the
+  Common Crawl web graph, making a small number of requests per host:
+  robots.txt, the root page, the two carbon.txt locations, and any URL named in
+  a carbon.txt DNS record or HTTP header. The operator states it crawls no
+  other pages and stores nothing but the carbon.txt files it finds.
+docs:
+  - "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+category: monitoring
+user_agents:
+  # The FAQ section "What is gwf-carbon-txt-crawler?" documents this agent, and
+  # its opt-out example prints the token as the user agent to block. No fuller
+  # string is published, so the documented token is recorded as-is (the
+  # treatment powermapper and amazon-kendra-crawler get); arcjet's accepted
+  # instance for it is the same bare token.
+  patterns:
+    - 'gwf-carbon-txt-crawler'
+  instances:
+    - 'gwf-carbon-txt-crawler'
+# "one for the /robots.txt (which we respect — we won't proceed to crawl your
+# site if robots.txt disallows it)", with the worked opt-out
+# `User-agent: gwf-carbon-txt-crawler`.
+behavior: { respects_robots_txt: true, robots_token: gwf-carbon-txt-crawler }
+# No address ranges, ASN or reverse-DNS method is published for the crawl, so
+# the entry carries no verification recipe.
+verification: []

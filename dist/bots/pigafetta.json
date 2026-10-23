@@ -1,0 +1,30 @@
+{
+  "id": "pigafetta",
+  "name": "Pigafetta",
+  "operator": {
+    "name": "Visual SEO Studio",
+    "url": "https://visual-seo.com"
+  },
+  "description": "The crawler inside Visual SEO Studio, a desktop SEO auditing tool, which walks a site's structure and HTML pages to assess technical SEO. Its bot page is an unusually explicit statement of crawling manners: it uses one explicit agent name, checks robots.txt before entering a domain or subdomain, takes the most restrictive reading of conflicting rules, obeys robots meta tags, X-Robots-Tag and rel=nofollow, caps Crawl-delay handling at 2 seconds, waits for each response to complete before issuing the next request, and sends a From header so site owners can make contact.",
+  "docs": [
+    "https://visual-seo.com/Pigafetta-Bot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Pigafetta/\\d"
+    ],
+    "instances": [
+      "Mozilla 5.0 (compatible; Pigafetta/0.5; +http://visual-seo.com/Pigafetta-Bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Pigafetta"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": []
+}

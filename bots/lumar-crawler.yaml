@@ -1,0 +1,45 @@
+id: lumar-crawler
+name: Lumar
+operator: { name: Lumar, url: "https://www.lumar.io" }
+description: >-
+  The site crawler behind Lumar's website analytics platform, formerly
+  Deepcrawl, which crawls a customer's pages at enterprise scale to collect
+  technical SEO, accessibility and site-health data. Lumar runs the crawl from
+  its own addresses and publishes them, names two robots.txt tokens — its
+  current and former brand — and warns site owners that its user agent may
+  still reference the Deepcrawl name so that existing customer rules keep
+  working. It states that it does not support the crawl-delay directive,
+  aiming instead to match the way Google crawls.
+docs:
+  - "https://www.lumar.io/spdr/"
+category: seo
+user_agents:
+  # The crawler page documents the robots.txt tokens only — "We obey the
+  # Robots.txt protocol and will not crawl your site if you exclude the Lumar
+  # user-agent token, e.g. User-agent: lumar ... User-agent: deepcrawl" — and
+  # no full User-Agent header, so the documented tokens are recorded as-is (the
+  # treatment powermapper and amazon-kendra-crawler get). arcjet's accepted
+  # instances for this bot are the same two tokens.
+  patterns:
+    - '[Ll]umar'
+    - '[Dd]eepcrawl'
+  instances:
+    - 'lumar'
+    - 'deepcrawl'
+behavior: { respects_robots_txt: true, robots_token: lumar }
+verification:
+  # "Our crawler requests primarily come from one of two IP addresses
+  # (52.5.118.182 or 52.86.188.211) or in some cases from a regional IP. You
+  # can find a full list of these IP addresses in JSON format here" — the link
+  # resolves to the dated snapshot below, which is the only address list Lumar
+  # links from its crawler page. Fetched live this run: HTTP 200, Google-style
+  # `prefixes` shape, /32s tagged "static" or "regional", creationTime
+  # 2026-02-06.
+  #
+  # Caution for future runs: the URL carries a date in its path and Lumar
+  # publishes no stable "latest" URL, so when Lumar uploads a newer file this
+  # one will either stop being updated or 404. A 404 here is a genuinely broken
+  # recipe (not a transient hold) and means re-reading /spdr/ for the new link.
+  - type: cidr_feed
+    url: "https://www.lumar.io/wp-content/uploads/2026/02/lumar_ip_list_feb_2026.json"
+    format: prefixes

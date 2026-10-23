@@ -1,0 +1,40 @@
+{
+  "id": "cl0q-crawler",
+  "name": "cl0q crawlers",
+  "operator": {
+    "name": "cl0q",
+    "url": "https://cl0q.com"
+  },
+  "description": "The three crawlers behind cl0q, an independent search engine that runs its own crawler and index rather than reselling another engine's results. cl0q-crawler reads a site's robots.txt and home page for the search index, cl0q-discovery follows a capped number of ordinary public links purely to learn which other sites exist, and cl0q-favicon fetches the site icon shown beside results. All three identify themselves, link back to one bot page, answer to the shared robots.txt token cl0q as well as their individual names, and run from a single published address. The crawler node is open source.",
+  "docs": [
+    "https://cl0q.com/bot/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "cl0q-(?:crawler|discovery|favicon)/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; cl0q-crawler/1.0; +https://cl0q.com/bot)",
+      "Mozilla/5.0 (compatible; cl0q-discovery/1.0; +https://cl0q.com/bot)",
+      "Mozilla/5.0 (compatible; cl0q-favicon/1.0; +https://cl0q.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "cl0q"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://cl0q.com/bot/ips.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": [
+    "143.110.230.182/32"
+  ]
+}

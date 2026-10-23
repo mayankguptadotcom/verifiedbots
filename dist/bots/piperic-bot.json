@@ -1,0 +1,30 @@
+{
+  "id": "piperic-bot",
+  "name": "PipericBot",
+  "operator": {
+    "name": "Piperic (Rácz Akácosi Laura)",
+    "url": "https://piperic.com"
+  },
+  "description": "The crawler behind Piperic, a B2B website-intelligence service that profiles public sites by technology, category and language. The operator describes it as comparable to BuiltWith or Wappalyzer: it fetches publicly accessible home pages plus standard public files such as robots.txt, llms.txt, ai.txt and humans.txt, typically a single home-page request per domain at a low rate. It states it bypasses no login or paywall, reaches no private or restricted area, and submits no forms, and it publishes a removal page for site owners who want their domain out of the index.",
+  "docs": [
+    "https://piperic.com/bot"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "PipericBot/\\d"
+    ],
+    "instances": [
+      "PipericBot/1.0 (+https://piperic.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "PipericBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": []
+}

@@ -17,6 +17,7 @@ description: >-
   nothing behind a paywall.
 docs:
   - "https://search.isonai.com/bot"
+  - "https://docs.isonai.com/en/bots/"
 category: search-engine
 user_agents:
   # The bot page documents two versioned forms of one token ("IsonSearchBot/1.0
@@ -44,3 +45,14 @@ verification:
   - type: cidr_feed
     url: "https://search.isonai.com/bot/ips.json"
     format: prefixes
+  # Added this run from Epithre's bots page (docs.isonai.com/en/bots/, now
+  # cited above), which documents a second mechanism the crawler's own page
+  # does not: "Both agents support HTTP Message Signatures (Web Bot Auth) ...
+  # IsonSearchBot: Signature-Agent is "https://search.isonai.com", with public
+  # keys in the IsonSearchBot key directory", adding that "Signing is being
+  # rolled out gradually" so unsigned requests still have to be recognised by
+  # user agent and address. Directory fetched live this run: HTTP 200,
+  # content-type application/http-message-signatures-directory+json, one
+  # Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://search.isonai.com/.well-known/http-message-signatures-directory"

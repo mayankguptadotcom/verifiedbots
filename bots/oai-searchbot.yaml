@@ -12,6 +12,12 @@ user_agents:
     - 'OAI-SearchBot/\d'
   instances:
     - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot'
+    # Second documented form, added this run from a live re-read of the cited
+    # page: "When fetching robots.txt files, we may use a user-agent string
+    # with an additional robots.txt marker. The marker helps site owners more
+    # easily distinguish requests for the robots.txt file from requests for
+    # other resources, especially when their logs do not include paths."
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; robots.txt; +https://openai.com/searchbot'
 behavior: { respects_robots_txt: true, robots_token: OAI-SearchBot }
 verification:
   - type: cidr_feed

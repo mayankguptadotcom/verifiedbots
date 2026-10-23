@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 16,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 17,
   "bots": [
     {
       "id": "censys",
@@ -573,6 +573,63 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "obot-crawler",
+      "name": "oBot",
+      "operator": {
+        "name": "IBM Deutschland Research & Development GmbH",
+        "url": "https://www.xforce-security.com"
+      },
+      "description": "The web crawler of the Content Security Division of IBM Germany Research & Development, which crawls pages and classifies their content into more than 65 categories to build the URL-filter database shipped in IBM's content filtering products and OEM SDK. The crawler page explains that the name predates IBM — it comes from ONLY Solutions GmbH, which built the crawler in the late 1990s — and that the token was deliberately never renamed so that existing robots.txt entries keep working. The operator documents its user agent, its address ranges and a hostname to check them against.",
+      "docs": [
+        "https://www.xforce-security.com/crawler/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "oBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; oBot/2.3.1; +http://www.xforce-security.com/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "oBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "206.253.224.0/24",
+            "206.253.225.0/24",
+            "206.253.226.0/24",
+            "194.153.113.0/24",
+            "161.156.29.32/27",
+            "2001:1be0:1000:160::/64",
+            "2001:1be0:1000:167::/64",
+            "2001:1be0:1000:168::/64",
+            "2001:1be0:1000:169::/64",
+            "2a03:8180:1c01:c1::/64"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "161.156.29.32/27",
+        "194.153.113.0/24",
+        "2001:1be0:1000:160::/64",
+        "2001:1be0:1000:167::/64",
+        "2001:1be0:1000:168::/64",
+        "2001:1be0:1000:169::/64",
+        "206.253.224.0/24",
+        "206.253.225.0/24",
+        "206.253.226.0/24",
+        "2a03:8180:1c01:c1::/64"
+      ]
     },
     {
       "id": "qualys-ssllabs",

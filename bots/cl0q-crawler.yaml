@@ -1,0 +1,42 @@
+id: cl0q-crawler
+name: cl0q crawlers
+operator: { name: cl0q, url: "https://cl0q.com" }
+description: >-
+  The three crawlers behind cl0q, an independent search engine that runs its
+  own crawler and index rather than reselling another engine's results.
+  cl0q-crawler reads a site's robots.txt and home page for the search index,
+  cl0q-discovery follows a capped number of ordinary public links purely to
+  learn which other sites exist, and cl0q-favicon fetches the site icon shown
+  beside results. All three identify themselves, link back to one bot page,
+  answer to the shared robots.txt token cl0q as well as their individual
+  names, and run from a single published address. The crawler node is open
+  source.
+# Operator, for the identifiability test: cl0q's about page states the project
+# is "built and run by Chris (@chrisknowshtml)" on servers they operate
+# themselves, with the crawler node's source published at
+# codeberg.org/cl0qsearch/crawler-node and contact by email and Discord.
+docs:
+  - "https://cl0q.com/bot/"
+category: search-engine
+user_agents:
+  # The bot page prints one full string per agent, reproduced below.
+  patterns:
+    - 'cl0q-(?:crawler|discovery|favicon)/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; cl0q-crawler/1.0; +https://cl0q.com/bot)'
+    - 'Mozilla/5.0 (compatible; cl0q-discovery/1.0; +https://cl0q.com/bot)'
+    - 'Mozilla/5.0 (compatible; cl0q-favicon/1.0; +https://cl0q.com/bot)'
+# "Respect robots.txt, including Crawl-delay (up to 30 s). Rules for our own
+# name take precedence over User-agent: *." The page documents
+# `User-agent: cl0q` as the group addressing all three agents, so that is the
+# token recorded; each agent also answers to its own name.
+behavior: { respects_robots_txt: true, robots_token: cl0q }
+verification:
+  # "run only from 143.110.230.182 (DigitalOcean, AS14061). The same list is
+  # published as /bot/ips.json for firewall and WAF allow-lists." Fetched live
+  # this run: HTTP 200, Google-style `prefixes` shape, one /32, creationTime
+  # 2026-10-02, and the file's own description names the three agents it
+  # covers. A single-address feed cannot churn faster than the daily build.
+  - type: cidr_feed
+    url: "https://cl0q.com/bot/ips.json"
+    format: prefixes

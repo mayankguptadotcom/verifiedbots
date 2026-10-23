@@ -1,0 +1,35 @@
+id: liner-user
+name: Liner-User
+operator: { name: Liner, url: "https://liner.com" }
+description: >-
+  Liner's on-demand fetcher. It retrieves a page in real time when a Liner
+  user asks a question, and the answer cites that page as its source. Liner
+  documents it alongside LinerBot as the second of two agents, each with its
+  own user agent, robots.txt token and signing key, and states explicitly that
+  rules written for LinerBot do not apply to Liner-User. Liner publishes no
+  address ranges for either agent and points site owners at the HTTP Message
+  Signatures key directory instead.
+docs:
+  - "https://liner-user.liner.com/docs/liner-user"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'Liner-User/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Liner-User/1.0; +https://liner-user.liner.com/docs/liner-user)'
+# "Each bot follows the robots.txt group that names its token, LinerBot or
+# Liner-User, and the * group when no group names it", with a worked
+# `User-Agent: Liner-User` / `Disallow: /` example.
+behavior: { respects_robots_txt: true, robots_token: Liner-User }
+verification:
+  # "Both bots sign their requests with HTTP Message Signatures (Web Bot Auth),
+  # each with its own key", and the page names this agent's directory. Fetched
+  # live this run: HTTP 200,
+  # content-type application/http-message-signatures-directory+json.
+  #
+  # No address recipe: the page's "IP address ranges" section states "We do not
+  # currently publish IP ranges for LinerBot or Liner-User, so our IP range
+  # list is intentionally empty", and the linked JSON confirms it
+  # (`"prefixes": []`, creationTime 2026-10-20).
+  - type: web_bot_auth
+    signature_agent_url: "https://liner-user.liner.com/.well-known/http-message-signatures-directory"

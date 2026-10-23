@@ -1,0 +1,49 @@
+{
+  "id": "yioop-bot",
+  "name": "YioopBot",
+  "operator": {
+    "name": "Seekquarry LLC (Chris Pollett)",
+    "url": "https://www.seekquarry.com"
+  },
+  "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+  "docs": [
+    "https://www.yioop.com/bot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "YioopBot"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; YioopBot; +https://www.yioop.com/bot.php)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "YioopBot"
+  },
+  "verification": [
+    {
+      "type": "static_cidrs",
+      "cidrs": [
+        "173.13.143.73/32",
+        "173.13.143.74/32",
+        "173.13.143.75/32",
+        "173.13.143.76/32",
+        "173.13.143.77/32",
+        "173.13.143.78/32"
+      ]
+    }
+  ],
+  "tier": 2,
+  "tier_label": "Verifiable",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": [
+    "173.13.143.73/32",
+    "173.13.143.74/32",
+    "173.13.143.75/32",
+    "173.13.143.76/32",
+    "173.13.143.77/32",
+    "173.13.143.78/32"
+  ]
+}

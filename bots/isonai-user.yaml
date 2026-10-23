@@ -1,0 +1,39 @@
+id: isonai-user
+name: IsonAI-User
+operator: { name: "PT Epithre Teknologi Indonesia", url: "https://epithre.com" }
+description: >-
+  Epithre's on-demand fetcher for IsonAI, the assistant built on Ison Search.
+  It visits a page in real time when a person using IsonAI asks about that
+  page or asks the assistant to read, summarise or analyse a link, and the
+  answer then cites the source. The operator states plainly that it is not
+  used to crawl the web automatically and not used to build or rank the Ison
+  Search index, so it is listed separately from IsonSearchBot. Because the
+  fetches are started by a user, Epithre says robots.txt rules may not apply
+  and that site owners who want to stop it should block on the user agent or
+  ask. It has no published address range by design, and the operator directs
+  verifiers to its signature instead.
+docs:
+  - "https://docs.isonai.com/en/bots/"
+category: ai-assistant
+user_agents:
+  # The bot table on the cited page prints one full string for this agent,
+  # reproduced verbatim below (the stray semicolon after the parenthesis is
+  # the operator's, not a transcription slip); arcjet carries the same string.
+  patterns:
+    - 'IsonAI-User/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; IsonAI-User/1.0; +https://www.isonai.com/bot'
+# "Because these requests are made on behalf of a user, robots.txt rules may
+# not apply." No opt-out token is documented for this agent — the page tells
+# site owners to block on the user agent or to contact Epithre — so none is
+# claimed here.
+behavior: { respects_robots_txt: false }
+verification:
+  # "IsonAI-User: Signature-Agent is "https://www.isonai.com", with public keys
+  # in the IsonAI-User key directory." Fetched live this run: HTTP 200 with
+  # content-type application/http-message-signatures-directory+json and one
+  # Ed25519 key. The page also states "IsonAI-User does not use a fixed,
+  # published IP range, so verify its signature rather than the IP address",
+  # which is why this entry carries the signature recipe and no address feed.
+  - type: web_bot_auth
+    signature_agent_url: "https://www.isonai.com/.well-known/http-message-signatures-directory"

@@ -12,6 +12,11 @@ user_agents:
     - 'GPTBot/\d'
   instances:
     - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.2; +https://openai.com/gptbot'
+    # The cited page, re-read live this run, now gives 1.4 as its example
+    # ("the version number may change"); the 1.2 string above is kept because
+    # it is what the page showed when this entry was written and site owners
+    # still have it in older logs.
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot'
 behavior: { respects_robots_txt: true, robots_token: GPTBot }
 verification:
   - type: cidr_feed

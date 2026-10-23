@@ -1,0 +1,29 @@
+{
+  "id": "greenweb-checker",
+  "name": "GreenWebChecker",
+  "operator": {
+    "name": "Green Web Foundation",
+    "url": "https://www.thegreenwebfoundation.org"
+  },
+  "description": "The fetcher behind the Green Web Foundation's Green Web Checker. When somebody runs a green check against a domain, the service tries to match that domain to a known green hosting provider by green IP range, by ASN, or by finding a carbon.txt file served over HTTP — and this user agent is used for that last request only. The operator states it will only ever request /carbon.txt and /.well-known/carbon.txt, with a HEAD or GET, and will not touch any other part of a site.",
+  "docs": [
+    "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+  ],
+  "category": "monitoring",
+  "user_agents": {
+    "patterns": [
+      "GreenWebChecker/\\d"
+    ],
+    "instances": [
+      "GreenWebChecker/1.0.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": []
+}

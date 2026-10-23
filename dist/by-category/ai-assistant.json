@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 17,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 19,
   "bots": [
     {
       "id": "aiwebindex-agent",
@@ -4238,6 +4238,40 @@
       ]
     },
     {
+      "id": "isonai-user",
+      "name": "IsonAI-User",
+      "operator": {
+        "name": "PT Epithre Teknologi Indonesia",
+        "url": "https://epithre.com"
+      },
+      "description": "Epithre's on-demand fetcher for IsonAI, the assistant built on Ison Search. It visits a page in real time when a person using IsonAI asks about that page or asks the assistant to read, summarise or analyse a link, and the answer then cites the source. The operator states plainly that it is not used to crawl the web automatically and not used to build or rank the Ison Search index, so it is listed separately from IsonSearchBot. Because the fetches are started by a user, Epithre says robots.txt rules may not apply and that site owners who want to stop it should block on the user agent or ask. It has no published address range by design, and the operator directs verifiers to its signature instead.",
+      "docs": [
+        "https://docs.isonai.com/en/bots/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "IsonAI-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; IsonAI-User/1.0; +https://www.isonai.com/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.isonai.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "kimi-user",
       "name": "Kimi-User",
       "operator": {
@@ -4276,6 +4310,41 @@
         "47.79.253.42/32",
         "47.79.253.91/32"
       ]
+    },
+    {
+      "id": "liner-user",
+      "name": "Liner-User",
+      "operator": {
+        "name": "Liner",
+        "url": "https://liner.com"
+      },
+      "description": "Liner's on-demand fetcher. It retrieves a page in real time when a Liner user asks a question, and the answer cites that page as its source. Liner documents it alongside LinerBot as the second of two agents, each with its own user agent, robots.txt token and signing key, and states explicitly that rules written for LinerBot do not apply to Liner-User. Liner publishes no address ranges for either agent and points site owners at the HTTP Message Signatures key directory instead.",
+      "docs": [
+        "https://liner-user.liner.com/docs/liner-user"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Liner-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Liner-User/1.0; +https://liner-user.liner.com/docs/liner-user)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Liner-User"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://liner-user.liner.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
     },
     {
       "id": "meta-externalfetcher",

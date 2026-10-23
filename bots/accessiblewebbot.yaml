@@ -1,0 +1,37 @@
+id: accessiblewebbot
+name: AccessibleWebBot
+operator: { name: "Accessible Web", url: "https://accessibleweb.com" }
+description: >-
+  The crawler Accessible Web runs for its RAMP accessibility-monitoring
+  product. It reads customers' sitemaps to find newly added pages and fetches
+  the individual pages RAMP users ask to have scanned for accessibility
+  problems, in both a plain and a headless-browser profile. The operator
+  documents both user agents and a reverse-DNS method for confirming that a
+  request really came from it, and explains how to allow the bot past
+  robots.txt rules meant for search engines.
+docs:
+  - "https://accessibleweb.com/bot/"
+category: monitoring
+user_agents:
+  # "You may see this bot with either of the following user agents", followed by
+  # the two strings below; both also appear in arcjet.
+  patterns:
+    - 'AccessibleWebBot/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/)'
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/) HeadlessChrome/W.X.Y.Z Safari/537.36'
+# The page documents a working opt-out ("The following entry in your robots.txt
+# will block the AccessibleWebBot from the entire site", `User-agent:
+# AccessibleWebBot`) and says the bot "should scan your website correctly if
+# your robots.txt is allowing search engines", i.e. it reads the file.
+behavior: { respects_robots_txt: true, robots_token: AccessibleWebBot }
+verification:
+  # "The bot will always scan websites from an IP address affiliated with the
+  # domain accessiblewebbot.com. If you receive traffic from a bot with user
+  # agents like the ones above, you can verify the authenticity of the requests
+  # by running a reverse DNS lookup on the IP address and making sure the domain
+  # matches." No address list is published — "If you need to either allow or
+  # disallow AccessibleWebBot based on the IP address of network traffic, please
+  # contact us" — so reverse DNS is the only recipe available.
+  - type: rdns
+    masks: ["*.accessiblewebbot.com"]

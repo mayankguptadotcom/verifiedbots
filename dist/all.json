@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 395,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 408,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -31,6 +31,44 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-20T20:56:47.446Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "accessiblewebbot",
+      "name": "AccessibleWebBot",
+      "operator": {
+        "name": "Accessible Web",
+        "url": "https://accessibleweb.com"
+      },
+      "description": "The crawler Accessible Web runs for its RAMP accessibility-monitoring product. It reads customers' sitemaps to find newly added pages and fetches the individual pages RAMP users ask to have scanned for accessibility problems, in both a plain and a headless-browser profile. The operator documents both user agents and a reverse-DNS method for confirming that a request really came from it, and explains how to allow the bot past robots.txt rules meant for search engines.",
+      "docs": [
+        "https://accessibleweb.com/bot/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AccessibleWebBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/)",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/) HeadlessChrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AccessibleWebBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.accessiblewebbot.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": []
     },
     {
@@ -9788,6 +9826,46 @@
       "resolved_cidrs": []
     },
     {
+      "id": "cl0q-crawler",
+      "name": "cl0q crawlers",
+      "operator": {
+        "name": "cl0q",
+        "url": "https://cl0q.com"
+      },
+      "description": "The three crawlers behind cl0q, an independent search engine that runs its own crawler and index rather than reselling another engine's results. cl0q-crawler reads a site's robots.txt and home page for the search index, cl0q-discovery follows a capped number of ordinary public links purely to learn which other sites exist, and cl0q-favicon fetches the site icon shown beside results. All three identify themselves, link back to one bot page, answer to the shared robots.txt token cl0q as well as their individual names, and run from a single published address. The crawler node is open source.",
+      "docs": [
+        "https://cl0q.com/bot/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "cl0q-(?:crawler|discovery|favicon)/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; cl0q-crawler/1.0; +https://cl0q.com/bot)",
+          "Mozilla/5.0 (compatible; cl0q-discovery/1.0; +https://cl0q.com/bot)",
+          "Mozilla/5.0 (compatible; cl0q-favicon/1.0; +https://cl0q.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "cl0q"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://cl0q.com/bot/ips.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "143.110.230.182/32"
+      ]
+    },
+    {
       "id": "claritybot",
       "name": "Claritybot",
       "operator": {
@@ -14027,6 +14105,39 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "goguides-crawler",
+      "name": "GoGuidesCrawler",
+      "operator": {
+        "name": "GoGuides, LLC",
+        "url": "https://www.goguides.com"
+      },
+      "description": "The two crawlers GoGuides runs for its web-evidence service, which publishes machine-readable records about public websites — crawl status, first-seen and last-seen history, freshness and canonical matching — for people and automated systems that query it about a domain. GoGuidesCrawler checks publicly accessible pages to refresh those observations and GoGuidesDiscoveryBot performs limited discovery checks on supported public URLs. The operator states the bots request public URLs only and should not sign in, defeat access controls or enter private account areas.",
+      "docs": [
+        "https://www.goguides.com/crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "GoGuidesCrawler/\\d",
+          "GoGuidesDiscoveryBot/\\d"
+        ],
+        "instances": [
+          "GoGuidesCrawler/3.0 (trust-transparency; +https://www.goguides.com/crawler)",
+          "GoGuidesCrawler/3.0",
+          "GoGuidesDiscoveryBot/1.0 (+https://www.goguides.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "GoGuidesCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": []
     },
     {
@@ -18900,7 +19011,8 @@
           "GPTBot/\\d"
         ],
         "instances": [
-          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.2; +https://openai.com/gptbot"
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.2; +https://openai.com/gptbot",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot"
         ]
       },
       "behavior": {
@@ -19117,6 +19229,65 @@
         "98.130.70.90/32",
         "99.79.159.33/32"
       ]
+    },
+    {
+      "id": "greenweb-carbon-txt-crawler",
+      "name": "gwf-carbon-txt-crawler",
+      "operator": {
+        "name": "Green Web Foundation",
+        "url": "https://www.thegreenwebfoundation.org"
+      },
+      "description": "The Green Web Foundation's annual crawl measuring adoption of carbon.txt, an open standard for publishing sustainability data about a website and its hosting. Once a year it works through the top 100 million hostnames in the Common Crawl web graph, making a small number of requests per host: robots.txt, the root page, the two carbon.txt locations, and any URL named in a carbon.txt DNS record or HTTP header. The operator states it crawls no other pages and stores nothing but the carbon.txt files it finds.",
+      "docs": [
+        "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "gwf-carbon-txt-crawler"
+        ],
+        "instances": [
+          "gwf-carbon-txt-crawler"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "gwf-carbon-txt-crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "greenweb-checker",
+      "name": "GreenWebChecker",
+      "operator": {
+        "name": "Green Web Foundation",
+        "url": "https://www.thegreenwebfoundation.org"
+      },
+      "description": "The fetcher behind the Green Web Foundation's Green Web Checker. When somebody runs a green check against a domain, the service tries to match that domain to a known green hosting provider by green IP range, by ASN, or by finding a carbon.txt file served over HTTP — and this user agent is used for that last request only. The operator states it will only ever request /carbon.txt and /.well-known/carbon.txt, with a HEAD or GET, and will not touch any other part of a site.",
+      "docs": [
+        "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "GreenWebChecker/\\d"
+        ],
+        "instances": [
+          "GreenWebChecker/1.0.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
     },
     {
       "id": "halo-security",
@@ -20324,6 +20495,40 @@
       "resolved_cidrs": []
     },
     {
+      "id": "isonai-user",
+      "name": "IsonAI-User",
+      "operator": {
+        "name": "PT Epithre Teknologi Indonesia",
+        "url": "https://epithre.com"
+      },
+      "description": "Epithre's on-demand fetcher for IsonAI, the assistant built on Ison Search. It visits a page in real time when a person using IsonAI asks about that page or asks the assistant to read, summarise or analyse a link, and the answer then cites the source. The operator states plainly that it is not used to crawl the web automatically and not used to build or rank the Ison Search index, so it is listed separately from IsonSearchBot. Because the fetches are started by a user, Epithre says robots.txt rules may not apply and that site owners who want to stop it should block on the user agent or ask. It has no published address range by design, and the operator directs verifiers to its signature instead.",
+      "docs": [
+        "https://docs.isonai.com/en/bots/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "IsonAI-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; IsonAI-User/1.0; +https://www.isonai.com/bot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.isonai.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "isonsearch-crawler",
       "name": "IsonSearchBot",
       "operator": {
@@ -20332,7 +20537,8 @@
       },
       "description": "The crawler that builds the index behind Ison Search, an Indonesian web search engine that also grounds cited AI answers linking back to the original page. Epithre states it trains no model on what the crawler reads. Crawling is paced per site rather than per crawler process: it starts at two requests per second, speeds up only while responses stay fast and error-free, never exceeds about ten per second or four concurrent connections, halves on slow responses and 5xx, and drops to the minimum and pauses on 429 or 403, with robots.txt Crawl-delay always taking precedence. Pages whose text appears only under JavaScript are rendered in a headless browser that sends the same token and follows the same rules. Epithre says it submits no forms, attempts no authentication, reads a CAPTCHA or bot challenge as a refusal rather than solving or retrying past it, and fetches nothing behind a paywall.",
       "docs": [
-        "https://search.isonai.com/bot"
+        "https://search.isonai.com/bot",
+        "https://docs.isonai.com/en/bots/"
       ],
       "category": "search-engine",
       "user_agents": {
@@ -20353,6 +20559,10 @@
           "type": "cidr_feed",
           "url": "https://search.isonai.com/bot/ips.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://search.isonai.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -20807,14 +21017,50 @@
       "resolved_cidrs": []
     },
     {
+      "id": "liner-user",
+      "name": "Liner-User",
+      "operator": {
+        "name": "Liner",
+        "url": "https://liner.com"
+      },
+      "description": "Liner's on-demand fetcher. It retrieves a page in real time when a Liner user asks a question, and the answer cites that page as its source. Liner documents it alongside LinerBot as the second of two agents, each with its own user agent, robots.txt token and signing key, and states explicitly that rules written for LinerBot do not apply to Liner-User. Liner publishes no address ranges for either agent and points site owners at the HTTP Message Signatures key directory instead.",
+      "docs": [
+        "https://liner-user.liner.com/docs/liner-user"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Liner-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Liner-User/1.0; +https://liner-user.liner.com/docs/liner-user)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Liner-User"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://liner-user.liner.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "linerbot",
       "name": "LinerBot",
       "operator": {
         "name": "Liner",
         "url": "https://liner.com"
       },
-      "description": "Web crawler operated by Liner, an AI search and research assistant, which gathers pages from the public web and indexes them so Liner's search and research agents can retrieve and cite them. Liner's crawler page documents the user agent, states that access is controlled through robots.txt, and gives worked examples for both a full disallow and path-scoped allow rules. Liner also publishes the crawler's addresses as a JSON feed under the heading \"IP address ranges\", noting the pool may change over time.",
+      "description": "Web crawler operated by Liner, an AI search and research assistant. It builds and refreshes the index behind Liner's search and reference features — paper metadata, citations and DOI resolution — so Liner's agents can retrieve and cite pages. Liner's crawler page documents the user agent and robots.txt token, gives worked examples for a full disallow and for path-scoped rules, and states that rules naming LinerBot do not apply to its on-demand sibling Liner-User. Both agents sign their requests with HTTP Message Signatures under separate keys; Liner publishes no address ranges for either.",
       "docs": [
+        "https://liner-bot.liner.com/docs/liner-bot",
         "https://docs.getliner.com/docs/linerbot"
       ],
       "category": "ai-crawler",
@@ -20823,7 +21069,7 @@
           "LinerBot/\\d"
         ],
         "instances": [
-          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; LinerBot/1.0; +https://docs.getliner.com/docs/linerbot)"
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; LinerBot/1.0; +https://liner-bot.liner.com/docs/liner-bot)"
         ]
       },
       "behavior": {
@@ -20832,9 +21078,8 @@
       },
       "verification": [
         {
-          "type": "cidr_feed",
-          "url": "https://docs.getliner.com/linerbot.json",
-          "format": "prefixes"
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://liner-bot.liner.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -21114,6 +21359,111 @@
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "lumar-crawler",
+      "name": "Lumar",
+      "operator": {
+        "name": "Lumar",
+        "url": "https://www.lumar.io"
+      },
+      "description": "The site crawler behind Lumar's website analytics platform, formerly Deepcrawl, which crawls a customer's pages at enterprise scale to collect technical SEO, accessibility and site-health data. Lumar runs the crawl from its own addresses and publishes them, names two robots.txt tokens — its current and former brand — and warns site owners that its user agent may still reference the Deepcrawl name so that existing customer rules keep working. It states that it does not support the crawl-delay directive, aiming instead to match the way Google crawls.",
+      "docs": [
+        "https://www.lumar.io/spdr/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "[Ll]umar",
+          "[Dd]eepcrawl"
+        ],
+        "instances": [
+          "lumar",
+          "deepcrawl"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "lumar"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.lumar.io/wp-content/uploads/2026/02/lumar_ip_list_feb_2026.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "103.241.52.5/32",
+        "103.30.12.14/32",
+        "104.218.194.48/32",
+        "109.198.49.168/32",
+        "110.239.208.213/32",
+        "110.239.211.210/32",
+        "110.239.215.76/32",
+        "110.239.216.183/32",
+        "110.239.219.46/32",
+        "110.239.221.50/32",
+        "119.13.209.196/32",
+        "119.13.234.31/32",
+        "119.13.235.120/32",
+        "119.13.237.234/32",
+        "121.91.87.145/32",
+        "161.123.172.42/32",
+        "161.123.94.195/32",
+        "162.43.226.212/32",
+        "176.53.223.125/32",
+        "188.190.107.50/32",
+        "188.241.57.89/32",
+        "193.42.57.127/32",
+        "193.42.59.80/32",
+        "193.56.25.182/32",
+        "193.56.25.78/32",
+        "194.110.50.161/32",
+        "194.156.114.188/32",
+        "195.66.216.177/32",
+        "204.217.149.77/32",
+        "206.204.13.77/32",
+        "206.204.14.137/32",
+        "206.204.2.98/32",
+        "206.204.7.194/32",
+        "206.232.41.10/32",
+        "208.66.95.116/32",
+        "209.20.175.57/32",
+        "217.9.19.167/32",
+        "45.114.241.26/32",
+        "45.154.120.1/32",
+        "45.154.120.246/32",
+        "45.154.121.6/32",
+        "45.154.192.120/32",
+        "45.159.8.185/32",
+        "45.84.231.187/32",
+        "52.5.118.182/32",
+        "52.86.188.211/32",
+        "58.97.134.135/32",
+        "62.241.63.0/32",
+        "78.156.189.19/32",
+        "78.156.190.58/32",
+        "83.229.119.118/32",
+        "89.104.122.84/32",
+        "89.184.192.251/32",
+        "89.223.23.247/32",
+        "92.118.208.185/32",
+        "92.255.0.44/32",
+        "92.255.52.54/32",
+        "92.255.82.52/32",
+        "92.43.85.17/32",
+        "92.43.85.20/32",
+        "92.43.86.96/32",
+        "94.139.231.67/32",
+        "94.176.132.129/32",
+        "94.176.133.250/32",
+        "95.175.69.231/32",
+        "95.175.71.242/32"
+      ]
     },
     {
       "id": "lyonlbot",
@@ -22705,7 +23055,8 @@
           "OAI-SearchBot/\\d"
         ],
         "instances": [
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot"
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; robots.txt; +https://openai.com/searchbot"
         ]
       },
       "behavior": {
@@ -22762,6 +23113,63 @@
         "74.7.242.128/25",
         "74.7.243.0/25",
         "74.7.244.0/25"
+      ]
+    },
+    {
+      "id": "obot-crawler",
+      "name": "oBot",
+      "operator": {
+        "name": "IBM Deutschland Research & Development GmbH",
+        "url": "https://www.xforce-security.com"
+      },
+      "description": "The web crawler of the Content Security Division of IBM Germany Research & Development, which crawls pages and classifies their content into more than 65 categories to build the URL-filter database shipped in IBM's content filtering products and OEM SDK. The crawler page explains that the name predates IBM — it comes from ONLY Solutions GmbH, which built the crawler in the late 1990s — and that the token was deliberately never renamed so that existing robots.txt entries keep working. The operator documents its user agent, its address ranges and a hostname to check them against.",
+      "docs": [
+        "https://www.xforce-security.com/crawler/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "oBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; oBot/2.3.1; +http://www.xforce-security.com/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "oBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "206.253.224.0/24",
+            "206.253.225.0/24",
+            "206.253.226.0/24",
+            "194.153.113.0/24",
+            "161.156.29.32/27",
+            "2001:1be0:1000:160::/64",
+            "2001:1be0:1000:167::/64",
+            "2001:1be0:1000:168::/64",
+            "2001:1be0:1000:169::/64",
+            "2a03:8180:1c01:c1::/64"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "161.156.29.32/27",
+        "194.153.113.0/24",
+        "2001:1be0:1000:160::/64",
+        "2001:1be0:1000:167::/64",
+        "2001:1be0:1000:168::/64",
+        "2001:1be0:1000:169::/64",
+        "206.253.224.0/24",
+        "206.253.225.0/24",
+        "206.253.226.0/24",
+        "2a03:8180:1c01:c1::/64"
       ]
     },
     {
@@ -23606,6 +24014,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "pigafetta",
+      "name": "Pigafetta",
+      "operator": {
+        "name": "Visual SEO Studio",
+        "url": "https://visual-seo.com"
+      },
+      "description": "The crawler inside Visual SEO Studio, a desktop SEO auditing tool, which walks a site's structure and HTML pages to assess technical SEO. Its bot page is an unusually explicit statement of crawling manners: it uses one explicit agent name, checks robots.txt before entering a domain or subdomain, takes the most restrictive reading of conflicting rules, obeys robots meta tags, X-Robots-Tag and rel=nofollow, caps Crawl-delay handling at 2 seconds, waits for each response to complete before issuing the next request, and sends a From header so site owners can make contact.",
+      "docs": [
+        "https://visual-seo.com/Pigafetta-Bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Pigafetta/\\d"
+        ],
+        "instances": [
+          "Mozilla 5.0 (compatible; Pigafetta/0.5; +http://visual-seo.com/Pigafetta-Bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Pigafetta"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "pingdom",
       "name": "Pingdom",
       "operator": {
@@ -23896,6 +24334,36 @@
       "resolved_cidrs": []
     },
     {
+      "id": "piperic-bot",
+      "name": "PipericBot",
+      "operator": {
+        "name": "Piperic (Rácz Akácosi Laura)",
+        "url": "https://piperic.com"
+      },
+      "description": "The crawler behind Piperic, a B2B website-intelligence service that profiles public sites by technology, category and language. The operator describes it as comparable to BuiltWith or Wappalyzer: it fetches publicly accessible home pages plus standard public files such as robots.txt, llms.txt, ai.txt and humans.txt, typically a single home-page request per domain at a low rate. It states it bypasses no login or paywall, reaches no private or restricted area, and submits no forms, and it publishes a removal page for site owners who want their domain out of the index.",
+      "docs": [
+        "https://piperic.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "PipericBot/\\d"
+        ],
+        "instances": [
+          "PipericBot/1.0 (+https://piperic.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PipericBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "pipl-crawler",
       "name": "PiplBot",
       "operator": {
@@ -24060,6 +24528,59 @@
       "tier_label": "Listed only",
       "first_seen": "2026-10-13T13:38:51.424Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "prerender-bot",
+      "name": "Prerender.io",
+      "operator": {
+        "name": "Prerender.io",
+        "url": "https://prerender.io"
+      },
+      "description": "The rendering service Prerender.io runs for its customers: it fetches and renders a customer's pages with a headless browser and caches the result so search engines and AI crawlers receive fully rendered HTML. Three request profiles share one identifier — a desktop renderer, a mobile renderer and a sitemap worker — and the operator's docs tell site owners not to trust the user agent alone, offering two published ways to confirm a request: a reverse-DNS lookup that must resolve under its own domain, and a published list of crawler address ranges.",
+      "docs": [
+        "https://docs.prerender.io/docs/33-overview-of-prerender-crawlers"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Prerender \\(\\+https://github\\.com/prerender/prerender\\)"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/W.X.Y.Z Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+          "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+          "Prerender (+https://github.com/prerender/prerender)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://ipranges.prerender.io/ipranges-all.txt",
+          "format": "text_lines"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.renders.prerender.io"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "103.207.40.0/24",
+        "103.207.41.0/24",
+        "103.207.42.0/24",
+        "103.207.43.0/24",
+        "104.224.12.0/24",
+        "104.224.13.0/24",
+        "104.224.14.0/24",
+        "104.224.15.0/24",
+        "5.161.0.0/16"
+      ]
     },
     {
       "id": "productsup-crawler",
@@ -31917,6 +32438,55 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "yioop-bot",
+      "name": "YioopBot",
+      "operator": {
+        "name": "Seekquarry LLC (Chris Pollett)",
+        "url": "https://www.seekquarry.com"
+      },
+      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+      "docs": [
+        "https://www.yioop.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YioopBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YioopBot; +https://www.yioop.com/bot.php)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YioopBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "173.13.143.73/32",
+            "173.13.143.74/32",
+            "173.13.143.75/32",
+            "173.13.143.76/32",
+            "173.13.143.77/32",
+            "173.13.143.78/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "173.13.143.73/32",
+        "173.13.143.74/32",
+        "173.13.143.75/32",
+        "173.13.143.76/32",
+        "173.13.143.77/32",
+        "173.13.143.78/32"
+      ]
     },
     {
       "id": "youbot",

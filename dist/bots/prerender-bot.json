@@ -1,0 +1,53 @@
+{
+  "id": "prerender-bot",
+  "name": "Prerender.io",
+  "operator": {
+    "name": "Prerender.io",
+    "url": "https://prerender.io"
+  },
+  "description": "The rendering service Prerender.io runs for its customers: it fetches and renders a customer's pages with a headless browser and caches the result so search engines and AI crawlers receive fully rendered HTML. Three request profiles share one identifier — a desktop renderer, a mobile renderer and a sitemap worker — and the operator's docs tell site owners not to trust the user agent alone, offering two published ways to confirm a request: a reverse-DNS lookup that must resolve under its own domain, and a published list of crawler address ranges.",
+  "docs": [
+    "https://docs.prerender.io/docs/33-overview-of-prerender-crawlers"
+  ],
+  "category": "seo",
+  "user_agents": {
+    "patterns": [
+      "Prerender \\(\\+https://github\\.com/prerender/prerender\\)"
+    ],
+    "instances": [
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/W.X.Y.Z Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+      "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+      "Prerender (+https://github.com/prerender/prerender)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://ipranges.prerender.io/ipranges-all.txt",
+      "format": "text_lines"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.renders.prerender.io"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-10-23T13:22:25.967Z",
+  "resolved_cidrs": [
+    "103.207.40.0/24",
+    "103.207.41.0/24",
+    "103.207.42.0/24",
+    "103.207.43.0/24",
+    "104.224.12.0/24",
+    "104.224.13.0/24",
+    "104.224.14.0/24",
+    "104.224.15.0/24",
+    "5.161.0.0/16"
+  ]
+}

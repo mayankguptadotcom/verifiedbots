@@ -1,0 +1,44 @@
+id: prerender-bot
+name: Prerender.io
+operator: { name: Prerender.io, url: "https://prerender.io" }
+description: >-
+  The rendering service Prerender.io runs for its customers: it fetches and
+  renders a customer's pages with a headless browser and caches the result so
+  search engines and AI crawlers receive fully rendered HTML. Three request
+  profiles share one identifier — a desktop renderer, a mobile renderer and a
+  sitemap worker — and the operator's docs tell site owners not to trust the
+  user agent alone, offering two published ways to confirm a request: a
+  reverse-DNS lookup that must resolve under its own domain, and a published
+  list of crawler address ranges.
+docs:
+  - "https://docs.prerender.io/docs/33-overview-of-prerender-crawlers"
+category: seo
+user_agents:
+  # "All Prerender.io crawlers include the following identifier in their
+  # user-agent string: Prerender (+https://github.com/prerender/prerender)",
+  # followed by a table of three full strings, reproduced below. W.X.Y.Z is the
+  # operator's own placeholder for the headless Chrome version ("do not
+  # hard-code it"), which is why the pattern matches the shared identifier
+  # rather than any version.
+  patterns:
+    - 'Prerender \(\+https://github\.com/prerender/prerender\)'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/W.X.Y.Z Safari/537.36 Prerender (+https://github.com/prerender/prerender)'
+    - 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 Prerender (+https://github.com/prerender/prerender)'
+    - 'Prerender (+https://github.com/prerender/prerender)'
+# Service traffic a customer configures against their own site, not a web
+# crawl: the cited page describes identification and verification only and
+# documents no robots.txt handling, so no obedience is claimed.
+behavior: { respects_robots_txt: false }
+verification:
+  # Both mechanisms are the operator's own, and both were checked live this run.
+  # "Prerender.io publishes its full list of crawler IP ranges" links this text
+  # feed: HTTP 200, text/plain, nine CIDRs (one /16 and eight /24s).
+  - type: cidr_feed
+    url: "https://ipranges.prerender.io/ipranges-all.txt"
+    format: text_lines
+  # "If the IP matches in both directions and the domain ends in
+  # .renders.prerender.io, the request is verified", with the worked example
+  # us-mci1-38.renders.prerender.io.
+  - type: rdns
+    masks: ["*.renders.prerender.io"]

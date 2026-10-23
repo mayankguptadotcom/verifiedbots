@@ -1,0 +1,37 @@
+id: pigafetta
+name: Pigafetta
+operator: { name: "Visual SEO Studio", url: "https://visual-seo.com" }
+description: >-
+  The crawler inside Visual SEO Studio, a desktop SEO auditing tool, which
+  walks a site's structure and HTML pages to assess technical SEO. Its bot
+  page is an unusually explicit statement of crawling manners: it uses one
+  explicit agent name, checks robots.txt before entering a domain or
+  subdomain, takes the most restrictive reading of conflicting rules, obeys
+  robots meta tags, X-Robots-Tag and rel=nofollow, caps Crawl-delay handling
+  at 2 seconds, waits for each response to complete before issuing the next
+  request, and sends a From header so site owners can make contact.
+docs:
+  - "https://visual-seo.com/Pigafetta-Bot"
+category: seo
+user_agents:
+  # "Pigafetta identify itself with the name "Pigafetta"; an example of the
+  # user agent it uses (version number might change) is: Mozilla 5.0
+  # (compatible; Pigafetta/0.5; +http://visual-seo.com/Pigafetta-Bot)". The
+  # missing slash in "Mozilla 5.0" is the operator's own, kept verbatim.
+  patterns:
+    - 'Pigafetta/\d'
+  instances:
+    - 'Mozilla 5.0 (compatible; Pigafetta/0.5; +http://visual-seo.com/Pigafetta-Bot)'
+# "Always checks the robots.txt file before entering a domain or sub-domain"
+# and "Adheres to the Robots Exclusion Protocol", with the worked opt-out
+# `User-agent: Pigafetta` / `Disallow: /`.
+behavior: { respects_robots_txt: true, robots_token: Pigafetta }
+# No recipe, and the reason is structural rather than a gap in the docs:
+# Visual SEO Studio is desktop software, so each crawl originates from the
+# customer's own machine and address. There is no operator address range,
+# ASN or reverse-DNS mask to publish — the same position powermapper is in,
+# and the reason this entry stays at Tier 3 however well documented it is.
+# The page also notes the agent can be changed for a site whose administrator
+# has asked for and authorised that ("unless required and authorized by a
+# verified site administrator").
+verification: []

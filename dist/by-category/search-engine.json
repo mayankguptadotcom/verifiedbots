@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 93,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 95,
   "bots": [
     {
       "id": "addsearch",
@@ -2375,6 +2375,46 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "cl0q-crawler",
+      "name": "cl0q crawlers",
+      "operator": {
+        "name": "cl0q",
+        "url": "https://cl0q.com"
+      },
+      "description": "The three crawlers behind cl0q, an independent search engine that runs its own crawler and index rather than reselling another engine's results. cl0q-crawler reads a site's robots.txt and home page for the search index, cl0q-discovery follows a capped number of ordinary public links purely to learn which other sites exist, and cl0q-favicon fetches the site icon shown beside results. All three identify themselves, link back to one bot page, answer to the shared robots.txt token cl0q as well as their individual names, and run from a single published address. The crawler node is open source.",
+      "docs": [
+        "https://cl0q.com/bot/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "cl0q-(?:crawler|discovery|favicon)/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; cl0q-crawler/1.0; +https://cl0q.com/bot)",
+          "Mozilla/5.0 (compatible; cl0q-discovery/1.0; +https://cl0q.com/bot)",
+          "Mozilla/5.0 (compatible; cl0q-favicon/1.0; +https://cl0q.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "cl0q"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://cl0q.com/bot/ips.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "143.110.230.182/32"
+      ]
     },
     {
       "id": "cludo",
@@ -5869,7 +5909,8 @@
       },
       "description": "The crawler that builds the index behind Ison Search, an Indonesian web search engine that also grounds cited AI answers linking back to the original page. Epithre states it trains no model on what the crawler reads. Crawling is paced per site rather than per crawler process: it starts at two requests per second, speeds up only while responses stay fast and error-free, never exceeds about ten per second or four concurrent connections, halves on slow responses and 5xx, and drops to the minimum and pauses on 429 or 403, with robots.txt Crawl-delay always taking precedence. Pages whose text appears only under JavaScript are rendered in a headless browser that sends the same token and follows the same rules. Epithre says it submits no forms, attempts no authentication, reads a CAPTCHA or bot challenge as a refusal rather than solving or retrying past it, and fetches nothing behind a paywall.",
       "docs": [
-        "https://search.isonai.com/bot"
+        "https://search.isonai.com/bot",
+        "https://docs.isonai.com/en/bots/"
       ],
       "category": "search-engine",
       "user_agents": {
@@ -5890,6 +5931,10 @@
           "type": "cidr_feed",
           "url": "https://search.isonai.com/bot/ips.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://search.isonai.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -8555,6 +8600,55 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "yioop-bot",
+      "name": "YioopBot",
+      "operator": {
+        "name": "Seekquarry LLC (Chris Pollett)",
+        "url": "https://www.seekquarry.com"
+      },
+      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+      "docs": [
+        "https://www.yioop.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YioopBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YioopBot; +https://www.yioop.com/bot.php)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YioopBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "173.13.143.73/32",
+            "173.13.143.74/32",
+            "173.13.143.75/32",
+            "173.13.143.76/32",
+            "173.13.143.77/32",
+            "173.13.143.78/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "173.13.143.73/32",
+        "173.13.143.74/32",
+        "173.13.143.75/32",
+        "173.13.143.76/32",
+        "173.13.143.77/32",
+        "173.13.143.78/32"
+      ]
     }
   ]
 }

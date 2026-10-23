@@ -1,8 +1,46 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 141,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 144,
   "bots": [
+    {
+      "id": "accessiblewebbot",
+      "name": "AccessibleWebBot",
+      "operator": {
+        "name": "Accessible Web",
+        "url": "https://accessibleweb.com"
+      },
+      "description": "The crawler Accessible Web runs for its RAMP accessibility-monitoring product. It reads customers' sitemaps to find newly added pages and fetches the individual pages RAMP users ask to have scanned for accessibility problems, in both a plain and a headless-browser profile. The operator documents both user agents and a reverse-DNS method for confirming that a request really came from it, and explains how to allow the bot past robots.txt rules meant for search engines.",
+      "docs": [
+        "https://accessibleweb.com/bot/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AccessibleWebBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/)",
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; AccessibleWebBot/1.0; +https://accessibleweb.com/bot/) HeadlessChrome/W.X.Y.Z Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AccessibleWebBot"
+      },
+      "verification": [
+        {
+          "type": "rdns",
+          "masks": [
+            "*.accessiblewebbot.com"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "addsearch",
       "name": "AddSearchBot",
@@ -10371,6 +10409,63 @@
       ]
     },
     {
+      "id": "obot-crawler",
+      "name": "oBot",
+      "operator": {
+        "name": "IBM Deutschland Research & Development GmbH",
+        "url": "https://www.xforce-security.com"
+      },
+      "description": "The web crawler of the Content Security Division of IBM Germany Research & Development, which crawls pages and classifies their content into more than 65 categories to build the URL-filter database shipped in IBM's content filtering products and OEM SDK. The crawler page explains that the name predates IBM — it comes from ONLY Solutions GmbH, which built the crawler in the late 1990s — and that the token was deliberately never renamed so that existing robots.txt entries keep working. The operator documents its user agent, its address ranges and a hostname to check them against.",
+      "docs": [
+        "https://www.xforce-security.com/crawler/"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "oBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; oBot/2.3.1; +http://www.xforce-security.com/crawler/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "oBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "206.253.224.0/24",
+            "206.253.225.0/24",
+            "206.253.226.0/24",
+            "194.153.113.0/24",
+            "161.156.29.32/27",
+            "2001:1be0:1000:160::/64",
+            "2001:1be0:1000:167::/64",
+            "2001:1be0:1000:168::/64",
+            "2001:1be0:1000:169::/64",
+            "2a03:8180:1c01:c1::/64"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "161.156.29.32/27",
+        "194.153.113.0/24",
+        "2001:1be0:1000:160::/64",
+        "2001:1be0:1000:167::/64",
+        "2001:1be0:1000:168::/64",
+        "2001:1be0:1000:169::/64",
+        "206.253.224.0/24",
+        "206.253.225.0/24",
+        "206.253.226.0/24",
+        "2a03:8180:1c01:c1::/64"
+      ]
+    },
+    {
       "id": "observepoint",
       "name": "ObservePoint",
       "operator": {
@@ -13710,6 +13805,55 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "yioop-bot",
+      "name": "YioopBot",
+      "operator": {
+        "name": "Seekquarry LLC (Chris Pollett)",
+        "url": "https://www.seekquarry.com"
+      },
+      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+      "docs": [
+        "https://www.yioop.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "YioopBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; YioopBot; +https://www.yioop.com/bot.php)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "YioopBot"
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "173.13.143.73/32",
+            "173.13.143.74/32",
+            "173.13.143.75/32",
+            "173.13.143.76/32",
+            "173.13.143.77/32",
+            "173.13.143.78/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "173.13.143.73/32",
+        "173.13.143.74/32",
+        "173.13.143.75/32",
+        "173.13.143.76/32",
+        "173.13.143.77/32",
+        "173.13.143.78/32"
+      ]
     }
   ]
 }

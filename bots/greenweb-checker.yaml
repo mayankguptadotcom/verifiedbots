@@ -1,0 +1,29 @@
+id: greenweb-checker
+name: GreenWebChecker
+operator: { name: "Green Web Foundation", url: "https://www.thegreenwebfoundation.org" }
+description: >-
+  The fetcher behind the Green Web Foundation's Green Web Checker. When
+  somebody runs a green check against a domain, the service tries to match
+  that domain to a known green hosting provider by green IP range, by ASN, or
+  by finding a carbon.txt file served over HTTP — and this user agent is used
+  for that last request only. The operator states it will only ever request
+  /carbon.txt and /.well-known/carbon.txt, with a HEAD or GET, and will not
+  touch any other part of a site.
+docs:
+  - "https://www.thegreenwebfoundation.org/green-web-checker-faq/"
+category: monitoring
+user_agents:
+  # "you've seen requests from the User Agent "GreenWebChecker/1.0.0" in your
+  # web server logs" — the FAQ prints the string and nothing fuller.
+  patterns:
+    - 'GreenWebChecker/\d'
+  instances:
+    - 'GreenWebChecker/1.0.0'
+# A check a person starts for one domain, scoped to two fixed paths. The FAQ
+# documents robots.txt handling for the foundation's separate annual
+# carbon.txt crawl (see greenweb-carbon-txt-crawler) but says nothing about
+# robots.txt for this agent, so no obedience is claimed and no token is listed.
+behavior: { respects_robots_txt: false }
+# The foundation publishes no address ranges, ASN or reverse-DNS method for
+# this fetcher, so the entry carries no verification recipe.
+verification: []

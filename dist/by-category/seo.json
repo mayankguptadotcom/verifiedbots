@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T09:24:42.371Z",
-  "count": 88,
+  "generated_at": "2026-10-23T13:27:31.257Z",
+  "count": 93,
   "bots": [
     {
       "id": "adobe-edge-optimize",
@@ -1207,6 +1207,39 @@
       "resolved_cidrs": []
     },
     {
+      "id": "goguides-crawler",
+      "name": "GoGuidesCrawler",
+      "operator": {
+        "name": "GoGuides, LLC",
+        "url": "https://www.goguides.com"
+      },
+      "description": "The two crawlers GoGuides runs for its web-evidence service, which publishes machine-readable records about public websites — crawl status, first-seen and last-seen history, freshness and canonical matching — for people and automated systems that query it about a domain. GoGuidesCrawler checks publicly accessible pages to refresh those observations and GoGuidesDiscoveryBot performs limited discovery checks on supported public URLs. The operator states the bots request public URLs only and should not sign in, defeat access controls or enter private account areas.",
+      "docs": [
+        "https://www.goguides.com/crawler"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "GoGuidesCrawler/\\d",
+          "GoGuidesDiscoveryBot/\\d"
+        ],
+        "instances": [
+          "GoGuidesCrawler/3.0 (trust-transparency; +https://www.goguides.com/crawler)",
+          "GoGuidesCrawler/3.0",
+          "GoGuidesDiscoveryBot/1.0 (+https://www.goguides.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "GoGuidesCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "hubspot-crawler",
       "name": "HubSpot Crawler",
       "operator": {
@@ -1671,6 +1704,111 @@
       ]
     },
     {
+      "id": "lumar-crawler",
+      "name": "Lumar",
+      "operator": {
+        "name": "Lumar",
+        "url": "https://www.lumar.io"
+      },
+      "description": "The site crawler behind Lumar's website analytics platform, formerly Deepcrawl, which crawls a customer's pages at enterprise scale to collect technical SEO, accessibility and site-health data. Lumar runs the crawl from its own addresses and publishes them, names two robots.txt tokens — its current and former brand — and warns site owners that its user agent may still reference the Deepcrawl name so that existing customer rules keep working. It states that it does not support the crawl-delay directive, aiming instead to match the way Google crawls.",
+      "docs": [
+        "https://www.lumar.io/spdr/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "[Ll]umar",
+          "[Dd]eepcrawl"
+        ],
+        "instances": [
+          "lumar",
+          "deepcrawl"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "lumar"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.lumar.io/wp-content/uploads/2026/02/lumar_ip_list_feb_2026.json",
+          "format": "prefixes"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "103.241.52.5/32",
+        "103.30.12.14/32",
+        "104.218.194.48/32",
+        "109.198.49.168/32",
+        "110.239.208.213/32",
+        "110.239.211.210/32",
+        "110.239.215.76/32",
+        "110.239.216.183/32",
+        "110.239.219.46/32",
+        "110.239.221.50/32",
+        "119.13.209.196/32",
+        "119.13.234.31/32",
+        "119.13.235.120/32",
+        "119.13.237.234/32",
+        "121.91.87.145/32",
+        "161.123.172.42/32",
+        "161.123.94.195/32",
+        "162.43.226.212/32",
+        "176.53.223.125/32",
+        "188.190.107.50/32",
+        "188.241.57.89/32",
+        "193.42.57.127/32",
+        "193.42.59.80/32",
+        "193.56.25.182/32",
+        "193.56.25.78/32",
+        "194.110.50.161/32",
+        "194.156.114.188/32",
+        "195.66.216.177/32",
+        "204.217.149.77/32",
+        "206.204.13.77/32",
+        "206.204.14.137/32",
+        "206.204.2.98/32",
+        "206.204.7.194/32",
+        "206.232.41.10/32",
+        "208.66.95.116/32",
+        "209.20.175.57/32",
+        "217.9.19.167/32",
+        "45.114.241.26/32",
+        "45.154.120.1/32",
+        "45.154.120.246/32",
+        "45.154.121.6/32",
+        "45.154.192.120/32",
+        "45.159.8.185/32",
+        "45.84.231.187/32",
+        "52.5.118.182/32",
+        "52.86.188.211/32",
+        "58.97.134.135/32",
+        "62.241.63.0/32",
+        "78.156.189.19/32",
+        "78.156.190.58/32",
+        "83.229.119.118/32",
+        "89.104.122.84/32",
+        "89.184.192.251/32",
+        "89.223.23.247/32",
+        "92.118.208.185/32",
+        "92.255.0.44/32",
+        "92.255.52.54/32",
+        "92.255.82.52/32",
+        "92.43.85.17/32",
+        "92.43.85.20/32",
+        "92.43.86.96/32",
+        "94.139.231.67/32",
+        "94.176.132.129/32",
+        "94.176.133.250/32",
+        "95.175.69.231/32",
+        "95.175.71.242/32"
+      ]
+    },
+    {
       "id": "mcontextual-bot",
       "name": "McontextualBot",
       "operator": {
@@ -2123,6 +2261,66 @@
       "resolved_cidrs": []
     },
     {
+      "id": "pigafetta",
+      "name": "Pigafetta",
+      "operator": {
+        "name": "Visual SEO Studio",
+        "url": "https://visual-seo.com"
+      },
+      "description": "The crawler inside Visual SEO Studio, a desktop SEO auditing tool, which walks a site's structure and HTML pages to assess technical SEO. Its bot page is an unusually explicit statement of crawling manners: it uses one explicit agent name, checks robots.txt before entering a domain or subdomain, takes the most restrictive reading of conflicting rules, obeys robots meta tags, X-Robots-Tag and rel=nofollow, caps Crawl-delay handling at 2 seconds, waits for each response to complete before issuing the next request, and sends a From header so site owners can make contact.",
+      "docs": [
+        "https://visual-seo.com/Pigafetta-Bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Pigafetta/\\d"
+        ],
+        "instances": [
+          "Mozilla 5.0 (compatible; Pigafetta/0.5; +http://visual-seo.com/Pigafetta-Bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Pigafetta"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "piperic-bot",
+      "name": "PipericBot",
+      "operator": {
+        "name": "Piperic (Rácz Akácosi Laura)",
+        "url": "https://piperic.com"
+      },
+      "description": "The crawler behind Piperic, a B2B website-intelligence service that profiles public sites by technology, category and language. The operator describes it as comparable to BuiltWith or Wappalyzer: it fetches publicly accessible home pages plus standard public files such as robots.txt, llms.txt, ai.txt and humans.txt, typically a single home-page request per domain at a low rate. It states it bypasses no login or paywall, reaches no private or restricted area, and submits no forms, and it publishes a removal page for site owners who want their domain out of the index.",
+      "docs": [
+        "https://piperic.com/bot"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "PipericBot/\\d"
+        ],
+        "instances": [
+          "PipericBot/1.0 (+https://piperic.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "PipericBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "powermapper",
       "name": "PowerMapper",
       "operator": {
@@ -2152,6 +2350,59 @@
       "tier_label": "Listed only",
       "first_seen": "2026-10-13T13:38:51.424Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "prerender-bot",
+      "name": "Prerender.io",
+      "operator": {
+        "name": "Prerender.io",
+        "url": "https://prerender.io"
+      },
+      "description": "The rendering service Prerender.io runs for its customers: it fetches and renders a customer's pages with a headless browser and caches the result so search engines and AI crawlers receive fully rendered HTML. Three request profiles share one identifier — a desktop renderer, a mobile renderer and a sitemap worker — and the operator's docs tell site owners not to trust the user agent alone, offering two published ways to confirm a request: a reverse-DNS lookup that must resolve under its own domain, and a published list of crawler address ranges.",
+      "docs": [
+        "https://docs.prerender.io/docs/33-overview-of-prerender-crawlers"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "Prerender \\(\\+https://github\\.com/prerender/prerender\\)"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/W.X.Y.Z Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+          "Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 Prerender (+https://github.com/prerender/prerender)",
+          "Prerender (+https://github.com/prerender/prerender)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://ipranges.prerender.io/ipranges-all.txt",
+          "format": "text_lines"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.renders.prerender.io"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-23T13:22:25.967Z",
+      "resolved_cidrs": [
+        "103.207.40.0/24",
+        "103.207.41.0/24",
+        "103.207.42.0/24",
+        "103.207.43.0/24",
+        "104.224.12.0/24",
+        "104.224.13.0/24",
+        "104.224.14.0/24",
+        "104.224.15.0/24",
+        "5.161.0.0/16"
+      ]
     },
     {
       "id": "proximic-crawler",
