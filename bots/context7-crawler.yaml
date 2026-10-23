@@ -4,10 +4,18 @@ operator: { name: Upstash, url: "https://context7.com" }
 description: >-
   Context7's documentation crawler, an Upstash project. It reads public
   documentation pages so that AI coding agents can retrieve and cite them, and
-  the operator states the content is used for AI search with links back to the
-  source rather than for model training. Requests are signed with HTTP Message
-  Signatures (RFC 9421) under the Web Bot Auth scheme.
+  the operator stated the content is used for AI search with links back to the
+  source rather than for model training. Context7 has since withdrawn the
+  crawler page that documented it and the key directory its requests were
+  signed against, so the user agent is all that remains attributable: the
+  entry is kept for identity and carries no verification recipe.
 docs:
+  # Still the URL the crawler's own user agent points at, and the one arcjet
+  # records, but it no longer documents the bot: fetched live on 2026-10-23 it
+  # answers 200 with a "Crawler Latest Libraries" page listing crawled
+  # libraries, served by Context7's dynamic route (the router payload shows
+  # `crawler` resolving as a username-style segment), with no mention of the
+  # user agent, robots handling or signing anywhere on it.
   - "https://context7.com/crawler"
 category: ai-crawler
 user_agents:
@@ -17,5 +25,20 @@ user_agents:
     - 'Context7-Crawler/1.0 (+https://context7.com/crawler)'
 behavior: { respects_robots_txt: true, robots_token: Context7-Crawler }
 verification:
-  - type: web_bot_auth
-    signature_agent_url: "https://context7.com/.well-known/http-message-signatures-directory"
+  # Was Tier 1 on a web_bot_auth recipe pointing at
+  # https://context7.com/.well-known/http-message-signatures-directory, added
+  # 2026-10-17 when both that directory and the crawler page were live. The
+  # directory is now gone, and deliberately rather than transiently: three
+  # fetches this run all returned HTTP 404 with Context7's own JSON error body,
+  # {"error":"Not Found","message":"The requested .well-known resource does not
+  # exist."} — i.e. its `.well-known` handler answering, not a network blip.
+  # No replacement directory is published: the crawler page no longer mentions
+  # signing, context7.com/sitemap.xml indexes only library pages, the guides
+  # index carries no crawler documentation, and a search restricted to
+  # context7.com/upstash.com/github.com surfaced only the withdrawn page in
+  # cached form. arcjet still carries the dead URL (addition_date 2026/10/16),
+  # so it cannot be used to re-source the recipe either.
+  #
+  # Re-attach only on a directory URL fetched successfully — not on arcjet's
+  # record, and not on a search result describing the old page.
+  []

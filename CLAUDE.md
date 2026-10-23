@@ -17,12 +17,17 @@ recipes) at verifiedbots.dev. Data lives in `bots/*.yaml` (one file per bot);
     feed never writes LKG, so the identical diff recurs forever. **Review the
     diff first** — confirm the additions are really the operator's (e.g. inside
     their own netblock) and that nothing legitimate was dropped.
+- `npm run verify-wba` — fetches every `web_bot_auth` key directory. Exit 1 on any
+  non-200 or wrong content type, and **CI runs it**, so a withdrawn directory
+  turns the build red even when validate, fetch-feeds and test are all green.
+  Unlike feeds there is no last-known-good fallback: a 404 here means the
+  recipe verifies nothing and must go (see `context7-crawler`, 2026-10-23).
 - `npm run build:artifacts` — rebuilds `dist/` (also refreshes `data/first-seen.json`).
 - `npm test` — full test suite (vitest).
 - Site: `cd site && npm run build` (Astro; only needed when `site/` changes).
 
-Run validate + fetch-feeds + test after every data change. All three green
-before committing.
+Run validate + fetch-feeds + verify-wba + test after every data change. All
+four green before committing (fetch-feeds exit 2 excepted — see above).
 
 ## Iron rules for bot data (never break these)
 
@@ -93,7 +98,7 @@ only when it fails the gate above.
    nested objects, e.g. `synthetics.prefixes_ipv4` for Datadog-style feeds;
    one recipe per array), `stripe_webhooks`. A feed in any other shape →
    use `static_cidrs` with documented ranges, or omit the recipe.
-6. Run `npm run validate && npm run fetch-feeds && npm test`. Fix or drop
+6. Run `npm run validate && npm run fetch-feeds && npm run verify-wba && npm test`. Fix or drop
    anything red. An exit-1 feed means the URL is wrong — never leave a broken
    recipe in; exit 2 (held/transient) is fine to commit through.
 7. Commit the YAML change (plus `dist/` + `data/first-seen.json` if you ran

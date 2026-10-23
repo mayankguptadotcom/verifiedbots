@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-23T13:29:36.328Z",
-  "count": 162,
+  "generated_at": "2026-10-23T13:33:23.199Z",
+  "count": 163,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1027,6 +1027,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "context7-crawler",
+      "name": "Context7-Crawler",
+      "operator": {
+        "name": "Upstash",
+        "url": "https://context7.com"
+      },
+      "description": "Context7's documentation crawler, an Upstash project. It reads public documentation pages so that AI coding agents can retrieve and cite them, and the operator stated the content is used for AI search with links back to the source rather than for model training. Context7 has since withdrawn the crawler page that documented it and the key directory its requests were signed against, so the user agent is all that remains attributable: the entry is kept for identity and carries no verification recipe.",
+      "docs": [
+        "https://context7.com/crawler"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "Context7-Crawler/\\d"
+        ],
+        "instances": [
+          "Context7-Crawler/1.0 (+https://context7.com/crawler)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Context7-Crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-17T13:26:18.038Z",
       "resolved_cidrs": []
     },
     {
