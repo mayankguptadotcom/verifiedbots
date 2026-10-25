@@ -2473,6 +2473,13 @@
     ]
   },
   {
+    "id": "uptimia",
+    "category": "monitoring",
+    "patterns": [
+      "Uptimia"
+    ]
+  },
+  {
     "id": "urlsuma",
     "category": "search-engine",
     "patterns": [

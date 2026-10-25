@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-25T09:13:10.203Z",
+  "generated_at": "2026-10-25T13:18:53.326Z",
   "count": 19,
   "bots": [
     {
@@ -4260,9 +4260,14 @@
       "behavior": {
         "respects_robots_txt": false
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.isonai.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": []
     },

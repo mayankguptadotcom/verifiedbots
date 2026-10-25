@@ -1,0 +1,62 @@
+id: uptimia
+name: Uptimia
+operator: { name: Uptimia, url: "https://www.uptimia.com" }
+description: >-
+  Website monitoring service that probes a customer's own hosts from a fixed
+  fleet of named checkpoints: uptime, page-speed, transaction, API and SSL
+  monitors all originate at those probes, and DNS monitors query the
+  customer's authoritative nameservers. The operator publishes the full probe
+  address list over both IP protocols and tells site owners to allowlist on
+  the combination of those addresses and the user-agent token rather than on
+  the token alone. Several of its other monitor families never touch the
+  customer's servers at all — domain monitors query the registry, virus
+  monitors the Google Web Risk API and blacklist monitors DNSBLs — and its
+  heartbeat and server-agent checks run in the opposite direction, outbound
+  from the customer's own infrastructure.
+docs:
+  - "https://help.uptimia.com/articles/whitelist-uptimia-monitoring-ips-firewall-waf-cdn"
+category: monitoring
+user_agents:
+  # "Probes send one of three User-Agent strings. All three contain the stable
+  # token Uptimia, which is the only thing worth matching on ... Write your
+  # rule against the substring Uptimia. Never pin it to a Chrome version,
+  # which moves with every browser upgrade." The pattern follows that
+  # instruction rather than inventing a tighter one. All three strings below
+  # are quoted verbatim from the cited page; `<version>` in the second is the
+  # operator's own placeholder for the Chromium driving the page, not a
+  # transcription gap.
+  patterns:
+    - 'Uptimia'
+  instances:
+    - 'Mozilla/5.0 (compatible; Uptimia; www.uptimia.com)'
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/<version> Safari/537.36 Uptimia/1.0 (https://www.uptimia.com)'
+    - 'Uptimia-ApiMonitor/1.0 (+https://www.uptimia.com)'
+# User-configured monitoring of the customer's own endpoints, not a web crawl:
+# the operator's documentation covers identification, allowlisting and probe
+# direction and says nothing about robots.txt, so no compliance is claimed and
+# no robots token exists to claim.
+behavior: { respects_robots_txt: false }
+verification:
+  # "Uptimia publishes every probe address at two URLs. Both list IPv4 and
+  # IPv6, neither needs an account, and both are regenerated from the same
+  # source the /checkpoints directory renders." The plain-text URL is used
+  # here because it is one entry per line; the second published URL
+  # (`.../monitoring-checkpoint-ips-whitelist`) carries the identical list in
+  # nginx `geo`/`map` syntax with each line suffixed `1;`, which no feed
+  # format here parses. Both were fetched live on 2026-10-25 (HTTP 200,
+  # text/plain, 273 entries each).
+  #
+  # Not a fast-rotating list, which is what makes this a Tier 1 recipe rather
+  # than a trap: the addresses are a provisioned checkpoint fleet, and the
+  # operator states "The list includes every provisioned probe, including any
+  # that is momentarily down: a probe must already be trusted when it comes
+  # back." The page's own count ("As of 2026-08-31 the list holds 274
+  # entries: 179 IPv4 addresses and 95 IPv6 entries") is within one entry of
+  # the 273 fetched here almost two months later.
+  #
+  # Mostly bare addresses rather than prefixes, as with `uptimerobot`'s feed:
+  # the operator notes "Three of the IPv6 entries are prefixes (/64 or /128)
+  # rather than single addresses."
+  - type: cidr_feed
+    url: "https://www.uptimia.com/monitoring-checkpoint-ips"
+    format: text_lines

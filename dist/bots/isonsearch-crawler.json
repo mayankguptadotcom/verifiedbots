@@ -29,6 +29,10 @@
       "type": "cidr_feed",
       "url": "https://search.isonai.com/bot/ips.json",
       "format": "prefixes"
+    },
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://search.isonai.com/.well-known/http-message-signatures-directory"
     }
   ],
   "tier": 1,
