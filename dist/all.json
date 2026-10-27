@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-27T09:53:17.239Z",
-  "count": 409,
+  "generated_at": "2026-10-27T13:53:41.899Z",
+  "count": 410,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -8088,7 +8088,8 @@
       },
       "description": "Crawler behind the Teamwork Graph \"custom website\" connector, which indexes a site an Atlassian customer has connected so its content is searchable in Rovo. Atlassian documents the robots.txt token and publishes the connector's egress ranges under the rovo-crawler product in its IP-ranges feed.",
       "docs": [
-        "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/"
+        "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/",
+        "https://ip-ranges.atlassian.com/"
       ],
       "category": "search-engine",
       "user_agents": {
@@ -8115,6 +8116,7 @@
             "104.192.137.224/28",
             "104.192.142.224/28",
             "104.192.143.224/28",
+            "131.162.90.20/30",
             "185.166.140.128/28",
             "185.166.141.128/28",
             "185.166.142.224/28",
@@ -8131,6 +8133,7 @@
         "104.192.142.224/28",
         "104.192.143.224/28",
         "13.200.41.240/28",
+        "131.162.90.20/30",
         "16.63.53.240/28",
         "18.246.31.208/28",
         "185.166.140.128/28",
@@ -9961,19 +9964,9 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
-        "136.107.176.208/32",
         "136.79.143.251/32",
         "136.83.20.215/32",
-        "16.58.26.69/32",
-        "160.79.106.128/28",
-        "160.79.106.16/28",
-        "18.225.238.228/32",
-        "18.227.226.255/32",
-        "20.102.46.224/28",
-        "20.64.57.208/28",
         "216.73.216.0/22",
-        "34.11.34.31/32",
-        "34.150.241.79/32",
         "34.152.124.140/32",
         "34.153.21.190/32",
         "34.162.111.78/32",
@@ -9984,21 +9977,7 @@
         "34.162.27.34/32",
         "34.162.86.102/32",
         "34.162.90.102/32",
-        "34.182.140.95/32",
-        "34.182.161.143/32",
-        "34.182.218.27/32",
-        "34.182.220.85/32",
-        "34.182.222.37/32",
-        "34.182.225.167/32",
-        "34.182.226.151/32",
-        "34.182.226.221/32",
-        "34.186.108.163/32",
-        "34.186.252.4/32",
-        "34.85.172.162/32",
-        "35.221.29.174/32",
-        "35.245.175.129/32",
-        "35.245.89.239/32",
-        "40.124.101.48/28"
+        "34.186.252.4/32"
       ]
     },
     {
@@ -10036,19 +10015,9 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
-        "136.107.176.208/32",
         "136.79.143.251/32",
         "136.83.20.215/32",
-        "16.58.26.69/32",
-        "160.79.106.128/28",
-        "160.79.106.16/28",
-        "18.225.238.228/32",
-        "18.227.226.255/32",
-        "20.102.46.224/28",
-        "20.64.57.208/28",
         "216.73.216.0/22",
-        "34.11.34.31/32",
-        "34.150.241.79/32",
         "34.152.124.140/32",
         "34.153.21.190/32",
         "34.162.111.78/32",
@@ -10059,21 +10028,7 @@
         "34.162.27.34/32",
         "34.162.86.102/32",
         "34.162.90.102/32",
-        "34.182.140.95/32",
-        "34.182.161.143/32",
-        "34.182.218.27/32",
-        "34.182.220.85/32",
-        "34.182.222.37/32",
-        "34.182.225.167/32",
-        "34.182.226.151/32",
-        "34.182.226.221/32",
-        "34.186.108.163/32",
-        "34.186.252.4/32",
-        "34.85.172.162/32",
-        "35.221.29.174/32",
-        "35.245.175.129/32",
-        "35.245.89.239/32",
-        "40.124.101.48/28"
+        "34.186.252.4/32"
       ]
     },
     {
@@ -10111,19 +10066,9 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
-        "136.107.176.208/32",
         "136.79.143.251/32",
         "136.83.20.215/32",
-        "16.58.26.69/32",
-        "160.79.106.128/28",
-        "160.79.106.16/28",
-        "18.225.238.228/32",
-        "18.227.226.255/32",
-        "20.102.46.224/28",
-        "20.64.57.208/28",
         "216.73.216.0/22",
-        "34.11.34.31/32",
-        "34.150.241.79/32",
         "34.152.124.140/32",
         "34.153.21.190/32",
         "34.162.111.78/32",
@@ -10134,21 +10079,7 @@
         "34.162.27.34/32",
         "34.162.86.102/32",
         "34.162.90.102/32",
-        "34.182.140.95/32",
-        "34.182.161.143/32",
-        "34.182.218.27/32",
-        "34.182.220.85/32",
-        "34.182.222.37/32",
-        "34.182.225.167/32",
-        "34.182.226.151/32",
-        "34.182.226.221/32",
-        "34.186.108.163/32",
-        "34.186.252.4/32",
-        "34.85.172.162/32",
-        "35.221.29.174/32",
-        "35.245.175.129/32",
-        "35.245.89.239/32",
-        "40.124.101.48/28"
+        "34.186.252.4/32"
       ]
     },
     {
@@ -10916,6 +10847,128 @@
       "resolved_cidrs": [
         "157.1.136.4/30",
         "157.1.136.8/30"
+      ]
+    },
+    {
+      "id": "coveo-crawler",
+      "name": "Coveobot",
+      "operator": {
+        "name": "Coveo",
+        "url": "https://www.coveo.com"
+      },
+      "description": "Crawler behind Coveo's hosted Web source, which indexes a customer's website into a Coveo search organization. Coveo documents the default User-Agent string and publishes the egress IP addresses of its cloud crawlers for every deployment region, so requests can be attributed to the operator.",
+      "docs": [
+        "https://docs.coveo.com/en/malf0160/",
+        "https://docs.coveo.com/en/n1ab5310/index-content/troubleshooting-web-source-issues",
+        "https://docs.coveo.com/en/1831/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Coveobot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) (compatible; Coveobot/2.0;+http://www.coveo.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.84.109.253/32",
+            "54.84.122.250/32",
+            "54.84.126.201/32",
+            "54.84.126.206/32",
+            "54.89.203.159/32",
+            "34.228.114.92/32",
+            "52.1.174.164/32",
+            "34.206.208.119/32",
+            "54.147.101.56/32",
+            "3.143.63.87/32",
+            "18.218.102.25/32",
+            "18.218.142.66/32",
+            "3.129.199.205/32",
+            "18.222.105.207/32",
+            "3.143.72.156/32",
+            "3.98.234.162/32",
+            "15.156.144.217/32",
+            "35.182.150.88/32",
+            "99.79.134.66/32",
+            "3.98.11.182/32",
+            "3.97.174.104/32",
+            "34.242.107.147/32",
+            "54.170.3.6/32",
+            "54.170.30.39/32",
+            "54.228.23.165/32",
+            "79.125.87.0/32",
+            "52.38.148.217/32",
+            "13.236.154.182/32",
+            "13.211.9.156/32",
+            "3.106.44.249/32",
+            "54.206.25.172/32",
+            "52.65.144.94/32",
+            "54.252.102.158/32",
+            "52.207.117.192/32",
+            "34.197.57.255/32",
+            "34.198.140.110/32",
+            "34.200.73.232/32",
+            "52.55.181.180/32",
+            "34.199.215.203/32",
+            "18.214.193.57/32",
+            "54.211.244.247/32",
+            "52.4.190.210/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-27T13:53:41.899Z",
+      "resolved_cidrs": [
+        "13.211.9.156/32",
+        "13.236.154.182/32",
+        "15.156.144.217/32",
+        "18.214.193.57/32",
+        "18.218.102.25/32",
+        "18.218.142.66/32",
+        "18.222.105.207/32",
+        "3.106.44.249/32",
+        "3.129.199.205/32",
+        "3.143.63.87/32",
+        "3.143.72.156/32",
+        "3.97.174.104/32",
+        "3.98.11.182/32",
+        "3.98.234.162/32",
+        "34.197.57.255/32",
+        "34.198.140.110/32",
+        "34.199.215.203/32",
+        "34.200.73.232/32",
+        "34.206.208.119/32",
+        "34.228.114.92/32",
+        "34.242.107.147/32",
+        "35.182.150.88/32",
+        "52.1.174.164/32",
+        "52.207.117.192/32",
+        "52.38.148.217/32",
+        "52.4.190.210/32",
+        "52.55.181.180/32",
+        "52.65.144.94/32",
+        "54.147.101.56/32",
+        "54.170.3.6/32",
+        "54.170.30.39/32",
+        "54.206.25.172/32",
+        "54.211.244.247/32",
+        "54.228.23.165/32",
+        "54.252.102.158/32",
+        "54.84.109.253/32",
+        "54.84.122.250/32",
+        "54.84.126.201/32",
+        "54.84.126.206/32",
+        "54.89.203.159/32",
+        "79.125.87.0/32",
+        "99.79.134.66/32"
       ]
     },
     {
@@ -13617,7 +13670,7 @@
         "name": "Firecrawl",
         "url": "https://firecrawl.dev"
       },
-      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl reads robots.txt before crawling and applies the rules written for the token FirecrawlAgent as well as those for *. The operator documents FirecrawlAgent as a robots.txt token only, warns that it may not appear in the User-Agent header of the fetch itself, and states that Firecrawl does not use a fixed set of outbound IP addresses — so requests cannot be attributed to the operator.",
       "docs": [
         "https://docs.firecrawl.dev/advanced-scraping-guide"
       ],
@@ -27107,7 +27160,7 @@
         "name": "Parallel Web Systems",
         "url": "https://parallel.ai"
       },
-      "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead.",
+      "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead. Parallel signs Shap-User requests with Web Bot Auth and publishes the key directory.",
       "docs": [
         "https://parallel.ai/parallel-web-systems-bots"
       ],
@@ -27123,9 +27176,14 @@
       "behavior": {
         "respects_robots_txt": false
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://shap-user.parallel.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
@@ -27158,6 +27216,10 @@
           "type": "cidr_feed",
           "url": "https://docs.parallel.ai/resources/shapbot.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://shapbot.parallel.ai/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -28710,22 +28772,14 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": [
-        "128.140.120.107/32",
-        "143.244.136.23/32",
-        "144.126.194.142/32",
-        "147.182.194.57/32",
-        "159.203.94.177/32",
-        "159.223.85.1/32",
-        "167.71.7.11/32",
-        "170.64.137.51/32",
-        "2400:6180:0:d0::e77:3001/128",
-        "2400:6180:100:d0::8e9:6001/128",
-        "2400:6180:10:200::9a:d000/128",
-        "2604:a880:4:1d0::341:4000/128",
-        "2604:a880:800:10::e36:2001/128",
-        "2a01:4f8:c17:b095::1/128",
-        "2a03:b0c0:1:d0::fe5:a001/128",
-        "2a03:b0c0:2:d0::1276:9001/128"
+        "2605:7380:8000:1000:8c5d:3bff:fed0:18a9/128",
+        "2a04:3543:1000:2310:8c5d:3bff:fed0:66e/128",
+        "2a04:3544:1000:1510:8c5d:3bff:fed0:16e6/128",
+        "2a04:3546:8000:1000:8c5d:3bff:fed0:54f9/128",
+        "85.9.192.172/32",
+        "94.237.7.128/32",
+        "95.111.197.76/32",
+        "95.111.223.64/32"
       ]
     },
     {
@@ -32759,7 +32813,7 @@
         "name": "Seekquarry LLC (Chris Pollett)",
         "url": "https://www.seekquarry.com"
       },
-      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code. The bot page also documents Web Bot Auth request signing and names the key directory that verifies it.",
       "docs": [
         "https://www.yioop.com/bot"
       ],
@@ -32778,6 +32832,10 @@
       },
       "verification": [
         {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.yioop.com/.well-known/http-message-signatures-directory"
+        },
+        {
           "type": "static_cidrs",
           "cidrs": [
             "173.13.143.73/32",
@@ -32789,8 +32847,8 @@
           ]
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": [
         "173.13.143.73/32",

@@ -1,0 +1,86 @@
+id: coveo-crawler
+name: Coveobot
+operator: { name: Coveo, url: "https://www.coveo.com" }
+description: >-
+  Crawler behind Coveo's hosted Web source, which indexes a customer's website
+  into a Coveo search organization. Coveo documents the default User-Agent
+  string and publishes the egress IP addresses of its cloud crawlers for every
+  deployment region, so requests can be attributed to the operator.
+docs:
+  - "https://docs.coveo.com/en/malf0160/"
+  - "https://docs.coveo.com/en/n1ab5310/index-content/troubleshooting-web-source-issues"
+  - "https://docs.coveo.com/en/1831/"
+category: search-engine
+user_agents:
+  patterns:
+    - 'Coveobot/[\d.]+'
+  instances:
+    # Quoted verbatim on the troubleshooting page as "the Coveo crawler user
+    # agent string". The +http://www.coveo.com/bot.html URL the string
+    # advertises 404s (checked this session), so it is not cited as a docs URL.
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) (compatible; Coveobot/2.0;+http://www.coveo.com/bot.html)'
+# The Web source honours robots.txt page restrictions and crawl-delay (the
+# slowest value wins), per the "Add a Web source" page; visit-time and
+# request-rate are documented as unsupported. The same page documents a
+# customer-settable "robots.txt" override box that makes the crawler ignore
+# those directives for the site being indexed. No robots User-agent token is
+# documented anywhere, so robots_token is omitted rather than guessed.
+behavior: { respects_robots_txt: true }
+verification:
+  # "IP addresses to allowlist" lists these as the addresses Coveo's cloud
+  # crawlers connect from, grouped by the organization's deployment region, and
+  # tells readers to use the /32 suffix because a shorter prefix "would result
+  # in allowing a larger range ... allowing other AWS clients". Transcribed
+  # verbatim from the page this session; 42 addresses across five regions.
+  # Not covered here: the on-premises Crawling Module (Maestro), which the
+  # customer hosts, so its requests come from customer addresses and are not
+  # attributable to Coveo.
+  - type: static_cidrs
+    cidrs:
+      # US organizations
+      - "54.84.109.253/32"
+      - "54.84.122.250/32"
+      - "54.84.126.201/32"
+      - "54.84.126.206/32"
+      - "54.89.203.159/32"
+      - "34.228.114.92/32"
+      - "52.1.174.164/32"
+      - "34.206.208.119/32"
+      - "54.147.101.56/32"
+      - "3.143.63.87/32"
+      - "18.218.102.25/32"
+      - "18.218.142.66/32"
+      - "3.129.199.205/32"
+      - "18.222.105.207/32"
+      - "3.143.72.156/32"
+      # Canadian organizations
+      - "3.98.234.162/32"
+      - "15.156.144.217/32"
+      - "35.182.150.88/32"
+      - "99.79.134.66/32"
+      - "3.98.11.182/32"
+      - "3.97.174.104/32"
+      # European organizations (Ireland)
+      - "34.242.107.147/32"
+      - "54.170.3.6/32"
+      - "54.170.30.39/32"
+      - "54.228.23.165/32"
+      - "79.125.87.0/32"
+      - "52.38.148.217/32"
+      # Australian organizations
+      - "13.236.154.182/32"
+      - "13.211.9.156/32"
+      - "3.106.44.249/32"
+      - "54.206.25.172/32"
+      - "52.65.144.94/32"
+      - "54.252.102.158/32"
+      # HIPAA organizations
+      - "52.207.117.192/32"
+      - "34.197.57.255/32"
+      - "34.198.140.110/32"
+      - "34.200.73.232/32"
+      - "52.55.181.180/32"
+      - "34.199.215.203/32"
+      - "18.214.193.57/32"
+      - "54.211.244.247/32"
+      - "52.4.190.210/32"

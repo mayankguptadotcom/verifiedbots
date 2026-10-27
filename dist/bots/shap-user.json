@@ -5,7 +5,7 @@
     "name": "Parallel Web Systems",
     "url": "https://parallel.ai"
   },
-  "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead.",
+  "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead. Parallel signs Shap-User requests with Web Bot Auth and publishes the key directory.",
   "docs": [
     "https://parallel.ai/parallel-web-systems-bots"
   ],
@@ -21,9 +21,14 @@
   "behavior": {
     "respects_robots_txt": false
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://shap-user.parallel.ai/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-08-23T13:20:46.873Z",
   "resolved_cidrs": []
 }

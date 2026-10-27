@@ -618,6 +618,13 @@
     ]
   },
   {
+    "id": "coveo-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "Coveobot/[\\d.]+"
+    ]
+  },
+  {
     "id": "criteo",
     "category": "seo",
     "patterns": [

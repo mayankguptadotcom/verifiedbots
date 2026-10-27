@@ -3,10 +3,12 @@ name: FirecrawlAgent
 operator: { name: Firecrawl, url: "https://firecrawl.dev" }
 description: >-
   The fetcher behind Firecrawl's scraping and crawling API, which retrieves web
-  pages on behalf of the developers and AI agents calling that API. Firecrawl's
-  crawl endpoint honours robots.txt by default; ignoring it is an enterprise
-  option that must be enabled by the operator. Firecrawl documents that it does
-  not use a fixed set of outbound IP addresses.
+  pages on behalf of the developers and AI agents calling that API. Firecrawl
+  reads robots.txt before crawling and applies the rules written for the token
+  FirecrawlAgent as well as those for *. The operator documents FirecrawlAgent
+  as a robots.txt token only, warns that it may not appear in the User-Agent
+  header of the fetch itself, and states that Firecrawl does not use a fixed set
+  of outbound IP addresses — so requests cannot be attributed to the operator.
 docs:
   - "https://docs.firecrawl.dev/advanced-scraping-guide"
 category: ai-crawler
@@ -14,6 +16,18 @@ user_agents:
   patterns:
     - 'FirecrawlAgent'
   instances:
+    # Sourced from the operator's own page when this entry was added. As of
+    # 2026-10-27 the page no longer prints any User-Agent string and now says:
+    # "FirecrawlAgent is the token Firecrawl matches against when it applies
+    # robots.txt rules. Do not assume it is also the User-Agent header on the
+    # fetch itself", advising robots.txt rather than a UA-matching WAF rule.
+    # The token is kept as the only identifier the operator documents, but a
+    # UA match should not be relied on for this bot. A domain-restricted search
+    # over firecrawl.dev found no other page carrying the string.
     - 'Mozilla/5.0 (compatible; FirecrawlAgent; +https://firecrawl.dev/)'
 behavior: { respects_robots_txt: true, robots_token: FirecrawlAgent }
+# Tier 3 by the operator's own statement, re-confirmed 2026-10-27: "IP
+# addresses: Firecrawl does not use a fixed set of outbound IPs." The
+# 35.245.250.x address on the same page is the inbound api.firecrawl.dev
+# server, not crawler egress, so it is not a verification recipe.
 verification: []

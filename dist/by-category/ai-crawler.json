@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-27T09:53:17.239Z",
+  "generated_at": "2026-10-27T13:53:41.899Z",
   "count": 43,
   "bots": [
     {
@@ -2900,19 +2900,9 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
-        "136.107.176.208/32",
         "136.79.143.251/32",
         "136.83.20.215/32",
-        "16.58.26.69/32",
-        "160.79.106.128/28",
-        "160.79.106.16/28",
-        "18.225.238.228/32",
-        "18.227.226.255/32",
-        "20.102.46.224/28",
-        "20.64.57.208/28",
         "216.73.216.0/22",
-        "34.11.34.31/32",
-        "34.150.241.79/32",
         "34.152.124.140/32",
         "34.153.21.190/32",
         "34.162.111.78/32",
@@ -2923,21 +2913,7 @@
         "34.162.27.34/32",
         "34.162.86.102/32",
         "34.162.90.102/32",
-        "34.182.140.95/32",
-        "34.182.161.143/32",
-        "34.182.218.27/32",
-        "34.182.220.85/32",
-        "34.182.222.37/32",
-        "34.182.225.167/32",
-        "34.182.226.151/32",
-        "34.182.226.221/32",
-        "34.186.108.163/32",
-        "34.186.252.4/32",
-        "34.85.172.162/32",
-        "35.221.29.174/32",
-        "35.245.175.129/32",
-        "35.245.89.239/32",
-        "40.124.101.48/28"
+        "34.186.252.4/32"
       ]
     },
     {
@@ -2975,19 +2951,9 @@
       "tier_label": "Fully verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": [
-        "136.107.176.208/32",
         "136.79.143.251/32",
         "136.83.20.215/32",
-        "16.58.26.69/32",
-        "160.79.106.128/28",
-        "160.79.106.16/28",
-        "18.225.238.228/32",
-        "18.227.226.255/32",
-        "20.102.46.224/28",
-        "20.64.57.208/28",
         "216.73.216.0/22",
-        "34.11.34.31/32",
-        "34.150.241.79/32",
         "34.152.124.140/32",
         "34.153.21.190/32",
         "34.162.111.78/32",
@@ -2998,21 +2964,7 @@
         "34.162.27.34/32",
         "34.162.86.102/32",
         "34.162.90.102/32",
-        "34.182.140.95/32",
-        "34.182.161.143/32",
-        "34.182.218.27/32",
-        "34.182.220.85/32",
-        "34.182.222.37/32",
-        "34.182.225.167/32",
-        "34.182.226.151/32",
-        "34.182.226.221/32",
-        "34.186.108.163/32",
-        "34.186.252.4/32",
-        "34.85.172.162/32",
-        "35.221.29.174/32",
-        "35.245.175.129/32",
-        "35.245.89.239/32",
-        "40.124.101.48/28"
+        "34.186.252.4/32"
       ]
     },
     {
@@ -3178,7 +3130,7 @@
         "name": "Firecrawl",
         "url": "https://firecrawl.dev"
       },
-      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl reads robots.txt before crawling and applies the rules written for the token FirecrawlAgent as well as those for *. The operator documents FirecrawlAgent as a robots.txt token only, warns that it may not appear in the User-Agent header of the fetch itself, and states that Firecrawl does not use a fixed set of outbound IP addresses — so requests cannot be attributed to the operator.",
       "docs": [
         "https://docs.firecrawl.dev/advanced-scraping-guide"
       ],
@@ -4474,6 +4426,10 @@
           "type": "cidr_feed",
           "url": "https://docs.parallel.ai/resources/shapbot.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://shapbot.parallel.ai/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

@@ -5,7 +5,7 @@
     "name": "Firecrawl",
     "url": "https://firecrawl.dev"
   },
-  "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+  "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl reads robots.txt before crawling and applies the rules written for the token FirecrawlAgent as well as those for *. The operator documents FirecrawlAgent as a robots.txt token only, warns that it may not appear in the User-Agent header of the fetch itself, and states that Firecrawl does not use a fixed set of outbound IP addresses — so requests cannot be attributed to the operator.",
   "docs": [
     "https://docs.firecrawl.dev/advanced-scraping-guide"
   ],

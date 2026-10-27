@@ -9,7 +9,8 @@ description: >-
   robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical,
   Crawl-delay and Sitemap directives. The crawler and search engine source are
   published under the GPLv3, so the documented behaviour can be checked
-  against the code.
+  against the code. The bot page also documents Web Bot Auth request signing
+  and names the key directory that verifies it.
 docs:
   - "https://www.yioop.com/bot"
 category: search-engine
@@ -31,6 +32,14 @@ verification:
   # hijacking my crawler's name." The published range is six consecutive
   # addresses, enumerated here as the six /32s it names rather than widened to
   # a block the operator did not publish.
+  # "Yioop Bot signs each request it makes over https using Web Bot Auth,
+  # which is built on RFC 9421 ... the Signature-Agent is https://www.yioop.com,
+  # and the public key that checks the signatures is published at
+  # https://www.yioop.com/.well-known/http-message-signatures-directory".
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://www.yioop.com/.well-known/http-message-signatures-directory"
   - type: static_cidrs
     cidrs:
       - "173.13.143.73/32"

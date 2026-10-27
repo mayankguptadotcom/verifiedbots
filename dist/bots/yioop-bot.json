@@ -5,7 +5,7 @@
     "name": "Seekquarry LLC (Chris Pollett)",
     "url": "https://www.seekquarry.com"
   },
-  "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+  "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code. The bot page also documents Web Bot Auth request signing and names the key directory that verifies it.",
   "docs": [
     "https://www.yioop.com/bot"
   ],
@@ -24,6 +24,10 @@
   },
   "verification": [
     {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://www.yioop.com/.well-known/http-message-signatures-directory"
+    },
+    {
       "type": "static_cidrs",
       "cidrs": [
         "173.13.143.73/32",
@@ -35,8 +39,8 @@
       ]
     }
   ],
-  "tier": 2,
-  "tier_label": "Verifiable",
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-10-23T13:22:25.967Z",
   "resolved_cidrs": [
     "173.13.143.73/32",

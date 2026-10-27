@@ -6,7 +6,8 @@ description: >-
   content on behalf of a user, giving content owners visibility into
   user-initiated requests. The operator documents that it is not used for
   automatic crawling and is intended to provide visibility rather than to be
-  managed through robots.txt, which governs ShapBot instead.
+  managed through robots.txt, which governs ShapBot instead. Parallel signs
+  Shap-User requests with Web Bot Auth and publishes the key directory.
 docs:
   - "https://parallel.ai/parallel-web-systems-bots"
 category: ai-assistant
@@ -16,4 +17,11 @@ user_agents:
   instances:
     - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0'
 behavior: { respects_robots_txt: false }
-verification: []
+verification:
+  # "Shap-User signs its requests with Web Bot Auth (HTTP Message Signatures).
+  # Public keys are published at
+  # shap-user.parallel.ai/.well-known/http-message-signatures-directory".
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, two Ed25519 keys.
+  - type: web_bot_auth
+    signature_agent_url: "https://shap-user.parallel.ai/.well-known/http-message-signatures-directory"

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-27T09:53:17.239Z",
-  "count": 95,
+  "generated_at": "2026-10-27T13:53:41.899Z",
+  "count": 96,
   "bots": [
     {
       "id": "addsearch",
@@ -2061,7 +2061,8 @@
       },
       "description": "Crawler behind the Teamwork Graph \"custom website\" connector, which indexes a site an Atlassian customer has connected so its content is searchable in Rovo. Atlassian documents the robots.txt token and publishes the connector's egress ranges under the rovo-crawler product in its IP-ranges feed.",
       "docs": [
-        "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/"
+        "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/",
+        "https://ip-ranges.atlassian.com/"
       ],
       "category": "search-engine",
       "user_agents": {
@@ -2088,6 +2089,7 @@
             "104.192.137.224/28",
             "104.192.142.224/28",
             "104.192.143.224/28",
+            "131.162.90.20/30",
             "185.166.140.128/28",
             "185.166.141.128/28",
             "185.166.142.224/28",
@@ -2104,6 +2106,7 @@
         "104.192.142.224/28",
         "104.192.143.224/28",
         "13.200.41.240/28",
+        "131.162.90.20/30",
         "16.63.53.240/28",
         "18.246.31.208/28",
         "185.166.140.128/28",
@@ -2496,6 +2499,128 @@
       "tier_label": "Verifiable",
       "first_seen": "2026-07-08T19:13:49.571Z",
       "resolved_cidrs": []
+    },
+    {
+      "id": "coveo-crawler",
+      "name": "Coveobot",
+      "operator": {
+        "name": "Coveo",
+        "url": "https://www.coveo.com"
+      },
+      "description": "Crawler behind Coveo's hosted Web source, which indexes a customer's website into a Coveo search organization. Coveo documents the default User-Agent string and publishes the egress IP addresses of its cloud crawlers for every deployment region, so requests can be attributed to the operator.",
+      "docs": [
+        "https://docs.coveo.com/en/malf0160/",
+        "https://docs.coveo.com/en/n1ab5310/index-content/troubleshooting-web-source-issues",
+        "https://docs.coveo.com/en/1831/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Coveobot/[\\d.]+"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) (compatible; Coveobot/2.0;+http://www.coveo.com/bot.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "54.84.109.253/32",
+            "54.84.122.250/32",
+            "54.84.126.201/32",
+            "54.84.126.206/32",
+            "54.89.203.159/32",
+            "34.228.114.92/32",
+            "52.1.174.164/32",
+            "34.206.208.119/32",
+            "54.147.101.56/32",
+            "3.143.63.87/32",
+            "18.218.102.25/32",
+            "18.218.142.66/32",
+            "3.129.199.205/32",
+            "18.222.105.207/32",
+            "3.143.72.156/32",
+            "3.98.234.162/32",
+            "15.156.144.217/32",
+            "35.182.150.88/32",
+            "99.79.134.66/32",
+            "3.98.11.182/32",
+            "3.97.174.104/32",
+            "34.242.107.147/32",
+            "54.170.3.6/32",
+            "54.170.30.39/32",
+            "54.228.23.165/32",
+            "79.125.87.0/32",
+            "52.38.148.217/32",
+            "13.236.154.182/32",
+            "13.211.9.156/32",
+            "3.106.44.249/32",
+            "54.206.25.172/32",
+            "52.65.144.94/32",
+            "54.252.102.158/32",
+            "52.207.117.192/32",
+            "34.197.57.255/32",
+            "34.198.140.110/32",
+            "34.200.73.232/32",
+            "52.55.181.180/32",
+            "34.199.215.203/32",
+            "18.214.193.57/32",
+            "54.211.244.247/32",
+            "52.4.190.210/32"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-10-27T13:53:41.899Z",
+      "resolved_cidrs": [
+        "13.211.9.156/32",
+        "13.236.154.182/32",
+        "15.156.144.217/32",
+        "18.214.193.57/32",
+        "18.218.102.25/32",
+        "18.218.142.66/32",
+        "18.222.105.207/32",
+        "3.106.44.249/32",
+        "3.129.199.205/32",
+        "3.143.63.87/32",
+        "3.143.72.156/32",
+        "3.97.174.104/32",
+        "3.98.11.182/32",
+        "3.98.234.162/32",
+        "34.197.57.255/32",
+        "34.198.140.110/32",
+        "34.199.215.203/32",
+        "34.200.73.232/32",
+        "34.206.208.119/32",
+        "34.228.114.92/32",
+        "34.242.107.147/32",
+        "35.182.150.88/32",
+        "52.1.174.164/32",
+        "52.207.117.192/32",
+        "52.38.148.217/32",
+        "52.4.190.210/32",
+        "52.55.181.180/32",
+        "52.65.144.94/32",
+        "54.147.101.56/32",
+        "54.170.3.6/32",
+        "54.170.30.39/32",
+        "54.206.25.172/32",
+        "54.211.244.247/32",
+        "54.228.23.165/32",
+        "54.252.102.158/32",
+        "54.84.109.253/32",
+        "54.84.122.250/32",
+        "54.84.126.201/32",
+        "54.84.126.206/32",
+        "54.89.203.159/32",
+        "79.125.87.0/32",
+        "99.79.134.66/32"
+      ]
     },
     {
       "id": "daumbot",
@@ -8608,7 +8733,7 @@
         "name": "Seekquarry LLC (Chris Pollett)",
         "url": "https://www.seekquarry.com"
       },
-      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code.",
+      "description": "The crawler for Yioop, an open-source PHP search engine written and run by Chris Pollett, whose crawls feed the live search engine at yioop.com. The bot page names the operator, the small block of addresses the crawl runs from, and an unusually detailed account of how the crawler reads robots.txt, robots meta tags, X-Robots-Tag headers, rel=nofollow, rel=canonical, Crawl-delay and Sitemap directives. The crawler and search engine source are published under the GPLv3, so the documented behaviour can be checked against the code. The bot page also documents Web Bot Auth request signing and names the key directory that verifies it.",
       "docs": [
         "https://www.yioop.com/bot"
       ],
@@ -8627,6 +8752,10 @@
       },
       "verification": [
         {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.yioop.com/.well-known/http-message-signatures-directory"
+        },
+        {
           "type": "static_cidrs",
           "cidrs": [
             "173.13.143.73/32",
@@ -8638,8 +8767,8 @@
           ]
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-10-23T13:22:25.967Z",
       "resolved_cidrs": [
         "173.13.143.73/32",

@@ -8,6 +8,7 @@ description: >-
   ranges under the rovo-crawler product in its IP-ranges feed.
 docs:
   - "https://support.atlassian.com/organization-administration/docs/connect-custom-website-to-rovo/"
+  - "https://ip-ranges.atlassian.com/"
 category: search-engine
 user_agents:
   patterns:
@@ -17,4 +18,24 @@ user_agents:
 behavior: { respects_robots_txt: true, robots_token: atlassian-bot }
 verification:
   - type: static_cidrs
-    cidrs: ["13.200.41.240/28", "16.63.53.240/28", "18.246.31.208/28", "43.202.69.112/28", "104.192.136.224/28", "104.192.137.224/28", "104.192.142.224/28", "104.192.143.224/28", "185.166.140.128/28", "185.166.141.128/28", "185.166.142.224/28", "185.166.143.224/28"]
+    # Taken from Atlassian's IP-ranges feed, keeping only items whose
+    # "product" array contains rovo-crawler and whose "direction" is egress.
+    # The feed itself is an array of objects, a shape none of this directory's
+    # cidr_feed formats can consume, so it is snapshotted here. Re-checked
+    # against the live feed (creationDate 2026-10-27) this session: the
+    # operator has added 131.162.90.20/30 (region gcp-us-central1) since this
+    # entry was written, and dropped nothing.
+    cidrs:
+      - "13.200.41.240/28"
+      - "16.63.53.240/28"
+      - "18.246.31.208/28"
+      - "43.202.69.112/28"
+      - "104.192.136.224/28"
+      - "104.192.137.224/28"
+      - "104.192.142.224/28"
+      - "104.192.143.224/28"
+      - "131.162.90.20/30"
+      - "185.166.140.128/28"
+      - "185.166.141.128/28"
+      - "185.166.142.224/28"
+      - "185.166.143.224/28"

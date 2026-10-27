@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-27T09:53:17.239Z",
-  "count": 163,
+  "generated_at": "2026-10-27T13:53:41.899Z",
+  "count": 162,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1612,7 +1612,7 @@
         "name": "Firecrawl",
         "url": "https://firecrawl.dev"
       },
-      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl's crawl endpoint honours robots.txt by default; ignoring it is an enterprise option that must be enabled by the operator. Firecrawl documents that it does not use a fixed set of outbound IP addresses.",
+      "description": "The fetcher behind Firecrawl's scraping and crawling API, which retrieves web pages on behalf of the developers and AI agents calling that API. Firecrawl reads robots.txt before crawling and applies the rules written for the token FirecrawlAgent as well as those for *. The operator documents FirecrawlAgent as a robots.txt token only, warns that it may not appear in the User-Agent header of the fetch itself, and states that Firecrawl does not use a fixed set of outbound IP addresses — so requests cannot be attributed to the operator.",
       "docs": [
         "https://docs.firecrawl.dev/advanced-scraping-guide"
       ],
@@ -3832,35 +3832,6 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
-      "resolved_cidrs": []
-    },
-    {
-      "id": "shap-user",
-      "name": "Shap-User",
-      "operator": {
-        "name": "Parallel Web Systems",
-        "url": "https://parallel.ai"
-      },
-      "description": "Parallel's user-triggered fetcher. It identifies itself when Parallel accesses content on behalf of a user, giving content owners visibility into user-initiated requests. The operator documents that it is not used for automatic crawling and is intended to provide visibility rather than to be managed through robots.txt, which governs ShapBot instead.",
-      "docs": [
-        "https://parallel.ai/parallel-web-systems-bots"
-      ],
-      "category": "ai-assistant",
-      "user_agents": {
-        "patterns": [
-          "Shap-User/\\d"
-        ],
-        "instances": [
-          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Shap-User/0.1.0"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": false
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {
