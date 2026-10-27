@@ -1,6 +1,6 @@
 {
   "url": "https://api.ahrefs.com/v3/public/crawler-ip-ranges",
-  "fetched_at": "2026-10-26T10:14:47.315Z",
+  "fetched_at": "2026-10-27T09:52:27.226Z",
   "ranges": [
     "142.44.220.0/24",
     "142.44.225.0/24",
