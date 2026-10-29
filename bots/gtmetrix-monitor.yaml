@@ -1,0 +1,38 @@
+id: gtmetrix-monitor
+name: GTmetrix
+operator: { name: GTmetrix, url: "https://gtmetrix.com" }
+description: >-
+  GTmetrix's page-performance testing agent. It loads a page in a real browser
+  from a test server the customer selects, and records timings and audit
+  results. GTmetrix publishes the addresses its test servers request from so
+  that site owners can allow or disallow them in a firewall, or keep the traffic
+  out of their analytics.
+docs:
+  - "https://gtmetrix.com/locations.html"
+category: monitoring
+user_agents:
+  # Pattern and instance from arcjet/well-known-bots (`gtmetrix-monitor`,
+  # fetched this session): the default string is a Chrome user agent with a
+  # trailing GTmetrix tag. Note that GTmetrix lets the person running a test
+  # anonymize the user agent, which removes that tag, so the string identifies
+  # the default configuration only — which is why the address feed matters more
+  # here than the user agent.
+  patterns:
+    - 'GTmetrix'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 GTmetrix'
+# Tests are started by the site owner (or whoever runs the test), not by a
+# crawler walking links, and GTmetrix documents no robots.txt handling on the
+# pages reachable this session.
+behavior: { respects_robots_txt: false }
+verification:
+  # "If you are concerned about GTmetrix requests affecting your analytics or
+  # being stopped by your firewall, you can use the IP addresses supplied to
+  # allow or disallow our servers" — https://gtmetrix.com/locations.html, which
+  # links this file as "Download Test Server Locations in TXT". Fetched live
+  # this session: HTTP 200, text/plain, 63 lines, every line a bare IPv4
+  # address. The test fleet is fixed infrastructure (the page states 114 test
+  # servers in 28 locations, each row marked Active), not a rotating pool.
+  - type: cidr_feed
+    url: "https://gtmetrix.com/locations.txt"
+    format: text_lines

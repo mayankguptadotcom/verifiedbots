@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-29T10:57:40.214Z",
-  "count": 19,
+  "generated_at": "2026-10-29T13:40:08.426Z",
+  "count": 21,
   "bots": [
     {
       "id": "aiwebindex-agent",
@@ -3033,6 +3033,70 @@
         "74.242.194.48/32",
         "98.70.219.37/32"
       ]
+    },
+    {
+      "id": "elevenlabs-bot",
+      "name": "ElevenlabsBot",
+      "operator": {
+        "name": "ElevenLabs",
+        "url": "https://elevenlabs.io"
+      },
+      "description": "ElevenLabs' knowledge-base fetcher. It retrieves the pages that ElevenLabs customers add to their conversational agents' knowledge bases, both when a page is added and when it is refreshed. ElevenLabs documents that it honors robots.txt and that it is configured independently of the training crawler, so a site can allow this token while disallowing ElevenlabsCrawler.",
+      "docs": [
+        "https://elevenlabs.io/docs/bots"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "ElevenlabsBot/\\d"
+        ],
+        "instances": [
+          "ElevenlabsBot/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ElevenlabsBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-29T13:40:08.426Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "exa-user",
+      "name": "ExaUser",
+      "operator": {
+        "name": "Exa",
+        "url": "https://exa.ai"
+      },
+      "description": "Exa's user-triggered fetcher, which retrieves a page live when a person, or an application built on the Exa API, asks for its current content. Exa documents it as separate from ExaSearchBot: it does not crawl automatically, it does no scheduled or background fetching, and it is not used to decide whether content appears in Exa search. Requests are signed with Web Bot Auth.",
+      "docs": [
+        "https://crawler.exa.ai/exauser"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "ExaUser/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-10-29T13:40:08.426Z",
+      "resolved_cidrs": []
     },
     {
       "id": "google-agent",

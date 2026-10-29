@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-29T10:57:40.214Z",
-  "count": 162,
+  "generated_at": "2026-10-29T13:40:08.426Z",
+  "count": 164,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -1357,6 +1357,66 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-04T20:03:13.870Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "elevenlabs-bot",
+      "name": "ElevenlabsBot",
+      "operator": {
+        "name": "ElevenLabs",
+        "url": "https://elevenlabs.io"
+      },
+      "description": "ElevenLabs' knowledge-base fetcher. It retrieves the pages that ElevenLabs customers add to their conversational agents' knowledge bases, both when a page is added and when it is refreshed. ElevenLabs documents that it honors robots.txt and that it is configured independently of the training crawler, so a site can allow this token while disallowing ElevenlabsCrawler.",
+      "docs": [
+        "https://elevenlabs.io/docs/bots"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "ElevenlabsBot/\\d"
+        ],
+        "instances": [
+          "ElevenlabsBot/1.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ElevenlabsBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-29T13:40:08.426Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "elevenlabs-crawler",
+      "name": "ElevenlabsCrawler",
+      "operator": {
+        "name": "ElevenLabs",
+        "url": "https://elevenlabs.io"
+      },
+      "description": "ElevenLabs' training crawler, which collects publicly available web content that may be used to train the company's generative AI models. ElevenLabs documents that disallowing this token in robots.txt indicates a site's content should not be used for training, and that robots.txt changes take effect within about 24 hours. It is configured independently of ElevenlabsBot.",
+      "docs": [
+        "https://elevenlabs.io/docs/bots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ElevenlabsCrawler/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ElevenlabsCrawler/1.0; +https://elevenlabs.io/docs/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ElevenlabsCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-29T13:40:08.426Z",
       "resolved_cidrs": []
     },
     {

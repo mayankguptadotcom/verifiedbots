@@ -1,0 +1,30 @@
+{
+  "id": "elevenlabs-bot",
+  "name": "ElevenlabsBot",
+  "operator": {
+    "name": "ElevenLabs",
+    "url": "https://elevenlabs.io"
+  },
+  "description": "ElevenLabs' knowledge-base fetcher. It retrieves the pages that ElevenLabs customers add to their conversational agents' knowledge bases, both when a page is added and when it is refreshed. ElevenLabs documents that it honors robots.txt and that it is configured independently of the training crawler, so a site can allow this token while disallowing ElevenlabsCrawler.",
+  "docs": [
+    "https://elevenlabs.io/docs/bots"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "ElevenlabsBot/\\d"
+    ],
+    "instances": [
+      "ElevenlabsBot/1.0"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "ElevenlabsBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-10-29T13:40:08.426Z",
+  "resolved_cidrs": []
+}

@@ -795,6 +795,20 @@
     ]
   },
   {
+    "id": "elevenlabs-bot",
+    "category": "ai-assistant",
+    "patterns": [
+      "ElevenlabsBot/\\d"
+    ]
+  },
+  {
+    "id": "elevenlabs-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "ElevenlabsCrawler/\\d"
+    ]
+  },
+  {
     "id": "embedly",
     "category": "social-preview",
     "patterns": [
@@ -806,6 +820,13 @@
     "category": "search-engine",
     "patterns": [
       "ExaSearchBot/\\d"
+    ]
+  },
+  {
+    "id": "exa-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "ExaUser/\\d"
     ]
   },
   {
@@ -1102,6 +1123,13 @@
     "category": "monitoring",
     "patterns": [
       "GreenWebChecker/\\d"
+    ]
+  },
+  {
+    "id": "gtmetrix-monitor",
+    "category": "monitoring",
+    "patterns": [
+      "GTmetrix"
     ]
   },
   {

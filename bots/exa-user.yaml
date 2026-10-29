@@ -1,0 +1,29 @@
+id: exa-user
+name: ExaUser
+operator: { name: Exa, url: "https://exa.ai" }
+description: >-
+  Exa's user-triggered fetcher, which retrieves a page live when a person, or an
+  application built on the Exa API, asks for its current content. Exa documents
+  it as separate from ExaSearchBot: it does not crawl automatically, it does no
+  scheduled or background fetching, and it is not used to decide whether content
+  appears in Exa search. Requests are signed with Web Bot Auth.
+docs:
+  - "https://crawler.exa.ai/exauser"
+category: ai-assistant
+user_agents:
+  patterns:
+    - 'ExaUser/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)'
+# "Because fetches are initiated by a user, robots.txt rules may not apply" —
+# the operator's own statement on the page above. Exa directs search opt-outs
+# to the ExaSearchBot token instead, so no robots_token is recorded here.
+behavior: { respects_robots_txt: false }
+verification:
+  # "Every request is signed with Web Bot Auth (RFC 9421) ... Keys are published
+  # at https://crawler.exa.ai/.well-known/http-message-signatures-directory".
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, two Ed25519 keys.
+  # Same directory as ExaSearchBot — Exa publishes one for both agents.
+  - type: web_bot_auth
+    signature_agent_url: "https://crawler.exa.ai/.well-known/http-message-signatures-directory"

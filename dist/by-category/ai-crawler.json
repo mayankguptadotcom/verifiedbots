@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-10-29T10:57:40.214Z",
-  "count": 43,
+  "generated_at": "2026-10-29T13:40:08.426Z",
+  "count": 44,
   "bots": [
     {
       "id": "ai2bot",
@@ -3121,6 +3121,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-09-29T13:30:54.911Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "elevenlabs-crawler",
+      "name": "ElevenlabsCrawler",
+      "operator": {
+        "name": "ElevenLabs",
+        "url": "https://elevenlabs.io"
+      },
+      "description": "ElevenLabs' training crawler, which collects publicly available web content that may be used to train the company's generative AI models. ElevenLabs documents that disallowing this token in robots.txt indicates a site's content should not be used for training, and that robots.txt changes take effect within about 24 hours. It is configured independently of ElevenlabsBot.",
+      "docs": [
+        "https://elevenlabs.io/docs/bots"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ElevenlabsCrawler/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ElevenlabsCrawler/1.0; +https://elevenlabs.io/docs/bots)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ElevenlabsCrawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-10-29T13:40:08.426Z",
       "resolved_cidrs": []
     },
     {
