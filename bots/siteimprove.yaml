@@ -25,6 +25,17 @@ user_agents:
     - 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0) Probe by Siteimprove.com'
 behavior: { respects_robots_txt: true, robots_token: SiteimproveBot-Crawler }
 verification:
+  # Re-verified 2026-10-31 against the operator's own download, not from memory:
+  # the second docs URL above links an attachment
+  # (help.siteimprove.com/helpdesk/attachments/80573418831) which serves
+  # "Siteimprove_IP_Addresses Q1_2026.txt" (HTTP 200, text/plain) — 44 bare
+  # IPv4 addresses that are a byte-for-byte set match for the 44 /32s below,
+  # with nothing added or dropped. Deliberately NOT converted to a cidr_feed:
+  # that URL redirects to a signed, expiring CDN link and the file is a
+  # quarterly snapshot ("Q1_2026"), so the attachment id will be replaced when
+  # Siteimprove publishes the next quarter — a feed pinned to it would either
+  # 404 or silently freeze. static_cidrs re-checked by a research run is the
+  # honest encoding for a list the operator republishes by hand each quarter.
   - type: static_cidrs
     cidrs:
       - "52.55.30.145/32"
