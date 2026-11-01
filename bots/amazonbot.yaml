@@ -16,7 +16,19 @@ user_agents:
 behavior: { respects_robots_txt: true, robots_token: Amazonbot }
 verification:
   # Transcribed from the operator's IP page, which serves the list as HTML rather
-  # than JSON, so it cannot be a cidr_feed. Snapshot creationTime: 2026-09-08.
+  # than JSON, so it cannot be a cidr_feed. The exact source URL is recorded here
+  # because two research runs had to rediscover it: the `docs` link above is the
+  # operator's landing page, and the address list lives on a separate page it
+  # links to — https://developer.amazon.com/amazonbot/ip-addresses/
+  # Amazon publishes one such page per agent (`/ip-addresses/` for Amazonbot,
+  # `/live-ip-addresses/` for Amzn-User, `/searchbot-ip-addresses/` for
+  # Amzn-SearchBot), each embedding a Google-style `prefixes` JSON block inside
+  # the HTML document. A network trace of the page on 2026-11-01 confirmed there
+  # is no separate JSON endpoint to point a `cidr_feed` at — the JSON is part of
+  # the HTML body, so `static_cidrs` remains the only honest encoding. Note this
+  # page keys its entries `ipv4Prefix`.
+  # Re-verified 2026-11-01: exact 1292/1292 set match, creationTime unchanged.
+  # Snapshot creationTime: 2026-09-08.
   - type: static_cidrs
     cidrs:
       - "3.81.245.78/32"

@@ -19,6 +19,18 @@ user_agents:
     - 'Mozilla/5.0 (compatible; AlertSite; +https://www.alertsite.com/)'
 behavior: { respects_robots_txt: false }
 verification:
+  # Re-verified against both operator pages on 2026-11-01 by set comparison.
+  # Six addresses that this entry carried were withdrawn by SmartBear and
+  # appear nowhere in either page (checked against the raw HTML, not just
+  # extracted text): 46.22.137.139, 46.22.138.128, 46.22.138.136, 52.124.0.48,
+  # 52.124.0.50 and 52.124.0.52. They are dropped — a range the operator no
+  # longer claims cannot attribute traffic to it. Two additions were taken up
+  # the other way: 46.22.143.111 and 46.22.143.201 are published in the
+  # monitoring-locations table on the same "Dublin (Ireland) / Vodafone IE /
+  # 5040" row as 46.22.143.115, which this entry already carried, so they are
+  # the operator's own and inside the same netblock. The table's
+  # 999.999.999.999 is deliberately NOT transcribed: the FAQ documents it as
+  # the placeholder shown "for monitors that do not resolve to" an address.
   - type: static_cidrs
     cidrs:
     - "185.167.96.219/32"
@@ -89,10 +101,9 @@ verification:
     - "173.225.184.208/32"
     - "173.225.184.237/32"
     - "173.225.184.243/32"
-    - "46.22.137.139/32"
-    - "46.22.138.128/32"
-    - "46.22.138.136/32"
+    - "46.22.143.111/32"
     - "46.22.143.115/32"
+    - "46.22.143.201/32"
     - "208.115.62.172/32"
     - "208.115.62.174/32"
     - "208.115.62.176/32"
@@ -262,8 +273,5 @@ verification:
     - "69.46.12.98/32"
     - "69.46.12.146/32"
     - "69.46.12.162/32"
-    - "52.124.0.48/32"
-    - "52.124.0.50/32"
-    - "52.124.0.52/32"
     - "31.7.56.154/32"
     - "31.7.61.170/32"
