@@ -15,5 +15,15 @@ user_agents:
     - 'linkdexbot'
   instances:
     - 'Mozilla/5.0 (compatible; linkdexbot/2.0; +http://www.linkdex.com/about/bots/)'
+    - 'Mozilla/5.0 (compatible; linkdexbot/2.1; +https://www.linkdex.com/en-us/about/bots/)'
+# The operator's bot page, re-read in full this run, documents three versions —
+# 2.0 (link checking), 2.1 (general site crawler, in a standard and a
+# "linkdexbot-mobile/2.1" mobile configuration) and 2.2 (ranked-page content) —
+# all of which the bare `linkdexbot` pattern above matches. Only the two
+# instances above are recorded verbatim: the page is served with soft hyphens
+# and mid-string line breaks that corrupt the mobile and 2.2 strings on
+# extraction, and repairing them would be inference, not transcription.
+# "Linkdex will respect the crawl frequency limitation you have outlined in
+# your robots.txt file."
 behavior: { respects_robots_txt: true }
 verification: []

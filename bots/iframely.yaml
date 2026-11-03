@@ -1,20 +1,34 @@
 id: iframely
-name: Iframely
+name: Iframely Preview Agent
 operator: { name: Iframely, url: "https://iframely.com" }
 description: >-
-  Iframely's fetcher, used to generate embeds and link previews of shared
-  URLs for its customers' apps and sites. Iframely publishes live IPv4/IPv6
-  address lists and documents reverse-DNS resolution to its own domain.
+  Iframely's preview fetcher, used to generate embeds and link previews of URLs
+  a person has shared in one of its customers' apps or sites. Iframely documents
+  it as reading only page metadata — Open Graph, Twitter Cards, oEmbed and
+  structured data — and as never performing automated processing, which goes out
+  as the Iframely Processing or Training agents instead. Iframely publishes live
+  IPv4/IPv6 gateway lists, documents reverse-DNS resolution to its own domain,
+  and signs requests with Web Bot Auth.
 docs:
   - "https://iframely.com/docs/about"
+  - "https://iframely.com/docs/allowlisting"
 category: social-preview
 user_agents:
   patterns:
     - 'Iframely/[\d.]+'
   instances:
     - 'Iframely/1.3.1 (+https://iframely.com/docs/about) Atlassian'
+# "We don't consult your robots.txt for these requests. The Preview Agent isn't
+# crawling your site — it never decides which URLs to fetch" — /docs/about.
 behavior: { respects_robots_txt: false }
 verification:
+  # /docs/allowlisting: "All three Iframely agents sign their requests using
+  # this standard [Web Bot Authentication], adding cryptographic HTTP message
+  # signature headers ... The signature host resolves to iframely.com".
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://iframely.com/.well-known/http-message-signatures-directory"
   - type: cidr_feed
     url: "https://iframely.com/ips-v4"
     format: text_lines

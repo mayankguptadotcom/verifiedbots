@@ -15,7 +15,8 @@
       "linkdexbot"
     ],
     "instances": [
-      "Mozilla/5.0 (compatible; linkdexbot/2.0; +http://www.linkdex.com/about/bots/)"
+      "Mozilla/5.0 (compatible; linkdexbot/2.0; +http://www.linkdex.com/about/bots/)",
+      "Mozilla/5.0 (compatible; linkdexbot/2.1; +https://www.linkdex.com/en-us/about/bots/)"
     ]
   },
   "behavior": {

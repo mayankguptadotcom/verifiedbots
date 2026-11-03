@@ -1214,6 +1214,20 @@
     ]
   },
   {
+    "id": "iframely-processing",
+    "category": "ai-assistant",
+    "patterns": [
+      "Iframely-Processing/[\\d.]+"
+    ]
+  },
+  {
+    "id": "iframely-training",
+    "category": "ai-crawler",
+    "patterns": [
+      "Iframely-Training/[\\d.]+"
+    ]
+  },
+  {
     "id": "imagesift",
     "category": "ai-crawler",
     "patterns": [
