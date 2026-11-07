@@ -2020,6 +2020,13 @@
     ]
   },
   {
+    "id": "riverbot",
+    "category": "ai-crawler",
+    "patterns": [
+      "RiverBot/\\d"
+    ]
+  },
+  {
     "id": "rogerbot",
     "category": "seo",
     "patterns": [

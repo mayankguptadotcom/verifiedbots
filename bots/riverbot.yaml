@@ -1,0 +1,55 @@
+id: riverbot
+name: RiverBot
+operator: { name: "River AI Inc.", url: "https://river.ai" }
+description: >-
+  River's web crawler, which fetches publicly available pages that the operator
+  uses to train and evaluate its AI models. The bot page states it always
+  identifies itself, follows robots.txt, and crawls deliberately slowly: one
+  request at a time per site, starting at no more than one per second and never
+  above two unless the site owner has agreed to more, backing off on slow
+  responses, server errors and Retry-After. It fetches only URLs it has been
+  given and the redirects they lead to, and does not follow links from page to
+  page, run JavaScript, submit forms or log in. The operator also honours
+  Cloudflare's Content-Signal and the IETF AI-preferences Content-Usage
+  opt-outs, treating a site or path marked no-AI-training as disallowed, and
+  announces changes to the crawler — its addresses included — in an Atom feed.
+docs:
+  - "https://river.ai/bot"
+category: ai-crawler
+user_agents:
+  # The one UA string printed on the operator's bot page under "Recognising
+  # RiverBot": "Every request RiverBot makes carries this user agent".
+  patterns:
+    - 'RiverBot/\d'
+  instances:
+    - 'RiverBot/1.0 (+https://river.ai/bot)'
+behavior: { respects_robots_txt: true, robots_token: RiverBot }
+verification:
+  # "RiverBot sends its requests from these addresses, also listed in
+  # riverbot.json". Fetched live this session: 200, application/json,
+  # Google/OpenAI-style "prefixes" shape, 100 /32s and no IPv6.
+  # Churn checked before attaching this as Tier 1: the feed's own
+  # creationTime is 2026-10-28 and the bot.atom changelog records the list
+  # growing additively (ten addresses on 2026-10-23, reaching 100 on
+  # 2026-10-27) with no change since — a stable list a daily build can
+  # publish, not a fast-rotating one.
+  - type: cidr_feed
+    url: "https://river.ai/riverbot.json"
+    format: prefixes
+  # "Every request is also signed with HTTP Message Signatures, as Web Bot Auth
+  # describes. Its Signature-Agent header is "https://river.ai", and the
+  # signature verifies against the public key in our key directory."
+  # Fetched live: 200 with the correct
+  # application/http-message-signatures-directory+json media type and one
+  # Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://river.ai/.well-known/http-message-signatures-directory"
+  # "The reverse DNS name of each ends in .bot.river.ai, such as
+  # crawl-3-212-178-146.bot.river.ai, and that name resolves back to the same
+  # address." Forward-confirmed this session rather than taken on trust: 12 of
+  # the 100 published addresses, sampled across the list, each reverse to
+  # crawl-<dashed-ip>.bot.river.ai and forward-resolve back to the same
+  # address (12/12). Plain PTR lookups are blocked in this container, so the
+  # check was run over DNS-over-HTTPS against dns.google.
+  - type: rdns
+    masks: ["*.bot.river.ai"]
