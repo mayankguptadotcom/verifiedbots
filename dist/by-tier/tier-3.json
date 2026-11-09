@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-09T13:00:11.327Z",
-  "count": 164,
+  "generated_at": "2026-11-09T13:20:43.799Z",
+  "count": 166,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -244,6 +244,97 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "andi-searchbot",
+      "name": "Andi-SearchBot",
+      "operator": {
+        "name": "Andi AI",
+        "url": "https://andiai.com"
+      },
+      "description": "The search crawler for Andi, an independent AI search engine that builds its own index (which the operator calls Trantora) rather than reselling another engine's results. Andi-SearchBot indexes pages so they can be found and cited in Andi's answers and through its search API. The operator states it never trains AI models on publisher content, and that it records each publisher's stated preferences for how its content may be used and passes them through its API so that services built on Andi's search can respect them.",
+      "docs": [
+        "https://andiai.com/bot"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Andi-SearchBot/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-SearchBot/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36",
+          "Andi-SearchBot/1.0 (+https://andiai.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Andi-SearchBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-09T13:20:43.799Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "andi-user",
+      "name": "Andi-User",
+      "operator": {
+        "name": "Andi AI",
+        "url": "https://andiai.com"
+      },
+      "description": "Andi's user-triggered fetcher, which retrieves a page when someone searching on Andi asks for it. The operator documents it separately from Andi-SearchBot, which does the automatic crawling for Andi's index, and notes that short-form requests also go out for API and feed fetches such as a Wikipedia summary pulled in for a person. Like Andi-SearchBot it sends a From: hello+publishers@andiai.com header on page fetches.",
+      "docs": [
+        "https://andiai.com/bot"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Andi-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-User/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36",
+          "Andi-User/1.0 (+https://andiai.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-09T13:20:43.799Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "andifeedbot",
+      "name": "AndiFeedBot",
+      "operator": {
+        "name": "Andi AI",
+        "url": "https://andiai.com"
+      },
+      "description": "Andi's news feed reader. The operator documents it as the agent that reads publishers' news feeds and news sitemaps for Andi's news coverage, and describes it as a special case of Andi-SearchBot in the way Googlebot-News is of Googlebot. Its scope is deliberately narrow: a robots.txt rule naming it applies to feed reading only, and otherwise Andi-SearchBot's rules apply.",
+      "docs": [
+        "https://andiai.com/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "AndiFeedBot/\\d"
+        ],
+        "instances": [
+          "AndiFeedBot/1.0 (+https://andiai.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AndiFeedBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-09T13:20:43.799Z",
       "resolved_cidrs": []
     },
     {
@@ -4832,37 +4923,6 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-29T13:18:16.426Z",
-      "resolved_cidrs": []
-    },
-    {
-      "id": "yahoo-crawler",
-      "name": "Yahoo! Slurp",
-      "operator": {
-        "name": "Yahoo",
-        "url": "https://www.yahoo.com/"
-      },
-      "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports.",
-      "docs": [
-        "https://help.yahoo.com/kb/SLN22600.html"
-      ],
-      "category": "search-engine",
-      "user_agents": {
-        "patterns": [
-          "Slurp"
-        ],
-        "instances": [
-          "Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)",
-          "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "Slurp"
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-07-16T00:59:46.504Z",
       "resolved_cidrs": []
     },
     {

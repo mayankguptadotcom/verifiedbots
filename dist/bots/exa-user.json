@@ -7,7 +7,7 @@
   },
   "description": "Exa's user-triggered fetcher, which retrieves a page live when a person, or an application built on the Exa API, asks for its current content. Exa documents it as separate from ExaSearchBot: it does not crawl automatically, it does no scheduled or background fetching, and it is not used to decide whether content appears in Exa search. Requests are signed with Web Bot Auth.",
   "docs": [
-    "https://crawler.exa.ai/exauser"
+    "https://exauser.crawler.exa.ai/"
   ],
   "category": "ai-assistant",
   "user_agents": {
@@ -15,6 +15,7 @@
       "ExaUser/\\d"
     ],
     "instances": [
+      "Mozilla/5.0 (compatible; ExaUser/1.0; +https://exauser.crawler.exa.ai)",
       "Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)"
     ]
   },
@@ -24,7 +25,7 @@
   "verification": [
     {
       "type": "web_bot_auth",
-      "signature_agent_url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory"
+      "signature_agent_url": "https://exauser.crawler.exa.ai/.well-known/http-message-signatures-directory"
     }
   ],
   "tier": 1,

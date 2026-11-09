@@ -1,0 +1,35 @@
+{
+  "id": "exa-searchbot-images",
+  "name": "ExaSearchBot-Images",
+  "operator": {
+    "name": "Exa",
+    "url": "https://exa.ai"
+  },
+  "description": "Exa's image crawler, which fetches the images referenced by pages ExaSearchBot has already crawled so that they can be shown in Exa search results. The operator documents it as one GET per image URL, with an Accept header listing image types and a Referer set to the origin of a page showing the image or to the image's own origin, and each image reduced to at most 560 pixels on its longest side for use as a thumbnail. Exa states it does not fetch from the same addresses as ExaSearchBot and that verification is cryptographic instead, so it holds regardless of the request's IP address.",
+  "docs": [
+    "https://images.crawler.exa.ai/"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "ExaSearchBot-Images"
+    ],
+    "instances": [
+      "ExaSearchBot-Images"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "ExaSearchBot-Images"
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://images.crawler.exa.ai/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-11-09T13:20:43.799Z",
+  "resolved_cidrs": []
+}

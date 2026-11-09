@@ -1,0 +1,24 @@
+id: andifeedbot
+name: AndiFeedBot
+operator: { name: "Andi AI", url: "https://andiai.com" }
+description: >-
+  Andi's news feed reader. The operator documents it as the agent that reads
+  publishers' news feeds and news sitemaps for Andi's news coverage, and
+  describes it as a special case of Andi-SearchBot in the way Googlebot-News is
+  of Googlebot. Its scope is deliberately narrow: a robots.txt rule naming it
+  applies to feed reading only, and otherwise Andi-SearchBot's rules apply.
+docs:
+  - "https://andiai.com/bot"
+category: feed-fetcher
+user_agents:
+  # The one string printed for this agent under "How they identify themselves".
+  patterns:
+    - 'AndiFeedBot/\d'
+  instances:
+    - 'AndiFeedBot/1.0 (+https://andiai.com/bot)'
+# "A rule for AndiFeedBot applies to feed reading only; otherwise
+# Andi-SearchBot's rules apply" — the operator documents the token as honoured.
+behavior: { respects_robots_txt: true, robots_token: AndiFeedBot }
+# No address ranges, ASN, reverse-DNS method or key directory is published, so
+# the entry carries no verification recipe.
+verification: []

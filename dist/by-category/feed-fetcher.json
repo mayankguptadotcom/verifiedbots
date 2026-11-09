@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-09T13:00:11.327Z",
-  "count": 32,
+  "generated_at": "2026-11-09T13:20:43.799Z",
+  "count": 33,
   "bots": [
     {
       "id": "amazon-seller-initiated-listing",
@@ -30,6 +30,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-23T13:20:46.873Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "andifeedbot",
+      "name": "AndiFeedBot",
+      "operator": {
+        "name": "Andi AI",
+        "url": "https://andiai.com"
+      },
+      "description": "Andi's news feed reader. The operator documents it as the agent that reads publishers' news feeds and news sitemaps for Andi's news coverage, and describes it as a special case of Andi-SearchBot in the way Googlebot-News is of Googlebot. Its scope is deliberately narrow: a robots.txt rule naming it applies to feed reading only, and otherwise Andi-SearchBot's rules apply.",
+      "docs": [
+        "https://andiai.com/bot"
+      ],
+      "category": "feed-fetcher",
+      "user_agents": {
+        "patterns": [
+          "AndiFeedBot/\\d"
+        ],
+        "instances": [
+          "AndiFeedBot/1.0 (+https://andiai.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AndiFeedBot"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-09T13:20:43.799Z",
       "resolved_cidrs": []
     },
     {

@@ -1,0 +1,30 @@
+{
+  "id": "andi-user",
+  "name": "Andi-User",
+  "operator": {
+    "name": "Andi AI",
+    "url": "https://andiai.com"
+  },
+  "description": "Andi's user-triggered fetcher, which retrieves a page when someone searching on Andi asks for it. The operator documents it separately from Andi-SearchBot, which does the automatic crawling for Andi's index, and notes that short-form requests also go out for API and feed fetches such as a Wikipedia summary pulled in for a person. Like Andi-SearchBot it sends a From: hello+publishers@andiai.com header on page fetches.",
+  "docs": [
+    "https://andiai.com/bot"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "Andi-User/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-User/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36",
+      "Andi-User/1.0 (+https://andiai.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-11-09T13:20:43.799Z",
+  "resolved_cidrs": []
+}

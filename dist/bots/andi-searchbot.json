@@ -1,0 +1,31 @@
+{
+  "id": "andi-searchbot",
+  "name": "Andi-SearchBot",
+  "operator": {
+    "name": "Andi AI",
+    "url": "https://andiai.com"
+  },
+  "description": "The search crawler for Andi, an independent AI search engine that builds its own index (which the operator calls Trantora) rather than reselling another engine's results. Andi-SearchBot indexes pages so they can be found and cited in Andi's answers and through its search API. The operator states it never trains AI models on publisher content, and that it records each publisher's stated preferences for how its content may be used and passes them through its API so that services built on Andi's search can respect them.",
+  "docs": [
+    "https://andiai.com/bot"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "Andi-SearchBot/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-SearchBot/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36",
+      "Andi-SearchBot/1.0 (+https://andiai.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "Andi-SearchBot"
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-11-09T13:20:43.799Z",
+  "resolved_cidrs": []
+}

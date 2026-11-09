@@ -1,0 +1,34 @@
+{
+  "id": "exa-user-images",
+  "name": "ExaUser-Images",
+  "operator": {
+    "name": "Exa",
+    "url": "https://exa.ai"
+  },
+  "description": "Exa's user-triggered image fetcher, the image counterpart of ExaUser. It retrieves an image live when a person, or an application built on the Exa API, asks for it. The operator documents it as separate from ExaSearchBot-Images: it does no scheduled or background crawling, it is not used to decide whether content appears in Exa search, and each fetch is a single GET for the image URL with the image reduced to at most 560 pixels on its longest side before it is returned. Requests are signed with Web Bot Auth.",
+  "docs": [
+    "https://exauser-images.crawler.exa.ai/"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "ExaUser-Images"
+    ],
+    "instances": [
+      "ExaUser-Images"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://exauser-images.crawler.exa.ai/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-11-09T13:20:43.799Z",
+  "resolved_cidrs": []
+}

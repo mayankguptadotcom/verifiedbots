@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-09T13:00:11.327Z",
-  "count": 22,
+  "generated_at": "2026-11-09T13:20:43.799Z",
+  "count": 24,
   "bots": [
     {
       "id": "aiwebindex-agent",
@@ -2155,6 +2155,36 @@
       ]
     },
     {
+      "id": "andi-user",
+      "name": "Andi-User",
+      "operator": {
+        "name": "Andi AI",
+        "url": "https://andiai.com"
+      },
+      "description": "Andi's user-triggered fetcher, which retrieves a page when someone searching on Andi asks for it. The operator documents it separately from Andi-SearchBot, which does the automatic crawling for Andi's index, and notes that short-form requests also go out for API and feed fetches such as a Wikipedia summary pulled in for a person. Like Andi-SearchBot it sends a From: hello+publishers@andiai.com header on page fetches.",
+      "docs": [
+        "https://andiai.com/bot"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Andi-User/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-User/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36",
+          "Andi-User/1.0 (+https://andiai.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-09T13:20:43.799Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "chatgpt-user",
       "name": "ChatGPT-User",
       "operator": {
@@ -3075,7 +3105,7 @@
       },
       "description": "Exa's user-triggered fetcher, which retrieves a page live when a person, or an application built on the Exa API, asks for its current content. Exa documents it as separate from ExaSearchBot: it does not crawl automatically, it does no scheduled or background fetching, and it is not used to decide whether content appears in Exa search. Requests are signed with Web Bot Auth.",
       "docs": [
-        "https://crawler.exa.ai/exauser"
+        "https://exauser.crawler.exa.ai/"
       ],
       "category": "ai-assistant",
       "user_agents": {
@@ -3083,6 +3113,7 @@
           "ExaUser/\\d"
         ],
         "instances": [
+          "Mozilla/5.0 (compatible; ExaUser/1.0; +https://exauser.crawler.exa.ai)",
           "Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)"
         ]
       },
@@ -3092,12 +3123,46 @@
       "verification": [
         {
           "type": "web_bot_auth",
-          "signature_agent_url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory"
+          "signature_agent_url": "https://exauser.crawler.exa.ai/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
       "first_seen": "2026-10-29T13:40:08.426Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "exa-user-images",
+      "name": "ExaUser-Images",
+      "operator": {
+        "name": "Exa",
+        "url": "https://exa.ai"
+      },
+      "description": "Exa's user-triggered image fetcher, the image counterpart of ExaUser. It retrieves an image live when a person, or an application built on the Exa API, asks for it. The operator documents it as separate from ExaSearchBot-Images: it does no scheduled or background crawling, it is not used to decide whether content appears in Exa search, and each fetch is a single GET for the image URL with the image reduced to at most 560 pixels on its longest side before it is returned. Requests are signed with Web Bot Auth.",
+      "docs": [
+        "https://exauser-images.crawler.exa.ai/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "ExaUser-Images"
+        ],
+        "instances": [
+          "ExaUser-Images"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://exauser-images.crawler.exa.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-09T13:20:43.799Z",
       "resolved_cidrs": []
     },
     {

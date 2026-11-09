@@ -4,6 +4,9 @@ operator: { name: Yahoo, url: "https://www.yahoo.com/" }
 description: >-
   Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo
   Search results and also gathers content for Yahoo News, Finance, and Sports.
+  Yahoo documents two ways to confirm a request really came from Slurp — a
+  forward-confirmed reverse DNS lookup under .crawl.yahoo.net, and a published
+  JSON list of the CIDR ranges it crawls from.
 docs:
   - "https://help.yahoo.com/kb/SLN22600.html"
 category: search-engine
@@ -14,4 +17,22 @@ user_agents:
     - 'Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)'
     - 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)'
 behavior: { respects_robots_txt: true, robots_token: Slurp }
-verification: []
+verification:
+  # "Option 2: Match the published IP ranges — Yahoo publishes the IP ranges
+  # used by Slurp in JSON format and CIDR notation, at
+  # https://s.yimg.com/bo/crawling/ipranges/common-crawlers.json. The list is
+  # updated when the ranges change."
+  # Fetched live this session: HTTP 200, application/json, Google/OpenAI-style
+  # "prefixes" shape, five ipv4Prefix entries and no IPv6.
+  # Churn checked before attaching this as Tier 1: the feed's own creationTime
+  # is 2026-11-06 (three days before this run) and the list is five whole CIDR
+  # blocks (/24, /25, /28) rather than a pool of individual addresses, so a
+  # daily snapshot tracks it faithfully — the opposite of the sirdata-bot case.
+  - type: cidr_feed
+    url: "https://s.yimg.com/bo/crawling/ipranges/common-crawlers.json"
+    format: prefixes
+  # "Option 1: Check DNS — Run a reverse DNS lookup on the IP address. The
+  # hostname returned must end in .crawl.yahoo.net ... Run a forward DNS lookup
+  # on that hostname and confirm it resolves back to the same IP address."
+  - type: rdns
+    masks: ["*.crawl.yahoo.net"]

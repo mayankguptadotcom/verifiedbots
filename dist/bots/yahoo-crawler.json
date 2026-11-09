@@ -5,7 +5,7 @@
     "name": "Yahoo",
     "url": "https://www.yahoo.com/"
   },
-  "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports.",
+  "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports. Yahoo documents two ways to confirm a request really came from Slurp — a forward-confirmed reverse DNS lookup under .crawl.yahoo.net, and a published JSON list of the CIDR ranges it crawls from.",
   "docs": [
     "https://help.yahoo.com/kb/SLN22600.html"
   ],
@@ -23,9 +23,27 @@
     "respects_robots_txt": true,
     "robots_token": "Slurp"
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://s.yimg.com/bo/crawling/ipranges/common-crawlers.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.crawl.yahoo.net"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-07-16T00:59:46.504Z",
-  "resolved_cidrs": []
+  "resolved_cidrs": [
+    "192.152.66.0/24",
+    "204.29.186.0/24",
+    "204.29.187.0/24",
+    "72.30.14.0/25",
+    "74.6.168.240/28"
+  ]
 }

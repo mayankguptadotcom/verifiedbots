@@ -1,0 +1,38 @@
+id: exa-searchbot-images
+name: ExaSearchBot-Images
+operator: { name: Exa, url: "https://exa.ai" }
+description: >-
+  Exa's image crawler, which fetches the images referenced by pages
+  ExaSearchBot has already crawled so that they can be shown in Exa search
+  results. The operator documents it as one GET per image URL, with an Accept
+  header listing image types and a Referer set to the origin of a page showing
+  the image or to the image's own origin, and each image reduced to at most 560
+  pixels on its longest side for use as a thumbnail. Exa states it does not
+  fetch from the same addresses as ExaSearchBot and that verification is
+  cryptographic instead, so it holds regardless of the request's IP address.
+docs:
+  - "https://images.crawler.exa.ai/"
+category: search-engine
+user_agents:
+  # "ExaSearchBot-Images sends this user-agent: ExaSearchBot-Images" — the
+  # operator page prints the bare token as the complete string, so it is
+  # recorded as-is (the treatment gwf-carbon-txt-crawler and powermapper get).
+  # The sibling entry's pattern 'ExaSearchBot/\d' deliberately does not match
+  # this, and this pattern does not match the sibling's versioned string.
+  patterns:
+    - 'ExaSearchBot-Images'
+  instances:
+    - 'ExaSearchBot-Images'
+# "ExaSearchBot-Images respects the Robots Exclusion Protocol, applying the
+# robots.txt of the host that serves the image, which may differ from the host
+# of the page showing it." Its own group takes precedence, then ExaSearchBot's,
+# then the rules set for major search engines, then '*'.
+behavior: { respects_robots_txt: true, robots_token: ExaSearchBot-Images }
+verification:
+  # "ExaSearchBot-Images' Ed25519 keys are published at
+  # https://images.crawler.exa.ai/.well-known/http-message-signatures-directory".
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key. This
+  # is a directory of its own, distinct from ExaSearchBot's.
+  - type: web_bot_auth
+    signature_agent_url: "https://images.crawler.exa.ai/.well-known/http-message-signatures-directory"

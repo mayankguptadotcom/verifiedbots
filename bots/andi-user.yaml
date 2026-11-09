@@ -1,0 +1,31 @@
+id: andi-user
+name: Andi-User
+operator: { name: "Andi AI", url: "https://andiai.com" }
+description: >-
+  Andi's user-triggered fetcher, which retrieves a page when someone searching
+  on Andi asks for it. The operator documents it separately from
+  Andi-SearchBot, which does the automatic crawling for Andi's index, and notes
+  that short-form requests also go out for API and feed fetches such as a
+  Wikipedia summary pulled in for a person. Like Andi-SearchBot it sends a
+  From: hello+publishers@andiai.com header on page fetches.
+docs:
+  - "https://andiai.com/bot"
+category: ai-assistant
+user_agents:
+  # Both strings are printed on the operator's bot page: the full string under
+  # "How they identify themselves" (W.X.Y.Z is documented as standing for "a
+  # current Chrome version") and the short form the page records for API and
+  # feed requests.
+  patterns:
+    - 'Andi-User/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-User/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36'
+    - 'Andi-User/1.0 (+https://andiai.com/bot)'
+# The bot page documents robots.txt obedience for search indexing under
+# Andi-SearchBot and directs opt-outs to that token ("A robots.txt rule only
+# needs the name: User-agent: Andi-SearchBot"). It says nothing about
+# robots.txt applying to this user-triggered fetcher, so per the project's
+# rule for non-crawler service traffic this is false with no token recorded.
+behavior: { respects_robots_txt: false }
+# No address ranges, ASN, reverse-DNS method or key directory is published.
+verification: []

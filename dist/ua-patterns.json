@@ -170,6 +170,27 @@
     ]
   },
   {
+    "id": "andi-searchbot",
+    "category": "search-engine",
+    "patterns": [
+      "Andi-SearchBot/\\d"
+    ]
+  },
+  {
+    "id": "andi-user",
+    "category": "ai-assistant",
+    "patterns": [
+      "Andi-User/\\d"
+    ]
+  },
+  {
+    "id": "andifeedbot",
+    "category": "feed-fetcher",
+    "patterns": [
+      "AndiFeedBot/\\d"
+    ]
+  },
+  {
     "id": "anomura",
     "category": "search-engine",
     "patterns": [
@@ -823,10 +844,24 @@
     ]
   },
   {
+    "id": "exa-searchbot-images",
+    "category": "search-engine",
+    "patterns": [
+      "ExaSearchBot-Images"
+    ]
+  },
+  {
     "id": "exa-user",
     "category": "ai-assistant",
     "patterns": [
       "ExaUser/\\d"
+    ]
+  },
+  {
+    "id": "exa-user-images",
+    "category": "ai-assistant",
+    "patterns": [
+      "ExaUser-Images"
     ]
   },
   {

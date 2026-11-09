@@ -1,0 +1,32 @@
+id: andi-searchbot
+name: Andi-SearchBot
+operator: { name: "Andi AI", url: "https://andiai.com" }
+description: >-
+  The search crawler for Andi, an independent AI search engine that builds its
+  own index (which the operator calls Trantora) rather than reselling another
+  engine's results. Andi-SearchBot indexes pages so they can be found and cited
+  in Andi's answers and through its search API. The operator states it never
+  trains AI models on publisher content, and that it records each publisher's
+  stated preferences for how its content may be used and passes them through
+  its API so that services built on Andi's search can respect them.
+docs:
+  - "https://andiai.com/bot"
+category: search-engine
+user_agents:
+  # Both strings are printed on the operator's bot page: the full string under
+  # "How they identify themselves", where W.X.Y.Z is documented as standing for
+  # "a current Chrome version", and the short form the same page says "appear[s]
+  # on API and feed requests".
+  patterns:
+    - 'Andi-SearchBot/\d'
+  instances:
+    - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Andi-SearchBot/1.0; +https://andiai.com/bot) Chrome/W.X.Y.Z Safari/537.36'
+    - 'Andi-SearchBot/1.0 (+https://andiai.com/bot)'
+# "For search indexing, Andi-SearchBot obeys robots.txt rules that name it and
+# noindex tags: a page excluded by either stays out of Andi's search index",
+# and "A robots.txt rule only needs the name: User-agent: Andi-SearchBot".
+behavior: { respects_robots_txt: true, robots_token: Andi-SearchBot }
+# Andi publishes no address ranges, ASN or reverse-DNS method, and neither
+# andiai.com nor andisearch.com serves a Web Bot Auth key directory (both
+# probed this session: 404). No verification recipe, so this is Tier 3.
+verification: []

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-09T13:00:11.327Z",
-  "count": 109,
+  "generated_at": "2026-11-09T13:20:43.799Z",
+  "count": 112,
   "bots": [
     {
       "id": "ahrefs-siteaudit",
@@ -3020,6 +3020,41 @@
       "resolved_cidrs": []
     },
     {
+      "id": "exa-searchbot-images",
+      "name": "ExaSearchBot-Images",
+      "operator": {
+        "name": "Exa",
+        "url": "https://exa.ai"
+      },
+      "description": "Exa's image crawler, which fetches the images referenced by pages ExaSearchBot has already crawled so that they can be shown in Exa search results. The operator documents it as one GET per image URL, with an Accept header listing image types and a Referer set to the origin of a page showing the image or to the image's own origin, and each image reduced to at most 560 pixels on its longest side for use as a thumbnail. Exa states it does not fetch from the same addresses as ExaSearchBot and that verification is cryptographic instead, so it holds regardless of the request's IP address.",
+      "docs": [
+        "https://images.crawler.exa.ai/"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "ExaSearchBot-Images"
+        ],
+        "instances": [
+          "ExaSearchBot-Images"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ExaSearchBot-Images"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://images.crawler.exa.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-09T13:20:43.799Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "exa-user",
       "name": "ExaUser",
       "operator": {
@@ -3028,7 +3063,7 @@
       },
       "description": "Exa's user-triggered fetcher, which retrieves a page live when a person, or an application built on the Exa API, asks for its current content. Exa documents it as separate from ExaSearchBot: it does not crawl automatically, it does no scheduled or background fetching, and it is not used to decide whether content appears in Exa search. Requests are signed with Web Bot Auth.",
       "docs": [
-        "https://crawler.exa.ai/exauser"
+        "https://exauser.crawler.exa.ai/"
       ],
       "category": "ai-assistant",
       "user_agents": {
@@ -3036,6 +3071,7 @@
           "ExaUser/\\d"
         ],
         "instances": [
+          "Mozilla/5.0 (compatible; ExaUser/1.0; +https://exauser.crawler.exa.ai)",
           "Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)"
         ]
       },
@@ -3045,12 +3081,46 @@
       "verification": [
         {
           "type": "web_bot_auth",
-          "signature_agent_url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory"
+          "signature_agent_url": "https://exauser.crawler.exa.ai/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
       "tier_label": "Fully verifiable",
       "first_seen": "2026-10-29T13:40:08.426Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "exa-user-images",
+      "name": "ExaUser-Images",
+      "operator": {
+        "name": "Exa",
+        "url": "https://exa.ai"
+      },
+      "description": "Exa's user-triggered image fetcher, the image counterpart of ExaUser. It retrieves an image live when a person, or an application built on the Exa API, asks for it. The operator documents it as separate from ExaSearchBot-Images: it does no scheduled or background crawling, it is not used to decide whether content appears in Exa search, and each fetch is a single GET for the image URL with the image reduced to at most 560 pixels on its longest side before it is returned. Requests are signed with Web Bot Auth.",
+      "docs": [
+        "https://exauser-images.crawler.exa.ai/"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "ExaUser-Images"
+        ],
+        "instances": [
+          "ExaUser-Images"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://exauser-images.crawler.exa.ai/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-09T13:20:43.799Z",
       "resolved_cidrs": []
     },
     {
@@ -14502,6 +14572,55 @@
         "78.14.142.185/32",
         "80.209.238.252/32",
         "85.206.149.28/32"
+      ]
+    },
+    {
+      "id": "yahoo-crawler",
+      "name": "Yahoo! Slurp",
+      "operator": {
+        "name": "Yahoo",
+        "url": "https://www.yahoo.com/"
+      },
+      "description": "Slurp is Yahoo Search's web crawler. It crawls and indexes pages for Yahoo Search results and also gathers content for Yahoo News, Finance, and Sports. Yahoo documents two ways to confirm a request really came from Slurp — a forward-confirmed reverse DNS lookup under .crawl.yahoo.net, and a published JSON list of the CIDR ranges it crawls from.",
+      "docs": [
+        "https://help.yahoo.com/kb/SLN22600.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "Slurp"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)",
+          "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "Slurp"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://s.yimg.com/bo/crawling/ipranges/common-crawlers.json",
+          "format": "prefixes"
+        },
+        {
+          "type": "rdns",
+          "masks": [
+            "*.crawl.yahoo.net"
+          ]
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": [
+        "192.152.66.0/24",
+        "204.29.186.0/24",
+        "204.29.187.0/24",
+        "72.30.14.0/25",
+        "74.6.168.240/28"
       ]
     },
     {
