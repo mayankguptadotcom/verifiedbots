@@ -1,0 +1,57 @@
+id: claude-agent
+name: Claude-Agent
+operator: { name: Anthropic, url: "https://www.anthropic.com" }
+description: >-
+  The browser Anthropic hosts for Claude products, including Claude Duet, to
+  complete tasks at a user's direction — what the operator calls agentic
+  browser use. Requests come from a real browser running on Anthropic's
+  infrastructure, so this is user-directed page access rather than crawling,
+  and the operator documents it separately from its robots (ClaudeBot,
+  Claude-User and Claude-SearchBot), noting that a site's preferences for the
+  two are independent. Allowing or blocking it decides whether a site's own
+  visitors can ask Claude to carry out tasks on that site.
+docs:
+  - "https://support.claude.com/en/articles/18234133"
+category: ai-assistant
+user_agents:
+  # "They carry the User-Agent header of the browser itself, with the addition
+  # of the token Claude-Agent to indicate that the browser is being driven by
+  # a hosted Claude agent... Other parts of this string can change, so match
+  # on the Claude-Agent token rather than the full string." The pattern below
+  # follows that instruction: it keys on the token, not the browser tail.
+  patterns:
+    - 'Claude-Agent/\d'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-Agent/1.0) Chrome/154.0.0.0 Safari/537.36'
+# The operator documents no robots.txt token and no robots behaviour for this
+# agent — its robots page covers the crawlers and fetchers instead, and says
+# the two sets of preferences are managed separately. User-directed fetches,
+# so false per this project's rule for non-crawler service traffic.
+behavior: { respects_robots_txt: false }
+verification:
+  # "This traffic comes from the IP addresses published at
+  # https://claude.com/.well-known/sail, listed under Claude-Agent."
+  # Fetched live this session: 200 with media type application/sail+toml,
+  # schema draft-kelley-webbotauth-sail-00, one prefix_set
+  # ("agentic-browser-use", exclusive=true) of nine IPv4 addresses and no
+  # IPv6, bound to a single service entry named Claude-Agent with
+  # exhaustive=true.
+  #
+  # Recorded as static_cidrs rather than a cidr_feed because SAIL is TOML and
+  # none of the five supported feed parsers reads it. Churn checked before
+  # recording the snapshot: the file's own `modified` stamp is
+  # 2026-10-22T18:36:00Z — 20 days old — and a second fetch later in this
+  # session returned a byte-identical body. The operator does caution that
+  # "these addresses may change over time", so re-check this list when the
+  # `modified` stamp moves; a SAIL parser would make this a Tier 1 feed.
+  - type: static_cidrs
+    cidrs:
+      - "136.71.21.147"
+      - "34.31.25.14"
+      - "34.67.187.248"
+      - "34.71.122.171"
+      - "34.70.177.231"
+      - "34.66.255.143"
+      - "34.68.65.207"
+      - "34.171.207.92"
+      - "34.60.73.195"

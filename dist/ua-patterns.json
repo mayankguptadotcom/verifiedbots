@@ -226,6 +226,13 @@
     ]
   },
   {
+    "id": "artsdata-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "artsdata-crawler"
+    ]
+  },
+  {
     "id": "atlassian-bot",
     "category": "search-engine",
     "patterns": [
@@ -470,6 +477,13 @@
     ]
   },
   {
+    "id": "claude-agent",
+    "category": "ai-assistant",
+    "patterns": [
+      "Claude-Agent/\\d"
+    ]
+  },
+  {
     "id": "claude-searchbot",
     "category": "ai-crawler",
     "patterns": [
@@ -578,8 +592,12 @@
     "id": "coccocbot",
     "category": "search-engine",
     "patterns": [
+      "coccocbot/\\d",
       "coccocbot-web/\\d",
-      "coccocbot-image/\\d"
+      "coccocbot-image/\\d",
+      "coccocbot-fast/\\d",
+      "coccocbot-ads/\\d",
+      "coccocbot-shopping/\\d"
     ]
   },
   {

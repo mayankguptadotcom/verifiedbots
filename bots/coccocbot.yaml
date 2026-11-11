@@ -1,21 +1,47 @@
 id: coccocbot
 name: coccocbot
-operator: { name: "Cốc Cốc", url: "https://coccoc.com" }
+operator: { name: "Cốc Cốc Company Limited", url: "https://coccoc.com" }
 description: >-
-  Cốc Cốc's web crawler, fetching pages for the Vietnamese Cốc Cốc search
-  engine. Separate web and image sub-bots share the same verification
-  domain.
+  The crawler family of Cốc Cốc, Vietnam's own search engine. The operator's
+  robots page describes them as web crawling robots that discover and download
+  websites and pages in order to include them in the Cốc Cốc Search Engine
+  index, and documents six robot names that can be told apart by their user
+  agent strings: a generic name covering all of them, the main web robot, and
+  separate image, fast, ads and e-commerce robots. All of them are verified
+  the same way, through the one reverse-DNS domain below.
 docs:
+  - "https://coccoc.com/search/console/en/coc-coc-robots"
   - "https://coccoc.com/search/console/en"
 category: search-engine
 user_agents:
+  # All seven strings are copied from the user-agent table on the operator's
+  # robots page (last updated 15/07/2022), read in full this session. The
+  # table lists six robot names; coccocbot-web has two documented forms,
+  # because the operator notes it uses the bare form "in some cases instead"
+  # of the Mozilla-prefixed one.
   patterns:
+    - 'coccocbot/\d'
     - 'coccocbot-web/\d'
     - 'coccocbot-image/\d'
+    - 'coccocbot-fast/\d'
+    - 'coccocbot-ads/\d'
+    - 'coccocbot-shopping/\d'
   instances:
+    - 'Mozilla/5.0 (compatible; coccocbot/1.0; +http://help.coccoc.com/searchengine)'
     - 'Mozilla/5.0 (compatible; coccocbot-web/1.0; +http://help.coccoc.com/searchengine)'
+    - 'coccocbot-web/1.0 (+http://help.coccoc.com/searchengine)'
     - 'Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)'
+    - 'Mozilla/5.0 (compatible; coccocbot-fast/1.0; +http://help.coccoc.com/searchengine)'
+    - 'Mozilla/5.0 (compatible; coccocbot-ads/1.0; +http://help.coccoc.com/searchengine)'
+    - 'Mozilla/5.0 (compatible; coccocbot-shopping/1.0; +http://help.coccoc.com/searchengine)'
 behavior: { respects_robots_txt: true, robots_token: coccocbot }
 verification:
+  # Forward-confirmed reverse DNS, in the operator's own words: "find the IP
+  # address which was used to make requests with our user agent string. Then,
+  # make a reverse DNS lookup for the IP address to determine the host domain
+  # name. The host name must end with '.coccoc.com'. Finally, make a forward
+  # DNS lookup with that host name. If you see the returned address match the
+  # original address, then it is a robot of Cốc Cốc." No IP list, no ASN and
+  # no key directory are published, so Tier 2 is the ceiling here.
   - type: rdns
     masks: ["*.coccoc.com"]

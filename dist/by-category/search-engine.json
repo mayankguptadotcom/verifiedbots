@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-11T11:56:55.334Z",
-  "count": 98,
+  "generated_at": "2026-11-11T13:23:59.463Z",
+  "count": 99,
   "bots": [
     {
       "id": "addsearch",
@@ -2084,6 +2084,37 @@
       ]
     },
     {
+      "id": "artsdata-crawler",
+      "name": "Artsdata-Crawler",
+      "operator": {
+        "name": "Artsdata",
+        "url": "https://kg.artsdata.ca"
+      },
+      "description": "The crawler for Artsdata, a public knowledge graph of performing-arts events, works, places, people and organizations. Its own permission page states the crawler's purpose as collecting publicly available arts and culture data, and describes its behaviour as respectful crawling with delays between requests. Site owners are asked to allow it rather than block it, and the page walks through robots.txt and Cloudflare bot protection as the two things that commonly stop it.",
+      "docs": [
+        "https://kg.artsdata.ca/doc/artsdata-crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "artsdata-crawler"
+        ],
+        "instances": [
+          "artsdata-crawler (compatible; +https://kg.artsdata.ca/doc/artsdata-crawler)",
+          "artsdata-crawler/1.3.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "artsdata-crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-11T13:23:59.463Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "atlassian-bot",
       "name": "atlassian-bot",
       "operator": {
@@ -2497,22 +2528,32 @@
       "id": "coccocbot",
       "name": "coccocbot",
       "operator": {
-        "name": "Cốc Cốc",
+        "name": "Cốc Cốc Company Limited",
         "url": "https://coccoc.com"
       },
-      "description": "Cốc Cốc's web crawler, fetching pages for the Vietnamese Cốc Cốc search engine. Separate web and image sub-bots share the same verification domain.",
+      "description": "The crawler family of Cốc Cốc, Vietnam's own search engine. The operator's robots page describes them as web crawling robots that discover and download websites and pages in order to include them in the Cốc Cốc Search Engine index, and documents six robot names that can be told apart by their user agent strings: a generic name covering all of them, the main web robot, and separate image, fast, ads and e-commerce robots. All of them are verified the same way, through the one reverse-DNS domain below.",
       "docs": [
+        "https://coccoc.com/search/console/en/coc-coc-robots",
         "https://coccoc.com/search/console/en"
       ],
       "category": "search-engine",
       "user_agents": {
         "patterns": [
+          "coccocbot/\\d",
           "coccocbot-web/\\d",
-          "coccocbot-image/\\d"
+          "coccocbot-image/\\d",
+          "coccocbot-fast/\\d",
+          "coccocbot-ads/\\d",
+          "coccocbot-shopping/\\d"
         ],
         "instances": [
+          "Mozilla/5.0 (compatible; coccocbot/1.0; +http://help.coccoc.com/searchengine)",
           "Mozilla/5.0 (compatible; coccocbot-web/1.0; +http://help.coccoc.com/searchengine)",
-          "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)"
+          "coccocbot-web/1.0 (+http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-fast/1.0; +http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-ads/1.0; +http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-shopping/1.0; +http://help.coccoc.com/searchengine)"
         ]
       },
       "behavior": {

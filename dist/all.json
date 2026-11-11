@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-11T11:56:55.334Z",
-  "count": 422,
+  "generated_at": "2026-11-11T13:23:59.463Z",
+  "count": 424,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -8163,6 +8163,37 @@
       ]
     },
     {
+      "id": "artsdata-crawler",
+      "name": "Artsdata-Crawler",
+      "operator": {
+        "name": "Artsdata",
+        "url": "https://kg.artsdata.ca"
+      },
+      "description": "The crawler for Artsdata, a public knowledge graph of performing-arts events, works, places, people and organizations. Its own permission page states the crawler's purpose as collecting publicly available arts and culture data, and describes its behaviour as respectful crawling with delays between requests. Site owners are asked to allow it rather than block it, and the page walks through robots.txt and Cloudflare bot protection as the two things that commonly stop it.",
+      "docs": [
+        "https://kg.artsdata.ca/doc/artsdata-crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "artsdata-crawler"
+        ],
+        "instances": [
+          "artsdata-crawler (compatible; +https://kg.artsdata.ca/doc/artsdata-crawler)",
+          "artsdata-crawler/1.3.0"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "artsdata-crawler"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-11T13:23:59.463Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "atlassian-bot",
       "name": "atlassian-bot",
       "operator": {
@@ -10017,6 +10048,60 @@
       "resolved_cidrs": []
     },
     {
+      "id": "claude-agent",
+      "name": "Claude-Agent",
+      "operator": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com"
+      },
+      "description": "The browser Anthropic hosts for Claude products, including Claude Duet, to complete tasks at a user's direction — what the operator calls agentic browser use. Requests come from a real browser running on Anthropic's infrastructure, so this is user-directed page access rather than crawling, and the operator documents it separately from its robots (ClaudeBot, Claude-User and Claude-SearchBot), noting that a site's preferences for the two are independent. Allowing or blocking it decides whether a site's own visitors can ask Claude to carry out tasks on that site.",
+      "docs": [
+        "https://support.claude.com/en/articles/18234133"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Claude-Agent/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-Agent/1.0) Chrome/154.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "136.71.21.147",
+            "34.31.25.14",
+            "34.67.187.248",
+            "34.71.122.171",
+            "34.70.177.231",
+            "34.66.255.143",
+            "34.68.65.207",
+            "34.171.207.92",
+            "34.60.73.195"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-11-11T13:23:59.463Z",
+      "resolved_cidrs": [
+        "136.71.21.147",
+        "34.171.207.92",
+        "34.31.25.14",
+        "34.60.73.195",
+        "34.66.255.143",
+        "34.67.187.248",
+        "34.68.65.207",
+        "34.70.177.231",
+        "34.71.122.171"
+      ]
+    },
+    {
       "id": "claude-searchbot",
       "name": "Claude-SearchBot",
       "operator": {
@@ -10566,22 +10651,32 @@
       "id": "coccocbot",
       "name": "coccocbot",
       "operator": {
-        "name": "Cốc Cốc",
+        "name": "Cốc Cốc Company Limited",
         "url": "https://coccoc.com"
       },
-      "description": "Cốc Cốc's web crawler, fetching pages for the Vietnamese Cốc Cốc search engine. Separate web and image sub-bots share the same verification domain.",
+      "description": "The crawler family of Cốc Cốc, Vietnam's own search engine. The operator's robots page describes them as web crawling robots that discover and download websites and pages in order to include them in the Cốc Cốc Search Engine index, and documents six robot names that can be told apart by their user agent strings: a generic name covering all of them, the main web robot, and separate image, fast, ads and e-commerce robots. All of them are verified the same way, through the one reverse-DNS domain below.",
       "docs": [
+        "https://coccoc.com/search/console/en/coc-coc-robots",
         "https://coccoc.com/search/console/en"
       ],
       "category": "search-engine",
       "user_agents": {
         "patterns": [
+          "coccocbot/\\d",
           "coccocbot-web/\\d",
-          "coccocbot-image/\\d"
+          "coccocbot-image/\\d",
+          "coccocbot-fast/\\d",
+          "coccocbot-ads/\\d",
+          "coccocbot-shopping/\\d"
         ],
         "instances": [
+          "Mozilla/5.0 (compatible; coccocbot/1.0; +http://help.coccoc.com/searchengine)",
           "Mozilla/5.0 (compatible; coccocbot-web/1.0; +http://help.coccoc.com/searchengine)",
-          "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)"
+          "coccocbot-web/1.0 (+http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-fast/1.0; +http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-ads/1.0; +http://help.coccoc.com/searchengine)",
+          "Mozilla/5.0 (compatible; coccocbot-shopping/1.0; +http://help.coccoc.com/searchengine)"
         ]
       },
       "behavior": {

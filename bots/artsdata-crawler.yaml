@@ -1,0 +1,40 @@
+id: artsdata-crawler
+name: Artsdata-Crawler
+operator: { name: Artsdata, url: "https://kg.artsdata.ca" }
+description: >-
+  The crawler for Artsdata, a public knowledge graph of performing-arts events,
+  works, places, people and organizations. Its own permission page states the
+  crawler's purpose as collecting publicly available arts and culture data, and
+  describes its behaviour as respectful crawling with delays between requests.
+  Site owners are asked to allow it rather than block it, and the page walks
+  through robots.txt and Cloudflare bot protection as the two things that
+  commonly stop it.
+docs:
+  - "https://kg.artsdata.ca/doc/artsdata-crawler"
+category: search-engine
+user_agents:
+  # Both strings come from the operator's permission page: it prints the
+  # User-Agent verbatim, then notes that "the Artsdata crawler also includes a
+  # version number appended to the User-agent string... the full User-agent
+  # string typically looks like this: artsdata-crawler/1.3.0, where the version
+  # may change". The pattern is the bare token because the page explicitly
+  # asks site owners to match on the name and ignore the version.
+  patterns:
+    - 'artsdata-crawler'
+  instances:
+    - 'artsdata-crawler (compatible; +https://kg.artsdata.ca/doc/artsdata-crawler)'
+    - 'artsdata-crawler/1.3.0'
+# "The primary tool for managing crawler access to your website is the
+# robots.txt file", with a worked `User-agent: artsdata-crawler` / `Allow: /`
+# example — the operator documents robots.txt as the control mechanism.
+behavior: { respects_robots_txt: true, robots_token: artsdata-crawler }
+# Tier 3, and deliberately so. The permission page publishes no IP ranges, no
+# ASN and no reverse-DNS method. kg.artsdata.ca *does* serve a live Web Bot
+# Auth key directory — probed this session: 200,
+# application/http-message-signatures-directory+json, one Ed25519 key, served
+# by the operator's own Heroku app rather than by a CDN default — but the
+# permission page says nothing about signing, Web Bot Auth, HTTP Message
+# Signatures or RFC 9421 (grepped for all of them: zero hits). Held on the
+# same standard as the other live-directory-without-an-operator-claim cases
+# in this project. Attach it only once Artsdata states that it signs.
+verification: []

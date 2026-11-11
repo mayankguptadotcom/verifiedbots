@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-11T11:56:55.334Z",
-  "count": 24,
+  "generated_at": "2026-11-11T13:23:59.463Z",
+  "count": 25,
   "bots": [
     {
       "id": "aiwebindex-agent",
@@ -2456,6 +2456,60 @@
         "9.223.181.208/28",
         "9.234.96.192/28",
         "9.234.97.96/28"
+      ]
+    },
+    {
+      "id": "claude-agent",
+      "name": "Claude-Agent",
+      "operator": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com"
+      },
+      "description": "The browser Anthropic hosts for Claude products, including Claude Duet, to complete tasks at a user's direction — what the operator calls agentic browser use. Requests come from a real browser running on Anthropic's infrastructure, so this is user-directed page access rather than crawling, and the operator documents it separately from its robots (ClaudeBot, Claude-User and Claude-SearchBot), noting that a site's preferences for the two are independent. Allowing or blocking it decides whether a site's own visitors can ask Claude to carry out tasks on that site.",
+      "docs": [
+        "https://support.claude.com/en/articles/18234133"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "Claude-Agent/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-Agent/1.0) Chrome/154.0.0.0 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "static_cidrs",
+          "cidrs": [
+            "136.71.21.147",
+            "34.31.25.14",
+            "34.67.187.248",
+            "34.71.122.171",
+            "34.70.177.231",
+            "34.66.255.143",
+            "34.68.65.207",
+            "34.171.207.92",
+            "34.60.73.195"
+          ]
+        }
+      ],
+      "tier": 2,
+      "tier_label": "Verifiable",
+      "first_seen": "2026-11-11T13:23:59.463Z",
+      "resolved_cidrs": [
+        "136.71.21.147",
+        "34.171.207.92",
+        "34.31.25.14",
+        "34.60.73.195",
+        "34.66.255.143",
+        "34.67.187.248",
+        "34.68.65.207",
+        "34.70.177.231",
+        "34.71.122.171"
       ]
     },
     {

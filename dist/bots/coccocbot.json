@@ -2,22 +2,32 @@
   "id": "coccocbot",
   "name": "coccocbot",
   "operator": {
-    "name": "Cốc Cốc",
+    "name": "Cốc Cốc Company Limited",
     "url": "https://coccoc.com"
   },
-  "description": "Cốc Cốc's web crawler, fetching pages for the Vietnamese Cốc Cốc search engine. Separate web and image sub-bots share the same verification domain.",
+  "description": "The crawler family of Cốc Cốc, Vietnam's own search engine. The operator's robots page describes them as web crawling robots that discover and download websites and pages in order to include them in the Cốc Cốc Search Engine index, and documents six robot names that can be told apart by their user agent strings: a generic name covering all of them, the main web robot, and separate image, fast, ads and e-commerce robots. All of them are verified the same way, through the one reverse-DNS domain below.",
   "docs": [
+    "https://coccoc.com/search/console/en/coc-coc-robots",
     "https://coccoc.com/search/console/en"
   ],
   "category": "search-engine",
   "user_agents": {
     "patterns": [
+      "coccocbot/\\d",
       "coccocbot-web/\\d",
-      "coccocbot-image/\\d"
+      "coccocbot-image/\\d",
+      "coccocbot-fast/\\d",
+      "coccocbot-ads/\\d",
+      "coccocbot-shopping/\\d"
     ],
     "instances": [
+      "Mozilla/5.0 (compatible; coccocbot/1.0; +http://help.coccoc.com/searchengine)",
       "Mozilla/5.0 (compatible; coccocbot-web/1.0; +http://help.coccoc.com/searchengine)",
-      "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)"
+      "coccocbot-web/1.0 (+http://help.coccoc.com/searchengine)",
+      "Mozilla/5.0 (compatible; coccocbot-image/1.0; +http://help.coccoc.com/searchengine)",
+      "Mozilla/5.0 (compatible; coccocbot-fast/1.0; +http://help.coccoc.com/searchengine)",
+      "Mozilla/5.0 (compatible; coccocbot-ads/1.0; +http://help.coccoc.com/searchengine)",
+      "Mozilla/5.0 (compatible; coccocbot-shopping/1.0; +http://help.coccoc.com/searchengine)"
     ]
   },
   "behavior": {
