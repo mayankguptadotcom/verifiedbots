@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-13T12:20:12.181Z",
-  "count": 167,
+  "generated_at": "2026-11-13T15:24:28.570Z",
+  "count": 171,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -734,6 +734,35 @@
       "resolved_cidrs": []
     },
     {
+      "id": "catchpoint",
+      "name": "Catchpoint",
+      "operator": {
+        "name": "Catchpoint Systems",
+        "url": "https://www.catchpoint.com"
+      },
+      "description": "The synthetic-monitoring agent of Catchpoint's internet performance monitoring platform. Its HTTP and browser tests fetch customer-selected endpoints from Catchpoint's public and enterprise nodes on a schedule the customer sets, so the traffic is configured monitoring rather than crawling. The operator tells customers they may identify this traffic by a user agent containing \"catchpoint\", while warning that the header can be modified and varies by test type.",
+      "docs": [
+        "https://docs.catchpoint.com/docs/catchpoint-synthetic-monitoring-firewall-network-requirements"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "[Cc]atchpoint"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64; Catchpoint) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-13T15:20:54.752Z",
+      "resolved_cidrs": []
+    },
+    {
       "id": "cincraw",
       "name": "Cincraw",
       "operator": {
@@ -821,6 +850,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code (WebFetch)",
+      "operator": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com"
+      },
+      "description": "The fetcher behind Claude Code's WebFetch tool, which retrieves a page a developer asked Claude Code to read while working in a terminal or editor. The operator documents that WebFetch sends a user agent beginning with Claude-User and an Accept header preferring Markdown over HTML, that each response is cached for 15 minutes, and that the fetch resolves and runs on the developer's own machine (optionally through their proxy). Because the request leaves that machine rather than Anthropic's infrastructure, the IP ranges Anthropic publishes for its crawlers and fetchers do not apply to it.",
+      "docs": [
+        "https://code.claude.com/docs/en/tools-reference"
+      ],
+      "category": "ai-assistant",
+      "user_agents": {
+        "patterns": [
+          "claude-code/\\d"
+        ],
+        "instances": [
+          "Claude-User (claude-code/2.1.308; +https://support.anthropic.com/)",
+          "claude-code/2.1.107 (cli)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-13T15:24:28.570Z",
       "resolved_cidrs": []
     },
     {
@@ -1089,6 +1148,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T00:59:46.504Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "clueweb-crawler",
+      "name": "ClueWeb Crawler",
+      "operator": {
+        "name": "Carnegie Mellon University (Language Technologies Institute)",
+        "url": "https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/"
+      },
+      "description": "The crawler that builds the CMU ClueWeb research corpus, run by Professor Chenyan Xiong's research group at Carnegie Mellon's Language Technologies Institute and used for language-model research. The operator documents that it crawls only public unauthenticated pages and content permitted by robots.txt, rate-limits per host, backs off on 429 and 503 responses, and offers an opt-out form in addition to robots.txt. It says its requests come from CMU SCS addresses but publishes no ranges, so they cannot be verified.",
+      "docs": [
+        "https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ClueWeb-Crawler/\\d"
+        ],
+        "instances": [
+          "ClueWeb-Crawler/1.0 (+https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/; mailto:cmu-clueweb-crawler@andrew.cmu.edu)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-13T15:20:54.752Z",
       "resolved_cidrs": []
     },
     {
@@ -2186,6 +2274,36 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "ibou-images",
+      "name": "ibou-images",
+      "operator": {
+        "name": "Babbar (ibou)",
+        "url": "https://www.ibou.com"
+      },
+      "description": "The image crawler of the French search engine ibou, documented by the operator as the robot that finds and catalogues images for ibou's services. It is the one crawler of the four for which ibou publishes no address list yet, so its requests cannot be verified.",
+      "docs": [
+        "https://www.ibou.com/crawlers.html"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "ibou-images/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (compatible; ibou-images/2.0; +https://www.ibou.com/crawlers.html)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ibou-images"
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-13T15:20:54.752Z",
       "resolved_cidrs": []
     },
     {

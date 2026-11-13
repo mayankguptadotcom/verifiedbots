@@ -31,6 +31,16 @@ user_agents:
     - 'GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)'
 behavior: { respects_robots_txt: false }
 verification:
+  # The operator's page publishes two lists for these fetchers and distinguishes
+  # them by who owns the request: reverse DNS "matches either
+  # ***-***-***-***.gae.googleusercontent.com or
+  # google-proxy-***-***-***-***.google.com, depending on whether the fetcher is
+  # Google- or user-owned". Both are recorded so neither half is unverifiable.
   - type: cidr_feed
     url: "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json"
+    format: prefixes
+  # Added this session after fetching it live: 200 application/json, prefixes
+  # shape, creationTime 2026-11-12T15:45:55, 504 prefixes.
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json"
     format: prefixes

@@ -1,0 +1,21 @@
+id: ibou-images
+name: ibou-images
+operator: { name: "Babbar (ibou)", url: "https://www.ibou.com" }
+description: >-
+  The image crawler of the French search engine ibou, documented by the
+  operator as the robot that finds and catalogues images for ibou's services.
+  It is the one crawler of the four for which ibou publishes no address list
+  yet, so its requests cannot be verified.
+docs:
+  - "https://www.ibou.com/crawlers.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'ibou-images/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; ibou-images/2.0; +https://www.ibou.com/crawlers.html)'
+behavior: { respects_robots_txt: true, robots_token: ibou-images }
+# The crawlers page prints "Coming soon" ("A venir") in this crawler's IP
+# ranges cell, and scopes its forward-confirmed reverse DNS instructions to
+# ibou-search, so no recipe is attached. Re-check for the promised list.
+verification: []

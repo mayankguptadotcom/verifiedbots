@@ -1,0 +1,37 @@
+id: clueweb-crawler
+name: ClueWeb Crawler
+operator:
+  name: "Carnegie Mellon University (Language Technologies Institute)"
+  url: "https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/"
+description: >-
+  The crawler that builds the CMU ClueWeb research corpus, run by Professor
+  Chenyan Xiong's research group at Carnegie Mellon's Language Technologies
+  Institute and used for language-model research. The operator documents that
+  it crawls only public unauthenticated pages and content permitted by
+  robots.txt, rate-limits per host, backs off on 429 and 503 responses, and
+  offers an opt-out form in addition to robots.txt. It says its requests come
+  from CMU SCS addresses but publishes no ranges, so they cannot be verified.
+docs:
+  - "https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/"
+category: ai-crawler
+user_agents:
+  # Printed verbatim under the page's "User-Agent" heading; the same string is
+  # the recorded instance in arcjet/well-known-bots (id clueweb-crawler).
+  patterns:
+    - 'ClueWeb-Crawler/\d'
+  instances:
+    - 'ClueWeb-Crawler/1.0 (+https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/; mailto:cmu-clueweb-crawler@andrew.cmu.edu)'
+# "Honors all robots.txt directives"; the page also lists "robots.txt &
+# crawl-delay" as respected. It names no robots.txt token, so none is recorded.
+behavior: { respects_robots_txt: true }
+# No recipe: the page gives the origin only as "CMU SCS IP range", with no
+# addresses, ASN or reverse-DNS mask. Re-check if CMU publishes a list.
+#
+# Sourcing note: the docs URL above is the canonical page (it is the URL the
+# crawler's own user agent advertises), and it was read in full this session —
+# but over http://, because the host serves an incomplete certificate chain to
+# this egress ("curl: (60) SSL certificate problem: unable to get local issuer
+# certificate", with the agent proxy reporting bundleCoversEveryHost: true, so
+# the gap is at the origin). Content fetched over http matched the arcjet
+# record exactly.
+verification: []

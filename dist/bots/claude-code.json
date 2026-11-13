@@ -1,0 +1,30 @@
+{
+  "id": "claude-code",
+  "name": "Claude Code (WebFetch)",
+  "operator": {
+    "name": "Anthropic",
+    "url": "https://www.anthropic.com"
+  },
+  "description": "The fetcher behind Claude Code's WebFetch tool, which retrieves a page a developer asked Claude Code to read while working in a terminal or editor. The operator documents that WebFetch sends a user agent beginning with Claude-User and an Accept header preferring Markdown over HTML, that each response is cached for 15 minutes, and that the fetch resolves and runs on the developer's own machine (optionally through their proxy). Because the request leaves that machine rather than Anthropic's infrastructure, the IP ranges Anthropic publishes for its crawlers and fetchers do not apply to it.",
+  "docs": [
+    "https://code.claude.com/docs/en/tools-reference"
+  ],
+  "category": "ai-assistant",
+  "user_agents": {
+    "patterns": [
+      "claude-code/\\d"
+    ],
+    "instances": [
+      "Claude-User (claude-code/2.1.308; +https://support.anthropic.com/)",
+      "claude-code/2.1.107 (cli)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": false
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-11-13T15:24:28.570Z",
+  "resolved_cidrs": []
+}

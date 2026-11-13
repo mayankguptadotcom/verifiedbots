@@ -1,0 +1,46 @@
+{
+  "id": "ibou-search",
+  "name": "ibou-search",
+  "operator": {
+    "name": "Babbar (ibou)",
+    "url": "https://www.ibou.com"
+  },
+  "description": "The crawler that collects pages for ibou's search engine, the French independent engine run by Babbar. The operator documents it as one of four named ibou crawlers, states that every answer cites and links the sources it draws on and that the data is not used to train AI models, publishes the crawler's address ranges as JSON, and documents forward-confirmed reverse DNS as the way to tell a genuine request from a copied user agent.",
+  "docs": [
+    "https://www.ibou.com/crawlers.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "ibou-search/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; ibou-search/2.0; +https://www.ibou.com/crawlers.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "ibou-search"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://www.ibou.com/ibousearch-ip-ranges.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "rdns",
+      "masks": [
+        "*.ibou.io"
+      ]
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-11-13T15:20:54.752Z",
+  "resolved_cidrs": [
+    "188.241.38.0/24",
+    "217.113.196.0/24",
+    "2a0e:6240:e000::/44"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ibou-news",
+  "name": "ibou-news",
+  "operator": {
+    "name": "Babbar (ibou)",
+    "url": "https://www.ibou.com"
+  },
+  "description": "The crawler that collects articles for ibou Actualites, the news service of the French search engine ibou. The operator documents it as one of four named ibou crawlers, says it follows robots.txt and that collected data is not used to train AI models, and publishes the address ranges its media crawlers fetch from as JSON.",
+  "docs": [
+    "https://www.ibou.com/crawlers.html"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "ibou-news/\\d"
+    ],
+    "instances": [
+      "Mozilla/5.0 (compatible; ibou-news/2.0; +https://www.ibou.com/crawlers.html)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "ibou-news"
+  },
+  "verification": [
+    {
+      "type": "cidr_feed",
+      "url": "https://www.ibou.com/iboumedia-ip-ranges.json",
+      "format": "prefixes"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-11-13T15:20:54.752Z",
+  "resolved_cidrs": [
+    "163.172.235.32/27"
+  ]
+}

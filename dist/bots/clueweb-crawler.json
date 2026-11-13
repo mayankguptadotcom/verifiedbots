@@ -1,0 +1,29 @@
+{
+  "id": "clueweb-crawler",
+  "name": "ClueWeb Crawler",
+  "operator": {
+    "name": "Carnegie Mellon University (Language Technologies Institute)",
+    "url": "https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/"
+  },
+  "description": "The crawler that builds the CMU ClueWeb research corpus, run by Professor Chenyan Xiong's research group at Carnegie Mellon's Language Technologies Institute and used for language-model research. The operator documents that it crawls only public unauthenticated pages and content permitted by robots.txt, rate-limits per host, backs off on 429 and 503 responses, and offers an opt-out form in addition to robots.txt. It says its requests come from CMU SCS addresses but publishes no ranges, so they cannot be verified.",
+  "docs": [
+    "https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "ClueWeb-Crawler/\\d"
+    ],
+    "instances": [
+      "ClueWeb-Crawler/1.0 (+https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/; mailto:cmu-clueweb-crawler@andrew.cmu.edu)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [],
+  "tier": 3,
+  "tier_label": "Listed only",
+  "first_seen": "2026-11-13T15:20:54.752Z",
+  "resolved_cidrs": []
+}

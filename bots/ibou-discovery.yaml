@@ -1,0 +1,28 @@
+id: ibou-discovery
+name: ibou-discovery
+operator: { name: "Babbar (ibou)", url: "https://www.ibou.com" }
+description: >-
+  The crawler that collects articles for ibou Decouverte, the content-discovery
+  service of the French search engine ibou. The operator documents it as one of
+  four named ibou crawlers, says it follows robots.txt and that collected data
+  is not used to train AI models, and publishes the address ranges its media
+  crawlers fetch from as JSON.
+docs:
+  - "https://www.ibou.com/crawlers.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'ibou-discovery/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; ibou-discovery/2.0; +https://www.ibou.com/crawlers.html)'
+# "All four crawlers follow robots.txt"; the page states that Crawl-delay is
+# supported by ibou-search only, so no delay directive is recorded here.
+behavior: { respects_robots_txt: true, robots_token: ibou-discovery }
+verification:
+  # The page links this list from the "IP ranges" cell of both ibou-discovery
+  # and ibou-news. Fetched live this session: 200 application/json, prefixes
+  # shape, creationTime 2026-05-24T17:08:23, one IPv4 /27. The forward-confirmed
+  # reverse DNS section is scoped to ibou-search, so no rdns recipe here.
+  - type: cidr_feed
+    url: "https://www.ibou.com/iboumedia-ip-ranges.json"
+    format: prefixes

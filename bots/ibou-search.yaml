@@ -1,0 +1,37 @@
+id: ibou-search
+name: ibou-search
+operator: { name: "Babbar (ibou)", url: "https://www.ibou.com" }
+description: >-
+  The crawler that collects pages for ibou's search engine, the French
+  independent engine run by Babbar. The operator documents it as one of four
+  named ibou crawlers, states that every answer cites and links the sources it
+  draws on and that the data is not used to train AI models, publishes the
+  crawler's address ranges as JSON, and documents forward-confirmed reverse DNS
+  as the way to tell a genuine request from a copied user agent.
+docs:
+  - "https://www.ibou.com/crawlers.html"
+category: search-engine
+user_agents:
+  patterns:
+    - 'ibou-search/\d'
+  instances:
+    - 'Mozilla/5.0 (compatible; ibou-search/2.0; +https://www.ibou.com/crawlers.html)'
+# "All four crawlers follow robots.txt". The page also documents a politeness
+# policy that applies to ibou-search alone: 5 seconds between requests to the
+# same host, 2.5 seconds between requests to the same IP within a domain, and
+# Crawl-delay support ("The other three crawlers do not support Crawl-delay").
+behavior: { respects_robots_txt: true, robots_token: ibou-search }
+verification:
+  # "The ibou-search IP ranges (JSON) are also available; this list may change."
+  # Fetched live this session: 200 application/json, prefixes shape,
+  # creationTime 2026-11-04T08:10:00, three prefixes (two IPv4 /24 and one
+  # IPv6 /44).
+  - type: cidr_feed
+    url: "https://www.ibou.com/ibousearch-ip-ranges.json"
+    format: prefixes
+  # "Run a reverse DNS lookup on the source IP. The hostname must end in
+  # .ibou.io ... Resolve that hostname to its IP addresses ... The original IP
+  # must be among them. Both checks are needed." The page scopes this section
+  # to ibou-search.
+  - type: rdns
+    masks: ["*.ibou.io"]

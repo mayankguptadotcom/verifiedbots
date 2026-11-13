@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-13T12:20:12.181Z",
-  "count": 61,
+  "generated_at": "2026-11-13T15:24:28.570Z",
+  "count": 62,
   "bots": [
     {
       "id": "accessiblewebbot",
@@ -768,6 +768,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "catchpoint",
+      "name": "Catchpoint",
+      "operator": {
+        "name": "Catchpoint Systems",
+        "url": "https://www.catchpoint.com"
+      },
+      "description": "The synthetic-monitoring agent of Catchpoint's internet performance monitoring platform. Its HTTP and browser tests fetch customer-selected endpoints from Catchpoint's public and enterprise nodes on a schedule the customer sets, so the traffic is configured monitoring rather than crawling. The operator tells customers they may identify this traffic by a user agent containing \"catchpoint\", while warning that the header can be modified and varies by test type.",
+      "docs": [
+        "https://docs.catchpoint.com/docs/catchpoint-synthetic-monitoring-firewall-network-requirements"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "[Cc]atchpoint"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64; Catchpoint) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.90 Safari/537.36"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-13T15:20:54.752Z",
       "resolved_cidrs": []
     },
     {

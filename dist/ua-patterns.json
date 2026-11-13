@@ -413,6 +413,13 @@
     ]
   },
   {
+    "id": "catchpoint",
+    "category": "monitoring",
+    "patterns": [
+      "[Cc]atchpoint"
+    ]
+  },
+  {
     "id": "ccbot",
     "category": "ai-crawler",
     "patterns": [
@@ -481,6 +488,13 @@
     "category": "ai-assistant",
     "patterns": [
       "Claude-Agent/\\d"
+    ]
+  },
+  {
+    "id": "claude-code",
+    "category": "ai-assistant",
+    "patterns": [
+      "claude-code/\\d"
     ]
   },
   {
@@ -586,6 +600,13 @@
     "category": "search-engine",
     "patterns": [
       "cludo\\.com bot"
+    ]
+  },
+  {
+    "id": "clueweb-crawler",
+    "category": "ai-crawler",
+    "patterns": [
+      "ClueWeb-Crawler/\\d"
     ]
   },
   {
@@ -1250,6 +1271,34 @@
     "category": "monitoring",
     "patterns": [
       "Buck\\/"
+    ]
+  },
+  {
+    "id": "ibou-discovery",
+    "category": "search-engine",
+    "patterns": [
+      "ibou-discovery/\\d"
+    ]
+  },
+  {
+    "id": "ibou-images",
+    "category": "search-engine",
+    "patterns": [
+      "ibou-images/\\d"
+    ]
+  },
+  {
+    "id": "ibou-news",
+    "category": "search-engine",
+    "patterns": [
+      "ibou-news/\\d"
+    ]
+  },
+  {
+    "id": "ibou-search",
+    "category": "search-engine",
+    "patterns": [
+      "ibou-search/\\d"
     ]
   },
   {

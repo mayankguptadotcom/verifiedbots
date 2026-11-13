@@ -1,25 +1,38 @@
 id: iboubot
 name: IbouBot
-operator: { name: Babbar (Ibou), url: "https://ibou.io" }
+operator: { name: "Babbar (ibou)", url: "https://www.ibou.com" }
 description: >-
-  The crawler behind Ibou, a French conversational search engine. It discovers
-  publicly accessible pages and indexes them so Ibou can cite and link back to
-  the sites it answers from. The operator documents a 5-second politeness delay
-  per host, publishes its address ranges as JSON, and documents
-  forward-confirmed reverse DNS as the reliable way to tell a genuine request
-  from a spoofed user agent.
+  The original crawler of Ibou, the French conversational search engine run by
+  Babbar. It discovers publicly accessible pages and indexes them so Ibou can
+  cite and link back to the sites it answers from. The operator documents a
+  5-second politeness delay per host (2.5 seconds per IP within a domain),
+  publishes its address ranges as JSON, and documents forward-confirmed reverse
+  DNS as the reliable way to tell a genuine request from a spoofed user agent.
+  The same operator separately documents four newer 2.0 crawlers
+  (ibou-search, ibou-discovery, ibou-images, ibou-news) on its crawlers page.
 docs:
-  - "https://ibou.io/iboubot.html"
+  # The crawler page is now served under ibou.com, which is also the domain the
+  # user agent below advertises; the ibou.io copy is still live and identical.
+  - "https://www.ibou.com/iboubot.html"
 category: search-engine
 user_agents:
   patterns:
     - 'IbouBot/\d'
   instances:
-    - 'Mozilla/5.0 (compatible; IbouBot/1.0; +bot@ibou.io; +https://ibou.io/iboubot.html)'
+    # Printed verbatim on the page as read this session. The entry previously
+    # recorded the ibou.io form of this string ("+bot@ibou.io;
+    # +https://ibou.io/iboubot.html"), which the operator's page no longer
+    # prints after the move to ibou.com.
+    - 'Mozilla/5.0 (compatible; IbouBot/1.0; +bot@ibou.com; +https://www.ibou.com/iboubot.html)'
 behavior: { respects_robots_txt: true, robots_token: IbouBot }
 verification:
+  # Linked from the page's "IP ranges" row. Fetched live this session: 200
+  # application/json, prefixes shape, creationTime 2025-07-25T14:16:44, one
+  # IPv4 /24 (the ibou.io copy of the same file answers identically).
   - type: cidr_feed
-    url: "https://ibou.io/iboubot-ip-ranges.json"
+    url: "https://www.ibou.com/iboubot-ip-ranges.json"
     format: prefixes
+  # "Reverse DNS suffix: ibou.io (forward-confirmed — see below)", with a
+  # worked host/dig example in the page's verification section.
   - type: rdns
     masks: ["*.ibou.io"]

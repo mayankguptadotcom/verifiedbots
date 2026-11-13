@@ -1,0 +1,35 @@
+id: claude-code
+name: Claude Code (WebFetch)
+operator: { name: Anthropic, url: "https://www.anthropic.com" }
+description: >-
+  The fetcher behind Claude Code's WebFetch tool, which retrieves a page a
+  developer asked Claude Code to read while working in a terminal or editor.
+  The operator documents that WebFetch sends a user agent beginning with
+  Claude-User and an Accept header preferring Markdown over HTML, that each
+  response is cached for 15 minutes, and that the fetch resolves and runs on
+  the developer's own machine (optionally through their proxy). Because the
+  request leaves that machine rather than Anthropic's infrastructure, the IP
+  ranges Anthropic publishes for its crawlers and fetchers do not apply to it.
+docs:
+  - "https://code.claude.com/docs/en/tools-reference"
+category: ai-assistant
+user_agents:
+  # The operator's page documents the prefix only ("WebFetch sets a User-Agent
+  # header beginning with Claude-User"). The two recorded strings below, which
+  # carry the claude-code/<version> token this entry keys on, are the instances
+  # in arcjet/well-known-bots (id anthropic-claude-code). The existing
+  # claude-user entry keys on 'Claude-User/\d' and so matches neither.
+  patterns:
+    - 'claude-code/\d'
+  instances:
+    - 'Claude-User (claude-code/2.1.308; +https://support.anthropic.com/)'
+    - 'claude-code/2.1.107 (cli)'
+# A fetch a developer explicitly asks for, not crawling; the operator documents
+# no robots.txt token or policy for WebFetch (its robots page covers ClaudeBot,
+# Claude-User and Claude-SearchBot instead).
+behavior: { respects_robots_txt: false }
+# Deliberately no recipe, and that is the point of listing it separately: the
+# request originates from the developer's machine, so neither
+# claude.com/crawling/bots.json (which claude-user carries) nor the SAIL prefix
+# set (which claude-agent carries) can verify it. Identity only — Tier 3.
+verification: []
