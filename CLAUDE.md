@@ -96,8 +96,11 @@ only when it fails the gate above.
 5. Feed formats for `cidr_feed`: `prefixes` (Google/OpenAI style),
    `json_array`, `text_lines`, `github_meta` (+`selector` — a dot-path into
    nested objects, e.g. `synthetics.prefixes_ipv4` for Datadog-style feeds;
-   one recipe per array), `stripe_webhooks`. A feed in any other shape →
-   use `static_cidrs` with documented ranges, or omit the recipe.
+   one recipe per array), `stripe_webhooks`, `sail` (SAIL/`application/sail+toml`,
+   schema `draft-kelley-webbotauth-sail-00`; `selector` is the `[[services]]`
+   name whose bound `prefix_sets` to read, e.g. `Claude-Agent` — omit it to
+   take every published set). A feed in any other shape → use `static_cidrs`
+   with documented ranges, or omit the recipe.
 6. Run `npm run validate && npm run fetch-feeds && npm run verify-wba && npm test`. Fix or drop
    anything red. An exit-1 feed means the URL is wrong — never leave a broken
    recipe in; exit 2 (held/transient) is fine to commit through.

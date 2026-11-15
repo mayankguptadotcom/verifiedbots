@@ -64,4 +64,55 @@ describe('parseFeed', () => {
     expect(() => parseFeed('json_array', '[1,2]')).toThrow(/unparseable feed/);
     expect(() => parseFeed('json_array', 'nope')).toThrow(/unparseable feed/);
   });
+
+  // SAIL (draft-kelley-webbotauth-sail-00). Fixture is the live body of
+  // https://claude.com/.well-known/sail, which publishes nine addresses in one prefix set
+  // bound to the Claude-Agent service.
+  it('parses a SAIL document, selecting a named service', () => {
+    expect(parseFeed('sail', fx('anthropic_sail.toml'), 'Claude-Agent')).toEqual([
+      '136.71.21.147',
+      '34.31.25.14',
+      '34.67.187.248',
+      '34.71.122.171',
+      '34.70.177.231',
+      '34.66.255.143',
+      '34.68.65.207',
+      '34.171.207.92',
+      '34.60.73.195',
+    ]);
+  });
+  it('returns every prefix set when no SAIL service is selected', () => {
+    expect(parseFeed('sail', fx('anthropic_sail.toml'))).toHaveLength(9);
+  });
+  it('unions ipv4 and ipv6 prefixes across the sets a service binds', () => {
+    const doc = [
+      'schema = "draft-kelley-webbotauth-sail-00"',
+      '[[prefix_sets]]',
+      'name = "a"',
+      'ipv4_prefixes = ["1.2.3.0/24"]',
+      'ipv6_prefixes = ["2001:db8::/32"]',
+      '[[prefix_sets]]',
+      'name = "b"',
+      'ipv4_prefixes = [',
+      '  "5.6.7.0/24", # a comment inside the array',
+      ']',
+      '[[services]]',
+      'name = "Svc"',
+      'prefix_sets = ["a", "b"]',
+    ].join('\n');
+    expect(parseFeed('sail', doc, 'Svc')).toEqual(['1.2.3.0/24', '2001:db8::/32', '5.6.7.0/24']);
+  });
+  it('throws rather than under-reporting when a SAIL service or prefix set is missing', () => {
+    const doc = '[[prefix_sets]]\nname = "a"\nipv4_prefixes = ["1.2.3.0/24"]\n[[services]]\nname = "Svc"\nprefix_sets = ["ghost"]\n';
+    expect(() => parseFeed('sail', doc, 'Svc')).toThrow(/unknown prefix set "ghost"/);
+    expect(() => parseFeed('sail', doc, 'Other')).toThrow(/no \[\[services\]\] entry named "Other"/);
+    expect(() => parseFeed('sail', 'schema = "x"\n')).toThrow(/declares no prefix_sets/);
+    expect(() => parseFeed('sail', '[[prefix_sets]]\nname = "a"\nipv4_prefixes = ["1.2.3.0/24"\n')).toThrow(
+      /unterminated array/,
+    );
+  });
+  it('does not treat a # inside a quoted SAIL string as a comment', () => {
+    const doc = '[[prefix_sets]]\nname = "has # hash"\nipv4_prefixes = ["1.2.3.0/24"]\n[[services]]\nname = "S"\nprefix_sets = ["has # hash"]\n';
+    expect(parseFeed('sail', doc, 'S')).toEqual(['1.2.3.0/24']);
+  });
 });

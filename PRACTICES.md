@@ -11,7 +11,10 @@ Example: `ExampleBot/2.1 (+https://example.com/bot)`.
 ## 2. Be verifiable (`verification`) — at least one of:
 - **Machine-readable IP ranges** at a stable HTTPS URL (JSON preferred; the
   Google/OpenAI `{"prefixes":[{"ipv4Prefix":...}]}` shape is the de-facto
-  standard) → `cidr_feed`
+  standard) → `cidr_feed`. A **SAIL** file (`application/sail+toml`, schema
+  `draft-kelley-webbotauth-sail-00`) at `/.well-known/sail` is read too: name
+  each agent in a `[[services]]` table bound to the `[[prefix_sets]]` it egresses
+  from, and the directory tracks it per service.
 - **Forward/reverse DNS** on a domain you control → `rdns`
 - **Web Bot Auth** (IETF HTTP Message Signatures): sign requests and host a
   key directory at `/.well-known/http-message-signatures-directory` →

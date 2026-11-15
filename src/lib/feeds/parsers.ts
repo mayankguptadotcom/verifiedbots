@@ -1,4 +1,4 @@
-export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array';
+export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array' | 'sail';
 
 function fail(detail: string): never {
   throw new Error(`unparseable feed: ${detail}`);
@@ -17,6 +17,136 @@ function asJson(body: string): any {
     }
     fail('invalid JSON');
   }
+}
+
+
+/**
+ * Minimal reader for the SAIL profile of TOML (`application/sail+toml`, schema
+ * `draft-kelley-webbotauth-sail-00`), which publishes a bot operator's egress addresses as
+ * `[[prefix_sets]]` tables of `ipv4_prefixes`/`ipv6_prefixes` plus `[[services]]` tables that
+ * bind a named service to one or more of those sets.
+ *
+ * This is deliberately NOT a general TOML parser. It accepts exactly the constructs the SAIL
+ * profile uses and throws on anything else, so an unexpected document fails loudly as a 'hard'
+ * feed outcome rather than silently yielding a short address list. Every string it returns is
+ * still validated by sanitizeCidrs downstream, and a short list would additionally trip the
+ * last-known-good diff guard, so a mis-read cannot quietly narrow a published range set.
+ */
+interface SailDoc {
+  prefixSets: Map<string, string[]>;
+  services: Map<string, string[]>;
+}
+
+/** Strips a trailing `# comment`, respecting double-quoted strings. */
+function stripComment(line: string): string {
+  let inStr = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"' && line[i - 1] !== '\\') inStr = !inStr;
+    else if (c === '#' && !inStr) return line.slice(0, i);
+  }
+  return line;
+}
+
+function parseStringArray(raw: string, key: string): string[] {
+  const inner = raw.trim().slice(1, -1);
+  const out: string[] = [];
+  for (const part of inner.split(',')) {
+    const t = part.trim();
+    if (t.length === 0) continue; // trailing comma / empty array
+    const m = /^"([^"]*)"$/.exec(t);
+    if (!m) fail(`sail: ${key} contains a non-string entry (${t})`);
+    out.push(m[1]);
+  }
+  return out;
+}
+
+function parseSailDoc(body: string): SailDoc {
+  const prefixSets = new Map<string, string[]>();
+  const services = new Map<string, string[]>();
+  // Current table: null at document root, otherwise the table-array name and its collected keys.
+  let table: 'prefix_sets' | 'services' | 'other' | null = null;
+  let cur: Record<string, string[] | string> = {};
+  const flush = () => {
+    if (table === 'prefix_sets') {
+      const name = cur.name;
+      if (typeof name !== 'string') fail('sail: a [[prefix_sets]] table has no name');
+      const v4 = cur.ipv4_prefixes ?? [];
+      const v6 = cur.ipv6_prefixes ?? [];
+      if (!Array.isArray(v4) || !Array.isArray(v6)) fail(`sail: prefix set "${name}" has a non-array prefix list`);
+      prefixSets.set(name as string, [...v4, ...v6]);
+    } else if (table === 'services') {
+      const name = cur.name;
+      if (typeof name !== 'string') fail('sail: a [[services]] table has no name');
+      const sets = cur.prefix_sets;
+      if (!Array.isArray(sets)) fail(`sail: service "${name}" lists no prefix_sets`);
+      services.set(name as string, sets);
+    }
+    cur = {};
+  };
+
+  const lines = body.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const line = stripComment(lines[i]).trim();
+    if (line.length === 0) continue;
+    const header = /^\[\[?([A-Za-z0-9_.-]+)\]\]?$/.exec(line);
+    if (header) {
+      flush();
+      const name = header[1];
+      table = name === 'prefix_sets' ? 'prefix_sets' : name === 'services' ? 'services' : 'other';
+      continue;
+    }
+    const eq = line.indexOf('=');
+    if (eq < 0) fail(`sail: unparseable line ${i + 1} (${line.slice(0, 40)})`);
+    const key = line.slice(0, eq).trim();
+    let value = line.slice(eq + 1).trim();
+    if (value.startsWith('[') && !value.endsWith(']')) {
+      // Multi-line array: accumulate until the closing bracket.
+      let j = i;
+      while (!value.endsWith(']')) {
+        j++;
+        if (j >= lines.length) fail(`sail: unterminated array for "${key}"`);
+        value += ' ' + stripComment(lines[j]).trim();
+        value = value.trim();
+      }
+      i = j;
+    }
+    if (table === 'prefix_sets' || table === 'services') {
+      if (value.startsWith('[')) cur[key] = parseStringArray(value, key);
+      else {
+        const m = /^"([^"]*)"$/.exec(value);
+        // Non-string scalars in a known table (exclusive/exhaustive booleans) are not needed
+        // for address extraction, so they are read and ignored rather than rejected.
+        if (m) cur[key] = m[1];
+      }
+    }
+  }
+  flush();
+  return { prefixSets, services };
+}
+
+/**
+ * Resolves a SAIL document to a flat address list. With a `selector`, it is the name of a
+ * `[[services]]` entry and only that service's bound prefix sets are returned — which is what
+ * attributes traffic to one named bot. Without a selector, every published prefix set is
+ * returned.
+ */
+export function parseSail(body: string, selector?: string): string[] {
+  const { prefixSets, services } = parseSailDoc(body);
+  if (prefixSets.size === 0) fail('sail: document declares no prefix_sets');
+  if (!selector) return [...prefixSets.values()].flat();
+  const bound = services.get(selector);
+  if (!bound) {
+    fail(`sail: no [[services]] entry named "${selector}" (found: ${[...services.keys()].join(', ') || 'none'})`);
+  }
+  const out: string[] = [];
+  for (const setName of bound) {
+    const prefixes = prefixSets.get(setName);
+    if (!prefixes) fail(`sail: service "${selector}" references unknown prefix set "${setName}"`);
+    out.push(...prefixes);
+  }
+  if (out.length === 0) fail(`sail: service "${selector}" resolves to no addresses`);
+  return out;
 }
 
 export function parseFeed(format: FeedFormat, body: string, selector?: string): string[] {
@@ -73,6 +203,8 @@ export function parseFeed(format: FeedFormat, body: string, selector?: string): 
       }
       return node;
     }
+    case 'sail':
+      return parseSail(body, selector);
     case 'text_lines':
       return body
         .split('\n')
