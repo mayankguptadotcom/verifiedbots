@@ -74,12 +74,16 @@ function parseSailDoc(body: string): SailDoc {
       const v4 = cur.ipv4_prefixes ?? [];
       const v6 = cur.ipv6_prefixes ?? [];
       if (!Array.isArray(v4) || !Array.isArray(v6)) fail(`sail: prefix set "${name}" has a non-array prefix list`);
+      // A repeated name would otherwise overwrite the earlier set and silently shorten the
+      // published list, which is the one failure mode this parser exists to avoid.
+      if (prefixSets.has(name)) fail(`sail: duplicate prefix set name "${name}"`);
       prefixSets.set(name as string, [...v4, ...v6]);
     } else if (table === 'services') {
       const name = cur.name;
       if (typeof name !== 'string') fail('sail: a [[services]] table has no name');
       const sets = cur.prefix_sets;
       if (!Array.isArray(sets)) fail(`sail: service "${name}" lists no prefix_sets`);
+      if (services.has(name)) fail(`sail: duplicate service name "${name}"`);
       services.set(name as string, sets);
     }
     cur = {};

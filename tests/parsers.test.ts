@@ -111,6 +111,13 @@ describe('parseFeed', () => {
       /unterminated array/,
     );
   });
+  it('rejects duplicate SAIL table names instead of overwriting them', () => {
+    const dupSet = '[[prefix_sets]]\nname = "a"\nipv4_prefixes = ["1.2.3.0/24"]\n[[prefix_sets]]\nname = "a"\nipv4_prefixes = ["5.6.7.0/24"]\n';
+    expect(() => parseFeed('sail', dupSet)).toThrow(/duplicate prefix set name "a"/);
+    const dupSvc =
+      '[[prefix_sets]]\nname = "a"\nipv4_prefixes = ["1.2.3.0/24"]\n[[services]]\nname = "S"\nprefix_sets = ["a"]\n[[services]]\nname = "S"\nprefix_sets = ["a"]\n';
+    expect(() => parseFeed('sail', dupSvc, 'S')).toThrow(/duplicate service name "S"/);
+  });
   it('does not treat a # inside a quoted SAIL string as a comment', () => {
     const doc = '[[prefix_sets]]\nname = "has # hash"\nipv4_prefixes = ["1.2.3.0/24"]\n[[services]]\nname = "S"\nprefix_sets = ["has # hash"]\n';
     expect(parseFeed('sail', doc, 'S')).toEqual(['1.2.3.0/24']);
