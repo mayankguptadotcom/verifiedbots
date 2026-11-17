@@ -63,6 +63,13 @@
     ]
   },
   {
+    "id": "ai-managed-agents-agent",
+    "category": "monitoring",
+    "patterns": [
+      "AIManagedAgents-Agent/\\d"
+    ]
+  },
+  {
     "id": "ai2bot",
     "category": "ai-crawler",
     "patterns": [
@@ -873,6 +880,13 @@
     "category": "social-preview",
     "patterns": [
       "Embedly/[\\d.]+"
+    ]
+  },
+  {
+    "id": "enfilade-crawler",
+    "category": "search-engine",
+    "patterns": [
+      "EnfiladeBot/\\d"
     ]
   },
   {

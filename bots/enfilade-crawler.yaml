@@ -1,0 +1,51 @@
+id: enfilade-crawler
+name: EnfiladeBot
+operator: { name: Enfilade, url: "https://enfilade.guide" }
+description: >-
+  The crawler of the Enfilade museum catalogue, an independent four-language
+  guide to museums. It does not sweep whole sites: it reads the addresses
+  recorded in its own entry for a museum, the pages that museum's exhibition
+  list links to, and the home page, sitemap and usual feed addresses when
+  looking for new ones. What it collects is what a visitor reads on the page —
+  opening hours, prices, address, telephone, ticket link, entrance coordinates
+  and the exhibition list — each field re-checked on its own interval, and the
+  operator publishes those intervals along with its request rate, its
+  conditional-request behaviour and a same-day stop-crawling undertaking.
+docs:
+  - "https://enfilade.guide/en/about-our-crawler"
+category: search-engine
+user_agents:
+  # "Every request carries its full name and the address of this page:
+  # EnfiladeBot/1.0 (+https://enfilade.guide/en/about-our-crawler). The address
+  # is given in the language of the museum's own country: English to British
+  # museums, French to French ones, Dutch to museums in the Netherlands and
+  # Flanders, Russian to Russian ones." The pattern therefore keys on the
+  # product token, not the +URL, which varies by the museum's country.
+  patterns:
+    - 'EnfiladeBot/\d'
+  instances:
+    - 'EnfiladeBot/1.0 (+https://enfilade.guide/en/about-our-crawler)'
+    - 'EnfiladeBot/1.0 (+https://enfilade.guide/fr/a-propos-du-robot)'
+    - 'EnfiladeBot/1.0 (+https://enfilade.guide/nl/over-onze-crawler)'
+    - 'EnfiladeBot/1.0 (+https://enfilade.guide/ru/o-sbore)'
+# "robots.txt is parsed and obeyed to RFC 9309: if there is no file, we crawl;
+# if the server answers it with a 5xx error, asks us to wait (429) or does not
+# answer at all, we leave the site alone until the file answers." It also
+# states that a group named after the bot replaces the general one, and that
+# "User-agent: *" is read only when no group of its own is in the file — but
+# the page never prints the token string itself, so no robots_token is claimed
+# here.
+behavior: { respects_robots_txt: true }
+verification:
+  # "Requests the crawler sends to a museum's site, with or without a browser,
+  # are signed with HTTP Message Signatures (RFC 9421) under the IETF Web Bot
+  # Auth draft; the key to verify them is at
+  # https://enfilade.guide/.well-known/http-message-signatures-directory".
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key
+  # (kid VOzIOiHbmql1mkhTNDno8H24C_QSYzV_SLERfFPHDnw). The operator publishes
+  # no IP ranges, ASN or rDNS mask, so signatures are the only mechanism and
+  # the only one claimed.
+  - type: web_bot_auth
+    signature_agent_url: "https://enfilade.guide/.well-known/http-message-signatures-directory"

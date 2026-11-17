@@ -1,0 +1,37 @@
+{
+  "id": "enfilade-crawler",
+  "name": "EnfiladeBot",
+  "operator": {
+    "name": "Enfilade",
+    "url": "https://enfilade.guide"
+  },
+  "description": "The crawler of the Enfilade museum catalogue, an independent four-language guide to museums. It does not sweep whole sites: it reads the addresses recorded in its own entry for a museum, the pages that museum's exhibition list links to, and the home page, sitemap and usual feed addresses when looking for new ones. What it collects is what a visitor reads on the page — opening hours, prices, address, telephone, ticket link, entrance coordinates and the exhibition list — each field re-checked on its own interval, and the operator publishes those intervals along with its request rate, its conditional-request behaviour and a same-day stop-crawling undertaking.",
+  "docs": [
+    "https://enfilade.guide/en/about-our-crawler"
+  ],
+  "category": "search-engine",
+  "user_agents": {
+    "patterns": [
+      "EnfiladeBot/\\d"
+    ],
+    "instances": [
+      "EnfiladeBot/1.0 (+https://enfilade.guide/en/about-our-crawler)",
+      "EnfiladeBot/1.0 (+https://enfilade.guide/fr/a-propos-du-robot)",
+      "EnfiladeBot/1.0 (+https://enfilade.guide/nl/over-onze-crawler)",
+      "EnfiladeBot/1.0 (+https://enfilade.guide/ru/o-sbore)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://enfilade.guide/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-11-17T13:15:05.147Z",
+  "resolved_cidrs": []
+}

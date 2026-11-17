@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-16T12:54:07.156Z",
-  "count": 431,
+  "generated_at": "2026-11-17T13:15:05.147Z",
+  "count": 433,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -517,6 +517,42 @@
         "92.222.108.96/27",
         "94.23.188.192/27"
       ]
+    },
+    {
+      "id": "ai-managed-agents-agent",
+      "name": "AIManagedAgents-Agent",
+      "operator": {
+        "name": "AI Managed Agents (Momentum)",
+        "url": "https://www.needmomentum.com"
+      },
+      "description": "A website monitoring and operations agent run by AI Managed Agents, which its own page describes as \"a service of Momentum's AI division\". It makes read-only requests to public pages, states it does not collect content for model training, does not sign in to the sites it monitors and does not answer or work around CAPTCHAs or other bot challenges. Its daily monitoring check is deliberately shaped so a site can tell signed from unsigned traffic: it reads robots.txt and requests the home page twice, once signed and once a few seconds later unsigned, under the same user agent.",
+      "docs": [
+        "https://agents.needmomentum.com/"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "AIManagedAgents-Agent/\\d"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 AIManagedAgents-Agent/1.0 (+https://agents.needmomentum.com/)",
+          "AIManagedAgents-Agent/1.0 (+https://agents.needmomentum.com/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AIManagedAgents-Agent"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://agents.needmomentum.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-17T13:15:05.147Z",
+      "resolved_cidrs": []
     },
     {
       "id": "ai2bot",
@@ -13510,6 +13546,43 @@
         "54.221.199.147/32",
         "54.225.104.196/32"
       ]
+    },
+    {
+      "id": "enfilade-crawler",
+      "name": "EnfiladeBot",
+      "operator": {
+        "name": "Enfilade",
+        "url": "https://enfilade.guide"
+      },
+      "description": "The crawler of the Enfilade museum catalogue, an independent four-language guide to museums. It does not sweep whole sites: it reads the addresses recorded in its own entry for a museum, the pages that museum's exhibition list links to, and the home page, sitemap and usual feed addresses when looking for new ones. What it collects is what a visitor reads on the page — opening hours, prices, address, telephone, ticket link, entrance coordinates and the exhibition list — each field re-checked on its own interval, and the operator publishes those intervals along with its request rate, its conditional-request behaviour and a same-day stop-crawling undertaking.",
+      "docs": [
+        "https://enfilade.guide/en/about-our-crawler"
+      ],
+      "category": "search-engine",
+      "user_agents": {
+        "patterns": [
+          "EnfiladeBot/\\d"
+        ],
+        "instances": [
+          "EnfiladeBot/1.0 (+https://enfilade.guide/en/about-our-crawler)",
+          "EnfiladeBot/1.0 (+https://enfilade.guide/fr/a-propos-du-robot)",
+          "EnfiladeBot/1.0 (+https://enfilade.guide/nl/over-onze-crawler)",
+          "EnfiladeBot/1.0 (+https://enfilade.guide/ru/o-sbore)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://enfilade.guide/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-17T13:15:05.147Z",
+      "resolved_cidrs": []
     },
     {
       "id": "exa-searchbot",

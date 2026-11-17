@@ -1,0 +1,52 @@
+id: ai-managed-agents-agent
+name: AIManagedAgents-Agent
+operator: { name: "AI Managed Agents (Momentum)", url: "https://www.needmomentum.com" }
+description: >-
+  A website monitoring and operations agent run by AI Managed Agents, which its
+  own page describes as "a service of Momentum's AI division". It makes
+  read-only requests to public pages, states it does not collect content for
+  model training, does not sign in to the sites it monitors and does not answer
+  or work around CAPTCHAs or other bot challenges. Its daily monitoring check
+  is deliberately shaped so a site can tell signed from unsigned traffic: it
+  reads robots.txt and requests the home page twice, once signed and once a few
+  seconds later unsigned, under the same user agent.
+docs:
+  - "https://agents.needmomentum.com/"
+category: monitoring
+user_agents:
+  # "Its User-Agent contains the product token AIManagedAgents-Agent. When it
+  # browses, that is a current Chrome user-agent string followed by the token
+  # and this page's address ... Its monitoring checks and its robots.txt reads,
+  # which are not made by a browser, send AIManagedAgents-Agent/1.0
+  # (+https://agents.needmomentum.com/) alone." Both instances below are quoted
+  # from that page; the pattern keys on the token, as the page instructs, so it
+  # matches the browser and non-browser forms alike.
+  patterns:
+    - 'AIManagedAgents-Agent/\d'
+  instances:
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 AIManagedAgents-Agent/1.0 (+https://agents.needmomentum.com/)'
+    - 'AIManagedAgents-Agent/1.0 (+https://agents.needmomentum.com/)'
+# "Before it loads a page, it reads the site's /robots.txt. It follows the group
+# written for User-agent: AIManagedAgents-Agent when there is one, and the group
+# for all user agents (User-agent: *) when there is not: Disallow, Allow and
+# Crawl-delay." The token is printed verbatim in the page's blocking example.
+behavior:
+  respects_robots_txt: true
+  robots_token: AIManagedAgents-Agent
+verification:
+  # "Its requests are signed with HTTP Message Signatures (RFC 9421), used as
+  # Web Bot Auth, and carry: Signature-Agent: "https://agents.needmomentum.com"
+  # [and] Signature-Input with tag="web-bot-auth",
+  # keyid="-pt3RyG0wb8jDt8FvS7xKdQtH0w-qxt5D680ydwWjmg" ... an Ed25519
+  # signature that verifies with the public key in the key directory below."
+  #
+  # The operator rules out every address-based mechanism explicitly: "It has no
+  # fixed IP addresses, so check the signature and not the address." So Web Bot
+  # Auth is the only recipe here by the operator's own instruction.
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key. Note
+  # the operator moved this host from signed-agent-keys.netlify.app on
+  # 2026-11-16, keeping the same key and keyid.
+  - type: web_bot_auth
+    signature_agent_url: "https://agents.needmomentum.com/.well-known/http-message-signatures-directory"
