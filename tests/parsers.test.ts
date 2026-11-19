@@ -65,6 +65,34 @@ describe('parseFeed', () => {
     expect(() => parseFeed('json_array', 'nope')).toThrow(/unparseable feed/);
   });
 
+  // ip_objects: an array of single-address objects rather than strings. Both bodies below are
+  // trimmed from the live feeds this format exists for —
+  // https://integralads.com/policy-docs/iasbot.json (bare addresses under "publicIPs") and
+  // https://www.smartology.net/smartologybot.json (prefixes under "cidrs").
+  it('parses an array of single-address objects', () => {
+    expect(
+      parseFeed('ip_objects', '{"creationTime":"2026-02-18T00:00:00","publicIPs":[{"ipv4":"3.217.168.199"},{"ipv4":"92.42.105.32"}]}', 'publicIPs'),
+    ).toEqual(['3.217.168.199', '92.42.105.32']);
+    expect(parseFeed('ip_objects', '{"cidrs":[{"ipv4":"18.139.53.199/32"},{"ipv6":"2001:db8::/32"}]}', 'cidrs')).toEqual([
+      '18.139.53.199/32',
+      '2001:db8::/32',
+    ]);
+  });
+  it('resolves an ip_objects selector as a dot-path', () => {
+    expect(parseFeed('ip_objects', '{"a":{"b":[{"ipv4":"1.2.3.4"}]}}', 'a.b')).toEqual(['1.2.3.4']);
+  });
+  it('rejects ip_objects bodies that do not serve the declared shape', () => {
+    const body = '{"publicIPs":[{"ipv4":"1.2.3.4"}]}';
+    expect(() => parseFeed('ip_objects', body)).toThrow(/requires a selector/);
+    expect(() => parseFeed('ip_objects', body, 'missing')).toThrow(/unparseable feed/);
+    expect(() => parseFeed('ip_objects', '{"publicIPs":"nope"}', 'publicIPs')).toThrow(/unparseable feed/);
+    // A string entry is the `github_meta` shape, not this one, and must not pass silently.
+    expect(() => parseFeed('ip_objects', '{"publicIPs":["1.2.3.4"]}', 'publicIPs')).toThrow(/not an object/);
+    expect(() => parseFeed('ip_objects', '{"publicIPs":[{"addr":"1.2.3.4"}]}', 'publicIPs')).toThrow(/missing ipv4\/ipv6/);
+    expect(() => parseFeed('ip_objects', '{"publicIPs":[{"ipv4":42}]}', 'publicIPs')).toThrow(/missing ipv4\/ipv6/);
+    expect(() => parseFeed('ip_objects', '[]', 'publicIPs')).toThrow(/unparseable feed/);
+  });
+
   // SAIL (draft-kelley-webbotauth-sail-00). Fixture is the live body of
   // https://claude.com/.well-known/sail, which publishes nine addresses in one prefix set
   // bound to the Claude-Agent service.

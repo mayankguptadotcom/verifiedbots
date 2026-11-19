@@ -1,0 +1,38 @@
+id: zanistabot
+name: ZanistaBot
+operator: { name: "Zanista.AI", url: "https://zanista.ai" }
+description: >-
+  Zanista.AI's financial-news crawler. The operator's crawler page states it
+  "collects financial news articles to summarize the content using advanced
+  language models (LLM)", perform sentiment analysis on them, and produce
+  tailored reports for customers in the financial sector, with every report
+  carrying citations back to the original source. Zanista states it rate-limits
+  its crawling "to ensure that our crawling activities do not negatively impact
+  the performance of the websites we interact with".
+docs:
+  - "https://zanista.ai/crawler-info"
+category: ai-crawler
+user_agents:
+  # "User-Agent String: ZanistaBot/1.0 (+https://zanista.ai/crawler-info)",
+  # quoted verbatim from the operator's crawler page. The page is a JavaScript
+  # single-page app that serves a 1,534-byte shell to a plain fetch — earlier
+  # review runs could read nothing from it — so it was rendered in headless
+  # Chromium this session to read the text.
+  patterns:
+    - 'ZanistaBot/\d'
+  instances:
+    - 'ZanistaBot/1.0 (+https://zanista.ai/crawler-info)'
+# "Respect for robots.txt: ZanistaBot fully respects the rules and directives
+# specified in the robots.txt file of each website we crawl. If a website
+# disallows certain sections or all crawling activity, ZanistaBot will comply
+# with these instructions." The page names no separate robots token, so none is
+# recorded.
+behavior:
+  respects_robots_txt: true
+# No verification recipe: the page documents a user agent, a purpose, a robots
+# policy and a contact address, but no IP ranges, no ASN and no signing. Note
+# that https://zanista.ai/.well-known/http-message-signatures-directory answers
+# HTTP 200 and is NOT a key directory — the site is a single-page app that
+# returns its 1,534-byte text/html shell for every path, including paths that
+# plainly do not exist, so that 200 is a routing artefact. Tier 3 by the gate.
+verification: []

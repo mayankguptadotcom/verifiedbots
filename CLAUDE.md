@@ -96,7 +96,10 @@ only when it fails the gate above.
 5. Feed formats for `cidr_feed`: `prefixes` (Google/OpenAI style),
    `json_array`, `text_lines`, `github_meta` (+`selector` — a dot-path into
    nested objects, e.g. `synthetics.prefixes_ipv4` for Datadog-style feeds;
-   one recipe per array), `stripe_webhooks`, `sail` (SAIL/`application/sail+toml`,
+   one recipe per array), `ip_objects` (+`selector` — same dot-path, but for an
+   array of single-address *objects* rather than strings, e.g. IAS's
+   `"publicIPs": [{"ipv4": "3.217.168.199"}]` or Smartology's
+   `"cidrs": [{"ipv4": "…/32"}]`), `stripe_webhooks`, `sail` (SAIL/`application/sail+toml`,
    schema `draft-kelley-webbotauth-sail-00`; `selector` is the `[[services]]`
    name whose bound `prefix_sets` to read, e.g. `Claude-Agent` — omit it to
    take every published set). A feed in any other shape → use `static_cidrs`

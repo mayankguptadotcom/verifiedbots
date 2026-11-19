@@ -1,4 +1,4 @@
-export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array' | 'sail';
+export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array' | 'ip_objects' | 'sail';
 
 function fail(detail: string): never {
   throw new Error(`unparseable feed: ${detail}`);
@@ -153,6 +153,22 @@ export function parseSail(body: string, selector?: string): string[] {
   return out;
 }
 
+/**
+ * Resolves a dot-path selector ("hooks", "synthetics.prefixes_ipv4") to an array node, or
+ * fails loudly. Shared by `github_meta` and `ip_objects`.
+ */
+function selectArray(doc: any, selector: string): unknown[] {
+  let node: any = doc;
+  for (const key of selector.split('.')) {
+    if (node === null || typeof node !== 'object' || Array.isArray(node)) {
+      fail(`selector "${selector}" does not resolve to an array`);
+    }
+    node = node[key];
+  }
+  if (!Array.isArray(node)) fail(`missing "${selector}" array`);
+  return node;
+}
+
 export function parseFeed(format: FeedFormat, body: string, selector?: string): string[] {
   switch (format) {
     case 'json_array': {
@@ -192,20 +208,38 @@ export function parseFeed(format: FeedFormat, body: string, selector?: string): 
       const doc = asJson(body);
       if (!selector) fail('github_meta requires a selector');
       // Selector is a dot-path: "hooks" (GitHub) or "synthetics.prefixes_ipv4" (Datadog-style nesting).
-      let node: any = doc;
-      for (const key of selector.split('.')) {
-        if (node === null || typeof node !== 'object' || Array.isArray(node)) {
-          fail(`selector "${selector}" does not resolve to an array`);
-        }
-        node = node[key];
-      }
-      if (!Array.isArray(node)) fail(`missing "${selector}" array`);
+      const node = selectArray(doc, selector);
       for (const entry of node) {
         if (typeof entry !== 'string') {
           fail('non-string entry in feed array');
         }
       }
-      return node;
+      return node as string[];
+    }
+    /**
+     * An array of single-address OBJECTS rather than strings, which `github_meta` rejects:
+     *   { "publicIPs": [ { "ipv4": "3.217.168.199" }, … ] }   (Integral Ad Science)
+     *   { "cidrs":     [ { "ipv4": "18.139.53.199/32" }, … ] } (Smartology)
+     * `selector` is the dot-path to that array. Each entry must carry exactly one `ipv4` or
+     * `ipv6` string; anything else fails loudly, so an unexpected document becomes a 'hard'
+     * feed outcome rather than a silently short address list. Bare addresses are normalised
+     * to /32 or /128 downstream by sanitizeCidrs, as they are for any other format.
+     */
+    case 'ip_objects': {
+      const doc = asJson(body);
+      if (!selector) fail('ip_objects requires a selector');
+      const node = selectArray(doc, selector);
+      const result: string[] = [];
+      for (const entry of node) {
+        if (entry === null || typeof entry !== 'object' || Array.isArray(entry)) {
+          fail('ip_objects entry is not an object');
+        }
+        const e = entry as Record<string, unknown>;
+        const addr = e.ipv4 ?? e.ipv6;
+        if (typeof addr !== 'string') fail('ip_objects entry missing ipv4/ipv6 string');
+        result.push(addr);
+      }
+      return result;
     }
     case 'sail':
       return parseSail(body, selector);

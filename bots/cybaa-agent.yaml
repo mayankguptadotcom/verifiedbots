@@ -1,0 +1,52 @@
+id: cybaa-agent
+name: CybaaAgent
+operator: { name: "Cybaa", url: "https://cybaa.io" }
+description: >-
+  The user-initiated half of Cybaa's two documented agents. Cybaa's bot policy
+  says this one "performs user-initiated checks on behalf of Cybaa customers",
+  validating "security headers, TLS/SSL configuration, and other
+  domain-specific security controls", and "operates only when explicitly
+  triggered by a customer request". The operator states its requests are
+  "targeted and limited in scope" and that it "does not perform broad
+  crawling" — the broad crawl is its sibling CybaaBot.
+docs:
+  - "https://cybaa.io/bot-policy"
+category: security
+user_agents:
+  # "Cybaa Agent operates via a headless browser (Chromium, Edge, or Firefox),
+  # and its user-agent string will reflect the underlying browser and operating
+  # system. The authoritative identifier is the trailing CybaaAgent token
+  # within the user-agent string." The instance below is the operator's own
+  # example, quoted verbatim, with their caveat that "actual OS and browser
+  # version may vary" — so the pattern keys on the token they call
+  # authoritative, not on the browser part.
+  #
+  # The policy page is a JavaScript single-page app that serves a ~10 KB shell
+  # extracting to "Reload Dismiss" on a plain fetch, which is why earlier
+  # review runs could read nothing from it; it was rendered in headless
+  # Chromium this session to read the text.
+  patterns:
+    - 'CybaaAgent'
+  instances:
+    - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 CybaaAgent'
+# "The bot may visit any URL the end user explicitly provides, regardless of
+# robots.txt" — it "operates under Cybaa's Terms and Conditions, where use of
+# the tool by a customer implies permission to access the URLs entered for
+# analysis". That is the user-configured-monitor shape CLAUDE.md describes, so
+# false, with a category that explains why. (Its sibling CybaaBot, which does
+# crawl broadly, does respect robots.txt.)
+behavior:
+  respects_robots_txt: false
+verification:
+  # "All requests are cryptographically signed using Web Bot Auth … All
+  # requests carry a valid HTTP Message Signature (Signature header with tag
+  # "web-bot-auth"). The corresponding public JWK set is published at:
+  # https://cybaa.io/.well-known/http-message-signatures-directory. Site owners
+  # may verify authenticity using this directory and the Ed25519 public key."
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key (kid
+  # Nk3dlwIepZGCY8teO7tVqSrd686jSDcquLIC08Lyl6c). The page publishes no IP
+  # ranges, so Web Bot Auth is the only recipe available.
+  - type: web_bot_auth
+    signature_agent_url: "https://cybaa.io/.well-known/http-message-signatures-directory"

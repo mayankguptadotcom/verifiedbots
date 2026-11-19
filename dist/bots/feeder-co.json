@@ -12,9 +12,10 @@
   "category": "feed-fetcher",
   "user_agents": {
     "patterns": [
-      "feeder\\.co(?:/crawler)?[;)]"
+      "feeder\\.co[;)/]"
     ],
     "instances": [
+      "Feeder/1.0 (feeder.co/fetcher)",
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36",
       "Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
@@ -35,6 +36,10 @@
       "masks": [
         "*.feeder.co"
       ]
+    },
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://adder.feeder.co/.well-known/http-message-signatures-directory"
     }
   ],
   "tier": 1,

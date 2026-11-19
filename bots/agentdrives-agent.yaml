@@ -1,0 +1,55 @@
+id: agentdrives-agent
+name: AgentDrivesAgent
+operator: { name: "AgentDrives", url: "https://agentdrives.com" }
+description: >-
+  The agent of AgentDrives, a Netherlands-based lab that test-drives software
+  products as an AI agent and publishes how far it gets. Its own page splits
+  the traffic three ways: a "drive" uses one product at a time the way a person
+  would (sign-up, account pages, and that product's API, CLI or MCP server with
+  its own key, about one page action every few seconds); a docs read before a
+  drive takes the pages the product's llms.txt, sitemap and docs menus list, at
+  most 600 pages in 12 minutes; and a monthly survey makes GET-only requests to
+  a few public pages of about 5,200 software sites (robots.txt, the home page,
+  llms.txt, an OpenAPI document, the MCP and A2A files under /.well-known/, the
+  sign-up page, and one documented API endpoint), at most 40 requests per site.
+  The operator states what it reads is reference only, "never used to train AI
+  models and never goes into a search index".
+docs:
+  - "https://agent.agentdrives.com/bot"
+  - "https://agent.agentdrives.com/agent.json"
+category: ai-crawler
+user_agents:
+  # Both forms are quoted verbatim from the operator's own machine-readable
+  # descriptor at https://agent.agentdrives.com/agent.json, fetched this
+  # session (200, application/json): "user_agent":
+  # "AgentDrivesAgent/1.0 (+https://agent.agentdrives.com/bot)" and
+  # "user_agent_browser": "Mozilla/5.0 (…) Chrome/<version> Safari/537.36
+  # AgentDrivesAgent/1.0 (+https://agent.agentdrives.com/bot)". The browser
+  # form's Chrome version is a placeholder in the operator's own text, so only
+  # the non-browser instance is recorded verbatim; the pattern keys on the
+  # token, which the page says "always applies, to every request".
+  patterns:
+    - 'AgentDrivesAgent/\d'
+  instances:
+    - 'AgentDrivesAgent/1.0 (+https://agent.agentdrives.com/bot)'
+# "Before a drive. It reads the product's robots.txt first. If the product's
+# address is disallowed for AgentDrivesAgent or for all user agents, it does not
+# drive that product, unless the owner ordered the drive." Crawl-delay is
+# honoured for its own token's group or else the * group, and the page prints
+# the blocking example "User-agent: AgentDrivesAgent / Disallow: /" verbatim.
+behavior:
+  respects_robots_txt: true
+  robots_token: AgentDrivesAgent
+verification:
+  # "Its browser and its HTTP client sign every request with Web Bot Auth (HTTP
+  # Message Signatures, RFC 9421, Ed25519, tag="web-bot-auth"). The signature
+  # covers @authority and signature-agent and is valid for 60 seconds." The
+  # operator rules out the address-based alternative itself: the two egress
+  # addresses it publishes carry the note "For information only: not exclusive
+  # to the agent. Verify the signature, not the address", so no static_cidrs
+  # recipe is attached.
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, two Ed25519 keys.
+  - type: web_bot_auth
+    signature_agent_url: "https://agent.agentdrives.com/.well-known/http-message-signatures-directory"

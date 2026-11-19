@@ -1,0 +1,44 @@
+id: cybaa-bot
+name: CybaaBot
+operator: { name: "Cybaa", url: "https://cybaa.io" }
+description: >-
+  The broad-crawl half of Cybaa's two documented agents. Cybaa's bot policy
+  says it "performs broad security research by crawling the top 1 million
+  domains obtained from Crawler.Ninja operated by Scott Helme", to identify
+  "misconfigurations, adoption of security headers, and general domain-level
+  security posture" and "to provide aggregate insights to the security
+  community". The operator describes it as "designed to be benign and
+  non-disruptive" and, at the time the page was read, said it was "in the
+  submission process with Cloudflare to be listed as a Verified Bot".
+docs:
+  - "https://cybaa.io/bot-policy"
+category: security
+user_agents:
+  # "Cybaa Bot also runs on a headless browser (Chromium, Edge, or Firefox),
+  # and the user-agent string will reflect the browser and operating system in
+  # use. The authoritative identifier is the trailing CybaaBot token at the end
+  # of the user-agent string." The instance below is the operator's own
+  # example, quoted verbatim, with their caveat that "actual OS and browser
+  # family/version may vary" — so the pattern keys on the token they call
+  # authoritative.
+  #
+  # Page read by rendering it in headless Chromium this session; see the note
+  # on the cybaa-agent entry.
+  patterns:
+    - 'CybaaBot'
+  instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 CybaaBot'
+# "Respects robots.txt directives, including User-agent targeting, Disallow,
+# and Allow rules." The page states User-agent targeting is honoured but does
+# not print the token to target, so no robots_token is recorded.
+behavior:
+  respects_robots_txt: true
+verification:
+  # Same directory as its sibling: "All requests are cryptographically signed
+  # using Web Bot Auth … The corresponding public JWK set is published at:
+  # https://cybaa.io/.well-known/http-message-signatures-directory."
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://cybaa.io/.well-known/http-message-signatures-directory"

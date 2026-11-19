@@ -15,9 +15,17 @@ docs:
   - "https://feeder.co/crawler"
 category: feed-fetcher
 user_agents:
+  # "Feeder's requests say feeder.co in their User-agent … The exact string can
+  # change over time, so we recommend matching on feeder.co." The pattern keys
+  # on the identifier plus the delimiter that follows it in every recorded
+  # form, as the operator instructs; the previous `(?:/crawler)?` form missed
+  # the `Feeder/1.0 (feeder.co/fetcher)` string the page now documents.
   patterns:
-    - 'feeder\.co(?:/crawler)?[;)]'
+    - 'feeder\.co[;)/]'
   instances:
+    # "These are the two you're most likely to see" — both quoted verbatim
+    # from the operator's page this session.
+    - 'Feeder/1.0 (feeder.co/fetcher)'
     - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
     - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'
     - 'Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
@@ -38,3 +46,12 @@ verification:
   # so the mask is the apex the operator names.
   - type: rdns
     masks: ["*.feeder.co"]
+  # New on the operator's page this session: "Feeder signs its requests with
+  # Web Bot Auth (HTTP Message Signatures, RFC 9421). The Signature-Agent
+  # header names https://adder.feeder.co, and our public key is published at
+  # adder.feeder.co/.well-known/http-message-signatures-directory."
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 key.
+  - type: web_bot_auth
+    signature_agent_url: "https://adder.feeder.co/.well-known/http-message-signatures-directory"

@@ -49,6 +49,13 @@
     ]
   },
   {
+    "id": "agentdrives-agent",
+    "category": "ai-crawler",
+    "patterns": [
+      "AgentDrivesAgent/\\d"
+    ]
+  },
+  {
     "id": "ahrefs-siteaudit",
     "category": "seo",
     "patterns": [
@@ -699,6 +706,20 @@
     ]
   },
   {
+    "id": "cybaa-agent",
+    "category": "security",
+    "patterns": [
+      "CybaaAgent"
+    ]
+  },
+  {
+    "id": "cybaa-bot",
+    "category": "security",
+    "patterns": [
+      "CybaaBot"
+    ]
+  },
+  {
     "id": "datadog-synthetics",
     "category": "monitoring",
     "patterns": [
@@ -972,7 +993,7 @@
     "id": "feeder-co",
     "category": "feed-fetcher",
     "patterns": [
-      "feeder\\.co(?:/crawler)?[;)]"
+      "feeder\\.co[;)/]"
     ]
   },
   {
@@ -3074,6 +3095,13 @@
     "category": "ai-crawler",
     "patterns": [
       "YouBot/\\d"
+    ]
+  },
+  {
+    "id": "zanistabot",
+    "category": "ai-crawler",
+    "patterns": [
+      "ZanistaBot/\\d"
     ]
   },
   {

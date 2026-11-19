@@ -1,0 +1,36 @@
+{
+  "id": "agentdrives-agent",
+  "name": "AgentDrivesAgent",
+  "operator": {
+    "name": "AgentDrives",
+    "url": "https://agentdrives.com"
+  },
+  "description": "The agent of AgentDrives, a Netherlands-based lab that test-drives software products as an AI agent and publishes how far it gets. Its own page splits the traffic three ways: a \"drive\" uses one product at a time the way a person would (sign-up, account pages, and that product's API, CLI or MCP server with its own key, about one page action every few seconds); a docs read before a drive takes the pages the product's llms.txt, sitemap and docs menus list, at most 600 pages in 12 minutes; and a monthly survey makes GET-only requests to a few public pages of about 5,200 software sites (robots.txt, the home page, llms.txt, an OpenAPI document, the MCP and A2A files under /.well-known/, the sign-up page, and one documented API endpoint), at most 40 requests per site. The operator states what it reads is reference only, \"never used to train AI models and never goes into a search index\".",
+  "docs": [
+    "https://agent.agentdrives.com/bot",
+    "https://agent.agentdrives.com/agent.json"
+  ],
+  "category": "ai-crawler",
+  "user_agents": {
+    "patterns": [
+      "AgentDrivesAgent/\\d"
+    ],
+    "instances": [
+      "AgentDrivesAgent/1.0 (+https://agent.agentdrives.com/bot)"
+    ]
+  },
+  "behavior": {
+    "respects_robots_txt": true,
+    "robots_token": "AgentDrivesAgent"
+  },
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://agent.agentdrives.com/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
+  "first_seen": "2026-11-19T13:24:32.962Z",
+  "resolved_cidrs": []
+}

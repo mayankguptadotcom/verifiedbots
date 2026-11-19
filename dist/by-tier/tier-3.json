@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-18T13:10:54.020Z",
-  "count": 171,
+  "generated_at": "2026-11-19T13:24:32.962Z",
+  "count": 172,
   "bots": [
     {
       "id": "academicbot-rtu",
@@ -5131,6 +5131,35 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "zanistabot",
+      "name": "ZanistaBot",
+      "operator": {
+        "name": "Zanista.AI",
+        "url": "https://zanista.ai"
+      },
+      "description": "Zanista.AI's financial-news crawler. The operator's crawler page states it \"collects financial news articles to summarize the content using advanced language models (LLM)\", perform sentiment analysis on them, and produce tailored reports for customers in the financial sector, with every report carrying citations back to the original source. Zanista states it rate-limits its crawling \"to ensure that our crawling activities do not negatively impact the performance of the websites we interact with\".",
+      "docs": [
+        "https://zanista.ai/crawler-info"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "ZanistaBot/\\d"
+        ],
+        "instances": [
+          "ZanistaBot/1.0 (+https://zanista.ai/crawler-info)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [],
+      "tier": 3,
+      "tier_label": "Listed only",
+      "first_seen": "2026-11-19T13:24:32.962Z",
       "resolved_cidrs": []
     },
     {

@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-18T13:10:54.020Z",
-  "count": 17,
+  "generated_at": "2026-11-19T13:24:32.962Z",
+  "count": 19,
   "bots": [
     {
       "id": "censys",
@@ -237,6 +237,74 @@
         "2604:a940:302:118::/64",
         "35.203.210.0/23"
       ]
+    },
+    {
+      "id": "cybaa-agent",
+      "name": "CybaaAgent",
+      "operator": {
+        "name": "Cybaa",
+        "url": "https://cybaa.io"
+      },
+      "description": "The user-initiated half of Cybaa's two documented agents. Cybaa's bot policy says this one \"performs user-initiated checks on behalf of Cybaa customers\", validating \"security headers, TLS/SSL configuration, and other domain-specific security controls\", and \"operates only when explicitly triggered by a customer request\". The operator states its requests are \"targeted and limited in scope\" and that it \"does not perform broad crawling\" — the broad crawl is its sibling CybaaBot.",
+      "docs": [
+        "https://cybaa.io/bot-policy"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "CybaaAgent"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 CybaaAgent"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://cybaa.io/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-19T13:24:32.962Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cybaa-bot",
+      "name": "CybaaBot",
+      "operator": {
+        "name": "Cybaa",
+        "url": "https://cybaa.io"
+      },
+      "description": "The broad-crawl half of Cybaa's two documented agents. Cybaa's bot policy says it \"performs broad security research by crawling the top 1 million domains obtained from Crawler.Ninja operated by Scott Helme\", to identify \"misconfigurations, adoption of security headers, and general domain-level security posture\" and \"to provide aggregate insights to the security community\". The operator describes it as \"designed to be benign and non-disruptive\" and, at the time the page was read, said it was \"in the submission process with Cloudflare to be listed as a Verified Bot\".",
+      "docs": [
+        "https://cybaa.io/bot-policy"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "CybaaBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 CybaaBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://cybaa.io/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-19T13:24:32.962Z",
+      "resolved_cidrs": []
     },
     {
       "id": "detectify",

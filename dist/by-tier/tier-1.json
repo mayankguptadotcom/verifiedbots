@@ -1,8 +1,44 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-18T13:10:54.020Z",
-  "count": 118,
+  "generated_at": "2026-11-19T13:24:32.962Z",
+  "count": 124,
   "bots": [
+    {
+      "id": "agentdrives-agent",
+      "name": "AgentDrivesAgent",
+      "operator": {
+        "name": "AgentDrives",
+        "url": "https://agentdrives.com"
+      },
+      "description": "The agent of AgentDrives, a Netherlands-based lab that test-drives software products as an AI agent and publishes how far it gets. Its own page splits the traffic three ways: a \"drive\" uses one product at a time the way a person would (sign-up, account pages, and that product's API, CLI or MCP server with its own key, about one page action every few seconds); a docs read before a drive takes the pages the product's llms.txt, sitemap and docs menus list, at most 600 pages in 12 minutes; and a monthly survey makes GET-only requests to a few public pages of about 5,200 software sites (robots.txt, the home page, llms.txt, an OpenAPI document, the MCP and A2A files under /.well-known/, the sign-up page, and one documented API endpoint), at most 40 requests per site. The operator states what it reads is reference only, \"never used to train AI models and never goes into a search index\".",
+      "docs": [
+        "https://agent.agentdrives.com/bot",
+        "https://agent.agentdrives.com/agent.json"
+      ],
+      "category": "ai-crawler",
+      "user_agents": {
+        "patterns": [
+          "AgentDrivesAgent/\\d"
+        ],
+        "instances": [
+          "AgentDrivesAgent/1.0 (+https://agent.agentdrives.com/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "AgentDrivesAgent"
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://agent.agentdrives.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-19T13:24:32.962Z",
+      "resolved_cidrs": []
+    },
     {
       "id": "ahrefs-siteaudit",
       "name": "AhrefsSiteAudit",
@@ -1569,6 +1605,7 @@
       "first_seen": "2026-11-11T13:23:59.463Z",
       "resolved_cidrs": [
         "136.71.21.147/32",
+        "153.61.208.16/32",
         "34.171.207.92/32",
         "34.31.25.14/32",
         "34.60.73.195/32",
@@ -1808,6 +1845,74 @@
         "54.73.82.123/32",
         "99.80.75.183/32"
       ]
+    },
+    {
+      "id": "cybaa-agent",
+      "name": "CybaaAgent",
+      "operator": {
+        "name": "Cybaa",
+        "url": "https://cybaa.io"
+      },
+      "description": "The user-initiated half of Cybaa's two documented agents. Cybaa's bot policy says this one \"performs user-initiated checks on behalf of Cybaa customers\", validating \"security headers, TLS/SSL configuration, and other domain-specific security controls\", and \"operates only when explicitly triggered by a customer request\". The operator states its requests are \"targeted and limited in scope\" and that it \"does not perform broad crawling\" — the broad crawl is its sibling CybaaBot.",
+      "docs": [
+        "https://cybaa.io/bot-policy"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "CybaaAgent"
+        ],
+        "instances": [
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 CybaaAgent"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://cybaa.io/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-19T13:24:32.962Z",
+      "resolved_cidrs": []
+    },
+    {
+      "id": "cybaa-bot",
+      "name": "CybaaBot",
+      "operator": {
+        "name": "Cybaa",
+        "url": "https://cybaa.io"
+      },
+      "description": "The broad-crawl half of Cybaa's two documented agents. Cybaa's bot policy says it \"performs broad security research by crawling the top 1 million domains obtained from Crawler.Ninja operated by Scott Helme\", to identify \"misconfigurations, adoption of security headers, and general domain-level security posture\" and \"to provide aggregate insights to the security community\". The operator describes it as \"designed to be benign and non-disruptive\" and, at the time the page was read, said it was \"in the submission process with Cloudflare to be listed as a Verified Bot\".",
+      "docs": [
+        "https://cybaa.io/bot-policy"
+      ],
+      "category": "security",
+      "user_agents": {
+        "patterns": [
+          "CybaaBot"
+        ],
+        "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 CybaaBot"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://cybaa.io/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-19T13:24:32.962Z",
+      "resolved_cidrs": []
     },
     {
       "id": "datadog-synthetics",
@@ -3256,9 +3361,10 @@
       "category": "feed-fetcher",
       "user_agents": {
         "patterns": [
-          "feeder\\.co(?:/crawler)?[;)]"
+          "feeder\\.co[;)/]"
         ],
         "instances": [
+          "Feeder/1.0 (feeder.co/fetcher)",
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6; +feeder.co/crawler) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; +feeder.co/crawler) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36",
           "Mozilla/5.0 (feeder.co; Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
@@ -3279,6 +3385,10 @@
           "masks": [
             "*.feeder.co"
           ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://adder.feeder.co/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -9075,11 +9185,14 @@
         "172.178.69.75/32",
         "172.196.48.58/32",
         "172.204.26.89/32",
+        "172.213.10.248/32",
         "20.165.40.104/32",
         "20.175.103.203/32",
         "20.214.16.34/32",
         "20.214.40.188/32",
         "20.215.67.195/32",
+        "20.217.200.198/32",
+        "20.250.9.132/32",
         "20.255.152.94/32",
         "20.58.136.237/32",
         "20.66.104.166/32",
@@ -9101,16 +9214,23 @@
         "4.221.169.10/32",
         "4.221.208.40/32",
         "4.223.126.117/32",
+        "4.232.144.1/32",
         "4.248.66.111/32",
         "4.255.141.203/32",
         "4.255.152.17/32",
+        "51.103.128.78/32",
+        "51.4.120.89/32",
         "52.140.18.69/32",
         "52.159.252.135/32",
         "52.175.27.162/32",
         "68.155.155.192/32",
         "68.155.155.195/32",
+        "68.210.149.104/32",
+        "68.210.149.21/32",
         "68.211.125.30/32",
         "68.211.125.58/32",
+        "70.153.85.157/32",
+        "70.153.85.164/32",
         "74.225.139.157/32",
         "74.225.217.56/32",
         "74.243.247.23/32",
@@ -9749,6 +9869,144 @@
         "92.247.179.240/28",
         "92.247.181.0/26",
         "95.179.169.161/32"
+      ]
+    },
+    {
+      "id": "integralads-crawler",
+      "name": "IAS Crawler",
+      "operator": {
+        "name": "Integral Ad Science",
+        "url": "https://integralads.com/"
+      },
+      "description": "Content-rating and ad-verification crawler operated by Integral Ad Science. It visits web pages to assess content quality and brand safety and to support invalid-traffic detection for advertisers. IAS publishes the public-facing addresses its robots crawl from as a JSON file linked from its indexing policy, which this directory reads as a live feed.",
+      "docs": [
+        "https://integralads.com/site-indexing-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ias_crawler"
+        ],
+        "instances": [
+          "IAS Crawler (ias_crawler; http://integralads.com/site-indexing-policy/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ias_crawler"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://integralads.com/policy-docs/iasbot.json",
+          "format": "ip_objects",
+          "selector": "publicIPs"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-07-16T01:14:20.999Z",
+      "resolved_cidrs": [
+        "151.106.17.251/32",
+        "162.211.125.4/32",
+        "162.211.125.5/32",
+        "162.211.125.6/32",
+        "162.211.125.7/32",
+        "162.211.125.8/32",
+        "173.224.127.64/32",
+        "173.224.127.65/32",
+        "173.224.127.66/32",
+        "173.224.127.67/32",
+        "173.224.127.68/32",
+        "173.224.127.69/32",
+        "173.224.127.70/32",
+        "173.224.127.71/32",
+        "18.214.43.70/32",
+        "23.21.212.31/32",
+        "3.217.168.199/32",
+        "3.226.51.67/32",
+        "34.195.212.30/32",
+        "35.175.92.196/32",
+        "92.204.170.15/32",
+        "92.204.190.235/32",
+        "92.204.248.55/32",
+        "92.42.105.32/32",
+        "92.42.105.33/32",
+        "92.42.105.34/32",
+        "92.42.105.35/32",
+        "92.42.105.36/32",
+        "92.42.105.37/32",
+        "92.42.105.38/32",
+        "92.42.105.39/32"
+      ]
+    },
+    {
+      "id": "integralads-wombles",
+      "name": "IAS Wombles",
+      "operator": {
+        "name": "Integral Ad Science",
+        "url": "https://integralads.com/"
+      },
+      "description": "The second crawler Integral Ad Science documents alongside IAS Crawler. IAS says Wombles captures additional information used to refine its invalid traffic models, as distinct from the content-rating work IAS Crawler does. Both robots are covered by the same public IP list IAS publishes.",
+      "docs": [
+        "https://integralads.com/site-indexing-policy/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "ias_wombles"
+        ],
+        "instances": [
+          "IAS Wombles (ias_wombles; http://integralads.com/site-indexing-policy/)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true,
+        "robots_token": "ias_wombles"
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://integralads.com/policy-docs/iasbot.json",
+          "format": "ip_objects",
+          "selector": "publicIPs"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-09-09T13:23:28.996Z",
+      "resolved_cidrs": [
+        "151.106.17.251/32",
+        "162.211.125.4/32",
+        "162.211.125.5/32",
+        "162.211.125.6/32",
+        "162.211.125.7/32",
+        "162.211.125.8/32",
+        "173.224.127.64/32",
+        "173.224.127.65/32",
+        "173.224.127.66/32",
+        "173.224.127.67/32",
+        "173.224.127.68/32",
+        "173.224.127.69/32",
+        "173.224.127.70/32",
+        "173.224.127.71/32",
+        "18.214.43.70/32",
+        "23.21.212.31/32",
+        "3.217.168.199/32",
+        "3.226.51.67/32",
+        "34.195.212.30/32",
+        "35.175.92.196/32",
+        "92.204.170.15/32",
+        "92.204.190.235/32",
+        "92.204.248.55/32",
+        "92.42.105.32/32",
+        "92.42.105.33/32",
+        "92.42.105.34/32",
+        "92.42.105.35/32",
+        "92.42.105.36/32",
+        "92.42.105.37/32",
+        "92.42.105.38/32",
+        "92.42.105.39/32"
       ]
     },
     {
@@ -11160,7 +11418,15 @@
         "18.97.9.98/32",
         "18.97.9.99/32",
         "3.222.232.239/32",
-        "3.224.62.45/32"
+        "3.224.62.45/32",
+        "3.41.218.160/32",
+        "3.41.218.161/32",
+        "3.41.218.162/32",
+        "3.41.218.163/32",
+        "3.41.218.164/32",
+        "3.41.218.165/32",
+        "3.41.218.166/32",
+        "3.41.218.167/32"
       ]
     },
     {
@@ -14115,6 +14381,63 @@
         "95.168.184.26/32",
         "95.179.200.188/32",
         "95.85.76.215/32"
+      ]
+    },
+    {
+      "id": "smartologybot",
+      "name": "SmartologyBot",
+      "operator": {
+        "name": "Smartology",
+        "url": "https://smartology.net"
+      },
+      "description": "Smartology's SmartMatch contextual advertising crawler. It reads pages on domains where an advertiser is buying advertising space, so that ads can be matched to page context; the operator states the bot is only active on a domain while suitable ad slots and advertiser budget exist. Smartology publishes its current address list and user-agent match pattern as a JSON document.",
+      "docs": [
+        "https://smartology.net/smartologybot/"
+      ],
+      "category": "seo",
+      "user_agents": {
+        "patterns": [
+          "SmartologyBot/\\d"
+        ],
+        "instances": [
+          "SmartologyBot/1.0 (+ http://www.smartology.net/smartologybot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": true
+      },
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://www.smartology.net/smartologybot.json",
+          "format": "ip_objects",
+          "selector": "cidrs"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-08-25T13:21:31.852Z",
+      "resolved_cidrs": [
+        "108.128.167.95/32",
+        "13.52.188.53/32",
+        "18.138.221.92/32",
+        "18.139.53.199/32",
+        "18.185.12.238/32",
+        "18.194.24.115/32",
+        "23.21.139.94/32",
+        "3.120.106.90/32",
+        "3.120.239.69/32",
+        "3.217.67.93/32",
+        "3.218.75.247/32",
+        "34.241.116.137/32",
+        "46.51.168.99/32",
+        "46.51.177.212/32",
+        "52.208.50.46/32",
+        "52.209.125.94/32",
+        "52.211.184.32/32",
+        "54.153.59.175/32",
+        "54.194.214.164/32",
+        "54.76.42.92/32"
       ]
     },
     {

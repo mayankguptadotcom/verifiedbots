@@ -18,25 +18,14 @@ user_agents:
     - 'SmartologyBot/1.0 (+ http://www.smartology.net/smartologybot)'
 behavior: { respects_robots_txt: true }
 verification:
-  - type: static_cidrs
-    cidrs:
-      - "18.139.53.199/32"
-      - "18.138.221.92/32"
-      - "18.194.24.115/32"
-      - "3.120.106.90/32"
-      - "34.241.116.137/32"
-      - "46.51.168.99/32"
-      - "52.208.50.46/32"
-      - "3.218.75.247/32"
-      - "3.217.67.93/32"
-      - "23.21.139.94/32"
-      - "13.52.188.53/32"
-      - "54.153.59.175/32"
-      - "18.185.12.238/32"
-      - "3.120.239.69/32"
-      - "108.128.167.95/32"
-      - "54.194.214.164/32"
-      - "54.76.42.92/32"
-      - "46.51.177.212/32"
-      - "52.211.184.32/32"
-      - "52.209.125.94/32"
+  # "Smartology publishes its current address list … as a JSON document" —
+  # https://www.smartology.net/smartologybot.json, linked from the operator's
+  # bot page and fetched live this session: HTTP 200, application/json, a
+  # `cidrs` array of 20 single-prefix objects ({"ipv4": "18.139.53.199/32"}).
+  # Read with the `ip_objects` format, added this session for this shape; the
+  # 20 prefixes are identical to the snapshot that stood here before, so this
+  # replaces the hand-copied list rather than changing it.
+  - type: cidr_feed
+    url: "https://www.smartology.net/smartologybot.json"
+    format: ip_objects
+    selector: cidrs
