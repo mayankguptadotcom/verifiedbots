@@ -1,7 +1,7 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-21T12:47:00.861Z",
-  "count": 124,
+  "generated_at": "2026-11-21T13:25:22.670Z",
+  "count": 125,
   "bots": [
     {
       "id": "agentdrives-agent",
@@ -15560,6 +15560,40 @@
         "95.164.84.180/32",
         "95.177.214.34/32"
       ]
+    },
+    {
+      "id": "uptimo-monitor",
+      "name": "Uptimo-Monitor",
+      "operator": {
+        "name": "Uptimo (Nariman Amerkanov)",
+        "url": "https://www.uptimo.io"
+      },
+      "description": "The monitoring agent of Uptimo, a German website-monitoring service for agencies and freelancers. Its own bot page states it \"only requests addresses that a customer has added for monitoring themselves - usually a website they look after\", and that it checks \"availability, response time, certificate and, if enabled, content, security headers and SEO basics\". The page is explicit that this is not crawler traffic: \"No crawling: only the added addresses plus robots.txt and sitemap.xml for the SEO check are requested\", at \"at most one request per minute and check, with one retry on error\", and \"no forms are submitted and no content is changed - unless the customer explicitly sets up a browser test for their own website\". Requests also carry an X-Monitor-Key header holding a per-domain secret that the customer can see in their account, which the page offers as the firewall-rule route for sites that cannot verify signatures.",
+      "docs": [
+        "https://www.uptimo.io/bot"
+      ],
+      "category": "monitoring",
+      "user_agents": {
+        "patterns": [
+          "Uptimo-Monitor/\\d"
+        ],
+        "instances": [
+          "Uptimo-Monitor/1.0 (+https://uptimo.io/bot)"
+        ]
+      },
+      "behavior": {
+        "respects_robots_txt": false
+      },
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://uptimo.io/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
+      "first_seen": "2026-11-21T13:25:22.670Z",
+      "resolved_cidrs": []
     },
     {
       "id": "watchforbot",

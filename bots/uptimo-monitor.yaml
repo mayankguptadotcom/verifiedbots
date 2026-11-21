@@ -1,0 +1,57 @@
+id: uptimo-monitor
+name: Uptimo-Monitor
+operator: { name: "Uptimo (Nariman Amerkanov)", url: "https://www.uptimo.io" }
+description: >-
+  The monitoring agent of Uptimo, a German website-monitoring service for
+  agencies and freelancers. Its own bot page states it "only requests addresses
+  that a customer has added for monitoring themselves - usually a website they
+  look after", and that it checks "availability, response time, certificate
+  and, if enabled, content, security headers and SEO basics". The page is
+  explicit that this is not crawler traffic: "No crawling: only the added
+  addresses plus robots.txt and sitemap.xml for the SEO check are requested",
+  at "at most one request per minute and check, with one retry on error", and
+  "no forms are submitted and no content is changed - unless the customer
+  explicitly sets up a browser test for their own website". Requests also carry
+  an X-Monitor-Key header holding a per-domain secret that the customer can see
+  in their account, which the page offers as the firewall-rule route for sites
+  that cannot verify signatures.
+docs:
+  - "https://www.uptimo.io/bot"
+category: monitoring
+user_agents:
+  # "User agent: Uptimo-Monitor/1.0 (+https://uptimo.io/bot)", quoted verbatim
+  # from the operator's bot page under its heading "How to recognise the
+  # monitor" (the page serves German by default and an English translation at
+  # the same URL; both print the same user-agent string).
+  patterns:
+    - 'Uptimo-Monitor/\d'
+  instances:
+    - 'Uptimo-Monitor/1.0 (+https://uptimo.io/bot)'
+# The page documents that the monitor requests robots.txt, but only as an input
+# to its SEO check ("only the added addresses plus robots.txt and sitemap.xml
+# for the SEO check are requested") - it never says the monitor obeys it, and
+# it names no robots token. This is user-configured monitoring of a site the
+# customer already looks after, so robots obedience is recorded as false per
+# the non-crawler service rule rather than assumed from the fetch.
+behavior:
+  respects_robots_txt: false
+verification:
+  # "Signature: Every request is signed with Ed25519 according to RFC 9421
+  # (Web Bot Auth, headers Signature, Signature-Input, Signature-Agent). Key
+  # ID: 7ZMXIO0I5ZBG7e4_ZIEwRlTs43bjD6W1WkoPbjji9Fc. Key directory:
+  # https://uptimo.io/.well-known/http-message-signatures-directory".
+  #
+  # Fetched live this session: HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 OKP key.
+  # The key was checked against the page rather than merely co-located with it:
+  # the RFC 7638 JWK thumbprint of the published key
+  # (x = 2ItGNUZuTJUFpRCDiHuSdwBjiCSpTqeqUx1AR8rnMYI) computes to
+  # 7ZMXIO0I5ZBG7e4_ZIEwRlTs43bjD6W1WkoPbjji9Fc, which is exactly the key ID
+  # the bot page prints, so the directory is the one the operator documents.
+  #
+  # The operator rules out every address-based recipe itself: "The monitor's IP
+  # addresses are deliberately not published. It is identified by user agent,
+  # domain key and signature - a forged user agent alone does not pass the
+  # signature check." So no static_cidrs, asn or rdns recipe is attached.
+  - type: web_bot_auth
+    signature_agent_url: "https://uptimo.io/.well-known/http-message-signatures-directory"
