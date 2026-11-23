@@ -18,5 +18,21 @@ user_agents:
     - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Ads-Naver/1.1; +https://naver.me/adsn) Chrome/W.X.Y.Z Safari/537.36'
 behavior: { respects_robots_txt: false }
 verification:
+  # No cidr_feed recipe, deliberately — recorded because it is one sentence
+  # away from being one. The Ads-Naver help page in `docs`, rendered in full
+  # this run (last modified 2026-11-06), says "자세한 내용 및 IP 정보 확인은
+  # 네이버 서치어드바이저 가이드를 참고 부탁드립니다" — for details, and to
+  # check IP information, refer to the Naver Search Advisor guide — and that
+  # guide's only address artefact is searchadvisor.naver.com/doc/naverbot.json,
+  # which it introduces generically as the list of IP ranges used by Naver's
+  # search robots (the ads page calls Ads-Naver a "광고용 웹수집 검색로봇", an
+  # ad web-collecting search robot). The file is demonstrably not Yeti-only:
+  # the worked example on Naver's Blueno page resolves 110.93.146.32, inside
+  # this feed's first prefix (110.93.146.32/29). Two reasons it is not attached
+  # yet: Naver never states that the list covers Ads-Naver, and
+  # searchadvisor.naver.com is unreachable from this environment's pipeline
+  # fetcher (HTTP 403, `x-block-reason: hostname_blocked`, while curl gets
+  # 200), so the recipe would publish zero ranges from here with no
+  # last-known-good to fall back on. naver-yeti already carries this feed.
   - type: rdns
     masks: ["*.naver.com"]

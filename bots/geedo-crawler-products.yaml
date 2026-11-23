@@ -1,24 +1,67 @@
 id: geedo-crawler-products
-name: Geedo Product Search
+name: GeedoProductFinder
 operator: { name: Geedo, url: "https://geedo.com" }
 description: >-
-  GeedoShopProductFinder is the crawler for Geedo, a product-search engine that
-  indexes publicly accessible product pages from online stores and follows
-  robots.txt rules.
+  The crawler for Geedo, a product-search engine specialised in online retail.
+  The operator states it indexes products directly from online stores and
+  distributes the results across roughly 200 regional Geedo sites based on the
+  shop's location, currently covering over 8 billion products from more than
+  5 million stores, and that it limits itself to publicly accessible product
+  pages while following robots.txt rules, rate limits and site-owner
+  restrictions.
+# Geedo has rewritten this page since the entry was created, and both
+# /product-search/ and /product-finder/ now serve the same document (byte
+# identical, 2,769 bytes this run; /zqx-control-nonexistent answers a 14-byte
+# 404, so neither 200 is a catch-all). The page is now headed
+# "GeedoProductFinder" and documents one crawler, not two. The old
+# /product-search/ path is kept out of `docs` in favour of the canonical one.
 docs:
-  - "https://geedo.com/product-search/"
+  - "https://geedo.com/product-finder/"
 category: search-engine
 user_agents:
+  # The operator prints exactly one UA string today, under "User Agent
+  # Strings", and it carries the token `GeedoProductFinder`. The earlier
+  # `GeedoShopProductFinder` and `GeedoProductSearch` forms are the strings
+  # arcjet/well-known-bots records for this operator and may still be in logs,
+  # so the first pattern is keyed to match the current and the Shop- form, and
+  # the legacy search token keeps its own pattern.
   patterns:
-    - 'GeedoShopProductFinder'
+    - 'Geedo(?:Shop)?ProductFinder'
     - 'GeedoProductSearch'
   instances:
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; GeedoProductFinder) Chrome/142.0.0.0 Safari/537.36'
     - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; GeedoShopProductFinder) Chrome/142.0.0.0 Safari/537.36'
     - 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GeedoProductSearch; +http://www.geedo.com/product-search.html) Chrome/79.0.3945.88 Safari/537.36'
-behavior: { respects_robots_txt: true }
+# The page's "Rate Limiting" and "Blocking the Crawler" sections both print
+# worked robots.txt examples keyed to `User-agent: GeedoProductFinder` (a
+# Crawl-delay: 10 example and a Disallow: /forum example), which is where the
+# robots token comes from.
+behavior: { respects_robots_txt: true, robots_token: GeedoProductFinder }
 verification:
+  # "GeedoProductFinder operates only from documented IP ranges: 83.99.206.0/24
+  # ... These lists are also available as IPv4 text and JSON." The JSON link on
+  # the page resolves to /product-finder/ips.json, fetched live this session:
+  # 200 application/json, prefixes shape, creationTime 2025-12-02T10:00:00, one
+  # prefix (83.99.206.0/24), matching the range printed on the page. The URL
+  # this entry used before (/product-search/product-search-ip.json) still
+  # answers 200 with byte-identical content but is no longer the one the
+  # operator links, so the documented path is used here.
   - type: cidr_feed
-    url: "https://geedo.com/product-search/product-search-ip.json"
+    url: "https://geedo.com/product-finder/ips.json"
     format: prefixes
+  # "Perform a reverse DNS lookup on the requesting IP. Ensure the returned
+  # hostname ends with .geedo.com ... Perform a forward lookup on the returned
+  # hostname. Confirm that it resolves to the same IP address." The page gives
+  # a worked example resolving 83.99.206.111 to
+  # product-search-83-99-206-111.geedo.com and back.
   - type: rdns
     masks: ["*.geedo.com"]
+  # No web_bot_auth recipe, deliberately. arcjet/well-known-bots declares a key
+  # directory at https://geedo.com/.well-known/http-message-signatures-directory
+  # for its `geedo-crawler-shop` id, and that URL does answer 200 with
+  # application/http-message-signatures-directory+json this run. But the
+  # operator's own page — rewritten more recently than arcjet's record, and
+  # carrying a dedicated "Verification" section — offers only the reverse-DNS
+  # check and the address ranges above, and says nothing about signing. A
+  # comprehensive verification section that omits signing is evidence of
+  # absence, so the directory stays unclaimed here.

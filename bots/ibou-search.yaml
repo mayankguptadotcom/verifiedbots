@@ -35,3 +35,15 @@ verification:
   # to ibou-search.
   - type: rdns
     masks: ["*.ibou.io"]
+  # Web Bot Auth directory declared for this crawler by arcjet/well-known-bots
+  # (`ibou-search`, pattern `ibou-search/`) and fetched live this session: HTTP
+  # 200, application/http-message-signatures-directory+json, 218 bytes of
+  # Ed25519 JWKS. ibou.io has been in the ledger's held set since 2026-11-13,
+  # held on the ibou *family*: the operator's crawlers.html says nothing about
+  # signing and scopes its verification section to ibou-search alone. arcjet
+  # likewise ties the directory to ibou-search alone, so it is attached here
+  # and to no other ibou entry (ibou-images, ibou-discovery and ibou-news keep
+  # what their own documentation supports). Already Tier 1 on the feed, so no
+  # tier moves on this.
+  - type: web_bot_auth
+    signature_agent_url: "https://ibou.io/.well-known/http-message-signatures-directory"

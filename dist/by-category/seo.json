@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-22T12:41:25.516Z",
+  "generated_at": "2026-11-23T13:33:03.971Z",
   "count": 93,
   "bots": [
     {
@@ -230,6 +230,10 @@
             "*.ahrefs.com",
             "*.ahrefs.net"
           ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://ahrefs.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

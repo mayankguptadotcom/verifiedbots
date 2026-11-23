@@ -25,3 +25,16 @@ verification:
   # 8.8.8.8), so the masks rest on the operator's statement alone.
   - type: rdns
     masks: ["*.ahrefs.com", "*.ahrefs.net"]
+  # Web Bot Auth directory declared for this crawler by arcjet/well-known-bots
+  # (`ahrefs-crawler`, pattern `AhrefsBot/`) and fetched live this session: HTTP
+  # 200, content-type application/http-message-signatures-directory+json,
+  # 298 bytes of Ed25519 JWKS. This host has been in the candidate ledger's
+  # "held" set since 2026-10-15 on the rule that a directory found by a sweep
+  # is not a recipe unless the operator documents signing — but arcjet is an
+  # acceptable source in its own right under iron rule 1(b), and it names this
+  # bot and this URL explicitly, which a bare sweep hit does not. Ahrefs' own
+  # bot page still documents only the address feed and the reverse-DNS suffix
+  # above, so the tier is unchanged either way (already Tier 1 on the feed).
+  # arcjet declares no directory for AhrefsSiteAudit, so that entry gets none.
+  - type: web_bot_auth
+    signature_agent_url: "https://ahrefs.com/.well-known/http-message-signatures-directory"

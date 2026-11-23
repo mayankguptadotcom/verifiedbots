@@ -22,3 +22,21 @@ verification:
     format: prefixes
   - type: rdns
     masks: ["*.naver.com"]
+  # No web_bot_auth recipe, deliberately — and this is a near miss worth
+  # recording. arcjet/well-known-bots declares one for this crawler
+  # (`naver-crawler`, pattern `Yeti`) at
+  # https://bot.naver.com/.well-known/http-message-signatures-directory, and
+  # curl fetched it live this session: HTTP 200,
+  # application/http-message-signatures-directory+json, one Ed25519 OKP key
+  # (kid 67UTPicrwtIinNf17uu88Xf2dA3BShYZdKep2hrcsdE) with "nbf": 1795057200,
+  # a not-before date only days old. Two things keep it out. (1) Naver
+  # documents no signing: the Search Advisor guide in `docs` was rendered in
+  # full this run (it is client-side rendered) and its verification section
+  # covers the user agent, forward-confirmed reverse DNS and the address list
+  # only; naver.me/bot, the URL arcjet cites, now redirects to a help.naver.com
+  # 404. (2) `npm run verify-wba` cannot check it from this environment:
+  # node's fetch gets HTTP 403 with `x-block-reason: hostname_blocked` and the
+  # body "Blocked by egress policy" for this hostname while curl gets 200, so
+  # the recipe would turn the CI-gating check red here with no last-known-good
+  # fallback. Add it from an environment that can fetch the host with the
+  # pipeline's own fetcher.

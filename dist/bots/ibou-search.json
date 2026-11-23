@@ -33,6 +33,10 @@
       "masks": [
         "*.ibou.io"
       ]
+    },
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://ibou.io/.well-known/http-message-signatures-directory"
     }
   ],
   "tier": 1,

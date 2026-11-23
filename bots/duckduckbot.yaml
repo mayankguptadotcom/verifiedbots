@@ -23,3 +23,17 @@ verification:
   - type: cidr_feed
     url: "https://duckduckgo.com/duckduckbot.json"
     format: prefixes
+  # Web Bot Auth directory declared for this crawler by arcjet/well-known-bots
+  # (`duckduckgo-crawler`, pattern `DuckDuckBot`) and fetched live this session:
+  # HTTP 200, content-type
+  # application/http-message-signatures-directory+json, one Ed25519 OKP key
+  # (kid 5HvpfNA946z6lcCXEIOOpzlN5l0mdZE42jdqimEwPf8), on a host that serves
+  # nothing else (bot.duckduckgo.com/ 404s). It is a different key from the one
+  # at assistbot.duckduckgo.com that duckassistbot carries, so DuckDuckGo
+  # publishes a directory per bot. The DuckDuckBot help page in `docs` was
+  # fetched raw this run (170 KB, server-rendered, 13.7 KB of extracted text)
+  # and contains no occurrence of "signature", "Web Bot Auth", "RFC 9421" or
+  # the directory host — same as the DuckAssistBot page. Sourced from arcjet
+  # under iron rule 1(b); re-check for an operator statement.
+  - type: web_bot_auth
+    signature_agent_url: "https://bot.duckduckgo.com/.well-known/http-message-signatures-directory"

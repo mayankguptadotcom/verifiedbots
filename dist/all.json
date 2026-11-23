@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-22T12:41:25.516Z",
+  "generated_at": "2026-11-23T13:33:03.971Z",
   "count": 438,
   "bots": [
     {
@@ -465,6 +465,10 @@
             "*.ahrefs.com",
             "*.ahrefs.net"
           ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://ahrefs.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -12928,6 +12932,10 @@
           "type": "cidr_feed",
           "url": "https://duckduckgo.com/duckduckbot.json",
           "format": "prefixes"
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://bot.duckduckgo.com/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,
@@ -14494,33 +14502,35 @@
     },
     {
       "id": "geedo-crawler-products",
-      "name": "Geedo Product Search",
+      "name": "GeedoProductFinder",
       "operator": {
         "name": "Geedo",
         "url": "https://geedo.com"
       },
-      "description": "GeedoShopProductFinder is the crawler for Geedo, a product-search engine that indexes publicly accessible product pages from online stores and follows robots.txt rules.",
+      "description": "The crawler for Geedo, a product-search engine specialised in online retail. The operator states it indexes products directly from online stores and distributes the results across roughly 200 regional Geedo sites based on the shop's location, currently covering over 8 billion products from more than 5 million stores, and that it limits itself to publicly accessible product pages while following robots.txt rules, rate limits and site-owner restrictions.",
       "docs": [
-        "https://geedo.com/product-search/"
+        "https://geedo.com/product-finder/"
       ],
       "category": "search-engine",
       "user_agents": {
         "patterns": [
-          "GeedoShopProductFinder",
+          "Geedo(?:Shop)?ProductFinder",
           "GeedoProductSearch"
         ],
         "instances": [
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; GeedoProductFinder) Chrome/142.0.0.0 Safari/537.36",
           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; GeedoShopProductFinder) Chrome/142.0.0.0 Safari/537.36",
           "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GeedoProductSearch; +http://www.geedo.com/product-search.html) Chrome/79.0.3945.88 Safari/537.36"
         ]
       },
       "behavior": {
-        "respects_robots_txt": true
+        "respects_robots_txt": true,
+        "robots_token": "GeedoProductFinder"
       },
       "verification": [
         {
           "type": "cidr_feed",
-          "url": "https://geedo.com/product-search/product-search-ip.json",
+          "url": "https://geedo.com/product-finder/ips.json",
           "format": "prefixes"
         },
         {
@@ -21220,6 +21230,10 @@
           "masks": [
             "*.ibou.io"
           ]
+        },
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://ibou.io/.well-known/http-message-signatures-directory"
         }
       ],
       "tier": 1,

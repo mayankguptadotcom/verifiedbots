@@ -1072,7 +1072,7 @@
     "id": "geedo-crawler-products",
     "category": "search-engine",
     "patterns": [
-      "GeedoShopProductFinder",
+      "Geedo(?:Shop)?ProductFinder",
       "GeedoProductSearch"
     ]
   },
