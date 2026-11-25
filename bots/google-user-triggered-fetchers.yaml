@@ -3,10 +3,17 @@ name: Google user-triggered fetchers
 operator: { name: Google, url: "https://www.google.com" }
 description: >-
   Google tools and product features that fetch a specific page because an end
-  user asked for it (Google Read Aloud, Site Verifier, Gemini Notebook,
-  Chrome Web Store, Google Messages, Pinpoint, Publisher Center, and similar),
-  rather than autonomous crawling for search indexing. They generally ignore
-  robots.txt because a human requested the fetch.
+  user asked for it, rather than autonomously crawling for search indexing.
+  They generally ignore robots.txt because a human requested the fetch. The
+  operator's current list covers Google Read Aloud, Google Site Verifier,
+  Gemini Notebook, Chrome Web Store, Google Messages, Google Pinpoint, Google
+  Publisher Center, Google Apps Script (UrlFetchApp), Google App Engine (URL
+  Fetch), Google Cloud Tasks (developer-configured webhooks), Google Image
+  Proxy (external images in Gmail messages and documents), Google Web Preview
+  (link-preview thumbnails in products such as Classroom) and PageSpeed
+  Insights (performance audits run from pagespeed.web.dev). Feedfetcher,
+  APIs-Google and Google-Agent are listed with this group by Google but have
+  their own directory entries.
 docs:
   - "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers"
 category: ai-assistant
@@ -20,6 +27,19 @@ user_agents:
     - 'GoogleMessages'
     - 'Google-Pinpoint'
     - 'GoogleProducer'
+    # Added 2026-11-25. Google's user-triggered fetchers page (fetched live
+    # this session, HTML and .md.txt, "Last updated 2026-11-23 UTC") has grown
+    # six documented members since this entry was last reviewed; each has its
+    # own UA string on the page and the page carries no retired section.
+    # GoogleImageProxy, Google-Apps-Script and AppEngine-Google in particular
+    # were rejected on 2026-09-03 and 2026-08-08 precisely because they
+    # appeared on none of Google's three crawler pages — they do now.
+    - 'AppEngine-Google'
+    - 'Google-Apps-Script'
+    - 'Google-Cloud-Tasks'
+    - 'GoogleImageProxy'
+    - 'Google Web Preview'
+    - 'Chrome-Lighthouse'
   instances:
     - 'Mozilla/5.0 (compatible; Google-Site-Verification/1.0)'
     - 'Google-Read-Aloud'
@@ -29,18 +49,36 @@ user_agents:
     - 'GoogleMessages'
     - 'Google-Pinpoint'
     - 'GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)'
+    - 'AppEngine-Google; (+http://code.google.com/appengine; appid: APPID)'
+    - 'Mozilla/5.0 (compatible; Google-Apps-Script; beanserver; +https://script.google.com; id: SCRIPT_ID)'
+    - 'Google-Cloud-Tasks'
+    - 'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)'
+    - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/W.X.Y.Z Safari/537.36'
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Safari/537.36 Chrome-Lighthouse'
+    - 'Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 Chrome-Lighthouse'
 behavior: { respects_robots_txt: false }
 verification:
-  # The operator's page publishes two lists for these fetchers and distinguishes
-  # them by who owns the request: reverse DNS "matches either
-  # ***-***-***-***.gae.googleusercontent.com or
-  # google-proxy-***-***-***-***.google.com, depending on whether the fetcher is
-  # Google- or user-owned". Both are recorded so neither half is unverifiable.
+  # The operator's page publishes three lists for this group and the
+  # verify-google-requests page distinguishes them by who owns the request:
+  # "Fetchers controlled by Google originate from IPs in the
+  # user-triggered-fetchers-google.json object and resolve to a google.com
+  # hostname. IPs in the user-triggered-fetchers.json object resolve to
+  # gae.googleusercontent.com hostnames." The reverse-DNS mask is
+  # "***-***-***-***.gae.googleusercontent.com or
+  # google-proxy-***-***-***-***.google.com, depending on whether the fetcher
+  # is Google- or user-owned" — neither half fits the schema's *.suffix mask
+  # form without widening to *.google.com, so only the feeds are recorded.
   - type: cidr_feed
     url: "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json"
     format: prefixes
-  # Added this session after fetching it live: 200 application/json, prefixes
-  # shape, creationTime 2026-11-12T15:45:55, 504 prefixes.
   - type: cidr_feed
     url: "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json"
+    format: prefixes
+  # Third list, named by the operator for this same group ("The IP ranges the
+  # user-triggered fetchers use are published in the user-triggered-fetchers.json,
+  # user-triggered-fetchers-google.json, and user-triggered-agents.json
+  # objects"). Fetched live 2026-11-25: 200 application/json, prefixes shape,
+  # creationTime 2026-11-23T15:46:09, 20 prefixes.
+  - type: cidr_feed
+    url: "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
     format: prefixes

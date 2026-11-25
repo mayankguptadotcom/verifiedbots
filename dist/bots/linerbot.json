@@ -7,8 +7,7 @@
   },
   "description": "Web crawler operated by Liner, an AI search and research assistant. It builds and refreshes the index behind Liner's search and reference features — paper metadata, citations and DOI resolution — so Liner's agents can retrieve and cite pages. Liner's crawler page documents the user agent and robots.txt token, gives worked examples for a full disallow and for path-scoped rules, and states that rules naming LinerBot do not apply to its on-demand sibling Liner-User. Both agents sign their requests with HTTP Message Signatures under separate keys; Liner publishes no address ranges for either.",
   "docs": [
-    "https://liner-bot.liner.com/docs/liner-bot",
-    "https://docs.getliner.com/docs/linerbot"
+    "https://liner-bot.liner.com/docs/liner-bot"
   ],
   "category": "ai-crawler",
   "user_agents": {

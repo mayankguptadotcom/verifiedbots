@@ -5,7 +5,7 @@
     "name": "Google",
     "url": "https://www.google.com"
   },
-  "description": "Google tools and product features that fetch a specific page because an end user asked for it (Google Read Aloud, Site Verifier, Gemini Notebook, Chrome Web Store, Google Messages, Pinpoint, Publisher Center, and similar), rather than autonomous crawling for search indexing. They generally ignore robots.txt because a human requested the fetch.",
+  "description": "Google tools and product features that fetch a specific page because an end user asked for it, rather than autonomously crawling for search indexing. They generally ignore robots.txt because a human requested the fetch. The operator's current list covers Google Read Aloud, Google Site Verifier, Gemini Notebook, Chrome Web Store, Google Messages, Google Pinpoint, Google Publisher Center, Google Apps Script (UrlFetchApp), Google App Engine (URL Fetch), Google Cloud Tasks (developer-configured webhooks), Google Image Proxy (external images in Gmail messages and documents), Google Web Preview (link-preview thumbnails in products such as Classroom) and PageSpeed Insights (performance audits run from pagespeed.web.dev). Feedfetcher, APIs-Google and Google-Agent are listed with this group by Google but have their own directory entries.",
   "docs": [
     "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers"
   ],
@@ -19,7 +19,13 @@
       "Google-CWS",
       "GoogleMessages",
       "Google-Pinpoint",
-      "GoogleProducer"
+      "GoogleProducer",
+      "AppEngine-Google",
+      "Google-Apps-Script",
+      "Google-Cloud-Tasks",
+      "GoogleImageProxy",
+      "Google Web Preview",
+      "Chrome-Lighthouse"
     ],
     "instances": [
       "Mozilla/5.0 (compatible; Google-Site-Verification/1.0)",
@@ -29,7 +35,14 @@
       "Mozilla/5.0 (compatible; Google-CWS)",
       "GoogleMessages",
       "Google-Pinpoint",
-      "GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)"
+      "GoogleProducer; (+https://developers.google.com/search/docs/crawling-indexing/google-producer)",
+      "AppEngine-Google; (+http://code.google.com/appengine; appid: APPID)",
+      "Mozilla/5.0 (compatible; Google-Apps-Script; beanserver; +https://script.google.com; id: SCRIPT_ID)",
+      "Google-Cloud-Tasks",
+      "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/W.X.Y.Z Safari/537.36",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Safari/537.36 Chrome-Lighthouse",
+      "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 Chrome-Lighthouse"
     ]
   },
   "behavior": {
@@ -44,6 +57,11 @@
     {
       "type": "cidr_feed",
       "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+      "format": "prefixes"
+    },
+    {
+      "type": "cidr_feed",
+      "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
       "format": "prefixes"
     }
   ],
@@ -146,6 +164,10 @@
     "107.178.225.32/27",
     "107.178.225.64/27",
     "107.178.225.96/27",
+    "136.121.16.0/24",
+    "136.121.24.0/21",
+    "136.121.40.0/21",
+    "136.122.0.0/16",
     "136.124.136.0/27",
     "136.124.136.32/27",
     "136.124.136.64/27",
@@ -502,6 +524,14 @@
     "2001:4860:4801:4169::/64",
     "2001:4860:4801:416a::/64",
     "2001:4860:4801:416b::/64",
+    "2001:4860:c::/124",
+    "2001:4860:c::10/124",
+    "2001:4860:c::20/124",
+    "2001:4860:c::30/124",
+    "2001:4860:c::40/124",
+    "2001:4860:c::50/124",
+    "2001:4860:c::60/124",
+    "2001:4860:c::70/124",
     "2404:f340:10:4000::/64",
     "2404:f340:10:4001::/64",
     "2404:f340:10:4002::/64",
@@ -1650,6 +1680,14 @@
     "74.125.215.224/27",
     "74.125.215.32/27",
     "74.125.215.64/27",
-    "74.125.215.96/27"
+    "74.125.215.96/27",
+    "74.125.232.0/28",
+    "74.125.232.112/28",
+    "74.125.232.16/28",
+    "74.125.232.32/28",
+    "74.125.232.48/28",
+    "74.125.232.64/28",
+    "74.125.232.80/28",
+    "74.125.232.96/28"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-24T14:58:24.643Z",
+  "generated_at": "2026-11-25T13:27:18.653Z",
   "count": 141,
   "bots": [
     {
@@ -9793,7 +9793,8 @@
         ],
         "instances": [
           "meta-externalads/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
-          "meta-externalads/1.1"
+          "meta-externalads/1.1",
+          "meta-externalads/1.1 (+/documentation/sharing/webmasters/web-crawlers)"
         ]
       },
       "behavior": {
@@ -9830,7 +9831,9 @@
           "meta-externalagent/\\d"
         ],
         "instances": [
-          "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)"
+          "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
+          "meta-externalagent/1.1 (+/documentation/sharing/webmasters/web-crawlers)",
+          "meta-externalagent/1.1"
         ]
       },
       "behavior": {
@@ -9868,7 +9871,8 @@
         ],
         "instances": [
           "meta-externalfetcher/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
-          "meta-externalfetcher/1.1"
+          "meta-externalfetcher/1.1",
+          "meta-externalfetcher/1.1 (+/documentation/sharing/webmasters/web-crawlers)"
         ]
       },
       "behavior": {
@@ -9905,7 +9909,8 @@
           "meta-webindexer/\\d"
         ],
         "instances": [
-          "meta-webindexer/1.1"
+          "meta-webindexer/1.1",
+          "meta-webindexer/1.1 (+/documentation/sharing/webmasters/web-crawlers)"
         ]
       },
       "behavior": {

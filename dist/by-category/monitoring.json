@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-24T14:58:24.643Z",
+  "generated_at": "2026-11-25T13:27:18.653Z",
   "count": 64,
   "bots": [
     {
@@ -639,9 +639,10 @@
         "name": "Microsoft",
         "url": "https://azure.microsoft.com"
       },
-      "description": "Synthetic availability-test agents from Microsoft Azure Application Insights that send recurring HTTP requests to user-configured URLs to monitor uptime and responsiveness from multiple Azure regions.",
+      "description": "Synthetic availability-test agents from Microsoft Azure Application Insights that send recurring HTTP requests to user-configured URLs to monitor uptime and responsiveness from multiple Azure regions. Microsoft warns that the tests run from shared IP addresses and that site owners should not rely on IP filtering alone; for origin verification it tells customers to set the custom header X-Customer-InstanceId with the value \"ApplicationInsightsAvailability:<availability test string identifier>\" (or the same value as an x-customer-instanceid query parameter) and to check for it on the receiving endpoint. The agents' addresses are published only as the Azure service tag ApplicationInsightsAvailability, retrievable through the authenticated Service Tag Discovery API or a date-stamped Download Center JSON file, so there is no stable public feed URL to attach.",
       "docs": [
-        "https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability"
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview"
       ],
       "category": "monitoring",
       "user_agents": {
@@ -1114,7 +1115,8 @@
           "Cloudflare-Healthchecks/[\\d.]+"
         ],
         "instances": [
-          "Mozilla/5.0 (compatible; Cloudflare-Healthchecks/1.0; +https://www.cloudflare.com/; healthcheck-id: AAAAAAAAAAAAAAAA)"
+          "Mozilla/5.0 (compatible; Cloudflare-Healthchecks/1.0; +https://www.cloudflare.com/; healthcheck-id: AAAAAAAAAAAAAAAA)",
+          "Mozilla/5.0 (compatible;Cloudflare-Healthchecks/1.0;+https://www.cloudflare.com/; healthcheck-id: XXX)"
         ]
       },
       "behavior": {

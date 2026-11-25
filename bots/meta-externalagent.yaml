@@ -12,6 +12,11 @@ user_agents:
     - 'meta-externalagent/\d'
   instances:
     - 'meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)'
+    # Current form on the operator's page, re-read live 2026-11-25 at
+    # developers.facebook.com/documentation/sharing/webmasters/web-crawlers
+    # (the /docs/ URL now 301s there); the +URL is site-relative as printed.
+    - 'meta-externalagent/1.1 (+/documentation/sharing/webmasters/web-crawlers)'
+    - 'meta-externalagent/1.1'
 behavior: { respects_robots_txt: true, robots_token: meta-externalagent }
 verification:
   - type: asn

@@ -1161,7 +1161,13 @@
       "AdsBot-Google",
       "AdsBot-Google-Mobile",
       "Mediapartners-Google",
-      "Google-Safety"
+      "Google-Safety",
+      "Google-analytics-postbacks",
+      "Google-Calendar-Importer",
+      "GoogleDocs",
+      "Google-Edu",
+      "pageburst",
+      "PlayStore-Google"
     ]
   },
   {
@@ -1175,7 +1181,13 @@
       "Google-CWS",
       "GoogleMessages",
       "Google-Pinpoint",
-      "GoogleProducer"
+      "GoogleProducer",
+      "AppEngine-Google",
+      "Google-Apps-Script",
+      "Google-Cloud-Tasks",
+      "GoogleImageProxy",
+      "Google Web Preview",
+      "Chrome-Lighthouse"
     ]
   },
   {

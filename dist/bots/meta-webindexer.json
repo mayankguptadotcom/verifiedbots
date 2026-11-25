@@ -15,7 +15,8 @@
       "meta-webindexer/\\d"
     ],
     "instances": [
-      "meta-webindexer/1.1"
+      "meta-webindexer/1.1",
+      "meta-webindexer/1.1 (+/documentation/sharing/webmasters/web-crawlers)"
     ]
   },
   "behavior": {

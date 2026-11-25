@@ -16,6 +16,10 @@ user_agents:
   instances:
     - 'meta-externalfetcher/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)'
     - 'meta-externalfetcher/1.1'
+    # Current form on the operator's page, re-read live 2026-11-25 at
+    # developers.facebook.com/documentation/sharing/webmasters/web-crawlers
+    # (the /docs/ URL now 301s there); the +URL is site-relative as printed.
+    - 'meta-externalfetcher/1.1 (+/documentation/sharing/webmasters/web-crawlers)'
 behavior: { respects_robots_txt: false, robots_token: meta-externalfetcher }
 verification:
   - type: asn

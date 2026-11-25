@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-24T14:58:24.643Z",
+  "generated_at": "2026-11-25T13:27:18.653Z",
   "count": 49,
   "bots": [
     {
@@ -3962,8 +3962,7 @@
       },
       "description": "Web crawler operated by Liner, an AI search and research assistant. It builds and refreshes the index behind Liner's search and reference features — paper metadata, citations and DOI resolution — so Liner's agents can retrieve and cite pages. Liner's crawler page documents the user agent and robots.txt token, gives worked examples for a full disallow and for path-scoped rules, and states that rules naming LinerBot do not apply to its on-demand sibling Liner-User. Both agents sign their requests with HTTP Message Signatures under separate keys; Liner publishes no address ranges for either.",
       "docs": [
-        "https://liner-bot.liner.com/docs/liner-bot",
-        "https://docs.getliner.com/docs/linerbot"
+        "https://liner-bot.liner.com/docs/liner-bot"
       ],
       "category": "ai-crawler",
       "user_agents": {
@@ -4074,7 +4073,9 @@
           "meta-externalagent/\\d"
         ],
         "instances": [
-          "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)"
+          "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
+          "meta-externalagent/1.1 (+/documentation/sharing/webmasters/web-crawlers)",
+          "meta-externalagent/1.1"
         ]
       },
       "behavior": {
@@ -4111,7 +4112,8 @@
           "meta-webindexer/\\d"
         ],
         "instances": [
-          "meta-webindexer/1.1"
+          "meta-webindexer/1.1",
+          "meta-webindexer/1.1 (+/documentation/sharing/webmasters/web-crawlers)"
         ]
       },
       "behavior": {

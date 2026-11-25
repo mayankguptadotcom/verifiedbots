@@ -17,5 +17,9 @@ user_agents:
     - 'Cloudflare-Healthchecks/[\d.]+'
   instances:
     - 'Mozilla/5.0 (compatible; Cloudflare-Healthchecks/1.0; +https://www.cloudflare.com/; healthcheck-id: AAAAAAAAAAAAAAAA)'
+    # Exact format as the zone-lockdown page prints it (re-read live 2026-11-25,
+    # "Last updated Apr 16, 2026"), which omits the spaces after the first two
+    # semicolons; XXX is the first 16 characters of the Health Check ID.
+    - 'Mozilla/5.0 (compatible;Cloudflare-Healthchecks/1.0;+https://www.cloudflare.com/; healthcheck-id: XXX)'
 behavior: { respects_robots_txt: false }
 verification: []

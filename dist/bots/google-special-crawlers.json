@@ -5,7 +5,7 @@
     "name": "Google",
     "url": "https://www.google.com"
   },
-  "description": "A group of Google crawlers that operate under separate agreements between the crawled site and a specific Google product (AdsBot, AdSense, Google Safety scanning, and similar). Several members of this group ignore the wildcard robots.txt rule and must be targeted explicitly. Google documents AdsBot-Google-Mobile, which checks ad quality on mobile web pages, as a current member of the group alongside AdsBot-Google; the group crawls from its own published IP ranges, separate from the common crawlers, and under the reverse-DNS mask rate-limited-proxy-***-***-***-***.google.com.",
+  "description": "A group of Google crawlers that operate under separate agreements between the crawled site and a specific Google product (AdsBot, AdSense, Google Safety scanning, and similar). Several members of this group ignore the wildcard robots.txt rule and must be targeted explicitly. Google's current list of the group names ten members: AdsBot-Google and AdsBot-Google-Mobile (ad-quality checks), Mediapartners-Google (AdSense and Ad Manager), Google-Safety (abuse and malware discovery), pageburst (landing-page safety and page understanding for Google Ads), PlayStore-Google (validating developer-submitted Play Store listing URLs), GoogleDocs (Google Sheets functions such as IMPORTHTML), Google-Calendar-Importer (refreshing subscribed external .ics calendar feeds), Google-Edu (verifying institutional domains applying for Workspace for Education), and Google-analytics-postbacks (delivering attribution postbacks to ad network endpoints). The group crawls from its own published IP ranges, separate from the common crawlers, and under the reverse-DNS mask rate-limited-proxy-***-***-***-***.google.com.",
   "docs": [
     "https://developers.google.com/crawling/docs/crawlers-fetchers/google-special-case-crawlers"
   ],
@@ -15,13 +15,28 @@
       "AdsBot-Google",
       "AdsBot-Google-Mobile",
       "Mediapartners-Google",
-      "Google-Safety"
+      "Google-Safety",
+      "Google-analytics-postbacks",
+      "Google-Calendar-Importer",
+      "GoogleDocs",
+      "Google-Edu",
+      "pageburst",
+      "PlayStore-Google"
     ],
     "instances": [
       "AdsBot-Google (+http://www.google.com/adsbot.html)",
       "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; AdsBot-Google-Mobile; +http://www.google.com/mobile/adsbot.html)",
       "Mediapartners-Google",
-      "Google-Safety"
+      "(Various mobile device types) (compatible; Mediapartners-Google/2.1; +http://www.google.com/bot.html)",
+      "Google-Safety",
+      "Google-analytics-postbacks",
+      "Google-Calendar-Importer",
+      "Mozilla/5.0 (compatible; GoogleDocs; apps-spreadsheets; +http://docs.google.com)",
+      "Google-Edu",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; pageburst) Chrome/W.X.Y.Z Safari/537.36",
+      "Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko; compatible; pageburst) CriOS/79.0.3945.117 Mobile/13B143 Safari/601.1.46",
+      "PlayStore-Google",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Safari/537.36 PlayStore-Google"
     ]
   },
   "behavior": {
@@ -30,7 +45,7 @@
   "verification": [
     {
       "type": "cidr_feed",
-      "url": "https://developers.google.com/static/search/apis/ipranges/special-crawlers.json",
+      "url": "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
       "format": "prefixes"
     }
   ],

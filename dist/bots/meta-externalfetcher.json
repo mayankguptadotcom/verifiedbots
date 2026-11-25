@@ -16,7 +16,8 @@
     ],
     "instances": [
       "meta-externalfetcher/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
-      "meta-externalfetcher/1.1"
+      "meta-externalfetcher/1.1",
+      "meta-externalfetcher/1.1 (+/documentation/sharing/webmasters/web-crawlers)"
     ]
   },
   "behavior": {

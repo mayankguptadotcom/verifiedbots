@@ -13,13 +13,14 @@ description: >-
   for either.
 docs:
   - "https://liner-bot.liner.com/docs/liner-bot"
-  - "https://docs.getliner.com/docs/linerbot"
 category: ai-crawler
 user_agents:
-  # Re-read this run on both hosts above, which now serve the same rewritten
-  # page. The documented reference URL inside the string moved from
-  # docs.getliner.com to liner-bot.liner.com with that rewrite; the instance
-  # below is the one the operator documents now.
+  # The documented reference URL inside the string moved from
+  # docs.getliner.com to liner-bot.liner.com when Liner rewrote this page; the
+  # instance below is the one the operator documents now. The old
+  # docs.getliner.com URL was dropped from docs above on 2026-11-25: it no
+  # longer resolves (no DNS, curl exit 000), while liner-bot.liner.com/docs/linerbot
+  # answers 200 and documents both LinerBot and Liner-User in full.
   patterns:
     - 'LinerBot/\d'
   instances:
