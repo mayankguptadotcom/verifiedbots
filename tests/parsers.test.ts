@@ -34,6 +34,35 @@ describe('parseFeed', () => {
     expect(() => parseFeed('github_meta', '{"synthetics":{"a":[]}}', 'synthetics.b')).toThrow(/unparseable feed/);
     expect(() => parseFeed('github_meta', '{"synthetics":"nope"}', 'synthetics.a')).toThrow(/unparseable feed/);
   });
+  it('parses an object of keyed arrays via a wildcard selector (New Relic shape)', () => {
+    const got = parseFeed('keyed_arrays', fx('newrelic_keyed_arrays.json'), '*');
+    expect(got.length).toBe(63);
+    expect(got.slice(0, 3)).toEqual(['44.202.178.0/24', '44.202.180.0/23', '44.210.68.0/24']);
+    expect(got).toContain('212.32.1.32/28');
+  });
+  it('descends past the wildcard into a named array (Ghost Inspector shape)', () => {
+    const got = parseFeed('keyed_arrays', fx('ghostinspector_keyed_arrays.json'), 'data.*.ips');
+    expect(got.length).toBe(38);
+    expect(got.slice(0, 2)).toEqual(['52.4.55.112', '52.20.108.143']);
+  });
+  it('reads keyed arrays in document order', () => {
+    const doc = '{"b":["2.2.2.2"],"a":["1.1.1.1"]}';
+    expect(parseFeed('keyed_arrays', doc, '*')).toEqual(['2.2.2.2', '1.1.1.1']);
+  });
+  it('throws on a keyed_arrays selector without exactly one wildcard', () => {
+    const doc = '{"a":["1.1.1.1"]}';
+    expect(() => parseFeed('keyed_arrays', doc)).toThrow(/requires a selector/);
+    expect(() => parseFeed('keyed_arrays', doc, 'a')).toThrow(/no "\*" segment/);
+    expect(() => parseFeed('keyed_arrays', '{"a":{"b":{"c":["1.1.1.1"]}}}', '*.*')).toThrow(/more than one "\*" segment/);
+  });
+  it('throws when a keyed_arrays branch is missing, not an array, or not all strings', () => {
+    expect(() => parseFeed('keyed_arrays', '{"a":"nope"}', '*')).toThrow(/does not hold an array/);
+    expect(() => parseFeed('keyed_arrays', '{"a":[1,2]}', '*')).toThrow(/non-string entry/);
+    expect(() => parseFeed('keyed_arrays', '{"d":{"a":{"nope":[]}}}', 'd.*.ips')).toThrow(/does not hold an array/);
+    expect(() => parseFeed('keyed_arrays', '{"d":{"a":"nope"}}', 'd.*.ips')).toThrow(/does not resolve to an array/);
+    expect(() => parseFeed('keyed_arrays', '{"d":"nope"}', 'd.*')).toThrow(/does not resolve to an object/);
+    expect(() => parseFeed('keyed_arrays', '{}', '*')).toThrow(/no keys/);
+  });
   it('parses plain text lines, skipping blanks', () => {
     expect(parseFeed('text_lines', fx('uptimerobot.txt'))).toEqual([
       '69.162.124.226',

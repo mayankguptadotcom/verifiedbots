@@ -5,7 +5,7 @@
     "name": "Fastmail",
     "url": "https://www.fastmail.com"
   },
-  "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA.",
+  "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA, and that its image-proxy and sender-icon requests are signed with Web Bot Auth.",
   "docs": [
     "https://www.fastmail.com/policies/bots/"
   ],
@@ -22,9 +22,14 @@
   "behavior": {
     "respects_robots_txt": false
   },
-  "verification": [],
-  "tier": 3,
-  "tier_label": "Listed only",
+  "verification": [
+    {
+      "type": "web_bot_auth",
+      "signature_agent_url": "https://www.fastmailcdn.com/.well-known/http-message-signatures-directory"
+    }
+  ],
+  "tier": 1,
+  "tier_label": "Fully verifiable",
   "first_seen": "2026-08-23T13:20:46.873Z",
   "resolved_cidrs": []
 }

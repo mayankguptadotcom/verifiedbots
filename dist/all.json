@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-26T14:00:23.551Z",
+  "generated_at": "2026-11-27T13:24:01.677Z",
   "count": 438,
   "bots": [
     {
@@ -10,7 +10,7 @@
         "name": "Riga Technical University (Institute of Applied Computer Systems)",
         "url": "https://academicbot.rtu.lv"
       },
-      "description": "Crawler run by Riga Technical University that indexes websites and documents to compare against student and researcher works for plagiarism detection. The operator publishes no IP ranges, so requests cannot be verified.",
+      "description": "Crawler run by Riga Technical University that indexes websites and documents to compare against student and researcher works for plagiarism detection. The operator publishes the crawler's outbound addresses as a plain-text list.",
       "docs": [
         "https://academicbot.rtu.lv/"
       ],
@@ -27,11 +27,27 @@
         "respects_robots_txt": true,
         "robots_token": "AcademicBotRTU"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://academicbot.rtu.lv/crawler-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-07-20T20:56:47.446Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "213.175.93.181/32",
+        "213.175.93.186/32",
+        "213.175.93.187/32",
+        "213.175.93.188/32",
+        "213.175.93.189/32",
+        "213.175.93.205/32",
+        "213.175.93.206/32",
+        "213.175.93.207/32",
+        "213.175.93.208/32"
+      ]
     },
     {
       "id": "accessiblewebbot",
@@ -204,7 +220,7 @@
       },
       "description": "Naver's advertising crawler. It periodically visits the landing pages advertisers register in Naver Search Ads, reading the HTML, content and meta information so Naver can assess page quality and match ads to relevant queries. Naver states this robot deliberately ignores robots.txt for registered landing pages, and tells site owners to verify it by reverse DNS.",
       "docs": [
-        "https://ads.naver.com/help/faq/994",
+        "https://ads.naver.com/help/faq/1974",
         "https://searchadvisor.naver.com/guide/seo-basic-firewall"
       ],
       "category": "seo",
@@ -14070,7 +14086,7 @@
         "name": "Fastmail",
         "url": "https://www.fastmail.com"
       },
-      "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA.",
+      "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA, and that its image-proxy and sender-icon requests are signed with Web Bot Auth.",
       "docs": [
         "https://www.fastmail.com/policies/bots/"
       ],
@@ -14087,9 +14103,14 @@
       "behavior": {
         "respects_robots_txt": false
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "web_bot_auth",
+          "signature_agent_url": "https://www.fastmailcdn.com/.well-known/http-message-signatures-directory"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
@@ -14362,7 +14383,7 @@
         "name": "FindFiles.net",
         "url": "https://findfiles.net"
       },
-      "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address.",
+      "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address. The operator publishes those addresses as a plain-text list.",
       "docs": [
         "https://findfiles.net/en/bot"
       ],
@@ -14385,11 +14406,9 @@
       },
       "verification": [
         {
-          "type": "static_cidrs",
-          "cidrs": [
-            "65.21.31.180/32",
-            "2a01:4f9:3080:2b61::2/128"
-          ]
+          "type": "cidr_feed",
+          "url": "https://findfiles.net/bot-ips.txt",
+          "format": "text_lines"
         },
         {
           "type": "rdns",
@@ -14398,8 +14417,8 @@
           ]
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": [
         "2a01:4f9:3080:2b61::2/128",
@@ -14678,7 +14697,7 @@
         "name": "Ghost Inspector",
         "url": "https://ghostinspector.com"
       },
-      "description": "Ghost Inspector runs customer-authored browser tests against the sites their owners point it at, from a fixed pool of cloud test runners in 18 regions. Its runners append the literal string \"Ghost Inspector\" to the browser user agent they run, and the operator publishes the full list of test-runner addresses so site owners can filter the traffic out of their analytics.",
+      "description": "Ghost Inspector runs customer-authored browser tests against the sites their owners point it at, from a fixed pool of cloud test runners in 18 regions. Its runners append the literal string \"Ghost Inspector\" to the browser user agent they run, and the operator publishes the full list of test-runner addresses so site owners can filter the traffic out of their analytics, served both as a documentation page and as a public API endpoint.",
       "docs": [
         "https://docs.ghostinspector.com/faq/",
         "https://docs.ghostinspector.com/public-api/test-runner-ip-addresses/"
@@ -14698,51 +14717,14 @@
       },
       "verification": [
         {
-          "type": "static_cidrs",
-          "cidrs": [
-            "52.4.55.112/32",
-            "52.20.108.143/32",
-            "52.201.131.218/32",
-            "52.205.11.111/32",
-            "15.185.63.107/32",
-            "15.185.63.176/32",
-            "52.60.48.246/32",
-            "52.60.90.232/32",
-            "13.244.48.162/32",
-            "13.244.136.56/32",
-            "52.210.60.111/32",
-            "52.210.234.253/32",
-            "52.29.147.57/32",
-            "52.57.15.241/32",
-            "18.162.186.232/32",
-            "18.162.226.126/32",
-            "52.56.51.140/32",
-            "52.56.60.61/32",
-            "15.161.196.95/32",
-            "15.161.220.58/32",
-            "52.66.94.141/32",
-            "52.66.144.183/32",
-            "52.9.221.14/32",
-            "52.52.37.140/32",
-            "52.47.76.126/32",
-            "52.47.157.89/32",
-            "52.67.38.171/32",
-            "52.67.99.152/32",
-            "52.78.158.117/32",
-            "52.78.175.144/32",
-            "52.220.124.147/32",
-            "52.220.131.87/32",
-            "13.53.114.221/32",
-            "13.53.164.156/32",
-            "52.62.56.25/32",
-            "52.63.16.151/32",
-            "52.198.43.67/32",
-            "52.198.43.160/32"
-          ]
+          "type": "cidr_feed",
+          "url": "https://api.ghostinspector.com/v1/test-runner-ip-addresses",
+          "format": "keyed_arrays",
+          "selector": "data.*.ips"
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-31T13:20:25.762Z",
       "resolved_cidrs": [
         "13.244.136.56/32",
@@ -25839,7 +25821,7 @@
         "name": "New Relic",
         "url": "https://newrelic.com"
       },
-      "description": "New Relic's synthetic-monitoring minions, which probe customer-configured URLs from public minion IPs. New Relic documents an X-Abuse-Info request header identifying the monitor and account; logs also record a NewRelicbot User-Agent. New Relic states the published ranges \"are reserved for use by New Relic and cannot be used by anyone else\". The published IP list is a JSON object keyed by location, which this directory's feed formats cannot consume, so the ranges are recorded statically instead.",
+      "description": "New Relic's synthetic-monitoring minions, which probe customer-configured URLs from public minion IPs. New Relic documents an X-Abuse-Info request header identifying the monitor and account; logs also record a NewRelicbot User-Agent. New Relic states the published ranges \"are reserved for use by New Relic and cannot be used by anyone else\", and publishes them as a JSON object keyed by monitoring location.",
       "docs": [
         "https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/synthetic-public-minion-ips/",
         "https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/administration/identify-synthetic-monitoring-requests-your-app/"
@@ -25858,76 +25840,14 @@
       },
       "verification": [
         {
-          "type": "static_cidrs",
-          "cidrs": [
-            "13.214.223.192/26",
-            "13.214.242.0/25",
-            "13.245.248.160/27",
-            "13.245.248.192/26",
-            "13.246.147.0/26",
-            "13.38.202.128/26",
-            "13.38.202.192/28",
-            "13.38.68.128/25",
-            "13.38.68.64/26",
-            "13.50.68.0/26",
-            "15.160.105.128/25",
-            "15.165.193.192/26",
-            "15.228.171.128/25",
-            "15.229.44.0/26",
-            "15.229.52.128/26",
-            "15.229.52.80/28",
-            "152.38.128.64/26",
-            "152.38.129.96/27",
-            "152.38.130.0/26",
-            "152.38.130.128/28",
-            "152.38.130.64/26",
-            "152.38.131.64/26",
-            "152.38.132.0/24",
-            "157.241.17.0/26",
-            "157.241.55.64/26",
-            "16.16.1.128/25",
-            "16.163.220.0/25",
-            "16.163.86.128/26",
-            "18.102.58.0/26",
-            "18.141.238.128/25",
-            "212.32.0.128/25",
-            "212.32.0.32/27",
-            "212.32.0.64/26",
-            "212.32.1.128/25",
-            "212.32.1.32/28",
-            "212.32.1.64/26",
-            "212.32.2.128/25",
-            "212.32.2.64/26",
-            "212.32.3.0/25",
-            "3.110.73.192/26",
-            "3.111.138.0/25",
-            "3.38.229.128/25",
-            "3.99.193.0/26",
-            "3.99.200.0/24",
-            "3.99.253.128/25",
-            "35.77.208.0/24",
-            "35.79.233.128/28",
-            "35.79.233.64/26",
-            "43.198.20.128/28",
-            "43.198.20.64/26",
-            "43.204.166.240/28",
-            "43.205.150.128/26",
-            "44.202.178.0/24",
-            "44.202.180.0/23",
-            "44.210.110.0/25",
-            "44.210.68.0/24",
-            "64.251.192.128/25",
-            "64.251.192.64/26",
-            "64.251.193.0/28",
-            "64.251.196.0/24",
-            "64.251.197.0/24",
-            "64.251.198.0/24",
-            "64.251.199.0/24"
-          ]
+          "type": "cidr_feed",
+          "url": "https://s3.amazonaws.com/nr-synthetics-assets/nat-ip-dnsname/production/ip-ranges.json",
+          "format": "keyed_arrays",
+          "selector": "*"
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-07-09T03:01:47.690Z",
       "resolved_cidrs": [
         "13.214.223.192/26",

@@ -4,7 +4,7 @@ operator: { name: Riga Technical University (Institute of Applied Computer Syste
 description: >-
   Crawler run by Riga Technical University that indexes websites and documents to
   compare against student and researcher works for plagiarism detection. The
-  operator publishes no IP ranges, so requests cannot be verified.
+  operator publishes the crawler's outbound addresses as a plain-text list.
 docs:
   - "https://academicbot.rtu.lv/"
 category: archiver
@@ -14,4 +14,11 @@ user_agents:
   instances:
     - 'AcademicBotRTU (https://academicbot.rtu.lv; mailto:caps@rtu.lv)'
 behavior: { respects_robots_txt: true, robots_token: AcademicBotRTU }
-verification: []
+verification:
+  # The bot page's "Bot IP addresses" section links this file with the text
+  # "Here is the list of outbound IP addresses the bot is using." Fetched live
+  # this session: 200, text/plain, nine bare IPv4 addresses, one per line and
+  # no comments, normalised to /32 downstream.
+  - type: cidr_feed
+    url: "https://academicbot.rtu.lv/crawler-ips.txt"
+    format: text_lines

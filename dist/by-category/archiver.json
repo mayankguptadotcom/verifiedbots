@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-26T14:00:23.551Z",
+  "generated_at": "2026-11-27T13:24:01.677Z",
   "count": 12,
   "bots": [
     {
@@ -10,7 +10,7 @@
         "name": "Riga Technical University (Institute of Applied Computer Systems)",
         "url": "https://academicbot.rtu.lv"
       },
-      "description": "Crawler run by Riga Technical University that indexes websites and documents to compare against student and researcher works for plagiarism detection. The operator publishes no IP ranges, so requests cannot be verified.",
+      "description": "Crawler run by Riga Technical University that indexes websites and documents to compare against student and researcher works for plagiarism detection. The operator publishes the crawler's outbound addresses as a plain-text list.",
       "docs": [
         "https://academicbot.rtu.lv/"
       ],
@@ -27,11 +27,27 @@
         "respects_robots_txt": true,
         "robots_token": "AcademicBotRTU"
       },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
+      "verification": [
+        {
+          "type": "cidr_feed",
+          "url": "https://academicbot.rtu.lv/crawler-ips.txt",
+          "format": "text_lines"
+        }
+      ],
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-07-20T20:56:47.446Z",
-      "resolved_cidrs": []
+      "resolved_cidrs": [
+        "213.175.93.181/32",
+        "213.175.93.186/32",
+        "213.175.93.187/32",
+        "213.175.93.188/32",
+        "213.175.93.189/32",
+        "213.175.93.205/32",
+        "213.175.93.206/32",
+        "213.175.93.207/32",
+        "213.175.93.208/32"
+      ]
     },
     {
       "id": "arquivo-pt",

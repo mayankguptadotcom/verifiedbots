@@ -1,4 +1,4 @@
-export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array' | 'ip_objects' | 'sail';
+export type FeedFormat = 'prefixes' | 'stripe_webhooks' | 'github_meta' | 'text_lines' | 'json_array' | 'ip_objects' | 'keyed_arrays' | 'sail';
 
 function fail(detail: string): never {
   throw new Error(`unparseable feed: ${detail}`);
@@ -238,6 +238,63 @@ export function parseFeed(format: FeedFormat, body: string, selector?: string): 
         const addr = e.ipv4 ?? e.ipv6;
         if (typeof addr !== 'string') fail('ip_objects entry missing ipv4/ipv6 string');
         result.push(addr);
+      }
+      return result;
+    }
+    /**
+     * An object whose VALUES each hold an array of addresses, keyed by something that is not
+     * itself data worth selecting — a monitoring location or a cloud region:
+     *   { "Washington, DC, USA": [ "44.202.178.0/24", … ], "Dublin, IE": [ … ] }   (New Relic)
+     *   { "data": { "us-east-1": { "name": …, "ips": [ … ] }, … } }                (Ghost Inspector)
+     * Neither shape has a single dot-path to an array, so `github_meta` cannot address them and
+     * one recipe per key would silently miss every location the operator adds later.
+     *
+     * `selector` is therefore a dot-path containing exactly one `*` segment, standing for
+     * "every key at this level": `*` for New Relic, `data.*.ips` for Ghost Inspector. The
+     * segments before `*` must resolve to a plain object, and the segments after it must resolve
+     * to an array of strings under every one of its keys. Anything else — no wildcard, two
+     * wildcards, a missing or non-array branch, a non-string entry, or an object with no keys
+     * at all — fails loudly, so an unexpected document becomes a 'hard' feed outcome rather
+     * than a silently short address list. Keys are read in document order.
+     */
+    case 'keyed_arrays': {
+      const doc = asJson(body);
+      if (!selector) fail('keyed_arrays requires a selector');
+      const parts = selector.split('.');
+      const star = parts.indexOf('*');
+      if (star === -1) fail(`keyed_arrays selector "${selector}" has no "*" segment`);
+      if (parts.indexOf('*', star + 1) !== -1) fail(`keyed_arrays selector "${selector}" has more than one "*" segment`);
+      const before = parts.slice(0, star).filter((p) => p.length > 0);
+      const after = parts.slice(star + 1).filter((p) => p.length > 0);
+
+      let parent: any = doc;
+      for (const key of before) {
+        if (parent === null || typeof parent !== 'object' || Array.isArray(parent)) {
+          fail(`keyed_arrays selector "${selector}" does not resolve to an object`);
+        }
+        parent = parent[key];
+      }
+      if (parent === null || typeof parent !== 'object' || Array.isArray(parent)) {
+        fail(`keyed_arrays selector "${selector}" does not resolve to an object`);
+      }
+
+      const keys = Object.keys(parent);
+      if (keys.length === 0) fail(`keyed_arrays selector "${selector}" resolves to an object with no keys`);
+
+      const result: string[] = [];
+      for (const key of keys) {
+        let node: any = parent[key];
+        for (const step of after) {
+          if (node === null || typeof node !== 'object' || Array.isArray(node)) {
+            fail(`keyed_arrays: "${key}" does not resolve to an array via "${after.join('.')}"`);
+          }
+          node = node[step];
+        }
+        if (!Array.isArray(node)) fail(`keyed_arrays: "${key}" does not hold an array`);
+        for (const entry of node) {
+          if (typeof entry !== 'string') fail(`keyed_arrays: non-string entry under "${key}"`);
+          result.push(entry);
+        }
       }
       return result;
     }

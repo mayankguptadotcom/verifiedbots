@@ -99,11 +99,19 @@ only when it fails the gate above.
    one recipe per array), `ip_objects` (+`selector` — same dot-path, but for an
    array of single-address *objects* rather than strings, e.g. IAS's
    `"publicIPs": [{"ipv4": "3.217.168.199"}]` or Smartology's
-   `"cidrs": [{"ipv4": "…/32"}]`), `stripe_webhooks`, `sail` (SAIL/`application/sail+toml`,
+   `"cidrs": [{"ipv4": "…/32"}]`), `stripe_webhooks`, `keyed_arrays` (+`selector` — a
+   dot-path with exactly one `*` segment meaning "every key at this level", for
+   an object whose *values* each hold an address array: `*` for New Relic's
+   `{"Washington, DC, USA": ["44.202.178.0/24", …]}`, `data.*.ips` for Ghost
+   Inspector's `{"data":{"us-east-1":{"ips":[…]}}}`; prefer this over one
+   `github_meta` recipe per key, which silently misses any location the
+   operator adds later), `sail` (SAIL/`application/sail+toml`,
    schema `draft-kelley-webbotauth-sail-00`; `selector` is the `[[services]]`
    name whose bound `prefix_sets` to read, e.g. `Claude-Agent` — omit it to
    take every published set). A feed in any other shape → use `static_cidrs`
-   with documented ranges, or omit the recipe.
+   with documented ranges, or omit the recipe. A feed needing a *filter*
+   (`route53-healthchecks`: the AWS ranges whose `service` is
+   `ROUTE53_HEALTHCHECKS`) is still unsupported — keep it `static_cidrs`.
 6. Run `npm run validate && npm run fetch-feeds && npm run verify-wba && npm test`. Fix or drop
    anything red. An exit-1 feed means the URL is wrong — never leave a broken
    recipe in; exit 2 (held/transient) is fine to commit through.

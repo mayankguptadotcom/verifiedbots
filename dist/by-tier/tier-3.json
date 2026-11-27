@@ -1,38 +1,8 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-26T14:00:23.551Z",
-  "count": 172,
+  "generated_at": "2026-11-27T13:24:01.677Z",
+  "count": 170,
   "bots": [
-    {
-      "id": "academicbot-rtu",
-      "name": "AcademicBotRTU",
-      "operator": {
-        "name": "Riga Technical University (Institute of Applied Computer Systems)",
-        "url": "https://academicbot.rtu.lv"
-      },
-      "description": "Crawler run by Riga Technical University that indexes websites and documents to compare against student and researcher works for plagiarism detection. The operator publishes no IP ranges, so requests cannot be verified.",
-      "docs": [
-        "https://academicbot.rtu.lv/"
-      ],
-      "category": "archiver",
-      "user_agents": {
-        "patterns": [
-          "AcademicBotRTU"
-        ],
-        "instances": [
-          "AcademicBotRTU (https://academicbot.rtu.lv; mailto:caps@rtu.lv)"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": true,
-        "robots_token": "AcademicBotRTU"
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-07-20T20:56:47.446Z",
-      "resolved_cidrs": []
-    },
     {
       "id": "adobe-edge-optimize",
       "name": "AdobeEdgeOptimize",
@@ -1694,36 +1664,6 @@
       "tier": 3,
       "tier_label": "Listed only",
       "first_seen": "2026-07-16T01:14:20.999Z",
-      "resolved_cidrs": []
-    },
-    {
-      "id": "fastmail-ua",
-      "name": "FastmailUA",
-      "operator": {
-        "name": "Fastmail",
-        "url": "https://www.fastmail.com"
-      },
-      "description": "Fastmail's server-side fetcher, used on behalf of its mail users. It proxies images embedded in messages so that no browser cookies, browser user agent or user IP address reach the remote server, and it fetches subscribed ICS and remote CalDAV calendars. Fastmail documents that every user agent it sends contains the string FastmailUA.",
-      "docs": [
-        "https://www.fastmail.com/policies/bots/"
-      ],
-      "category": "social-preview",
-      "user_agents": {
-        "patterns": [
-          "FastmailUA/\\d"
-        ],
-        "instances": [
-          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36 FastmailUA/1.0",
-          "FastmailUA/1.0"
-        ]
-      },
-      "behavior": {
-        "respects_robots_txt": false
-      },
-      "verification": [],
-      "tier": 3,
-      "tier_label": "Listed only",
-      "first_seen": "2026-08-23T13:20:46.873Z",
       "resolved_cidrs": []
     },
     {

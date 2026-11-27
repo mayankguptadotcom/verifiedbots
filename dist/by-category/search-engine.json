@@ -1,6 +1,6 @@
 {
   "project": "Verified Bots Directory",
-  "generated_at": "2026-11-26T14:00:23.551Z",
+  "generated_at": "2026-11-27T13:24:01.677Z",
   "count": 104,
   "bots": [
     {
@@ -3441,7 +3441,7 @@
         "name": "FindFiles.net",
         "url": "https://findfiles.net"
       },
-      "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address.",
+      "description": "The crawler behind the FindFiles.net file search engine. It checks that publicly accessible files users search for are still available, using multiplexed HTTP/2 HEAD requests with a minimum ten-second interval per server, and may download images, videos and executables for classification and safety checks. Purpose-specific user agents are published for its link checking, favicon fetching, virus scanning and image classification agents, which all share one crawler host and address. The operator publishes those addresses as a plain-text list.",
       "docs": [
         "https://findfiles.net/en/bot"
       ],
@@ -3464,11 +3464,9 @@
       },
       "verification": [
         {
-          "type": "static_cidrs",
-          "cidrs": [
-            "65.21.31.180/32",
-            "2a01:4f9:3080:2b61::2/128"
-          ]
+          "type": "cidr_feed",
+          "url": "https://findfiles.net/bot-ips.txt",
+          "format": "text_lines"
         },
         {
           "type": "rdns",
@@ -3477,8 +3475,8 @@
           ]
         }
       ],
-      "tier": 2,
-      "tier_label": "Verifiable",
+      "tier": 1,
+      "tier_label": "Fully verifiable",
       "first_seen": "2026-08-25T13:21:31.852Z",
       "resolved_cidrs": [
         "2a01:4f9:3080:2b61::2/128",

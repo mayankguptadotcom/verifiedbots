@@ -6,7 +6,8 @@ description: >-
   images embedded in messages so that no browser cookies, browser user agent or
   user IP address reach the remote server, and it fetches subscribed ICS and
   remote CalDAV calendars. Fastmail documents that every user agent it sends
-  contains the string FastmailUA.
+  contains the string FastmailUA, and that its image-proxy and sender-icon
+  requests are signed with Web Bot Auth.
 docs:
   - "https://www.fastmail.com/policies/bots/"
 category: social-preview
@@ -17,4 +18,16 @@ user_agents:
     - 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36 FastmailUA/1.0'
     - 'FastmailUA/1.0'
 behavior: { respects_robots_txt: false }
-verification: []
+verification:
+  # Fastmail's bots policy states that image-proxying and sender-icon requests
+  # are "cryptographically signed using Web Bot Auth, which is based on HTTP
+  # Message Signatures (RFC 9421)", that they carry
+  # Signature-Agent: "https://www.fastmailcdn.com", that the signature covers
+  # @authority and signature-agent with Ed25519 under the tag web-bot-auth, and
+  # that the keyid is the key's JWK SHA-256 thumbprint. The directory was
+  # fetched live this session: 200,
+  # application/http-message-signatures-directory+json, one Ed25519 OKP key.
+  # The page is explicit that calendar fetches "are not currently signed", so
+  # this recipe covers the image-proxy and sender-icon traffic only.
+  - type: web_bot_auth
+    signature_agent_url: "https://www.fastmailcdn.com/.well-known/http-message-signatures-directory"

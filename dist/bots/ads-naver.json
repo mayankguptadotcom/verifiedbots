@@ -7,7 +7,7 @@
   },
   "description": "Naver's advertising crawler. It periodically visits the landing pages advertisers register in Naver Search Ads, reading the HTML, content and meta information so Naver can assess page quality and match ads to relevant queries. Naver states this robot deliberately ignores robots.txt for registered landing pages, and tells site owners to verify it by reverse DNS.",
   "docs": [
-    "https://ads.naver.com/help/faq/994",
+    "https://ads.naver.com/help/faq/1974",
     "https://searchadvisor.naver.com/guide/seo-basic-firewall"
   ],
   "category": "seo",
