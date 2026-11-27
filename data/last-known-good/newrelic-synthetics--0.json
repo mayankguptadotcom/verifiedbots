@@ -1,6 +1,6 @@
 {
   "url": "https://s3.amazonaws.com/nr-synthetics-assets/nat-ip-dnsname/production/ip-ranges.json",
-  "fetched_at": "2026-11-27T13:25:25.042Z",
+  "fetched_at": "2026-11-27T13:27:04.197Z",
   "ranges": [
     "13.214.223.192/26",
     "13.214.242.0/25",
